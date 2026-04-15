@@ -1,0 +1,72 @@
+# Topic classification for publications.
+#
+# Each topic has:
+#   - slug:  internal identifier (used in publications JSON and JS filter)
+#   - name:  display label (shown in filter pills and chips)
+#   - patterns: list of case-insensitive regex patterns. A publication
+#              matches the topic if ANY pattern hits the title or venue.
+#
+# A publication may match zero, one, or many topics. The site shows all
+# matching topics as small chips on each paper card, and the second
+# filter row lets users narrow the list by topic.
+#
+# To force-assign or force-remove topics for a specific paper, add an
+# entry to topic_overrides below keyed by DBLP record key. The override
+# list REPLACES the auto-detected topics (empty list = no topics).
+
+topics:
+  - slug: ir
+    name: Information Retrieval
+    patterns:
+      - '\b(retriev\w*|search\w*|rank\w*|quer\w*|index\w*|relevance|click.?through|crawl\w*|sponsored\s+search|\bIR\b)'
+      - '\b(SIGIR|ECIR|WSDM|CIKM|TOIS)\b'
+
+  - slug: recsys
+    name: Recommender Systems
+    patterns:
+      - '\brecommend\w*'
+      - '\b(collaborative\s+filter|sequential\s+rec|top.?k\s+rec)'
+      - '\b(RecSys|TORS|SRS)\b'
+
+  - slug: llm_agents
+    name: LLM & Agentic AI
+    patterns:
+      - '\b(LLMs?|VLMs?)\b'
+      - '\b(large|vision).{0,6}language\s+model'
+      - '\blanguage\s+models?\b'
+      - '\bRAG\b'
+      - '\bretrieval.?augmented'
+      - '\b(generative\s+AI|foundation\s+model|prompt\w*|in.?context|instruction\s+tun\w*|chain.?of.?thought|CoT)\b'
+      - '\bagent\w*'
+      - '\b(GPT|BERT|T5|Llama|Mistral)\b'
+
+  - slug: nlp
+    name: Natural Language Processing
+    patterns:
+      - '\bNLP\b'
+      - '\bnatural\s+language'
+      - '\b(text\s+mining|sentiment\w*|text\s+classif\w*|misinformation|fake\s+news|hate\s+speech|persuas\w*|semeval|linguist\w*|word\s+embedding|text\s+analy\w*|translation|tokeniz\w*|dialog\w*|summariz\w*|question\s+answer)'
+
+  - slug: gnn
+    name: Graph Neural Networks
+    patterns:
+      - '\bGNN\w*'
+      - '\bgraph\s+(neural|convolution\w*|attention|based|embedding|transformer)'
+      - '\bGCN\b'
+      - '\b(message\s+passing|sheaf\w*|knowledge\s+graph|heterogeneous\s+graph|graph.based)'
+
+  - slug: trust
+    name: Trustworthy AI
+    patterns:
+      - '\b(explain\w*|interpret\w*|counterfactual\w*|fair\w*|robust\w*|trust\w*|privacy|safet\w*|safe\w*|bias\w*|adversar\w*|instabil\w*|hallucin\w*|poison\w*|watermark|reliabil\w*|transparen\w*|accountab\w*)'
+      - '\b(XAI|ethic\w*)\b'
+
+  - slug: efficient
+    name: Efficient IR & Systems
+    patterns:
+      - '\b(efficient\w*|distribut\w*|parallel\w*|scalab\w*|throughput|latency|compress\w*|quantiz\w*|cach\w*|prefetch\w*|bitonic|\bsort\w*|prun\w*|accelerat\w*|GPU|CUDA|index\s+compress)'
+
+# Force-override topics for specific DBLP keys. Use this for papers the
+# regex classifier gets wrong. The override list REPLACES auto-detected
+# topics; use [] to remove all topics from a paper.
+topic_overrides: {}

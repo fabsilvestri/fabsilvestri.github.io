@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Fetch Fabrizio Silvestri's publications from DBLP and classify them.
 
-Reads data/venues.yml for the A*/Q1 classification map and writes
+Reads data/venues.yml for the A*/Q1 classification map and
+data/topics.yml for topic classification, then writes
 assets/js/publications-data.js and data/publications.json.
 
-No third-party dependencies — uses only the Python standard library.
+Dependencies: PyYAML (pip install -r scripts/requirements.txt).
 Run locally:  python3 scripts/fetch_publications.py
 """
 from __future__ import annotations
@@ -17,12 +18,15 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+import yaml
+
 DBLP_PID = "s/FabrizioSilvestri"
 DBLP_URL = f"https://dblp.org/pid/{DBLP_PID}.xml"
 USER_AGENT = "fabsilvestri-homepage/1.0 (+https://fabsilvestri.github.io)"
 
 ROOT = Path(__file__).resolve().parent.parent
 VENUES_FILE = ROOT / "data" / "venues.yml"
+TOPICS_FILE = ROOT / "data" / "topics.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 
@@ -61,36 +65,66 @@ VENUE_DISPLAY = {
 }
 
 
-def load_venues(path: Path) -> dict[str, list[str]]:
-    """Tiny YAML loader for the specific venues.yml format.
+def load_venues(path: Path) -> dict:
+    """Load venues.yml. Venue abbreviations are lowercased for matching;
+    regex patterns and DBLP keys in skip lists are preserved verbatim."""
+    with path.open(encoding="utf-8") as f:
+        raw = yaml.safe_load(f) or {}
+    for key in ("a_star_confs", "q1_journals"):
+        raw[key] = [v.lower() for v in raw.get(key, []) or []]
+    for key in ("skip_title_patterns", "skip_keys"):
+        raw[key] = list(raw.get(key, []) or [])
+    return raw
 
-    Supports: top-level keys whose values are lists of strings, "#" comments,
-    and inline "<value> # comment" annotations. Does NOT support nested maps
-    or anchors — we don't need them here, and this keeps the script
-    dependency-free so it can run in any CI container without pip install.
+
+def load_topics(path: Path) -> tuple[list[dict], dict[str, list[str]]]:
+    """Load topics.yml. Returns (topics_list, overrides_map).
+
+    Each topic is a dict with keys: slug, name, and compiled_patterns
+    (a list of re.Pattern objects compiled case-insensitive).
     """
-    venues: dict[str, list[str]] = {}
-    current_key: str | None = None
-    for raw in path.read_text(encoding="utf-8").splitlines():
-        # Drop inline comments: whitespace + "#" + rest-of-line.
-        line = re.sub(r"\s+#.*$", "", raw)
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
+    if not path.exists():
+        return [], {}
+    with path.open(encoding="utf-8") as f:
+        raw = yaml.safe_load(f) or {}
+    topics = []
+    for entry in raw.get("topics", []) or []:
+        slug = entry.get("slug")
+        name = entry.get("name") or slug
+        patterns = entry.get("patterns") or []
+        if not slug or not patterns:
             continue
-        indent = len(line) - len(line.lstrip())
-        if indent == 0 and stripped.endswith(":"):
-            current_key = stripped[:-1].strip()
-            venues[current_key] = []
-        elif stripped.startswith("- ") and current_key is not None:
-            item = stripped[2:].strip().strip('"').strip("'")
-            if item:
-                # Venue abbreviation lists are lowercased for matching;
-                # regex patterns and DBLP keys are kept verbatim.
-                if current_key in ("skip_title_patterns", "skip_keys"):
-                    venues[current_key].append(item)
-                else:
-                    venues[current_key].append(item.lower())
-    return venues
+        topics.append({
+            "slug": slug,
+            "name": name,
+            "compiled_patterns": [re.compile(p, re.IGNORECASE) for p in patterns],
+        })
+    overrides = raw.get("topic_overrides") or {}
+    return topics, overrides
+
+
+def classify_topics(
+    pub: dict,
+    topics: list[dict],
+    overrides: dict[str, list[str]],
+) -> list[str]:
+    """Return the list of topic slugs matching this publication.
+
+    An explicit entry in `topic_overrides` (keyed by DBLP key) replaces
+    the auto-detected topics. Otherwise, each topic's patterns are tested
+    against the concatenation of title and venue — any match adds the
+    topic slug to the result.
+    """
+    if pub["key"] in overrides:
+        return list(overrides[pub["key"]] or [])
+    text = f"{pub['title']} {pub['venue']}"
+    matched: list[str] = []
+    for topic in topics:
+        for pat in topic["compiled_patterns"]:
+            if pat.search(text):
+                matched.append(topic["slug"])
+                break
+    return matched
 
 
 def venue_abbrev(dblp_key: str) -> str:
@@ -190,9 +224,11 @@ TYPE_ORDER = [
 
 def main() -> int:
     venues = load_venues(VENUES_FILE)
+    topics, topic_overrides = load_topics(TOPICS_FILE)
     print(
         f"Loaded venues: {len(venues.get('a_star_confs', []))} A* confs, "
-        f"{len(venues.get('q1_journals', []))} Q1 journals",
+        f"{len(venues.get('q1_journals', []))} Q1 journals; "
+        f"{len(topics)} topics",
         file=sys.stderr,
     )
 
@@ -222,6 +258,7 @@ def main() -> int:
             skipped += 1
             continue
         parsed["type"] = classify(record, venues)
+        parsed["topics"] = classify_topics(parsed, topics, topic_overrides)
         pubs.append(parsed)
 
     pubs.sort(
@@ -233,7 +270,14 @@ def main() -> int:
     )
 
     counts = {t: sum(1 for p in pubs if p["type"] == t) for t in TYPE_ORDER}
+    counts_by_topic = {
+        t["slug"]: sum(1 for p in pubs if t["slug"] in p.get("topics", []))
+        for t in topics
+    }
     years = sorted({p["year"] for p in pubs if p["year"] > 0}, reverse=True)
+
+    # Emit the topic metadata the renderer needs: ordered slug+name pairs.
+    topics_meta = [{"slug": t["slug"], "name": t["name"]} for t in topics]
 
     payload = {
         "last_updated": date.today().isoformat(),
@@ -241,7 +285,9 @@ def main() -> int:
         "source": DBLP_URL,
         "count": len(pubs),
         "counts_by_type": counts,
+        "counts_by_topic": counts_by_topic,
         "years": years,
+        "topics_meta": topics_meta,
         "publications": pubs,
     }
 
@@ -268,6 +314,13 @@ def main() -> int:
         f"— skipped {skipped} entries matching skip_title_patterns",
         file=sys.stderr,
     )
+    if counts_by_topic:
+        topic_summary = ", ".join(
+            f"{slug}={n}" for slug, n in sorted(counts_by_topic.items(), key=lambda kv: -kv[1])
+        )
+        print(f"Topic coverage: {topic_summary}", file=sys.stderr)
+        untagged = sum(1 for p in pubs if not p.get("topics"))
+        print(f"Papers with no topic matched: {untagged}", file=sys.stderr)
     return 0
 
 

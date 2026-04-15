@@ -346,8 +346,10 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
+.pub-filters.topic-filters { margin-bottom: 22px; }
+
 .pub-tab {
   padding: 8px 16px;
   border: 1px solid rgba(139, 92, 246, 0.25);
@@ -361,6 +363,9 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .pub-tab:hover { background: rgba(255, 255, 255, 0.85); color: var(--ink); }
 .pub-tab.is-active {
@@ -368,6 +373,26 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   color: #fff;
   border-color: transparent;
   box-shadow: 0 6px 18px -6px rgba(99, 102, 241, 0.55);
+}
+.pub-tab-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.7;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.12);
+}
+.pub-tab.is-active .pub-tab-count {
+  background: rgba(255, 255, 255, 0.22);
+  opacity: 0.95;
+}
+
+/* Topic row: slightly smaller + lighter to read as secondary. */
+.topic-filters .pub-tab {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-color: rgba(139, 92, 246, 0.15);
 }
 
 .pub-year-block { margin-bottom: 10px; }
@@ -440,6 +465,29 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   font-size: 12px;
   font-family: var(--font-mono);
   color: var(--ink-muted);
+}
+.pub-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.pub-chip {
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.pub-chip:hover {
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--accent-1);
+  border-color: rgba(139, 92, 246, 0.35);
 }
 .pub-empty {
   text-align: center;

@@ -12,6 +12,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
     rel="stylesheet"
   />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -137,13 +139,16 @@
         Auto-synced nightly from <a href="https://dblp.org/pid/s/FabrizioSilvestri.html" target="_blank" rel="noopener">DBLP</a>.
         Last updated <span id="pub-last-updated">—</span>.
       </p>
-      <div class="pub-filters" id="pub-filters" role="tablist">
+      <div class="pub-filters" id="pub-filters" role="tablist" aria-label="Filter by type">
         <button class="pub-tab is-active" data-filter="all" role="tab">All</button>
         <button class="pub-tab" data-filter="a_star_conf" role="tab">A* Conferences</button>
         <button class="pub-tab" data-filter="q1_journal" role="tab">Q1 Journals</button>
         <button class="pub-tab" data-filter="other" role="tab">Other Conferences &amp; Journals</button>
         <button class="pub-tab" data-filter="workshop" role="tab">Workshops</button>
         <button class="pub-tab" data-filter="preprint" role="tab">Preprints</button>
+      </div>
+      <div class="pub-filters topic-filters" id="topic-filters" role="tablist" aria-label="Filter by topic">
+        <!-- Topic pills are injected by publications.js from window.PUBLICATIONS.topics_meta. -->
       </div>
       <div class="pub-list" id="pub-list">
         <p class="pub-empty">Loading publications…</p>

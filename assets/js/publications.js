@@ -1,5 +1,9 @@
 /* Publications renderer — reads window.PUBLICATIONS (from publications-data.js)
- * and renders filterable year-grouped list into #pub-list. */
+ * and renders a year-grouped list with two filter dimensions:
+ *   - TYPE (A*, Q1, Other, Workshop, Preprint) in #pub-filters
+ *   - TOPIC (IR, RecSys, LLM & Agentic AI, …) in #topic-filters
+ * The two filters are ANDed. Clicking a topic chip on a paper activates
+ * that topic filter. */
 (function () {
   "use strict";
 
@@ -16,8 +20,6 @@
       .replace(/'/g, "&#039;");
   }
 
-  // Fallback labels for the badge when a publication has no venue_short.
-  // Also shown as the badge tooltip for the quality-tier reference.
   var TYPE_FALLBACK = {
     a_star_conf:   "A* Conference",
     q1_journal:    "Q1 Journal",
@@ -27,9 +29,6 @@
     preprint:      "Preprint"
   };
 
-  // Maps a filter value to the set of publication types it matches.
-  // "other" spans both other_conf and other_journal so the "Other
-  // Conferences & Journals" tab shows them together.
   var FILTER_TYPES = {
     a_star_conf:   ["a_star_conf"],
     q1_journal:    ["q1_journal"],
@@ -37,6 +36,11 @@
     workshop:      ["workshop"],
     preprint:      ["preprint"]
   };
+
+  // Filter state (both default to "all").
+  var state = { type: "all", topic: "all" };
+  // Map from topic slug -> display name, populated at init from topics_meta.
+  var TOPIC_NAMES = {};
 
   function renderAuthors(authors) {
     return authors
@@ -51,6 +55,23 @@
     var venue = pub.venue || "";
     if (!venue) return String(pub.year || "");
     return escapeHtml(venue) + (pub.year ? " · " + pub.year : "");
+  }
+
+  function renderChips(topics) {
+    if (!topics || !topics.length) return "";
+    return (
+      '<div class="pub-chips">' +
+      topics.map(function (slug) {
+        var name = TOPIC_NAMES[slug] || slug;
+        return (
+          '<button type="button" class="pub-chip" data-topic="' + escapeHtml(slug) +
+          '" title="Filter by ' + escapeHtml(name) + '">' +
+          escapeHtml(name) +
+          "</button>"
+        );
+      }).join("") +
+      "</div>"
+    );
   }
 
   function renderItem(pub) {
@@ -69,6 +90,7 @@
           '<h3 class="pub-title">' + titleHtml + "</h3>" +
           '<p class="pub-authors">' + renderAuthors(pub.authors || []) + "</p>" +
           '<p class="pub-venue">' + renderVenue(pub) + "</p>" +
+          renderChips(pub.topics) +
         "</div>" +
       "</article>"
     );
@@ -87,7 +109,18 @@
       .map(function (y) { return { year: y, pubs: groups[y] }; });
   }
 
-  function render(filter) {
+  function matchesType(pub, typeFilter) {
+    if (typeFilter === "all") return true;
+    var types = FILTER_TYPES[typeFilter] || [typeFilter];
+    return types.indexOf(pub.type) !== -1;
+  }
+
+  function matchesTopic(pub, topicFilter) {
+    if (topicFilter === "all") return true;
+    return (pub.topics || []).indexOf(topicFilter) !== -1;
+  }
+
+  function render() {
     var data = window.PUBLICATIONS;
     var list = byId("pub-list");
     if (!list) return;
@@ -95,16 +128,14 @@
       list.innerHTML = '<p class="pub-empty">No publication data found. Run scripts/fetch_publications.py.</p>';
       return;
     }
-    var pubs = data.publications;
-    if (filter && filter !== "all") {
-      var types = FILTER_TYPES[filter] || [filter];
-      pubs = pubs.filter(function (p) { return types.indexOf(p.type) !== -1; });
-    }
+    var pubs = data.publications.filter(function (p) {
+      return matchesType(p, state.type) && matchesTopic(p, state.topic);
+    });
     if (pubs.length === 0) {
-      list.innerHTML = '<p class="pub-empty">No publications in this category.</p>';
+      list.innerHTML = '<p class="pub-empty">No publications match the current filters.</p>';
       return;
     }
-    var html = groupByYear(pubs)
+    list.innerHTML = groupByYear(pubs)
       .map(function (g) {
         return (
           '<div class="pub-year-block">' +
@@ -114,7 +145,6 @@
         );
       })
       .join("");
-    list.innerHTML = html;
   }
 
   function updateStats() {
@@ -135,23 +165,82 @@
     if (updEl) updEl.textContent = data.last_updated || "—";
   }
 
-  function initTabs() {
+  function setTypeFilter(value) {
+    state.type = value;
+    var bar = byId("pub-filters");
+    if (bar) {
+      bar.querySelectorAll(".pub-tab").forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-filter") === value);
+      });
+    }
+    render();
+  }
+
+  function setTopicFilter(value) {
+    state.topic = value;
+    var bar = byId("topic-filters");
+    if (bar) {
+      bar.querySelectorAll(".pub-tab").forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-filter") === value);
+      });
+    }
+    render();
+  }
+
+  function initTypeTabs() {
     var bar = byId("pub-filters");
     if (!bar) return;
     bar.addEventListener("click", function (e) {
       var btn = e.target.closest(".pub-tab");
       if (!btn) return;
-      var filter = btn.getAttribute("data-filter");
-      bar.querySelectorAll(".pub-tab").forEach(function (b) {
-        b.classList.toggle("is-active", b === btn);
-      });
-      render(filter);
+      setTypeFilter(btn.getAttribute("data-filter"));
+    });
+  }
+
+  function initTopicTabs() {
+    var bar = byId("topic-filters");
+    var data = window.PUBLICATIONS;
+    if (!bar || !data || !data.topics_meta || !data.topics_meta.length) return;
+    var counts = data.counts_by_topic || {};
+    var html = '<button class="pub-tab is-active" data-filter="all">All topics</button>';
+    data.topics_meta.forEach(function (t) {
+      TOPIC_NAMES[t.slug] = t.name;
+      var n = counts[t.slug] || 0;
+      html +=
+        '<button class="pub-tab" data-filter="' + t.slug + '">' +
+        escapeHtml(t.name) +
+        ' <span class="pub-tab-count">' + n + '</span>' +
+        "</button>";
+    });
+    bar.innerHTML = html;
+    bar.addEventListener("click", function (e) {
+      var btn = e.target.closest(".pub-tab");
+      if (!btn) return;
+      setTopicFilter(btn.getAttribute("data-filter"));
+    });
+  }
+
+  function initChipClicks() {
+    var list = byId("pub-list");
+    if (!list) return;
+    list.addEventListener("click", function (e) {
+      var chip = e.target.closest(".pub-chip");
+      if (!chip) return;
+      e.preventDefault();
+      var slug = chip.getAttribute("data-topic");
+      if (!slug) return;
+      setTopicFilter(slug);
+      // Scroll the publications section to the top so the user sees the effect.
+      var pubs = document.getElementById("publications");
+      if (pubs) pubs.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     updateStats();
-    initTabs();
-    render("all");
+    initTypeTabs();
+    initTopicTabs();
+    initChipClicks();
+    render();
   });
 })();
