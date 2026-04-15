@@ -98,7 +98,21 @@ def venue_abbrev(dblp_key: str) -> str:
 
 
 def is_workshop(booktitle: str) -> bool:
-    return bool(booktitle and re.search(r"\bworkshop\b", booktitle, re.I))
+    """Detect satellite events / workshop tracks by booktitle.
+
+    DBLP records satellite events in several conventions:
+      - "... Workshop ..." or "... Workshops ..."     (plain English)
+      - "WSCD@WSDM", "SemEval@NAACL", "Tiny Papers @ ICLR"
+        (the "satellite-at-main-conference" shorthand, reliably a
+        non-main-track event — workshops, tutorials, student tracks).
+    """
+    if not booktitle:
+        return False
+    if re.search(r"\bworkshops?\b", booktitle, re.I):
+        return True
+    if "@" in booktitle:
+        return True
+    return False
 
 
 def classify(record: ET.Element, venues: dict[str, list[str]]) -> str:
