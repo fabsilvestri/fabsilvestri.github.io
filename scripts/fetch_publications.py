@@ -28,7 +28,8 @@ OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 
 TYPE_A_STAR = "a_star_conf"
 TYPE_Q1 = "q1_journal"
-TYPE_OTHER = "other"
+TYPE_OTHER_CONF = "other_conf"
+TYPE_OTHER_JOURNAL = "other_journal"
 TYPE_PREPRINT = "preprint"
 
 # Display-name overrides for venue abbreviations. Anything not in this map
@@ -129,7 +130,9 @@ def classify(record: ET.Element, venues: dict[str, list[str]]) -> str:
         return TYPE_A_STAR
     if tag == "article" and abbrev in venues.get("q1_journals", []):
         return TYPE_Q1
-    return TYPE_OTHER
+    if tag == "article":
+        return TYPE_OTHER_JOURNAL
+    return TYPE_OTHER_CONF
 
 
 def format_author(name: str) -> str:
@@ -178,7 +181,7 @@ def fetch_dblp_xml() -> bytes:
         return resp.read()
 
 
-TYPE_ORDER = [TYPE_A_STAR, TYPE_Q1, TYPE_OTHER, TYPE_PREPRINT]
+TYPE_ORDER = [TYPE_A_STAR, TYPE_Q1, TYPE_OTHER_CONF, TYPE_OTHER_JOURNAL, TYPE_PREPRINT]
 
 
 def main() -> int:
@@ -255,7 +258,8 @@ def main() -> int:
     print(
         f"Wrote {len(pubs)} publications "
         f"(A*={counts[TYPE_A_STAR]}, Q1={counts[TYPE_Q1]}, "
-        f"Other={counts[TYPE_OTHER]}, Preprint={counts[TYPE_PREPRINT]}) "
+        f"OtherConf={counts[TYPE_OTHER_CONF]}, OtherJrnl={counts[TYPE_OTHER_JOURNAL]}, "
+        f"Preprint={counts[TYPE_PREPRINT]}) "
         f"spanning {years[-1] if years else '?'}–{years[0] if years else '?'} "
         f"— skipped {skipped} entries matching skip_title_patterns",
         file=sys.stderr,

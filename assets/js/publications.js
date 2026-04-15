@@ -17,11 +17,23 @@
   }
 
   // Fallback labels for the badge when a publication has no venue_short.
+  // Also shown as the badge tooltip for the quality-tier reference.
   var TYPE_FALLBACK = {
-    a_star_conf: "A* Conf.",
-    q1_journal: "Q1 Journal",
-    other: "Other",
-    preprint: "Preprint"
+    a_star_conf:   "A* Conference",
+    q1_journal:    "Q1 Journal",
+    other_conf:    "Other Conference",
+    other_journal: "Other Journal",
+    preprint:      "Preprint / Workshop"
+  };
+
+  // Maps a filter value to the set of publication types it matches.
+  // "other" spans both other_conf and other_journal so the "Other
+  // Conferences & Journals" tab shows them together.
+  var FILTER_TYPES = {
+    a_star_conf:   ["a_star_conf"],
+    q1_journal:    ["q1_journal"],
+    other:         ["other_conf", "other_journal"],
+    preprint:      ["preprint"]
   };
 
   function renderAuthors(authors) {
@@ -83,7 +95,8 @@
     }
     var pubs = data.publications;
     if (filter && filter !== "all") {
-      pubs = pubs.filter(function (p) { return p.type === filter; });
+      var types = FILTER_TYPES[filter] || [filter];
+      pubs = pubs.filter(function (p) { return types.indexOf(p.type) !== -1; });
     }
     if (pubs.length === 0) {
       list.innerHTML = '<p class="pub-empty">No publications in this category.</p>';
