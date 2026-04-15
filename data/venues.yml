@@ -55,6 +55,7 @@ q1_journals:
   - tnn          # IEEE Trans. on Neural Networks and Learning Systems
   - tbd          # IEEE Trans. on Big Data
   - tai          # IEEE Trans. on Artificial Intelligence
+  - access       # IEEE Access
   - ipm          # Information Processing & Management
   - jasis        # JASIST
   - ir           # Information Retrieval Journal

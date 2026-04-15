@@ -1,13 +1,13 @@
 {
   "last_updated": "2026-04-15",
-  "generated_at": "2026-04-15T11:39:04+00:00",
+  "generated_at": "2026-04-15T11:41:32+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 284,
   "counts_by_type": {
     "a_star_conf": 48,
-    "q1_journal": 15,
+    "q1_journal": 17,
     "other_conf": 92,
-    "other_journal": 23,
+    "other_journal": 21,
     "preprint": 106
   },
   "years": [
@@ -265,6 +265,24 @@
       "type": "a_star_conf"
     },
     {
+      "key": "journals/access/BetelloPSTBTS25",
+      "title": "A Reproducible Analysis of Sequential Recommender Systems",
+      "authors": [
+        "F. Betello",
+        "A. Purificato",
+        "F. Siciliano",
+        "G. Trappolini",
+        "A. Bacciu",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "IEEE Access",
+      "venue_short": "IEEE Access",
+      "url": "https://doi.org/10.1109/ACCESS.2024.3522049",
+      "type": "q1_journal"
+    },
+    {
       "key": "journals/tai/MovinSFST25",
       "title": "Consistent Counterfactual Explanations via Anomaly Control and Data Coherence",
       "authors": [
@@ -278,6 +296,24 @@
       "venue": "IEEE Trans. Artif. Intell.",
       "venue_short": "IEEE T-AI",
       "url": "https://doi.org/10.1109/TAI.2024.3496616",
+      "type": "q1_journal"
+    },
+    {
+      "key": "journals/access/TrappoliniPSDSDS25",
+      "title": "Quantized Auto Encoder-Based Anomaly Detection for Multivariate Time Series Data in 5G Networks",
+      "authors": [
+        "G. Trappolini",
+        "A. Purificato",
+        "F. Siciliano",
+        "L. D'Addona",
+        "A. Maria Spagnolo",
+        "D. Dato",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "IEEE Access",
+      "venue_short": "IEEE Access",
+      "url": "https://doi.org/10.1109/ACCESS.2025.3568133",
       "type": "q1_journal"
     },
     {
@@ -498,42 +534,6 @@
       "venue": "Comput. Medical Imaging Graph.",
       "venue_short": "CMIG",
       "url": "https://doi.org/10.1016/j.compmedimag.2024.102484",
-      "type": "other_journal"
-    },
-    {
-      "key": "journals/access/BetelloPSTBTS25",
-      "title": "A Reproducible Analysis of Sequential Recommender Systems",
-      "authors": [
-        "F. Betello",
-        "A. Purificato",
-        "F. Siciliano",
-        "G. Trappolini",
-        "A. Bacciu",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "IEEE Access",
-      "venue_short": "IEEE Access",
-      "url": "https://doi.org/10.1109/ACCESS.2024.3522049",
-      "type": "other_journal"
-    },
-    {
-      "key": "journals/access/TrappoliniPSDSDS25",
-      "title": "Quantized Auto Encoder-Based Anomaly Detection for Multivariate Time Series Data in 5G Networks",
-      "authors": [
-        "G. Trappolini",
-        "A. Purificato",
-        "F. Siciliano",
-        "L. D'Addona",
-        "A. Maria Spagnolo",
-        "D. Dato",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "IEEE Access",
-      "venue_short": "IEEE Access",
-      "url": "https://doi.org/10.1109/ACCESS.2025.3568133",
       "type": "other_journal"
     },
     {
