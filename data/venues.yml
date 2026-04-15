@@ -65,6 +65,7 @@ q1_journals:
   - ai           # Artificial Intelligence (Elsevier)
   - nn           # Neural Networks (Elsevier)
   - fgcs         # Future Generation Computer Systems (Elsevier)
+  - osnm         # Online Social Networks and Media (Elsevier)
   - datamine     # Data Mining and Knowledge Discovery (Springer)
   - ir           # Information Retrieval Journal (Springer)
   - pvldb        # Proc. of the VLDB Endowment

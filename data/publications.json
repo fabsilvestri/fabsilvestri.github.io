@@ -1,13 +1,13 @@
 {
   "last_updated": "2026-04-15",
-  "generated_at": "2026-04-15T11:47:48+00:00",
+  "generated_at": "2026-04-15T11:49:11+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 284,
   "counts_by_type": {
     "a_star_conf": 48,
-    "q1_journal": 29,
+    "q1_journal": 31,
     "other_conf": 92,
-    "other_journal": 9,
+    "other_journal": 7,
     "preprint": 106
   },
   "years": [
@@ -317,6 +317,22 @@
       "type": "q1_journal"
     },
     {
+      "key": "journals/osnm/EnneiferBSAS25",
+      "title": "The perils of stealthy data poisoning attacks in misogynistic content moderation",
+      "authors": [
+        "S. Enneifer",
+        "F. Baccini",
+        "F. Siciliano",
+        "I. Amerini",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "Online Soc. Networks Media",
+      "venue_short": "OSNM",
+      "url": "https://doi.org/10.1016/j.osnem.2025.100334",
+      "type": "q1_journal"
+    },
+    {
       "key": "conf/ijcnn/TeodoroSTS25",
       "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
       "authors": [
@@ -534,22 +550,6 @@
       "venue": "Comput. Medical Imaging Graph.",
       "venue_short": "CMIG",
       "url": "https://doi.org/10.1016/j.compmedimag.2024.102484",
-      "type": "other_journal"
-    },
-    {
-      "key": "journals/osnm/EnneiferBSAS25",
-      "title": "The perils of stealthy data poisoning attacks in misogynistic content moderation",
-      "authors": [
-        "S. Enneifer",
-        "F. Baccini",
-        "F. Siciliano",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "Online Soc. Networks Media",
-      "venue_short": "OSNM",
-      "url": "https://doi.org/10.1016/j.osnem.2025.100334",
       "type": "other_journal"
     },
     {
@@ -1659,6 +1659,24 @@
       "type": "a_star_conf"
     },
     {
+      "key": "journals/osnm/BarnaboS00NMS23",
+      "title": "Deep active learning for misinformation detection using geometric deep learning",
+      "authors": [
+        "G. Barnabò",
+        "F. Siciliano",
+        "C. Castillo",
+        "S. Leonardi",
+        "P. Nakov",
+        "G. Da San Martino",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "Online Soc. Networks Media",
+      "venue_short": "OSNM",
+      "url": "https://doi.org/10.1016/j.osnem.2023.100244",
+      "type": "q1_journal"
+    },
+    {
       "key": "conf/xai/MagisterBKSCSJL23",
       "title": "Concept Distillation in Graph Neural Networks",
       "authors": [
@@ -1749,24 +1767,6 @@
       "venue": "Discov. Artif. Intell.",
       "venue_short": "DAI",
       "url": "https://doi.org/10.1007/s44163-023-00047-7",
-      "type": "other_journal"
-    },
-    {
-      "key": "journals/osnm/BarnaboS00NMS23",
-      "title": "Deep active learning for misinformation detection using geometric deep learning",
-      "authors": [
-        "G. Barnabò",
-        "F. Siciliano",
-        "C. Castillo",
-        "S. Leonardi",
-        "P. Nakov",
-        "G. Da San Martino",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "Online Soc. Networks Media",
-      "venue_short": "OSNM",
-      "url": "https://doi.org/10.1016/j.osnem.2023.100244",
       "type": "other_journal"
     },
     {
