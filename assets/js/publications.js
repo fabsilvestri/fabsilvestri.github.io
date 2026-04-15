@@ -114,7 +114,10 @@
   }
 
   function matchesType(pub, typeFilter) {
-    if (typeFilter === "all") return true;
+    // "all" excludes preprints — they're only visible via the
+    // dedicated Preprints tab. Everything else is a peer-reviewed
+    // venue (A*/Q1/Other conf/Other journal/Workshop).
+    if (typeFilter === "all") return pub.type !== "preprint";
     var types = FILTER_TYPES[typeFilter] || [typeFilter];
     return types.indexOf(pub.type) !== -1;
   }
@@ -220,7 +223,13 @@
     var astarEl = byId("stat-astar");
     var yearsEl = byId("stat-years");
     var updEl = byId("pub-last-updated");
-    if (totalEl) totalEl.textContent = data.count || "—";
+    // Exclude preprints from the headline count so it matches the
+    // default "All" filter view.
+    if (totalEl && data.counts_by_type) {
+      var peerReviewed = (data.count || 0) -
+        (data.counts_by_type.preprint || 0);
+      totalEl.textContent = peerReviewed || "—";
+    }
     if (astarEl && data.counts_by_type) {
       astarEl.textContent = data.counts_by_type.a_star_conf || 0;
     }
