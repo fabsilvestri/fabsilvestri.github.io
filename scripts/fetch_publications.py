@@ -31,6 +31,33 @@ TYPE_Q1 = "q1_journal"
 TYPE_OTHER = "other"
 TYPE_PREPRINT = "preprint"
 
+# Display-name overrides for venue abbreviations. Anything not in this map
+# is uppercased (e.g. "sigir" -> "SIGIR", "eacl" -> "EACL").
+VENUE_DISPLAY = {
+    "corr":    "arXiv",
+    "nips":    "NeurIPS",
+    "neurips": "NeurIPS",
+    "iclr":    "ICLR",
+    "pvldb":   "VLDB",
+    "tweb":    "TWEB",
+    "tois":    "TOIS",
+    "tkde":    "TKDE",
+    "tors":    "TORS",
+    "tist":    "TIST",
+    "tkdd":    "TKDD",
+    "jmlr":    "JMLR",
+    "tacl":    "TACL",
+    "jair":    "JAIR",
+    "cacm":    "CACM",
+    "ipm":     "IP&M",
+    "jasis":   "JASIST",
+    "access":  "IEEE Access",
+    "tai":     "IEEE T-AI",
+    "cmig":    "CMIG",
+    "concurrency": "Concurrency",
+    "fgcs":    "FGCS",
+}
+
 
 def load_venues(path: Path) -> dict[str, list[str]]:
     """Tiny YAML loader for the specific venues.yml format.
@@ -107,6 +134,8 @@ def parse_record(record: ET.Element) -> dict:
     venue_name = (
         record.findtext("journal") or record.findtext("booktitle") or ""
     ).strip()
+    abbrev = venue_abbrev(record.get("key", ""))
+    venue_short = VENUE_DISPLAY.get(abbrev, abbrev.upper()) if abbrev else ""
     url = None
     for ee in record.findall("ee"):
         candidate = (ee.text or "").strip()
@@ -119,6 +148,7 @@ def parse_record(record: ET.Element) -> dict:
         "authors": authors,
         "year": year,
         "venue": venue_name,
+        "venue_short": venue_short,
         "url": url,
     }
 

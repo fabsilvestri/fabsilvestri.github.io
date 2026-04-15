@@ -16,7 +16,8 @@
       .replace(/'/g, "&#039;");
   }
 
-  var TYPE_LABELS = {
+  // Fallback labels for the badge when a publication has no venue_short.
+  var TYPE_FALLBACK = {
     a_star_conf: "A* Conf.",
     q1_journal: "Q1 Journal",
     other: "Other",
@@ -43,10 +44,12 @@
       ? '<a href="' + escapeHtml(pub.url) + '" target="_blank" rel="noopener">' +
         escapeHtml(pub.title) + "</a>"
       : escapeHtml(pub.title);
+    var badgeText = pub.venue_short || TYPE_FALLBACK[pub.type] || pub.type;
     return (
       '<article class="pub-item">' +
-        '<span class="pub-badge type-' + pub.type + '">' +
-          escapeHtml(TYPE_LABELS[pub.type] || pub.type) +
+        '<span class="pub-badge type-' + pub.type + '" title="' +
+          escapeHtml(TYPE_FALLBACK[pub.type] || "") + '">' +
+          escapeHtml(badgeText) +
         "</span>" +
         '<div class="pub-body">' +
           '<h3 class="pub-title">' + titleHtml + "</h3>" +
