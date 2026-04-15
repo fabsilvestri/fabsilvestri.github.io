@@ -28,8 +28,8 @@ topics:
       - '\b(collaborative\s+filter|sequential\s+rec|top.?k\s+rec)'
       - '\b(RecSys|TORS|SRS)\b'
 
-  - slug: llm_agents
-    name: LLM & Agentic AI
+  - slug: llm
+    name: LLM
     patterns:
       - '\b(LLMs?|VLMs?)\b'
       - '\b(large|vision).{0,6}language\s+model'
@@ -37,34 +37,88 @@ topics:
       - '\bRAG\b'
       - '\bretrieval.?augmented'
       - '\b(generative\s+AI|foundation\s+model|prompt\w*|in.?context|instruction\s+tun\w*|chain.?of.?thought|CoT)\b'
-      - '\bagent\w*'
-      - '\b(GPT|BERT|T5|Llama|Mistral)\b'
+      - '\b(GPT|BERT|T5|Llama|Mistral|Claude|Gemini)\b'
+      - '\btransformer\w*'
+      - '\bdecoding\b'
+      - '\battention\s+(sink|head|mechanism|pattern)'
+      - '\b(pre.?train|fine.?tun|in.?context\s+learn)'
+      - '\bhallucin\w*'
+
+  - slug: agents
+    name: Agentic AI
+    patterns:
+      - '\b(agent|agents|agentic|multi.?agent|autonomous\s+agent)\b'
 
   - slug: nlp
     name: Natural Language Processing
     patterns:
       - '\bNLP\b'
       - '\bnatural\s+language'
-      - '\b(text\s+mining|sentiment\w*|text\s+classif\w*|misinformation|fake\s+news|hate\s+speech|persuas\w*|semeval|linguist\w*|word\s+embedding|text\s+analy\w*|translation|tokeniz\w*|dialog\w*|summariz\w*|question\s+answer)'
+      - '\b(text\s+mining|sentiment\w*|text\s+classif\w*|text\s+analy\w*|linguist\w*|word\s+embedding|translation|tokeniz\w*|dialog\w*|summariz\w*|question\s+answer|semeval|named\s+entit|parsing)'
 
   - slug: gnn
     name: Graph Neural Networks
     patterns:
       - '\bGNN\w*'
-      - '\bgraph\s+(neural|convolution\w*|attention|based|embedding|transformer)'
+      - '\bgraph\s+(neural|convolution\w*|attention|based|embedding|transformer|representation)'
       - '\bGCN\b'
-      - '\b(message\s+passing|sheaf\w*|knowledge\s+graph|heterogeneous\s+graph|graph.based)'
+      - '\b(message\s+passing|sheaf\w*|knowledge\s+graph|heterogeneous\s+graph|graph.based|node\s+classification|link\s+prediction)'
 
   - slug: trust
     name: Trustworthy AI
     patterns:
-      - '\b(explain\w*|interpret\w*|counterfactual\w*|fair\w*|robust\w*|trust\w*|privacy|safet\w*|safe\w*|bias\w*|adversar\w*|instabil\w*|hallucin\w*|poison\w*|watermark|reliabil\w*|transparen\w*|accountab\w*)'
+      - '\b(explain\w*|interpret\w*|counterfactual\w*|fair\w*|robust\w*|trust\w*|privacy|safet\w*|safe\w*|bias\w*|adversar\w*|instabil\w*|poison\w*|watermark|reliabil\w*|transparen\w*|accountab\w*|noisy\s+label)'
       - '\b(XAI|ethic\w*)\b'
+
+  - slug: task_vectors
+    name: Task Vectors & Model Merging
+    patterns:
+      - '\btask\s+vectors?\b'
+      - '\btask\s+arithmetic\b'
+      - '\btask\s+interference\b'
+      - '\btask\s+singular'
+      - '\bmodel\s+(merging|soup)\b'
+      - '\bMoErging\b'
+      - '\b(model|machine)\s+unlearning\b'
+      - '\bMoE\b'   # Mixture of Experts — often paired with merging
 
   - slug: efficient
     name: Efficient IR & Systems
     patterns:
       - '\b(efficient\w*|distribut\w*|parallel\w*|scalab\w*|throughput|latency|compress\w*|quantiz\w*|cach\w*|prefetch\w*|bitonic|\bsort\w*|prun\w*|accelerat\w*|GPU|CUDA|index\s+compress)'
+      - '\b(grid|peer.?to.?peer|\bP2P\b|stream\s+process|middleware|high.?performance|\bHPC\b|workflow|cluster|concurrent|concurrency|multi.?core|map.?reduce)'
+
+  - slug: misinfo
+    name: Misinformation & Content Moderation
+    patterns:
+      - '\b(mis|dis)information\b'
+      - '\b(fake\s+news|hate\s+speech|harmful|propaganda|persuasion|meme|memes|content\s+moderation|moderation)\b'
+      - '\bintegrity\b'
+      - '\bdeviant\s+commun'
+
+  - slug: data_mining
+    name: Data Mining
+    patterns:
+      - '\bdata\s+mining\b'
+      - '\b(frequent\s+(item|set|pattern)|transactional\s+dataset|association\s+rule|frequent\s+pattern)'
+      - '\b(kDCI|apriori|fp.?growth)\b'
+      - '\b(k.?means|clustering|classification\s+rule)'
+      - '\b(frequent\s+sets?)\b'
+
+  - slug: social_net
+    name: Social Networks & Opinion Dynamics
+    patterns:
+      - '\b(social\s+network|online\s+social|social\s+media)'
+      - '\b(opinion\s+dynamic|community\s+(detection|hiding|member|structure|overlap)|deviant\s+commun)'
+      - '\bOSN\b'
+
+  # Catch-all: auto-assigned to any paper that matches no other topic.
+  # Must have slug "misc" and empty patterns — the script hardcodes the
+  # "misc" fallback and will skip its (empty) pattern list during
+  # regex matching.
+  - slug: misc
+    name: Miscellaneous
+    patterns: []
 
 # Force-override topics for specific DBLP keys. Use this for papers the
 # regex classifier gets wrong. The override list REPLACES auto-detected

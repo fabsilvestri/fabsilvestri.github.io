@@ -77,11 +77,17 @@ def load_venues(path: Path) -> dict:
     return raw
 
 
+MISC_SLUG = "misc"  # catch-all topic for papers that match nothing else
+
+
 def load_topics(path: Path) -> tuple[list[dict], dict[str, list[str]]]:
     """Load topics.yml. Returns (topics_list, overrides_map).
 
     Each topic is a dict with keys: slug, name, and compiled_patterns
-    (a list of re.Pattern objects compiled case-insensitive).
+    (a list of re.Pattern objects compiled case-insensitive). A topic
+    with empty patterns is kept in the list (so it appears in the
+    filter bar) but is skipped during auto-matching — the MISC_SLUG
+    topic is the canonical such catch-all.
     """
     if not path.exists():
         return [], {}
@@ -92,7 +98,7 @@ def load_topics(path: Path) -> tuple[list[dict], dict[str, list[str]]]:
         slug = entry.get("slug")
         name = entry.get("name") or slug
         patterns = entry.get("patterns") or []
-        if not slug or not patterns:
+        if not slug:
             continue
         topics.append({
             "slug": slug,
@@ -111,19 +117,23 @@ def classify_topics(
     """Return the list of topic slugs matching this publication.
 
     An explicit entry in `topic_overrides` (keyed by DBLP key) replaces
-    the auto-detected topics. Otherwise, each topic's patterns are tested
-    against the concatenation of title and venue — any match adds the
-    topic slug to the result.
+    the auto-detected topics. Otherwise each topic's patterns are tested
+    against title + venue — any match adds the slug to the result.
+    Papers matching no other topic are auto-tagged MISC_SLUG.
     """
     if pub["key"] in overrides:
         return list(overrides[pub["key"]] or [])
     text = f"{pub['title']} {pub['venue']}"
     matched: list[str] = []
     for topic in topics:
+        if not topic["compiled_patterns"]:
+            continue  # catch-all topic — never matches via regex
         for pat in topic["compiled_patterns"]:
             if pat.search(text):
                 matched.append(topic["slug"])
                 break
+    if not matched:
+        matched = [MISC_SLUG]
     return matched
 
 
