@@ -74,6 +74,12 @@ q1_journals:
 # Used to filter out workshop-organizing entries, editorials, and reports
 # that DBLP lists as "publications" but are service contributions, not
 # research papers. Edit this list to keep or remove entries from the site.
+# Explicit DBLP keys to drop. Use this for one-off non-papers (invited
+# talks, panels, keynotes, abstracts) whose titles look like regular
+# research papers and therefore don't match any general pattern.
+skip_keys:
+  - conf/www/MantrachS19  # "Enlisting the Public to Build a Healthier Web Information Commons" (WWW 2019 — not a paper)
+
 skip_title_patterns:
   - '\bworkshop on\b'           # "... Workshop on X ..."  (organizing a workshop)
   - '\bworkshop report\b'       # "SIGIR workshop report ..."

@@ -1,10 +1,10 @@
 {
   "last_updated": "2026-04-15",
-  "generated_at": "2026-04-15T10:25:24+00:00",
+  "generated_at": "2026-04-15T11:34:13+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 285,
+  "count": 284,
   "counts_by_type": {
-    "a_star_conf": 49,
+    "a_star_conf": 48,
     "q1_journal": 15,
     "other": 115,
     "preprint": 106
@@ -2647,19 +2647,6 @@
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2009.10311",
       "type": "preprint"
-    },
-    {
-      "key": "conf/www/MantrachS19",
-      "title": "Enlisting the Public to Build a Healthier Web Information Commons",
-      "authors": [
-        "A. Mantrach",
-        "F. Silvestri"
-      ],
-      "year": 2019,
-      "venue": "WWW",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/3308558.3314993",
-      "type": "a_star_conf"
     },
     {
       "key": "conf/naacl/EdizelPBFGS19",

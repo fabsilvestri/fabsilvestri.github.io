@@ -83,8 +83,8 @@ def load_venues(path: Path) -> dict[str, list[str]]:
             item = stripped[2:].strip().strip('"').strip("'")
             if item:
                 # Venue abbreviation lists are lowercased for matching;
-                # regex patterns in skip_title_patterns are kept as-is.
-                if current_key == "skip_title_patterns":
+                # regex patterns and DBLP keys are kept verbatim.
+                if current_key in ("skip_title_patterns", "skip_keys"):
                     venues[current_key].append(item)
                 else:
                     venues[current_key].append(item.lower())
@@ -195,6 +195,7 @@ def main() -> int:
     skip_patterns = [
         re.compile(p, re.IGNORECASE) for p in venues.get("skip_title_patterns", [])
     ]
+    skip_keys = set(venues.get("skip_keys", []))
 
     pubs: list[dict] = []
     skipped = 0
@@ -205,6 +206,9 @@ def main() -> int:
                 record = child
                 break
         if record is None:
+            continue
+        if record.get("key") in skip_keys:
+            skipped += 1
             continue
         parsed = parse_record(record)
         if any(pat.search(parsed["title"]) for pat in skip_patterns):
