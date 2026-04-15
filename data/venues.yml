@@ -69,3 +69,13 @@ q1_journals:
   - cacm         # Communications of the ACM
   - nature
   - science
+
+# Title patterns (case-insensitive regex) for DBLP records to DROP entirely.
+# Used to filter out workshop-organizing entries, editorials, and reports
+# that DBLP lists as "publications" but are service contributions, not
+# research papers. Edit this list to keep or remove entries from the site.
+skip_title_patterns:
+  - '\bworkshop on\b'           # "... Workshop on X ..."  (organizing a workshop)
+  - '\bworkshop report\b'       # "SIGIR workshop report ..."
+  - '^report on .* workshop\b'  # "Report on the ... Workshop ..."
+  - '\bworkshop$'               # "... Workshop"  (title ending in the workshop name)

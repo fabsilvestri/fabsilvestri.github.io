@@ -143,7 +143,12 @@ def main() -> int:
     xml_bytes = fetch_dblp_xml()
     root = ET.fromstring(xml_bytes)
 
+    skip_patterns = [
+        re.compile(p, re.IGNORECASE) for p in venues.get("skip_title_patterns", [])
+    ]
+
     pubs: list[dict] = []
+    skipped = 0
     for r in root.findall("r"):
         record = None
         for child in r:
@@ -153,6 +158,9 @@ def main() -> int:
         if record is None:
             continue
         parsed = parse_record(record)
+        if any(pat.search(parsed["title"]) for pat in skip_patterns):
+            skipped += 1
+            continue
         parsed["type"] = classify(record, venues)
         pubs.append(parsed)
 
@@ -195,7 +203,8 @@ def main() -> int:
         f"Wrote {len(pubs)} publications "
         f"(A*={counts[TYPE_A_STAR]}, Q1={counts[TYPE_Q1]}, "
         f"Other={counts[TYPE_OTHER]}, Preprint={counts[TYPE_PREPRINT]}) "
-        f"spanning {years[-1] if years else '?'}–{years[0] if years else '?'}",
+        f"spanning {years[-1] if years else '?'}–{years[0] if years else '?'} "
+        f"— skipped {skipped} entries matching skip_title_patterns",
         file=sys.stderr,
     )
     return 0
