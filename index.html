@@ -139,16 +139,22 @@
         Auto-synced nightly from <a href="https://dblp.org/pid/s/FabrizioSilvestri.html" target="_blank" rel="noopener">DBLP</a>.
         Last updated <span id="pub-last-updated">—</span>.
       </p>
-      <div class="pub-filters" id="pub-filters" role="tablist" aria-label="Filter by type">
-        <button class="pub-tab is-active" data-filter="all" role="tab">All</button>
-        <button class="pub-tab" data-filter="a_star_conf" role="tab">A* Conferences</button>
-        <button class="pub-tab" data-filter="q1_journal" role="tab">Q1 Journals</button>
-        <button class="pub-tab" data-filter="other" role="tab">Other Conferences &amp; Journals</button>
-        <button class="pub-tab" data-filter="workshop" role="tab">Workshops</button>
-        <button class="pub-tab" data-filter="preprint" role="tab">Preprints</button>
+      <div class="pub-filter-group">
+        <span class="pub-filter-label">Type</span>
+        <div class="pub-filters pub-filters-type" id="pub-filters" role="tablist" aria-label="Filter by type">
+          <button class="pub-tab is-active" data-filter="all" role="tab">All</button>
+          <button class="pub-tab" data-filter="a_star_conf" role="tab">A* Conferences</button>
+          <button class="pub-tab" data-filter="q1_journal" role="tab">Q1 Journals</button>
+          <button class="pub-tab" data-filter="other" role="tab">Other Conferences &amp; Journals</button>
+          <button class="pub-tab" data-filter="workshop" role="tab">Workshops</button>
+          <button class="pub-tab" data-filter="preprint" role="tab">Preprints</button>
+        </div>
       </div>
-      <div class="pub-filters topic-filters" id="topic-filters" role="tablist" aria-label="Filter by topic">
-        <!-- Topic pills are injected by publications.js from window.PUBLICATIONS.topics_meta. -->
+      <div class="pub-filter-group">
+        <span class="pub-filter-label">Topic</span>
+        <div class="pub-filters pub-filters-topic" id="topic-filters" role="tablist" aria-label="Filter by topic">
+          <!-- Topic chips are injected by publications.js from window.PUBLICATIONS.topics_meta. -->
+        </div>
       </div>
       <div class="pub-list" id="pub-list">
         <p class="pub-empty">Loading publications…</p>
