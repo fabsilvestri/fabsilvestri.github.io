@@ -80,3 +80,4 @@ skip_title_patterns:
   - '^report on .* workshop\b'  # "Report on the ... Workshop ..."
   - '\bworkshop$'               # "... Workshop"  (title ending in the workshop name)
   - '^editorial\b'              # "Editorial ..." / "Editorial: ..." / "Editorial — ..."
+  - '^\S+\s*@\s*\w+\d+\b'       # "IR-RAG @ SIGIR24 ...", "RobustRecSys @ RecSys2024 ..."

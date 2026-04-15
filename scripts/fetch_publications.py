@@ -82,7 +82,12 @@ def load_venues(path: Path) -> dict[str, list[str]]:
         elif stripped.startswith("- ") and current_key is not None:
             item = stripped[2:].strip().strip('"').strip("'")
             if item:
-                venues[current_key].append(item.lower())
+                # Venue abbreviation lists are lowercased for matching;
+                # regex patterns in skip_title_patterns are kept as-is.
+                if current_key == "skip_title_patterns":
+                    venues[current_key].append(item)
+                else:
+                    venues[current_key].append(item.lower())
     return venues
 
 

@@ -1,10 +1,10 @@
 {
   "last_updated": "2026-04-15",
-  "generated_at": "2026-04-15T09:41:58+00:00",
+  "generated_at": "2026-04-15T10:10:49+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 292,
+  "count": 290,
   "counts_by_type": {
-    "a_star_conf": 58,
+    "a_star_conf": 56,
     "q1_journal": 15,
     "other": 127,
     "preprint": 92
@@ -983,21 +983,6 @@
       "type": "a_star_conf"
     },
     {
-      "key": "conf/sigir/PetroniSST24",
-      "title": "IR-RAG @ SIGIR24: Information Retrieval's Role in RAG Systems",
-      "authors": [
-        "F. Petroni",
-        "F. Siciliano",
-        "F. Silvestri",
-        "G. Trappolini"
-      ],
-      "year": 2024,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/3626772.3657984",
-      "type": "a_star_conf"
-    },
-    {
       "key": "conf/www/NadaiFGWLSKLRGN24",
       "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
       "authors": [
@@ -1020,20 +1005,6 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/3589335.3648339",
-      "type": "a_star_conf"
-    },
-    {
-      "key": "conf/recsys/GuarrasiSS24",
-      "title": "RobustRecSys @ RecSys2024: Design, Evaluation and Deployment of Robust Recommender Systems",
-      "authors": [
-        "V. Guarrasi",
-        "F. Siciliano",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "RecSys",
-      "venue_short": "RECSYS",
-      "url": "https://doi.org/10.1145/3640457.3687106",
       "type": "a_star_conf"
     },
     {
