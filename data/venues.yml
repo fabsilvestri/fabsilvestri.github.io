@@ -1,0 +1,71 @@
+# Venue classification for publication list.
+#
+# Keys are DBLP venue abbreviations — the segment after "conf/" or
+# "journals/" in the DBLP record key. For example, a record with
+# key="conf/sigir/SmithJ24" has venue abbreviation "sigir".
+#
+# The fetch_publications.py script reads this file and classifies
+# each publication into one of:
+#   - "a_star_conf"   (inproceedings whose venue is in a_star_confs)
+#   - "q1_journal"    (articles whose venue is in q1_journals)
+#   - "preprint"      (CoRR/arXiv, publtype="informal", booktitle contains "workshop")
+#   - "other"         (everything else)
+#
+# Edit the lists below to match your own ranking preferences.
+
+# CORE 2023 rank A* conferences relevant to ML / NLP / IR / DB / Vision.
+a_star_confs:
+  # Information Retrieval / Web / Data Mining
+  - sigir
+  - www          # The Web Conference (formerly WWW)
+  - kdd
+  - wsdm
+  - recsys
+  # Natural Language Processing
+  - acl
+  - emnlp
+  - naacl
+  - eacl
+  # Machine Learning / AI
+  - icml
+  - nips         # legacy NeurIPS key
+  - neurips
+  - iclr
+  - aaai
+  - ijcai
+  - uai
+  - aistats
+  - colt
+  # Computer Vision
+  - cvpr
+  - iccv
+  - eccv
+  # Databases / Systems
+  - sigmod
+  - vldb
+  - icde
+  - pods
+
+# Q1 journals (curated).
+q1_journals:
+  - tois         # ACM Trans. on Information Systems
+  - tors         # ACM Trans. on Recommender Systems
+  - tkde         # IEEE Trans. on Knowledge and Data Engineering
+  - tpami        # IEEE Trans. on Pattern Analysis and Machine Intelligence
+  - tnn          # IEEE Trans. on Neural Networks and Learning Systems
+  - tbd          # IEEE Trans. on Big Data
+  - tai          # IEEE Trans. on Artificial Intelligence
+  - ipm          # Information Processing & Management
+  - jasis        # JASIST
+  - ir           # Information Retrieval Journal
+  - jmlr
+  - tacl         # Trans. of the ACL
+  - coling       # Computational Linguistics (journal) — note: also a conference
+  - cl           # Computational Linguistics
+  - ai           # Artificial Intelligence (Elsevier)
+  - jair
+  - tkdd         # ACM Trans. on Knowledge Discovery from Data
+  - vldb         # VLDB Journal
+  - cacm         # Communications of the ACM
+  - nature
+  - science

@@ -1,0 +1,38 @@
+name: Update publications
+
+on:
+  schedule:
+    # Every 14 days at 04:00 UTC. GitHub Actions cron has no native
+    # "every N days" operator, so we approximate with days-of-month 1 and 15.
+    - cron: "0 4 1,15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch publications from DBLP
+        run: python scripts/fetch_publications.py
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/publications.json assets/js/publications-data.js)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/publications.json assets/js/publications-data.js
+            git commit -m "chore: refresh publications from DBLP ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes to publication data."
+          fi
