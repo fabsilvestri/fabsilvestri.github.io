@@ -1,13 +1,13 @@
 {
   "last_updated": "2026-04-15",
-  "generated_at": "2026-04-15T11:41:32+00:00",
+  "generated_at": "2026-04-15T11:47:48+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 284,
   "counts_by_type": {
     "a_star_conf": 48,
-    "q1_journal": 17,
+    "q1_journal": 29,
     "other_conf": 92,
-    "other_journal": 21,
+    "other_journal": 9,
     "preprint": 106
   },
   "years": [
@@ -1007,6 +1007,22 @@
       "type": "a_star_conf"
     },
     {
+      "key": "journals/nn/BucarelliDBSS24",
+      "title": "A topological description of loss surfaces based on Betti Numbers",
+      "authors": [
+        "M. Sofia Bucarelli",
+        "G. Alessio D'Inverno",
+        "M. Bianchini",
+        "F. Scarselli",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "Neural Networks",
+      "venue_short": "NN",
+      "url": "https://doi.org/10.1016/j.neunet.2024.106465",
+      "type": "q1_journal"
+    },
+    {
       "key": "journals/tai/ChenSTWZA24",
       "title": "Explain the Explainer: Interpreting Model-Agnostic Counterfactual Explanations of a Deep Reinforcement Learning Agent",
       "authors": [
@@ -1161,22 +1177,6 @@
       "venue_short": "IRONGRAPHS",
       "url": "https://doi.org/10.1007/978-3-031-71382-8_6",
       "type": "other_conf"
-    },
-    {
-      "key": "journals/nn/BucarelliDBSS24",
-      "title": "A topological description of loss surfaces based on Betti Numbers",
-      "authors": [
-        "M. Sofia Bucarelli",
-        "G. Alessio D'Inverno",
-        "M. Bianchini",
-        "F. Scarselli",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "Neural Networks",
-      "venue_short": "NN",
-      "url": "https://doi.org/10.1016/j.neunet.2024.106465",
-      "type": "other_journal"
     },
     {
       "key": "journals/corr/abs-2408-03873",
@@ -2322,6 +2322,23 @@
       "type": "a_star_conf"
     },
     {
+      "key": "journals/pvldb/ThorneYSS0L21",
+      "title": "From Natural Language Processing to Neural Databases",
+      "authors": [
+        "J. Thorne",
+        "M. Yazdani",
+        "M. Saeidi",
+        "F. Silvestri",
+        "S. Riedel",
+        "A. Y. Levy"
+      ],
+      "year": 2021,
+      "venue": "Proc. VLDB Endow.",
+      "venue_short": "VLDB",
+      "url": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
+      "type": "q1_journal"
+    },
+    {
       "key": "journals/tkde/TolomeiS21",
       "title": "Generating Actionable Interpretations from Ensembles of Decision Trees",
       "authors": [
@@ -2332,6 +2349,22 @@
       "venue": "IEEE Trans. Knowl. Data Eng.",
       "venue_short": "TKDE",
       "url": "https://doi.org/10.1109/TKDE.2019.2945326",
+      "type": "q1_journal"
+    },
+    {
+      "key": "journals/isci/TonellottoGNGS21",
+      "title": "Neural network quantization in federated learning at the edge",
+      "authors": [
+        "N. Tonellotto",
+        "A. Gotta",
+        "F. Maria Nardini",
+        "D. Gadler",
+        "F. Silvestri"
+      ],
+      "year": 2021,
+      "venue": "Inf. Sci.",
+      "venue_short": "ISCI",
+      "url": "https://doi.org/10.1016/j.ins.2021.06.039",
       "type": "q1_journal"
     },
     {
@@ -2351,39 +2384,6 @@
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN52387.2021.9533640",
       "type": "other_conf"
-    },
-    {
-      "key": "journals/pvldb/ThorneYSS0L21",
-      "title": "From Natural Language Processing to Neural Databases",
-      "authors": [
-        "J. Thorne",
-        "M. Yazdani",
-        "M. Saeidi",
-        "F. Silvestri",
-        "S. Riedel",
-        "A. Y. Levy"
-      ],
-      "year": 2021,
-      "venue": "Proc. VLDB Endow.",
-      "venue_short": "VLDB",
-      "url": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
-      "type": "other_journal"
-    },
-    {
-      "key": "journals/isci/TonellottoGNGS21",
-      "title": "Neural network quantization in federated learning at the edge",
-      "authors": [
-        "N. Tonellotto",
-        "A. Gotta",
-        "F. Maria Nardini",
-        "D. Gadler",
-        "F. Silvestri"
-      ],
-      "year": 2021,
-      "venue": "Inf. Sci.",
-      "venue_short": "ISCI",
-      "url": "https://doi.org/10.1016/j.ins.2021.06.039",
-      "type": "other_journal"
     },
     {
       "key": "journals/corr/abs-2103-12541",
@@ -2717,7 +2717,7 @@
       "venue": "ACM Trans. Intell. Syst. Technol.",
       "venue_short": "TIST",
       "url": "https://doi.org/10.1145/3205453",
-      "type": "other_journal"
+      "type": "q1_journal"
     },
     {
       "key": "conf/www/BronRLSEC17",
@@ -2752,21 +2752,6 @@
       "type": "a_star_conf"
     },
     {
-      "key": "journals/snam/ColettoALS17",
-      "title": "Adult content consumption in online social networks",
-      "authors": [
-        "M. Coletto",
-        "L. Maria Aiello",
-        "C. Lucchese",
-        "F. Silvestri"
-      ],
-      "year": 2017,
-      "venue": "Soc. Netw. Anal. Min.",
-      "venue_short": "SNAM",
-      "url": "https://doi.org/10.1007/s13278-017-0449-y",
-      "type": "other_journal"
-    },
-    {
       "key": "journals/isci/BaiCGMS17",
       "title": "Exploiting search history of users for news personalization",
       "authors": [
@@ -2780,7 +2765,7 @@
       "venue": "Inf. Sci.",
       "venue_short": "ISCI",
       "url": "https://doi.org/10.1016/j.ins.2016.12.038",
-      "type": "other_journal"
+      "type": "q1_journal"
     },
     {
       "key": "journals/datamine/Anagnostopoulos17",
@@ -2796,6 +2781,21 @@
       "venue": "Data Min. Knowl. Discov.",
       "venue_short": "DATAMINE",
       "url": "https://doi.org/10.1007/s10618-016-0477-7",
+      "type": "q1_journal"
+    },
+    {
+      "key": "journals/snam/ColettoALS17",
+      "title": "Adult content consumption in online social networks",
+      "authors": [
+        "M. Coletto",
+        "L. Maria Aiello",
+        "C. Lucchese",
+        "F. Silvestri"
+      ],
+      "year": 2017,
+      "venue": "Soc. Netw. Anal. Min.",
+      "venue_short": "SNAM",
+      "url": "https://doi.org/10.1007/s13278-017-0449-y",
       "type": "other_journal"
     },
     {
@@ -3113,6 +3113,21 @@
       "type": "q1_journal"
     },
     {
+      "key": "journals/tist/MunteanNSB15",
+      "title": "On Learning Prediction Models for Tourists Paths",
+      "authors": [
+        "C. Ioana Muntean",
+        "F. Maria Nardini",
+        "F. Silvestri",
+        "R. Baraglia"
+      ],
+      "year": 2015,
+      "venue": "ACM Trans. Intell. Syst. Technol.",
+      "venue_short": "TIST",
+      "url": "https://doi.org/10.1145/2766459",
+      "type": "q1_journal"
+    },
+    {
       "key": "conf/ismis/SydowMNMS15",
       "title": "MUSETS: Diversity-Aware Web Query Suggestions for Shortening User Sessions",
       "authors": [
@@ -3127,21 +3142,6 @@
       "venue_short": "ISMIS",
       "url": "https://doi.org/10.1007/978-3-319-25252-0_26",
       "type": "other_conf"
-    },
-    {
-      "key": "journals/tist/MunteanNSB15",
-      "title": "On Learning Prediction Models for Tourists Paths",
-      "authors": [
-        "C. Ioana Muntean",
-        "F. Maria Nardini",
-        "F. Silvestri",
-        "R. Baraglia"
-      ],
-      "year": 2015,
-      "venue": "ACM Trans. Intell. Syst. Technol.",
-      "venue_short": "TIST",
-      "url": "https://doi.org/10.1145/2766459",
-      "type": "other_journal"
     },
     {
       "key": "conf/iir/BaragliaMNS14",
@@ -3201,6 +3201,21 @@
       "venue": "ACM Trans. Inf. Syst.",
       "venue_short": "TOIS",
       "url": "https://doi.org/10.1145/2493175.2493179",
+      "type": "q1_journal"
+    },
+    {
+      "key": "journals/isci/BerardiE0S13",
+      "title": "Endorsements and rebuttals in blog distillation",
+      "authors": [
+        "G. Berardi",
+        "A. Esuli",
+        "F. Sebastiani",
+        "F. Silvestri"
+      ],
+      "year": 2013,
+      "venue": "Inf. Sci.",
+      "venue_short": "ISCI",
+      "url": "https://doi.org/10.1016/j.ins.2013.05.037",
       "type": "q1_journal"
     },
     {
@@ -3269,21 +3284,6 @@
       "venue_short": "SPIRE",
       "url": "https://doi.org/10.1007/978-3-319-02432-5_9",
       "type": "other_conf"
-    },
-    {
-      "key": "journals/isci/BerardiE0S13",
-      "title": "Endorsements and rebuttals in blog distillation",
-      "authors": [
-        "G. Berardi",
-        "A. Esuli",
-        "F. Sebastiani",
-        "F. Silvestri"
-      ],
-      "year": 2013,
-      "venue": "Inf. Sci.",
-      "venue_short": "ISCI",
-      "url": "https://doi.org/10.1016/j.ins.2013.05.037",
-      "type": "other_journal"
     },
     {
       "key": "conf/sigir/BonchiPSVV12",
@@ -3537,6 +3537,21 @@
       "type": "a_star_conf"
     },
     {
+      "key": "journals/pvldb/CapanniniNPS11",
+      "title": "Efficient Diversification of Web Search Results",
+      "authors": [
+        "G. Capannini",
+        "F. Maria Nardini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2011,
+      "venue": "Proc. VLDB Endow.",
+      "venue_short": "VLDB",
+      "url": "http://www.vldb.org/pvldb/vol4/p451-capannini.pdf",
+      "type": "q1_journal"
+    },
+    {
       "key": "conf/iir/BerardiESS11",
       "title": "Blog Distillation via Sentiment-Sensitive Link Analysis",
       "authors": [
@@ -3582,21 +3597,6 @@
       "type": "other_conf"
     },
     {
-      "key": "journals/pvldb/CapanniniNPS11",
-      "title": "Efficient Diversification of Web Search Results",
-      "authors": [
-        "G. Capannini",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2011,
-      "venue": "Proc. VLDB Endow.",
-      "venue_short": "VLDB",
-      "url": "http://www.vldb.org/pvldb/vol4/p451-capannini.pdf",
-      "type": "other_journal"
-    },
-    {
       "key": "journals/corr/abs-1105-4255",
       "title": "Efficient Diversification of Web Search Results",
       "authors": [
@@ -3610,6 +3610,18 @@
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1105.4255",
       "type": "preprint"
+    },
+    {
+      "key": "journals/ftir/Silvestri10",
+      "title": "Mining Query Logs: Turning Search Usage Data into Knowledge",
+      "authors": [
+        "F. Silvestri"
+      ],
+      "year": 2010,
+      "venue": "Found. Trends Inf. Retr.",
+      "venue_short": "FTIR",
+      "url": "https://doi.org/10.1561/1500000013",
+      "type": "q1_journal"
     },
     {
       "key": "journals/tois/PuppinSPB10",
@@ -3763,18 +3775,6 @@
       "type": "other_journal"
     },
     {
-      "key": "journals/ftir/Silvestri10",
-      "title": "Mining Query Logs: Turning Search Usage Data into Knowledge",
-      "authors": [
-        "F. Silvestri"
-      ],
-      "year": 2010,
-      "venue": "Found. Trends Inf. Retr.",
-      "venue_short": "FTIR",
-      "url": "https://doi.org/10.1561/1500000013",
-      "type": "other_journal"
-    },
-    {
       "key": "conf/iat/LuccheseOPST10",
       "title": "Detecting Task-Based Query Sessions Using Collaborative Knowledge",
       "authors": [
@@ -3838,6 +3838,21 @@
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/1526709.1526862",
       "type": "a_star_conf"
+    },
+    {
+      "key": "journals/fgcs/LeeXLS09",
+      "title": "Special Section: Scalable information systems",
+      "authors": [
+        "W. Lee",
+        "J. Xu",
+        "J. Li",
+        "F. Silvestri"
+      ],
+      "year": 2009,
+      "venue": "Future Gener. Comput. Syst.",
+      "venue_short": "FGCS",
+      "url": "https://doi.org/10.1016/j.future.2008.07.012",
+      "type": "q1_journal"
     },
     {
       "key": "conf/cikm/BaragliaCDNPS09",
@@ -3921,21 +3936,6 @@
       "type": "other_conf"
     },
     {
-      "key": "journals/fgcs/LeeXLS09",
-      "title": "Special Section: Scalable information systems",
-      "authors": [
-        "W. Lee",
-        "J. Xu",
-        "J. Li",
-        "F. Silvestri"
-      ],
-      "year": 2009,
-      "venue": "Future Gener. Comput. Syst.",
-      "venue_short": "FGCS",
-      "url": "https://doi.org/10.1016/j.future.2008.07.012",
-      "type": "other_journal"
-    },
-    {
       "key": "conf/wsdm/BaragliaCCFPS09",
       "title": "Search shortcuts using click-through data",
       "authors": [
@@ -3968,6 +3968,23 @@
       "type": "preprint"
     },
     {
+      "key": "journals/tweb/Baeza-YatesGJMPS08",
+      "title": "Design trade-offs for search engine caching",
+      "authors": [
+        "R. Baeza-Yates",
+        "A. Gionis",
+        "F. Junqueira",
+        "V. Murdock",
+        "V. Plachouras",
+        "F. Silvestri"
+      ],
+      "year": 2008,
+      "venue": "ACM Trans. Web",
+      "venue_short": "TWEB",
+      "url": "https://doi.org/10.1145/1409220.1409223",
+      "type": "q1_journal"
+    },
+    {
       "key": "conf/la-web/SilvestriBLOP08",
       "title": "(Query) History Teaches Everything, Including the Future",
       "authors": [
@@ -3996,23 +4013,6 @@
       "venue_short": "HPDC",
       "url": "https://doi.org/10.1145/1383422.1383458",
       "type": "other_conf"
-    },
-    {
-      "key": "journals/tweb/Baeza-YatesGJMPS08",
-      "title": "Design trade-offs for search engine caching",
-      "authors": [
-        "R. Baeza-Yates",
-        "A. Gionis",
-        "F. Junqueira",
-        "V. Murdock",
-        "V. Plachouras",
-        "F. Silvestri"
-      ],
-      "year": 2008,
-      "venue": "ACM Trans. Web",
-      "venue_short": "TWEB",
-      "url": "https://doi.org/10.1145/1409220.1409223",
-      "type": "other_journal"
     },
     {
       "key": "journals/ercim/LaforenzaNST08",

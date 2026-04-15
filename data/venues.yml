@@ -46,28 +46,35 @@ a_star_confs:
   - icde
   - pods
 
-# Q1 journals (curated).
+# Q1 journals — Scimago SJR Q1 in at least one Computer Science category.
 q1_journals:
   - tois         # ACM Trans. on Information Systems
   - tors         # ACM Trans. on Recommender Systems
+  - tist         # ACM Trans. on Intelligent Systems and Technology
+  - tkdd         # ACM Trans. on Knowledge Discovery from Data
+  - tweb         # ACM Trans. on the Web
+  - cacm         # Communications of the ACM
   - tkde         # IEEE Trans. on Knowledge and Data Engineering
   - tpami        # IEEE Trans. on Pattern Analysis and Machine Intelligence
   - tnn          # IEEE Trans. on Neural Networks and Learning Systems
   - tbd          # IEEE Trans. on Big Data
   - tai          # IEEE Trans. on Artificial Intelligence
   - access       # IEEE Access
-  - ipm          # Information Processing & Management
-  - jasis        # JASIST
-  - ir           # Information Retrieval Journal
-  - jmlr
-  - tacl         # Trans. of the ACL
-  - coling       # Computational Linguistics (journal) — note: also a conference
-  - cl           # Computational Linguistics
+  - ipm          # Information Processing & Management (Elsevier)
+  - isci         # Information Sciences (Elsevier)
   - ai           # Artificial Intelligence (Elsevier)
-  - jair
-  - tkdd         # ACM Trans. on Knowledge Discovery from Data
+  - nn           # Neural Networks (Elsevier)
+  - fgcs         # Future Generation Computer Systems (Elsevier)
+  - datamine     # Data Mining and Knowledge Discovery (Springer)
+  - ir           # Information Retrieval Journal (Springer)
+  - pvldb        # Proc. of the VLDB Endowment
   - vldb         # VLDB Journal
-  - cacm         # Communications of the ACM
+  - jmlr         # Journal of Machine Learning Research
+  - jair         # Journal of Artificial Intelligence Research
+  - ftir         # Foundations and Trends in Information Retrieval
+  - jasis        # JASIST
+  - tacl         # Trans. of the ACL
+  - cl           # Computational Linguistics
   - nature
   - science
 
