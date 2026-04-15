@@ -23,7 +23,8 @@
     q1_journal:    "Q1 Journal",
     other_conf:    "Other Conference",
     other_journal: "Other Journal",
-    preprint:      "Preprint / Workshop"
+    workshop:      "Workshop",
+    preprint:      "Preprint"
   };
 
   // Maps a filter value to the set of publication types it matches.
@@ -33,6 +34,7 @@
     a_star_conf:   ["a_star_conf"],
     q1_journal:    ["q1_journal"],
     other:         ["other_conf", "other_journal"],
+    workshop:      ["workshop"],
     preprint:      ["preprint"]
   };
 

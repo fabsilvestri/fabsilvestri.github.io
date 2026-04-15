@@ -409,11 +409,13 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   min-width: 82px;
   text-align: center;
 }
-/* Conference = green (A* dark, other light); Journal = blue (Q1 dark, other light); Preprint & Workshop = red. */
+/* Conference = green (A* dark, other light); Journal = blue (Q1 dark, other light);
+   Workshop = amber; Preprint = red. */
 .pub-badge.type-a_star_conf    { background: rgba(5, 150, 105, 0.18);  color: #065f46; }   /* emerald-700 */
 .pub-badge.type-other_conf     { background: rgba(34, 197, 94, 0.15);  color: #16a34a; }   /* green-600 */
 .pub-badge.type-q1_journal     { background: rgba(29, 78, 216, 0.18);  color: #1e3a8a; }   /* blue-900 */
 .pub-badge.type-other_journal  { background: rgba(59, 130, 246, 0.15); color: #2563eb; }   /* blue-600 */
+.pub-badge.type-workshop       { background: rgba(245, 158, 11, 0.18); color: #b45309; }   /* amber-700 */
 .pub-badge.type-preprint       { background: rgba(239, 68, 68, 0.15);  color: #b91c1c; }   /* red-700 */
 
 .pub-body { min-width: 0; }
