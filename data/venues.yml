@@ -81,3 +81,5 @@ skip_title_patterns:
   - '\bworkshop$'               # "... Workshop"  (title ending in the workshop name)
   - '^editorial\b'              # "Editorial ..." / "Editorial: ..." / "Editorial — ..."
   - '^\S+\s*@\s*\w+\d+\b'       # "IR-RAG @ SIGIR24 ...", "RobustRecSys @ RecSys2024 ..."
+  - '^[A-Z][A-Z0-9]+\s+\d{4}[:\s]' # "TSMO 2024: ...", "OSNED 2018 Chairs' Welcome ...", "ECIR 2012: ..."
+  - "chairs'?\\s+welcome"       # "... Chairs' Welcome ..." (workshop preface)
