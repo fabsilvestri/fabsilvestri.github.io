@@ -37,8 +37,12 @@
     preprint:      ["preprint"]
   };
 
-  // Filter state (both default to "all").
-  var state = { type: "all", topic: "all" };
+  // Filter state. `showOlder` toggles the "> RECENT_YEARS old" section.
+  var state = { type: "all", topic: "all", showOlder: false };
+  // Rolling window: always show the most-recent N years (not by calendar
+  // year — by the most-recent year present in the data, so the window
+  // stays a fixed 5 years wide even as time passes).
+  var RECENT_YEARS = 5;
   // Map from topic slug -> display name, populated at init from topics_meta.
   var TOPIC_NAMES = {};
 
@@ -120,22 +124,8 @@
     return (pub.topics || []).indexOf(topicFilter) !== -1;
   }
 
-  function render() {
-    var data = window.PUBLICATIONS;
-    var list = byId("pub-list");
-    if (!list) return;
-    if (!data || !data.publications) {
-      list.innerHTML = '<p class="pub-empty">No publication data found. Run scripts/fetch_publications.py.</p>';
-      return;
-    }
-    var pubs = data.publications.filter(function (p) {
-      return matchesType(p, state.type) && matchesTopic(p, state.topic);
-    });
-    if (pubs.length === 0) {
-      list.innerHTML = '<p class="pub-empty">No publications match the current filters.</p>';
-      return;
-    }
-    list.innerHTML = groupByYear(pubs)
+  function renderGroups(groups) {
+    return groups
       .map(function (g) {
         return (
           '<div class="pub-year-block">' +
@@ -145,6 +135,82 @@
         );
       })
       .join("");
+  }
+
+  function render() {
+    var data = window.PUBLICATIONS;
+    var list = byId("pub-list");
+    if (!list) return;
+    if (!data || !data.publications) {
+      list.innerHTML = '<p class="pub-empty">No publication data found. Run scripts/fetch_publications.py.</p>';
+      return;
+    }
+
+    // Rolling 5-year window anchored on the most-recent year across the
+    // full corpus (so the window doesn't shrink when a topic filter
+    // happens to exclude the newest papers).
+    var maxYear = (data.years && data.years.length) ? data.years[0] : 0;
+    var cutoff = maxYear - (RECENT_YEARS - 1);
+
+    var filtered = data.publications.filter(function (p) {
+      return matchesType(p, state.type) && matchesTopic(p, state.topic);
+    });
+
+    var recent = filtered.filter(function (p) { return p.year >= cutoff; });
+    var older  = filtered.filter(function (p) { return p.year <  cutoff; });
+
+    var html = "";
+    if (recent.length > 0) {
+      html += renderGroups(groupByYear(recent));
+    } else if (older.length === 0) {
+      list.innerHTML = '<p class="pub-empty">No publications match the current filters.</p>';
+      return;
+    } else {
+      html += '<p class="pub-empty">No publications in the last ' +
+              RECENT_YEARS + ' years match the current filters.</p>';
+    }
+
+    if (older.length > 0) {
+      if (state.showOlder) {
+        html +=
+          '<div class="pub-older-toggle-wrap">' +
+            '<button type="button" class="pub-older-toggle" id="pub-older-toggle">' +
+              'Hide older publications' +
+            '</button>' +
+          '</div>';
+        html += renderGroups(groupByYear(older));
+        html +=
+          '<div class="pub-older-toggle-wrap">' +
+            '<button type="button" class="pub-older-toggle" id="pub-older-toggle-bottom">' +
+              'Hide older publications' +
+            '</button>' +
+          '</div>';
+      } else {
+        html +=
+          '<div class="pub-older-toggle-wrap">' +
+            '<button type="button" class="pub-older-toggle" id="pub-older-toggle">' +
+              'Show ' + older.length + ' older publication' +
+              (older.length === 1 ? '' : 's') +
+              ' <span class="pub-older-years">(' +
+                (cutoff - 1) + ' and earlier)</span>' +
+            '</button>' +
+          '</div>';
+      }
+    }
+
+    list.innerHTML = html;
+  }
+
+  function handleOlderToggle(e) {
+    var btn = e.target.closest("#pub-older-toggle, #pub-older-toggle-bottom");
+    if (!btn) return;
+    state.showOlder = !state.showOlder;
+    render();
+    // When expanding, scroll the newly-revealed section into view.
+    if (state.showOlder) {
+      var firstOld = document.querySelector(".pub-older-toggle-wrap + .pub-year-block");
+      if (firstOld) firstOld.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   function updateStats() {
@@ -167,6 +233,7 @@
 
   function setTypeFilter(value) {
     state.type = value;
+    state.showOlder = false;
     var bar = byId("pub-filters");
     if (bar) {
       bar.querySelectorAll(".pub-tab").forEach(function (b) {
@@ -178,6 +245,7 @@
 
   function setTopicFilter(value) {
     state.topic = value;
+    state.showOlder = false;
     var bar = byId("topic-filters");
     if (bar) {
       bar.querySelectorAll(".pub-tab").forEach(function (b) {
@@ -224,6 +292,11 @@
     var list = byId("pub-list");
     if (!list) return;
     list.addEventListener("click", function (e) {
+      // Older-publications toggle has priority over chip-click handling.
+      if (e.target.closest("#pub-older-toggle, #pub-older-toggle-bottom")) {
+        handleOlderToggle(e);
+        return;
+      }
       var chip = e.target.closest(".pub-chip");
       if (!chip) return;
       e.preventDefault();
