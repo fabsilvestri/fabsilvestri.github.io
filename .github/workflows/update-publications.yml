@@ -2,9 +2,8 @@ name: Update publications
 
 on:
   schedule:
-    # Every 14 days at 04:00 UTC. GitHub Actions cron has no native
-    # "every N days" operator, so we approximate with days-of-month 1 and 15.
-    - cron: "0 4 1,15 * *"
+    # Nightly at 04:00 UTC (~05:00 CET / ~06:00 CEST — quiet hours in Rome).
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 permissions:

@@ -3,8 +3,8 @@
 Personal homepage for Fabrizio Silvestri — Full Professor at Sapienza University of Rome.
 
 Single-page static site with a "glass-light" aesthetic. Publications are
-auto-synced from [DBLP](https://dblp.org/pid/s/FabrizioSilvestri.html) every
-two weeks by a GitHub Action.
+auto-synced from [DBLP](https://dblp.org/pid/s/FabrizioSilvestri.html)
+nightly by a GitHub Action.
 
 ## Structure
 
@@ -23,7 +23,7 @@ two weeks by a GitHub Action.
 │   ├── fetch_publications.py         # DBLP fetch + classify
 │   └── requirements.txt              # (empty — stdlib only)
 └── .github/workflows/
-    ├── update-publications.yml       # biweekly cron (days 1 & 15 at 04:00 UTC)
+    ├── update-publications.yml       # nightly cron (04:00 UTC)
     └── pages.yml                     # deploy on push to main
 ```
 
@@ -70,5 +70,5 @@ Push to `main`. The `pages.yml` workflow deploys the repo to GitHub Pages.
 One-time setup in the repo: Settings → Pages → Build and deployment →
 Source: **GitHub Actions**.
 
-The biweekly publication update commits any changes directly to `main`;
+The nightly publication update commits any changes directly to `main`;
 that push triggers a redeploy automatically.
