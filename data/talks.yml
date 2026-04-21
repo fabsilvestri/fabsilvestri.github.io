@@ -1,18 +1,54 @@
 # Invited talks, keynotes, and tutorials. Maintained by hand — the
-# homepage renders this file in order (most recent first).
+# homepage renders this file sorted most-recent-first.
 #
 # Schema per entry:
 #   year:     4-digit integer.
 #   title:    the talk title or topic.
 #   venue:    where it was given (conference, institution, seminar series).
-#   role:     "Keynote" | "Invited Talk" | "Tutorial" | "Panel" | "Distinguished Lecture"
+#   role:     "Keynote" | "Invited Talk" | "Tutorial" | "Panel" |
+#             "Distinguished Lecture" | "Lightning Talk" | …
 #   location: optional city / country.
 #   url:      optional link to the event page, slides, or recording.
 
 talks:
+  - year: 2026
+    title: "Dall'automazione all'Agentic AI"
+    venue: IntelligentIA — A new intelligence for a new era
+    role: Invited Speaker (TED-style)
+    location: Rome, Italy
+    url: https://intelligentia.live/
+
+  - year: 2024
+    title: "Il futuro dell'AI e gli impatti nelle aziende (fireside discussion)"
+    venue: Il Clipper — Randstad Italia networking event
+    role: Invited Speaker (industry dialogue)
+    location: Rome, Italy
+    url: https://www.linkedin.com/posts/fabrizio-silvestri-a6b0391_we-had-so-much-fun-working-on-this-project-activity-7161675949112074241-CPc0
+
   - year: 2021
     title: "Neural Databases: Natural Language Generation meets Databases"
     venue: International Conference on Web Engineering (ICWE 2021)
     role: Keynote
     location: Biarritz, France (virtual)
     url: https://icwe2021.webengineering.org/fabrizio-silvestri/
+
+  - year: 2019
+    title: "Misspelling Oblivious Word Embeddings"
+    venue: NDR — The Artificial Intelligence Conference
+    role: Invited Speaker
+    location: Iași, Romania
+    url: https://www.facebook.com/ndrconf/videos/165181428483272/
+
+  - year: 2018
+    title: "Lightning Talk (WeCNLP 2018)"
+    venue: West Coast NLP Summit (WeCNLP 2018)
+    role: Lightning Talk
+    location: Facebook HQ, Menlo Park, CA, USA
+    url: https://www.youtube.com/watch?v=GpVB0UUkr7U
+
+  - year: 2015
+    title: "On the Use of Word Embeddings in Query Rewriting for Sponsored Search"
+    venue: 6th Italian Information Retrieval Workshop (IIR 2015)
+    role: Invited Talk
+    location: Cagliari, Italy
+    url: http://iir2015.isti.cnr.it/?page_id=591
