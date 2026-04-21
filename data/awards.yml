@@ -1,7 +1,8 @@
 # Awards and honors. Maintained by hand — the homepage renders this
 # file in order (most recent first). Candidate entries surfaced by
-# scripts/discover_awards.py appear under data/awards_candidates.md;
-# review each one before copying it here.
+# scripts/discover_awards.py or scripts/discover_awards_claude.py
+# appear under data/awards_candidates.{md,json}; review each one
+# before copying it here.
 #
 # Schema per entry:
 #   year:        4-digit integer.
@@ -10,13 +11,44 @@
 #   description: optional one-line context (e.g. "for paper X").
 #   url:         optional link to the public announcement or award page.
 
-awards: []
+awards:
+  - year: 2025
+    title: Best Paper Award
+    issuer: HCAI Workshop @ ACM CIKM 2025
+    description: >-
+      For "Enhancing XAI Narratives through Multi-Narrative Refinement
+      and Knowledge Distillation" — with F. Giorgi, M. Silvestri,
+      C. Campagnano, G. Tolomei.
+    url: https://corsi.di.uniroma1.it/en/best-paper-award-research-xai-narratives-llms-hcai-workshop-acm-cikm-2025
 
-# Example (uncomment and fill in as appropriate):
-#
-# awards:
-#   - year: 2024
-#     title: Best Paper Award
-#     issuer: SIGIR
-#     description: For "The Power of Noise: Redefining Retrieval for RAG Systems"
-#     url: https://sigir-2024.github.io/awards
+  - year: 2018
+    title: Test-of-Time Award
+    issuer: European Conference on Information Retrieval (ECIR)
+    description: >-
+      For "Sorting Out the Document Identifier Assignment Problem"
+      (ECIR 2007), recognising lasting impact on IR research.
+    url: https://www.isti.cnr.it/it/comunicazioni/risultati/1710-test-of-time-award-for-the-paper-sorting-out-the-document-identifier-assignment-problem-by-fabrizio-silvestri
+
+  - year: 2014
+    title: Best Paper Award
+    issuer: Yahoo Tech Pulse
+    description: >-
+      Internal Yahoo research conference, recognising best paper
+      across the company's research organisation.
+    url: https://datasciencefestival.com/speaker/fabrizio-silvestri/
+
+  - year: 2011
+    title: Best Paper Award Runner-up
+    issuer: ACM WSDM
+    description: >-
+      For "Identifying Task-based Sessions in Search Engine Query Logs"
+      — with C. Lucchese, S. Orlando, R. Perego, G. Tolomei.
+    url: http://hpc.isti.cnr.it/awards/
+
+  - year: 2007
+    title: Best Paper Award
+    issuer: European Conference on Information Retrieval (ECIR)
+    description: >-
+      For "Sorting Out the Document Identifier Assignment Problem"
+      — awarded at the 29th ECIR.
+    url: https://www.cnr.it/en/news/4541/best-paper-award-alla-29th-ecir-2007-premiato-fabrizio-silvestri-ricercatore-isti-cnr

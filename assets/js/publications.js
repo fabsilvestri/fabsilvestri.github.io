@@ -494,6 +494,43 @@
     if (navItem) navItem.hidden = false;
   }
 
+  function renderTalks() {
+    var data = window.PUBLICATIONS;
+    var list = byId("talks-list");
+    var section = byId("talks");
+    var navItem = byId("nav-talks");
+    if (!list || !section) return;
+    var talks = (data && data.talks) || [];
+    if (talks.length === 0) {
+      section.hidden = true;
+      if (navItem) navItem.hidden = true;
+      return;
+    }
+    list.innerHTML = talks.map(function (t) {
+      var title = escapeHtml(t.title);
+      if (t.url) {
+        title = '<a href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener">' + title + ' ↗</a>';
+      }
+      var meta = [];
+      if (t.venue) meta.push(escapeHtml(t.venue));
+      if (t.location) meta.push(escapeHtml(t.location));
+      var roleBadge = t.role
+        ? '<span class="talk-role">' + escapeHtml(t.role) + '</span>'
+        : '';
+      return (
+        '<li class="talk-item">' +
+          '<span class="talk-year">' + t.year + '</span>' +
+          '<div class="talk-body">' +
+            '<div class="talk-title">' + title + roleBadge + '</div>' +
+            (meta.length ? '<div class="talk-meta">' + meta.join(' · ') + '</div>' : '') +
+          '</div>' +
+        '</li>'
+      );
+    }).join("");
+    section.hidden = false;
+    if (navItem) navItem.hidden = false;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     updateStats();
     initTypeTabs();
@@ -501,6 +538,7 @@
     initChipClicks();
     initDownloadButton();
     renderAwards();
+    renderTalks();
     render();
   });
 })();

@@ -1,0 +1,22 @@
+# Invited talks, keynotes, and tutorials. Maintained by hand — the
+# homepage renders this file in order (most recent first).
+#
+# Schema per entry:
+#   year:     4-digit integer.
+#   title:    the talk title or topic.
+#   venue:    where it was given (conference, institution, seminar series).
+#   role:     "Keynote" | "Invited Talk" | "Tutorial" | "Panel" | "Distinguished Lecture"
+#   location: optional city / country.
+#   url:      optional link to the event page, slides, or recording.
+
+talks: []
+
+# Example (uncomment and fill in):
+#
+# talks:
+#   - year: 2025
+#     title: "The Power of Noise: Rethinking Retrieval for RAG"
+#     venue: "SIGIR 2025 Industry Day"
+#     role: Keynote
+#     location: "Padua, Italy"
+#     url: https://sigir-2025.org/program/keynotes
