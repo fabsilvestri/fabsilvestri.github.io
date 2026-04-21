@@ -37,12 +37,10 @@
     preprint:      ["preprint"]
   };
 
-  // "Selected" is a hybrid high-impact filter: a paper qualifies iff it's
-  // in a top-tier venue (A/A* conf or Q1 journal) AND either has ≥ N
-  // Scholar citations OR is recent enough that citations haven't had
-  // time to accumulate (last SELECTED_RECENT_YEARS calendar years).
-  var SELECTED_CITE_THRESHOLD = 20;
-  var SELECTED_RECENT_YEARS = 2;
+  // "Selected" = the top-N most-cited papers from top-tier venues
+  // (CORE A/A* conferences or Scimago Q1-CS journals). Rendered as a
+  // flat list without year grouping — ranked purely by impact.
+  var SELECTED_TOP_N = 15;
 
   // Filter state. `showOlder` toggles the "> RECENT_YEARS old" section.
   var state = { type: "selected", topic: "all", showOlder: false };
@@ -160,27 +158,37 @@
     return (data.years && data.years.length) ? data.years[0] : 0;
   }
 
-  function isSelected(pub, max) {
-    // Hybrid high-impact: top-tier venue AND (≥ threshold cites OR recent).
-    if (pub.type !== "a_star_conf" && pub.type !== "q1_journal") return false;
-    if ((pub.citations || 0) >= SELECTED_CITE_THRESHOLD) return true;
-    if (pub.year && pub.year >= max - (SELECTED_RECENT_YEARS - 1)) return true;
-    return false;
+  function isTopTier(pub) {
+    return pub.type === "a_star_conf" || pub.type === "q1_journal";
   }
 
-  function matchesType(pub, typeFilter, max) {
+  // Sort by citations desc, then year desc. Used to pick the "top N"
+  // in the Selected view and in the IEEE download.
+  function byImpact(a, b) {
+    var cb = (b.citations || 0) - (a.citations || 0);
+    if (cb !== 0) return cb;
+    return (b.year || 0) - (a.year || 0);
+  }
+
+  function matchesType(pub, typeFilter) {
     // "all" excludes preprints — they're only visible via the
-    // dedicated Preprints tab. Everything else is a peer-reviewed
-    // venue (A*/Q1/Other conf/Other journal/Workshop).
+    // dedicated Preprints tab. "selected" matches the top-tier
+    // pool; the top-N slice is applied later at render time so
+    // that the topic filter narrows the pool before ranking.
     if (typeFilter === "all") return pub.type !== "preprint";
-    if (typeFilter === "selected") return isSelected(pub, max);
+    if (typeFilter === "selected") return isTopTier(pub);
     var types = FILTER_TYPES[typeFilter] || [typeFilter];
     return types.indexOf(pub.type) !== -1;
   }
 
   function selectedPubs(data) {
-    var max = maxYear(data);
-    return (data.publications || []).filter(function (p) { return isSelected(p, max); });
+    // The set downloaded as IEEE bibliography — same definition and
+    // ordering as the Selected view (top-N after topic filter is
+    // applied, if any).
+    return (data.publications || [])
+      .filter(function (p) { return isTopTier(p) && matchesTopic(p, state.topic); })
+      .sort(byImpact)
+      .slice(0, SELECTED_TOP_N);
   }
 
   // IEEE-style plain-text bibliography. Conference papers get
@@ -203,20 +211,19 @@
   }
 
   function buildIEEEDocument(data) {
-    var pubs = selectedPubs(data).slice().sort(function (a, b) {
-      if (b.year !== a.year) return b.year - a.year;
-      return (a.title || "").localeCompare(b.title || "");
-    });
+    // Same set and order as the on-page Selected view: top-N by
+    // citations among CORE A/A* conferences and Scimago Q1-CS journals.
+    var pubs = selectedPubs(data);
     var header = [
       "Publications — Fabrizio Silvestri",
-      "Selected: high-impact papers — CORE A/A* conferences or Scimago Q1 (CS)",
-      "journals with at least " + SELECTED_CITE_THRESHOLD + " Google Scholar citations,",
-      "or published in the last " + SELECTED_RECENT_YEARS + " years.",
+      "Selected: top " + SELECTED_TOP_N + " most-cited papers in CORE A/A*",
+      "conferences or Scimago Q1 (Computer Science) journals.",
+      "Citations: Google Scholar (cached).",
       "Source: https://dblp.org/pid/s/FabrizioSilvestri.html",
       "Generated: " + (data.last_updated || new Date().toISOString().slice(0, 10)),
       "Count: " + pubs.length,
       "",
-      "References (IEEE style)",
+      "References (IEEE style, in decreasing order of citations)",
       ""
     ].join("\n");
     var body = pubs.map(function (p, i) { return toIEEE(p, i + 1); }).join("\n");
@@ -265,15 +272,28 @@
       return;
     }
 
+    var filtered = data.publications.filter(function (p) {
+      return matchesType(p, state.type) && matchesTopic(p, state.topic);
+    });
+
+    // Selected view: flat, citation-ranked, capped at SELECTED_TOP_N.
+    // No year grouping, no recent/older split — the list is a
+    // signature-paper highlight reel.
+    if (state.type === "selected") {
+      var top = filtered.slice().sort(byImpact).slice(0, SELECTED_TOP_N);
+      if (top.length === 0) {
+        list.innerHTML = '<p class="pub-empty">No publications match the current filters.</p>';
+        return;
+      }
+      list.innerHTML = '<div class="pub-year-block">' + top.map(renderItem).join("") + '</div>';
+      return;
+    }
+
     // Rolling 5-year window anchored on the most-recent year across the
     // full corpus (so the window doesn't shrink when a topic filter
     // happens to exclude the newest papers).
     var max = maxYear(data);
     var cutoff = max - (RECENT_YEARS - 1);
-
-    var filtered = data.publications.filter(function (p) {
-      return matchesType(p, state.type, max) && matchesTopic(p, state.topic);
-    });
 
     var recent = filtered.filter(function (p) { return p.year >= cutoff; });
     var older  = filtered.filter(function (p) { return p.year <  cutoff; });
