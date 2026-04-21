@@ -344,6 +344,29 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   color: var(--ink-muted);
   font-size: 13px;
   margin: 0 0 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.pub-download {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(142, 31, 45, 0.4);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--accent-1);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: auto;
+}
+.pub-download:hover {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px -6px rgba(142, 31, 45, 0.5);
 }
 /* ---- Filter rows ---- */
 .pub-filter-group {

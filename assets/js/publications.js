@@ -30,6 +30,7 @@
   };
 
   var FILTER_TYPES = {
+    selected:      ["a_star_conf", "q1_journal"],
     a_star_conf:   ["a_star_conf"],
     q1_journal:    ["q1_journal"],
     other:         ["other_conf", "other_journal"],
@@ -37,8 +38,9 @@
     preprint:      ["preprint"]
   };
 
-  // Filter state. `showOlder` toggles the "> RECENT_YEARS old" section.
-  var state = { type: "all", topic: "all", showOlder: false };
+  // Filter state. Default view is the curated A/A* + Q1 subset;
+  // `showOlder` toggles the "> RECENT_YEARS old" section.
+  var state = { type: "selected", topic: "all", showOlder: false };
   // Rolling window: always show the most-recent N years (not by calendar
   // year — by the most-recent year present in the data, so the window
   // stays a fixed 5 years wide even as time passes).
@@ -120,6 +122,65 @@
     if (typeFilter === "all") return pub.type !== "preprint";
     var types = FILTER_TYPES[typeFilter] || [typeFilter];
     return types.indexOf(pub.type) !== -1;
+  }
+
+  function selectedPubs(data) {
+    return (data.publications || []).filter(function (p) {
+      return p.type === "a_star_conf" || p.type === "q1_journal";
+    });
+  }
+
+  // IEEE-style plain-text bibliography. Conference papers get
+  // "in Proc. <venue>, <year>."; journal articles get "<venue>, <year>."
+  // Authors use the IEEE "A, B, and C" convention (Oxford comma).
+  function formatAuthorsIEEE(authors) {
+    if (!authors || authors.length === 0) return "";
+    if (authors.length === 1) return authors[0];
+    if (authors.length === 2) return authors[0] + " and " + authors[1];
+    return authors.slice(0, -1).join(", ") + ", and " + authors[authors.length - 1];
+  }
+
+  function toIEEE(pub, n) {
+    var authors = formatAuthorsIEEE(pub.authors || []);
+    var title = (pub.title || "").replace(/\.+$/, "");
+    var venue = pub.venue_short || pub.venue || "";
+    var year = pub.year || "";
+    var venueText = pub.type === "q1_journal" ? venue : "in Proc. " + venue;
+    return "[" + n + "] " + authors + ", “" + title + ",” " + venueText + ", " + year + ".";
+  }
+
+  function buildIEEEDocument(data) {
+    var pubs = selectedPubs(data).slice().sort(function (a, b) {
+      if (b.year !== a.year) return b.year - a.year;
+      return (a.title || "").localeCompare(b.title || "");
+    });
+    var header = [
+      "Publications — Fabrizio Silvestri",
+      "Selected: A/A* conferences and Q1 journals",
+      "Source: https://dblp.org/pid/s/FabrizioSilvestri.html",
+      "Generated: " + (data.last_updated || new Date().toISOString().slice(0, 10)),
+      "Count: " + pubs.length,
+      "",
+      "References (IEEE style)",
+      ""
+    ].join("\n");
+    var body = pubs.map(function (p, i) { return toIEEE(p, i + 1); }).join("\n");
+    return header + body + "\n";
+  }
+
+  function downloadIEEE() {
+    var data = window.PUBLICATIONS;
+    if (!data) return;
+    var text = buildIEEEDocument(data);
+    var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "silvestri-publications-ieee.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 0);
   }
 
   function matchesTopic(pub, topicFilter) {
@@ -318,11 +379,18 @@
     });
   }
 
+  function initDownloadButton() {
+    var btn = byId("pub-download-ieee");
+    if (!btn) return;
+    btn.addEventListener("click", downloadIEEE);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     updateStats();
     initTypeTabs();
     initTopicTabs();
     initChipClicks();
+    initDownloadButton();
     render();
   });
 })();
