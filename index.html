@@ -339,8 +339,20 @@
     <p>© <span id="footer-year"></span> Fabrizio Silvestri · Built with static HTML &amp; auto-synced via GitHub Actions</p>
   </footer>
 
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" hidden>
+    <p class="cookie-copy">
+      This site uses Google Analytics to count visitors (anonymised IP, no ads, no profiling).
+      You can change your mind later by clearing site data.
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-decline" type="button" class="btn btn-ghost">Decline</button>
+      <button id="cookie-accept" type="button" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+
   <script src="assets/js/publications-data.js"></script>
   <script src="assets/js/publications.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
