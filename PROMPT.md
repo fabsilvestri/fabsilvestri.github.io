@@ -228,3 +228,116 @@ python3 scripts/fetch_publications.py
 
 After `fetch_publications.py`, the hero stats on the rendered page
 (Publications, A/A\* Conf. papers, Years active) should show real numbers.
+
+---
+
+# For non-experts — end-to-end walkthrough
+
+The sections above are written for an LLM applying the prompt. If you are the
+professor whose site is being built and you'd rather click than type, this
+section is for you. The whole thing takes ~45 minutes, one time, then runs
+itself.
+
+## What you need
+
+- A **GitHub** account (free — <https://github.com/signup>).
+- An **LLM subscription** (see §Recommended subscriptions below). We'll assume
+  you pick **Claude Pro** — the rest of this walkthrough uses Claude Code.
+- **Python 3.10+** installed on your computer. Mac: usually pre-installed; on
+  Windows, install from <https://www.python.org/downloads/>.
+- A **portrait photo** (~1000 px square, JPEG).
+
+## Step 1 — fork the template
+
+1. While signed in to GitHub, visit <https://github.com/fabsilvestri/fabsilvestri.github.io>.
+2. Click the **Fork** button (top right). Name your fork `<yourusername>.github.io`
+   (e.g. `janepublic.github.io`). This gives you a full copy you can edit.
+
+GitHub Pages will later publish anything on that repo's `main` branch to
+`https://<yourusername>.github.io/` automatically.
+
+## Step 2 — install Claude Code on your computer
+
+Follow the installer at <https://www.anthropic.com/claude-code>. When it asks
+you to sign in, use the same email as your Claude Pro subscription.
+
+## Step 3 — hand the prompt to Claude Code
+
+1. Clone your forked repo to your computer. Either use the green **<> Code**
+   button on GitHub → **Open with GitHub Desktop**, or open a terminal and run:
+   ```bash
+   git clone https://github.com/<yourusername>/<yourusername>.github.io.git
+   cd <yourusername>.github.io
+   ```
+2. Launch Claude Code in that folder:
+   ```bash
+   claude
+   ```
+3. Tell Claude:
+
+   > Read `PROMPT.md`. Apply it to me. My information: [paste the filled-in
+   > Inputs block].
+
+   Fill in the YAML **Inputs** block from §Inputs above with your details. For
+   the fields you don't know how to answer (e.g. `research_cards`, `topics`,
+   `hero_lede`), ask Claude for drafts: *"Draft 4 research cards based on my
+   DBLP profile at https://dblp.org/pid/.../"*. Review and revise.
+
+Claude Code will edit the files, run the bootstrap scripts, and commit the
+changes for you. Follow its prompts.
+
+## Step 4 — push to GitHub
+
+When Claude finishes, ask:
+
+> Push the changes to GitHub.
+
+Claude Code will run `git push`. (If it asks you to authenticate, follow the
+GitHub device-login URL it prints.)
+
+## Step 5 — three GitHub clicks (one-time)
+
+In the repo's web page on github.com:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. **Settings → Actions → General → Workflow permissions → Read and write permissions** (then Save).
+3. **Settings → Secrets and variables → Actions → New repository secret.**
+   - Name: `ANTHROPIC_API_KEY`
+   - Value: your API key from <https://console.anthropic.com/> → Settings → API Keys.
+   - (Skip this if you don't want the weekly automated award-discovery PR —
+     the rest of the site works without it.)
+
+Wait ~2 minutes. Visit `https://<yourusername>.github.io/`. Your site is live.
+
+## Step 6 — ongoing maintenance
+
+You don't have to do anything. Every night at 04:00 UTC the nightly workflow
+pulls fresh publications from DBLP and updates the site. Every Monday the
+award-discovery workflow opens a PR with candidate awards for you to review.
+
+When you want to add an invited talk or update the About section, edit
+`data/talks.yml` or `index.html` directly in GitHub's web UI — the workflows
+will redeploy automatically.
+
+# Recommended subscriptions
+
+| What | Option | Cost | Why |
+|---|---|---|---|
+| **LLM for the initial clone + ongoing tweaks** | **Claude Pro** + Claude Code | **$20 / month** | Best integration with files + git; handles the full clone/patch/push flow autonomously. This is the recommended choice for one-off setup and occasional edits. |
+| | Claude Max | $100–200 / month | Only worth it if you'll use Claude heavily for other research/coding too. Overkill just for this site. |
+| | ChatGPT Plus | $20 / month | Works but needs more hand-holding on local files and git. |
+| | Cursor Pro | $20 / month | IDE-based alternative to Claude Code; also fine. |
+| **API key for the weekly award-discovery workflow** | **Anthropic API** (pay-as-you-go, no subscription) | **~$8 / year** | Each weekly run costs roughly $0.10–0.30 with prompt caching; 52 runs/year ≈ $8. Create the key at <https://console.anthropic.com/>. |
+| **GitHub hosting** | **GitHub Free** | **$0** | GitHub Pages + Actions minutes are free for public repos on any plan. No need for Pro. |
+| **Domain name** (optional) | Namecheap / Cloudflare | ~$10 / year | Only if you want a custom domain like `janepublic.it` instead of the default `janepublic.github.io`. Add it in **Settings → Pages → Custom domain** after buying. |
+| **Professional headshot** | Local photographer | one-time | Optional. A clean square JPEG in good light is all you need. |
+
+**Total, minimum realistic spend for one year:** ~$248 (Claude Pro $240 + API
+$8). If you cancel Claude Pro after the initial setup, ongoing cost drops to
+~$8 / year.
+
+**Cheapest path (for someone willing to learn a bit):** skip the monthly
+subscription and use the Anthropic API directly for both the setup and the
+weekly workflow. Setup costs roughly $2–5 in API credits. Ongoing: ~$8 / year.
+Total first year: ~$15. This assumes you're comfortable reading error messages
+and running Python scripts.
