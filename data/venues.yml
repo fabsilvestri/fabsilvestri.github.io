@@ -1,8 +1,8 @@
 # Venue classification sources.
 #
 # Conferences are ranked against CORE (data/core_rankings.csv):
-#   inproceedings whose CORE rank is "A*"  →  a_star_conf
-#   anything else (or no CORE entry)       →  other_conf
+#   inproceedings whose CORE rank is "A*" or "A"  →  a_star_conf
+#   anything else (or no CORE entry)              →  other_conf
 #
 # Journals are ranked against Scimago (data/scimago_journal_rank.csv):
 #   article whose ISSN resolves to Q1 in any Computer Science subject

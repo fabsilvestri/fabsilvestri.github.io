@@ -1,12 +1,12 @@
 {
   "last_updated": "2026-04-21",
-  "generated_at": "2026-04-21T13:56:10+00:00",
+  "generated_at": "2026-04-21T14:11:27+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 285,
   "counts_by_type": {
-    "a_star_conf": 38,
+    "a_star_conf": 73,
     "q1_journal": 29,
-    "other_conf": 102,
+    "other_conf": 67,
     "other_journal": 9,
     "workshop": 14,
     "preprint": 93
@@ -122,7 +122,7 @@
       "venue": "EACL (Volume 1: Long Papers)",
       "venue_short": "EACL",
       "url": "https://aclanthology.org/2026.eacl-long.391/",
-      "type": "other_conf",
+      "type": "a_star_conf",
       "topics": [
         "ir",
         "llm"
@@ -143,7 +143,7 @@
       "venue": "EACL (Volume 2: Short Papers)",
       "venue_short": "EACL",
       "url": "https://aclanthology.org/2026.eacl-short.51/",
-      "type": "other_conf",
+      "type": "a_star_conf",
       "topics": [
         "ir"
       ]
@@ -295,6 +295,25 @@
       ]
     },
     {
+      "key": "conf/cikm/TeodoroGSS25",
+      "title": "Advances in Medical Knowledge Systems: LLMs, RAG and Foundation Models",
+      "authors": [
+        "G. Di Teodoro",
+        "V. Guarrasi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3746252.3761592",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "llm"
+      ]
+    },
+    {
       "key": "conf/acl/RuscioNS25",
       "title": "Beyond Position: the emergence of wavelet-like properties in Transformers",
       "authors": [
@@ -332,6 +351,65 @@
       ]
     },
     {
+      "key": "conf/ecir/CampagnanoMPS25",
+      "title": "E2Rank: Efficient and Effective Layer-Wise Reranking",
+      "authors": [
+        "C. Campagnano",
+        "A. Mallia",
+        "J. Pertschuk",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "ECIR (3)",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-031-88714-7_41",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ]
+    },
+    {
+      "key": "conf/aistats/GiorgiCST25",
+      "title": "Natural Language Counterfactual Explanations for Graphs Using Large Language Models",
+      "authors": [
+        "F. Giorgi",
+        "C. Campagnano",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2025,
+      "venue": "AISTATS",
+      "venue_short": "AISTATS",
+      "url": "https://proceedings.mlr.press/v258/giorgi25a.html",
+      "type": "a_star_conf",
+      "topics": [
+        "llm",
+        "nlp",
+        "trust"
+      ]
+    },
+    {
+      "key": "conf/wacv/AlfaranoAFBAS25",
+      "title": "STLight: A Fully Convolutional Approach for Efficient Predictive Learning by Spatio-Temporal Joint Processing",
+      "authors": [
+        "A. Alfarano",
+        "A. Alfarano",
+        "L. Friso",
+        "A. Bacciu",
+        "I. Amerini",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "WACV",
+      "venue_short": "WACV",
+      "url": "https://doi.org/10.1109/WACV61041.2025.00114",
+      "type": "a_star_conf",
+      "topics": [
+        "efficient"
+      ]
+    },
+    {
       "key": "conf/cvpr/GargiuloCBSSR25",
       "title": "Task Singular Vectors: Reducing Task Interference in Model Merging",
       "authors": [
@@ -352,6 +430,23 @@
       ]
     },
     {
+      "key": "conf/recsys/SbandiSS25",
+      "title": "TIM-Rec: Explicit Sparse Feedback on Multi-Item Upselling Recommendations in an Industrial Dataset of Telco Calls",
+      "authors": [
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "RecSys",
+      "venue_short": "RECSYS",
+      "url": "https://doi.org/10.1145/3705328.3748150",
+      "type": "a_star_conf",
+      "topics": [
+        "recsys"
+      ]
+    },
+    {
       "key": "conf/sigir/CampagnanoMS25",
       "title": "Unveiling DIME: Reproducibility, Generalizability, and Formal Analysis of Dimension Importance Estimation for Dense Retrieval",
       "authors": [
@@ -366,6 +461,23 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
+      ]
+    },
+    {
+      "key": "conf/icwsm/LentiSM25",
+      "title": "Variational Inference of Parameters in Opinion Dynamics Models",
+      "authors": [
+        "J. Lenti",
+        "F. Silvestri",
+        "G. De Francisci Morales"
+      ],
+      "year": 2025,
+      "venue": "ICWSM",
+      "venue_short": "ICWSM",
+      "url": "https://doi.org/10.1609/icwsm.v19i1.35963",
+      "type": "a_star_conf",
+      "topics": [
+        "social_net"
       ]
     },
     {
@@ -493,25 +605,6 @@
       ]
     },
     {
-      "key": "conf/cikm/TeodoroGSS25",
-      "title": "Advances in Medical Knowledge Systems: LLMs, RAG and Foundation Models",
-      "authors": [
-        "G. Di Teodoro",
-        "V. Guarrasi",
-        "F. Siciliano",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3746252.3761592",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "llm"
-      ]
-    },
-    {
       "key": "conf/ijcnn/SicilianoPBTS25",
       "title": "Are Convolutional Sequential Recommender Systems Still Competitive? Introducing New Models and Insights",
       "authors": [
@@ -565,25 +658,6 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
-    },
-    {
-      "key": "conf/ecir/CampagnanoMPS25",
-      "title": "E2Rank: Efficient and Effective Layer-Wise Reranking",
-      "authors": [
-        "C. Campagnano",
-        "A. Mallia",
-        "J. Pertschuk",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "ECIR (3)",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-031-88714-7_41",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "efficient"
       ]
     },
     {
@@ -641,26 +715,6 @@
       ]
     },
     {
-      "key": "conf/aistats/GiorgiCST25",
-      "title": "Natural Language Counterfactual Explanations for Graphs Using Large Language Models",
-      "authors": [
-        "F. Giorgi",
-        "C. Campagnano",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "AISTATS",
-      "venue_short": "AISTATS",
-      "url": "https://proceedings.mlr.press/v258/giorgi25a.html",
-      "type": "other_conf",
-      "topics": [
-        "llm",
-        "nlp",
-        "trust"
-      ]
-    },
-    {
       "key": "conf/ictir/Betello0D0S25",
       "title": "QPP-RA: Aggregating Large Language Model Rankings",
       "authors": [
@@ -697,60 +751,6 @@
       "type": "other_conf",
       "topics": [
         "gnn"
-      ]
-    },
-    {
-      "key": "conf/wacv/AlfaranoAFBAS25",
-      "title": "STLight: A Fully Convolutional Approach for Efficient Predictive Learning by Spatio-Temporal Joint Processing",
-      "authors": [
-        "A. Alfarano",
-        "A. Alfarano",
-        "L. Friso",
-        "A. Bacciu",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "WACV",
-      "venue_short": "WACV",
-      "url": "https://doi.org/10.1109/WACV61041.2025.00114",
-      "type": "other_conf",
-      "topics": [
-        "efficient"
-      ]
-    },
-    {
-      "key": "conf/recsys/SbandiSS25",
-      "title": "TIM-Rec: Explicit Sparse Feedback on Multi-Item Upselling Recommendations in an Industrial Dataset of Telco Calls",
-      "authors": [
-        "A. Sbandi",
-        "F. Siciliano",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "RecSys",
-      "venue_short": "RECSYS",
-      "url": "https://doi.org/10.1145/3705328.3748150",
-      "type": "other_conf",
-      "topics": [
-        "recsys"
-      ]
-    },
-    {
-      "key": "conf/icwsm/LentiSM25",
-      "title": "Variational Inference of Parameters in Opinion Dynamics Models",
-      "authors": [
-        "J. Lenti",
-        "F. Silvestri",
-        "G. De Francisci Morales"
-      ],
-      "year": 2025,
-      "venue": "ICWSM",
-      "venue_short": "ICWSM",
-      "url": "https://doi.org/10.1609/icwsm.v19i1.35963",
-      "type": "other_conf",
-      "topics": [
-        "social_net"
       ]
     },
     {
@@ -1248,6 +1248,45 @@
       ]
     },
     {
+      "key": "conf/ecir/BetelloSMS24",
+      "title": "Investigating the Robustness of Sequential Recommender Systems Against Training Data Perturbations",
+      "authors": [
+        "F. Betello",
+        "F. Siciliano",
+        "P. Mishra",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "ECIR (2)",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-031-56060-6_14",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "trust"
+      ]
+    },
+    {
+      "key": "conf/cikm/SbandiSS24",
+      "title": "Mitigating Extreme Cold Start in Graph-based RecSys through Re-ranking",
+      "authors": [
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3627673.3680069",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "gnn"
+      ]
+    },
+    {
       "key": "conf/www/NadaiFGWLSKLRGN24",
       "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
       "authors": [
@@ -1416,26 +1455,6 @@
       ]
     },
     {
-      "key": "conf/ecir/BetelloSMS24",
-      "title": "Investigating the Robustness of Sequential Recommender Systems Against Training Data Perturbations",
-      "authors": [
-        "F. Betello",
-        "F. Siciliano",
-        "P. Mishra",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "ECIR (2)",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-031-56060-6_14",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "trust"
-      ]
-    },
-    {
       "key": "conf/ijcnn/WaniBS24",
       "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
       "authors": [
@@ -1450,25 +1469,6 @@
       "type": "other_conf",
       "topics": [
         "trust"
-      ]
-    },
-    {
-      "key": "conf/cikm/SbandiSS24",
-      "title": "Mitigating Extreme Cold Start in Graph-based RecSys through Re-ranking",
-      "authors": [
-        "A. Sbandi",
-        "F. Siciliano",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3627673.3680069",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "gnn"
       ]
     },
     {
@@ -2008,6 +2008,53 @@
       ]
     },
     {
+      "key": "conf/cikm/PalumboDWLFFFSB23",
+      "title": "Graph Learning for Exploratory Query Suggestions in an Instant Search System",
+      "authors": [
+        "E. Palumbo",
+        "A. Damianou",
+        "A. Wang",
+        "A. Liu",
+        "G. Fazelnia",
+        "F. Fabbri",
+        "R. Ferreira",
+        "F. Silvestri",
+        "H. Bouchard",
+        "C. Hauff",
+        "M. Lalmas",
+        "B. Carterette",
+        "P. Chandar",
+        "D. Nyhan"
+      ],
+      "year": 2023,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3583780.3615481",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/recsys/BacciuSTS23",
+      "title": "Integrating Item Relevance in Training Loss for Sequential Recommender Systems",
+      "authors": [
+        "A. Bacciu",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "RecSys",
+      "venue_short": "RECSYS",
+      "url": "https://doi.org/10.1145/3604915.3610643",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys"
+      ]
+    },
+    {
       "key": "conf/cvpr/BucarelliCSMS23",
       "title": "Leveraging Inter-Rater Agreement for Classification in the Presence of Noisy Labels",
       "authors": [
@@ -2145,53 +2192,6 @@
       "type": "other_conf",
       "topics": [
         "llm"
-      ]
-    },
-    {
-      "key": "conf/cikm/PalumboDWLFFFSB23",
-      "title": "Graph Learning for Exploratory Query Suggestions in an Instant Search System",
-      "authors": [
-        "E. Palumbo",
-        "A. Damianou",
-        "A. Wang",
-        "A. Liu",
-        "G. Fazelnia",
-        "F. Fabbri",
-        "R. Ferreira",
-        "F. Silvestri",
-        "H. Bouchard",
-        "C. Hauff",
-        "M. Lalmas",
-        "B. Carterette",
-        "P. Chandar",
-        "D. Nyhan"
-      ],
-      "year": 2023,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3583780.3615481",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/recsys/BacciuSTS23",
-      "title": "Integrating Item Relevance in Training Loss for Sequential Recommender Systems",
-      "authors": [
-        "A. Bacciu",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "RecSys",
-      "venue_short": "RECSYS",
-      "url": "https://doi.org/10.1145/3604915.3610643",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys"
       ]
     },
     {
@@ -2602,6 +2602,26 @@
       ]
     },
     {
+      "key": "conf/aistats/LucicHTRS22",
+      "title": "CF-GNNExplainer: Counterfactual Explanations for Graph Neural Networks",
+      "authors": [
+        "A. Lucic",
+        "M. A. ter Hoeve",
+        "G. Tolomei",
+        "M. de Rijke",
+        "F. Silvestri"
+      ],
+      "year": 2022,
+      "venue": "AISTATS",
+      "venue_short": "AISTATS",
+      "url": "https://proceedings.mlr.press/v151/lucic22a.html",
+      "type": "a_star_conf",
+      "topics": [
+        "gnn",
+        "trust"
+      ]
+    },
+    {
       "key": "conf/ijcai/SharmaAADMFHSN022",
       "title": "Detecting and Understanding Harmful Memes: A Survey",
       "authors": [
@@ -2643,6 +2663,28 @@
       "topics": [
         "ir",
         "nlp"
+      ]
+    },
+    {
+      "key": "conf/cikm/ChenSW0AT22",
+      "title": "ReLAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
+      "authors": [
+        "Z. Chen",
+        "F. Silvestri",
+        "J. Wang",
+        "H. Zhu",
+        "H. Ahn",
+        "G. Tolomei"
+      ],
+      "year": 2022,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3511808.3557429",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "agents",
+        "trust"
       ]
     },
     {
@@ -2692,26 +2734,6 @@
       ]
     },
     {
-      "key": "conf/aistats/LucicHTRS22",
-      "title": "CF-GNNExplainer: Counterfactual Explanations for Graph Neural Networks",
-      "authors": [
-        "A. Lucic",
-        "M. A. ter Hoeve",
-        "G. Tolomei",
-        "M. de Rijke",
-        "F. Silvestri"
-      ],
-      "year": 2022,
-      "venue": "AISTATS",
-      "venue_short": "AISTATS",
-      "url": "https://proceedings.mlr.press/v151/lucic22a.html",
-      "type": "other_conf",
-      "topics": [
-        "gnn",
-        "trust"
-      ]
-    },
-    {
       "key": "conf/ijcnn/BarnaboSCLNMS22",
       "title": "FbMultiLingMisinfo: Challenging Large-Scale Multilingual Benchmark for Misinformation Detection",
       "authors": [
@@ -2747,28 +2769,6 @@
       "url": "https://doi.org/10.1109/IJCNN55064.2022.9892367",
       "type": "other_conf",
       "topics": [
-        "trust"
-      ]
-    },
-    {
-      "key": "conf/cikm/ChenSW0AT22",
-      "title": "ReLAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
-      "authors": [
-        "Z. Chen",
-        "F. Silvestri",
-        "J. Wang",
-        "H. Zhu",
-        "H. Ahn",
-        "G. Tolomei"
-      ],
-      "year": 2022,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3511808.3557429",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "agents",
         "trust"
       ]
     },
@@ -3309,7 +3309,7 @@
       "venue": "NAACL-HLT (1)",
       "venue_short": "NAACL",
       "url": "https://doi.org/10.18653/v1/n19-1326",
-      "type": "other_conf",
+      "type": "a_star_conf",
       "topics": [
         "nlp"
       ]
@@ -3509,6 +3509,25 @@
       ]
     },
     {
+      "key": "conf/icwsm/ColettoALS16",
+      "title": "On the Behaviour of Deviant Communities in Online Social Networks",
+      "authors": [
+        "M. Coletto",
+        "L. Maria Aiello",
+        "C. Lucchese",
+        "F. Silvestri"
+      ],
+      "year": 2016,
+      "venue": "ICWSM",
+      "venue_short": "ICWSM",
+      "url": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
+      "type": "a_star_conf",
+      "topics": [
+        "misinfo",
+        "social_net"
+      ]
+    },
+    {
       "key": "conf/sigir/LuccheseNOPST16",
       "title": "Post-Learning Optimization of Tree Ensembles for Efficient Ranking",
       "authors": [
@@ -3554,6 +3573,27 @@
       ]
     },
     {
+      "key": "conf/cikm/AielloAB0BMS16",
+      "title": "The Role of Relevance in Sponsored Search",
+      "authors": [
+        "L. Maria Aiello",
+        "I. Arapakis",
+        "R. Baeza-Yates",
+        "X. Bai",
+        "N. Barbieri",
+        "A. Mantrach",
+        "F. Silvestri"
+      ],
+      "year": 2016,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2983323.2983840",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
       "key": "conf/clef/SinghMS16",
       "title": "Improving Profiles of Weakly-Engaged Users - With Applications to Recommender Systems",
       "authors": [
@@ -3568,25 +3608,6 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
-    },
-    {
-      "key": "conf/icwsm/ColettoALS16",
-      "title": "On the Behaviour of Deviant Communities in Online Social Networks",
-      "authors": [
-        "M. Coletto",
-        "L. Maria Aiello",
-        "C. Lucchese",
-        "F. Silvestri"
-      ],
-      "year": 2016,
-      "venue": "ICWSM",
-      "venue_short": "ICWSM",
-      "url": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
-      "type": "other_conf",
-      "topics": [
-        "misinfo",
-        "social_net"
       ]
     },
     {
@@ -3607,27 +3628,6 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
-    },
-    {
-      "key": "conf/cikm/AielloAB0BMS16",
-      "title": "The Role of Relevance in Sponsored Search",
-      "authors": [
-        "L. Maria Aiello",
-        "I. Arapakis",
-        "R. Baeza-Yates",
-        "X. Bai",
-        "N. Barbieri",
-        "A. Mantrach",
-        "F. Silvestri"
-      ],
-      "year": 2016,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2983323.2983840",
-      "type": "other_conf",
-      "topics": [
-        "ir"
       ]
     },
     {
@@ -3758,6 +3758,24 @@
       ]
     },
     {
+      "key": "conf/naacl/ColmenaresLMS15",
+      "title": "HEADS: Headline Generation as Sequence Prediction Using an Abstract Feature-Rich Space",
+      "authors": [
+        "C. A. Colmenares",
+        "M. Litvak",
+        "A. Mantrach",
+        "F. Silvestri"
+      ],
+      "year": 2015,
+      "venue": "HLT-NAACL",
+      "venue_short": "NAACL",
+      "url": "https://doi.org/10.3115/v1/n15-1014",
+      "type": "a_star_conf",
+      "topics": [
+        "misc"
+      ]
+    },
+    {
       "key": "conf/www/Baeza-YatesDGRS15",
       "title": "Large-scale Contextual Query-to-Ad Matching and Retrieval System for Sponsored Search: (Abstract)",
       "authors": [
@@ -3771,6 +3789,24 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/2740908.2744112",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/wsdm/Baeza-YatesJSH15",
+      "title": "Predicting The Next App That You Are Going To Use",
+      "authors": [
+        "R. Baeza-Yates",
+        "D. Jiang",
+        "F. Silvestri",
+        "B. Harrison"
+      ],
+      "year": 2015,
+      "venue": "WSDM",
+      "venue_short": "WSDM",
+      "url": "https://doi.org/10.1145/2684822.2685302",
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -3831,24 +3867,6 @@
       ]
     },
     {
-      "key": "conf/naacl/ColmenaresLMS15",
-      "title": "HEADS: Headline Generation as Sequence Prediction Using an Abstract Feature-Rich Space",
-      "authors": [
-        "C. A. Colmenares",
-        "M. Litvak",
-        "A. Mantrach",
-        "F. Silvestri"
-      ],
-      "year": 2015,
-      "venue": "HLT-NAACL",
-      "venue_short": "NAACL",
-      "url": "https://doi.org/10.3115/v1/n15-1014",
-      "type": "other_conf",
-      "topics": [
-        "misc"
-      ]
-    },
-    {
       "key": "conf/ismis/SydowMNMS15",
       "title": "MUSETS: Diversity-Aware Web Query Suggestions for Shortening User Sessions",
       "authors": [
@@ -3862,24 +3880,6 @@
       "venue": "ISMIS",
       "venue_short": "ISMIS",
       "url": "https://doi.org/10.1007/978-3-319-25252-0_26",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/wsdm/Baeza-YatesJSH15",
-      "title": "Predicting The Next App That You Are Going To Use",
-      "authors": [
-        "R. Baeza-Yates",
-        "D. Jiang",
-        "F. Silvestri",
-        "B. Harrison"
-      ],
-      "year": 2015,
-      "venue": "WSDM",
-      "venue_short": "WSDM",
-      "url": "https://doi.org/10.1145/2684822.2685302",
       "type": "other_conf",
       "topics": [
         "ir"
@@ -3904,6 +3904,24 @@
       ]
     },
     {
+      "key": "conf/cikm/BaragliaMNS13",
+      "title": "LearNext: learning to predict tourists movements",
+      "authors": [
+        "R. Baraglia",
+        "C. Ioana Muntean",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2013,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2505515.2505656",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
       "key": "conf/www/MunteanNSS13",
       "title": "Learning to shorten query sessions",
       "authors": [
@@ -3919,6 +3937,28 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
+      ]
+    },
+    {
+      "key": "conf/cikm/BroccoloMOOPST13",
+      "title": "Load-sensitive selective pruning for distributed search",
+      "authors": [
+        "D. Broccolo",
+        "C. Macdonald",
+        "S. Orlando",
+        "I. Ounis",
+        "R. Perego",
+        "F. Silvestri",
+        "N. Tonellotto"
+      ],
+      "year": 2013,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2505515.2505699",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
       ]
     },
     {
@@ -3973,46 +4013,6 @@
       "type": "q1_journal",
       "topics": [
         "misc"
-      ]
-    },
-    {
-      "key": "conf/cikm/BaragliaMNS13",
-      "title": "LearNext: learning to predict tourists movements",
-      "authors": [
-        "R. Baraglia",
-        "C. Ioana Muntean",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2013,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2505515.2505656",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/cikm/BroccoloMOOPST13",
-      "title": "Load-sensitive selective pruning for distributed search",
-      "authors": [
-        "D. Broccolo",
-        "C. Macdonald",
-        "S. Orlando",
-        "I. Ounis",
-        "R. Perego",
-        "F. Silvestri",
-        "N. Tonellotto"
-      ],
-      "year": 2013,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2505515.2505699",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "efficient"
       ]
     },
     {
@@ -4077,6 +4077,62 @@
       ]
     },
     {
+      "key": "conf/ecir/LucchesePSVV12",
+      "title": "How Random Walks Can Help Tourism",
+      "authors": [
+        "C. Lucchese",
+        "R. Perego",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2012,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-642-28997-2_17",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/cikm/BonchiFNSV12",
+      "title": "Interactive and context-aware tag spell check and correction",
+      "authors": [
+        "F. Bonchi",
+        "O. Frieder",
+        "F. Maria Nardini",
+        "F. Silvestri",
+        "H. Vahabi"
+      ],
+      "year": 2012,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2396761.2398534",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/cikm/PennacchiottiSVV12",
+      "title": "Making your interests follow you on twitter",
+      "authors": [
+        "M. Pennacchiotti",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2012,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2396761.2396786",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
       "key": "conf/sigir/JonassenCS12",
       "title": "Prefetching query results and its impact on search engines",
       "authors": [
@@ -4092,6 +4148,27 @@
       "topics": [
         "ir",
         "efficient"
+      ]
+    },
+    {
+      "key": "conf/cikm/BlancoCLPS12",
+      "title": "You should read this! let me explain you why: explaining news recommendations to users",
+      "authors": [
+        "R. Blanco",
+        "D. Ceccarelli",
+        "C. Lucchese",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2012,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2396761.2398559",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "trust"
       ]
     },
     {
@@ -4168,83 +4245,6 @@
       ]
     },
     {
-      "key": "conf/ecir/LucchesePSVV12",
-      "title": "How Random Walks Can Help Tourism",
-      "authors": [
-        "C. Lucchese",
-        "R. Perego",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2012,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-642-28997-2_17",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/cikm/BonchiFNSV12",
-      "title": "Interactive and context-aware tag spell check and correction",
-      "authors": [
-        "F. Bonchi",
-        "O. Frieder",
-        "F. Maria Nardini",
-        "F. Silvestri",
-        "H. Vahabi"
-      ],
-      "year": 2012,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2396761.2398534",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/cikm/PennacchiottiSVV12",
-      "title": "Making your interests follow you on twitter",
-      "authors": [
-        "M. Pennacchiotti",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2012,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2396761.2396786",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/cikm/BlancoCLPS12",
-      "title": "You should read this! let me explain you why: explaining news recommendations to users",
-      "authors": [
-        "R. Blanco",
-        "D. Ceccarelli",
-        "C. Lucchese",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2012,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2396761.2398559",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "trust"
-      ]
-    },
-    {
       "key": "conf/iat/BaragliaFMNS12",
       "title": "RecTour: A Recommender System for Tourists",
       "authors": [
@@ -4304,6 +4304,27 @@
       ]
     },
     {
+      "key": "conf/edbt/CeccarelliLOPS11",
+      "title": "Caching query-biased snippets for efficient retrieval",
+      "authors": [
+        "D. Ceccarelli",
+        "C. Lucchese",
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2011,
+      "venue": "EDBT",
+      "venue_short": "EDBT",
+      "url": "https://doi.org/10.1145/1951365.1951379",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "trust",
+        "efficient"
+      ]
+    },
+    {
       "key": "conf/www/CapanniniNPS11",
       "title": "Efficient diversification of search results using query logs",
       "authors": [
@@ -4320,6 +4341,25 @@
       "topics": [
         "ir",
         "efficient"
+      ]
+    },
+    {
+      "key": "conf/wsdm/LuccheseOPST11",
+      "title": "Identifying task-based sessions in search engine query logs",
+      "authors": [
+        "C. Lucchese",
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2011,
+      "venue": "WSDM",
+      "venue_short": "WSDM",
+      "url": "https://doi.org/10.1145/1935826.1935875",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
       ]
     },
     {
@@ -4340,6 +4380,23 @@
       "topics": [
         "ir",
         "recsys"
+      ]
+    },
+    {
+      "key": "conf/ecir/PeregoST11",
+      "title": "Representing Document Lengths with Identifiers",
+      "authors": [
+        "R. Perego",
+        "F. Silvestri",
+        "N. Tonellotto"
+      ],
+      "year": 2011,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-642-20161-5_66",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
       ]
     },
     {
@@ -4380,63 +4437,6 @@
       ]
     },
     {
-      "key": "conf/edbt/CeccarelliLOPS11",
-      "title": "Caching query-biased snippets for efficient retrieval",
-      "authors": [
-        "D. Ceccarelli",
-        "C. Lucchese",
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2011,
-      "venue": "EDBT",
-      "venue_short": "EDBT",
-      "url": "https://doi.org/10.1145/1951365.1951379",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "trust",
-        "efficient"
-      ]
-    },
-    {
-      "key": "conf/wsdm/LuccheseOPST11",
-      "title": "Identifying task-based sessions in search engine query logs",
-      "authors": [
-        "C. Lucchese",
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2011,
-      "venue": "WSDM",
-      "venue_short": "WSDM",
-      "url": "https://doi.org/10.1145/1935826.1935875",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/ecir/PeregoST11",
-      "title": "Representing Document Lengths with Identifiers",
-      "authors": [
-        "R. Perego",
-        "F. Silvestri",
-        "N. Tonellotto"
-      ],
-      "year": 2011,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-642-20161-5_66",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
       "key": "journals/corr/abs-1105-4255",
       "title": "Efficient Diversification of Web Search Results",
       "authors": [
@@ -4452,6 +4452,24 @@
       "type": "preprint",
       "topics": [
         "ir",
+        "efficient"
+      ]
+    },
+    {
+      "key": "conf/cikm/SilvestriV10",
+      "title": "VSEncoding: efficient coding and fast decoding of integer lists via dynamic programming",
+      "authors": [
+        "F. Silvestri",
+        "R. Venturini"
+      ],
+      "year": 2010,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/1871437.1871592",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "llm",
         "efficient"
       ]
     },
@@ -4623,24 +4641,6 @@
       ]
     },
     {
-      "key": "conf/cikm/SilvestriV10",
-      "title": "VSEncoding: efficient coding and fast decoding of integer lists via dynamic programming",
-      "authors": [
-        "F. Silvestri",
-        "R. Venturini"
-      ],
-      "year": 2010,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/1871437.1871592",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "llm",
-        "efficient"
-      ]
-    },
-    {
       "key": "journals/ijdst/VarvarigouTKSP10",
       "title": "A Study on the Effect of Application and Resource Characteristics on the QoS in Service Provisioning Environments",
       "authors": [
@@ -4697,6 +4697,64 @@
       ]
     },
     {
+      "key": "conf/cikm/BaragliaCDNPS09",
+      "title": "Aging effects on query flow graphs for query suggestion",
+      "authors": [
+        "R. Baraglia",
+        "C. Castillo",
+        "D. Donato",
+        "F. Maria Nardini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2009,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/1645953.1646272",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/ecir/OrlandoS09",
+      "title": "Mining Query Logs",
+      "authors": [
+        "S. Orlando",
+        "F. Silvestri"
+      ],
+      "year": 2009,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-642-00958-7_94",
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ]
+    },
+    {
+      "key": "conf/recsys/BaragliaCCFFPS09",
+      "title": "Search shortcuts: a new approach to the recommendation of queries",
+      "authors": [
+        "R. Baraglia",
+        "F. Cacheda",
+        "V. Carneiro",
+        "D. Fernández",
+        "V. Formoso",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2009,
+      "venue": "RecSys",
+      "venue_short": "RECSYS",
+      "url": "https://doi.org/10.1145/1639714.1639729",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys"
+      ]
+    },
+    {
       "key": "conf/www/BaragliaCCFPS09",
       "title": "Search shortcuts: driving users towards their goals",
       "authors": [
@@ -4732,26 +4790,6 @@
       "type": "q1_journal",
       "topics": [
         "efficient"
-      ]
-    },
-    {
-      "key": "conf/cikm/BaragliaCDNPS09",
-      "title": "Aging effects on query flow graphs for query suggestion",
-      "authors": [
-        "R. Baraglia",
-        "C. Castillo",
-        "D. Donato",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2009,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/1645953.1646272",
-      "type": "other_conf",
-      "topics": [
-        "ir"
       ]
     },
     {
@@ -4793,22 +4831,6 @@
       ]
     },
     {
-      "key": "conf/ecir/OrlandoS09",
-      "title": "Mining Query Logs",
-      "authors": [
-        "S. Orlando",
-        "F. Silvestri"
-      ],
-      "year": 2009,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-642-00958-7_94",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
       "key": "conf/fia/NittoKMPPPSH09",
       "title": "S-Cube: Addressing Multidisciplinary Research Challenges for the Internet of Services",
       "authors": [
@@ -4828,28 +4850,6 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
-    },
-    {
-      "key": "conf/recsys/BaragliaCCFFPS09",
-      "title": "Search shortcuts: a new approach to the recommendation of queries",
-      "authors": [
-        "R. Baraglia",
-        "F. Cacheda",
-        "V. Carneiro",
-        "D. Fernández",
-        "V. Formoso",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2009,
-      "venue": "RecSys",
-      "venue_short": "RECSYS",
-      "url": "https://doi.org/10.1145/1639714.1639729",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys"
       ]
     },
     {
@@ -4892,6 +4892,24 @@
       ]
     },
     {
+      "key": "conf/hpdc/LaforenzaNS08",
+      "title": "Collaborative ranking of grid-enabled workflow service providers",
+      "authors": [
+        "D. Laforenza",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2008,
+      "venue": "HPDC",
+      "venue_short": "HPDC",
+      "url": "https://doi.org/10.1145/1383422.1383458",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ]
+    },
+    {
       "key": "conf/la-web/SilvestriBLOP08",
       "title": "(Query) History Teaches Everything, Including the Future",
       "authors": [
@@ -4908,24 +4926,6 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
-    },
-    {
-      "key": "conf/hpdc/LaforenzaNS08",
-      "title": "Collaborative ranking of grid-enabled workflow service providers",
-      "authors": [
-        "D. Laforenza",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2008,
-      "venue": "HPDC",
-      "venue_short": "HPDC",
-      "url": "https://doi.org/10.1145/1383422.1383458",
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "efficient"
       ]
     },
     {
@@ -5004,6 +5004,22 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
+      ]
+    },
+    {
+      "key": "conf/ecir/Silvestri07",
+      "title": "Sorting Out the Document Identifier Assignment Problem",
+      "authors": [
+        "F. Silvestri"
+      ],
+      "year": 2007,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-540-71496-5_12",
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
       ]
     },
     {
@@ -5137,19 +5153,19 @@
       ]
     },
     {
-      "key": "conf/ecir/Silvestri07",
-      "title": "Sorting Out the Document Identifier Assignment Problem",
+      "key": "conf/cikm/PuppinS06",
+      "title": "The query-vector document model",
       "authors": [
+        "D. Puppin",
         "F. Silvestri"
       ],
-      "year": 2007,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-540-71496-5_12",
-      "type": "other_conf",
+      "year": 2006,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/1183614.1183777",
+      "type": "a_star_conf",
       "topics": [
-        "ir",
-        "efficient"
+        "ir"
       ]
     },
     {
@@ -5203,22 +5219,6 @@
       "venue": "Infoscale",
       "venue_short": "INFOSCALE",
       "url": "https://doi.org/10.1145/1146847.1146881",
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ]
-    },
-    {
-      "key": "conf/cikm/PuppinS06",
-      "title": "The query-vector document model",
-      "authors": [
-        "D. Puppin",
-        "F. Silvestri"
-      ],
-      "year": 2006,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/1183614.1183777",
       "type": "other_conf",
       "topics": [
         "ir"

@@ -21,7 +21,7 @@
   }
 
   var TYPE_FALLBACK = {
-    a_star_conf:   "A* Conference",
+    a_star_conf:   "A/A* Conference",
     q1_journal:    "Q1 Journal",
     other_conf:    "Other Conference",
     other_journal: "Other Journal",

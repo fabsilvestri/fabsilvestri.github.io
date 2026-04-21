@@ -70,7 +70,7 @@ Classification rules:
 
 - `publtype="informal"` or venue `corr` → **Preprint**
 - Booktitle containing "workshop" or the `X@Y` shorthand → **Workshop**
-- `inproceedings` whose resolved CORE rank is `A*` → **A\* Conference**
+- `inproceedings` whose resolved CORE rank is `A*` or `A` → **A/A\* Conference**
 - `article` whose resolved Scimago ISSN has quartile Q1 in any
   [Computer Science category](scripts/fetch_publications.py) → **Q1 Journal**
 - Everything else → **Other Conferences & Journals**

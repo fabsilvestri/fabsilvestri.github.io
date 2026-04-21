@@ -295,7 +295,7 @@ def classify(
 
     if tag == "inproceedings":
         acro = venues.get("conference_core_acronym", {}).get(abbrev) or abbrev.upper()
-        if core_ranks.get(acro) == "A*":
+        if core_ranks.get(acro) in ("A*", "A"):
             return TYPE_A_STAR
         return TYPE_OTHER_CONF
 
