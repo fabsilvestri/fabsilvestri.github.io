@@ -265,22 +265,36 @@ def venue_abbrev(dblp_key: str) -> str:
     return parts[1].lower() if len(parts) >= 2 else ""
 
 
-def is_workshop(booktitle: str) -> bool:
-    """Detect satellite events / workshop tracks by booktitle.
+NON_MAIN_TRACK_RE = re.compile(
+    r"\b(workshops?"
+    r"|companion"            # "WWW (Companion Volume)" – posters/workshops bundled
+    r"|posters?"             # "WWW (Posters)"
+    r"|tutorials?"           # "ACL Tutorials"
+    r"|demonstrations?|demos?"  # "EMNLP Demos", "ACL Demonstrations"
+    r"|doctoral"             # "ACL Doctoral Consortium"
+    r"|abstracts?"           # "NeurIPS Extended Abstracts"
+    r"|student"              # "ACL Student Research Workshop" (covered by "workshop" too)
+    r")\b",
+    re.IGNORECASE,
+)
 
-    DBLP records satellite events in several conventions:
-      - "... Workshop ..." or "... Workshops ..."     (plain English)
-      - "WSCD@WSDM", "SemEval@NAACL", "Tiny Papers @ ICLR"
-        (the "satellite-at-main-conference" shorthand, reliably a
-        non-main-track event — workshops, tutorials, student tracks).
-    """
+
+def is_workshop(booktitle: str) -> bool:
+    """Return True when a DBLP booktitle reads as a satellite / companion
+    track rather than a main research track.
+
+    DBLP marks satellite events in several conventions:
+      - Plain English: "... Workshop ...", "... Workshops ..."
+      - Satellite shorthand: "WSCD@WSDM", "SemEval@NAACL", "Tiny Papers @ ICLR"
+      - Parenthesised subvolumes: "WWW (Companion Volume)", "WWW (Posters)",
+        "EMNLP (Demonstrations)", "ACL Tutorials", "PKDD/ECML Workshops (2)"
+    A main-track paper should never match here; we err on the side of
+    exclusion so these records don't leak into A/A* or Q1."""
     if not booktitle:
         return False
-    if re.search(r"\bworkshops?\b", booktitle, re.I):
-        return True
     if "@" in booktitle:
         return True
-    return False
+    return bool(NON_MAIN_TRACK_RE.search(booktitle))
 
 
 def classify(

@@ -1,26 +1,26 @@
 {
   "last_updated": "2026-04-21",
-  "generated_at": "2026-04-21T14:39:21+00:00",
+  "generated_at": "2026-04-21T14:47:45+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 285,
+  "count": 282,
   "counts_by_type": {
-    "a_star_conf": 73,
-    "q1_journal": 29,
+    "a_star_conf": 63,
+    "q1_journal": 28,
     "other_conf": 67,
     "other_journal": 9,
-    "workshop": 14,
+    "workshop": 22,
     "preprint": 93
   },
   "counts_by_topic": {
-    "ir": 108,
+    "ir": 105,
     "recsys": 44,
-    "llm": 33,
+    "llm": 32,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
     "trust": 49,
     "task_vectors": 9,
-    "efficient": 53,
+    "efficient": 51,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -320,28 +320,6 @@
         "ir"
       ],
       "citations": 0
-    },
-    {
-      "key": "conf/cikm/TeodoroGSS25",
-      "title": "Advances in Medical Knowledge Systems: LLMs, RAG and Foundation Models",
-      "authors": [
-        "G. Di Teodoro",
-        "V. Guarrasi",
-        "F. Siciliano",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3746252.3761592",
-      "url_publisher": "https://doi.org/10.1145/3746252.3761592",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "llm"
-      ],
-      "citations": 2
     },
     {
       "key": "conf/acl/RuscioNS25",
@@ -1470,38 +1448,6 @@
       "citations": 10
     },
     {
-      "key": "conf/www/NadaiFGWLSKLRGN24",
-      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
-      "authors": [
-        "M. De Nadai",
-        "F. Fabbri",
-        "P. Gigioli",
-        "A. Wang",
-        "A. Li",
-        "F. Silvestri",
-        "L. Kim",
-        "S. Lin",
-        "V. Radosavljevic",
-        "S. Ghael",
-        "D. Nyhan",
-        "H. Bouchard",
-        "M. Lalmas",
-        "A. Damianou"
-      ],
-      "year": 2024,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/3589335.3648339",
-      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 30
-    },
-    {
       "key": "conf/sigir/CuconasuTSFCMTS24",
       "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
       "authors": [
@@ -1749,6 +1695,38 @@
         "gnn"
       ],
       "citations": 13
+    },
+    {
+      "key": "conf/www/NadaiFGWLSKLRGN24",
+      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
+      "authors": [
+        "M. De Nadai",
+        "F. Fabbri",
+        "P. Gigioli",
+        "A. Wang",
+        "A. Li",
+        "F. Silvestri",
+        "L. Kim",
+        "S. Lin",
+        "V. Radosavljevic",
+        "S. Ghael",
+        "D. Nyhan",
+        "H. Bouchard",
+        "M. Lalmas",
+        "A. Damianou"
+      ],
+      "year": 2024,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/3589335.3648339",
+      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "recsys",
+        "gnn"
+      ],
+      "citations": 30
     },
     {
       "key": "conf/robustrecsys/FrancomanoSS24",
@@ -3870,29 +3848,6 @@
       "citations": 0
     },
     {
-      "key": "conf/www/BronRLSEC17",
-      "title": "Friendly, Appealing or Both?: Characterising User Experience in Sponsored Search Landing Pages",
-      "authors": [
-        "M. Bron",
-        "M. Redi",
-        "M. Lalmas",
-        "F. Silvestri",
-        "H. Evans",
-        "M. Chute"
-      ],
-      "year": 2017,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/3041021.3054193",
-      "url_publisher": "https://doi.org/10.1145/3041021.3054193",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 4
-    },
-    {
       "key": "conf/kdd/TolomeiSHL17",
       "title": "Interpretable Predictions of Tree-based Ensembles via Actionable Feature Tweaking",
       "authors": [
@@ -3977,6 +3932,29 @@
         "social_net"
       ],
       "citations": 11
+    },
+    {
+      "key": "conf/www/BronRLSEC17",
+      "title": "Friendly, Appealing or Both?: Characterising User Experience in Sponsored Search Landing Pages",
+      "authors": [
+        "M. Bron",
+        "M. Redi",
+        "M. Lalmas",
+        "F. Silvestri",
+        "H. Evans",
+        "M. Chute"
+      ],
+      "year": 2017,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/3041021.3054193",
+      "url_publisher": "https://doi.org/10.1145/3041021.3054193",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir"
+      ],
+      "citations": 4
     },
     {
       "key": "conf/www/BarbieriSL16",
@@ -4328,28 +4306,6 @@
       "citations": 65
     },
     {
-      "key": "conf/www/Baeza-YatesDGRS15",
-      "title": "Large-scale Contextual Query-to-Ad Matching and Retrieval System for Sponsored Search: (Abstract)",
-      "authors": [
-        "R. Baeza-Yates",
-        "N. Djuric",
-        "M. Grbovic",
-        "V. Radosavljevic",
-        "F. Silvestri"
-      ],
-      "year": 2015,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/2740908.2744112",
-      "url_publisher": "https://doi.org/10.1145/2740908.2744112",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 0
-    },
-    {
       "key": "conf/wsdm/Baeza-YatesJSH15",
       "title": "Predicting The Next App That You Are Going To Use",
       "authors": [
@@ -4456,6 +4412,28 @@
       "citations": 0
     },
     {
+      "key": "conf/www/Baeza-YatesDGRS15",
+      "title": "Large-scale Contextual Query-to-Ad Matching and Retrieval System for Sponsored Search: (Abstract)",
+      "authors": [
+        "R. Baeza-Yates",
+        "N. Djuric",
+        "M. Grbovic",
+        "V. Radosavljevic",
+        "F. Silvestri"
+      ],
+      "year": 2015,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/2740908.2744112",
+      "url_publisher": "https://doi.org/10.1145/2740908.2744112",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir"
+      ],
+      "citations": 0
+    },
+    {
       "key": "conf/iir/BaragliaMNS14",
       "title": "LearNext: Learning to Predict Tourists Movements",
       "authors": [
@@ -4498,27 +4476,6 @@
       "citations": 48
     },
     {
-      "key": "conf/www/MunteanNSS13",
-      "title": "Learning to shorten query sessions",
-      "authors": [
-        "C. Ioana Muntean",
-        "F. Maria Nardini",
-        "F. Silvestri",
-        "M. Sydow"
-      ],
-      "year": 2013,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/2487788.2487851",
-      "url_publisher": "https://doi.org/10.1145/2487788.2487851",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 4
-    },
-    {
       "key": "conf/cikm/BroccoloMOOPST13",
       "title": "Load-sensitive selective pruning for distributed search",
       "authors": [
@@ -4542,26 +4499,6 @@
         "efficient"
       ],
       "citations": 22
-    },
-    {
-      "key": "conf/www/BlancoMS13",
-      "title": "Towards leveraging closed captions for news retrieval",
-      "authors": [
-        "R. Blanco",
-        "G. De Francisci Morales",
-        "F. Silvestri"
-      ],
-      "year": 2013,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/2487788.2487853",
-      "url_publisher": "https://doi.org/10.1145/2487788.2487853",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 6
     },
     {
       "key": "journals/tois/LuccheseOPST13",
@@ -4651,6 +4588,47 @@
         "ir"
       ],
       "citations": 7
+    },
+    {
+      "key": "conf/www/MunteanNSS13",
+      "title": "Learning to shorten query sessions",
+      "authors": [
+        "C. Ioana Muntean",
+        "F. Maria Nardini",
+        "F. Silvestri",
+        "M. Sydow"
+      ],
+      "year": 2013,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/2487788.2487851",
+      "url_publisher": "https://doi.org/10.1145/2487788.2487851",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir"
+      ],
+      "citations": 4
+    },
+    {
+      "key": "conf/www/BlancoMS13",
+      "title": "Towards leveraging closed captions for news retrieval",
+      "authors": [
+        "R. Blanco",
+        "G. De Francisci Morales",
+        "F. Silvestri"
+      ],
+      "year": 2013,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/2487788.2487853",
+      "url_publisher": "https://doi.org/10.1145/2487788.2487853",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir"
+      ],
+      "citations": 6
     },
     {
       "key": "conf/sigir/BonchiPSVV12",
@@ -4964,28 +4942,6 @@
       "citations": 31
     },
     {
-      "key": "conf/www/CapanniniNPS11",
-      "title": "Efficient diversification of search results using query logs",
-      "authors": [
-        "G. Capannini",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2011,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/1963192.1963202",
-      "url_publisher": "https://doi.org/10.1145/1963192.1963202",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 9
-    },
-    {
       "key": "conf/wsdm/LuccheseOPST11",
       "title": "Identifying task-based sessions in search engine query logs",
       "authors": [
@@ -5006,29 +4962,6 @@
         "ir"
       ],
       "citations": 186
-    },
-    {
-      "key": "conf/www/BonchiPSVV11",
-      "title": "Recommendations for the long tail by term-query graph",
-      "authors": [
-        "F. Bonchi",
-        "R. Perego",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2011,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/1963192.1963201",
-      "url_publisher": "https://doi.org/10.1145/1963192.1963201",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "recsys"
-      ],
-      "citations": 29
     },
     {
       "key": "conf/ecir/PeregoST11",
@@ -5092,6 +5025,51 @@
         "nlp"
       ],
       "citations": 4
+    },
+    {
+      "key": "conf/www/CapanniniNPS11",
+      "title": "Efficient diversification of search results using query logs",
+      "authors": [
+        "G. Capannini",
+        "F. Maria Nardini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2011,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/1963192.1963202",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963202",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 9
+    },
+    {
+      "key": "conf/www/BonchiPSVV11",
+      "title": "Recommendations for the long tail by term-query graph",
+      "authors": [
+        "F. Bonchi",
+        "R. Perego",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2011,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/1963192.1963201",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963201",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "recsys"
+      ],
+      "citations": 29
     },
     {
       "key": "journals/corr/abs-1105-4255",
@@ -5709,29 +5687,6 @@
       "citations": 0
     },
     {
-      "key": "conf/icde/Baeza-YatesCJPS07",
-      "title": "Challenges on Distributed Web Retrieval",
-      "authors": [
-        "R. A. Baeza-Yates",
-        "C. Castillo",
-        "F. Junqueira",
-        "V. Plachouras",
-        "F. Silvestri"
-      ],
-      "year": 2007,
-      "venue": "ICDE",
-      "venue_short": "ICDE",
-      "url": "https://doi.org/10.1109/ICDE.2007.367846",
-      "url_publisher": "https://doi.org/10.1109/ICDE.2007.367846",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 149
-    },
-    {
       "key": "conf/sigir/CastilloDGMS07",
       "title": "Know your neighbors: web spam detection using the web topology",
       "authors": [
@@ -5814,25 +5769,6 @@
         "misc"
       ],
       "citations": 161
-    },
-    {
-      "key": "journals/ipm/Silvestri07",
-      "title": "Special issue on heterogeneous and distributed IR",
-      "authors": [
-        "F. Silvestri"
-      ],
-      "year": 2007,
-      "venue": "Inf. Process. Manag.",
-      "venue_short": "IP&M",
-      "url": "https://doi.org/10.1016/j.ipm.2006.12.001",
-      "url_publisher": "https://doi.org/10.1016/j.ipm.2006.12.001",
-      "url_arxiv": null,
-      "type": "q1_journal",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 0
     },
     {
       "key": "conf/coregrid/TserpesKMVSL07",
@@ -6401,29 +6337,6 @@
       "citations": 44
     },
     {
-      "key": "conf/www/SilvestriFOPP03",
-      "title": "A Hybrid Strategy for Caching Web Search Engine Results",
-      "authors": [
-        "F. Silvestri",
-        "T. Fagni",
-        "S. Orlando",
-        "P. Palmerini",
-        "R. Perego"
-      ],
-      "year": 2003,
-      "venue": "WWW (Posters)",
-      "venue_short": "WWW",
-      "url": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
-      "url_publisher": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 4
-    },
-    {
       "key": "conf/fimi/OrlandoLPPS03",
       "title": "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets",
       "authors": [
@@ -6444,6 +6357,29 @@
         "data_mining"
       ],
       "citations": 91
+    },
+    {
+      "key": "conf/www/SilvestriFOPP03",
+      "title": "A Hybrid Strategy for Caching Web Search Engine Results",
+      "authors": [
+        "F. Silvestri",
+        "T. Fagni",
+        "S. Orlando",
+        "P. Palmerini",
+        "R. Perego"
+      ],
+      "year": 2003,
+      "venue": "WWW (Posters)",
+      "venue_short": "WWW",
+      "url": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
+      "url_publisher": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 4
     },
     {
       "key": "conf/icdm/OrlandoPPS02",

@@ -75,11 +75,16 @@ journal_issn:
   concurrency: ["1532-0626", "1532-0634"]   # Concurrency and Computation
   ercim:       []                            # ERCIM News — magazine, not in Scimago
 
-# Explicit DBLP keys to drop. Use this for one-off non-papers (invited
-# talks, panels, keynotes, abstracts) whose titles look like regular
-# research papers and therefore don't match any general pattern.
+# Explicit DBLP keys to drop. Use this for one-off non-papers
+# (keynotes, invited talks, panels, tutorials, abstracts) whose
+# booktitle is the plain conference acronym and whose title doesn't
+# match any general skip pattern — there's no automatable signal, so
+# list them here. The nightly sync honours this list on every run,
+# so one edit keeps the non-paper out of future builds.
 skip_keys:
-  - conf/www/MantrachS19  # "Enlisting the Public to Build a Healthier Web Information Commons" (WWW 2019 — not a paper)
+  - conf/www/MantrachS19             # Enlisting the Public... (WWW 2019 — not a paper)
+  - conf/icde/Baeza-YatesCJPS07      # "Challenges on Distributed Web Retrieval" — ICDE 2007 keynote (pages 6-20)
+  - conf/cikm/TeodoroGSS25           # "Advances in Medical Knowledge Systems..." — CIKM 2025 tutorial
 
 # Title patterns (case-insensitive regex) for DBLP records to DROP entirely.
 # Used to filter out workshop-organizing entries, editorials, and reports
@@ -91,6 +96,11 @@ skip_title_patterns:
   - '^report on .* workshop\b'  # "Report on the ... Workshop ..."
   - '\bworkshop$'               # "... Workshop"  (title ending in the workshop name)
   - '^editorial\b'              # "Editorial ..." / "Editorial: ..." / "Editorial — ..."
+  - '^guest editorial\b'        # "Guest Editorial ..."
+  - '^special issue\b'          # "Special issue on ..." (guest-editor intro, not research)
+  - '^preface\b'                # "Preface ..." (volume preface)
+  - '^foreword\b'               # "Foreword ..."
+  - '^message from\b'           # "Message from the ... Chair", "Message from the Organizers"
   - '^\S+\s*@\s*\w+\d+\b'       # "IR-RAG @ SIGIR24 ...", "RobustRecSys @ RecSys2024 ..."
   - '^[A-Z][A-Z0-9]+\s+\d{4}[:\s]' # "TSMO 2024: ...", "OSNED 2018 Chairs' Welcome ...", "ECIR 2012: ..."
   - "chairs'?\\s+welcome"       # "... Chairs' Welcome ..." (workshop preface)
