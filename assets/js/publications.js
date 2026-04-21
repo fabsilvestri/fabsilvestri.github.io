@@ -460,12 +460,47 @@
     btn.addEventListener("click", downloadIEEE);
   }
 
+  function renderAwards() {
+    var data = window.PUBLICATIONS;
+    var list = byId("awards-list");
+    var section = byId("awards");
+    var navItem = byId("nav-awards");
+    if (!list || !section) return;
+    var awards = (data && data.awards) || [];
+    if (awards.length === 0) {
+      section.hidden = true;
+      if (navItem) navItem.hidden = true;
+      return;
+    }
+    list.innerHTML = awards.map(function (a) {
+      var title = escapeHtml(a.title);
+      if (a.url) {
+        title = '<a href="' + escapeHtml(a.url) + '" target="_blank" rel="noopener">' + title + ' ↗</a>';
+      }
+      var meta = [];
+      if (a.issuer) meta.push(escapeHtml(a.issuer));
+      if (a.description) meta.push(escapeHtml(a.description));
+      return (
+        '<li class="award-item">' +
+          '<span class="award-year">' + a.year + '</span>' +
+          '<div class="award-body">' +
+            '<div class="award-title">' + title + '</div>' +
+            (meta.length ? '<div class="award-meta">' + meta.join(' · ') + '</div>' : '') +
+          '</div>' +
+        '</li>'
+      );
+    }).join("");
+    section.hidden = false;
+    if (navItem) navItem.hidden = false;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     updateStats();
     initTypeTabs();
     initTopicTabs();
     initChipClicks();
     initDownloadButton();
+    renderAwards();
     render();
   });
 })();

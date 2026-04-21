@@ -620,6 +620,50 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   opacity: 0.7;
 }
 
+/* ---- Awards ---- */
+.awards-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.award-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: start;
+  gap: 14px 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-md);
+  transition: background 0.15s, transform 0.15s;
+}
+.award-item:hover {
+  background: rgba(255, 255, 255, 0.82);
+  transform: translateX(2px);
+}
+.award-year {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-1);
+  letter-spacing: 0.04em;
+}
+.award-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.award-title a { color: inherit; }
+.award-title a:hover { color: var(--accent-1); }
+.award-meta {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
 /* ---- Teaching ---- */
 .course-list {
   list-style: none;

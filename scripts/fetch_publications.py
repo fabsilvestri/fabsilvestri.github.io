@@ -33,6 +33,7 @@ TOPICS_FILE = ROOT / "data" / "topics.yml"
 CORE_FILE = ROOT / "data" / "core_rankings.csv"
 SCIMAGO_FILE = ROOT / "data" / "scimago_journal_rank.csv"
 CITATIONS_FILE = ROOT / "data" / "citations.json"
+AWARDS_FILE = ROOT / "data" / "awards.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 OUT_SITEMAP = ROOT / "sitemap.xml"
@@ -447,6 +448,33 @@ TYPE_ORDER = [
 ]
 
 
+def load_awards(path: Path) -> list[dict]:
+    """Read the hand-curated awards list. Each entry must at minimum
+    have year + title; issuer/description/url are optional. Awards are
+    sorted most-recent-first for display."""
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8") as f:
+        raw = yaml.safe_load(f) or {}
+    awards = []
+    for entry in raw.get("awards") or []:
+        if not entry:
+            continue
+        title = (entry.get("title") or "").strip()
+        year = entry.get("year")
+        if not title or not year:
+            continue
+        awards.append({
+            "year": int(year),
+            "title": title,
+            "issuer": (entry.get("issuer") or "").strip(),
+            "description": (entry.get("description") or "").strip(),
+            "url": (entry.get("url") or "").strip(),
+        })
+    awards.sort(key=lambda a: -a["year"])
+    return awards
+
+
 def load_citations(path: Path) -> dict[str, int]:
     """Return {dblp_key → citation_count} from the Scholar scrape cache.
     Missing file → empty dict with a console note (citations are optional)."""
@@ -468,11 +496,12 @@ def main() -> int:
     core_ranks = load_core_rankings(CORE_FILE)
     scimago = load_scimago(SCIMAGO_FILE)
     citations = load_citations(CITATIONS_FILE)
+    awards = load_awards(AWARDS_FILE)
     print(
         f"Loaded venues: {len(venues.get('conference_core_acronym', {}))} CORE overrides, "
         f"{len(venues.get('journal_issn', {}))} journal ISSN mappings; "
         f"{len(core_ranks)} CORE entries, {len(scimago)} Scimago ISSNs; "
-        f"{len(topics)} topics; {len(citations)} citation counts",
+        f"{len(topics)} topics; {len(citations)} citation counts; {len(awards)} awards",
         file=sys.stderr,
     )
 
@@ -536,6 +565,7 @@ def main() -> int:
         "years": years,
         "topics_meta": topics_meta,
         "publications": pubs,
+        "awards": awards,
     }
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)

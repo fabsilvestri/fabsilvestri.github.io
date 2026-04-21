@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-04-21",
-  "generated_at": "2026-04-21T14:50:12+00:00",
+  "generated_at": "2026-04-21T15:02:50+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 283,
   "counts_by_type": {
@@ -6469,5 +6469,6 @@
       ],
       "citations": 50
     }
-  ]
+  ],
+  "awards": []
 }

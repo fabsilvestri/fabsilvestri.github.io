@@ -1,0 +1,22 @@
+# Awards and honors. Maintained by hand — the homepage renders this
+# file in order (most recent first). Candidate entries surfaced by
+# scripts/discover_awards.py appear under data/awards_candidates.md;
+# review each one before copying it here.
+#
+# Schema per entry:
+#   year:        4-digit integer.
+#   title:       the award name, verbatim.
+#   issuer:      who awarded it (conference, society, journal, university).
+#   description: optional one-line context (e.g. "for paper X").
+#   url:         optional link to the public announcement or award page.
+
+awards: []
+
+# Example (uncomment and fill in as appropriate):
+#
+# awards:
+#   - year: 2024
+#     title: Best Paper Award
+#     issuer: SIGIR
+#     description: For "The Power of Noise: Redefining Retrieval for RAG Systems"
+#     url: https://sigir-2024.github.io/awards
