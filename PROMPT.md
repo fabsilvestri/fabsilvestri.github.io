@@ -176,6 +176,31 @@ python3 scripts/refresh_citations.py        # Scholar → data/citations.json (s
 git add -A && git commit -m "Initial bootstrap" && git push
 ```
 
+## Automation that comes with the clone
+
+The cloned repo carries three GitHub Actions workflows — all per-person-agnostic,
+copy verbatim, no edits needed:
+
+- `.github/workflows/update-publications.yml` — runs `fetch_publications.py`
+  nightly at 04:00 UTC and commits any change to `data/publications.json` +
+  `assets/js/publications-data.js` + `sitemap.xml`.
+- `.github/workflows/discover-awards.yml` — runs `discover_awards_claude.py`
+  every Monday at 05:30 UTC and opens a PR with `data/awards_candidates.{json,md}`
+  for review.
+- `.github/workflows/pages.yml` — deploys the site to GitHub Pages on every
+  push to `main`.
+
+**One-time GitHub setup** (the LLM can't do this — instruct the user):
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. **Settings → Secrets and variables → Actions → New repository secret**
+   → `ANTHROPIC_API_KEY` = the user's Anthropic key (only needed for the
+   weekly award-discovery PR; without it that workflow will fail silently —
+   the site still works).
+3. **Settings → Actions → General → Workflow permissions → Read and write
+   permissions** (so the nightly job can commit and the discovery job can
+   open PRs).
+
 ## Classification rules (reference — unchanged across installations)
 
 Every DBLP record lands in one of six buckets:
