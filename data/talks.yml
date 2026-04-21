@@ -9,14 +9,10 @@
 #   location: optional city / country.
 #   url:      optional link to the event page, slides, or recording.
 
-talks: []
-
-# Example (uncomment and fill in):
-#
-# talks:
-#   - year: 2025
-#     title: "The Power of Noise: Rethinking Retrieval for RAG"
-#     venue: "SIGIR 2025 Industry Day"
-#     role: Keynote
-#     location: "Padua, Italy"
-#     url: https://sigir-2025.org/program/keynotes
+talks:
+  - year: 2021
+    title: "Neural Databases: Natural Language Generation meets Databases"
+    venue: International Conference on Web Engineering (ICWE 2021)
+    role: Keynote
+    location: Biarritz, France (virtual)
+    url: https://icwe2021.webengineering.org/fabrizio-silvestri/
