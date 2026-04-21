@@ -24,6 +24,7 @@ nightly by a GitHub Action.
 ├── scripts/
 │   ├── fetch_publications.py         # DBLP fetch + classify
 │   ├── refresh_scimago.py            # yearly Scimago CSV refresh
+│   ├── refresh_citations.py          # Scholar citation cache refresh
 │   └── requirements.txt
 └── .github/workflows/
     ├── update-publications.yml       # nightly cron (04:00 UTC)
@@ -83,6 +84,23 @@ CORE (every ~2 years, last edition CORE2023):
 curl -L 'https://portal.core.edu.au/conf-ranks/?search=&by=all&source=CORE2023&sort=atitle&page=1&do=Export' \
   -o data/core_rankings.csv
 ```
+
+Google Scholar citations (refresh whenever you want fresh numbers;
+nightly is fine, but Scholar will rate-limit from CI so run locally):
+
+```bash
+pip install requests beautifulsoup4   # first time
+python3 scripts/refresh_citations.py
+```
+
+Scrapes `scholar.google.com/citations?user=pi985dQAAAAJ`, fuzzy-matches
+each row to a DBLP title, and writes `data/citations.json`
+(`{dblp_key → cite_count}`). Unmatched Scholar rows (editorials, PhD
+thesis, workshop abstracts, etc.) are listed in the `unmatched` field
+of the same file. The homepage's "Selected" tab uses these counts to
+pick high-impact papers — definition: top-tier venue (CORE A/A* or
+Scimago-Q1 CS) **and** (≥ 20 Scholar citations **or** published in the
+last 2 years).
 
 Scimago (yearly). The official download at scimagojr.com is
 Cloudflare-protected, so we pull the same data from the

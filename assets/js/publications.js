@@ -30,7 +30,6 @@
   };
 
   var FILTER_TYPES = {
-    selected:      ["a_star_conf", "q1_journal"],
     a_star_conf:   ["a_star_conf"],
     q1_journal:    ["q1_journal"],
     other:         ["other_conf", "other_journal"],
@@ -38,8 +37,14 @@
     preprint:      ["preprint"]
   };
 
-  // Filter state. Default view is the curated A/A* + Q1 subset;
-  // `showOlder` toggles the "> RECENT_YEARS old" section.
+  // "Selected" is a hybrid high-impact filter: a paper qualifies iff it's
+  // in a top-tier venue (A/A* conf or Q1 journal) AND either has ≥ N
+  // Scholar citations OR is recent enough that citations haven't had
+  // time to accumulate (last SELECTED_RECENT_YEARS calendar years).
+  var SELECTED_CITE_THRESHOLD = 20;
+  var SELECTED_RECENT_YEARS = 2;
+
+  // Filter state. `showOlder` toggles the "> RECENT_YEARS old" section.
   var state = { type: "selected", topic: "all", showOlder: false };
   // Rolling window: always show the most-recent N years (not by calendar
   // year — by the most-recent year present in the data, so the window
@@ -58,9 +63,18 @@
   }
 
   function renderVenue(pub) {
-    var venue = pub.venue || "";
-    if (!venue) return String(pub.year || "");
-    return escapeHtml(venue) + (pub.year ? " · " + pub.year : "");
+    var parts = [];
+    if (pub.venue) parts.push(escapeHtml(pub.venue));
+    if (pub.year) parts.push(String(pub.year));
+    if (pub.citations && pub.citations > 0) {
+      var q = encodeURIComponent(pub.title || "");
+      parts.push(
+        '<a class="pub-cites" href="https://scholar.google.com/scholar?q=' + q +
+        '" target="_blank" rel="noopener" title="Citations from Google Scholar">Cited by ' +
+        pub.citations + '</a>'
+      );
+    }
+    return parts.join(" · ");
   }
 
   function renderChips(topics) {
@@ -115,19 +129,31 @@
       .map(function (y) { return { year: y, pubs: groups[y] }; });
   }
 
-  function matchesType(pub, typeFilter) {
+  function maxYear(data) {
+    return (data.years && data.years.length) ? data.years[0] : 0;
+  }
+
+  function isSelected(pub, max) {
+    // Hybrid high-impact: top-tier venue AND (≥ threshold cites OR recent).
+    if (pub.type !== "a_star_conf" && pub.type !== "q1_journal") return false;
+    if ((pub.citations || 0) >= SELECTED_CITE_THRESHOLD) return true;
+    if (pub.year && pub.year >= max - (SELECTED_RECENT_YEARS - 1)) return true;
+    return false;
+  }
+
+  function matchesType(pub, typeFilter, max) {
     // "all" excludes preprints — they're only visible via the
     // dedicated Preprints tab. Everything else is a peer-reviewed
     // venue (A*/Q1/Other conf/Other journal/Workshop).
     if (typeFilter === "all") return pub.type !== "preprint";
+    if (typeFilter === "selected") return isSelected(pub, max);
     var types = FILTER_TYPES[typeFilter] || [typeFilter];
     return types.indexOf(pub.type) !== -1;
   }
 
   function selectedPubs(data) {
-    return (data.publications || []).filter(function (p) {
-      return p.type === "a_star_conf" || p.type === "q1_journal";
-    });
+    var max = maxYear(data);
+    return (data.publications || []).filter(function (p) { return isSelected(p, max); });
   }
 
   // IEEE-style plain-text bibliography. Conference papers get
@@ -156,7 +182,9 @@
     });
     var header = [
       "Publications — Fabrizio Silvestri",
-      "Selected: A/A* conferences and Q1 journals",
+      "Selected: high-impact papers — CORE A/A* conferences or Scimago Q1 (CS)",
+      "journals with at least " + SELECTED_CITE_THRESHOLD + " Google Scholar citations,",
+      "or published in the last " + SELECTED_RECENT_YEARS + " years.",
       "Source: https://dblp.org/pid/s/FabrizioSilvestri.html",
       "Generated: " + (data.last_updated || new Date().toISOString().slice(0, 10)),
       "Count: " + pubs.length,
@@ -213,11 +241,11 @@
     // Rolling 5-year window anchored on the most-recent year across the
     // full corpus (so the window doesn't shrink when a topic filter
     // happens to exclude the newest papers).
-    var maxYear = (data.years && data.years.length) ? data.years[0] : 0;
-    var cutoff = maxYear - (RECENT_YEARS - 1);
+    var max = maxYear(data);
+    var cutoff = max - (RECENT_YEARS - 1);
 
     var filtered = data.publications.filter(function (p) {
-      return matchesType(p, state.type) && matchesTopic(p, state.topic);
+      return matchesType(p, state.type, max) && matchesTopic(p, state.topic);
     });
 
     var recent = filtered.filter(function (p) { return p.year >= cutoff; });

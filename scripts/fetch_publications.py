@@ -32,6 +32,7 @@ VENUES_FILE = ROOT / "data" / "venues.yml"
 TOPICS_FILE = ROOT / "data" / "topics.yml"
 CORE_FILE = ROOT / "data" / "core_rankings.csv"
 SCIMAGO_FILE = ROOT / "data" / "scimago_journal_rank.csv"
+CITATIONS_FILE = ROOT / "data" / "citations.json"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 OUT_SITEMAP = ROOT / "sitemap.xml"
@@ -125,33 +126,35 @@ def normalize_issn(issn: str) -> str:
     return re.sub(r"[^0-9Xx]", "", issn or "").upper()
 
 
-def load_core_rankings(path: Path) -> dict[str, str]:
-    """Return {acronym_upper → rank}. On collision, keep the best rank
-    per CORE_RANK_ORDER; anything outside that order is kept only if
-    nothing better has been seen."""
+def load_core_rankings(path: Path) -> dict[str, dict]:
+    """Return {acronym_upper → {"rank": str, "title": str}}. On
+    collision, keep the entry with the best rank per CORE_RANK_ORDER;
+    the title travels with the winning rank so downstream code can
+    surface the full conference name."""
     if not path.exists():
         print(
             f"[warn] CORE rankings missing: {path.name} — all conferences will be other_conf.",
             file=sys.stderr,
         )
         return {}
-    out: dict[str, str] = {}
+    out: dict[str, dict] = {}
     with path.open(newline="", encoding="utf-8") as f:
         for row in csv.reader(f):
             if len(row) < 5:
                 continue
+            title = row[1].strip()
             acro = row[2].strip().upper()
             rank = row[4].strip()
             if not acro:
                 continue
             prev = out.get(acro)
-            if prev is None or CORE_RANK_ORDER.get(rank, 99) < CORE_RANK_ORDER.get(prev, 99):
-                out[acro] = rank
+            if prev is None or CORE_RANK_ORDER.get(rank, 99) < CORE_RANK_ORDER.get(prev.get("rank", ""), 99):
+                out[acro] = {"rank": rank, "title": title}
     return out
 
 
-def load_scimago(path: Path) -> dict[str, list[tuple[str, int]]]:
-    """Return {normalized_issn → [(category_name, quartile_int), ...]}.
+def load_scimago(path: Path) -> dict[str, dict]:
+    """Return {normalized_issn → {"categories": [(name, q), ...], "title": str}}.
     Scimago CSVs are semicolon-separated with a single header row; the
     ISSN column lists one or more ISSNs comma-separated, typically
     without hyphens. Each category appears as 'Name (Qn)' joined by
@@ -163,13 +166,14 @@ def load_scimago(path: Path) -> dict[str, list[tuple[str, int]]]:
             file=sys.stderr,
         )
         return {}
-    out: dict[str, list[tuple[str, int]]] = {}
+    out: dict[str, dict] = {}
     with path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter=";")
         # Tolerate minor header casing drift between Scimago editions.
         fields = {name.strip().lower(): name for name in (reader.fieldnames or [])}
         issn_col = fields.get("issn")
         cat_col = fields.get("categories")
+        title_col = fields.get("title")
         if not issn_col or not cat_col:
             print(
                 f"[warn] Scimago CSV missing Issn/Categories columns — headers were: "
@@ -186,10 +190,12 @@ def load_scimago(path: Path) -> dict[str, list[tuple[str, int]]]:
                     cats.append((m.group("name").strip(), int(m.group("q"))))
             if not cats:
                 continue
+            title = (row.get(title_col, "") if title_col else "") or ""
+            entry = {"categories": cats, "title": title.strip()}
             for issn in (row.get(issn_col, "") or "").split(","):
                 key = normalize_issn(issn)
                 if key:
-                    out[key] = cats
+                    out[key] = entry
     return out
 
 
@@ -280,8 +286,8 @@ def is_workshop(booktitle: str) -> bool:
 def classify(
     record: ET.Element,
     venues: dict,
-    core_ranks: dict[str, str],
-    scimago: dict[str, list[tuple[str, int]]],
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
 ) -> str:
     tag = record.tag
     key = record.get("key", "")
@@ -295,20 +301,44 @@ def classify(
 
     if tag == "inproceedings":
         acro = venues.get("conference_core_acronym", {}).get(abbrev) or abbrev.upper()
-        if core_ranks.get(acro) in ("A*", "A"):
+        entry = core_ranks.get(acro)
+        if entry and entry.get("rank") in ("A*", "A"):
             return TYPE_A_STAR
         return TYPE_OTHER_CONF
 
     if tag == "article":
         for issn in venues.get("journal_issn", {}).get(abbrev, []):
-            cats = scimago.get(issn)
-            if not cats:
+            entry = scimago.get(issn)
+            if not entry:
                 continue
-            for name, q in cats:
+            for name, q in entry.get("categories", []):
                 if q == 1 and name in CS_CATEGORIES:
                     return TYPE_Q1
         return TYPE_OTHER_JOURNAL
     return TYPE_OTHER_CONF
+
+
+def resolve_venue_full(
+    pub: dict,
+    venues: dict,
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
+) -> str:
+    """Return the best full name we have for a venue — the CORE title
+    for conferences, the Scimago title for journals — falling back to
+    DBLP's booktitle/journal field when the external source is silent."""
+    abbrev = venue_abbrev(pub.get("key", ""))
+    if pub.get("type") in (TYPE_A_STAR, TYPE_OTHER_CONF, TYPE_WORKSHOP):
+        acro = venues.get("conference_core_acronym", {}).get(abbrev) or abbrev.upper()
+        entry = core_ranks.get(acro)
+        if entry and entry.get("title"):
+            return entry["title"]
+    elif pub.get("type") in (TYPE_Q1, TYPE_OTHER_JOURNAL):
+        for issn in venues.get("journal_issn", {}).get(abbrev, []):
+            entry = scimago.get(issn)
+            if entry and entry.get("title"):
+                return entry["title"]
+    return pub.get("venue", "")
 
 
 def format_author(name: str) -> str:
@@ -363,16 +393,32 @@ TYPE_ORDER = [
 ]
 
 
+def load_citations(path: Path) -> dict[str, int]:
+    """Return {dblp_key → citation_count} from the Scholar scrape cache.
+    Missing file → empty dict with a console note (citations are optional)."""
+    if not path.exists():
+        print(
+            f"[warn] Citations cache missing: {path.name} — "
+            f"publication items will render without cite counts. "
+            f"Run scripts/refresh_citations.py to populate.",
+            file=sys.stderr,
+        )
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {k: int(v) for k, v in (payload.get("citations") or {}).items()}
+
+
 def main() -> int:
     venues = load_venues(VENUES_FILE)
     topics, topic_overrides = load_topics(TOPICS_FILE)
     core_ranks = load_core_rankings(CORE_FILE)
     scimago = load_scimago(SCIMAGO_FILE)
+    citations = load_citations(CITATIONS_FILE)
     print(
         f"Loaded venues: {len(venues.get('conference_core_acronym', {}))} CORE overrides, "
         f"{len(venues.get('journal_issn', {}))} journal ISSN mappings; "
         f"{len(core_ranks)} CORE entries, {len(scimago)} Scimago ISSNs; "
-        f"{len(topics)} topics",
+        f"{len(topics)} topics; {len(citations)} citation counts",
         file=sys.stderr,
     )
 
@@ -403,6 +449,7 @@ def main() -> int:
             continue
         parsed["type"] = classify(record, venues, core_ranks, scimago)
         parsed["topics"] = classify_topics(parsed, topics, topic_overrides)
+        parsed["citations"] = citations.get(parsed["key"], 0)
         pubs.append(parsed)
 
     pubs.sort(

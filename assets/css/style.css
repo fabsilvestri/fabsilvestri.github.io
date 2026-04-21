@@ -549,6 +549,11 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   font-family: var(--font-mono);
   color: var(--ink-muted);
 }
+.pub-cites {
+  color: var(--accent-1);
+  font-weight: 600;
+}
+.pub-cites:hover { text-decoration: underline; }
 .pub-chips {
   display: flex;
   flex-wrap: wrap;

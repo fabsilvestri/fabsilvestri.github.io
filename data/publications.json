@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-04-21",
-  "generated_at": "2026-04-21T14:11:27+00:00",
+  "generated_at": "2026-04-21T14:32:22+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 285,
   "counts_by_type": {
@@ -126,7 +126,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/eacl/DErasmoCMBTS26",
@@ -146,7 +147,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/tors/ChenHSZAT26",
@@ -168,7 +170,8 @@
         "recsys",
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/tors/PurificatoCSLS26",
@@ -188,7 +191,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "journals/corr/abs-2602-17518",
@@ -208,7 +212,8 @@
       "topics": [
         "ir",
         "agents"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2602-15650",
@@ -229,7 +234,8 @@
       "topics": [
         "llm",
         "trust"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2602-06652",
@@ -253,7 +259,8 @@
       "topics": [
         "llm",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2603-21840",
@@ -272,7 +279,8 @@
       "type": "preprint",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2601-05649",
@@ -292,7 +300,8 @@
       "type": "preprint",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/cikm/TeodoroGSS25",
@@ -311,7 +320,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/acl/RuscioNS25",
@@ -328,7 +338,8 @@
       "type": "a_star_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "conf/emnlp/CuconasuFHMS25",
@@ -348,7 +359,8 @@
       "topics": [
         "llm",
         "trust"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/ecir/CampagnanoMPS25",
@@ -367,7 +379,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "conf/aistats/GiorgiCST25",
@@ -387,7 +400,8 @@
         "llm",
         "nlp",
         "trust"
-      ]
+      ],
+      "citations": 12
     },
     {
       "key": "conf/wacv/AlfaranoAFBAS25",
@@ -407,7 +421,8 @@
       "type": "a_star_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/cvpr/GargiuloCBSSR25",
@@ -427,7 +442,8 @@
       "type": "a_star_conf",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 98
     },
     {
       "key": "conf/recsys/SbandiSS25",
@@ -444,7 +460,8 @@
       "type": "a_star_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/sigir/CampagnanoMS25",
@@ -461,7 +478,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "conf/icwsm/LentiSM25",
@@ -478,7 +496,8 @@
       "type": "a_star_conf",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "journals/cmig/TeodoroSGVGSZSP25",
@@ -503,7 +522,8 @@
         "gnn",
         "trust",
         "efficient"
-      ]
+      ],
+      "citations": 22
     },
     {
       "key": "journals/access/BetelloPSTBTS25",
@@ -524,7 +544,8 @@
       "type": "q1_journal",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 30
     },
     {
       "key": "journals/tai/MovinSFST25",
@@ -543,7 +564,8 @@
       "type": "q1_journal",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "journals/access/TrappoliniPSDSDS25",
@@ -564,7 +586,8 @@
       "type": "q1_journal",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/osnm/EnneiferBSAS25",
@@ -584,7 +607,8 @@
       "topics": [
         "trust",
         "misinfo"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/ijcnn/TeodoroSTS25",
@@ -602,7 +626,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "conf/ijcnn/SicilianoPBTS25",
@@ -621,7 +646,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/iir/SicilianoPBTS25",
@@ -640,7 +666,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/iir/TeodoroSTS25",
@@ -658,7 +685,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/ictir/DErasmoTST25",
@@ -676,7 +704,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "conf/iir/DErasmoTTS25",
@@ -694,7 +723,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/ijcnn/FrancescoCBS25",
@@ -712,7 +742,8 @@
       "type": "other_conf",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/ictir/Betello0D0S25",
@@ -732,7 +763,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/ijcnn/CasoTBLS25",
@@ -751,7 +783,8 @@
       "type": "other_conf",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/iciap/ZhouSCBSR25",
@@ -771,7 +804,8 @@
       "type": "workshop",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "journals/corr/abs-2510-15731",
@@ -791,7 +825,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "journals/corr/abs-2510-22593",
@@ -812,7 +847,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2502-10111",
@@ -830,7 +866,8 @@
       "topics": [
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2502-00432",
@@ -848,7 +885,8 @@
       "type": "preprint",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2508-03606",
@@ -868,7 +906,8 @@
       "topics": [
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2510-04727",
@@ -888,7 +927,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2505-15561",
@@ -908,7 +948,8 @@
       "topics": [
         "llm",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2505-18088",
@@ -928,7 +969,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2510-03134",
@@ -947,7 +989,8 @@
       "type": "preprint",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2509-21211",
@@ -965,7 +1008,8 @@
       "type": "preprint",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2510-20351",
@@ -983,7 +1027,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2502-09193",
@@ -1001,7 +1046,8 @@
       "type": "preprint",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2505-23225",
@@ -1019,7 +1065,8 @@
       "type": "preprint",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2504-05342",
@@ -1041,7 +1088,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2508-16082",
@@ -1062,7 +1110,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/corr/abs-2505-01468",
@@ -1081,7 +1130,8 @@
       "type": "preprint",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/corr/abs-2511-22435",
@@ -1099,7 +1149,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2512-00242",
@@ -1116,7 +1167,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2510-21440",
@@ -1136,7 +1188,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2511-18660",
@@ -1154,7 +1207,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2502-12581",
@@ -1174,7 +1228,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/corr/abs-2510-09551",
@@ -1191,7 +1246,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2501-14524",
@@ -1209,7 +1265,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2508-02546",
@@ -1226,7 +1283,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "conf/kdd/BerniniST24",
@@ -1245,7 +1303,8 @@
         "ir",
         "trust",
         "social_net"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "conf/ecir/BetelloSMS24",
@@ -1265,7 +1324,8 @@
         "ir",
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 24
     },
     {
       "key": "conf/cikm/SbandiSS24",
@@ -1284,7 +1344,8 @@
         "ir",
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "conf/www/NadaiFGWLSKLRGN24",
@@ -1313,7 +1374,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 30
     },
     {
       "key": "conf/sigir/CuconasuTSFCMTS24",
@@ -1336,7 +1398,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 457
     },
     {
       "key": "journals/nn/BucarelliDBSS24",
@@ -1355,7 +1418,8 @@
       "type": "q1_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/tai/ChenSTWZA24",
@@ -1376,7 +1440,8 @@
       "topics": [
         "agents",
         "trust"
-      ]
+      ],
+      "citations": 53
     },
     {
       "key": "journals/tai/TrappoliniMSRST24",
@@ -1396,7 +1461,8 @@
       "type": "q1_journal",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 15
     },
     {
       "key": "conf/coling/BacciuCTS24",
@@ -1414,7 +1480,8 @@
       "type": "other_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 23
     },
     {
       "key": "conf/iir/BetelloSMS24",
@@ -1434,7 +1501,8 @@
         "ir",
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/xai/AbrateSBS24",
@@ -1452,7 +1520,8 @@
       "type": "other_conf",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/ijcnn/WaniBS24",
@@ -1469,7 +1538,8 @@
       "type": "other_conf",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/iir/CuconasuTSFCMTS24",
@@ -1492,7 +1562,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/irongraphs/AlbaneseTSS24",
@@ -1512,7 +1583,8 @@
         "recsys",
         "trust",
         "social_net"
-      ]
+      ],
+      "citations": 1
     },
     {
       "key": "conf/recsogood/PurificatoS24",
@@ -1529,7 +1601,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 13
     },
     {
       "key": "conf/robustrecsys/FrancomanoSS24",
@@ -1548,7 +1621,8 @@
         "ir",
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/semeval/DimitrovAHHSNM24",
@@ -1570,7 +1644,8 @@
       "topics": [
         "nlp",
         "misinfo"
-      ]
+      ],
+      "citations": 67
     },
     {
       "key": "journals/corr/abs-2408-03873",
@@ -1591,7 +1666,8 @@
       "type": "preprint",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 30
     },
     {
       "key": "journals/corr/abs-2406-14972",
@@ -1610,7 +1686,8 @@
       "topics": [
         "llm",
         "trust"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2411-07770",
@@ -1628,7 +1705,8 @@
       "type": "preprint",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "journals/corr/abs-2401-03824",
@@ -1647,7 +1725,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2411-03055",
@@ -1667,7 +1746,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "journals/corr/abs-2410-18067",
@@ -1683,7 +1763,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2404-15760",
@@ -1708,7 +1789,8 @@
       "topics": [
         "trust",
         "task_vectors"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2412-14967",
@@ -1726,7 +1808,8 @@
       "type": "preprint",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 8
     },
     {
       "key": "journals/corr/abs-2410-09514",
@@ -1743,7 +1826,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 13
     },
     {
       "key": "journals/corr/abs-2405-19749",
@@ -1764,7 +1848,8 @@
         "ir",
         "recsys",
         "llm"
-      ]
+      ],
+      "citations": 15
     },
     {
       "key": "journals/corr/abs-2406-11720",
@@ -1783,7 +1868,8 @@
       "topics": [
         "ir",
         "gnn"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/corr/abs-2402-14802",
@@ -1801,7 +1887,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "journals/corr/abs-2410-09295",
@@ -1821,7 +1908,8 @@
         "llm",
         "nlp",
         "trust"
-      ]
+      ],
+      "citations": 12
     },
     {
       "key": "journals/corr/abs-2403-05185",
@@ -1850,7 +1938,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 30
     },
     {
       "key": "journals/corr/abs-2406-12535",
@@ -1867,7 +1956,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2412-08419",
@@ -1887,7 +1977,8 @@
       "topics": [
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2412-09983",
@@ -1906,7 +1997,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2411-10198",
@@ -1926,7 +2018,8 @@
       "type": "preprint",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2412-00081",
@@ -1946,7 +2039,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 98
     },
     {
       "key": "journals/corr/abs-2401-14887",
@@ -1969,7 +2063,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 457
     },
     {
       "key": "journals/corr/abs-2403-05358",
@@ -1986,7 +2081,8 @@
       "type": "preprint",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2403-14339",
@@ -2005,7 +2101,8 @@
       "type": "preprint",
       "topics": [
         "task_vectors"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/cikm/PalumboDWLFFFSB23",
@@ -2033,7 +2130,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "conf/recsys/BacciuSTS23",
@@ -2052,7 +2150,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 19
     },
     {
       "key": "conf/cvpr/BucarelliCSMS23",
@@ -2071,7 +2170,8 @@
       "type": "a_star_conf",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 30
     },
     {
       "key": "conf/sigir/TrappoliniSRHS23",
@@ -2090,7 +2190,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 20
     },
     {
       "key": "conf/nips/DutaCSL23",
@@ -2108,7 +2209,8 @@
       "type": "a_star_conf",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 79
     },
     {
       "key": "conf/sigir/ChenSWZT23",
@@ -2129,7 +2231,8 @@
         "ir",
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 42
     },
     {
       "key": "journals/osnm/BarnaboS00NMS23",
@@ -2150,7 +2253,8 @@
       "type": "q1_journal",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 33
     },
     {
       "key": "conf/xai/MagisterBKSCSJL23",
@@ -2173,7 +2277,8 @@
       "topics": [
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 13
     },
     {
       "key": "conf/iir/BacciuTSRS23",
@@ -2192,7 +2297,8 @@
       "type": "other_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 37
     },
     {
       "key": "conf/cogmi/TolomeiCST23",
@@ -2210,7 +2316,8 @@
       "type": "other_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 17
     },
     {
       "key": "journals/dai/BarnaboTLCFPS23",
@@ -2231,7 +2338,8 @@
       "type": "other_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 12
     },
     {
       "key": "conf/pkdd/SicilianoMPBAS23",
@@ -2252,7 +2360,8 @@
       "topics": [
         "trust",
         "misinfo"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/iclr/RuscioMS23",
@@ -2269,7 +2378,8 @@
       "type": "workshop",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/aiia/BacciuCSSTT23",
@@ -2290,7 +2400,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 20
     },
     {
       "key": "journals/corr/abs-2312-17506",
@@ -2315,7 +2426,8 @@
         "gnn",
         "trust",
         "efficient"
-      ]
+      ],
+      "citations": 22
     },
     {
       "key": "journals/corr/abs-2312-15228",
@@ -2336,7 +2448,8 @@
       "topics": [
         "trust",
         "misinfo"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2303-08288",
@@ -2353,7 +2466,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2303-09470",
@@ -2370,7 +2484,8 @@
       "type": "preprint",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2310-08909",
@@ -2389,7 +2504,8 @@
         "ir",
         "trust",
         "social_net"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2306-14457",
@@ -2408,7 +2524,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 37
     },
     {
       "key": "journals/corr/abs-2312-02401",
@@ -2427,7 +2544,8 @@
       "type": "preprint",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 17
     },
     {
       "key": "journals/corr/abs-2305-10824",
@@ -2446,7 +2564,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 19
     },
     {
       "key": "journals/corr/abs-2307-13165",
@@ -2465,7 +2584,8 @@
       "topics": [
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2305-01447",
@@ -2484,7 +2604,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 20
     },
     {
       "key": "journals/corr/abs-2310-04875",
@@ -2502,7 +2623,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 17
     },
     {
       "key": "journals/corr/abs-2306-00707",
@@ -2521,7 +2643,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2307-12798",
@@ -2542,7 +2665,8 @@
       "topics": [
         "ir",
         "llm"
-      ]
+      ],
+      "citations": 20
     },
     {
       "key": "journals/corr/abs-2309-17116",
@@ -2560,7 +2684,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 79
     },
     {
       "key": "journals/corr/abs-2304-09097",
@@ -2579,7 +2704,8 @@
       "topics": [
         "recsys",
         "gnn"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2305-00574",
@@ -2599,7 +2725,8 @@
       "topics": [
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 42
     },
     {
       "key": "conf/aistats/LucicHTRS22",
@@ -2619,7 +2746,8 @@
       "topics": [
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 317
     },
     {
       "key": "conf/ijcai/SharmaAADMFHSN022",
@@ -2643,7 +2771,8 @@
       "type": "a_star_conf",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 118
     },
     {
       "key": "conf/sigir/SauchukTHTS22",
@@ -2663,7 +2792,8 @@
       "topics": [
         "ir",
         "nlp"
-      ]
+      ],
+      "citations": 25
     },
     {
       "key": "conf/cikm/ChenSW0AT22",
@@ -2685,7 +2815,8 @@
         "ir",
         "agents",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/cacm/HalevyCMOPSSS22",
@@ -2708,7 +2839,8 @@
       "topics": [
         "misinfo",
         "social_net"
-      ]
+      ],
+      "citations": 92
     },
     {
       "key": "conf/coling/AlamC0SDMSFN22",
@@ -2731,7 +2863,8 @@
       "type": "other_conf",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 225
     },
     {
       "key": "conf/ijcnn/BarnaboSCLNMS22",
@@ -2752,7 +2885,8 @@
       "type": "other_conf",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 22
     },
     {
       "key": "conf/ijcnn/SicilianoBTS22",
@@ -2770,7 +2904,8 @@
       "type": "other_conf",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 13
     },
     {
       "key": "journals/corr/abs-2205-04274",
@@ -2794,7 +2929,8 @@
       "type": "preprint",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 118
     },
     {
       "key": "journals/corr/abs-2207-13586",
@@ -2816,7 +2952,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 24
     },
     {
       "key": "journals/corr/abs-2208-04222",
@@ -2839,7 +2976,8 @@
         "recsys",
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 52
     },
     {
       "key": "journals/corr/abs-2209-09688",
@@ -2859,7 +2997,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 15
     },
     {
       "key": "conf/acl/ThorneYSS0H20",
@@ -2879,7 +3018,8 @@
       "type": "a_star_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 43
     },
     {
       "key": "conf/acl/DimitrovASASFNM20",
@@ -2901,7 +3041,8 @@
       "type": "a_star_conf",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 135
     },
     {
       "key": "journals/pvldb/ThorneYSS0L21",
@@ -2921,7 +3062,8 @@
       "type": "q1_journal",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 82
     },
     {
       "key": "journals/tkde/TolomeiS21",
@@ -2937,7 +3079,8 @@
       "type": "q1_journal",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 26
     },
     {
       "key": "journals/isci/TonellottoGNGS21",
@@ -2956,7 +3099,8 @@
       "type": "q1_journal",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 89
     },
     {
       "key": "conf/ijcnn/ErricaSEDPPR21",
@@ -2977,7 +3121,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "conf/semeval/DimitrovASASFNM21",
@@ -3000,7 +3145,8 @@
       "topics": [
         "nlp",
         "misinfo"
-      ]
+      ],
+      "citations": 173
     },
     {
       "key": "journals/corr/abs-2103-12541",
@@ -3023,7 +3169,8 @@
       "type": "preprint",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 225
     },
     {
       "key": "journals/corr/abs-2102-03322",
@@ -3043,7 +3190,8 @@
       "topics": [
         "gnn",
         "trust"
-      ]
+      ],
+      "citations": 317
     },
     {
       "key": "journals/corr/abs-2104-00353",
@@ -3064,7 +3212,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 12
     },
     {
       "key": "journals/corr/abs-2106-01074",
@@ -3084,7 +3233,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 43
     },
     {
       "key": "journals/corr/abs-2109-08013",
@@ -3106,7 +3256,8 @@
       "type": "preprint",
       "topics": [
         "misinfo"
-      ]
+      ],
+      "citations": 135
     },
     {
       "key": "journals/corr/abs-2110-02775",
@@ -3124,7 +3275,8 @@
       "type": "preprint",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 13
     },
     {
       "key": "journals/corr/abs-2110-11960",
@@ -3145,7 +3297,8 @@
       "topics": [
         "agents",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2105-09284",
@@ -3168,7 +3321,8 @@
       "topics": [
         "nlp",
         "misinfo"
-      ]
+      ],
+      "citations": 173
     },
     {
       "key": "conf/emnlp/MassarelliPPORP20",
@@ -3190,7 +3344,8 @@
       "type": "a_star_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 74
     },
     {
       "key": "conf/bias/0002CGMS20",
@@ -3210,7 +3365,8 @@
       "topics": [
         "ir",
         "trust"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2006-00937",
@@ -3231,7 +3387,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/corr/abs-2010-06973",
@@ -3251,7 +3408,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 17
     },
     {
       "key": "journals/corr/abs-2001-07524",
@@ -3269,7 +3427,8 @@
       "type": "preprint",
       "topics": [
         "gnn"
-      ]
+      ],
+      "citations": 29
     },
     {
       "key": "journals/corr/abs-2009-10311",
@@ -3292,7 +3451,8 @@
       "topics": [
         "misinfo",
         "social_net"
-      ]
+      ],
+      "citations": 92
     },
     {
       "key": "conf/naacl/EdizelPBFGS19",
@@ -3312,7 +3472,8 @@
       "type": "a_star_conf",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 97
     },
     {
       "key": "journals/corr/abs-1911-03587",
@@ -3334,7 +3495,8 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 74
     },
     {
       "key": "journals/corr/abs-1905-09755",
@@ -3354,7 +3516,8 @@
       "type": "preprint",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 97
     },
     {
       "key": "journals/tist/LuccheseNOPST18",
@@ -3375,7 +3538,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/www/BronRLSEC17",
@@ -3395,7 +3559,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/kdd/TolomeiSHL17",
@@ -3413,7 +3578,8 @@
       "type": "a_star_conf",
       "topics": [
         "trust"
-      ]
+      ],
+      "citations": 352
     },
     {
       "key": "journals/isci/BaiCGMS17",
@@ -3432,7 +3598,8 @@
       "type": "q1_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 58
     },
     {
       "key": "journals/datamine/Anagnostopoulos17",
@@ -3451,7 +3618,8 @@
       "type": "q1_journal",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 77
     },
     {
       "key": "journals/snam/ColettoALS17",
@@ -3469,7 +3637,8 @@
       "type": "other_journal",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "conf/www/BarbieriSL16",
@@ -3486,7 +3655,8 @@
       "type": "a_star_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 84
     },
     {
       "key": "conf/sigir/AlawadALMS16",
@@ -3506,7 +3676,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 19
     },
     {
       "key": "conf/icwsm/ColettoALS16",
@@ -3525,7 +3696,8 @@
       "topics": [
         "misinfo",
         "social_net"
-      ]
+      ],
+      "citations": 21
     },
     {
       "key": "conf/sigir/LuccheseNOPST16",
@@ -3546,7 +3718,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 92
     },
     {
       "key": "conf/sigir/GrbovicDRSBFOYO16",
@@ -3570,7 +3743,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 86
     },
     {
       "key": "conf/cikm/AielloAB0BMS16",
@@ -3591,7 +3765,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 21
     },
     {
       "key": "conf/clef/SinghMS16",
@@ -3608,7 +3783,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/iir/LuccheseNOPST16",
@@ -3628,7 +3804,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/sigir/FerroCMMSKRCPLM16",
@@ -3658,7 +3835,8 @@
       "type": "other_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "journals/corr/SinghSS16",
@@ -3675,7 +3853,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/ColettoALS16",
@@ -3694,7 +3873,8 @@
       "topics": [
         "misinfo",
         "social_net"
-      ]
+      ],
+      "citations": 21
     },
     {
       "key": "journals/corr/ColettoALS16a",
@@ -3712,7 +3892,8 @@
       "type": "preprint",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "journals/corr/GrbovicDRSBFOYO16",
@@ -3736,7 +3917,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 86
     },
     {
       "key": "conf/sigir/GrbovicDRSB15",
@@ -3755,7 +3937,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 149
     },
     {
       "key": "conf/naacl/ColmenaresLMS15",
@@ -3773,7 +3956,8 @@
       "type": "a_star_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 65
     },
     {
       "key": "conf/www/Baeza-YatesDGRS15",
@@ -3792,7 +3976,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/wsdm/Baeza-YatesJSH15",
@@ -3810,7 +3995,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 221
     },
     {
       "key": "conf/kdd/LalmasLSST15",
@@ -3829,7 +4015,8 @@
       "type": "a_star_conf",
       "topics": [
         "llm"
-      ]
+      ],
+      "citations": 44
     },
     {
       "key": "journals/ipm/BlancoMS15",
@@ -3846,7 +4033,8 @@
       "type": "q1_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "journals/tist/MunteanNSB15",
@@ -3864,7 +4052,8 @@
       "type": "q1_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 46
     },
     {
       "key": "conf/ismis/SydowMNMS15",
@@ -3883,7 +4072,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/iir/BaragliaMNS14",
@@ -3901,7 +4091,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 48
     },
     {
       "key": "conf/cikm/BaragliaMNS13",
@@ -3919,7 +4110,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 48
     },
     {
       "key": "conf/www/MunteanNSS13",
@@ -3937,7 +4129,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/cikm/BroccoloMOOPST13",
@@ -3959,7 +4152,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 22
     },
     {
       "key": "conf/www/BlancoMS13",
@@ -3976,7 +4170,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 6
     },
     {
       "key": "journals/tois/LuccheseOPST13",
@@ -3995,7 +4190,8 @@
       "type": "q1_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 76
     },
     {
       "key": "journals/isci/BerardiE0S13",
@@ -4013,7 +4209,8 @@
       "type": "q1_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/riao/LuccheseOPST13",
@@ -4032,7 +4229,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "conf/spire/BroccoloMOOPST13",
@@ -4053,7 +4251,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/sigir/BonchiPSVV12",
@@ -4074,7 +4273,8 @@
         "ir",
         "recsys",
         "efficient"
-      ]
+      ],
+      "citations": 59
     },
     {
       "key": "conf/ecir/LucchesePSVV12",
@@ -4093,7 +4293,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 56
     },
     {
       "key": "conf/cikm/BonchiFNSV12",
@@ -4112,7 +4313,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "conf/cikm/PennacchiottiSVV12",
@@ -4130,7 +4332,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 69
     },
     {
       "key": "conf/sigir/JonassenCS12",
@@ -4148,7 +4351,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 45
     },
     {
       "key": "conf/cikm/BlancoCLPS12",
@@ -4169,7 +4373,8 @@
         "ir",
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 29
     },
     {
       "key": "journals/ipm/BroccoloMNPS12",
@@ -4188,7 +4393,8 @@
       "type": "q1_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 46
     },
     {
       "key": "journals/ipm/CapanniniSB12",
@@ -4205,7 +4411,8 @@
       "type": "q1_journal",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 32
     },
     {
       "key": "conf/amt/BaragliaFMNS12",
@@ -4224,7 +4431,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 18
     },
     {
       "key": "conf/nldb/BerardiESS12",
@@ -4242,7 +4450,8 @@
       "type": "other_conf",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/iat/BaragliaFMNS12",
@@ -4261,7 +4470,8 @@
       "type": "workshop",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/ecai/CorazzaMMMPSS12",
@@ -4282,7 +4492,8 @@
       "type": "workshop",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/ercim/JackSSTV12",
@@ -4301,7 +4512,8 @@
       "type": "preprint",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/edbt/CeccarelliLOPS11",
@@ -4322,7 +4534,8 @@
         "ir",
         "trust",
         "efficient"
-      ]
+      ],
+      "citations": 31
     },
     {
       "key": "conf/www/CapanniniNPS11",
@@ -4341,7 +4554,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/wsdm/LuccheseOPST11",
@@ -4360,7 +4574,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 186
     },
     {
       "key": "conf/www/BonchiPSVV11",
@@ -4380,7 +4595,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 29
     },
     {
       "key": "conf/ecir/PeregoST11",
@@ -4397,7 +4613,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "journals/pvldb/CapanniniNPS11",
@@ -4416,7 +4633,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 117
     },
     {
       "key": "conf/iir/BerardiESS11",
@@ -4434,7 +4652,8 @@
       "type": "other_conf",
       "topics": [
         "nlp"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-1105-4255",
@@ -4453,7 +4672,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 117
     },
     {
       "key": "conf/cikm/SilvestriV10",
@@ -4471,7 +4691,8 @@
         "ir",
         "llm",
         "efficient"
-      ]
+      ],
+      "citations": 102
     },
     {
       "key": "journals/ftir/Silvestri10",
@@ -4486,7 +4707,8 @@
       "type": "q1_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 257
     },
     {
       "key": "journals/tois/PuppinSPB10",
@@ -4505,7 +4727,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 46
     },
     {
       "key": "conf/apweb/LamDPS10",
@@ -4523,7 +4746,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "conf/spire/BroccoloFNPS10",
@@ -4544,7 +4768,8 @@
         "ir",
         "recsys",
         "efficient"
-      ]
+      ],
+      "citations": 16
     },
     {
       "key": "conf/hpcc/CapanniniSB10",
@@ -4561,7 +4786,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/spire/NardiniSVVF10",
@@ -4580,7 +4806,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/webi/LamPS10",
@@ -4598,7 +4825,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "conf/iir/BroccoloNPS10",
@@ -4617,7 +4845,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/riao/BaragliaNCPDS10",
@@ -4638,7 +4867,8 @@
       "topics": [
         "ir",
         "gnn"
-      ]
+      ],
+      "citations": 24
     },
     {
       "key": "journals/ijdst/VarvarigouTKSP10",
@@ -4657,7 +4887,8 @@
       "type": "other_journal",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "conf/iat/LuccheseOPST10",
@@ -4676,7 +4907,8 @@
       "type": "workshop",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/icde/TolomeiOS10",
@@ -4694,7 +4926,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "conf/cikm/BaragliaCDNPS09",
@@ -4714,7 +4947,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 31
     },
     {
       "key": "conf/ecir/OrlandoS09",
@@ -4730,7 +4964,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 9
     },
     {
       "key": "conf/recsys/BaragliaCCFFPS09",
@@ -4752,7 +4987,8 @@
       "topics": [
         "ir",
         "recsys"
-      ]
+      ],
+      "citations": 36
     },
     {
       "key": "conf/www/BaragliaCCFPS09",
@@ -4772,7 +5008,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 5
     },
     {
       "key": "journals/fgcs/LeeXLS09",
@@ -4790,7 +5027,8 @@
       "type": "q1_journal",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/icumt/MordacchiniDTBSO09",
@@ -4810,7 +5048,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 23
     },
     {
       "key": "conf/wise/LamPQS09",
@@ -4828,7 +5067,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "conf/fia/NittoKMPPPSH09",
@@ -4850,7 +5090,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/wsdm/BaragliaCCFPS09",
@@ -4870,7 +5111,8 @@
       "type": "workshop",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/sigir/CapanniniSBN09",
@@ -4889,7 +5131,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 29
     },
     {
       "key": "conf/hpdc/LaforenzaNS08",
@@ -4907,7 +5150,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 7
     },
     {
       "key": "conf/la-web/SilvestriBLOP08",
@@ -4926,7 +5170,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 3
     },
     {
       "key": "journals/tweb/Baeza-YatesGJMPS08",
@@ -4947,7 +5192,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 136
     },
     {
       "key": "journals/ercim/LaforenzaNST08",
@@ -4965,7 +5211,8 @@
       "type": "preprint",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/icde/Baeza-YatesCJPS07",
@@ -4985,7 +5232,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 149
     },
     {
       "key": "conf/sigir/CastilloDGMS07",
@@ -5004,7 +5252,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 492
     },
     {
       "key": "conf/ecir/Silvestri07",
@@ -5020,7 +5269,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 135
     },
     {
       "key": "conf/sigir/Baeza-YatesGJMPS07",
@@ -5041,7 +5291,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 299
     },
     {
       "key": "journals/cacm/BaragliaS07",
@@ -5057,7 +5308,8 @@
       "type": "q1_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 161
     },
     {
       "key": "journals/ipm/Silvestri07",
@@ -5073,7 +5325,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/coregrid/TserpesKMVSL07",
@@ -5093,7 +5346,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/cbms/LaforenzaLSSSF07",
@@ -5113,7 +5367,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 16
     },
     {
       "key": "conf/infoscale/PuppinSPB07",
@@ -5131,7 +5386,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 18
     },
     {
       "key": "conf/infoscale/LuccheseOPS07",
@@ -5150,7 +5406,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 62
     },
     {
       "key": "conf/cikm/PuppinS06",
@@ -5166,7 +5423,8 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 18
     },
     {
       "key": "journals/tois/FagniPSO06",
@@ -5185,7 +5443,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 287
     },
     {
       "key": "conf/sac/BaragliaLOSS06",
@@ -5205,7 +5464,8 @@
       "topics": [
         "recsys",
         "trust"
-      ]
+      ],
+      "citations": 26
     },
     {
       "key": "conf/infoscale/PuppinSL06",
@@ -5222,7 +5482,8 @@
       "type": "other_conf",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 76
     },
     {
       "key": "conf/sac/PuppinS06",
@@ -5238,7 +5499,8 @@
       "type": "other_conf",
       "topics": [
         "social_net"
-      ]
+      ],
+      "citations": 45
     },
     {
       "key": "journals/concurrency/SilvestriPLO06",
@@ -5256,7 +5518,8 @@
       "type": "other_journal",
       "topics": [
         "ir"
-      ]
+      ],
+      "citations": 11
     },
     {
       "key": "conf/europar/PuppinMBTS05",
@@ -5275,7 +5538,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 93
     },
     {
       "key": "conf/itcc/PuppinSL05",
@@ -5292,7 +5556,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 2
     },
     {
       "key": "conf/sigir/SilvestriOP04",
@@ -5311,7 +5576,8 @@
         "ir",
         "efficient",
         "data_mining"
-      ]
+      ],
+      "citations": 69
     },
     {
       "key": "conf/europar/FagniPS04",
@@ -5329,7 +5595,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/dagstuhl/PuppinSLO04",
@@ -5348,7 +5615,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/webi/SilvestriPLO04",
@@ -5367,7 +5635,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/pkdd/BaragliaMS04",
@@ -5384,7 +5653,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/ccgrid/PuppinSL04",
@@ -5401,7 +5671,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/sebd/BaragliaS04",
@@ -5417,7 +5688,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/webi/BaragliaS04",
@@ -5433,7 +5705,8 @@
       "type": "other_conf",
       "topics": [
         "recsys"
-      ]
+      ],
+      "citations": 107
     },
     {
       "key": "conf/sebd/OrlandoPS04",
@@ -5450,7 +5723,8 @@
       "type": "other_conf",
       "topics": [
         "efficient"
-      ]
+      ],
+      "citations": 0
     },
     {
       "key": "conf/sac/SilvestriPO04",
@@ -5468,7 +5742,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 57
     },
     {
       "key": "conf/itcc/SilvestriBPS04",
@@ -5486,7 +5761,8 @@
       "type": "other_conf",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 40
     },
     {
       "key": "conf/fimi/LuccheseOPS04",
@@ -5504,7 +5780,8 @@
       "type": "other_conf",
       "topics": [
         "data_mining"
-      ]
+      ],
+      "citations": 68
     },
     {
       "key": "conf/iccS/SilvestriOP04",
@@ -5522,7 +5799,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 10
     },
     {
       "key": "journals/jdim/SilvestriBPS04",
@@ -5540,7 +5818,8 @@
       "type": "other_journal",
       "topics": [
         "misc"
-      ]
+      ],
+      "citations": 40
     },
     {
       "key": "journals/corr/cs-IR-0407053",
@@ -5558,7 +5837,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 44
     },
     {
       "key": "conf/www/SilvestriFOPP03",
@@ -5578,7 +5858,8 @@
       "topics": [
         "ir",
         "efficient"
-      ]
+      ],
+      "citations": 4
     },
     {
       "key": "conf/fimi/OrlandoLPPS03",
@@ -5597,7 +5878,8 @@
       "type": "other_conf",
       "topics": [
         "data_mining"
-      ]
+      ],
+      "citations": 91
     },
     {
       "key": "conf/icdm/OrlandoPPS02",
@@ -5615,7 +5897,8 @@
       "type": "a_star_conf",
       "topics": [
         "data_mining"
-      ]
+      ],
+      "citations": 155
     },
     {
       "key": "conf/vecpar/OrlandoPPS02",
@@ -5634,7 +5917,8 @@
       "topics": [
         "efficient",
         "data_mining"
-      ]
+      ],
+      "citations": 41
     },
     {
       "key": "conf/europar/OrlandoPPS02",
@@ -5653,7 +5937,8 @@
       "topics": [
         "efficient",
         "data_mining"
-      ]
+      ],
+      "citations": 50
     }
   ]
 }

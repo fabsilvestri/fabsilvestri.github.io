@@ -1,0 +1,937 @@
+{
+  "scholar_id": "pi985dQAAAAJ",
+  "fetched_at": "2026-04-21T14:31:29+00:00",
+  "total_cites": 11409,
+  "citations": {
+    "conf/eacl/TrappoliniCFMS26": 2,
+    "conf/eacl/DErasmoCMBTS26": 0,
+    "journals/tors/ChenHSZAT26": 4,
+    "journals/tors/PurificatoCSLS26": 11,
+    "journals/corr/abs-2602-17518": 0,
+    "journals/corr/abs-2602-15650": 1,
+    "journals/corr/abs-2602-06652": 0,
+    "journals/corr/abs-2603-21840": 0,
+    "journals/corr/abs-2601-05649": 0,
+    "conf/cikm/TeodoroGSS25": 2,
+    "conf/acl/RuscioNS25": 1,
+    "conf/emnlp/CuconasuFHMS25": 9,
+    "conf/ecir/CampagnanoMPS25": 3,
+    "conf/aistats/GiorgiCST25": 12,
+    "conf/wacv/AlfaranoAFBAS25": 4,
+    "conf/cvpr/GargiuloCBSSR25": 98,
+    "conf/recsys/SbandiSS25": 2,
+    "conf/sigir/CampagnanoMS25": 5,
+    "conf/icwsm/LentiSM25": 10,
+    "journals/cmig/TeodoroSGVGSZSP25": 22,
+    "journals/access/BetelloPSTBTS25": 30,
+    "journals/tai/MovinSFST25": 6,
+    "journals/access/TrappoliniPSDSDS25": 3,
+    "journals/osnm/EnneiferBSAS25": 0,
+    "conf/ijcnn/TeodoroSTS25": 6,
+    "conf/ijcnn/SicilianoPBTS25": 2,
+    "conf/iir/SicilianoPBTS25": 0,
+    "conf/iir/TeodoroSTS25": 0,
+    "conf/ictir/DErasmoTST25": 8,
+    "conf/iir/DErasmoTTS25": 0,
+    "conf/ijcnn/FrancescoCBS25": 0,
+    "conf/ictir/Betello0D0S25": 0,
+    "conf/ijcnn/CasoTBLS25": 0,
+    "conf/iciap/ZhouSCBSR25": 8,
+    "journals/corr/abs-2510-15731": 8,
+    "journals/corr/abs-2510-22593": 1,
+    "journals/corr/abs-2502-10111": 5,
+    "journals/corr/abs-2502-00432": 0,
+    "journals/corr/abs-2508-03606": 0,
+    "journals/corr/abs-2510-04727": 2,
+    "journals/corr/abs-2505-18088": 2,
+    "journals/corr/abs-2510-03134": 2,
+    "journals/corr/abs-2509-21211": 1,
+    "journals/corr/abs-2510-20351": 2,
+    "journals/corr/abs-2502-09193": 0,
+    "journals/corr/abs-2505-23225": 0,
+    "journals/corr/abs-2504-05342": 1,
+    "journals/corr/abs-2508-16082": 3,
+    "journals/corr/abs-2505-01468": 3,
+    "journals/corr/abs-2511-22435": 0,
+    "journals/corr/abs-2512-00242": 0,
+    "journals/corr/abs-2510-21440": 2,
+    "journals/corr/abs-2511-18660": 0,
+    "journals/corr/abs-2502-12581": 3,
+    "journals/corr/abs-2510-09551": 0,
+    "journals/corr/abs-2508-02546": 8,
+    "conf/kdd/BerniniST24": 6,
+    "conf/ecir/BetelloSMS24": 24,
+    "conf/cikm/SbandiSS24": 10,
+    "conf/www/NadaiFGWLSKLRGN24": 30,
+    "conf/sigir/CuconasuTSFCMTS24": 457,
+    "journals/nn/BucarelliDBSS24": 5,
+    "journals/tai/ChenSTWZA24": 53,
+    "journals/tai/TrappoliniMSRST24": 15,
+    "conf/coling/BacciuCTS24": 23,
+    "conf/iir/BetelloSMS24": 4,
+    "conf/xai/AbrateSBS24": 7,
+    "conf/ijcnn/WaniBS24": 9,
+    "conf/iir/CuconasuTSFCMTS24": 7,
+    "conf/irongraphs/AlbaneseTSS24": 1,
+    "conf/recsogood/PurificatoS24": 13,
+    "conf/robustrecsys/FrancomanoSS24": 0,
+    "conf/semeval/DimitrovAHHSNM24": 67,
+    "journals/corr/abs-2408-03873": 30,
+    "journals/corr/abs-2406-14972": 4,
+    "journals/corr/abs-2411-07770": 6,
+    "journals/corr/abs-2401-03824": 5,
+    "journals/corr/abs-2411-03055": 8,
+    "journals/corr/abs-2410-18067": 0,
+    "journals/corr/abs-2404-15760": 5,
+    "journals/corr/abs-2412-14967": 8,
+    "journals/corr/abs-2410-09514": 13,
+    "journals/corr/abs-2405-19749": 15,
+    "journals/corr/abs-2406-11720": 3,
+    "journals/corr/abs-2402-14802": 9,
+    "journals/corr/abs-2410-09295": 12,
+    "journals/corr/abs-2403-05185": 30,
+    "journals/corr/abs-2406-12535": 0,
+    "journals/corr/abs-2412-09983": 2,
+    "journals/corr/abs-2411-10198": 4,
+    "journals/corr/abs-2412-00081": 98,
+    "journals/corr/abs-2401-14887": 457,
+    "journals/corr/abs-2403-05358": 10,
+    "conf/cikm/PalumboDWLFFFSB23": 6,
+    "conf/recsys/BacciuSTS23": 19,
+    "conf/cvpr/BucarelliCSMS23": 30,
+    "conf/sigir/TrappoliniSRHS23": 20,
+    "conf/nips/DutaCSL23": 79,
+    "conf/sigir/ChenSWZT23": 42,
+    "journals/osnm/BarnaboS00NMS23": 33,
+    "conf/xai/MagisterBKSCSJL23": 13,
+    "conf/iir/BacciuTSRS23": 37,
+    "conf/cogmi/TolomeiCST23": 17,
+    "journals/dai/BarnaboTLCFPS23": 12,
+    "conf/pkdd/SicilianoMPBAS23": 4,
+    "conf/iclr/RuscioMS23": 2,
+    "conf/aiia/BacciuCSSTT23": 20,
+    "journals/corr/abs-2312-17506": 22,
+    "journals/corr/abs-2312-15228": 4,
+    "journals/corr/abs-2303-08288": 2,
+    "journals/corr/abs-2303-09470": 2,
+    "journals/corr/abs-2310-08909": 2,
+    "journals/corr/abs-2306-14457": 37,
+    "journals/corr/abs-2312-02401": 17,
+    "journals/corr/abs-2305-10824": 19,
+    "journals/corr/abs-2305-01447": 20,
+    "journals/corr/abs-2310-04875": 17,
+    "journals/corr/abs-2306-00707": 5,
+    "journals/corr/abs-2307-12798": 20,
+    "journals/corr/abs-2309-17116": 79,
+    "journals/corr/abs-2304-09097": 4,
+    "journals/corr/abs-2305-00574": 42,
+    "conf/aistats/LucicHTRS22": 317,
+    "conf/ijcai/SharmaAADMFHSN022": 118,
+    "conf/sigir/SauchukTHTS22": 25,
+    "journals/cacm/HalevyCMOPSSS22": 92,
+    "conf/coling/AlamC0SDMSFN22": 225,
+    "conf/ijcnn/BarnaboSCLNMS22": 22,
+    "conf/ijcnn/SicilianoBTS22": 13,
+    "journals/corr/abs-2205-04274": 118,
+    "journals/corr/abs-2207-13586": 24,
+    "journals/corr/abs-2208-04222": 52,
+    "journals/corr/abs-2209-09688": 15,
+    "conf/acl/ThorneYSS0H20": 43,
+    "conf/acl/DimitrovASASFNM20": 135,
+    "journals/pvldb/ThorneYSS0L21": 82,
+    "journals/tkde/TolomeiS21": 26,
+    "journals/isci/TonellottoGNGS21": 89,
+    "conf/ijcnn/ErricaSEDPPR21": 3,
+    "conf/semeval/DimitrovASASFNM21": 173,
+    "journals/corr/abs-2103-12541": 225,
+    "journals/corr/abs-2102-03322": 317,
+    "journals/corr/abs-2104-00353": 12,
+    "journals/corr/abs-2106-01074": 43,
+    "journals/corr/abs-2109-08013": 135,
+    "journals/corr/abs-2110-02775": 13,
+    "journals/corr/abs-2105-09284": 173,
+    "conf/emnlp/MassarelliPPORP20": 74,
+    "conf/bias/0002CGMS20": 0,
+    "journals/corr/abs-2006-00937": 3,
+    "journals/corr/abs-2010-06973": 17,
+    "journals/corr/abs-2001-07524": 29,
+    "journals/corr/abs-2009-10311": 92,
+    "conf/naacl/EdizelPBFGS19": 97,
+    "journals/corr/abs-1911-03587": 74,
+    "journals/corr/abs-1905-09755": 97,
+    "conf/www/BronRLSEC17": 4,
+    "conf/kdd/TolomeiSHL17": 352,
+    "journals/isci/BaiCGMS17": 58,
+    "journals/datamine/Anagnostopoulos17": 77,
+    "journals/snam/ColettoALS17": 11,
+    "conf/www/BarbieriSL16": 84,
+    "conf/sigir/AlawadALMS16": 19,
+    "conf/icwsm/ColettoALS16": 21,
+    "conf/sigir/LuccheseNOPST16": 92,
+    "conf/sigir/GrbovicDRSBFOYO16": 86,
+    "conf/cikm/AielloAB0BMS16": 21,
+    "conf/clef/SinghMS16": 2,
+    "journals/sigir/FerroCMMSKRCPLM16": 2,
+    "journals/corr/ColettoALS16": 21,
+    "journals/corr/ColettoALS16a": 11,
+    "journals/corr/GrbovicDRSBFOYO16": 86,
+    "conf/sigir/GrbovicDRSB15": 149,
+    "conf/naacl/ColmenaresLMS15": 65,
+    "conf/wsdm/Baeza-YatesJSH15": 221,
+    "conf/kdd/LalmasLSST15": 44,
+    "journals/ipm/BlancoMS15": 11,
+    "journals/tist/MunteanNSB15": 46,
+    "conf/ismis/SydowMNMS15": 0,
+    "conf/iir/BaragliaMNS14": 48,
+    "conf/cikm/BaragliaMNS13": 48,
+    "conf/www/MunteanNSS13": 4,
+    "conf/cikm/BroccoloMOOPST13": 22,
+    "conf/www/BlancoMS13": 6,
+    "journals/tois/LuccheseOPST13": 76,
+    "journals/isci/BerardiE0S13": 7,
+    "conf/riao/LuccheseOPST13": 10,
+    "conf/spire/BroccoloMOOPST13": 7,
+    "conf/sigir/BonchiPSVV12": 59,
+    "conf/ecir/LucchesePSVV12": 56,
+    "conf/cikm/BonchiFNSV12": 5,
+    "conf/cikm/PennacchiottiSVV12": 69,
+    "conf/sigir/JonassenCS12": 45,
+    "conf/cikm/BlancoCLPS12": 29,
+    "journals/ipm/BroccoloMNPS12": 46,
+    "journals/ipm/CapanniniSB12": 32,
+    "conf/amt/BaragliaFMNS12": 18,
+    "conf/nldb/BerardiESS12": 4,
+    "conf/iat/BaragliaFMNS12": 9,
+    "conf/ecai/CorazzaMMMPSS12": 5,
+    "journals/ercim/JackSSTV12": 0,
+    "conf/edbt/CeccarelliLOPS11": 31,
+    "conf/www/CapanniniNPS11": 9,
+    "conf/wsdm/LuccheseOPST11": 186,
+    "conf/www/BonchiPSVV11": 29,
+    "conf/ecir/PeregoST11": 0,
+    "journals/pvldb/CapanniniNPS11": 117,
+    "conf/iir/BerardiESS11": 4,
+    "journals/corr/abs-1105-4255": 117,
+    "conf/cikm/SilvestriV10": 102,
+    "journals/ftir/Silvestri10": 257,
+    "journals/tois/PuppinSPB10": 46,
+    "conf/apweb/LamDPS10": 5,
+    "conf/spire/BroccoloFNPS10": 16,
+    "conf/hpcc/CapanniniSB10": 9,
+    "conf/spire/NardiniSVVF10": 4,
+    "conf/webi/LamPS10": 10,
+    "conf/iir/BroccoloNPS10": 0,
+    "conf/riao/BaragliaNCPDS10": 24,
+    "journals/ijdst/VarvarigouTKSP10": 3,
+    "conf/iat/LuccheseOPST10": 9,
+    "conf/icde/TolomeiOS10": 11,
+    "conf/cikm/BaragliaCDNPS09": 31,
+    "conf/ecir/OrlandoS09": 9,
+    "conf/recsys/BaragliaCCFFPS09": 36,
+    "conf/www/BaragliaCCFPS09": 5,
+    "conf/icumt/MordacchiniDTBSO09": 23,
+    "conf/wise/LamPQS09": 11,
+    "conf/fia/NittoKMPPPSH09": 7,
+    "conf/wsdm/BaragliaCCFPS09": 4,
+    "conf/sigir/CapanniniSBN09": 29,
+    "conf/hpdc/LaforenzaNS08": 7,
+    "conf/la-web/SilvestriBLOP08": 3,
+    "journals/tweb/Baeza-YatesGJMPS08": 136,
+    "journals/ercim/LaforenzaNST08": 0,
+    "conf/icde/Baeza-YatesCJPS07": 149,
+    "conf/sigir/CastilloDGMS07": 492,
+    "conf/ecir/Silvestri07": 135,
+    "conf/sigir/Baeza-YatesGJMPS07": 299,
+    "journals/cacm/BaragliaS07": 161,
+    "journals/ipm/Silvestri07": 0,
+    "conf/coregrid/TserpesKMVSL07": 4,
+    "conf/cbms/LaforenzaLSSSF07": 16,
+    "conf/infoscale/PuppinSPB07": 18,
+    "conf/infoscale/LuccheseOPS07": 62,
+    "conf/cikm/PuppinS06": 18,
+    "journals/tois/FagniPSO06": 287,
+    "conf/sac/BaragliaLOSS06": 26,
+    "conf/infoscale/PuppinSL06": 76,
+    "conf/sac/PuppinS06": 45,
+    "journals/concurrency/SilvestriPLO06": 11,
+    "conf/europar/PuppinMBTS05": 93,
+    "conf/itcc/PuppinSL05": 2,
+    "conf/sigir/SilvestriOP04": 69,
+    "conf/europar/FagniPS04": 4,
+    "conf/dagstuhl/PuppinSLO04": 4,
+    "conf/webi/SilvestriPLO04": 4,
+    "conf/pkdd/BaragliaMS04": 4,
+    "conf/sebd/BaragliaS04": 0,
+    "conf/webi/BaragliaS04": 107,
+    "conf/sac/SilvestriPO04": 57,
+    "conf/itcc/SilvestriBPS04": 40,
+    "conf/fimi/LuccheseOPS04": 68,
+    "conf/iccS/SilvestriOP04": 10,
+    "journals/jdim/SilvestriBPS04": 40,
+    "journals/corr/cs-IR-0407053": 44,
+    "conf/www/SilvestriFOPP03": 4,
+    "conf/fimi/OrlandoLPPS03": 91,
+    "conf/icdm/OrlandoPPS02": 155,
+    "conf/vecpar/OrlandoPPS02": 41,
+    "conf/europar/OrlandoPPS02": 50,
+    "journals/corr/abs-2501-14524": 4,
+    "conf/www/Baeza-YatesDGRS15": 0
+  },
+  "unmatched": [
+    {
+      "title": "Method and system for displaying content relating to a subject matter of a displayed media program",
+      "cites": 216,
+      "year": 2017
+    },
+    {
+      "title": "R e LAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
+      "cites": 80,
+      "year": 2022
+    },
+    {
+      "title": "Machine learning classification of digital content for mobile devices",
+      "cites": 54,
+      "year": 2024
+    },
+    {
+      "title": "Generating actionable suggestions for improving user engagement with online advertisements",
+      "cites": 54,
+      "year": 2020
+    },
+    {
+      "title": "Palliative treatment for malignant jaundice: endoscopic vs surgical approach",
+      "cites": 36,
+      "year": 2003
+    },
+    {
+      "title": "State of the art report, gap analysis of knowledge on principles, techniques and methodologies for monitoring and adaptation of SBAs",
+      "cites": 34,
+      "year": 2008
+    },
+    {
+      "title": "Predicting the next application that you are going to use on aviate",
+      "cites": 33,
+      "year": 2018
+    },
+    {
+      "title": ": Gradient-based and Task-Agnostic machine Unlearning",
+      "cites": 22,
+      "year": 2024
+    },
+    {
+      "title": "Method of detecting spam hosts based on clustering the host graph",
+      "cites": 19,
+      "year": 2009
+    },
+    {
+      "title": "A scalable multi-strategy algorithm for counting frequent sets",
+      "cites": 18,
+      "year": 2002
+    },
+    {
+      "title": "Report on the search futures workshop at ECIR 2024",
+      "cites": 17,
+      "year": 2024
+    },
+    {
+      "title": "High performance issues in web search engines: Algorithms and techniques",
+      "cites": 17,
+      "year": 2004
+    },
+    {
+      "title": "Ir-rag@ sigir24: Information retrieval's role in rag systems",
+      "cites": 16,
+      "year": 2024
+    },
+    {
+      "title": "X-CLE a VER: Learning Ranking Ensembles by Growing and Pruning Trees",
+      "cites": 16,
+      "year": 2018
+    },
+    {
+      "title": "Method of detecting spam hosts based on propagating prediction labels",
+      "cites": 14,
+      "year": 2009
+    },
+    {
+      "title": "A peer-to-peer information service for the grid",
+      "cites": 13,
+      "year": 2004
+    },
+    {
+      "title": "Changing machine learning classification of digital content",
+      "cites": 12,
+      "year": 2021
+    },
+    {
+      "title": "Systems and methods for query rewriting",
+      "cites": 11,
+      "year": 2016
+    },
+    {
+      "title": "System and method for identifying spam hosts using stacked graphical learning",
+      "cites": 11,
+      "year": 2009
+    },
+    {
+      "title": "Using exogenous sources for personalization of website services",
+      "cites": 10,
+      "year": 2017
+    },
+    {
+      "title": "Advances in Information Retrieval: 38th European Conference on IR Research, ECIR 2016, Padua, Italy, March 20-23, 2016. Proceedings",
+      "cites": 9,
+      "year": 2016
+    },
+    {
+      "title": "Advances in Information Retrieval: 38th European Conference on IR Research (ECIR 2016) proceedings",
+      "cites": 8,
+      "year": 2016
+    },
+    {
+      "title": "Recommender Systems.",
+      "cites": 8,
+      "year": 2014
+    },
+    {
+      "title": "An efficient algorithm to generate search shortcuts",
+      "cites": 8,
+      "year": 2010
+    },
+    {
+      "title": "Headline generation as a sequence prediction with conditional random fields",
+      "cites": 7,
+      "year": 2019
+    },
+    {
+      "title": "WSN key distribution method based on PTPP",
+      "cites": 7,
+      "year": 2014
+    },
+    {
+      "title": "Critical evaluation of the use of dogs in biomedical research and testing",
+      "cites": 7,
+      "year": 2011
+    },
+    {
+      "title": "SIGIR workshop report: the SIGIR heterogeneous and distributed information retrieval workshop",
+      "cites": 7,
+      "year": 2005
+    },
+    {
+      "title": "State of the Art Report",
+      "cites": 6,
+      "year": 2008
+    },
+    {
+      "title": "Semantic workflow representation and samples",
+      "cites": 6,
+      "year": 2005
+    },
+    {
+      "title": "Preserving privacy in web recommender systems",
+      "cites": 5,
+      "year": 2010
+    },
+    {
+      "title": "PO-JRA-1.2. 1, State of the Art Report, Gap Analysis of Knowledge on Principles, Techniques and Methodologies for Monitoring and Adaptation of SBAs",
+      "cites": 5,
+      "year": 2008
+    },
+    {
+      "title": "Service Research Challenges and Solutions for the Future Internet",
+      "cites": 4,
+      "year": 2010
+    },
+    {
+      "title": "Advances in Information Retrieval",
+      "cites": 4,
+      "year": 2009
+    },
+    {
+      "title": "Web search result caching and prefetching",
+      "cites": 4,
+      "year": 2009
+    },
+    {
+      "title": "The CIKM 2006 workshop on information retrieval in peer-to-peer networks",
+      "cites": 4,
+      "year": 2007
+    },
+    {
+      "title": "Toward GRIDLE: A way to build grid applications searching through an ecosystem of components",
+      "cites": 4,
+      "year": 2006
+    },
+    {
+      "title": "Robustrecsys@ recsys2024: Design, evaluation and deployment of robust recommender systems",
+      "cites": 3,
+      "year": 2024
+    },
+    {
+      "title": "Proceedings of the 2015 IEEE/ACM international conference on advances in social networks analysis and mining 2015",
+      "cites": 3,
+      "year": 2015
+    },
+    {
+      "title": "Effective data access patterns on massively parallel processors",
+      "cites": 3,
+      "year": 2014
+    },
+    {
+      "title": "A Survey on Explainable AI Narratives based on Large Language Models",
+      "cites": 2,
+      "year": 2025
+    },
+    {
+      "title": "Report on the 1st Workshop on Information Retrieval's Role in RAG Systems (IR-RAG 2024) at SIGIR 2024",
+      "cites": 2,
+      "year": 2025
+    },
+    {
+      "title": "Advances in Information Retrieval: 34th European Conference on IR Research, ECIR 2012, Barcelona, Spain, April 1-5, 2012, Proceedings",
+      "cites": 2,
+      "year": 2012
+    },
+    {
+      "title": "Knowledge extraction of service usage",
+      "cites": 2,
+      "year": 2011
+    },
+    {
+      "title": "Scalable information systems",
+      "cites": 2,
+      "year": 2009
+    },
+    {
+      "title": "ECIR 2008 workshop on efficiency issues on information retrieval",
+      "cites": 2,
+      "year": 2008
+    },
+    {
+      "title": "Efficiency issues in information retrieval workshop",
+      "cites": 2,
+      "year": 2008
+    },
+    {
+      "title": "Eco-Friendly Federated Learning: Designing a FinOps Framework for Multicloud Resource Coordination",
+      "cites": 1,
+      "year": 2025
+    },
+    {
+      "title": "IR-RAG@ SIGIR25: The Second Edition of the Workshop on Information Retrieval's Role in RAG Systems",
+      "cites": 1,
+      "year": 2025
+    },
+    {
+      "title": "Advances in Information Retrieval: 47th European Conference on Information Retrieval, ECIR 2025, Lucca, Italy, April 6–10, 2025, Proceedings, Part I",
+      "cites": 1,
+      "year": 2025
+    },
+    {
+      "title": "The Right to Hide: Masking Community Affiliation via Minimal Graph Rewiring",
+      "cites": 1,
+      "year": 2025
+    },
+    {
+      "title": "Energy Guided smoothness to improve Robustness in Graph Classification",
+      "cites": 1,
+      "year": 2024
+    },
+    {
+      "title": "Generate counterfactual explanations for graph neural networks from node feature perturbations",
+      "cites": 1,
+      "year": 2024
+    },
+    {
+      "title": "Enhancing Content Moderation with Culturally-Aware Models",
+      "cites": 1,
+      "year": 2023
+    },
+    {
+      "title": "Mining Lifecycle Event Logs for Enhancing Service-Based Applications",
+      "cites": 1,
+      "year": 2013
+    },
+    {
+      "title": "String Processing and Information Retrieval: 18th International Symposium, SPIRE 2011, Pisa, Italy, October 17-21, 2011, Proceedings",
+      "cites": 1,
+      "year": 2011
+    },
+    {
+      "title": "Query Log Analysis for Enhancing Web Search",
+      "cites": 1,
+      "year": 2009
+    },
+    {
+      "title": "Proceedings of the 2nd International Conference on Scalable Information Systems",
+      "cites": 1,
+      "year": 2007
+    },
+    {
+      "title": "On the Value of Query Logs for Modern Information Retrieval",
+      "cites": 1,
+      "year": 2006
+    },
+    {
+      "title": "When Annotators Disagree: A Principled Approach to Learning with Noisy Labels",
+      "cites": 0,
+      "year": 2026
+    },
+    {
+      "title": "TSMO 2025: Two-sided Marketplace Optimization: Search, Discovery, Matching, Pricing & Growth",
+      "cites": 0,
+      "year": 2025
+    },
+    {
+      "title": "Countering Overfitting with Counterfactual Examples",
+      "cites": 0,
+      "year": 2025
+    },
+    {
+      "title": "Machine Learning and Principles and Practice of Knowledge Discovery in Databases: International Workshops of ECML PKDD 2023, Turin, Italy, September 18–22, 2023, Revised …",
+      "cites": 0,
+      "year": 2025
+    },
+    {
+      "title": "Preface to Joint European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases, ECML PKDD 2023-Volume IV",
+      "cites": 0,
+      "year": 2025
+    },
+    {
+      "title": "Preface to International Workshops of ECML PKDD 2023",
+      "cites": 0,
+      "year": 2025
+    },
+    {
+      "title": "Gender Matters: On Recurrence Risk of Cardiovascular Complications for Type 2 Diabetes Subjects",
+      "cites": 0,
+      "year": 2024
+    },
+    {
+      "title": "TSMO 2024: Two-sided Marketplace Optimization",
+      "cites": 0,
+      "year": 2024
+    },
+    {
+      "title": "Editorial on the Special Issue of the World Wide Web journal with selected papers from the 22nd International Conference on Web Information Systems Engineering (WISE)",
+      "cites": 0,
+      "year": 2024
+    },
+    {
+      "title": "Discover Artificial Intelligence",
+      "cites": 0,
+      "year": 2023
+    },
+    {
+      "title": "Web Information Systems Engineering–WISE 2022: 23rd International Conference, Biarritz, France, November 1–3, 2022, Proceedings",
+      "cites": 0,
+      "year": 2022
+    },
+    {
+      "title": "Human-Interpretable Machine Learning",
+      "cites": 0,
+      "year": 2022
+    },
+    {
+      "title": "Node Masking",
+      "cites": 0,
+      "year": 2021
+    },
+    {
+      "title": "Enlisting the Public to Build a Healthier Web Information Commons",
+      "cites": 0,
+      "year": 2019
+    },
+    {
+      "title": "The web conference 2019 research chairs' preface",
+      "cites": 0,
+      "year": 2019
+    },
+    {
+      "title": "Demonstrations track chairs' welcome",
+      "cites": 0,
+      "year": 2019
+    },
+    {
+      "title": "Proceedings of the 10th Italian Information Retrieval Workshop",
+      "cites": 0,
+      "year": 2019
+    },
+    {
+      "title": "Special issue on OSNEM network properties and dynamics",
+      "cites": 0,
+      "year": 2019
+    },
+    {
+      "title": "OSNED 2018 Chairs' Welcome & Organization",
+      "cites": 0,
+      "year": 2018
+    },
+    {
+      "title": "Improve ranking efficiency by optimizing tree ensembles",
+      "cites": 0,
+      "year": 2016
+    },
+    {
+      "title": "PREDICTING THE NEXT APP THAT YOU ARE GOING TO USE ON AVIATE",
+      "cites": 0,
+      "year": 2015
+    },
+    {
+      "title": "GENERATING ACTIONABLE SUGGESTIONS FOR IMPROVING USER ENGAGEMENT",
+      "cites": 0,
+      "year": 2015
+    },
+    {
+      "title": "DEEP LEARNING FOR QUERY REWRITING",
+      "cites": 0,
+      "year": 2015
+    },
+    {
+      "title": "Welcome from the ASONAM 2015 program chairs",
+      "cites": 0,
+      "year": 2015
+    },
+    {
+      "title": "Editorial, Special Issue on SPIRE.",
+      "cites": 0,
+      "year": 2013
+    },
+    {
+      "title": "METHOD AND SYSTEM FOR DISPLAYING CON-TENT RELATING TO A SUBJECT MATTER OF A DISPLAYED MEDIA PROGRAM",
+      "cites": 0,
+      "year": 2013
+    },
+    {
+      "title": "SNOW chairs' welcome",
+      "cites": 0,
+      "year": 2013
+    },
+    {
+      "title": "Program committee chairs' welcome message",
+      "cites": 0,
+      "year": 2013
+    },
+    {
+      "title": "ECIR 2012: 34th european conference on information retrieval research",
+      "cites": 0,
+      "year": 2012
+    },
+    {
+      "title": "Advances in Information Retrieval-34th European Conference on IR Research, ECIR 2012, Barcelona",
+      "cites": 0,
+      "year": 2012
+    },
+    {
+      "title": "String Processing and Information Retrieval",
+      "cites": 0,
+      "year": 2011
+    },
+    {
+      "title": "An incremental prefix filtering approach for all pairs similarity search",
+      "cites": 0,
+      "year": 2010
+    },
+    {
+      "title": "the Future",
+      "cites": 0,
+      "year": 2008
+    },
+    {
+      "title": "InfoScale 2008: The Third International ICST Conference on Scalable Information Systems",
+      "cites": 0,
+      "year": 2008
+    },
+    {
+      "title": "Collaborative Ranking of Grid-enabled Workﬂow Services Providers",
+      "cites": 0,
+      "year": 2008
+    },
+    {
+      "title": "Workshop on large-scale distributed systems for information retrieval",
+      "cites": 0,
+      "year": 2007
+    },
+    {
+      "title": "TOIS reviewers January 2006 through May 2007",
+      "cites": 0,
+      "year": 2007
+    },
+    {
+      "title": "LSDS-IR",
+      "cites": 0,
+      "year": 2007
+    },
+    {
+      "title": "Incremental Caching for Collection Selection Architectures",
+      "cites": 0,
+      "year": 2007
+    },
+    {
+      "title": "Proceedings of the 2nf International Conference on Scalable Information Systems",
+      "cites": 0,
+      "year": 2007
+    },
+    {
+      "title": "Topic 5-Parallel and Distributed Databases, Data Mining and Knowledge Discovery-A Highly Scalable Parallel Caching System for Web Search Engine Results",
+      "cites": 0,
+      "year": 2004
+    },
+    {
+      "title": "Scheduling High Performance Data Mining",
+      "cites": 0,
+      "year": 2003
+    },
+    {
+      "title": "LAPAROSCOPIC TREATMENT OF GALLBLADDER AND COMMON BILE DUCT STONES",
+      "cites": 0,
+      "year": 2001
+    },
+    {
+      "title": "Energy Guided Smoothness to Improve Robustness",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Balancing the Diversity-Coverage Trade-off in Graph-based Recommendations for Cold-Start Industrial Applications",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Rank Lifting and Random Non-Linear Maps",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "AI for Mechanism Design and Strategic Decision Making (AIMS)",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "One Size Does not Fit All: Cross-Architectural Layer-wise Representations in Diffusion Models",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Composable Sparse Subnetworks via Maximum-Entropy Principle",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "WORKSHOP REPORT",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Fabrizio Silvestri, Ph. D.",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Doc Ref: P5. 3.1",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Automatic Music Production Using Generative Adversarial Networks",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "TECHNICAL REPORT TECHNICAL REPORT",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Soft Token Matching for Interpretable Low-Resource Classification",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Mauro Coletto, Luca Maria Aiello",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Low-fat Search Engines with Collection-Selection Oriented Caching",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Buchbeiträge",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "ASONAM 2016 program committee",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Program Track Committees",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Full-Flavored Data Intensive Algorithms on Low-Carb Architectures",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "SNOW’14 Chairs’ Welcome",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "WI-IAT Workshops 2012",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Manuel Montes-y-Gómez, INAOE, Mexico David Nichols, University of Waikato, New Zealand Yoan J. Pinzón, National University of Colombia, Colombia Manuel Reyes-Gómez, Microsoft …",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Hary Agius, Brunel University, United Kingdom Yannis Avrithis, National Technical University of Athens, Greece Makram Bouzid, Motorola Labs Claudia Buzzi, Italian National …",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "xvii",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "P2P-RDM 2011 Committees",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "An Effective Recommender System for Highly Dynamic and Large Web Sites (Demo Paper)",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "A Search Architecture Enabling Efficient Diversification of Search Results",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "ACM SIGIR 2005 Workshop on Heterogeneous and Distributed Information Retrieval (HDIR 2005)",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "Web Spam Detection",
+      "cites": 0,
+      "year": 0
+    },
+    {
+      "title": "The Web Object Store: an infrastructure for mining semantics from web resources and their usage",
+      "cites": 0,
+      "year": 0
+    }
+  ]
+}
