@@ -17,7 +17,7 @@
 (function () {
   "use strict";
 
-  var GA4_ID = "G-XXXXXXXXXX"; // <-- replace with your real ID
+  var GA4_ID = "G-70ZNSVLQVH";
   var STORAGE_KEY = "analytics-consent"; // "granted" | "denied" | null
 
   if (!GA4_ID || GA4_ID === "G-XXXXXXXXXX") return; // Not configured
