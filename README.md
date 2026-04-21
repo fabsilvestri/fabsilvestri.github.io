@@ -25,9 +25,12 @@ nightly by a GitHub Action.
 │   ├── fetch_publications.py         # DBLP fetch + classify
 │   ├── refresh_scimago.py            # yearly Scimago CSV refresh
 │   ├── refresh_citations.py          # Scholar citation cache refresh
+│   ├── discover_awards_claude.py     # weekly Claude web-search award scan
+│   ├── discover_awards.py            # DuckDuckGo fallback (no API key)
 │   └── requirements.txt
 └── .github/workflows/
     ├── update-publications.yml       # nightly cron (04:00 UTC)
+    ├── discover-awards.yml           # weekly cron (Mon 05:30 UTC)
     └── pages.yml                     # deploy on push to main
 ```
 
@@ -118,6 +121,39 @@ and writes a slim CSV (Title, Issn, SJR Best Quartile, Categories) to
 unavailable: download from <https://www.scimagojr.com/journalrank.php>
 ("Download data" button) and save the file under the same name — the
 classifier reads it the same way.
+
+## Awards discovery
+
+The on-page Awards section is driven entirely by hand-curated
+`data/awards.yml`. Two helpers surface *candidates* for review —
+neither auto-publishes:
+
+**Weekly, high-quality (primary)** — Claude Opus 4.7 plans and runs
+web searches via the server-side `web_search` tool, reads the pages,
+disambiguates namesakes, and returns a structured JSON list with
+confidence labels. Requires an Anthropic API key.
+
+```bash
+pip install "anthropic>=0.88"
+export ANTHROPIC_API_KEY=sk-ant-…
+python3 scripts/discover_awards_claude.py
+```
+
+Outputs `data/awards_candidates.json` (structured) and
+`data/awards_candidates.md` (human-readable). Costs a few cents per
+run with prompt caching; the system prompt sits behind a cache
+breakpoint so weekly runs get near-90% cache reads on input.
+
+A GitHub Action (`.github/workflows/discover-awards.yml`) runs this
+every Monday at 05:30 UTC and opens a PR when the candidates change.
+One-time setup: add `ANTHROPIC_API_KEY` to the repo's Actions secrets.
+
+**Zero-cost fallback** — `scripts/discover_awards.py` runs a handful
+of DuckDuckGo queries and writes raw result snippets to the same
+`awards_candidates.md`. Useful offline / when no API key is available.
+
+Workflow either way: review the candidates file, verify each lead,
+then add the ones you want to keep to `data/awards.yml`.
 
 ## Deployment
 

@@ -1,0 +1,49 @@
+name: Discover awards (weekly)
+
+on:
+  schedule:
+    # Monday 05:30 UTC (~06:30 Rome CET / 07:30 CEST — off-peak).
+    - cron: "30 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Anthropic SDK
+        run: pip install "anthropic>=0.88"
+
+      - name: Run discovery
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/discover_awards_claude.py
+
+      - name: Open PR if candidates changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: refresh awards candidates"
+          title: "Awards candidates — weekly refresh"
+          body: |
+            Weekly run of `scripts/discover_awards_claude.py` produced a new
+            candidate list. Review `data/awards_candidates.md` and copy any
+            verified awards into `data/awards.yml`.
+
+            Close this PR without merging if nothing here is worth adding —
+            only `awards.yml` drives the on-page section.
+          branch: awards-candidates-auto
+          delete-branch: true
+          add-paths: |
+            data/awards_candidates.json
+            data/awards_candidates.md
