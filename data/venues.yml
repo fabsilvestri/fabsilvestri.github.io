@@ -83,8 +83,7 @@ journal_issn:
 # so one edit keeps the non-paper out of future builds.
 skip_keys:
   - conf/www/MantrachS19             # Enlisting the Public... (WWW 2019 — not a paper)
-  - conf/icde/Baeza-YatesCJPS07      # "Challenges on Distributed Web Retrieval" — ICDE 2007 keynote (pages 6-20)
-  - conf/cikm/TeodoroGSS25           # "Advances in Medical Knowledge Systems..." — CIKM 2025 tutorial
+  - conf/cikm/TeodoroGSS25           # "Advances in Medical Knowledge Systems..." — CIKM 2025 tutorial (4 pages)
 
 # Title patterns (case-insensitive regex) for DBLP records to DROP entirely.
 # Used to filter out workshop-organizing entries, editorials, and reports
