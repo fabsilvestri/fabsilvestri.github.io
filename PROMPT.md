@@ -1,18 +1,45 @@
 # PROMPT — clone this homepage for another academic
 
-This repo is a template. Given the **Inputs** block below, an LLM generates an
-identical-looking homepage for a different professor by cloning this tree and
-substituting a fixed set of values. Everything else is copied verbatim.
+This file is a standalone spec. Given a filled-in **Inputs** block below, an
+LLM generates an identical-looking homepage for a different professor by
+pulling down the template repo, substituting a fixed set of values, and
+pushing to a new repo. Everything not listed in **§Edits** is copied verbatim.
+
+**Template source:** `https://github.com/fabsilvestri/fabsilvestri.github.io.git`
 
 ## Usage
+
+Assume the LLM is started in an empty working directory that contains nothing
+but this file. The LLM should perform every step below; no pre-existing tree
+is required.
 
 1. Collect inputs. Ask the user only for what you cannot web-research (bio,
    research cards, topic patterns, colour). Derive the rest from DBLP, Scholar,
    and the university faculty page.
-2. Clone this repo to a new directory.
+2. Materialise the template. Check whether you're already inside a clone
+   (a sibling `index.html` and `scripts/fetch_publications.py` exist alongside
+   this `PROMPT.md`). If **yes**, skip this step and treat the current
+   directory as your working directory. If **no**, pull the template into a
+   fresh subdirectory and drop its git history so the new site starts clean:
+   ```bash
+   git clone https://github.com/fabsilvestri/fabsilvestri.github.io.git site
+   cd site
+   rm -rf .git
+   git init -b main
+   ```
+   From here on, all paths are relative to the working directory.
 3. Apply **§Edits**; keep every other file as-is.
-4. Run **§Bootstrap** to populate generated data.
-5. Commit, push to `<github_user>.github.io`.
+4. Run **§Bootstrap** to populate the generated data files.
+5. Commit and push. Assumes the user already created an empty repo at
+   `https://github.com/<github_user>/<github_user>.github.io`:
+   ```bash
+   git add -A
+   git commit -m "Initial site"
+   # Add origin only if one isn't already set (already-inside-a-fork case).
+   git remote get-url origin >/dev/null 2>&1 \
+     || git remote add origin https://github.com/<github_user>/<github_user>.github.io.git
+   git push -u origin main
+   ```
 
 ## Inputs
 
@@ -165,15 +192,16 @@ Every file not listed here is copied verbatim.
 
 ## Bootstrap
 
+Run these from inside `site/` (the clone target from §Usage step 2) **after**
+applying §Edits. The commit / push is handled in §Usage step 5.
+
 ```bash
 pip install -r scripts/requirements.txt
 pip install pandas pyarrow                  # refresh_scimago.py, first run only
 
 python3 scripts/fetch_publications.py       # DBLP → data/publications.json
-python3 scripts/refresh_citations.py        # Scholar → data/citations.json (skip if no scholar_user)
-# python3 scripts/refresh_scimago.py        # only if vendored Scimago CSV is stale
-
-git add -A && git commit -m "Initial bootstrap" && git push
+python3 scripts/refresh_citations.py        # Scholar → data/citations.json (skip if scholar_user is empty)
+# python3 scripts/refresh_scimago.py        # only if data/scimago_journal_rank.csv is stale
 ```
 
 ## Automation that comes with the clone
