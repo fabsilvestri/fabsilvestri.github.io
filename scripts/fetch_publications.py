@@ -364,12 +364,25 @@ def parse_record(record: ET.Element) -> dict:
     ).strip()
     abbrev = venue_abbrev(record.get("key", ""))
     venue_short = VENUE_DISPLAY.get(abbrev, abbrev.upper()) if abbrev else ""
-    url = None
-    for ee in record.findall("ee"):
-        candidate = (ee.text or "").strip()
-        if candidate:
-            url = candidate
-            break
+
+    # Collect every <ee> on this record. We classify into publisher vs
+    # arXiv based on host: arxiv.org is always the preprint, anything
+    # else (DOI, ACL Anthology, IEEE Xplore, CVPR open-access, …) is
+    # treated as the publisher's canonical page. We skip wikidata.org
+    # (DBLP injects these as auxiliary identifiers, not reading copies).
+    all_ees = [(ee.text or "").strip() for ee in record.findall("ee") if (ee.text or "").strip()]
+    url_publisher = None
+    url_arxiv = None
+    for u in all_ees:
+        if "wikidata.org" in u:
+            continue
+        if "arxiv.org" in u:
+            if url_arxiv is None:
+                url_arxiv = u
+        else:
+            if url_publisher is None:
+                url_publisher = u
+
     return {
         "key": record.get("key"),
         "title": title,
@@ -377,8 +390,35 @@ def parse_record(record: ET.Element) -> dict:
         "year": year,
         "venue": venue_name,
         "venue_short": venue_short,
-        "url": url,
+        "url": url_publisher or url_arxiv,
+        "url_publisher": url_publisher,
+        "url_arxiv": url_arxiv,
     }
+
+
+def normalize_title_for_match(s: str) -> str:
+    """Key used to cross-link conference/journal papers with their
+    arXiv preprint — title variants differ in punctuation and trailing
+    periods, so strip to alphanumerics+spaces."""
+    s = (s or "").lower()
+    s = re.sub(r"[^\w\s]", " ", s, flags=re.UNICODE)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def cross_link_arxiv(pubs: list[dict]) -> None:
+    """For every non-preprint pub, attach `url_arxiv` by finding a
+    preprint (type=preprint, host=arxiv.org) with the same normalized
+    title. Mutates `pubs` in place."""
+    preprint_arxiv: dict[str, str] = {}
+    for p in pubs:
+        if p.get("type") == TYPE_PREPRINT and p.get("url_arxiv"):
+            preprint_arxiv.setdefault(normalize_title_for_match(p["title"]), p["url_arxiv"])
+    for p in pubs:
+        if p.get("type") == TYPE_PREPRINT or p.get("url_arxiv"):
+            continue
+        hit = preprint_arxiv.get(normalize_title_for_match(p.get("title", "")))
+        if hit:
+            p["url_arxiv"] = hit
 
 
 def fetch_dblp_xml() -> bytes:
@@ -451,6 +491,8 @@ def main() -> int:
         parsed["topics"] = classify_topics(parsed, topics, topic_overrides)
         parsed["citations"] = citations.get(parsed["key"], 0)
         pubs.append(parsed)
+
+    cross_link_arxiv(pubs)
 
     pubs.sort(
         key=lambda p: (

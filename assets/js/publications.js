@@ -62,6 +62,20 @@
       .join(", ");
   }
 
+  function publisherLabel(url) {
+    // Best-effort host label for the "Publisher" link so readers know
+    // where it goes without hovering. Falls back to "Publisher".
+    if (!url) return "Publisher";
+    if (url.indexOf("doi.org") !== -1) return "DOI";
+    if (url.indexOf("aclanthology.org") !== -1) return "ACL Anthology";
+    if (url.indexOf("openreview.net") !== -1) return "OpenReview";
+    if (url.indexOf("openaccess.thecvf.com") !== -1) return "CVF";
+    if (url.indexOf("proceedings.mlr.press") !== -1) return "PMLR";
+    if (url.indexOf("dl.acm.org") !== -1) return "ACM";
+    if (url.indexOf("ieeexplore.ieee.org") !== -1) return "IEEE";
+    return "Publisher";
+  }
+
   function renderVenue(pub) {
     var parts = [];
     if (pub.venue) parts.push(escapeHtml(pub.venue));
@@ -72,6 +86,19 @@
         '<a class="pub-cites" href="https://scholar.google.com/scholar?q=' + q +
         '" target="_blank" rel="noopener" title="Citations from Google Scholar">Cited by ' +
         pub.citations + '</a>'
+      );
+    }
+    if (pub.url_publisher) {
+      parts.push(
+        '<a class="pub-link pub-link-pub" href="' + escapeHtml(pub.url_publisher) +
+        '" target="_blank" rel="noopener" title="Open the official publisher page">' +
+        escapeHtml(publisherLabel(pub.url_publisher)) + ' ↗</a>'
+      );
+    }
+    if (pub.url_arxiv) {
+      parts.push(
+        '<a class="pub-link pub-link-arxiv" href="' + escapeHtml(pub.url_arxiv) +
+        '" target="_blank" rel="noopener" title="Open the arXiv preprint">arXiv ↗</a>'
       );
     }
     return parts.join(" · ");

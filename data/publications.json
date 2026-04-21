@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-04-21",
-  "generated_at": "2026-04-21T14:32:22+00:00",
+  "generated_at": "2026-04-21T14:39:21+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 285,
   "counts_by_type": {
@@ -122,6 +122,8 @@
       "venue": "EACL (Volume 1: Long Papers)",
       "venue_short": "EACL",
       "url": "https://aclanthology.org/2026.eacl-long.391/",
+      "url_publisher": "https://aclanthology.org/2026.eacl-long.391/",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -144,6 +146,8 @@
       "venue": "EACL (Volume 2: Short Papers)",
       "venue_short": "EACL",
       "url": "https://aclanthology.org/2026.eacl-short.51/",
+      "url_publisher": "https://aclanthology.org/2026.eacl-short.51/",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -165,6 +169,8 @@
       "venue": "Trans. Recomm. Syst.",
       "venue_short": "TORS",
       "url": "https://doi.org/10.1145/3731683",
+      "url_publisher": "https://doi.org/10.1145/3731683",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "recsys",
@@ -187,6 +193,8 @@
       "venue": "Trans. Recomm. Syst.",
       "venue_short": "TORS",
       "url": "https://doi.org/10.1145/3742898",
+      "url_publisher": "https://doi.org/10.1145/3742898",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "recsys",
@@ -208,6 +216,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2602.17518",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2602.17518",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -230,6 +240,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2602.15650",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2602.15650",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm",
@@ -255,6 +267,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2602.06652",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2602.06652",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm",
@@ -276,6 +290,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2603.21840",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2603.21840",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "nlp"
@@ -297,6 +313,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2601.05649",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2601.05649",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir"
@@ -316,6 +334,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/3746252.3761592",
+      "url_publisher": "https://doi.org/10.1145/3746252.3761592",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -335,6 +355,8 @@
       "venue": "ACL (1)",
       "venue_short": "ACL",
       "url": "https://aclanthology.org/2025.acl-long.303/",
+      "url_publisher": "https://aclanthology.org/2025.acl-long.303/",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm"
@@ -355,6 +377,8 @@
       "venue": "EMNLP",
       "venue_short": "EMNLP",
       "url": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
+      "url_publisher": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm",
@@ -375,6 +399,8 @@
       "venue": "ECIR (3)",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-031-88714-7_41",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-88714-7_41",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -395,6 +421,8 @@
       "venue": "AISTATS",
       "venue_short": "AISTATS",
       "url": "https://proceedings.mlr.press/v258/giorgi25a.html",
+      "url_publisher": "https://proceedings.mlr.press/v258/giorgi25a.html",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm",
@@ -418,6 +446,8 @@
       "venue": "WACV",
       "venue_short": "WACV",
       "url": "https://doi.org/10.1109/WACV61041.2025.00114",
+      "url_publisher": "https://doi.org/10.1109/WACV61041.2025.00114",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "efficient"
@@ -439,6 +469,8 @@
       "venue": "CVPR",
       "venue_short": "CVPR",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
+      "url_publisher": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "task_vectors"
@@ -457,6 +489,8 @@
       "venue": "RecSys",
       "venue_short": "RECSYS",
       "url": "https://doi.org/10.1145/3705328.3748150",
+      "url_publisher": "https://doi.org/10.1145/3705328.3748150",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "recsys"
@@ -475,6 +509,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/3726302.3730318",
+      "url_publisher": "https://doi.org/10.1145/3726302.3730318",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -493,6 +529,8 @@
       "venue": "ICWSM",
       "venue_short": "ICWSM",
       "url": "https://doi.org/10.1609/icwsm.v19i1.35963",
+      "url_publisher": "https://doi.org/10.1609/icwsm.v19i1.35963",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "social_net"
@@ -517,6 +555,8 @@
       "venue": "Comput. Medical Imaging Graph.",
       "venue_short": "CMIG",
       "url": "https://doi.org/10.1016/j.compmedimag.2024.102484",
+      "url_publisher": "https://doi.org/10.1016/j.compmedimag.2024.102484",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "gnn",
@@ -541,6 +581,8 @@
       "venue": "IEEE Access",
       "venue_short": "IEEE Access",
       "url": "https://doi.org/10.1109/ACCESS.2024.3522049",
+      "url_publisher": "https://doi.org/10.1109/ACCESS.2024.3522049",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "recsys"
@@ -561,6 +603,8 @@
       "venue": "IEEE Trans. Artif. Intell.",
       "venue_short": "IEEE T-AI",
       "url": "https://doi.org/10.1109/TAI.2024.3496616",
+      "url_publisher": "https://doi.org/10.1109/TAI.2024.3496616",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "trust"
@@ -583,6 +627,8 @@
       "venue": "IEEE Access",
       "venue_short": "IEEE Access",
       "url": "https://doi.org/10.1109/ACCESS.2025.3568133",
+      "url_publisher": "https://doi.org/10.1109/ACCESS.2025.3568133",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "efficient"
@@ -603,6 +649,8 @@
       "venue": "Online Soc. Networks Media",
       "venue_short": "OSNM",
       "url": "https://doi.org/10.1016/j.osnem.2025.100334",
+      "url_publisher": "https://doi.org/10.1016/j.osnem.2025.100334",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "trust",
@@ -623,6 +671,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -643,6 +693,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -663,6 +715,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-4026/paper4.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-4026/paper4.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -682,6 +736,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-4026/paper25.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-4026/paper25.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -701,6 +757,8 @@
       "venue": "ICTIR",
       "venue_short": "ICTIR",
       "url": "https://doi.org/10.1145/3731120.3744579",
+      "url_publisher": "https://doi.org/10.1145/3731120.3744579",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -720,6 +778,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-4026/paper10.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-4026/paper10.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -739,6 +799,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN64981.2025.11227954",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11227954",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "gnn"
@@ -759,6 +821,8 @@
       "venue": "ICTIR",
       "venue_short": "ICTIR",
       "url": "https://doi.org/10.1145/3731120.3744575",
+      "url_publisher": "https://doi.org/10.1145/3731120.3744575",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -780,6 +844,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN64981.2025.11228915",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11228915",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "gnn"
@@ -801,6 +867,8 @@
       "venue": "ICIAP (Workshops 2)",
       "venue_short": "ICIAP",
       "url": "https://doi.org/10.1007/978-3-032-11381-8_17",
+      "url_publisher": "https://doi.org/10.1007/978-3-032-11381-8_17",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "task_vectors"
@@ -822,6 +890,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.15731",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.15731",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -844,6 +914,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.22593",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.22593",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -862,6 +934,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2502.10111",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2502.10111",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn",
@@ -882,6 +956,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2502.00432",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2502.00432",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "social_net"
@@ -902,6 +978,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2508.03606",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2508.03606",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -924,6 +1002,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.04727",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.04727",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -944,6 +1024,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2505.15561",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2505.15561",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm",
@@ -966,6 +1048,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2505.18088",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2505.18088",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -986,6 +1070,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.03134",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.03134",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust"
@@ -1005,6 +1091,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2509.21211",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2509.21211",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "social_net"
@@ -1024,6 +1112,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.20351",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.20351",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -1043,6 +1133,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2502.09193",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2502.09193",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust"
@@ -1062,6 +1154,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2505.23225",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2505.23225",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust"
@@ -1085,6 +1179,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2504.05342",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2504.05342",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -1107,6 +1203,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2508.16082",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2508.16082",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -1127,6 +1225,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2505.01468",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2505.01468",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir"
@@ -1146,6 +1246,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2511.22435",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2511.22435",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1164,6 +1266,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2512.00242",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2512.00242",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -1184,6 +1288,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.21440",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.21440",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -1204,6 +1310,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2511.18660",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2511.18660",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -1225,6 +1333,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2502.12581",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2502.12581",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1243,6 +1353,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2510.09551",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2510.09551",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1262,6 +1374,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2501.14524",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2501.14524",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1280,6 +1394,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2508.02546",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2508.02546",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -1298,6 +1414,8 @@
       "venue": "KDD",
       "venue_short": "KDD",
       "url": "https://doi.org/10.1145/3637528.3671896",
+      "url_publisher": "https://doi.org/10.1145/3637528.3671896",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -1319,6 +1437,8 @@
       "venue": "ECIR (2)",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-031-56060-6_14",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-56060-6_14",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -1339,6 +1459,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/3627673.3680069",
+      "url_publisher": "https://doi.org/10.1145/3627673.3680069",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -1370,6 +1492,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/3589335.3648339",
+      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "recsys",
@@ -1394,6 +1518,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/3626772.3657834",
+      "url_publisher": "https://doi.org/10.1145/3626772.3657834",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -1415,6 +1541,8 @@
       "venue": "Neural Networks",
       "venue_short": "NN",
       "url": "https://doi.org/10.1016/j.neunet.2024.106465",
+      "url_publisher": "https://doi.org/10.1016/j.neunet.2024.106465",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "misc"
@@ -1436,6 +1564,8 @@
       "venue": "IEEE Trans. Artif. Intell.",
       "venue_short": "IEEE T-AI",
       "url": "https://doi.org/10.1109/TAI.2022.3223892",
+      "url_publisher": "https://doi.org/10.1109/TAI.2022.3223892",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "agents",
@@ -1458,6 +1588,8 @@
       "venue": "IEEE Trans. Artif. Intell.",
       "venue_short": "IEEE T-AI",
       "url": "https://doi.org/10.1109/TAI.2023.3319306",
+      "url_publisher": "https://doi.org/10.1109/TAI.2023.3319306",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "gnn"
@@ -1477,6 +1609,8 @@
       "venue": "LREC/COLING",
       "venue_short": "COLING",
       "url": "https://aclanthology.org/2024.lrec-main.388",
+      "url_publisher": "https://aclanthology.org/2024.lrec-main.388",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "llm"
@@ -1496,6 +1630,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-3802/paper3.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3802/paper3.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -1517,6 +1653,8 @@
       "venue": "xAI (3)",
       "venue_short": "XAI",
       "url": "https://doi.org/10.1007/978-3-031-63800-8_2",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-63800-8_2",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "trust"
@@ -1535,6 +1673,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
+      "url_publisher": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "trust"
@@ -1558,6 +1698,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-3802/paper23.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3802/paper23.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -1578,6 +1720,8 @@
       "venue": "IRonGraphs",
       "venue_short": "IRONGRAPHS",
       "url": "https://doi.org/10.1007/978-3-031-71382-8_6",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-71382-8_6",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys",
@@ -1597,6 +1741,8 @@
       "venue": "RecSoGood@RecSys",
       "venue_short": "RECSOGOOD",
       "url": "https://doi.org/10.1007/978-3-031-87654-7_11",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-87654-7_11",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "recsys",
@@ -1616,6 +1762,8 @@
       "venue": "RobustRecSys@RecSys",
       "venue_short": "ROBUSTRECSYS",
       "url": "https://ceur-ws.org/Vol-3924/short7.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3924/short7.pdf",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir",
@@ -1640,6 +1788,8 @@
       "venue": "SemEval@NAACL",
       "venue_short": "SEMEVAL",
       "url": "https://doi.org/10.18653/v1/2024.semeval-1.275",
+      "url_publisher": "https://doi.org/10.18653/v1/2024.semeval-1.275",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "nlp",
@@ -1663,6 +1813,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2408.03873",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2408.03873",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys"
@@ -1682,6 +1834,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2406.14972",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2406.14972",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm",
@@ -1702,6 +1856,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2411.07770",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2411.07770",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys"
@@ -1722,6 +1878,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2401.03824",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2401.03824",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1743,6 +1901,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2411.03055",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2411.03055",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -1760,6 +1920,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2410.18067",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2410.18067",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1785,6 +1947,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2404.15760",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2404.15760",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust",
@@ -1805,6 +1969,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2412.14967",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2412.14967",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir"
@@ -1822,6 +1988,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2410.09514",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2410.09514",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -1843,6 +2011,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2405.19749",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2405.19749",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -1864,6 +2034,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2406.11720",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2406.11720",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -1884,6 +2056,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2402.14802",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2402.14802",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -1903,6 +2077,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2410.09295",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2410.09295",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm",
@@ -1934,6 +2110,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2403.05185",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2403.05185",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -1953,6 +2131,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2406.12535",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2406.12535",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -1973,6 +2153,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2412.08419",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2412.08419",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn",
@@ -1993,6 +2175,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2412.09983",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2412.09983",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -2015,6 +2199,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2411.10198",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2411.10198",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "efficient"
@@ -2036,6 +2222,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2412.00081",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2412.00081",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -2059,6 +2247,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2401.14887",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2401.14887",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -2078,6 +2268,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2403.05358",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2403.05358",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "social_net"
@@ -2098,6 +2290,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2403.14339",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2403.14339",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "task_vectors"
@@ -2127,6 +2321,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/3583780.3615481",
+      "url_publisher": "https://doi.org/10.1145/3583780.3615481",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -2146,6 +2342,8 @@
       "venue": "RecSys",
       "venue_short": "RECSYS",
       "url": "https://doi.org/10.1145/3604915.3610643",
+      "url_publisher": "https://doi.org/10.1145/3604915.3610643",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -2167,6 +2365,8 @@
       "venue": "CVPR",
       "venue_short": "CVPR",
       "url": "https://doi.org/10.1109/CVPR52729.2023.00335",
+      "url_publisher": "https://doi.org/10.1109/CVPR52729.2023.00335",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "trust"
@@ -2187,6 +2387,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/3539618.3591930",
+      "url_publisher": "https://doi.org/10.1145/3539618.3591930",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -2206,6 +2408,8 @@
       "venue": "NeurIPS",
       "venue_short": "NeurIPS",
       "url": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
+      "url_publisher": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "gnn"
@@ -2226,6 +2430,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/3539618.3592070",
+      "url_publisher": "https://doi.org/10.1145/3539618.3592070",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -2250,6 +2456,8 @@
       "venue": "Online Soc. Networks Media",
       "venue_short": "OSNM",
       "url": "https://doi.org/10.1016/j.osnem.2023.100244",
+      "url_publisher": "https://doi.org/10.1016/j.osnem.2023.100244",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "misinfo"
@@ -2273,6 +2481,8 @@
       "venue": "xAI (3)",
       "venue_short": "XAI",
       "url": "https://doi.org/10.1007/978-3-031-44070-0_12",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-44070-0_12",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "gnn",
@@ -2294,6 +2504,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "llm"
@@ -2313,6 +2525,8 @@
       "venue": "CogMI",
       "venue_short": "COGMI",
       "url": "https://doi.org/10.1109/CogMI58952.2023.00027",
+      "url_publisher": "https://doi.org/10.1109/CogMI58952.2023.00027",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "llm"
@@ -2335,6 +2549,8 @@
       "venue": "Discov. Artif. Intell.",
       "venue_short": "DAI",
       "url": "https://doi.org/10.1007/s44163-023-00047-7",
+      "url_publisher": "https://doi.org/10.1007/s44163-023-00047-7",
+      "url_arxiv": "https://arxiv.org/abs/2104.00353",
       "type": "other_journal",
       "topics": [
         "misc"
@@ -2356,6 +2572,8 @@
       "venue": "PKDD/ECML Workshops (2)",
       "venue_short": "PKDD",
       "url": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "trust",
@@ -2375,6 +2593,8 @@
       "venue": "Tiny Papers @ ICLR",
       "venue_short": "ICLR",
       "url": "https://openreview.net/forum?id=R82eeIF4rP_",
+      "url_publisher": "https://openreview.net/forum?id=R82eeIF4rP_",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "llm"
@@ -2396,6 +2616,8 @@
       "venue": "DP@AI*IA",
       "venue_short": "AIIA",
       "url": "https://ceur-ws.org/Vol-3537/paper4.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3537/paper4.pdf",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir",
@@ -2421,6 +2643,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2312.17506",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2312.17506",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn",
@@ -2444,6 +2668,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2312.15228",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2312.15228",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust",
@@ -2463,6 +2689,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2303.08288",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2303.08288",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -2481,6 +2709,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2303.09470",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2303.09470",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "trust"
@@ -2499,6 +2729,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2310.08909",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2310.08909",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -2521,6 +2753,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2306.14457",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2306.14457",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -2541,6 +2775,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2312.02401",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2312.02401",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misinfo"
@@ -2560,6 +2796,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2305.10824",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2305.10824",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -2580,6 +2818,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2307.13165",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2307.13165",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -2601,6 +2841,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2305.01447",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2305.01447",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -2620,6 +2862,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2310.04875",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2310.04875",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "llm"
@@ -2640,6 +2884,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2306.00707",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2306.00707",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -2661,6 +2907,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2307.12798",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2307.12798",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir",
@@ -2681,6 +2929,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2309.17116",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2309.17116",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -2700,6 +2950,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2304.09097",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2304.09097",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -2721,6 +2973,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2305.00574",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2305.00574",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -2742,6 +2996,8 @@
       "venue": "AISTATS",
       "venue_short": "AISTATS",
       "url": "https://proceedings.mlr.press/v151/lucic22a.html",
+      "url_publisher": "https://proceedings.mlr.press/v151/lucic22a.html",
+      "url_arxiv": "https://arxiv.org/abs/2102.03322",
       "type": "a_star_conf",
       "topics": [
         "gnn",
@@ -2768,6 +3024,8 @@
       "venue": "IJCAI",
       "venue_short": "IJCAI",
       "url": "https://doi.org/10.24963/ijcai.2022/781",
+      "url_publisher": "https://doi.org/10.24963/ijcai.2022/781",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "misinfo"
@@ -2788,6 +3046,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/3477495.3532034",
+      "url_publisher": "https://doi.org/10.1145/3477495.3532034",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -2810,6 +3070,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/3511808.3557429",
+      "url_publisher": "https://doi.org/10.1145/3511808.3557429",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -2835,6 +3097,8 @@
       "venue": "Commun. ACM",
       "venue_short": "CACM",
       "url": "https://doi.org/10.1145/3462671",
+      "url_publisher": "https://doi.org/10.1145/3462671",
+      "url_arxiv": "https://arxiv.org/abs/2009.10311",
       "type": "q1_journal",
       "topics": [
         "misinfo",
@@ -2860,6 +3124,8 @@
       "venue": "COLING",
       "venue_short": "COLING",
       "url": "https://aclanthology.org/2022.coling-1.576",
+      "url_publisher": "https://aclanthology.org/2022.coling-1.576",
+      "url_arxiv": "https://arxiv.org/abs/2103.12541",
       "type": "other_conf",
       "topics": [
         "misinfo"
@@ -2882,6 +3148,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN55064.2022.9892739",
+      "url_publisher": "https://doi.org/10.1109/IJCNN55064.2022.9892739",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misinfo"
@@ -2901,6 +3169,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN55064.2022.9892367",
+      "url_publisher": "https://doi.org/10.1109/IJCNN55064.2022.9892367",
+      "url_arxiv": "https://arxiv.org/abs/2110.02775",
       "type": "other_conf",
       "topics": [
         "trust"
@@ -2926,6 +3196,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2205.04274",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2205.04274",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misinfo"
@@ -2949,6 +3221,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2207.13586",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2207.13586",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -2971,6 +3245,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2208.04222",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2208.04222",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "recsys",
@@ -2994,6 +3270,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://doi.org/10.48550/arXiv.2209.09688",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2209.09688",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "gnn"
@@ -3015,6 +3293,8 @@
       "venue": "ACL/IJCNLP (1)",
       "venue_short": "ACL",
       "url": "https://doi.org/10.18653/v1/2021.acl-long.241",
+      "url_publisher": "https://doi.org/10.18653/v1/2021.acl-long.241",
+      "url_arxiv": "https://arxiv.org/abs/2106.01074",
       "type": "a_star_conf",
       "topics": [
         "misc"
@@ -3038,6 +3318,8 @@
       "venue": "ACL/IJCNLP (1)",
       "venue_short": "ACL",
       "url": "https://doi.org/10.18653/v1/2021.acl-long.516",
+      "url_publisher": "https://doi.org/10.18653/v1/2021.acl-long.516",
+      "url_arxiv": "https://arxiv.org/abs/2109.08013",
       "type": "a_star_conf",
       "topics": [
         "misinfo"
@@ -3059,6 +3341,8 @@
       "venue": "Proc. VLDB Endow.",
       "venue_short": "VLDB",
       "url": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
+      "url_publisher": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "nlp"
@@ -3076,6 +3360,8 @@
       "venue": "IEEE Trans. Knowl. Data Eng.",
       "venue_short": "TKDE",
       "url": "https://doi.org/10.1109/TKDE.2019.2945326",
+      "url_publisher": "https://doi.org/10.1109/TKDE.2019.2945326",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "trust"
@@ -3096,6 +3382,8 @@
       "venue": "Inf. Sci.",
       "venue_short": "ISCI",
       "url": "https://doi.org/10.1016/j.ins.2021.06.039",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2021.06.039",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "efficient"
@@ -3118,6 +3406,8 @@
       "venue": "IJCNN",
       "venue_short": "IJCNN",
       "url": "https://doi.org/10.1109/IJCNN52387.2021.9533640",
+      "url_publisher": "https://doi.org/10.1109/IJCNN52387.2021.9533640",
+      "url_arxiv": "https://arxiv.org/abs/2006.00937",
       "type": "other_conf",
       "topics": [
         "misc"
@@ -3141,6 +3431,8 @@
       "venue": "SemEval@ACL/IJCNLP",
       "venue_short": "SEMEVAL",
       "url": "https://doi.org/10.18653/v1/2021.semeval-1.7",
+      "url_publisher": "https://doi.org/10.18653/v1/2021.semeval-1.7",
+      "url_arxiv": "https://arxiv.org/abs/2105.09284",
       "type": "workshop",
       "topics": [
         "nlp",
@@ -3166,6 +3458,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2103.12541",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2103.12541",
       "type": "preprint",
       "topics": [
         "misinfo"
@@ -3186,6 +3480,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2102.03322",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2102.03322",
       "type": "preprint",
       "topics": [
         "gnn",
@@ -3209,6 +3505,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2104.00353",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2104.00353",
       "type": "preprint",
       "topics": [
         "misc"
@@ -3230,6 +3528,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2106.01074",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2106.01074",
       "type": "preprint",
       "topics": [
         "misc"
@@ -3253,6 +3553,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2109.08013",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2109.08013",
       "type": "preprint",
       "topics": [
         "misinfo"
@@ -3272,6 +3574,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2110.02775",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2110.02775",
       "type": "preprint",
       "topics": [
         "trust"
@@ -3293,6 +3597,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2110.11960",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2110.11960",
       "type": "preprint",
       "topics": [
         "agents",
@@ -3317,6 +3623,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2105.09284",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2105.09284",
       "type": "preprint",
       "topics": [
         "nlp",
@@ -3341,6 +3649,8 @@
       "venue": "EMNLP (Findings)",
       "venue_short": "EMNLP",
       "url": "https://doi.org/10.18653/v1/2020.findings-emnlp.22",
+      "url_publisher": "https://doi.org/10.18653/v1/2020.findings-emnlp.22",
+      "url_arxiv": "http://arxiv.org/abs/1911.03587",
       "type": "a_star_conf",
       "topics": [
         "llm"
@@ -3361,6 +3671,8 @@
       "venue": "BIAS",
       "venue_short": "BIAS",
       "url": "https://doi.org/10.1007/978-3-030-52485-2_14",
+      "url_publisher": "https://doi.org/10.1007/978-3-030-52485-2_14",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -3384,6 +3696,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2006.00937",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2006.00937",
       "type": "preprint",
       "topics": [
         "misc"
@@ -3405,6 +3719,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2010.06973",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2010.06973",
       "type": "preprint",
       "topics": [
         "misc"
@@ -3424,6 +3740,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2001.07524",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2001.07524",
       "type": "preprint",
       "topics": [
         "gnn"
@@ -3447,6 +3765,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "https://arxiv.org/abs/2009.10311",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2009.10311",
       "type": "preprint",
       "topics": [
         "misinfo",
@@ -3469,6 +3789,8 @@
       "venue": "NAACL-HLT (1)",
       "venue_short": "NAACL",
       "url": "https://doi.org/10.18653/v1/n19-1326",
+      "url_publisher": "https://doi.org/10.18653/v1/n19-1326",
+      "url_arxiv": "http://arxiv.org/abs/1905.09755",
       "type": "a_star_conf",
       "topics": [
         "nlp"
@@ -3492,6 +3814,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1911.03587",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1911.03587",
       "type": "preprint",
       "topics": [
         "llm"
@@ -3513,6 +3837,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1905.09755",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1905.09755",
       "type": "preprint",
       "topics": [
         "nlp"
@@ -3534,6 +3860,8 @@
       "venue": "ACM Trans. Intell. Syst. Technol.",
       "venue_short": "TIST",
       "url": "https://doi.org/10.1145/3205453",
+      "url_publisher": "https://doi.org/10.1145/3205453",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir",
@@ -3556,6 +3884,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/3041021.3054193",
+      "url_publisher": "https://doi.org/10.1145/3041021.3054193",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -3575,6 +3905,8 @@
       "venue": "KDD",
       "venue_short": "KDD",
       "url": "https://doi.org/10.1145/3097983.3098039",
+      "url_publisher": "https://doi.org/10.1145/3097983.3098039",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "trust"
@@ -3595,6 +3927,8 @@
       "venue": "Inf. Sci.",
       "venue_short": "ISCI",
       "url": "https://doi.org/10.1016/j.ins.2016.12.038",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2016.12.038",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir"
@@ -3615,6 +3949,8 @@
       "venue": "Data Min. Knowl. Discov.",
       "venue_short": "DATAMINE",
       "url": "https://doi.org/10.1007/s10618-016-0477-7",
+      "url_publisher": "https://doi.org/10.1007/s10618-016-0477-7",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "recsys"
@@ -3634,6 +3970,8 @@
       "venue": "Soc. Netw. Anal. Min.",
       "venue_short": "SNAM",
       "url": "https://doi.org/10.1007/s13278-017-0449-y",
+      "url_publisher": "https://doi.org/10.1007/s13278-017-0449-y",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "social_net"
@@ -3652,6 +3990,8 @@
       "venue": "WWW",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/2872427.2883092",
+      "url_publisher": "https://doi.org/10.1145/2872427.2883092",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "misc"
@@ -3672,6 +4012,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2911451.2914760",
+      "url_publisher": "https://doi.org/10.1145/2911451.2914760",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -3692,6 +4034,8 @@
       "venue": "ICWSM",
       "venue_short": "ICWSM",
       "url": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
+      "url_publisher": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
+      "url_arxiv": "http://arxiv.org/abs/1610.08372",
       "type": "a_star_conf",
       "topics": [
         "misinfo",
@@ -3714,6 +4058,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2911451.2914763",
+      "url_publisher": "https://doi.org/10.1145/2911451.2914763",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -3739,6 +4085,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2911451.2911538",
+      "url_publisher": "https://doi.org/10.1145/2911451.2911538",
+      "url_arxiv": "http://arxiv.org/abs/1607.01869",
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -3762,6 +4110,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2983323.2983840",
+      "url_publisher": "https://doi.org/10.1145/2983323.2983840",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -3780,6 +4130,8 @@
       "venue": "CLEF",
       "venue_short": "CLEF",
       "url": "https://doi.org/10.1007/978-3-319-44564-9_10",
+      "url_publisher": "https://doi.org/10.1007/978-3-319-44564-9_10",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -3801,6 +4153,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-1653/paper_27.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-1653/paper_27.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -3832,6 +4186,8 @@
       "venue": "SIGIR Forum",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2964797.2964801",
+      "url_publisher": "https://doi.org/10.1145/2964797.2964801",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "ir"
@@ -3850,6 +4206,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1605.08242",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1605.08242",
       "type": "preprint",
       "topics": [
         "misc"
@@ -3869,6 +4227,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1610.08372",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1610.08372",
       "type": "preprint",
       "topics": [
         "misinfo",
@@ -3889,6 +4249,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1612.08157",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1612.08157",
       "type": "preprint",
       "topics": [
         "social_net"
@@ -3913,6 +4275,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1607.01869",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1607.01869",
       "type": "preprint",
       "topics": [
         "ir",
@@ -3934,6 +4298,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2766462.2767709",
+      "url_publisher": "https://doi.org/10.1145/2766462.2767709",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -3953,6 +4319,8 @@
       "venue": "HLT-NAACL",
       "venue_short": "NAACL",
       "url": "https://doi.org/10.3115/v1/n15-1014",
+      "url_publisher": "https://doi.org/10.3115/v1/n15-1014",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "misc"
@@ -3973,6 +4341,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/2740908.2744112",
+      "url_publisher": "https://doi.org/10.1145/2740908.2744112",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -3992,6 +4362,8 @@
       "venue": "WSDM",
       "venue_short": "WSDM",
       "url": "https://doi.org/10.1145/2684822.2685302",
+      "url_publisher": "https://doi.org/10.1145/2684822.2685302",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4012,6 +4384,8 @@
       "venue": "KDD",
       "venue_short": "KDD",
       "url": "https://doi.org/10.1145/2783258.2788581",
+      "url_publisher": "https://doi.org/10.1145/2783258.2788581",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm"
@@ -4030,6 +4404,8 @@
       "venue": "Inf. Process. Manag.",
       "venue_short": "IP&M",
       "url": "https://doi.org/10.1016/j.ipm.2014.07.010",
+      "url_publisher": "https://doi.org/10.1016/j.ipm.2014.07.010",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir"
@@ -4049,6 +4425,8 @@
       "venue": "ACM Trans. Intell. Syst. Technol.",
       "venue_short": "TIST",
       "url": "https://doi.org/10.1145/2766459",
+      "url_publisher": "https://doi.org/10.1145/2766459",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "misc"
@@ -4069,6 +4447,8 @@
       "venue": "ISMIS",
       "venue_short": "ISMIS",
       "url": "https://doi.org/10.1007/978-3-319-25252-0_26",
+      "url_publisher": "https://doi.org/10.1007/978-3-319-25252-0_26",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -4088,6 +4468,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-1127/paper10.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-1127/paper10.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -4107,6 +4489,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2505515.2505656",
+      "url_publisher": "https://doi.org/10.1145/2505515.2505656",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4126,6 +4510,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/2487788.2487851",
+      "url_publisher": "https://doi.org/10.1145/2487788.2487851",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4148,6 +4534,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2505515.2505699",
+      "url_publisher": "https://doi.org/10.1145/2505515.2505699",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4167,6 +4555,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/2487788.2487853",
+      "url_publisher": "https://doi.org/10.1145/2487788.2487853",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4187,6 +4577,8 @@
       "venue": "ACM Trans. Inf. Syst.",
       "venue_short": "TOIS",
       "url": "https://doi.org/10.1145/2493175.2493179",
+      "url_publisher": "https://doi.org/10.1145/2493175.2493179",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir"
@@ -4206,6 +4598,8 @@
       "venue": "Inf. Sci.",
       "venue_short": "ISCI",
       "url": "https://doi.org/10.1016/j.ins.2013.05.037",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2013.05.037",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "misc"
@@ -4226,6 +4620,8 @@
       "venue": "OAIR",
       "venue_short": "RIAO",
       "url": "http://dl.acm.org/citation.cfm?id=2491768",
+      "url_publisher": "http://dl.acm.org/citation.cfm?id=2491768",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -4248,6 +4644,8 @@
       "venue": "SPIRE",
       "venue_short": "SPIRE",
       "url": "https://doi.org/10.1007/978-3-319-02432-5_9",
+      "url_publisher": "https://doi.org/10.1007/978-3-319-02432-5_9",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -4268,6 +4666,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2348283.2348332",
+      "url_publisher": "https://doi.org/10.1145/2348283.2348332",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4290,6 +4690,8 @@
       "venue": "ECIR",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-642-28997-2_17",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-28997-2_17",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4310,6 +4712,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2396761.2398534",
+      "url_publisher": "https://doi.org/10.1145/2396761.2398534",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4329,6 +4733,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2396761.2396786",
+      "url_publisher": "https://doi.org/10.1145/2396761.2396786",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4347,6 +4753,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/2348283.2348368",
+      "url_publisher": "https://doi.org/10.1145/2348283.2348368",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4368,6 +4776,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/2396761.2398559",
+      "url_publisher": "https://doi.org/10.1145/2396761.2398559",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4390,6 +4800,8 @@
       "venue": "Inf. Process. Manag.",
       "venue_short": "IP&M",
       "url": "https://doi.org/10.1016/j.ipm.2011.07.005",
+      "url_publisher": "https://doi.org/10.1016/j.ipm.2011.07.005",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir"
@@ -4408,6 +4820,8 @@
       "venue": "Inf. Process. Manag.",
       "venue_short": "IP&M",
       "url": "https://doi.org/10.1016/j.ipm.2010.11.010",
+      "url_publisher": "https://doi.org/10.1016/j.ipm.2010.11.010",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "efficient"
@@ -4428,6 +4842,8 @@
       "venue": "AMT",
       "venue_short": "AMT",
       "url": "https://doi.org/10.1007/978-3-642-35236-2_20",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-35236-2_20",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -4447,6 +4863,8 @@
       "venue": "NLDB",
       "venue_short": "NLDB",
       "url": "https://doi.org/10.1007/978-3-642-31178-9_26",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-31178-9_26",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "nlp"
@@ -4467,6 +4885,8 @@
       "venue": "Web Intelligence/IAT Workshops",
       "venue_short": "IAT",
       "url": "https://doi.org/10.1109/WI-IAT.2012.88",
+      "url_publisher": "https://doi.org/10.1109/WI-IAT.2012.88",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "recsys"
@@ -4489,6 +4909,8 @@
       "venue": "EternalS@ECAI",
       "venue_short": "ECAI",
       "url": "https://doi.org/10.1007/978-3-642-45260-4_9",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-45260-4_9",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir"
@@ -4509,6 +4931,8 @@
       "venue": "ERCIM News",
       "venue_short": "ERCIM",
       "url": "http://ercim-news.ercim.eu/en90/ri/cite-as-you-write",
+      "url_publisher": "http://ercim-news.ercim.eu/en90/ri/cite-as-you-write",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "misc"
@@ -4529,6 +4953,8 @@
       "venue": "EDBT",
       "venue_short": "EDBT",
       "url": "https://doi.org/10.1145/1951365.1951379",
+      "url_publisher": "https://doi.org/10.1145/1951365.1951379",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4550,6 +4976,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/1963192.1963202",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963202",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4571,6 +4999,8 @@
       "venue": "WSDM",
       "venue_short": "WSDM",
       "url": "https://doi.org/10.1145/1935826.1935875",
+      "url_publisher": "https://doi.org/10.1145/1935826.1935875",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4591,6 +5021,8 @@
       "venue": "WWW (Companion Volume)",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/1963192.1963201",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963201",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4610,6 +5042,8 @@
       "venue": "ECIR",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-642-20161-5_66",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-20161-5_66",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4629,6 +5063,8 @@
       "venue": "Proc. VLDB Endow.",
       "venue_short": "VLDB",
       "url": "http://www.vldb.org/pvldb/vol4/p451-capannini.pdf",
+      "url_publisher": "http://www.vldb.org/pvldb/vol4/p451-capannini.pdf",
+      "url_arxiv": "http://arxiv.org/abs/1105.4255",
       "type": "q1_journal",
       "topics": [
         "ir",
@@ -4649,6 +5085,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-704/26.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-704/26.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "nlp"
@@ -4668,6 +5106,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "url": "http://arxiv.org/abs/1105.4255",
+      "url_publisher": null,
+      "url_arxiv": "http://arxiv.org/abs/1105.4255",
       "type": "preprint",
       "topics": [
         "ir",
@@ -4686,6 +5126,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/1871437.1871592",
+      "url_publisher": "https://doi.org/10.1145/1871437.1871592",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -4704,6 +5146,8 @@
       "venue": "Found. Trends Inf. Retr.",
       "venue_short": "FTIR",
       "url": "https://doi.org/10.1561/1500000013",
+      "url_publisher": "https://doi.org/10.1561/1500000013",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir"
@@ -4723,6 +5167,8 @@
       "venue": "ACM Trans. Inf. Syst.",
       "venue_short": "TOIS",
       "url": "https://doi.org/10.1145/1740592.1740593",
+      "url_publisher": "https://doi.org/10.1145/1740592.1740593",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir",
@@ -4743,6 +5189,8 @@
       "venue": "APWeb",
       "venue_short": "APWEB",
       "url": "https://doi.org/10.1109/APWeb.2010.30",
+      "url_publisher": "https://doi.org/10.1109/APWeb.2010.30",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -4763,6 +5211,8 @@
       "venue": "SPIRE",
       "venue_short": "SPIRE",
       "url": "https://doi.org/10.1007/978-3-642-16321-0_2",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_2",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -4783,6 +5233,8 @@
       "venue": "HPCC",
       "venue_short": "HPCC",
       "url": "https://doi.org/10.1109/HPCC.2010.22",
+      "url_publisher": "https://doi.org/10.1109/HPCC.2010.22",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -4803,6 +5255,8 @@
       "venue": "SPIRE",
       "venue_short": "SPIRE",
       "url": "https://doi.org/10.1007/978-3-642-16321-0_4",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_4",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -4821,6 +5275,8 @@
       "venue": "Web Intelligence",
       "venue_short": "WEBI",
       "url": "https://doi.org/10.1109/WI-IAT.2010.139",
+      "url_publisher": "https://doi.org/10.1109/WI-IAT.2010.139",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -4841,6 +5297,8 @@
       "venue": "IIR",
       "venue_short": "IIR",
       "url": "https://ceur-ws.org/Vol-560/paper21.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-560/paper21.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -4863,6 +5321,8 @@
       "venue": "RIAO",
       "venue_short": "RIAO",
       "url": "https://dl.acm.org/doi/10.5555/1937055.1937102",
+      "url_publisher": "https://dl.acm.org/doi/10.5555/1937055.1937102",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -4884,6 +5344,8 @@
       "venue": "Int. J. Distributed Syst. Technol.",
       "venue_short": "IJDST",
       "url": "https://doi.org/10.4018/jdst.2010090804",
+      "url_publisher": "https://doi.org/10.4018/jdst.2010090804",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "efficient"
@@ -4904,6 +5366,8 @@
       "venue": "Web Intelligence/IAT Workshops",
       "venue_short": "IAT",
       "url": "https://doi.org/10.1109/WI-IAT.2010.281",
+      "url_publisher": "https://doi.org/10.1109/WI-IAT.2010.281",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir"
@@ -4922,6 +5386,8 @@
       "venue": "ICDE Workshops",
       "venue_short": "ICDE",
       "url": "https://doi.org/10.1109/ICDEW.2010.5452726",
+      "url_publisher": "https://doi.org/10.1109/ICDEW.2010.5452726",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir",
@@ -4944,6 +5410,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/1645953.1646272",
+      "url_publisher": "https://doi.org/10.1145/1645953.1646272",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4961,6 +5429,8 @@
       "venue": "ECIR",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-642-00958-7_94",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-00958-7_94",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -4983,6 +5453,8 @@
       "venue": "RecSys",
       "venue_short": "RECSYS",
       "url": "https://doi.org/10.1145/1639714.1639729",
+      "url_publisher": "https://doi.org/10.1145/1639714.1639729",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5005,6 +5477,8 @@
       "venue": "WWW",
       "venue_short": "WWW",
       "url": "https://doi.org/10.1145/1526709.1526862",
+      "url_publisher": "https://doi.org/10.1145/1526709.1526862",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -5024,6 +5498,8 @@
       "venue": "Future Gener. Comput. Syst.",
       "venue_short": "FGCS",
       "url": "https://doi.org/10.1016/j.future.2008.07.012",
+      "url_publisher": "https://doi.org/10.1016/j.future.2008.07.012",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "efficient"
@@ -5045,6 +5521,8 @@
       "venue": "ICUMT",
       "venue_short": "ICUMT",
       "url": "https://doi.org/10.1109/ICUMT.2009.5345355",
+      "url_publisher": "https://doi.org/10.1109/ICUMT.2009.5345355",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5064,6 +5542,8 @@
       "venue": "WISE",
       "venue_short": "WISE",
       "url": "https://doi.org/10.1007/978-3-642-04409-0_50",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-04409-0_50",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -5087,6 +5567,8 @@
       "venue": "Future Internet Assembly",
       "venue_short": "FIA",
       "url": "https://doi.org/10.3233/978-1-60750-007-0-263",
+      "url_publisher": "https://doi.org/10.3233/978-1-60750-007-0-263",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -5108,6 +5590,8 @@
       "venue": "WSCD@WSDM",
       "venue_short": "WSDM",
       "url": "https://doi.org/10.1145/1507509.1507517",
+      "url_publisher": "https://doi.org/10.1145/1507509.1507517",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir"
@@ -5127,6 +5611,8 @@
       "venue": "LSDS-IR@SIGIR",
       "venue_short": "SIGIR",
       "url": "https://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir",
@@ -5146,6 +5632,8 @@
       "venue": "HPDC",
       "venue_short": "HPDC",
       "url": "https://doi.org/10.1145/1383422.1383458",
+      "url_publisher": "https://doi.org/10.1145/1383422.1383458",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5167,6 +5655,8 @@
       "venue": "LA-WEB",
       "venue_short": "LA-WEB",
       "url": "https://doi.org/10.1109/LA-WEB.2008.21",
+      "url_publisher": "https://doi.org/10.1109/LA-WEB.2008.21",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -5188,6 +5678,8 @@
       "venue": "ACM Trans. Web",
       "venue_short": "TWEB",
       "url": "https://doi.org/10.1145/1409220.1409223",
+      "url_publisher": "https://doi.org/10.1145/1409220.1409223",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "ir",
@@ -5208,6 +5700,8 @@
       "venue": "ERCIM News",
       "venue_short": "ERCIM",
       "url": "http://ercim-news.ercim.eu/spranker-a-discovery-tool-to-rank-service-providers-using-quality-of-experience",
+      "url_publisher": "http://ercim-news.ercim.eu/spranker-a-discovery-tool-to-rank-service-providers-using-quality-of-experience",
+      "url_arxiv": null,
       "type": "preprint",
       "topics": [
         "ir"
@@ -5228,6 +5722,8 @@
       "venue": "ICDE",
       "venue_short": "ICDE",
       "url": "https://doi.org/10.1109/ICDE.2007.367846",
+      "url_publisher": "https://doi.org/10.1109/ICDE.2007.367846",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5249,6 +5745,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/1277741.1277814",
+      "url_publisher": "https://doi.org/10.1145/1277741.1277814",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -5265,6 +5763,8 @@
       "venue": "ECIR",
       "venue_short": "ECIR",
       "url": "https://doi.org/10.1007/978-3-540-71496-5_12",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-71496-5_12",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5287,6 +5787,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/1277741.1277775",
+      "url_publisher": "https://doi.org/10.1145/1277741.1277775",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5305,6 +5807,8 @@
       "venue": "Commun. ACM",
       "venue_short": "CACM",
       "url": "https://doi.org/10.1145/1216016.1216022",
+      "url_publisher": "https://doi.org/10.1145/1216016.1216022",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "misc"
@@ -5321,6 +5825,8 @@
       "venue": "Inf. Process. Manag.",
       "venue_short": "IP&M",
       "url": "https://doi.org/10.1016/j.ipm.2006.12.001",
+      "url_publisher": "https://doi.org/10.1016/j.ipm.2006.12.001",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir",
@@ -5343,6 +5849,8 @@
       "venue": "CoreGRID",
       "venue_short": "COREGRID",
       "url": "https://doi.org/10.1007/978-0-387-72498-0_4",
+      "url_publisher": "https://doi.org/10.1007/978-0-387-72498-0_4",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5364,6 +5872,8 @@
       "venue": "CBMS",
       "venue_short": "CBMS",
       "url": "https://doi.org/10.1109/CBMS.2007.29",
+      "url_publisher": "https://doi.org/10.1109/CBMS.2007.29",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5383,6 +5893,8 @@
       "venue": "Infoscale",
       "venue_short": "INFOSCALE",
       "url": "https://doi.org/10.4108/infoscale.2007.892",
+      "url_publisher": "https://doi.org/10.4108/infoscale.2007.892",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5402,6 +5914,8 @@
       "venue": "Infoscale",
       "venue_short": "INFOSCALE",
       "url": "https://doi.org/10.4108/infoscale.2007.227",
+      "url_publisher": "https://doi.org/10.4108/infoscale.2007.227",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5420,6 +5934,8 @@
       "venue": "CIKM",
       "venue_short": "CIKM",
       "url": "https://doi.org/10.1145/1183614.1183777",
+      "url_publisher": "https://doi.org/10.1145/1183614.1183777",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir"
@@ -5439,6 +5955,8 @@
       "venue": "ACM Trans. Inf. Syst.",
       "venue_short": "TOIS",
       "url": "https://doi.org/10.1145/1125857.1125859",
+      "url_publisher": "https://doi.org/10.1145/1125857.1125859",
+      "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
         "ir",
@@ -5460,6 +5978,8 @@
       "venue": "SAC",
       "venue_short": "SAC",
       "url": "https://doi.org/10.1145/1141277.1141407",
+      "url_publisher": "https://doi.org/10.1145/1141277.1141407",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys",
@@ -5479,6 +5999,8 @@
       "venue": "Infoscale",
       "venue_short": "INFOSCALE",
       "url": "https://doi.org/10.1145/1146847.1146881",
+      "url_publisher": "https://doi.org/10.1145/1146847.1146881",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir"
@@ -5496,6 +6018,8 @@
       "venue": "SAC",
       "venue_short": "SAC",
       "url": "https://doi.org/10.1145/1141277.1141605",
+      "url_publisher": "https://doi.org/10.1145/1141277.1141605",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "social_net"
@@ -5515,6 +6039,8 @@
       "venue": "Concurr. Comput. Pract. Exp.",
       "venue_short": "Concurrency",
       "url": "https://doi.org/10.1002/cpe.995",
+      "url_publisher": "https://doi.org/10.1002/cpe.995",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "ir"
@@ -5535,6 +6061,8 @@
       "venue": "Euro-Par",
       "venue_short": "EUROPAR",
       "url": "https://doi.org/10.1007/11549468_52",
+      "url_publisher": "https://doi.org/10.1007/11549468_52",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5553,6 +6081,8 @@
       "venue": "ITCC (2)",
       "venue_short": "ITCC",
       "url": "https://doi.org/10.1109/ITCC.2005.108",
+      "url_publisher": "https://doi.org/10.1109/ITCC.2005.108",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5571,6 +6101,8 @@
       "venue": "SIGIR",
       "venue_short": "SIGIR",
       "url": "https://doi.org/10.1145/1008992.1009046",
+      "url_publisher": "https://doi.org/10.1145/1008992.1009046",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5591,6 +6123,8 @@
       "venue": "Euro-Par",
       "venue_short": "EUROPAR",
       "url": "https://doi.org/10.1007/978-3-540-27866-5_45",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-27866-5_45",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5611,6 +6145,8 @@
       "venue": "Future Generation Grids",
       "venue_short": "DAGSTUHL",
       "url": "https://doi.org/10.1007/978-0-387-29445-2_9",
+      "url_publisher": "https://doi.org/10.1007/978-0-387-29445-2_9",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5631,6 +6167,8 @@
       "venue": "Web Intelligence",
       "venue_short": "WEBI",
       "url": "https://doi.org/10.1109/WI.2004.10026",
+      "url_publisher": "https://doi.org/10.1109/WI.2004.10026",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5650,6 +6188,8 @@
       "venue": "PKDD",
       "venue_short": "PKDD",
       "url": "https://doi.org/10.1007/978-3-540-30116-5_56",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-30116-5_56",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -5668,6 +6208,8 @@
       "venue": "CCGRID",
       "venue_short": "CCGRID",
       "url": "https://doi.org/10.1109/CCGrid.2004.1336708",
+      "url_publisher": "https://doi.org/10.1109/CCGrid.2004.1336708",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -5685,6 +6227,8 @@
       "venue": "SEBD",
       "venue_short": "SEBD",
       "url": null,
+      "url_publisher": null,
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -5702,6 +6246,8 @@
       "venue": "Web Intelligence",
       "venue_short": "WEBI",
       "url": "https://doi.org/10.1109/WI.2004.10158",
+      "url_publisher": "https://doi.org/10.1109/WI.2004.10158",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "recsys"
@@ -5720,6 +6266,8 @@
       "venue": "SEBD",
       "venue_short": "SEBD",
       "url": null,
+      "url_publisher": null,
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient"
@@ -5738,6 +6286,8 @@
       "venue": "SAC",
       "venue_short": "SAC",
       "url": "https://doi.org/10.1145/967900.968024",
+      "url_publisher": "https://doi.org/10.1145/967900.968024",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5758,6 +6308,8 @@
       "venue": "ITCC (1)",
       "venue_short": "ITCC",
       "url": "https://doi.org/10.1109/ITCC.2004.1286486",
+      "url_publisher": "https://doi.org/10.1109/ITCC.2004.1286486",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "misc"
@@ -5777,6 +6329,8 @@
       "venue": "FIMI",
       "venue_short": "FIMI",
       "url": "https://ceur-ws.org/Vol-126/webdocs.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-126/webdocs.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "data_mining"
@@ -5795,6 +6349,8 @@
       "venue": "International Conference on Computational Science",
       "venue_short": "ICCS",
       "url": "https://doi.org/10.1007/978-3-540-24685-5_33",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-24685-5_33",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "ir",
@@ -5815,6 +6371,8 @@
       "venue": "J. Digit. Inf. Manag.",
       "venue_short": "JDIM",
       "url": "http://www.dirf.org/jdim/abstractv2i2.htm#11",
+      "url_publisher": "http://www.dirf.org/jdim/abstractv2i2.htm#11",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "misc"
@@ -5832,7 +6390,9 @@
       "year": 2004,
       "venue": "CoRR",
       "venue_short": "arXiv",
-      "url": "http://arxiv.org/abs/cs.IR/0407053",
+      "url": "https://doi.org/10.48550/arXiv.cs/0407053",
+      "url_publisher": "https://doi.org/10.48550/arXiv.cs/0407053",
+      "url_arxiv": "http://arxiv.org/abs/cs.IR/0407053",
       "type": "preprint",
       "topics": [
         "ir",
@@ -5854,6 +6414,8 @@
       "venue": "WWW (Posters)",
       "venue_short": "WWW",
       "url": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
+      "url_publisher": "http://www2003.org/cdrom/papers/poster/p156/p156-silvestri.html",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
@@ -5875,6 +6437,8 @@
       "venue": "FIMI",
       "venue_short": "FIMI",
       "url": "https://ceur-ws.org/Vol-90/palmerini.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-90/palmerini.pdf",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "data_mining"
@@ -5894,6 +6458,8 @@
       "venue": "ICDM",
       "venue_short": "ICDM",
       "url": "https://doi.org/10.1109/ICDM.2002.1183921",
+      "url_publisher": "https://doi.org/10.1109/ICDM.2002.1183921",
+      "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "data_mining"
@@ -5913,6 +6479,8 @@
       "venue": "VECPAR",
       "venue_short": "VECPAR",
       "url": "https://doi.org/10.1007/3-540-36569-9_28",
+      "url_publisher": "https://doi.org/10.1007/3-540-36569-9_28",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient",
@@ -5933,6 +6501,8 @@
       "venue": "Euro-Par",
       "venue_short": "EUROPAR",
       "url": "https://doi.org/10.1007/3-540-45706-2_49",
+      "url_publisher": "https://doi.org/10.1007/3-540-45706-2_49",
+      "url_arxiv": null,
       "type": "other_conf",
       "topics": [
         "efficient",
