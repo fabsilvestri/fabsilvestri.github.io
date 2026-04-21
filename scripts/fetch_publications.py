@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """Fetch Fabrizio Silvestri's publications from DBLP and classify them.
 
-Reads data/venues.yml for the A*/Q1 classification map and
-data/topics.yml for topic classification, then writes
-assets/js/publications-data.js and data/publications.json.
+Conferences are ranked against CORE (data/core_rankings.csv); journals
+are ranked against Scimago (data/scimago_journal_rank.csv). The
+DBLP→CORE acronym and DBLP→ISSN mappings live in data/venues.yml.
+Topic tagging lives in data/topics.yml. Outputs are written to
+data/publications.json and assets/js/publications-data.js.
 
 Dependencies: PyYAML (pip install -r scripts/requirements.txt).
 Run locally:  python3 scripts/fetch_publications.py
 """
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sys
@@ -27,6 +30,8 @@ USER_AGENT = "fabsilvestri-homepage/1.0 (+https://fabsilvestri.github.io)"
 ROOT = Path(__file__).resolve().parent.parent
 VENUES_FILE = ROOT / "data" / "venues.yml"
 TOPICS_FILE = ROOT / "data" / "topics.yml"
+CORE_FILE = ROOT / "data" / "core_rankings.csv"
+SCIMAGO_FILE = ROOT / "data" / "scimago_journal_rank.csv"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 OUT_SITEMAP = ROOT / "sitemap.xml"
@@ -67,16 +72,125 @@ VENUE_DISPLAY = {
 }
 
 
+# Scimago subject categories that count as "Computer Science". A
+# journal is Q1 iff at least one of these categories is rated Q1 for
+# it — per the user's preference that "Q1" means Scimago Q1 in a CS
+# category, not any subject area.
+CS_CATEGORIES: set[str] = {
+    "Artificial Intelligence",
+    "Computational Theory and Mathematics",
+    "Computer Graphics and Computer-Aided Design",
+    "Computer Networks and Communications",
+    "Computer Science Applications",
+    "Computer Science (miscellaneous)",
+    "Computer Vision and Pattern Recognition",
+    "Hardware and Architecture",
+    "Human-Computer Interaction",
+    "Information Systems",
+    "Signal Processing",
+    "Software",
+}
+
+# CORE rank precedence for collision resolution — when the same acronym
+# appears in CORE under multiple conference names, we keep the best rank.
+CORE_RANK_ORDER = {"A*": 0, "A": 1, "B": 2, "C": 3}
+
+# Scimago category string format:  "Artificial Intelligence (Q1)".
+# "-" quartile (no score) is also possible; we ignore those.
+CATEGORY_RE = re.compile(r"^(?P<name>.+?)\s*\(Q(?P<q>[1-4])\)\s*$")
+
+
 def load_venues(path: Path) -> dict:
-    """Load venues.yml. Venue abbreviations are lowercased for matching;
-    regex patterns and DBLP keys in skip lists are preserved verbatim."""
+    """Load venues.yml. Abbrevs are lowercased; acronyms uppercased;
+    ISSNs normalized (no hyphen, uppercase X). Skip lists verbatim."""
     with path.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f) or {}
-    for key in ("a_star_confs", "q1_journals"):
-        raw[key] = [v.lower() for v in raw.get(key, []) or []]
+    conf = raw.get("conference_core_acronym") or {}
+    raw["conference_core_acronym"] = {
+        k.lower(): (v or "").strip().upper() for k, v in conf.items()
+    }
+    journals = raw.get("journal_issn") or {}
+    raw["journal_issn"] = {
+        k.lower(): [normalize_issn(i) for i in (v or []) if i]
+        for k, v in journals.items()
+    }
     for key in ("skip_title_patterns", "skip_keys"):
         raw[key] = list(raw.get(key, []) or [])
     return raw
+
+
+def normalize_issn(issn: str) -> str:
+    """'1046-8188' → '10468188'; 'X' stays uppercase; anything
+    non-alphanumeric is stripped."""
+    return re.sub(r"[^0-9Xx]", "", issn or "").upper()
+
+
+def load_core_rankings(path: Path) -> dict[str, str]:
+    """Return {acronym_upper → rank}. On collision, keep the best rank
+    per CORE_RANK_ORDER; anything outside that order is kept only if
+    nothing better has been seen."""
+    if not path.exists():
+        print(
+            f"[warn] CORE rankings missing: {path.name} — all conferences will be other_conf.",
+            file=sys.stderr,
+        )
+        return {}
+    out: dict[str, str] = {}
+    with path.open(newline="", encoding="utf-8") as f:
+        for row in csv.reader(f):
+            if len(row) < 5:
+                continue
+            acro = row[2].strip().upper()
+            rank = row[4].strip()
+            if not acro:
+                continue
+            prev = out.get(acro)
+            if prev is None or CORE_RANK_ORDER.get(rank, 99) < CORE_RANK_ORDER.get(prev, 99):
+                out[acro] = rank
+    return out
+
+
+def load_scimago(path: Path) -> dict[str, list[tuple[str, int]]]:
+    """Return {normalized_issn → [(category_name, quartile_int), ...]}.
+    Scimago CSVs are semicolon-separated with a single header row; the
+    ISSN column lists one or more ISSNs comma-separated, typically
+    without hyphens. Each category appears as 'Name (Qn)' joined by
+    '; ' inside a quoted field."""
+    if not path.exists():
+        print(
+            f"[warn] Scimago rankings missing: {path.name} — all journals will be other_journal.\n"
+            f"       Download from https://www.scimagojr.com/journalrank.php (Download data).",
+            file=sys.stderr,
+        )
+        return {}
+    out: dict[str, list[tuple[str, int]]] = {}
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        # Tolerate minor header casing drift between Scimago editions.
+        fields = {name.strip().lower(): name for name in (reader.fieldnames or [])}
+        issn_col = fields.get("issn")
+        cat_col = fields.get("categories")
+        if not issn_col or not cat_col:
+            print(
+                f"[warn] Scimago CSV missing Issn/Categories columns — headers were: "
+                f"{list(reader.fieldnames or [])}",
+                file=sys.stderr,
+            )
+            return {}
+        for row in reader:
+            cats_field = row.get(cat_col, "") or ""
+            cats: list[tuple[str, int]] = []
+            for piece in cats_field.split(";"):
+                m = CATEGORY_RE.match(piece.strip())
+                if m:
+                    cats.append((m.group("name").strip(), int(m.group("q"))))
+            if not cats:
+                continue
+            for issn in (row.get(issn_col, "") or "").split(","):
+                key = normalize_issn(issn)
+                if key:
+                    out[key] = cats
+    return out
 
 
 MISC_SLUG = "misc"  # catch-all topic for papers that match nothing else
@@ -163,7 +277,12 @@ def is_workshop(booktitle: str) -> bool:
     return False
 
 
-def classify(record: ET.Element, venues: dict[str, list[str]]) -> str:
+def classify(
+    record: ET.Element,
+    venues: dict,
+    core_ranks: dict[str, str],
+    scimago: dict[str, list[tuple[str, int]]],
+) -> str:
     tag = record.tag
     key = record.get("key", "")
     abbrev = venue_abbrev(key)
@@ -173,11 +292,21 @@ def classify(record: ET.Element, venues: dict[str, list[str]]) -> str:
         return TYPE_PREPRINT
     if is_workshop(booktitle):
         return TYPE_WORKSHOP
-    if tag == "inproceedings" and abbrev in venues.get("a_star_confs", []):
-        return TYPE_A_STAR
-    if tag == "article" and abbrev in venues.get("q1_journals", []):
-        return TYPE_Q1
+
+    if tag == "inproceedings":
+        acro = venues.get("conference_core_acronym", {}).get(abbrev) or abbrev.upper()
+        if core_ranks.get(acro) == "A*":
+            return TYPE_A_STAR
+        return TYPE_OTHER_CONF
+
     if tag == "article":
+        for issn in venues.get("journal_issn", {}).get(abbrev, []):
+            cats = scimago.get(issn)
+            if not cats:
+                continue
+            for name, q in cats:
+                if q == 1 and name in CS_CATEGORIES:
+                    return TYPE_Q1
         return TYPE_OTHER_JOURNAL
     return TYPE_OTHER_CONF
 
@@ -237,9 +366,12 @@ TYPE_ORDER = [
 def main() -> int:
     venues = load_venues(VENUES_FILE)
     topics, topic_overrides = load_topics(TOPICS_FILE)
+    core_ranks = load_core_rankings(CORE_FILE)
+    scimago = load_scimago(SCIMAGO_FILE)
     print(
-        f"Loaded venues: {len(venues.get('a_star_confs', []))} A* confs, "
-        f"{len(venues.get('q1_journals', []))} Q1 journals; "
+        f"Loaded venues: {len(venues.get('conference_core_acronym', {}))} CORE overrides, "
+        f"{len(venues.get('journal_issn', {}))} journal ISSN mappings; "
+        f"{len(core_ranks)} CORE entries, {len(scimago)} Scimago ISSNs; "
         f"{len(topics)} topics",
         file=sys.stderr,
     )
@@ -269,7 +401,7 @@ def main() -> int:
         if any(pat.search(parsed["title"]) for pat in skip_patterns):
             skipped += 1
             continue
-        parsed["type"] = classify(record, venues)
+        parsed["type"] = classify(record, venues, core_ranks, scimago)
         parsed["topics"] = classify_topics(parsed, topics, topic_overrides)
         pubs.append(parsed)
 
