@@ -1,0 +1,56 @@
+name: Refresh Scholar citations (biweekly)
+
+on:
+  schedule:
+    # 1st and 15th of each month at 05:15 UTC (~06:15 Rome).
+    # Twice a month is close enough to "every two weeks".
+    - cron: "15 5 1,15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+          pip install "requests>=2.31" "beautifulsoup4>=4.12"
+
+      # Scholar rate-limits CI IPs (GitHub Actions runs on Azure ranges
+      # that google-scholar.com often challenges). We tolerate failure —
+      # when Scholar returns an interstitial the script exits non-zero,
+      # continue-on-error keeps the workflow green, and the next run
+      # tries again.
+      - name: Scrape Google Scholar (best effort)
+        id: scholar
+        continue-on-error: true
+        run: python scripts/refresh_citations.py
+
+      - name: Regenerate publications.json with fresh citations
+        if: steps.scholar.outcome == 'success'
+        run: python scripts/fetch_publications.py
+
+      - name: Commit + push if changed
+        if: steps.scholar.outcome == 'success'
+        run: |
+          FILES="data/citations.json data/publications.json assets/js/publications-data.js index.html sitemap.xml"
+          if [ -n "$(git status --porcelain $FILES)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add $FILES
+            git commit -m "chore: refresh Scholar citations ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No citation changes."
+          fi

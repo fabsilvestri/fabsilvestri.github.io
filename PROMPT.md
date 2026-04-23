@@ -211,7 +211,12 @@ copy verbatim, no edits needed:
 
 - `.github/workflows/update-publications.yml` — runs `fetch_publications.py`
   nightly at 04:00 UTC and commits any change to `data/publications.json` +
-  `assets/js/publications-data.js` + `sitemap.xml`.
+  `assets/js/publications-data.js` + `sitemap.xml` + `index.html` (the last
+  one for the asset cache-buster).
+- `.github/workflows/refresh-citations.yml` — runs `refresh_citations.py`
+  on the 1st and 15th of each month (≈ biweekly) to scrape Google Scholar.
+  Best effort: Scholar rate-limits CI IPs, so some runs may abort. The
+  workflow swallows the failure and the next run tries again.
 - `.github/workflows/discover-awards.yml` — runs `discover_awards_claude.py`
   every Monday at 05:30 UTC and opens a PR with `data/awards_candidates.{json,md}`
   for review.
