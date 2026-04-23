@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-04-22",
-  "generated_at": "2026-04-22T05:57:54+00:00",
+  "last_updated": "2026-04-23",
+  "generated_at": "2026-04-23T06:03:23+00:00",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 283,
+  "count": 284,
   "counts_by_type": {
-    "a_star_conf": 64,
+    "a_star_conf": 65,
     "q1_journal": 28,
     "other_conf": 67,
     "other_journal": 9,
@@ -18,7 +18,7 @@
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
-    "trust": 49,
+    "trust": 50,
     "task_vectors": 9,
     "efficient": 52,
     "misinfo": 19,
@@ -108,6 +108,27 @@
     }
   ],
   "publications": [
+    {
+      "key": "conf/kdd/GiorgiVST26",
+      "title": "Countering Overfitting with Counterfactual Examples",
+      "authors": [
+        "F. Giorgi",
+        "F. Veglianti",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2026,
+      "venue": "KDD (1)",
+      "venue_short": "KDD",
+      "url": "https://doi.org/10.1145/3770854.3780243",
+      "url_publisher": "https://doi.org/10.1145/3770854.3780243",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "trust"
+      ],
+      "citations": 0
+    },
     {
       "key": "conf/eacl/TrappoliniCFMS26",
       "title": "Redefining Retrieval Evaluation in the Era of LLMs",
