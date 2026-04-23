@@ -29,10 +29,10 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git status --porcelain data/publications.json assets/js/publications-data.js sitemap.xml)" ]; then
+          if [ -n "$(git status --porcelain data/publications.json assets/js/publications-data.js sitemap.xml index.html)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/publications.json assets/js/publications-data.js sitemap.xml
+            git add data/publications.json assets/js/publications-data.js sitemap.xml index.html
             git commit -m "chore: refresh publications from DBLP ($(date -u +%Y-%m-%d))"
             git push
           else

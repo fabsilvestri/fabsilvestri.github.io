@@ -38,7 +38,18 @@ TALKS_FILE = ROOT / "data" / "talks.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 OUT_SITEMAP = ROOT / "sitemap.xml"
+INDEX_HTML = ROOT / "index.html"
 SITE_URL = "https://fabsilvestri.github.io/"
+
+# Assets whose `?v=YYYY-MM-DD` query string gets bumped to today on every
+# run — purely a cache-buster so visiting browsers actually refetch after a
+# nightly publications refresh. Static files with no version: don't bump.
+CACHE_BUSTED_ASSETS = [
+    "assets/js/publications-data.js",
+    "assets/js/publications.js",
+    "assets/js/analytics.js",
+    "assets/css/style.css",
+]
 
 TYPE_A_STAR = "a_star_conf"
 TYPE_Q1 = "q1_journal"
@@ -614,8 +625,24 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    # Refresh sitemap lastmod so crawlers know the page changed today.
     today = date.today().isoformat()
+
+    # Bump ?v=... on cache-busted assets in index.html so browsers pick up
+    # the refreshed publications-data.js immediately after a nightly deploy
+    # instead of serving a stale cached copy until the URL changes.
+    if INDEX_HTML.exists():
+        html = INDEX_HTML.read_text(encoding="utf-8")
+        new_html = html
+        for asset in CACHE_BUSTED_ASSETS:
+            new_html = re.sub(
+                re.escape(asset) + r"(\?v=\d{4}-\d{2}-\d{2})?",
+                f"{asset}?v={today}",
+                new_html,
+            )
+        if new_html != html:
+            INDEX_HTML.write_text(new_html, encoding="utf-8")
+
+    # Refresh sitemap lastmod so crawlers know the page changed today.
     OUT_SITEMAP.write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
