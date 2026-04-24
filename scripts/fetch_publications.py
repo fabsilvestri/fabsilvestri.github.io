@@ -515,9 +515,10 @@ def load_talks(path: Path) -> list[dict]:
     return talks
 
 
-def load_citations(path: Path) -> dict[str, int]:
-    """Return {dblp_key → citation_count} from the Scholar scrape cache.
-    Missing file → empty dict with a console note (citations are optional)."""
+def load_citations(path: Path) -> tuple[dict[str, int], str]:
+    """Return ({dblp_key → citation_count}, fetched_at_iso_date) from the
+    Scholar scrape cache. Missing file → empty dict + empty date with a
+    console note (citations are optional)."""
     if not path.exists():
         print(
             f"[warn] Citations cache missing: {path.name} — "
@@ -525,9 +526,12 @@ def load_citations(path: Path) -> dict[str, int]:
             f"Run scripts/refresh_citations.py to populate.",
             file=sys.stderr,
         )
-        return {}
+        return {}, ""
     payload = json.loads(path.read_text(encoding="utf-8"))
-    return {k: int(v) for k, v in (payload.get("citations") or {}).items()}
+    counts = {k: int(v) for k, v in (payload.get("citations") or {}).items()}
+    # fetched_at is ISO-8601 with time; keep just the date for display.
+    fetched_at = (payload.get("fetched_at") or "")[:10]
+    return counts, fetched_at
 
 
 def main() -> int:
@@ -535,14 +539,15 @@ def main() -> int:
     topics, topic_overrides = load_topics(TOPICS_FILE)
     core_ranks = load_core_rankings(CORE_FILE)
     scimago = load_scimago(SCIMAGO_FILE)
-    citations = load_citations(CITATIONS_FILE)
+    citations, citations_fetched_at = load_citations(CITATIONS_FILE)
     awards = load_awards(AWARDS_FILE)
     talks = load_talks(TALKS_FILE)
     print(
         f"Loaded venues: {len(venues.get('conference_core_acronym', {}))} CORE overrides, "
         f"{len(venues.get('journal_issn', {}))} journal ISSN mappings; "
         f"{len(core_ranks)} CORE entries, {len(scimago)} Scimago ISSNs; "
-        f"{len(topics)} topics; {len(citations)} citation counts; "
+        f"{len(topics)} topics; {len(citations)} citation counts "
+        f"(fetched {citations_fetched_at or '?'}); "
         f"{len(awards)} awards; {len(talks)} talks",
         file=sys.stderr,
     )
@@ -600,6 +605,7 @@ def main() -> int:
     payload = {
         "last_updated": date.today().isoformat(),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "citations_fetched_at": citations_fetched_at,
         "source": DBLP_URL,
         "count": len(pubs),
         "counts_by_type": counts,

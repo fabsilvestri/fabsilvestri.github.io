@@ -374,6 +374,18 @@
       yearsEl.textContent = span + "+";
     }
     if (updEl) updEl.textContent = data.last_updated || "—";
+
+    var citEl = byId("cit-last-updated");
+    var citWrap = byId("cit-last-updated-wrap");
+    if (citEl && citWrap) {
+      var when = data.citations_fetched_at || "";
+      if (when) {
+        citEl.textContent = when;
+        citWrap.hidden = false;
+      } else {
+        citWrap.hidden = true;
+      }
+    }
   }
 
   function setTypeFilter(value) {
