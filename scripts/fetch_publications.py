@@ -38,6 +38,7 @@ TALKS_FILE = ROOT / "data" / "talks.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_JS = ROOT / "assets" / "js" / "publications-data.js"
 OUT_SITEMAP = ROOT / "sitemap.xml"
+OUT_SITEMAP_INDEX = ROOT / "sitemap_index.xml"
 INDEX_HTML = ROOT / "index.html"
 SITE_URL = "https://fabsilvestri.github.io/"
 
@@ -649,7 +650,7 @@ def main() -> int:
             INDEX_HTML.write_text(new_html, encoding="utf-8")
 
     # Refresh sitemap lastmod so crawlers know the page changed today.
-    OUT_SITEMAP.write_text(
+    sitemap_xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         '  <url>\n'
@@ -658,9 +659,17 @@ def main() -> int:
         '    <changefreq>daily</changefreq>\n'
         '    <priority>1.0</priority>\n'
         '  </url>\n'
-        '</urlset>\n',
-        encoding="utf-8",
+        '</urlset>\n'
     )
+    OUT_SITEMAP.write_text(sitemap_xml, encoding="utf-8")
+    # A duplicate at /sitemap_index.xml exists purely as a workaround for a
+    # Search Console quirk: once a sitemap URL has been submitted, Google
+    # caches its fetch result indefinitely (you can't remove a sitemap from
+    # the Search Console UI any more). When the original /sitemap.xml gets
+    # stuck on "Couldn't fetch", submitting /sitemap_index.xml gives Google
+    # a fresh URL to crawl with no cached state. Both files are kept in
+    # sync on every nightly run.
+    OUT_SITEMAP_INDEX.write_text(sitemap_xml, encoding="utf-8")
 
     print(
         f"Wrote {len(pubs)} publications "

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fabsilvestri.github.io/sitemap.xml
+Sitemap: https://fabsilvestri.github.io/sitemap_index.xml
