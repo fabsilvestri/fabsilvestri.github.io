@@ -37,13 +37,21 @@ awards:
       across the company's research organisation.
     url: https://datasciencefestival.com/speaker/fabrizio-silvestri/
 
+  - year: 2013
+    title: Computing Reviews' Notable Books and Articles
+    issuer: ACM Computing Reviews
+    description: >-
+      For "Discovering Tasks from Search Engine Query Logs" — with
+      C. Lucchese, S. Orlando, R. Perego, G. Tolomei.
+    url: https://www.isti.cnr.it/en/announcements/achievements/1685-computing-reviews-notable-books-and-articles-2013
+
   - year: 2011
-    title: Best Paper Award Runner-up
+    title: Honorable Mention (Best Paper Candidate)
     issuer: ACM WSDM
     description: >-
       For "Identifying Task-based Sessions in Search Engine Query Logs"
       — with C. Lucchese, S. Orlando, R. Perego, G. Tolomei.
-    url: http://hpc.isti.cnr.it/awards/
+    url: http://www.wsdm2011.org/wsdm2011/awards
 
   - year: 2007
     title: Best Paper Award
