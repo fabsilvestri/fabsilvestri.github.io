@@ -3,6 +3,15 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # GITHUB_TOKEN pushes don't trigger `on: push`, so the bot workflows
+  # below would otherwise commit to main without redeploying Pages.
+  workflow_run:
+    workflows:
+      - "Update publications"
+      - "Refresh Scholar citations (biweekly)"
+      - "Discover awards (weekly)"
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,6 +25,10 @@ concurrency:
 
 jobs:
   deploy:
+    # When triggered by workflow_run, only deploy if the upstream run
+    # actually succeeded — a Scholar captcha or DBLP outage shouldn't
+    # spawn a no-op redeploy. push/dispatch triggers always deploy.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
