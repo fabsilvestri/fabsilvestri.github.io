@@ -129,6 +129,9 @@ def load_venues(path: Path) -> dict:
         k.lower(): [normalize_issn(i) for i in (v or []) if i]
         for k, v in journals.items()
     }
+    raw["journal_q1_override"] = {
+        k.lower() for k in (raw.get("journal_q1_override") or [])
+    }
     for key in ("skip_title_patterns", "skip_keys"):
         raw[key] = list(raw.get(key, []) or [])
     return raw
@@ -342,6 +345,10 @@ def classify(
             for name, q in entry.get("categories", []):
                 if q == 1 and name in CS_CATEGORIES:
                     return TYPE_Q1
+        # Override: journals Scimago hasn't indexed yet (e.g. new ACM
+        # Transactions) but that are clearly Q1 on scimagojr.com.
+        if abbrev in venues.get("journal_q1_override", set()):
+            return TYPE_Q1
         return TYPE_OTHER_JOURNAL
     return TYPE_OTHER_CONF
 

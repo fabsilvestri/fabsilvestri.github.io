@@ -1,14 +1,14 @@
 {
   "last_updated": "2026-05-18",
-  "generated_at": "2026-05-18T07:58:44+00:00",
+  "generated_at": "2026-05-18T10:19:12+00:00",
   "citations_fetched_at": "2026-05-15",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 284,
   "counts_by_type": {
     "a_star_conf": 65,
-    "q1_journal": 28,
+    "q1_journal": 30,
     "other_conf": 67,
-    "other_journal": 9,
+    "other_journal": 7,
     "workshop": 22,
     "preprint": 93
   },
@@ -193,7 +193,7 @@
       "url": "https://doi.org/10.1145/3731683",
       "url_publisher": "https://doi.org/10.1145/3731683",
       "url_arxiv": null,
-      "type": "other_journal",
+      "type": "q1_journal",
       "topics": [
         "recsys",
         "gnn",
@@ -217,7 +217,7 @@
       "url": "https://doi.org/10.1145/3742898",
       "url_publisher": "https://doi.org/10.1145/3742898",
       "url_arxiv": null,
-      "type": "other_journal",
+      "type": "q1_journal",
       "topics": [
         "recsys",
         "gnn"

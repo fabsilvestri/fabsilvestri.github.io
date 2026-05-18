@@ -7,6 +7,9 @@
 # Journals are ranked against Scimago (data/scimago_journal_rank.csv):
 #   article whose ISSN resolves to Q1 in any Computer Science subject
 #   category → q1_journal; anything else → other_journal.
+#   journal_q1_override (below) is a manual escape hatch for journals
+#   Scimago rates Q1 on its website but that the parquet mirror hasn't
+#   indexed yet.
 #
 # Workshops (booktitle contains "workshop" or the "X@Y" satellite-event
 # shorthand) and preprints (CoRR/arXiv, publtype="informal") are
@@ -74,6 +77,15 @@ journal_issn:
   # (kept here so the ISSN column is self-documenting; Scimago decides)
   concurrency: ["1532-0626", "1532-0634"]   # Concurrency and Computation
   ercim:       []                            # ERCIM News — magazine, not in Scimago
+
+# DBLP journal abbreviations to force-classify as Q1, for journals
+# that Scimago's website rates Q1 but our local snapshot doesn't yet
+# cover (the ikashnitsky/sjrdata mirror lags the live site by ~1 year
+# and brand-new ACM/IEEE Transactions take longer to be indexed).
+# Verify each entry on scimagojr.com before adding — this bypasses
+# the ISSN/Scimago join entirely.
+journal_q1_override:
+  - tors    # ACM Trans. on Recommender Systems — Q1 on scimagojr.com (journalsearch.php?q=18997), missing from sjrdata 2024 parquet.
 
 # Explicit DBLP keys to drop. Use this for one-off non-papers
 # (keynotes, invited talks, panels, tutorials, abstracts) whose
