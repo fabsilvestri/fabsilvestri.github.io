@@ -1,5 +1,7 @@
-/* Publications renderer — reads window.PUBLICATIONS (from publications-data.js)
- * and renders a year-grouped list with two filter dimensions:
+/* Publications renderer — fetches data/publications.json with
+ * cache: 'no-store' at page load (so counters and the publication list
+ * are always live, no matter how stale the cached HTML is), then renders
+ * a year-grouped list with two filter dimensions:
  *   - TYPE (A*, Q1, Other, Workshop, Preprint) in #pub-filters
  *   - TOPIC (IR, RecSys, LLM & Agentic AI, …) in #topic-filters
  * The two filters are ANDed. Clicking a topic chip on a paper activates
@@ -543,7 +545,26 @@
     if (navItem) navItem.hidden = false;
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  // Fetch publications.json with cache: 'no-store' so visitors always see
+  // the latest bot refresh (counts, list, awards, talks) even when their
+  // browser or an intermediate cache is still serving an older index.html.
+  // Falls back to a window.PUBLICATIONS preloaded by an inline script if
+  // the fetch fails (offline, file moved, etc.).
+  function loadData() {
+    return fetch("data/publications.json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (json) { window.PUBLICATIONS = json; })
+      .catch(function (err) {
+        if (window.PUBLICATIONS) return; // use whatever was preloaded
+        console.error("publications.json fetch failed:", err);
+      });
+  }
+
+  function renderAll() {
+    if (!window.PUBLICATIONS) return; // nothing to render
     updateStats();
     initTypeTabs();
     initTopicTabs();
@@ -552,5 +573,9 @@
     renderAwards();
     renderTalks();
     render();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    loadData().then(renderAll);
   });
 })();

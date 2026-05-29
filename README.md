@@ -13,16 +13,15 @@ nightly by a GitHub Action.
 ├── index.html                        # single page
 ├── assets/
 │   ├── css/style.css                 # glass-light theme
-│   ├── js/publications.js            # renderer (DOM)
-│   ├── js/publications-data.js       # generated — window.PUBLICATIONS
+│   ├── js/publications.js            # renderer (DOM) — fetches publications.json at runtime
 │   └── img/profile.jpg               # hero photo
 ├── data/
-│   ├── publications.json             # generated — canonical JSON
+│   ├── publications.json             # generated — canonical JSON, served live to the page
 │   ├── venues.yml                    # DBLP → CORE acronym / Scimago ISSN map
 │   ├── core_rankings.csv             # CORE conference rankings (vendored)
 │   └── scimago_journal_rank.csv      # Scimago journal quartiles (manual download)
 ├── scripts/
-│   ├── fetch_publications.py         # DBLP fetch + classify
+│   ├── fetch_publications.py         # DBLP fetch + classify (also bumps cache busters)
 │   ├── refresh_scimago.py            # yearly Scimago CSV refresh
 │   ├── refresh_citations.py          # Scholar citation cache refresh
 │   ├── discover_awards_claude.py     # weekly Claude web-search award scan
@@ -30,20 +29,32 @@ nightly by a GitHub Action.
 │   └── requirements.txt
 └── .github/workflows/
     ├── update-publications.yml       # nightly cron (04:00 UTC)
+    ├── refresh-citations.yml         # weekly cron (Sun 05:15 UTC)
     ├── discover-awards.yml           # weekly cron (Mon 05:30 UTC)
-    └── pages.yml                     # deploy on push to main
+    ├── bump-cache-buster.yml         # on push: rehash CSS/JS, rewrite index.html
+    └── pages.yml                     # deploy on push to main (and after bot workflows)
 ```
 
-## Local development
+## How counters stay live
 
-The publications renderer loads data from a `<script>` tag, so the site
-works over `file://` too. But the smoothest dev experience is a local
-server:
+`assets/js/publications.js` fetches `data/publications.json` at page
+load with `cache: 'no-store'`, so the hero stats and publication list
+always reflect the latest nightly refresh — no need to wait for the
+cached HTML to expire. The other static assets (`publications.js`,
+`analytics.js`, `style.css`) carry a `?v=<content-hash>` cache buster
+that's recomputed by `fetch_publications.py` and by the
+`bump-cache-buster` workflow, so a manual edit to any of them is
+picked up by visitors as soon as the next deploy lands.
+
+## Local development
 
 ```bash
 python3 -m http.server 8000
 open http://localhost:8000
 ```
+
+(Note: the `file://` protocol won't work any more — the renderer
+needs a real HTTP origin to fetch `data/publications.json`.)
 
 ## Refreshing publications manually
 
@@ -51,9 +62,9 @@ open http://localhost:8000
 python3 scripts/fetch_publications.py
 ```
 
-This regenerates both `data/publications.json` and
-`assets/js/publications-data.js`. No dependencies — the script uses only
-the Python standard library.
+This regenerates `data/publications.json` and rewrites the
+`?v=<content-hash>` query strings in `index.html`. Requires PyYAML
+(`pip install -r scripts/requirements.txt`).
 
 ## Editing venue classification
 

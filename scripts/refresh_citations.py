@@ -48,6 +48,13 @@ USER_AGENT = (
 PAGE_SIZE = 100
 REQUEST_PAUSE = 1.5  # seconds between pages, be polite
 
+# Retry budget when Scholar serves an interstitial. A single CI run on
+# Azure IPs frequently catches a transient challenge that clears within
+# a minute; trying twice more buys us most of those without becoming a
+# scraping pest. Backoff is exponential with jitter at the call site.
+MAX_PAGE_RETRIES = 3
+RETRY_BACKOFF_BASE = 20  # seconds — 20, 40, 80 with exponential growth
+
 
 def normalize_title(s: str) -> str:
     """Lowercase, strip non-alphanumeric, collapse whitespace — so
@@ -59,21 +66,42 @@ def normalize_title(s: str) -> str:
 
 
 def fetch_page(session: requests.Session, cstart: int) -> str:
+    """Fetch a single Scholar profile page. Retries on interstitial /
+    transient 5xx with exponential backoff before giving up — Scholar's
+    bot challenge on Azure CI ranges usually clears within a minute."""
     url = (
         f"https://scholar.google.com/citations?"
         f"user={SCHOLAR_ID}&hl=en&cstart={cstart}&pagesize={PAGE_SIZE}"
     )
-    r = session.get(url, timeout=30)
-    r.raise_for_status()
-    html = r.text
-    # If Scholar decides to challenge us, we get a "Please show you're
-    # not a robot" page or a redirect with no publication table.
-    if "gsc_a_tr" not in html:
-        raise SystemExit(
-            f"Scholar returned no publication rows at cstart={cstart}. "
-            "Likely blocked — try again later or from a different IP."
-        )
-    return html
+    last_err = ""
+    for attempt in range(1, MAX_PAGE_RETRIES + 1):
+        try:
+            r = session.get(url, timeout=30)
+            r.raise_for_status()
+            html = r.text
+            # If Scholar decides to challenge us, we get a "Please show
+            # you're not a robot" page or a redirect with no publication
+            # table. The first page of the profile always contains at
+            # least one row; later pages with a tiny tail might legit-
+            # imately have fewer than PAGE_SIZE rows but still ≥1.
+            if "gsc_a_tr" in html:
+                return html
+            last_err = f"no publication rows (cstart={cstart})"
+        except requests.RequestException as e:
+            last_err = f"{type(e).__name__}: {e}"
+        if attempt < MAX_PAGE_RETRIES:
+            delay = RETRY_BACKOFF_BASE * (2 ** (attempt - 1))
+            print(
+                f"  attempt {attempt}/{MAX_PAGE_RETRIES} failed ({last_err}); "
+                f"sleeping {delay}s before retry",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+    raise SystemExit(
+        f"Scholar fetch failed after {MAX_PAGE_RETRIES} attempts at "
+        f"cstart={cstart}: {last_err}. Likely blocked — try again later "
+        f"or from a different IP."
+    )
 
 
 def parse_rows(html: str) -> list[dict]:

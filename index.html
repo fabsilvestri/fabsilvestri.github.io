@@ -110,7 +110,11 @@
   />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=2026-05-29" />
+  <link rel="stylesheet" href="assets/css/style.css?v=6e075cc1aa" />
+  <!-- Kick off the publications.json fetch in parallel with parsing the
+       rest of <head>, so the data is in the HTTP cache by the time
+       publications.js runs and asks for it. -->
+  <link rel="preload" as="fetch" type="application/json" crossorigin="anonymous" href="data/publications.json" />
 </head>
 <body>
   <div class="bg-gradient" aria-hidden="true"></div>
@@ -359,9 +363,12 @@
     </div>
   </div>
 
-  <script src="assets/js/publications-data.js?v=2026-05-29"></script>
-  <script src="assets/js/publications.js?v=2026-05-29"></script>
-  <script src="assets/js/analytics.js?v=2026-05-29"></script>
+  <!-- Publication data is fetched at runtime by publications.js from
+       data/publications.json (cache: 'no-store') so counters and the
+       publication list always reflect the latest bot refresh, even if
+       the cached HTML is a few minutes behind. -->
+  <script src="assets/js/publications.js?v=b1f31f067f"></script>
+  <script src="assets/js/analytics.js?v=c4f706f382"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

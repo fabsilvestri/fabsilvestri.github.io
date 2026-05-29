@@ -211,17 +211,25 @@ copy verbatim, no edits needed:
 
 - `.github/workflows/update-publications.yml` — runs `fetch_publications.py`
   nightly at 04:00 UTC and commits any change to `data/publications.json` +
-  `assets/js/publications-data.js` + `sitemap.xml` + `index.html` (the last
-  one for the asset cache-buster).
+  `sitemap.xml` + `index.html` (the last one for the asset cache-buster).
+  The page fetches `data/publications.json` at runtime with `cache: 'no-store'`,
+  so refreshed counters land for visitors on the next page load with no
+  cache-buster churn.
 - `.github/workflows/refresh-citations.yml` — runs `refresh_citations.py`
-  on the 1st and 15th of each month (≈ biweekly) to scrape Google Scholar.
-  Best effort: Scholar rate-limits CI IPs, so some runs may abort. The
-  workflow swallows the failure and the next run tries again.
+  every Sunday at 05:15 UTC to scrape Google Scholar. The script retries
+  the fetch up to 3 times with exponential backoff before giving up; the
+  workflow itself uses `continue-on-error` for the scrape step so a hard
+  block doesn't fail the run, and the next week tries again.
 - `.github/workflows/discover-awards.yml` — runs `discover_awards_claude.py`
   every Monday at 05:30 UTC and opens a PR with `data/awards_candidates.{json,md}`
   for review.
+- `.github/workflows/bump-cache-buster.yml` — fires on any push to `main`
+  that touches `publications.js`, `analytics.js`, or `style.css`, and
+  rewrites the `?v=<content-hash>` query string in `index.html`. Catches
+  manual edits that would otherwise leave browsers serving a stale cached
+  copy until the next nightly refresh.
 - `.github/workflows/pages.yml` — deploys the site to GitHub Pages on every
-  push to `main`.
+  push to `main`, and after each of the bot workflows above completes.
 
 **One-time GitHub setup** (the LLM can't do this — instruct the user):
 
