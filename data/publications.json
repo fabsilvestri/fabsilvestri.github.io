@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-10",
-  "generated_at": "2026-06-10T08:04:01+00:00",
+  "last_updated": "2026-06-11",
+  "generated_at": "2026-06-11T08:42:03+00:00",
   "citations_fetched_at": "2026-05-15",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 284,
@@ -143,8 +143,8 @@
       "year": 2026,
       "venue": "EACL (Volume 1: Long Papers)",
       "venue_short": "EACL",
-      "url": "https://aclanthology.org/2026.eacl-long.391/",
-      "url_publisher": "https://aclanthology.org/2026.eacl-long.391/",
+      "url": "https://doi.org/10.18653/v1/2026.eacl-long.391",
+      "url_publisher": "https://doi.org/10.18653/v1/2026.eacl-long.391",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
@@ -167,8 +167,8 @@
       "year": 2026,
       "venue": "EACL (Volume 2: Short Papers)",
       "venue_short": "EACL",
-      "url": "https://aclanthology.org/2026.eacl-short.51/",
-      "url_publisher": "https://aclanthology.org/2026.eacl-short.51/",
+      "url": "https://doi.org/10.18653/v1/2026.eacl-short.51",
+      "url_publisher": "https://doi.org/10.18653/v1/2026.eacl-short.51",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
@@ -354,8 +354,8 @@
       "year": 2025,
       "venue": "ACL (1)",
       "venue_short": "ACL",
-      "url": "https://aclanthology.org/2025.acl-long.303/",
-      "url_publisher": "https://aclanthology.org/2025.acl-long.303/",
+      "url": "https://doi.org/10.18653/v1/2025.acl-long.303",
+      "url_publisher": "https://doi.org/10.18653/v1/2025.acl-long.303",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
