@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-06-22",
-  "generated_at": "2026-06-22T09:45:11+00:00",
+  "last_updated": "2026-06-23",
+  "generated_at": "2026-06-23T07:43:54+00:00",
   "citations_fetched_at": "2026-06-15",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 284,
+  "count": 285,
   "counts_by_type": {
-    "a_star_conf": 65,
+    "a_star_conf": 66,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -15,7 +15,7 @@
   "counts_by_topic": {
     "ir": 106,
     "recsys": 44,
-    "llm": 32,
+    "llm": 33,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
@@ -536,6 +536,26 @@
         "social_net"
       ],
       "citations": 15
+    },
+    {
+      "key": "conf/nips/RuscioNS25",
+      "title": "What are you sinking? A geometric approach on attention sink",
+      "authors": [
+        "V. Ruscio",
+        "U. Nanni",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "NeurIPS",
+      "venue_short": "NeurIPS",
+      "url": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
+      "url_publisher": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
     },
     {
       "key": "journals/cmig/TeodoroSGVGSZSP25",
