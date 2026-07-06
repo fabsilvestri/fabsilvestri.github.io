@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-07-05",
-  "generated_at": "2026-07-05T07:21:46+00:00",
+  "last_updated": "2026-07-06",
+  "generated_at": "2026-07-06T08:15:57+00:00",
   "citations_fetched_at": "2026-06-15",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 285,
+  "count": 286,
   "counts_by_type": {
     "a_star_conf": 66,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
     "workshop": 22,
-    "preprint": 93
+    "preprint": 94
   },
   "counts_by_topic": {
     "ir": 106,
     "recsys": 44,
-    "llm": 33,
+    "llm": 34,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
@@ -340,6 +340,26 @@
       "type": "preprint",
       "topics": [
         "ir"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2606-06160",
+      "title": "Where does Absolute Position come from in decoder-only Transformers?",
+      "authors": [
+        "V. Ruscio",
+        "U. Nanni",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "url": "https://doi.org/10.48550/arXiv.2606.06160",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2606.06160",
+      "url_arxiv": null,
+      "type": "preprint",
+      "topics": [
+        "llm"
       ],
       "citations": 0
     },
