@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-06",
-  "generated_at": "2026-07-06T09:30:02+00:00",
+  "last_updated": "2026-07-07",
+  "generated_at": "2026-07-07T07:34:03+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 286,
+  "count": 287,
   "counts_by_type": {
-    "a_star_conf": 66,
+    "a_star_conf": 67,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -15,7 +15,7 @@
   "counts_by_topic": {
     "ir": 106,
     "recsys": 44,
-    "llm": 34,
+    "llm": 35,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
@@ -173,6 +173,28 @@
       "type": "a_star_conf",
       "topics": [
         "ir"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/acl/GiannettiTTSL26",
+      "title": "The Mechanics of Interference: Defusing Distractors in RAG via Sparse Autoencoder Interventions",
+      "authors": [
+        "C. Giannetti",
+        "G. Trappolini",
+        "N. Tonellotto",
+        "F. Silvestri",
+        "P. Lio"
+      ],
+      "year": 2026,
+      "venue": "ACL (Findings)",
+      "venue_short": "ACL",
+      "url": "https://aclanthology.org/2026.findings-acl.583/",
+      "url_publisher": "https://aclanthology.org/2026.findings-acl.583/",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
       ],
       "citations": 0
     },
