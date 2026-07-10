@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-08",
-  "generated_at": "2026-07-08T06:24:19+00:00",
+  "last_updated": "2026-07-10",
+  "generated_at": "2026-07-10T07:31:33+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 287,
+  "count": 288,
   "counts_by_type": {
-    "a_star_conf": 67,
+    "a_star_conf": 68,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -15,7 +15,7 @@
   "counts_by_topic": {
     "ir": 106,
     "recsys": 44,
-    "llm": 35,
+    "llm": 36,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
@@ -109,6 +109,29 @@
     }
   ],
   "publications": [
+    {
+      "key": "conf/acl/RulliPMSSD26",
+      "title": "Attention Sinks in Diffusion Language Models",
+      "authors": [
+        "M. Eduardo Rulli",
+        "S. Petruzzi",
+        "E. Michielon",
+        "F. Silvestri",
+        "S. Scardapane",
+        "A. Devoto"
+      ],
+      "year": 2026,
+      "venue": "ACL (Findings)",
+      "venue_short": "ACL",
+      "url": "https://aclanthology.org/2026.findings-acl.2145/",
+      "url_publisher": "https://aclanthology.org/2026.findings-acl.2145/",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
     {
       "key": "conf/kdd/GiorgiVST26",
       "title": "Countering Overfitting with Counterfactual Examples",
