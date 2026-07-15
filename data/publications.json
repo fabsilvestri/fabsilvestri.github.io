@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-14",
-  "generated_at": "2026-07-14T06:07:13+00:00",
+  "last_updated": "2026-07-15",
+  "generated_at": "2026-07-15T06:10:51+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 289,
+  "count": 290,
   "counts_by_type": {
-    "a_star_conf": 69,
+    "a_star_conf": 70,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -13,7 +13,7 @@
     "preprint": 94
   },
   "counts_by_topic": {
-    "ir": 107,
+    "ir": 108,
     "recsys": 45,
     "llm": 36,
     "agents": 4,
@@ -21,7 +21,7 @@
     "gnn": 31,
     "trust": 50,
     "task_vectors": 9,
-    "efficient": 53,
+    "efficient": 54,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -173,6 +173,29 @@
       "type": "a_star_conf",
       "topics": [
         "trust"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/sigir/CalugaruSPTS26",
+      "title": "Load-sensitive Selective Pruning in Dense Retrieval",
+      "authors": [
+        "M. Diana Calugaru",
+        "F. Siciliano",
+        "F. Pezzuti",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/3805712.3809875",
+      "url_publisher": "https://doi.org/10.1145/3805712.3809875",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
       ],
       "citations": 0
     },
