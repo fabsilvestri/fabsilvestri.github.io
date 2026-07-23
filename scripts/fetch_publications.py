@@ -647,6 +647,7 @@ def main() -> int:
         key=lambda p: (
             -p["year"],
             TYPE_ORDER.index(p["type"]) if p["type"] in TYPE_ORDER else 99,
+            (p.get("venue_short") or p.get("venue") or "").lower(),
             p["title"].lower(),
         )
     )

@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-23",
-  "generated_at": "2026-07-23T06:26:50+00:00",
+  "last_updated": "2026-07-06",
+  "generated_at": "2026-07-06T09:30:02+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 290,
+  "count": 286,
   "counts_by_type": {
-    "a_star_conf": 70,
+    "a_star_conf": 66,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -13,15 +13,15 @@
     "preprint": 94
   },
   "counts_by_topic": {
-    "ir": 108,
-    "recsys": 45,
-    "llm": 36,
+    "ir": 106,
+    "recsys": 44,
+    "llm": 34,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
     "trust": 50,
     "task_vectors": 9,
-    "efficient": 54,
+    "efficient": 52,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -110,96 +110,6 @@
   ],
   "publications": [
     {
-      "key": "conf/acl/RulliPMSSD26",
-      "title": "Attention Sinks in Diffusion Language Models",
-      "authors": [
-        "M. Eduardo Rulli",
-        "S. Petruzzi",
-        "E. Michielon",
-        "F. Silvestri",
-        "S. Scardapane",
-        "A. Devoto"
-      ],
-      "year": 2026,
-      "venue": "ACL (Findings)",
-      "venue_short": "ACL",
-      "url": "https://aclanthology.org/2026.findings-acl.2145/",
-      "url_publisher": "https://aclanthology.org/2026.findings-acl.2145/",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "llm"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/sigir/TeodoroSTS26",
-      "title": "CATS: Cluster-Aware Thompson Sampling for Negative Mining in Sequential Recommendation",
-      "authors": [
-        "G. Di Teodoro",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/3805712.3809539",
-      "url_publisher": "https://doi.org/10.1145/3805712.3809539",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "efficient"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/kdd/GiorgiVST26",
-      "title": "Countering Overfitting with Counterfactual Examples",
-      "authors": [
-        "F. Giorgi",
-        "F. Veglianti",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2026,
-      "venue": "KDD (1)",
-      "venue_short": "KDD",
-      "url": "https://doi.org/10.1145/3770854.3780243",
-      "url_publisher": "https://doi.org/10.1145/3770854.3780243",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "trust"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/sigir/CalugaruSPTS26",
-      "title": "Load-sensitive Selective Pruning in Dense Retrieval",
-      "authors": [
-        "M. Diana Calugaru",
-        "F. Siciliano",
-        "F. Pezzuti",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/3805712.3809875",
-      "url_publisher": "https://doi.org/10.1145/3805712.3809875",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 0
-    },
-    {
       "key": "conf/eacl/TrappoliniCFMS26",
       "title": "Redefining Retrieval Evaluation in the Era of LLMs",
       "authors": [
@@ -246,24 +156,23 @@
       "citations": 0
     },
     {
-      "key": "conf/acl/GiannettiTTSL26",
-      "title": "The Mechanics of Interference: Defusing Distractors in RAG via Sparse Autoencoder Interventions",
+      "key": "conf/kdd/GiorgiVST26",
+      "title": "Countering Overfitting with Counterfactual Examples",
       "authors": [
-        "C. Giannetti",
-        "G. Trappolini",
-        "N. Tonellotto",
+        "F. Giorgi",
+        "F. Veglianti",
         "F. Silvestri",
-        "P. Lio"
+        "G. Tolomei"
       ],
       "year": 2026,
-      "venue": "ACL (Findings)",
-      "venue_short": "ACL",
-      "url": "https://aclanthology.org/2026.findings-acl.583/",
-      "url_publisher": "https://aclanthology.org/2026.findings-acl.583/",
+      "venue": "KDD (1)",
+      "venue_short": "KDD",
+      "url": "https://doi.org/10.1145/3770854.3780243",
+      "url_publisher": "https://doi.org/10.1145/3770854.3780243",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "llm"
+        "trust"
       ],
       "citations": 0
     },
@@ -475,27 +384,50 @@
       "citations": 3
     },
     {
-      "key": "conf/emnlp/CuconasuFHMS25",
-      "title": "Do RAG Systems Really Suffer From Positional Bias?",
+      "key": "conf/aistats/GiorgiCST25",
+      "title": "Natural Language Counterfactual Explanations for Graphs Using Large Language Models",
       "authors": [
-        "F. Cuconasu",
-        "S. Filice",
-        "G. Horowitz",
-        "Y. Maarek",
-        "F. Silvestri"
+        "F. Giorgi",
+        "C. Campagnano",
+        "F. Silvestri",
+        "G. Tolomei"
       ],
       "year": 2025,
-      "venue": "EMNLP",
-      "venue_short": "EMNLP",
-      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
-      "url_publisher": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
+      "venue": "AISTATS",
+      "venue_short": "AISTATS",
+      "url": "https://proceedings.mlr.press/v258/giorgi25a.html",
+      "url_publisher": "https://proceedings.mlr.press/v258/giorgi25a.html",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm",
+        "nlp",
         "trust"
       ],
-      "citations": 14
+      "citations": 16
+    },
+    {
+      "key": "conf/cvpr/GargiuloCBSSR25",
+      "title": "Task Singular Vectors: Reducing Task Interference in Model Merging",
+      "authors": [
+        "A. Andrea Gargiulo",
+        "D. Crisostomi",
+        "M. Sofia Bucarelli",
+        "S. Scardapane",
+        "F. Silvestri",
+        "E. Rodolà"
+      ],
+      "year": 2025,
+      "venue": "CVPR",
+      "venue_short": "CVPR",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
+      "url_publisher": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "task_vectors"
+      ],
+      "citations": 142
     },
     {
       "key": "conf/ecir/CampagnanoMPS25",
@@ -520,73 +452,67 @@
       "citations": 4
     },
     {
-      "key": "conf/aistats/GiorgiCST25",
-      "title": "Natural Language Counterfactual Explanations for Graphs Using Large Language Models",
+      "key": "conf/emnlp/CuconasuFHMS25",
+      "title": "Do RAG Systems Really Suffer From Positional Bias?",
       "authors": [
-        "F. Giorgi",
-        "C. Campagnano",
-        "F. Silvestri",
-        "G. Tolomei"
+        "F. Cuconasu",
+        "S. Filice",
+        "G. Horowitz",
+        "Y. Maarek",
+        "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "AISTATS",
-      "venue_short": "AISTATS",
-      "url": "https://proceedings.mlr.press/v258/giorgi25a.html",
-      "url_publisher": "https://proceedings.mlr.press/v258/giorgi25a.html",
+      "venue": "EMNLP",
+      "venue_short": "EMNLP",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
+      "url_publisher": "https://doi.org/10.18653/v1/2025.emnlp-main.1422",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "llm",
-        "nlp",
         "trust"
       ],
-      "citations": 16
+      "citations": 14
     },
     {
-      "key": "conf/wacv/AlfaranoAFBAS25",
-      "title": "STLight: A Fully Convolutional Approach for Efficient Predictive Learning by Spatio-Temporal Joint Processing",
+      "key": "conf/icwsm/LentiSM25",
+      "title": "Variational Inference of Parameters in Opinion Dynamics Models",
       "authors": [
-        "A. Alfarano",
-        "A. Alfarano",
-        "L. Friso",
-        "A. Bacciu",
-        "I. Amerini",
+        "J. Lenti",
+        "F. Silvestri",
+        "G. De Francisci Morales"
+      ],
+      "year": 2025,
+      "venue": "ICWSM",
+      "venue_short": "ICWSM",
+      "url": "https://doi.org/10.1609/icwsm.v19i1.35963",
+      "url_publisher": "https://doi.org/10.1609/icwsm.v19i1.35963",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "social_net"
+      ],
+      "citations": 13
+    },
+    {
+      "key": "conf/nips/RuscioNS25",
+      "title": "What are you sinking? A geometric approach on attention sink",
+      "authors": [
+        "V. Ruscio",
+        "U. Nanni",
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "WACV",
-      "venue_short": "WACV",
-      "url": "https://doi.org/10.1109/WACV61041.2025.00114",
-      "url_publisher": "https://doi.org/10.1109/WACV61041.2025.00114",
+      "venue": "NeurIPS",
+      "venue_short": "NeurIPS",
+      "url": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
+      "url_publisher": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "efficient"
+        "llm"
       ],
-      "citations": 5
-    },
-    {
-      "key": "conf/cvpr/GargiuloCBSSR25",
-      "title": "Task Singular Vectors: Reducing Task Interference in Model Merging",
-      "authors": [
-        "A. Andrea Gargiulo",
-        "D. Crisostomi",
-        "M. Sofia Bucarelli",
-        "S. Scardapane",
-        "F. Silvestri",
-        "E. Rodolà"
-      ],
-      "year": 2025,
-      "venue": "CVPR",
-      "venue_short": "CVPR",
-      "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
-      "url_publisher": "https://openaccess.thecvf.com/content/CVPR2025/html/Gargiulo_Task_Singular_Vectors_Reducing_Task_Interference_in_Model_Merging_CVPR_2025_paper.html",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 142
+      "citations": 16
     },
     {
       "key": "conf/recsys/SbandiSS25",
@@ -629,44 +555,27 @@
       "citations": 5
     },
     {
-      "key": "conf/icwsm/LentiSM25",
-      "title": "Variational Inference of Parameters in Opinion Dynamics Models",
+      "key": "conf/wacv/AlfaranoAFBAS25",
+      "title": "STLight: A Fully Convolutional Approach for Efficient Predictive Learning by Spatio-Temporal Joint Processing",
       "authors": [
-        "J. Lenti",
-        "F. Silvestri",
-        "G. De Francisci Morales"
-      ],
-      "year": 2025,
-      "venue": "ICWSM",
-      "venue_short": "ICWSM",
-      "url": "https://doi.org/10.1609/icwsm.v19i1.35963",
-      "url_publisher": "https://doi.org/10.1609/icwsm.v19i1.35963",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "social_net"
-      ],
-      "citations": 13
-    },
-    {
-      "key": "conf/nips/RuscioNS25",
-      "title": "What are you sinking? A geometric approach on attention sink",
-      "authors": [
-        "V. Ruscio",
-        "U. Nanni",
+        "A. Alfarano",
+        "A. Alfarano",
+        "L. Friso",
+        "A. Bacciu",
+        "I. Amerini",
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "NeurIPS",
-      "venue_short": "NeurIPS",
-      "url": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
-      "url_publisher": "http://papers.nips.cc/paper_files/paper/2025/hash/b2c4b7d34b3d96b9dc12f7bce424b7ae-Abstract-Conference.html",
+      "venue": "WACV",
+      "venue_short": "WACV",
+      "url": "https://doi.org/10.1109/WACV61041.2025.00114",
+      "url_publisher": "https://doi.org/10.1109/WACV61041.2025.00114",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "llm"
+        "efficient"
       ],
-      "citations": 16
+      "citations": 5
     },
     {
       "key": "journals/cmig/TeodoroSGVGSZSP25",
@@ -721,28 +630,6 @@
       "citations": 32
     },
     {
-      "key": "journals/tai/MovinSFST25",
-      "title": "Consistent Counterfactual Explanations via Anomaly Control and Data Coherence",
-      "authors": [
-        "M. Movin",
-        "F. Siciliano",
-        "R. Ferreira",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "IEEE Trans. Artif. Intell.",
-      "venue_short": "IEEE T-AI",
-      "url": "https://doi.org/10.1109/TAI.2024.3496616",
-      "url_publisher": "https://doi.org/10.1109/TAI.2024.3496616",
-      "url_arxiv": null,
-      "type": "q1_journal",
-      "topics": [
-        "trust"
-      ],
-      "citations": 8
-    },
-    {
       "key": "journals/access/TrappoliniPSDSDS25",
       "title": "Quantized Auto Encoder-Based Anomaly Detection for Multivariate Time Series Data in 5G Networks",
       "authors": [
@@ -765,6 +652,28 @@
         "efficient"
       ],
       "citations": 5
+    },
+    {
+      "key": "journals/tai/MovinSFST25",
+      "title": "Consistent Counterfactual Explanations via Anomaly Control and Data Coherence",
+      "authors": [
+        "M. Movin",
+        "F. Siciliano",
+        "R. Ferreira",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2025,
+      "venue": "IEEE Trans. Artif. Intell.",
+      "venue_short": "IEEE T-AI",
+      "url": "https://doi.org/10.1109/TAI.2024.3496616",
+      "url_publisher": "https://doi.org/10.1109/TAI.2024.3496616",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "trust"
+      ],
+      "citations": 8
     },
     {
       "key": "journals/osnm/EnneiferBSAS25",
@@ -790,47 +699,48 @@
       "citations": 1
     },
     {
-      "key": "conf/ijcnn/TeodoroSTS25",
-      "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
+      "key": "conf/ictir/DErasmoTST25",
+      "title": "Eclipse: Contrastive Dimension Importance Estimation with Pseudo-Irrelevance Feedback for Dense Retrieval",
       "authors": [
-        "G. Di Teodoro",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
+        "G. D'Erasmo",
+        "G. Trappolini",
+        "F. Silvestri",
+        "N. Tonellotto"
       ],
       "year": 2025,
-      "venue": "IJCNN",
-      "venue_short": "IJCNN",
-      "url": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
-      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
+      "venue": "ICTIR",
+      "venue_short": "ICTIR",
+      "url": "https://doi.org/10.1145/3731120.3744579",
+      "url_publisher": "https://doi.org/10.1145/3731120.3744579",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
-        "recsys"
+        "ir"
       ],
       "citations": 8
     },
     {
-      "key": "conf/ijcnn/SicilianoPBTS25",
-      "title": "Are Convolutional Sequential Recommender Systems Still Competitive? Introducing New Models and Insights",
+      "key": "conf/ictir/Betello0D0S25",
+      "title": "QPP-RA: Aggregating Large Language Model Rankings",
       "authors": [
-        "F. Siciliano",
-        "A. Purificato",
         "F. Betello",
-        "N. Tonellotto",
+        "M. Russo",
+        "P. Dütting",
+        "S. Leonardi",
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "IJCNN",
-      "venue_short": "IJCNN",
-      "url": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
-      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
+      "venue": "ICTIR",
+      "venue_short": "ICTIR",
+      "url": "https://doi.org/10.1145/3731120.3744575",
+      "url_publisher": "https://doi.org/10.1145/3731120.3744575",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
-        "recsys"
+        "ir",
+        "llm"
       ],
-      "citations": 2
+      "citations": 1
     },
     {
       "key": "conf/iir/SicilianoPBTS25",
@@ -876,27 +786,6 @@
       "citations": 0
     },
     {
-      "key": "conf/ictir/DErasmoTST25",
-      "title": "Eclipse: Contrastive Dimension Importance Estimation with Pseudo-Irrelevance Feedback for Dense Retrieval",
-      "authors": [
-        "G. D'Erasmo",
-        "G. Trappolini",
-        "F. Silvestri",
-        "N. Tonellotto"
-      ],
-      "year": 2025,
-      "venue": "ICTIR",
-      "venue_short": "ICTIR",
-      "url": "https://doi.org/10.1145/3731120.3744579",
-      "url_publisher": "https://doi.org/10.1145/3731120.3744579",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 8
-    },
-    {
       "key": "conf/iir/DErasmoTTS25",
       "title": "Eclipse: Leveraging Pseudo-Irrelevance for Dimension Importance Estimation",
       "authors": [
@@ -918,6 +807,49 @@
       "citations": 0
     },
     {
+      "key": "conf/ijcnn/TeodoroSTS25",
+      "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
+      "authors": [
+        "G. Di Teodoro",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "IJCNN",
+      "venue_short": "IJCNN",
+      "url": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11228603",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 8
+    },
+    {
+      "key": "conf/ijcnn/SicilianoPBTS25",
+      "title": "Are Convolutional Sequential Recommender Systems Still Competitive? Introducing New Models and Insights",
+      "authors": [
+        "F. Siciliano",
+        "A. Purificato",
+        "F. Betello",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "IJCNN",
+      "venue_short": "IJCNN",
+      "url": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
+      "url_publisher": "https://doi.org/10.1109/IJCNN64981.2025.11229036",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 2
+    },
+    {
       "key": "conf/ijcnn/FrancescoCBS25",
       "title": "Link Prediction with Physics-Inspired Graph Neural Networks",
       "authors": [
@@ -937,29 +869,6 @@
         "gnn"
       ],
       "citations": 0
-    },
-    {
-      "key": "conf/ictir/Betello0D0S25",
-      "title": "QPP-RA: Aggregating Large Language Model Rankings",
-      "authors": [
-        "F. Betello",
-        "M. Russo",
-        "P. Dütting",
-        "S. Leonardi",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "ICTIR",
-      "venue_short": "ICTIR",
-      "url": "https://doi.org/10.1145/3731120.3744575",
-      "url_publisher": "https://doi.org/10.1145/3731120.3744575",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "llm"
-      ],
-      "citations": 1
     },
     {
       "key": "conf/ijcnn/CasoTBLS25",
@@ -1534,26 +1443,26 @@
       "citations": 16
     },
     {
-      "key": "conf/kdd/BerniniST24",
-      "title": "Evading Community Detection via Counterfactual Neighborhood Search",
+      "key": "conf/cikm/SbandiSS24",
+      "title": "Mitigating Extreme Cold Start in Graph-based RecSys through Re-ranking",
       "authors": [
-        "A. Bernini",
-        "F. Silvestri",
-        "G. Tolomei"
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
       ],
       "year": 2024,
-      "venue": "KDD",
-      "venue_short": "KDD",
-      "url": "https://doi.org/10.1145/3637528.3671896",
-      "url_publisher": "https://doi.org/10.1145/3637528.3671896",
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3627673.3680069",
+      "url_publisher": "https://doi.org/10.1145/3627673.3680069",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
-        "trust",
-        "social_net"
+        "recsys",
+        "gnn"
       ],
-      "citations": 9
+      "citations": 10
     },
     {
       "key": "conf/ecir/BetelloSMS24",
@@ -1579,26 +1488,26 @@
       "citations": 27
     },
     {
-      "key": "conf/cikm/SbandiSS24",
-      "title": "Mitigating Extreme Cold Start in Graph-based RecSys through Re-ranking",
+      "key": "conf/kdd/BerniniST24",
+      "title": "Evading Community Detection via Counterfactual Neighborhood Search",
       "authors": [
-        "A. Sbandi",
-        "F. Siciliano",
-        "F. Silvestri"
+        "A. Bernini",
+        "F. Silvestri",
+        "G. Tolomei"
       ],
       "year": 2024,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3627673.3680069",
-      "url_publisher": "https://doi.org/10.1145/3627673.3680069",
+      "venue": "KDD",
+      "venue_short": "KDD",
+      "url": "https://doi.org/10.1145/3637528.3671896",
+      "url_publisher": "https://doi.org/10.1145/3637528.3671896",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
         "ir",
-        "recsys",
-        "gnn"
+        "trust",
+        "social_net"
       ],
-      "citations": 10
+      "citations": 9
     },
     {
       "key": "conf/sigir/CuconasuTSFCMTS24",
@@ -1625,28 +1534,6 @@
         "llm"
       ],
       "citations": 553
-    },
-    {
-      "key": "journals/nn/BucarelliDBSS24",
-      "title": "A topological description of loss surfaces based on Betti Numbers",
-      "authors": [
-        "M. Sofia Bucarelli",
-        "G. Alessio D'Inverno",
-        "M. Bianchini",
-        "F. Scarselli",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "Neural Networks",
-      "venue_short": "NN",
-      "url": "https://doi.org/10.1016/j.neunet.2024.106465",
-      "url_publisher": "https://doi.org/10.1016/j.neunet.2024.106465",
-      "url_arxiv": null,
-      "type": "q1_journal",
-      "topics": [
-        "misc"
-      ],
-      "citations": 6
     },
     {
       "key": "journals/tai/ChenSTWZA24",
@@ -1696,6 +1583,28 @@
       "citations": 15
     },
     {
+      "key": "journals/nn/BucarelliDBSS24",
+      "title": "A topological description of loss surfaces based on Betti Numbers",
+      "authors": [
+        "M. Sofia Bucarelli",
+        "G. Alessio D'Inverno",
+        "M. Bianchini",
+        "F. Scarselli",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "Neural Networks",
+      "venue_short": "NN",
+      "url": "https://doi.org/10.1016/j.neunet.2024.106465",
+      "url_publisher": "https://doi.org/10.1016/j.neunet.2024.106465",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "misc"
+      ],
+      "citations": 6
+    },
+    {
       "key": "conf/coling/BacciuCTS24",
       "title": "DanteLLM: Let's Push Italian LLM Research Forward!",
       "authors": [
@@ -1740,47 +1649,6 @@
       "citations": 4
     },
     {
-      "key": "conf/xai/AbrateSBS24",
-      "title": "Human-in-the-Loop Personalized Counterfactual Recourse",
-      "authors": [
-        "C. Abrate",
-        "F. Siciliano",
-        "F. Bonchi",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "xAI (3)",
-      "venue_short": "XAI",
-      "url": "https://doi.org/10.1007/978-3-031-63800-8_2",
-      "url_publisher": "https://doi.org/10.1007/978-3-031-63800-8_2",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "trust"
-      ],
-      "citations": 8
-    },
-    {
-      "key": "conf/ijcnn/WaniBS24",
-      "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
-      "authors": [
-        "F. Ahmad Wani",
-        "M. Sofia Bucarelli",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "IJCNN",
-      "venue_short": "IJCNN",
-      "url": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
-      "url_publisher": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "trust"
-      ],
-      "citations": 9
-    },
-    {
       "key": "conf/iir/CuconasuTSFCMTS24",
       "title": "Rethinking Relevance: How Noise and Distractors Impact Retrieval-Augmented Generation",
       "authors": [
@@ -1807,6 +1675,26 @@
       "citations": 10
     },
     {
+      "key": "conf/ijcnn/WaniBS24",
+      "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
+      "authors": [
+        "F. Ahmad Wani",
+        "M. Sofia Bucarelli",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "IJCNN",
+      "venue_short": "IJCNN",
+      "url": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
+      "url_publisher": "https://doi.org/10.1109/IJCNN60899.2024.10650366",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "trust"
+      ],
+      "citations": 9
+    },
+    {
       "key": "conf/irongraphs/AlbaneseTSS24",
       "title": "The Impact of Source-Target Node Distance on Vicious Adversarial Attacks in Social Network Recommendation Systems",
       "authors": [
@@ -1830,6 +1718,27 @@
       "citations": 1
     },
     {
+      "key": "conf/xai/AbrateSBS24",
+      "title": "Human-in-the-Loop Personalized Counterfactual Recourse",
+      "authors": [
+        "C. Abrate",
+        "F. Siciliano",
+        "F. Bonchi",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "xAI (3)",
+      "venue_short": "XAI",
+      "url": "https://doi.org/10.1007/978-3-031-63800-8_2",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-63800-8_2",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "trust"
+      ],
+      "citations": 8
+    },
+    {
       "key": "conf/recsogood/PurificatoS24",
       "title": "Eco-Aware Graph Neural Networks for Sustainable Recommendations",
       "authors": [
@@ -1848,38 +1757,6 @@
         "gnn"
       ],
       "citations": 15
-    },
-    {
-      "key": "conf/www/NadaiFGWLSKLRGN24",
-      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
-      "authors": [
-        "M. De Nadai",
-        "F. Fabbri",
-        "P. Gigioli",
-        "A. Wang",
-        "A. Li",
-        "F. Silvestri",
-        "L. Kim",
-        "S. Lin",
-        "V. Radosavljevic",
-        "S. Ghael",
-        "D. Nyhan",
-        "H. Bouchard",
-        "M. Lalmas",
-        "A. Damianou"
-      ],
-      "year": 2024,
-      "venue": "WWW (Companion Volume)",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/3589335.3648339",
-      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 35
     },
     {
       "key": "conf/robustrecsys/FrancomanoSS24",
@@ -1927,6 +1804,38 @@
         "misinfo"
       ],
       "citations": 75
+    },
+    {
+      "key": "conf/www/NadaiFGWLSKLRGN24",
+      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
+      "authors": [
+        "M. De Nadai",
+        "F. Fabbri",
+        "P. Gigioli",
+        "A. Wang",
+        "A. Li",
+        "F. Silvestri",
+        "L. Kim",
+        "S. Lin",
+        "V. Radosavljevic",
+        "S. Ghael",
+        "D. Nyhan",
+        "H. Bouchard",
+        "M. Lalmas",
+        "A. Damianou"
+      ],
+      "year": 2024,
+      "venue": "WWW (Companion Volume)",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/3589335.3648339",
+      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "recsys",
+        "gnn"
+      ],
+      "citations": 35
     },
     {
       "key": "journals/corr/abs-2408-03873",
@@ -2461,28 +2370,6 @@
       "citations": 6
     },
     {
-      "key": "conf/recsys/BacciuSTS23",
-      "title": "Integrating Item Relevance in Training Loss for Sequential Recommender Systems",
-      "authors": [
-        "A. Bacciu",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "RecSys",
-      "venue_short": "RECSYS",
-      "url": "https://doi.org/10.1145/3604915.3610643",
-      "url_publisher": "https://doi.org/10.1145/3604915.3610643",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "recsys"
-      ],
-      "citations": 19
-    },
-    {
       "key": "conf/cvpr/BucarelliCSMS23",
       "title": "Leveraging Inter-Rater Agreement for Classification in the Presence of Noisy Labels",
       "authors": [
@@ -2505,6 +2392,49 @@
       "citations": 30
     },
     {
+      "key": "conf/nips/DutaCSL23",
+      "title": "Sheaf Hypergraph Networks",
+      "authors": [
+        "I. Duta",
+        "G. Cassarà",
+        "F. Silvestri",
+        "P. Lió"
+      ],
+      "year": 2023,
+      "venue": "NeurIPS",
+      "venue_short": "NeurIPS",
+      "url": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
+      "url_publisher": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "gnn"
+      ],
+      "citations": 92
+    },
+    {
+      "key": "conf/recsys/BacciuSTS23",
+      "title": "Integrating Item Relevance in Training Loss for Sequential Recommender Systems",
+      "authors": [
+        "A. Bacciu",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "RecSys",
+      "venue_short": "RECSYS",
+      "url": "https://doi.org/10.1145/3604915.3610643",
+      "url_publisher": "https://doi.org/10.1145/3604915.3610643",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys"
+      ],
+      "citations": 19
+    },
+    {
       "key": "conf/sigir/TrappoliniSRHS23",
       "title": "Multimodal Neural Databases",
       "authors": [
@@ -2525,27 +2455,6 @@
         "ir"
       ],
       "citations": 20
-    },
-    {
-      "key": "conf/nips/DutaCSL23",
-      "title": "Sheaf Hypergraph Networks",
-      "authors": [
-        "I. Duta",
-        "G. Cassarà",
-        "F. Silvestri",
-        "P. Lió"
-      ],
-      "year": 2023,
-      "venue": "NeurIPS",
-      "venue_short": "NeurIPS",
-      "url": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
-      "url_publisher": "http://papers.nips.cc/paper_files/paper/2023/hash/27f243af2887d7f248f518d9b967a882-Abstract-Conference.html",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 92
     },
     {
       "key": "conf/sigir/ChenSWZT23",
@@ -2596,6 +2505,49 @@
       "citations": 36
     },
     {
+      "key": "conf/cogmi/TolomeiCST23",
+      "title": "Prompt-to-OS (P2OS): Revolutionizing Operating Systems and Human-Computer Interaction with Integrated AI Generative Models",
+      "authors": [
+        "G. Tolomei",
+        "C. Campagnano",
+        "F. Silvestri",
+        "G. Trappolini"
+      ],
+      "year": 2023,
+      "venue": "CogMI",
+      "venue_short": "COGMI",
+      "url": "https://doi.org/10.1109/CogMI58952.2023.00027",
+      "url_publisher": "https://doi.org/10.1109/CogMI58952.2023.00027",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 16
+    },
+    {
+      "key": "conf/iir/BacciuTSRS23",
+      "title": "Fauno: The Italian Large Language Model that will leave you senza parole!",
+      "authors": [
+        "A. Bacciu",
+        "G. Trappolini",
+        "A. Santilli",
+        "E. Rodolà",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "IIR",
+      "venue_short": "IIR",
+      "url": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 38
+    },
+    {
       "key": "conf/xai/MagisterBKSCSJL23",
       "title": "Concept Distillation in Graph Neural Networks",
       "authors": [
@@ -2622,49 +2574,6 @@
       "citations": 15
     },
     {
-      "key": "conf/iir/BacciuTSRS23",
-      "title": "Fauno: The Italian Large Language Model that will leave you senza parole!",
-      "authors": [
-        "A. Bacciu",
-        "G. Trappolini",
-        "A. Santilli",
-        "E. Rodolà",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "IIR",
-      "venue_short": "IIR",
-      "url": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "llm"
-      ],
-      "citations": 38
-    },
-    {
-      "key": "conf/cogmi/TolomeiCST23",
-      "title": "Prompt-to-OS (P2OS): Revolutionizing Operating Systems and Human-Computer Interaction with Integrated AI Generative Models",
-      "authors": [
-        "G. Tolomei",
-        "C. Campagnano",
-        "F. Silvestri",
-        "G. Trappolini"
-      ],
-      "year": 2023,
-      "venue": "CogMI",
-      "venue_short": "COGMI",
-      "url": "https://doi.org/10.1109/CogMI58952.2023.00027",
-      "url_publisher": "https://doi.org/10.1109/CogMI58952.2023.00027",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "llm"
-      ],
-      "citations": 16
-    },
-    {
       "key": "journals/dai/BarnaboTLCFPS23",
       "title": "CycleDRUMS: automatic drum arrangement for bass lines using CycleGAN",
       "authors": [
@@ -2689,50 +2598,6 @@
       "citations": 13
     },
     {
-      "key": "conf/pkdd/SicilianoMPBAS23",
-      "title": "Adversarial Data Poisoning for Fake News Detection: How to Make a Model Misclassify a Target News Without Modifying it",
-      "authors": [
-        "F. Siciliano",
-        "L. Maiano",
-        "L. Papa",
-        "F. Baccini",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "PKDD/ECML Workshops (2)",
-      "venue_short": "PKDD",
-      "url": "https://doi.org/10.1007/978-3-031-74627-7_44",
-      "url_publisher": "https://doi.org/10.1007/978-3-031-74627-7_44",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "trust",
-        "misinfo"
-      ],
-      "citations": 4
-    },
-    {
-      "key": "conf/iclr/RuscioMS23",
-      "title": "Attention-likelihood relationship in Transformers",
-      "authors": [
-        "V. Ruscio",
-        "V. Maiorca",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "Tiny Papers @ ICLR",
-      "venue_short": "ICLR",
-      "url": "https://openreview.net/forum?id=R82eeIF4rP_",
-      "url_publisher": "https://openreview.net/forum?id=R82eeIF4rP_",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "llm"
-      ],
-      "citations": 2
-    },
-    {
       "key": "conf/aiia/BacciuCSSTT23",
       "title": "RRAML: Reinforced Retrieval Augmented Machine Learning",
       "authors": [
@@ -2755,6 +2620,50 @@
         "llm"
       ],
       "citations": 21
+    },
+    {
+      "key": "conf/iclr/RuscioMS23",
+      "title": "Attention-likelihood relationship in Transformers",
+      "authors": [
+        "V. Ruscio",
+        "V. Maiorca",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "Tiny Papers @ ICLR",
+      "venue_short": "ICLR",
+      "url": "https://openreview.net/forum?id=R82eeIF4rP_",
+      "url_publisher": "https://openreview.net/forum?id=R82eeIF4rP_",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "llm"
+      ],
+      "citations": 2
+    },
+    {
+      "key": "conf/pkdd/SicilianoMPBAS23",
+      "title": "Adversarial Data Poisoning for Fake News Detection: How to Make a Model Misclassify a Target News Without Modifying it",
+      "authors": [
+        "F. Siciliano",
+        "L. Maiano",
+        "L. Papa",
+        "F. Baccini",
+        "I. Amerini",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "PKDD/ECML Workshops (2)",
+      "venue_short": "PKDD",
+      "url": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "trust",
+        "misinfo"
+      ],
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2312-17506",
@@ -3137,6 +3046,31 @@
       "citations": 339
     },
     {
+      "key": "conf/cikm/ChenSW0AT22",
+      "title": "ReLAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
+      "authors": [
+        "Z. Chen",
+        "F. Silvestri",
+        "J. Wang",
+        "H. Zhu",
+        "H. Ahn",
+        "G. Tolomei"
+      ],
+      "year": 2022,
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/3511808.3557429",
+      "url_publisher": "https://doi.org/10.1145/3511808.3557429",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "agents",
+        "trust"
+      ],
+      "citations": 0
+    },
+    {
       "key": "conf/ijcai/SharmaAADMFHSN022",
       "title": "Detecting and Understanding Harmful Memes: A Survey",
       "authors": [
@@ -3185,31 +3119,6 @@
         "nlp"
       ],
       "citations": 27
-    },
-    {
-      "key": "conf/cikm/ChenSW0AT22",
-      "title": "ReLAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
-      "authors": [
-        "Z. Chen",
-        "F. Silvestri",
-        "J. Wang",
-        "H. Zhu",
-        "H. Ahn",
-        "G. Tolomei"
-      ],
-      "year": 2022,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/3511808.3557429",
-      "url_publisher": "https://doi.org/10.1145/3511808.3557429",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "agents",
-        "trust"
-      ],
-      "citations": 0
     },
     {
       "key": "journals/cacm/HalevyCMOPSSS22",
@@ -3458,27 +3367,26 @@
       "citations": 144
     },
     {
-      "key": "journals/pvldb/ThorneYSS0L21",
-      "title": "From Natural Language Processing to Neural Databases",
+      "key": "journals/isci/TonellottoGNGS21",
+      "title": "Neural network quantization in federated learning at the edge",
       "authors": [
-        "J. Thorne",
-        "M. Yazdani",
-        "M. Saeidi",
-        "F. Silvestri",
-        "S. Riedel",
-        "A. Y. Levy"
+        "N. Tonellotto",
+        "A. Gotta",
+        "F. Maria Nardini",
+        "D. Gadler",
+        "F. Silvestri"
       ],
       "year": 2021,
-      "venue": "Proc. VLDB Endow.",
-      "venue_short": "VLDB",
-      "url": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
-      "url_publisher": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
+      "venue": "Inf. Sci.",
+      "venue_short": "ISCI",
+      "url": "https://doi.org/10.1016/j.ins.2021.06.039",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2021.06.039",
       "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
-        "nlp"
+        "efficient"
       ],
-      "citations": 84
+      "citations": 93
     },
     {
       "key": "journals/tkde/TolomeiS21",
@@ -3500,26 +3408,27 @@
       "citations": 28
     },
     {
-      "key": "journals/isci/TonellottoGNGS21",
-      "title": "Neural network quantization in federated learning at the edge",
+      "key": "journals/pvldb/ThorneYSS0L21",
+      "title": "From Natural Language Processing to Neural Databases",
       "authors": [
-        "N. Tonellotto",
-        "A. Gotta",
-        "F. Maria Nardini",
-        "D. Gadler",
-        "F. Silvestri"
+        "J. Thorne",
+        "M. Yazdani",
+        "M. Saeidi",
+        "F. Silvestri",
+        "S. Riedel",
+        "A. Y. Levy"
       ],
       "year": 2021,
-      "venue": "Inf. Sci.",
-      "venue_short": "ISCI",
-      "url": "https://doi.org/10.1016/j.ins.2021.06.039",
-      "url_publisher": "https://doi.org/10.1016/j.ins.2021.06.039",
+      "venue": "Proc. VLDB Endow.",
+      "venue_short": "VLDB",
+      "url": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
+      "url_publisher": "http://www.vldb.org/pvldb/vol14/p1033-thorne.pdf",
       "url_arxiv": null,
       "type": "q1_journal",
       "topics": [
-        "efficient"
+        "nlp"
       ],
-      "citations": 93
+      "citations": 84
     },
     {
       "key": "conf/ijcnn/ErricaSEDPPR21",
@@ -4022,28 +3931,6 @@
       "citations": 365
     },
     {
-      "key": "journals/isci/BaiCGMS17",
-      "title": "Exploiting search history of users for news personalization",
-      "authors": [
-        "X. Bai",
-        "B. Barla Cambazoglu",
-        "F. Gullo",
-        "A. Mantrach",
-        "F. Silvestri"
-      ],
-      "year": 2017,
-      "venue": "Inf. Sci.",
-      "venue_short": "ISCI",
-      "url": "https://doi.org/10.1016/j.ins.2016.12.038",
-      "url_publisher": "https://doi.org/10.1016/j.ins.2016.12.038",
-      "url_arxiv": null,
-      "type": "q1_journal",
-      "topics": [
-        "ir"
-      ],
-      "citations": 59
-    },
-    {
       "key": "journals/datamine/Anagnostopoulos17",
       "title": "Tour recommendation for groups",
       "authors": [
@@ -4064,6 +3951,28 @@
         "recsys"
       ],
       "citations": 78
+    },
+    {
+      "key": "journals/isci/BaiCGMS17",
+      "title": "Exploiting search history of users for news personalization",
+      "authors": [
+        "X. Bai",
+        "B. Barla Cambazoglu",
+        "F. Gullo",
+        "A. Mantrach",
+        "F. Silvestri"
+      ],
+      "year": 2017,
+      "venue": "Inf. Sci.",
+      "venue_short": "ISCI",
+      "url": "https://doi.org/10.1016/j.ins.2016.12.038",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2016.12.038",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "ir"
+      ],
+      "citations": 59
     },
     {
       "key": "journals/snam/ColettoALS17",
@@ -4110,24 +4019,50 @@
       "citations": 4
     },
     {
-      "key": "conf/www/BarbieriSL16",
-      "title": "Improving Post-Click User Engagement on Native Ads via Survival Analysis",
+      "key": "conf/cikm/AielloAB0BMS16",
+      "title": "The Role of Relevance in Sponsored Search",
       "authors": [
+        "L. Maria Aiello",
+        "I. Arapakis",
+        "R. Baeza-Yates",
+        "X. Bai",
         "N. Barbieri",
-        "F. Silvestri",
-        "M. Lalmas"
+        "A. Mantrach",
+        "F. Silvestri"
       ],
       "year": 2016,
-      "venue": "WWW",
-      "venue_short": "WWW",
-      "url": "https://doi.org/10.1145/2872427.2883092",
-      "url_publisher": "https://doi.org/10.1145/2872427.2883092",
+      "venue": "CIKM",
+      "venue_short": "CIKM",
+      "url": "https://doi.org/10.1145/2983323.2983840",
+      "url_publisher": "https://doi.org/10.1145/2983323.2983840",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "misc"
+        "ir"
       ],
-      "citations": 84
+      "citations": 24
+    },
+    {
+      "key": "conf/icwsm/ColettoALS16",
+      "title": "On the Behaviour of Deviant Communities in Online Social Networks",
+      "authors": [
+        "M. Coletto",
+        "L. Maria Aiello",
+        "C. Lucchese",
+        "F. Silvestri"
+      ],
+      "year": 2016,
+      "venue": "ICWSM",
+      "venue_short": "ICWSM",
+      "url": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
+      "url_publisher": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
+      "url_arxiv": "http://arxiv.org/abs/1610.08372",
+      "type": "a_star_conf",
+      "topics": [
+        "misinfo",
+        "social_net"
+      ],
+      "citations": 22
     },
     {
       "key": "conf/sigir/AlawadALMS16",
@@ -4151,28 +4086,6 @@
         "recsys"
       ],
       "citations": 19
-    },
-    {
-      "key": "conf/icwsm/ColettoALS16",
-      "title": "On the Behaviour of Deviant Communities in Online Social Networks",
-      "authors": [
-        "M. Coletto",
-        "L. Maria Aiello",
-        "C. Lucchese",
-        "F. Silvestri"
-      ],
-      "year": 2016,
-      "venue": "ICWSM",
-      "venue_short": "ICWSM",
-      "url": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
-      "url_publisher": "http://www.aaai.org/ocs/index.php/ICWSM/ICWSM16/paper/view/13059",
-      "url_arxiv": "http://arxiv.org/abs/1610.08372",
-      "type": "a_star_conf",
-      "topics": [
-        "misinfo",
-        "social_net"
-      ],
-      "citations": 22
     },
     {
       "key": "conf/sigir/LuccheseNOPST16",
@@ -4226,28 +4139,24 @@
       "citations": 87
     },
     {
-      "key": "conf/cikm/AielloAB0BMS16",
-      "title": "The Role of Relevance in Sponsored Search",
+      "key": "conf/www/BarbieriSL16",
+      "title": "Improving Post-Click User Engagement on Native Ads via Survival Analysis",
       "authors": [
-        "L. Maria Aiello",
-        "I. Arapakis",
-        "R. Baeza-Yates",
-        "X. Bai",
         "N. Barbieri",
-        "A. Mantrach",
-        "F. Silvestri"
+        "F. Silvestri",
+        "M. Lalmas"
       ],
       "year": 2016,
-      "venue": "CIKM",
-      "venue_short": "CIKM",
-      "url": "https://doi.org/10.1145/2983323.2983840",
-      "url_publisher": "https://doi.org/10.1145/2983323.2983840",
+      "venue": "WWW",
+      "venue_short": "WWW",
+      "url": "https://doi.org/10.1145/2872427.2883092",
+      "url_publisher": "https://doi.org/10.1145/2872427.2883092",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "ir"
+        "misc"
       ],
-      "citations": 24
+      "citations": 84
     },
     {
       "key": "conf/clef/SinghMS16",
@@ -4416,26 +4325,26 @@
       "citations": 87
     },
     {
-      "key": "conf/sigir/GrbovicDRSB15",
-      "title": "Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search",
+      "key": "conf/kdd/LalmasLSST15",
+      "title": "Promoting Positive Post-Click Experience for In-Stream Yahoo Gemini Users",
       "authors": [
-        "M. Grbovic",
-        "N. Djuric",
-        "V. Radosavljevic",
+        "M. Lalmas",
+        "J. Lehmann",
+        "G. Shaked",
         "F. Silvestri",
-        "N. Bhamidipati"
+        "G. Tolomei"
       ],
       "year": 2015,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/2766462.2767709",
-      "url_publisher": "https://doi.org/10.1145/2766462.2767709",
+      "venue": "KDD",
+      "venue_short": "KDD",
+      "url": "https://doi.org/10.1145/2783258.2788581",
+      "url_publisher": "https://doi.org/10.1145/2783258.2788581",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "ir"
+        "llm"
       ],
-      "citations": 151
+      "citations": 44
     },
     {
       "key": "conf/naacl/ColmenaresLMS15",
@@ -4459,6 +4368,28 @@
       "citations": 67
     },
     {
+      "key": "conf/sigir/GrbovicDRSB15",
+      "title": "Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search",
+      "authors": [
+        "M. Grbovic",
+        "N. Djuric",
+        "V. Radosavljevic",
+        "F. Silvestri",
+        "N. Bhamidipati"
+      ],
+      "year": 2015,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/2766462.2767709",
+      "url_publisher": "https://doi.org/10.1145/2766462.2767709",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 151
+    },
+    {
       "key": "conf/wsdm/Baeza-YatesJSH15",
       "title": "Predicting The Next App That You Are Going To Use",
       "authors": [
@@ -4478,28 +4409,6 @@
         "ir"
       ],
       "citations": 227
-    },
-    {
-      "key": "conf/kdd/LalmasLSST15",
-      "title": "Promoting Positive Post-Click Experience for In-Stream Yahoo Gemini Users",
-      "authors": [
-        "M. Lalmas",
-        "J. Lehmann",
-        "G. Shaked",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2015,
-      "venue": "KDD",
-      "venue_short": "KDD",
-      "url": "https://doi.org/10.1145/2783258.2788581",
-      "url_publisher": "https://doi.org/10.1145/2783258.2788581",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "llm"
-      ],
-      "citations": 44
     },
     {
       "key": "journals/ipm/BlancoMS15",
@@ -4654,6 +4563,27 @@
       "citations": 22
     },
     {
+      "key": "journals/isci/BerardiE0S13",
+      "title": "Endorsements and rebuttals in blog distillation",
+      "authors": [
+        "G. Berardi",
+        "A. Esuli",
+        "F. Sebastiani",
+        "F. Silvestri"
+      ],
+      "year": 2013,
+      "venue": "Inf. Sci.",
+      "venue_short": "ISCI",
+      "url": "https://doi.org/10.1016/j.ins.2013.05.037",
+      "url_publisher": "https://doi.org/10.1016/j.ins.2013.05.037",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "misc"
+      ],
+      "citations": 7
+    },
+    {
       "key": "journals/tois/LuccheseOPST13",
       "title": "Discovering tasks from search engine query logs",
       "authors": [
@@ -4674,27 +4604,6 @@
         "ir"
       ],
       "citations": 76
-    },
-    {
-      "key": "journals/isci/BerardiE0S13",
-      "title": "Endorsements and rebuttals in blog distillation",
-      "authors": [
-        "G. Berardi",
-        "A. Esuli",
-        "F. Sebastiani",
-        "F. Silvestri"
-      ],
-      "year": 2013,
-      "venue": "Inf. Sci.",
-      "venue_short": "ISCI",
-      "url": "https://doi.org/10.1016/j.ins.2013.05.037",
-      "url_publisher": "https://doi.org/10.1016/j.ins.2013.05.037",
-      "url_arxiv": null,
-      "type": "q1_journal",
-      "topics": [
-        "misc"
-      ],
-      "citations": 7
     },
     {
       "key": "conf/riao/LuccheseOPST13",
@@ -4784,52 +4693,6 @@
       "citations": 6
     },
     {
-      "key": "conf/sigir/BonchiPSVV12",
-      "title": "Efficient query recommendations in the long tail via center-piece subgraphs",
-      "authors": [
-        "F. Bonchi",
-        "R. Perego",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2012,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/2348283.2348332",
-      "url_publisher": "https://doi.org/10.1145/2348283.2348332",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "efficient"
-      ],
-      "citations": 60
-    },
-    {
-      "key": "conf/ecir/LucchesePSVV12",
-      "title": "How Random Walks Can Help Tourism",
-      "authors": [
-        "C. Lucchese",
-        "R. Perego",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2012,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-642-28997-2_17",
-      "url_publisher": "https://doi.org/10.1007/978-3-642-28997-2_17",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 58
-    },
-    {
       "key": "conf/cikm/BonchiFNSV12",
       "title": "Interactive and context-aware tag spell check and correction",
       "authors": [
@@ -4873,27 +4736,6 @@
       "citations": 69
     },
     {
-      "key": "conf/sigir/JonassenCS12",
-      "title": "Prefetching query results and its impact on search engines",
-      "authors": [
-        "S. Jonassen",
-        "B. Barla Cambazoglu",
-        "F. Silvestri"
-      ],
-      "year": 2012,
-      "venue": "SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://doi.org/10.1145/2348283.2348368",
-      "url_publisher": "https://doi.org/10.1145/2348283.2348368",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 45
-    },
-    {
       "key": "conf/cikm/BlancoCLPS12",
       "title": "You should read this! let me explain you why: explaining news recommendations to users",
       "authors": [
@@ -4916,6 +4758,73 @@
         "trust"
       ],
       "citations": 32
+    },
+    {
+      "key": "conf/ecir/LucchesePSVV12",
+      "title": "How Random Walks Can Help Tourism",
+      "authors": [
+        "C. Lucchese",
+        "R. Perego",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2012,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-642-28997-2_17",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-28997-2_17",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 58
+    },
+    {
+      "key": "conf/sigir/BonchiPSVV12",
+      "title": "Efficient query recommendations in the long tail via center-piece subgraphs",
+      "authors": [
+        "F. Bonchi",
+        "R. Perego",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2012,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/2348283.2348332",
+      "url_publisher": "https://doi.org/10.1145/2348283.2348332",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "efficient"
+      ],
+      "citations": 60
+    },
+    {
+      "key": "conf/sigir/JonassenCS12",
+      "title": "Prefetching query results and its impact on search engines",
+      "authors": [
+        "S. Jonassen",
+        "B. Barla Cambazoglu",
+        "F. Silvestri"
+      ],
+      "year": 2012,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/2348283.2348368",
+      "url_publisher": "https://doi.org/10.1145/2348283.2348368",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 45
     },
     {
       "key": "journals/ipm/BroccoloMNPS12",
@@ -5003,28 +4912,6 @@
       "citations": 4
     },
     {
-      "key": "conf/iat/BaragliaFMNS12",
-      "title": "RecTour: A Recommender System for Tourists",
-      "authors": [
-        "R. Baraglia",
-        "C. Frattari",
-        "C. Ioana Muntean",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2012,
-      "venue": "Web Intelligence/IAT Workshops",
-      "venue_short": "IAT",
-      "url": "https://doi.org/10.1109/WI-IAT.2012.88",
-      "url_publisher": "https://doi.org/10.1109/WI-IAT.2012.88",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 9
-    },
-    {
       "key": "conf/ecai/CorazzaMMMPSS12",
       "title": "Using Machine Learning and Information Retrieval Techniques to Improve Software Maintainability",
       "authors": [
@@ -5049,6 +4936,28 @@
       "citations": 5
     },
     {
+      "key": "conf/iat/BaragliaFMNS12",
+      "title": "RecTour: A Recommender System for Tourists",
+      "authors": [
+        "R. Baraglia",
+        "C. Frattari",
+        "C. Ioana Muntean",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2012,
+      "venue": "Web Intelligence/IAT Workshops",
+      "venue_short": "IAT",
+      "url": "https://doi.org/10.1109/WI-IAT.2012.88",
+      "url_publisher": "https://doi.org/10.1109/WI-IAT.2012.88",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 9
+    },
+    {
       "key": "journals/ercim/JackSSTV12",
       "title": "Cite-as-you-write",
       "authors": [
@@ -5067,6 +4976,26 @@
       "type": "preprint",
       "topics": [
         "misc"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/ecir/PeregoST11",
+      "title": "Representing Document Lengths with Identifiers",
+      "authors": [
+        "R. Perego",
+        "F. Silvestri",
+        "N. Tonellotto"
+      ],
+      "year": 2011,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-642-20161-5_66",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-20161-5_66",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
       ],
       "citations": 0
     },
@@ -5115,26 +5044,6 @@
         "ir"
       ],
       "citations": 187
-    },
-    {
-      "key": "conf/ecir/PeregoST11",
-      "title": "Representing Document Lengths with Identifiers",
-      "authors": [
-        "R. Perego",
-        "F. Silvestri",
-        "N. Tonellotto"
-      ],
-      "year": 2011,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-642-20161-5_66",
-      "url_publisher": "https://doi.org/10.1007/978-3-642-20161-5_66",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 0
     },
     {
       "key": "journals/pvldb/CapanniniNPS11",
@@ -5329,30 +5238,6 @@
       "citations": 5
     },
     {
-      "key": "conf/spire/BroccoloFNPS10",
-      "title": "Incremental Algorithms for Effective and Efficient Query Recommendation",
-      "authors": [
-        "D. Broccolo",
-        "O. Frieder",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2010,
-      "venue": "SPIRE",
-      "venue_short": "SPIRE",
-      "url": "https://doi.org/10.1007/978-3-642-16321-0_2",
-      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_2",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "efficient"
-      ],
-      "citations": 17
-    },
-    {
       "key": "conf/hpcc/CapanniniSB10",
       "title": "K-Model: A New Computational Model for Stream Processors",
       "authors": [
@@ -5371,49 +5256,6 @@
         "efficient"
       ],
       "citations": 9
-    },
-    {
-      "key": "conf/spire/NardiniSVVF10",
-      "title": "On Tag Spell Checking",
-      "authors": [
-        "F. Maria Nardini",
-        "F. Silvestri",
-        "H. Vahabi",
-        "P. Vahabi",
-        "O. Frieder"
-      ],
-      "year": 2010,
-      "venue": "SPIRE",
-      "venue_short": "SPIRE",
-      "url": "https://doi.org/10.1007/978-3-642-16321-0_4",
-      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_4",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "misc"
-      ],
-      "citations": 4
-    },
-    {
-      "key": "conf/webi/LamPS10",
-      "title": "On Using Query Logs for Static Index Pruning",
-      "authors": [
-        "H. Thanh Lam",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2010,
-      "venue": "Web Intelligence",
-      "venue_short": "WEBI",
-      "url": "https://doi.org/10.1109/WI-IAT.2010.139",
-      "url_publisher": "https://doi.org/10.1109/WI-IAT.2010.139",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 10
     },
     {
       "key": "conf/iir/BroccoloNPS10",
@@ -5460,6 +5302,73 @@
         "gnn"
       ],
       "citations": 24
+    },
+    {
+      "key": "conf/spire/BroccoloFNPS10",
+      "title": "Incremental Algorithms for Effective and Efficient Query Recommendation",
+      "authors": [
+        "D. Broccolo",
+        "O. Frieder",
+        "F. Maria Nardini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2010,
+      "venue": "SPIRE",
+      "venue_short": "SPIRE",
+      "url": "https://doi.org/10.1007/978-3-642-16321-0_2",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_2",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "efficient"
+      ],
+      "citations": 17
+    },
+    {
+      "key": "conf/spire/NardiniSVVF10",
+      "title": "On Tag Spell Checking",
+      "authors": [
+        "F. Maria Nardini",
+        "F. Silvestri",
+        "H. Vahabi",
+        "P. Vahabi",
+        "O. Frieder"
+      ],
+      "year": 2010,
+      "venue": "SPIRE",
+      "venue_short": "SPIRE",
+      "url": "https://doi.org/10.1007/978-3-642-16321-0_4",
+      "url_publisher": "https://doi.org/10.1007/978-3-642-16321-0_4",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "misc"
+      ],
+      "citations": 4
+    },
+    {
+      "key": "conf/webi/LamPS10",
+      "title": "On Using Query Logs for Static Index Pruning",
+      "authors": [
+        "H. Thanh Lam",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2010,
+      "venue": "Web Intelligence",
+      "venue_short": "WEBI",
+      "url": "https://doi.org/10.1109/WI-IAT.2010.139",
+      "url_publisher": "https://doi.org/10.1109/WI-IAT.2010.139",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 10
     },
     {
       "key": "journals/ijdst/VarvarigouTKSP10",
@@ -5638,6 +5547,31 @@
       "citations": 0
     },
     {
+      "key": "conf/fia/NittoKMPPPSH09",
+      "title": "S-Cube: Addressing Multidisciplinary Research Challenges for the Internet of Services",
+      "authors": [
+        "E. Di Nitto",
+        "D. Karastoyanova",
+        "A. Metzger",
+        "M. Parkin",
+        "M. Pistore",
+        "K. Pohl",
+        "F. Silvestri",
+        "W. van den Heuvel"
+      ],
+      "year": 2009,
+      "venue": "Future Internet Assembly",
+      "venue_short": "FIA",
+      "url": "https://doi.org/10.3233/978-1-60750-007-0-263",
+      "url_publisher": "https://doi.org/10.3233/978-1-60750-007-0-263",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "misc"
+      ],
+      "citations": 7
+    },
+    {
       "key": "conf/icumt/MordacchiniDTBSO09",
       "title": "Challenges in designing an interest-based distributed aggregation of users in P2P systems",
       "authors": [
@@ -5682,29 +5616,26 @@
       "citations": 11
     },
     {
-      "key": "conf/fia/NittoKMPPPSH09",
-      "title": "S-Cube: Addressing Multidisciplinary Research Challenges for the Internet of Services",
+      "key": "conf/sigir/CapanniniSBN09",
+      "title": "Sorting using BItonic netwoRk wIth CUDA",
       "authors": [
-        "E. Di Nitto",
-        "D. Karastoyanova",
-        "A. Metzger",
-        "M. Parkin",
-        "M. Pistore",
-        "K. Pohl",
+        "G. Capannini",
         "F. Silvestri",
-        "W. van den Heuvel"
+        "R. Baraglia",
+        "F. Maria Nardini"
       ],
       "year": 2009,
-      "venue": "Future Internet Assembly",
-      "venue_short": "FIA",
-      "url": "https://doi.org/10.3233/978-1-60750-007-0-263",
-      "url_publisher": "https://doi.org/10.3233/978-1-60750-007-0-263",
+      "venue": "LSDS-IR@SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-480/paper4.pdf",
       "url_arxiv": null,
-      "type": "other_conf",
+      "type": "workshop",
       "topics": [
-        "misc"
+        "ir",
+        "efficient"
       ],
-      "citations": 7
+      "citations": 29
     },
     {
       "key": "conf/wsdm/BaragliaCCFPS09",
@@ -5728,28 +5659,6 @@
         "ir"
       ],
       "citations": 4
-    },
-    {
-      "key": "conf/sigir/CapanniniSBN09",
-      "title": "Sorting using BItonic netwoRk wIth CUDA",
-      "authors": [
-        "G. Capannini",
-        "F. Silvestri",
-        "R. Baraglia",
-        "F. Maria Nardini"
-      ],
-      "year": 2009,
-      "venue": "LSDS-IR@SIGIR",
-      "venue_short": "SIGIR",
-      "url": "https://ceur-ws.org/Vol-480/paper4.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-480/paper4.pdf",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 29
     },
     {
       "key": "conf/hpdc/LaforenzaNS08",
@@ -5840,6 +5749,25 @@
       "citations": 0
     },
     {
+      "key": "conf/ecir/Silvestri07",
+      "title": "Sorting Out the Document Identifier Assignment Problem",
+      "authors": [
+        "F. Silvestri"
+      ],
+      "year": 2007,
+      "venue": "ECIR",
+      "venue_short": "ECIR",
+      "url": "https://doi.org/10.1007/978-3-540-71496-5_12",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-71496-5_12",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 138
+    },
+    {
       "key": "conf/icde/Baeza-YatesCJPS07",
       "title": "Challenges on Distributed Web Retrieval",
       "authors": [
@@ -5885,25 +5813,6 @@
       "citations": 499
     },
     {
-      "key": "conf/ecir/Silvestri07",
-      "title": "Sorting Out the Document Identifier Assignment Problem",
-      "authors": [
-        "F. Silvestri"
-      ],
-      "year": 2007,
-      "venue": "ECIR",
-      "venue_short": "ECIR",
-      "url": "https://doi.org/10.1007/978-3-540-71496-5_12",
-      "url_publisher": "https://doi.org/10.1007/978-3-540-71496-5_12",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 138
-    },
-    {
       "key": "conf/sigir/Baeza-YatesGJMPS07",
       "title": "The impact of caching on search engines",
       "authors": [
@@ -5947,29 +5856,6 @@
       "citations": 162
     },
     {
-      "key": "conf/coregrid/TserpesKMVSL07",
-      "title": "An Open Architecture for QoS Information in Business Grids",
-      "authors": [
-        "K. Tserpes",
-        "D. Kyriazis",
-        "A. Menychtas",
-        "T. A. Varvarigou",
-        "F. Silvestri",
-        "D. Laforenza"
-      ],
-      "year": 2007,
-      "venue": "CoreGRID",
-      "venue_short": "COREGRID",
-      "url": "https://doi.org/10.1007/978-0-387-72498-0_4",
-      "url_publisher": "https://doi.org/10.1007/978-0-387-72498-0_4",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "efficient"
-      ],
-      "citations": 4
-    },
-    {
       "key": "conf/cbms/LaforenzaLSSSF07",
       "title": "Biological Experiments on the Grid: A Novel Workflow Management Platform",
       "authors": [
@@ -5991,6 +5877,29 @@
         "efficient"
       ],
       "citations": 16
+    },
+    {
+      "key": "conf/coregrid/TserpesKMVSL07",
+      "title": "An Open Architecture for QoS Information in Business Grids",
+      "authors": [
+        "K. Tserpes",
+        "D. Kyriazis",
+        "A. Menychtas",
+        "T. A. Varvarigou",
+        "F. Silvestri",
+        "D. Laforenza"
+      ],
+      "year": 2007,
+      "venue": "CoreGRID",
+      "venue_short": "COREGRID",
+      "url": "https://doi.org/10.1007/978-0-387-72498-0_4",
+      "url_publisher": "https://doi.org/10.1007/978-0-387-72498-0_4",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 4
     },
     {
       "key": "conf/infoscale/PuppinSPB07",
@@ -6077,6 +5986,26 @@
       "citations": 292
     },
     {
+      "key": "conf/infoscale/PuppinSL06",
+      "title": "Query-driven document partitioning and collection selection",
+      "authors": [
+        "D. Puppin",
+        "F. Silvestri",
+        "D. Laforenza"
+      ],
+      "year": 2006,
+      "venue": "Infoscale",
+      "venue_short": "INFOSCALE",
+      "url": "https://doi.org/10.1145/1146847.1146881",
+      "url_publisher": "https://doi.org/10.1145/1146847.1146881",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 77
+    },
+    {
       "key": "conf/sac/BaragliaLOSS06",
       "title": "A privacy preserving web recommender system",
       "authors": [
@@ -6098,26 +6027,6 @@
         "trust"
       ],
       "citations": 26
-    },
-    {
-      "key": "conf/infoscale/PuppinSL06",
-      "title": "Query-driven document partitioning and collection selection",
-      "authors": [
-        "D. Puppin",
-        "F. Silvestri",
-        "D. Laforenza"
-      ],
-      "year": 2006,
-      "venue": "Infoscale",
-      "venue_short": "INFOSCALE",
-      "url": "https://doi.org/10.1145/1146847.1146881",
-      "url_publisher": "https://doi.org/10.1145/1146847.1146881",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 77
     },
     {
       "key": "conf/sac/PuppinS06",
@@ -6224,25 +6133,24 @@
       "citations": 69
     },
     {
-      "key": "conf/europar/FagniPS04",
-      "title": "A Highly Scalable Parallel Caching System for Web Search Engine Results",
+      "key": "conf/ccgrid/PuppinSL04",
+      "title": "An evaluation of component-based software design approaches",
       "authors": [
-        "T. Fagni",
-        "R. Perego",
-        "F. Silvestri"
+        "D. Puppin",
+        "F. Silvestri",
+        "D. Laforenza"
       ],
       "year": 2004,
-      "venue": "Euro-Par",
-      "venue_short": "EUROPAR",
-      "url": "https://doi.org/10.1007/978-3-540-27866-5_45",
-      "url_publisher": "https://doi.org/10.1007/978-3-540-27866-5_45",
+      "venue": "CCGRID",
+      "venue_short": "CCGRID",
+      "url": "https://doi.org/10.1109/CCGrid.2004.1336708",
+      "url_publisher": "https://doi.org/10.1109/CCGrid.2004.1336708",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
-        "ir",
-        "efficient"
+        "misc"
       ],
-      "citations": 4
+      "citations": 0
     },
     {
       "key": "conf/dagstuhl/PuppinSLO04",
@@ -6267,19 +6175,18 @@
       "citations": 4
     },
     {
-      "key": "conf/webi/SilvestriPLO04",
-      "title": "A Search Architecture for Grid Software Components",
+      "key": "conf/europar/FagniPS04",
+      "title": "A Highly Scalable Parallel Caching System for Web Search Engine Results",
       "authors": [
-        "F. Silvestri",
-        "D. Puppin",
-        "D. Laforenza",
-        "S. Orlando"
+        "T. Fagni",
+        "R. Perego",
+        "F. Silvestri"
       ],
       "year": 2004,
-      "venue": "Web Intelligence",
-      "venue_short": "WEBI",
-      "url": "https://doi.org/10.1109/WI.2004.10026",
-      "url_publisher": "https://doi.org/10.1109/WI.2004.10026",
+      "venue": "Euro-Par",
+      "venue_short": "EUROPAR",
+      "url": "https://doi.org/10.1007/978-3-540-27866-5_45",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-27866-5_45",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
@@ -6287,146 +6194,6 @@
         "efficient"
       ],
       "citations": 4
-    },
-    {
-      "key": "conf/pkdd/BaragliaMS04",
-      "title": "An Effective Recommender System for Highly Dynamic and Large Web Sites",
-      "authors": [
-        "R. Baraglia",
-        "F. Merlo",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "PKDD",
-      "venue_short": "PKDD",
-      "url": "https://doi.org/10.1007/978-3-540-30116-5_56",
-      "url_publisher": "https://doi.org/10.1007/978-3-540-30116-5_56",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 4
-    },
-    {
-      "key": "conf/ccgrid/PuppinSL04",
-      "title": "An evaluation of component-based software design approaches",
-      "authors": [
-        "D. Puppin",
-        "F. Silvestri",
-        "D. Laforenza"
-      ],
-      "year": 2004,
-      "venue": "CCGRID",
-      "venue_short": "CCGRID",
-      "url": "https://doi.org/10.1109/CCGrid.2004.1336708",
-      "url_publisher": "https://doi.org/10.1109/CCGrid.2004.1336708",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "misc"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/sebd/BaragliaS04",
-      "title": "An Online Recommender System",
-      "authors": [
-        "R. Baraglia",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "SEBD",
-      "venue_short": "SEBD",
-      "url": null,
-      "url_publisher": null,
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/webi/BaragliaS04",
-      "title": "An Online Recommender System for Large Web Sites",
-      "authors": [
-        "R. Baraglia",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "Web Intelligence",
-      "venue_short": "WEBI",
-      "url": "https://doi.org/10.1109/WI.2004.10158",
-      "url_publisher": "https://doi.org/10.1109/WI.2004.10158",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 108
-    },
-    {
-      "key": "conf/sebd/OrlandoPS04",
-      "title": "Assigning Document Identifiers to Enhance Compressibility of Fulltext Indices",
-      "authors": [
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "SEBD",
-      "venue_short": "SEBD",
-      "url": null,
-      "url_publisher": null,
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "efficient"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "conf/sac/SilvestriPO04",
-      "title": "Assigning document identifiers to enhance compressibility of Web Search Engines indexes",
-      "authors": [
-        "F. Silvestri",
-        "R. Perego",
-        "S. Orlando"
-      ],
-      "year": 2004,
-      "venue": "SAC",
-      "venue_short": "SAC",
-      "url": "https://doi.org/10.1145/967900.968024",
-      "url_publisher": "https://doi.org/10.1145/967900.968024",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 57
-    },
-    {
-      "key": "conf/itcc/SilvestriBPS04",
-      "title": "On-line Generation of Suggestions for Web Users",
-      "authors": [
-        "F. Silvestri",
-        "R. Baraglia",
-        "P. Palmerini",
-        "M. Serranó"
-      ],
-      "year": 2004,
-      "venue": "ITCC (1)",
-      "venue_short": "ITCC",
-      "url": "https://doi.org/10.1109/ITCC.2004.1286486",
-      "url_publisher": "https://doi.org/10.1109/ITCC.2004.1286486",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "misc"
-      ],
-      "citations": 40
     },
     {
       "key": "conf/fimi/LuccheseOPS04",
@@ -6469,6 +6236,148 @@
         "efficient"
       ],
       "citations": 10
+    },
+    {
+      "key": "conf/itcc/SilvestriBPS04",
+      "title": "On-line Generation of Suggestions for Web Users",
+      "authors": [
+        "F. Silvestri",
+        "R. Baraglia",
+        "P. Palmerini",
+        "M. Serranó"
+      ],
+      "year": 2004,
+      "venue": "ITCC (1)",
+      "venue_short": "ITCC",
+      "url": "https://doi.org/10.1109/ITCC.2004.1286486",
+      "url_publisher": "https://doi.org/10.1109/ITCC.2004.1286486",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "misc"
+      ],
+      "citations": 40
+    },
+    {
+      "key": "conf/pkdd/BaragliaMS04",
+      "title": "An Effective Recommender System for Highly Dynamic and Large Web Sites",
+      "authors": [
+        "R. Baraglia",
+        "F. Merlo",
+        "F. Silvestri"
+      ],
+      "year": 2004,
+      "venue": "PKDD",
+      "venue_short": "PKDD",
+      "url": "https://doi.org/10.1007/978-3-540-30116-5_56",
+      "url_publisher": "https://doi.org/10.1007/978-3-540-30116-5_56",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 4
+    },
+    {
+      "key": "conf/sac/SilvestriPO04",
+      "title": "Assigning document identifiers to enhance compressibility of Web Search Engines indexes",
+      "authors": [
+        "F. Silvestri",
+        "R. Perego",
+        "S. Orlando"
+      ],
+      "year": 2004,
+      "venue": "SAC",
+      "venue_short": "SAC",
+      "url": "https://doi.org/10.1145/967900.968024",
+      "url_publisher": "https://doi.org/10.1145/967900.968024",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 57
+    },
+    {
+      "key": "conf/sebd/BaragliaS04",
+      "title": "An Online Recommender System",
+      "authors": [
+        "R. Baraglia",
+        "F. Silvestri"
+      ],
+      "year": 2004,
+      "venue": "SEBD",
+      "venue_short": "SEBD",
+      "url": null,
+      "url_publisher": null,
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/sebd/OrlandoPS04",
+      "title": "Assigning Document Identifiers to Enhance Compressibility of Fulltext Indices",
+      "authors": [
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2004,
+      "venue": "SEBD",
+      "venue_short": "SEBD",
+      "url": null,
+      "url_publisher": null,
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/webi/SilvestriPLO04",
+      "title": "A Search Architecture for Grid Software Components",
+      "authors": [
+        "F. Silvestri",
+        "D. Puppin",
+        "D. Laforenza",
+        "S. Orlando"
+      ],
+      "year": 2004,
+      "venue": "Web Intelligence",
+      "venue_short": "WEBI",
+      "url": "https://doi.org/10.1109/WI.2004.10026",
+      "url_publisher": "https://doi.org/10.1109/WI.2004.10026",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 4
+    },
+    {
+      "key": "conf/webi/BaragliaS04",
+      "title": "An Online Recommender System for Large Web Sites",
+      "authors": [
+        "R. Baraglia",
+        "F. Silvestri"
+      ],
+      "year": 2004,
+      "venue": "Web Intelligence",
+      "venue_short": "WEBI",
+      "url": "https://doi.org/10.1109/WI.2004.10158",
+      "url_publisher": "https://doi.org/10.1109/WI.2004.10158",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 108
     },
     {
       "key": "journals/jdim/SilvestriBPS04",
@@ -6579,28 +6488,6 @@
       "citations": 157
     },
     {
-      "key": "conf/vecpar/OrlandoPPS02",
-      "title": "An Efficient Parallel and Distributed Algorithm for Counting Frequent Sets",
-      "authors": [
-        "S. Orlando",
-        "P. Palmerini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2002,
-      "venue": "VECPAR",
-      "venue_short": "VECPAR",
-      "url": "https://doi.org/10.1007/3-540-36569-9_28",
-      "url_publisher": "https://doi.org/10.1007/3-540-36569-9_28",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "efficient",
-        "data_mining"
-      ],
-      "citations": 41
-    },
-    {
       "key": "conf/europar/OrlandoPPS02",
       "title": "Scheduling High Performance Data Mining Tasks on a Data Grid Environment",
       "authors": [
@@ -6621,6 +6508,28 @@
         "data_mining"
       ],
       "citations": 50
+    },
+    {
+      "key": "conf/vecpar/OrlandoPPS02",
+      "title": "An Efficient Parallel and Distributed Algorithm for Counting Frequent Sets",
+      "authors": [
+        "S. Orlando",
+        "P. Palmerini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2002,
+      "venue": "VECPAR",
+      "venue_short": "VECPAR",
+      "url": "https://doi.org/10.1007/3-540-36569-9_28",
+      "url_publisher": "https://doi.org/10.1007/3-540-36569-9_28",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "efficient",
+        "data_mining"
+      ],
+      "citations": 41
     }
   ],
   "awards": [
