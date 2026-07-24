@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-06",
-  "generated_at": "2026-07-06T09:30:02+00:00",
+  "last_updated": "2026-07-24",
+  "generated_at": "2026-07-24T06:21:53+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 286,
+  "count": 290,
   "counts_by_type": {
-    "a_star_conf": 66,
+    "a_star_conf": 70,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
@@ -13,15 +13,15 @@
     "preprint": 94
   },
   "counts_by_topic": {
-    "ir": 106,
-    "recsys": 44,
-    "llm": 34,
+    "ir": 108,
+    "recsys": 45,
+    "llm": 36,
     "agents": 4,
     "nlp": 12,
     "gnn": 31,
     "trust": 50,
     "task_vectors": 9,
-    "efficient": 52,
+    "efficient": 54,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -110,6 +110,51 @@
   ],
   "publications": [
     {
+      "key": "conf/acl/RulliPMSSD26",
+      "title": "Attention Sinks in Diffusion Language Models",
+      "authors": [
+        "M. Eduardo Rulli",
+        "S. Petruzzi",
+        "E. Michielon",
+        "F. Silvestri",
+        "S. Scardapane",
+        "A. Devoto"
+      ],
+      "year": 2026,
+      "venue": "ACL (Findings)",
+      "venue_short": "ACL",
+      "url": "https://aclanthology.org/2026.findings-acl.2145/",
+      "url_publisher": "https://aclanthology.org/2026.findings-acl.2145/",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/acl/GiannettiTTSL26",
+      "title": "The Mechanics of Interference: Defusing Distractors in RAG via Sparse Autoencoder Interventions",
+      "authors": [
+        "C. Giannetti",
+        "G. Trappolini",
+        "N. Tonellotto",
+        "F. Silvestri",
+        "P. Lio"
+      ],
+      "year": 2026,
+      "venue": "ACL (Findings)",
+      "venue_short": "ACL",
+      "url": "https://aclanthology.org/2026.findings-acl.583/",
+      "url_publisher": "https://aclanthology.org/2026.findings-acl.583/",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
       "key": "conf/eacl/TrappoliniCFMS26",
       "title": "Redefining Retrieval Evaluation in the Era of LLMs",
       "authors": [
@@ -173,6 +218,52 @@
       "type": "a_star_conf",
       "topics": [
         "trust"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/sigir/TeodoroSTS26",
+      "title": "CATS: Cluster-Aware Thompson Sampling for Negative Mining in Sequential Recommendation",
+      "authors": [
+        "G. Di Teodoro",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/3805712.3809539",
+      "url_publisher": "https://doi.org/10.1145/3805712.3809539",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys",
+        "efficient"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "conf/sigir/CalugaruSPTS26",
+      "title": "Load-sensitive Selective Pruning in Dense Retrieval",
+      "authors": [
+        "M. Diana Calugaru",
+        "F. Siciliano",
+        "F. Pezzuti",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "SIGIR",
+      "venue_short": "SIGIR",
+      "url": "https://doi.org/10.1145/3805712.3809875",
+      "url_publisher": "https://doi.org/10.1145/3805712.3809875",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
       ],
       "citations": 0
     },
