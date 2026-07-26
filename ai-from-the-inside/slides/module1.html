@@ -367,6 +367,22 @@ section.failure h4 { color: var(--alert); }
   padding: 0 .25em; border-radius: 3px; font-weight: 600;
 }
 
+/* the one-click way into the notebook, shown at the moment it is needed */
+.nb-open {
+  display: inline-flex; align-items: baseline; gap: .5em;
+  font-family: var(--mono); font-size: max(19px, .62em); font-weight: 600;
+  color: #fff !important; background: var(--bordeaux);
+  border-radius: 8px; padding: .5em .95em;
+  text-decoration: none !important; letter-spacing: .01em;
+  box-shadow: 0 2px 0 rgba(0,0,0,.16);
+}
+.nb-open .arrow-out { font-size: .9em; opacity: .8; }
+.nb-path {
+  font-family: var(--mono); font-size: max(16px, .5em); color: var(--ink-faint);
+  margin-top: .5em;
+}
+.nb-path b { color: var(--ink); font-weight: 600; }
+
 .kbd {
   font-family: var(--mono); font-size: .8em; background: #fff; color: var(--ink);
   border: 1px solid #CFC7BC; border-bottom-width: 3px; border-radius: 6px;
@@ -491,6 +507,27 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
 .nest--2 { background: #FBF3E6; border-color: #E5D2B2; }
 .nest--3 { background: #EDF5F3; border-color: #C4DED7; }
 .nest--4 { background: #ECEEF9; border-color: #C6CDEC; }
+
+/* ============================================================
+   DIAGRAMS — inline SVG, so the decks stay single self-contained
+   files and the figures stay crisp on any projector.
+   ============================================================ */
+.fig { display: block; margin: .2em auto; max-width: 100%; height: auto; }
+.fig text { font-family: var(--sans); fill: var(--ink); }
+.fig .lbl   { font-size: 15px; font-weight: 700; letter-spacing: .04em; }
+.fig .cap   { font-size: 14px; fill: var(--ink-soft); }
+.fig .tiny  { font-size: 12px; fill: var(--ink-faint); }
+.fig .mono  { font-family: var(--mono); font-size: 14px; }
+.fig .accent-t { fill: var(--bordeaux); }
+.fig .teal-t   { fill: var(--teal); }
+.fig .gold-t   { fill: var(--gold); }
+.fig .box   { fill: #fff; stroke: var(--rule); stroke-width: 1.5; }
+.fig .box-a { fill: #FBF2F3; stroke: var(--bordeaux); stroke-width: 2; }
+.fig .box-t { fill: #EDF7F5; stroke: var(--teal); stroke-width: 2; }
+.fig .box-g { fill: #FBF4E4; stroke: var(--gold); stroke-width: 2; }
+.fig .arrow { stroke: var(--bordeaux); stroke-width: 2; fill: none; }
+.fig .thin  { stroke: var(--rule); stroke-width: 1; fill: none; }
+.fig-cap { font-size: .62em; color: var(--ink-soft); text-align: center; margin-top: .3em; }
 
 </style>
 </head>
@@ -662,7 +699,11 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
         work and losing it.</li>
     <li>Click the <b>▶</b> button on the first cell. If you see a green tick, you are ready.</li>
   </ol>
-  <p class="muted mt small">Nothing to install. Nothing to pay for. Nothing to configure.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/00_warmup.ipynb"
+    >Open Notebook 0 · Warm-up in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">Nothing to install. Nothing to pay for. Nothing to configure.
+  Every exercise slide today carries this same button.</p>
   <aside class="notes">
     <p>Do this now, not at 9:40 — you want the inevitable Google-account problems surfaced while
     you still have slack in the schedule.</p>
@@ -1261,6 +1302,11 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <p class="big mt" style="max-width:24em">You are about to build, train and evaluate a working
   machine-learning system — and then break it on purpose.</p>
   <p class="muted mt2">Lines of code you will write: <b>zero</b>.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/01_teach_a_machine.ipynb"
+    >Open Notebook 1 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">or: course page → Notebooks → <b>1 · Teach a machine to sort your texts</b>
+  &nbsp;·&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes">
     <p>Energy shift. Get them into the notebook fast; the slides after this are a safety net, not a script.</p>
   </aside>
@@ -1504,14 +1550,76 @@ AVERAGE training and test accuracy, with the baseline.
 <section>
   <span class="eyebrow">Architecture 2 · the idea</span>
   <h2>CNN: slide a small window over everything</h2>
-  <ol class="steps mt" style="font-size:.9em">
-    <li>Take a small window — say 3×3 pixels — that detects one simple thing, like a vertical edge.</li>
-    <li>Slide it across the entire image, checking every position.</li>
-    <li>You now have a map of "where are the vertical edges?"</li>
-    <li>Do that with hundreds of different windows. Then run more windows over <em>those</em> maps.</li>
-  </ol>
-  <p class="muted mt2 small">Because the same window is reused everywhere, the network learns
-  "edge" <b>once</b> instead of once per position. That single trick is what made computer vision work.</p>
+
+  <svg class="fig" viewBox="0 0 1180 300" style="max-height:340px" role="img"
+       aria-label="A three by three window slides across an image; at each position it writes one number into a feature map.">
+    <!-- the image -->
+    <text class="lbl accent-t" x="10" y="20">THE IMAGE</text>
+    <g transform="translate(10,34)">
+      <rect class="box" x="0" y="0" width="252" height="252" rx="4"/>
+      <g class="thin">
+        <path d="M36 0V252M72 0V252M108 0V252M144 0V252M180 0V252M216 0V252"/>
+        <path d="M0 36H252M0 72H252M0 108H252M0 144H252M0 180H252M0 216H252"/>
+      </g>
+      <!-- a faint diagonal "edge" in the pixels -->
+      <g fill="#CFC5B7" opacity=".85">
+        <rect x="74" y="38" width="34" height="34"/><rect x="110" y="74" width="34" height="34"/>
+        <rect x="146" y="110" width="34" height="34"/><rect x="182" y="146" width="34" height="34"/>
+      </g>
+      <!-- window at three positions -->
+      <rect x="0" y="0" width="108" height="108" fill="none" stroke="#12706A" stroke-width="3" stroke-dasharray="6 4"/>
+      <rect x="72" y="72" width="108" height="108" fill="none" stroke="#12706A" stroke-width="3"/>
+      <rect x="144" y="144" width="108" height="108" fill="none" stroke="#12706A" stroke-width="3" stroke-dasharray="6 4"/>
+      <text class="tiny teal-t" x="76" y="196">3×3 window</text>
+    </g>
+
+    <!-- arrows -->
+    <g class="arrow">
+      <path d="M280 160H360" marker-end="url(#ar)"/>
+    </g>
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+    </defs>
+    <text class="cap" x="284" y="146">same window,</text>
+    <text class="cap" x="284" y="196">every position</text>
+
+    <!-- feature map -->
+    <text class="lbl teal-t" x="380" y="20">WHERE THAT SHAPE IS</text>
+    <g transform="translate(380,34)">
+      <rect class="box-t" x="0" y="0" width="180" height="180" rx="4"/>
+      <g class="thin" opacity=".5">
+        <path d="M60 0V180M120 0V180"/><path d="M0 60H180M0 120H180"/>
+      </g>
+      <circle cx="30" cy="30" r="9" fill="#12706A" opacity=".22"/>
+      <circle cx="90" cy="90" r="17" fill="#12706A"/>
+      <circle cx="150" cy="150" r="9" fill="#12706A" opacity=".22"/>
+      <text class="tiny" x="0" y="204">one number per position — a map, not a picture</text>
+    </g>
+
+    <!-- stacked maps -->
+    <g class="arrow"><path d="M596 124H656" marker-end="url(#ar)"/></g>
+    <text class="lbl gold-t" x="676" y="20">HUNDREDS OF WINDOWS</text>
+    <g transform="translate(676,34)">
+      <rect class="box-g" x="36" y="0" width="150" height="150" rx="4" opacity=".35"/>
+      <rect class="box-g" x="18" y="18" width="150" height="150" rx="4" opacity=".6"/>
+      <rect class="box-g" x="0" y="36" width="150" height="150" rx="4"/>
+      <text class="tiny" x="0" y="210">edges, corners, blobs — one map each</text>
+    </g>
+
+    <g class="arrow"><path d="M886 124H946" marker-end="url(#ar)"/></g>
+    <text class="lbl accent-t" x="966" y="20">THEN AGAIN</text>
+    <g transform="translate(966,34)">
+      <rect class="box-a" x="0" y="36" width="150" height="150" rx="4"/>
+      <text class="mono accent-t" x="18" y="120">windows over</text>
+      <text class="mono accent-t" x="30" y="142">the maps</text>
+      <text class="tiny" x="0" y="210">and so on, layer after layer</text>
+    </g>
+  </svg>
+
+  <p class="muted mt small">Because the <b>same</b> window is reused at every position, the network learns
+  "edge" <b>once</b> instead of once per location. That single trick is what made computer vision work.</p>
   <aside class="notes">
     <p>The name: "convolution" is just the mathematical word for sliding a window and multiplying.
     Say it once, then never again.</p>
@@ -1521,14 +1629,82 @@ AVERAGE training and test accuracy, with the baseline.
 <section>
   <span class="eyebrow">Architecture 2 · what emerges</span>
   <h2>A hierarchy nobody designed</h2>
-  <div class="mt">
-    <div class="layer" style="border-left:5px solid #DED6CB"><b>Layer 1</b> — edges and blobs of colour</div>
-    <div class="layer" style="border-left:5px solid #C9BFB2"><b>Layer 2</b> — corners, curves, simple textures</div>
-    <div class="layer" style="border-left:5px solid #B8892B"><b>Layer 3</b> — repeated motifs: wheels, eyes, letterforms</div>
-    <div class="layer" style="border-left:5px solid #8E2436"><b>Layer 4</b> — whole objects: a face, a column, a signature</div>
-  </div>
-  <p class="muted mt2 small">Nobody programmed this progression. It appears on its own, from nothing but
-  examples and the guess–check–adjust loop. When researchers first visualised it, it was a genuine surprise.</p>
+  <svg class="fig" viewBox="0 0 1180 250" style="max-height:290px" role="img"
+       aria-label="Four layers: edges, then curves and textures, then parts, then whole objects.">
+    <defs>
+      <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+    </defs>
+
+    <!-- L1 edges -->
+    <g transform="translate(20,30)">
+      <rect class="box" x="0" y="0" width="170" height="150" rx="6"/>
+      <g stroke="#8A8A97" stroke-width="5" stroke-linecap="round">
+        <path d="M28 30V70"/><path d="M70 30L110 70"/><path d="M130 32H160"/>
+        <path d="M28 100H68"/><path d="M96 92L130 126"/><path d="M150 96V130"/>
+      </g>
+      <text class="lbl" x="0" y="176">LAYER 1</text>
+      <text class="cap" x="0" y="196">edges and blobs</text>
+    </g>
+    <path class="arrow" d="M204 105H244" marker-end="url(#ar2)"/>
+
+    <!-- L2 curves/textures -->
+    <g transform="translate(258,30)">
+      <rect class="box" x="0" y="0" width="170" height="150" rx="6"/>
+      <g stroke="#B8892B" stroke-width="5" fill="none" stroke-linecap="round">
+        <path d="M24 74a26 26 0 0 1 52 0"/>
+        <path d="M96 40q34 0 34 34"/>
+        <path d="M24 122h30v-30"/>
+        <circle cx="120" cy="118" r="20"/>
+      </g>
+      <text class="lbl" x="0" y="176">LAYER 2</text>
+      <text class="cap" x="0" y="196">corners, curves, texture</text>
+    </g>
+    <path class="arrow" d="M442 105H482" marker-end="url(#ar2)"/>
+
+    <!-- L3 parts -->
+    <g transform="translate(496,30)">
+      <rect class="box" x="0" y="0" width="170" height="150" rx="6"/>
+      <!-- an eye -->
+      <g stroke="#A8564F" stroke-width="4" fill="none">
+        <path d="M18 52q28-26 56 0q-28 26-56 0"/><circle cx="46" cy="52" r="9" fill="#A8564F"/>
+      </g>
+      <!-- a wheel -->
+      <g stroke="#A8564F" stroke-width="4" fill="none">
+        <circle cx="122" cy="56" r="24"/><circle cx="122" cy="56" r="7" fill="#A8564F"/>
+        <path d="M122 32v48M98 56h48"/>
+      </g>
+      <!-- a letterform -->
+      <text x="40" y="136" font-family="Georgia, serif" font-size="42" fill="#A8564F">A a</text>
+      <text class="lbl" x="0" y="176">LAYER 3</text>
+      <text class="cap" x="0" y="196">parts and motifs</text>
+    </g>
+    <path class="arrow" d="M680 105H720" marker-end="url(#ar2)"/>
+
+    <!-- L4 whole object -->
+    <g transform="translate(734,30)">
+      <rect class="box-a" x="0" y="0" width="170" height="150" rx="6"/>
+      <g stroke="#8E2436" stroke-width="4" fill="none">
+        <circle cx="85" cy="72" r="46"/>
+        <path d="M64 60q8-8 16 0M90 60q8-8 16 0"/>
+        <path d="M66 92q19 16 38 0"/>
+      </g>
+      <text class="lbl accent-t" x="0" y="176">LAYER 4</text>
+      <text class="cap" x="0" y="196">whole objects</text>
+    </g>
+
+    <g transform="translate(936,30)">
+      <rect class="box-g" x="0" y="0" width="224" height="150" rx="6"/>
+      <text class="lbl gold-t" x="16" y="34">NOBODY</text>
+      <text class="lbl gold-t" x="16" y="56">DESIGNED THIS</text>
+      <text class="cap" x="16" y="86">It appears on its own,</text>
+      <text class="cap" x="16" y="106">from nothing but examples</text>
+      <text class="cap" x="16" y="126">and guess–check–adjust.</text>
+    </g>
+  </svg>
+  <p class="muted mt small">When researchers first visualised these layers, it was a genuine surprise —
+  the progression was never specified anywhere.</p>
   <aside class="notes">
     <p>This is one of the few genuinely beautiful results in the field, and it is accessible to any audience.</p>
     <p>If asked for a picture: Zeiler &amp; Fergus (2014) feature visualisations are the classic reference.</p>
@@ -1576,7 +1752,7 @@ AVERAGE training and test accuracy, with the baseline.
 </section>
 
 <section class="exercise vc">
-  <span class="eyebrow">Live demo · 5 minutes · watch, don't type</span>
+  <span class="eyebrow">Exercise 2 · live demo · 5 minutes · Notebook 2 · watch, don't type</span>
   <h2>Watch one get built, and then fooled</h2>
   <div class="prompt mt">Load the built-in handwritten digits dataset and show me 10
 example images with their labels. Train a LOGISTIC REGRESSION
@@ -1589,8 +1765,12 @@ noisy, and how many points each one dropped.
 </div>
   <p class="muted mt small">Both settings are pinned for a reason: a random forest
   <em>does</em> lose confidence under noise, and at half this noise nothing visible happens.
-  The notebook explains why — use its version, not a paraphrase.</p>
-  <p class="muted mt small">Runs in under a minute on Colab's free tier. No GPU, no waiting, no installation.</p>
+  <b>Notebook 2</b> explains why — use its version, not a paraphrase.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/02_images_and_failure.ipynb"
+    >Open Notebook 2 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">Nothing to do now — but it is yours to re-run afterwards.
+  Runs in under a minute, no GPU.</p>
   <aside class="notes">
     <p>Run this yourself on the shared screen rather than sending them off — it is a five-minute beat, not an exercise. Say so explicitly, or half of them will start typing and miss the point.</p>
     <p>The payload is the second prompt: accuracy drops, <b>confidence does not</b>. Say that out loud.</p>
@@ -1616,16 +1796,77 @@ noisy, and how many points each one dropped.
 <section>
   <span class="eyebrow">Architecture 3 · the idea</span>
   <h2>RNN: read one word at a time, and carry a memory</h2>
-  <div class="flow mt" style="font-size:.7em">
-    <div class="step"><b>"The"</b>memory: —</div><span class="arw">→</span>
-    <div class="step"><b>"senate"</b>memory: subject seen</div><span class="arw">→</span>
-    <div class="step"><b>"condemned"</b>memory: subject + action</div><span class="arw">→</span>
-    <div class="step"><b>"the consul"</b>memory: who did what to whom</div>
-  </div>
-  <p class="mt2">The network reads left to right, and after each word updates a small internal summary
-  of everything so far. Order now matters, because the summary depends on it.</p>
-  <p class="muted small">This is how machine translation, early speech recognition and predictive
-  keyboards worked for most of the 2010s.</p>
+  <svg class="fig" viewBox="0 0 1180 300" style="max-height:330px" role="img"
+       aria-label="Words enter one at a time; a memory box passes left to right, updated at each step.">
+    <defs>
+      <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+      <marker id="ar3t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#12706A"/>
+      </marker>
+    </defs>
+
+    <text class="lbl accent-t" x="20" y="24">ONE WORD AT A TIME →</text>
+
+    <g id="rnnsteps">
+      <!-- step template repeated: word box, up arrow, cell, memory arrow -->
+      <!-- 1 -->
+      <g transform="translate(20,190)">
+        <rect class="box" x="0" y="0" width="180" height="46" rx="6"/>
+        <text class="mono" x="62" y="30">The</text>
+      </g>
+      <path class="arrow" d="M110 188V150" marker-end="url(#ar3)"/>
+      <g transform="translate(50,80)"><rect class="box-a" x="0" y="0" width="120" height="66" rx="8"/>
+        <text class="lbl accent-t" x="30" y="40">STEP 1</text></g>
+      <text class="cap" x="34" y="266">memory: —</text>
+
+      <!-- 2 -->
+      <g transform="translate(310,190)">
+        <rect class="box" x="0" y="0" width="180" height="46" rx="6"/>
+        <text class="mono" x="46" y="30">senate</text>
+      </g>
+      <path class="arrow" d="M400 188V150" marker-end="url(#ar3)"/>
+      <g transform="translate(340,80)"><rect class="box-a" x="0" y="0" width="120" height="66" rx="8"/>
+        <text class="lbl accent-t" x="30" y="40">STEP 2</text></g>
+      <text class="cap" x="306" y="266">memory: a subject</text>
+
+      <!-- 3 -->
+      <g transform="translate(600,190)">
+        <rect class="box" x="0" y="0" width="180" height="46" rx="6"/>
+        <text class="mono" x="22" y="30">condemned</text>
+      </g>
+      <path class="arrow" d="M690 188V150" marker-end="url(#ar3)"/>
+      <g transform="translate(630,80)"><rect class="box-a" x="0" y="0" width="120" height="66" rx="8"/>
+        <text class="lbl accent-t" x="30" y="40">STEP 3</text></g>
+      <text class="cap" x="596" y="266">+ an action</text>
+
+      <!-- 4 -->
+      <g transform="translate(890,190)">
+        <rect class="box" x="0" y="0" width="180" height="46" rx="6"/>
+        <text class="mono" x="26" y="30">the consul</text>
+      </g>
+      <path class="arrow" d="M980 188V150" marker-end="url(#ar3)"/>
+      <g transform="translate(920,80)"><rect class="box-t" x="0" y="0" width="120" height="66" rx="8"/>
+        <text class="lbl teal-t" x="30" y="40">STEP 4</text></g>
+      <text class="cap" x="886" y="266">who did what to whom</text>
+    </g>
+
+    <!-- the memory passing along -->
+    <g stroke="#12706A" stroke-width="3" fill="none">
+      <path d="M170 113H336" marker-end="url(#ar3t)"/>
+      <path d="M460 113H626" marker-end="url(#ar3t)"/>
+      <path d="M750 113H916" marker-end="url(#ar3t)"/>
+    </g>
+    <text class="lbl teal-t" x="186" y="60">the memory, carried forward and rewritten at every step</text>
+    <text class="tiny" x="186" y="140">one small summary</text>
+    <text class="tiny" x="476" y="140">overwritten again</text>
+    <text class="tiny" x="766" y="140">and again</text>
+  </svg>
+
+  <p class="muted mt small">It reads strictly left to right, updating one small summary after each word.
+  Order now matters, because the summary depends on it. This is how machine translation and
+  predictive keyboards worked for most of the 2010s.</p>
   <aside class="notes">
     <p>"Recurrent" = it feeds its own output back into itself. Say it once.</p>
   </aside>
@@ -1695,25 +1936,43 @@ noisy, and how many points each one dropped.
   <h2>Every word gets to ask every other word a question</h2>
   <p class="mt">For each word, the model computes: <em>which other words in this text do I need to
   look at in order to be understood correctly?</em></p>
-  <div class="card card--dark mt">
-    <p class="small" style="color:#8A8A97;margin-bottom:.5em">Processing the word <b class="gold">"angry"</b>:</p>
-    <p style="line-height:2">
-      <span class="tok tok--dim">The</span>
-      <span class="tok tok--a">letter</span>
-      <span class="tok tok--dim">she</span>
-      <span class="tok tok--dim">wrote</span>
-      <span class="tok tok--dim">to</span>
-      <span class="tok tok--dim">her</span>
-      <span class="tok tok--b">sister</span>
-      <span class="tok tok--dim">was</span>
-      <span class="tok tok--c"><b>angry</b></span>
-    </p>
-    <p class="small mt" style="color:#4A4A57;margin:0">
-      Strong attention to <b>letter</b> (what is angry?) and to <b>sister</b> (angry at whom?).
-      Weak attention to <em>the, to, her</em>.</p>
-  </div>
-  <p class="muted mt small">"Attention" is just a set of weights saying how much each word should
-  influence each other word. Nothing more mystical than that.</p>
+  <svg class="fig mt" viewBox="0 0 1180 260" style="max-height:290px" role="img"
+       aria-label="Curved lines run from the word angry back to every other word; the thickest go to letter and sister.">
+    <text class="lbl accent-t" x="20" y="22">PROCESSING THE WORD “ANGRY”, IT LOOKS BACK AT EVERY OTHER WORD AT ONCE</text>
+
+    <!-- arcs drawn first so the word boxes sit on top -->
+    <g fill="none" stroke="#8E2436" stroke-linecap="round">
+      <path d="M175 176C175 96 985 96 985 176" stroke-width="11" opacity=".85"/>
+      <path d="M600 176C600 108 985 108 985 176" stroke-width="9"  opacity=".75"/>
+      <path d="M300 176C300 124 985 124 985 176" stroke-width="3"  opacity=".28"/>
+      <path d="M400 176C400 132 985 132 985 176" stroke-width="2.5" opacity=".24"/>
+      <path d="M500 176C500 140 985 140 985 176" stroke-width="2"  opacity=".2"/>
+      <path d="M700 176C700 146 985 146 985 176" stroke-width="2"  opacity=".2"/>
+      <path d="M85 176C85 116 985 116 985 176"  stroke-width="2"  opacity=".2"/>
+      <path d="M800 176C800 152 985 152 985 176" stroke-width="4" opacity=".35"/>
+    </g>
+
+    <!-- the sentence -->
+    <g transform="translate(0,176)">
+      <g><rect class="box" x="40" y="0" width="90" height="46" rx="6"/><text class="mono" x="66" y="30">The</text></g>
+      <g><rect class="box-a" x="136" y="0" width="118" height="46" rx="6"/><text class="mono accent-t" x="158" y="30">letter</text></g>
+      <g><rect class="box" x="260" y="0" width="80" height="46" rx="6"/><text class="mono" x="280" y="30">she</text></g>
+      <g><rect class="box" x="346" y="0" width="108" height="46" rx="6"/><text class="mono" x="366" y="30">wrote</text></g>
+      <g><rect class="box" x="460" y="0" width="72" height="46" rx="6"/><text class="mono" x="482" y="30">to</text></g>
+      <g><rect class="box" x="538" y="0" width="82" height="46" rx="6"/><text class="mono" x="556" y="30">her</text></g>
+      <g><rect class="box-a" x="626" y="0" width="120" height="46" rx="6"/><text class="mono accent-t" x="644" y="30">sister</text></g>
+      <g><rect class="box" x="752" y="0" width="86" height="46" rx="6"/><text class="mono" x="772" y="30">was</text></g>
+      <g><rect class="box-g" x="920" y="0" width="130" height="46" rx="6"/><text class="mono gold-t" x="944" y="30" font-weight="700">angry</text></g>
+    </g>
+
+    <text class="cap" x="136" y="248">what is angry?</text>
+    <text class="cap" x="626" y="248">angry at whom?</text>
+    <text class="tiny" x="300" y="248">thin lines = barely consulted</text>
+  </svg>
+
+  <p class="muted mt small">Thickness is the <b>attention weight</b> — how much each word is allowed to
+  influence this one. Strong to <b>letter</b> and <b>sister</b>; nearly nothing to <em>the, to, her</em>.
+  That is all "attention" means.</p>
   <aside class="notes">
     <p>Resist any temptation toward queries/keys/values. The weighting intuition is complete and correct
     at this level.</p>
@@ -1745,15 +2004,67 @@ noisy, and how many points each one dropped.
 <section>
   <span class="eyebrow">The commercially decisive part</span>
   <h2>All at once means all in parallel</h2>
-  <div class="grid g2 mt">
-    <div class="card card--ghost"><h4 class="faint">RNN</h4>
-      <p class="small">Word 2 cannot be processed until word 1 is done. Ten thousand words means ten
-      thousand steps, in order. Adding computers does not help.</p></div>
-    <div class="card card--gold"><h4>Transformer</h4>
-      <p class="small">All words processed simultaneously. Add a thousand computers and it really does
-      go a thousand times faster.</p></div>
-  </div>
-  <p class="mt2">This is why 2017 mattered commercially, not just intellectually: it made the models
+  <svg class="fig mt" viewBox="0 0 1180 250" style="max-height:280px" role="img"
+       aria-label="An RNN processes words in a chain, one after another. A Transformer processes all words at the same time.">
+    <defs>
+      <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8A8A97"/>
+      </marker>
+    </defs>
+
+    <!-- RNN: a chain -->
+    <text class="lbl" x="20" y="22" fill="#8A8A97">RNN — ONE AFTER ANOTHER</text>
+    <g transform="translate(20,44)">
+      <g stroke="#8A8A97" stroke-width="2.5" fill="none">
+        <path d="M74 30H116" marker-end="url(#ar4)"/>
+        <path d="M178 30H220" marker-end="url(#ar4)"/>
+        <path d="M282 30H324" marker-end="url(#ar4)"/>
+        <path d="M386 30H428" marker-end="url(#ar4)"/>
+      </g>
+      <g>
+        <rect class="box" x="12" y="6" width="62" height="48" rx="6"/><text class="mono" x="34" y="36">1</text>
+        <rect class="box" x="116" y="6" width="62" height="48" rx="6"/><text class="mono" x="138" y="36">2</text>
+        <rect class="box" x="220" y="6" width="62" height="48" rx="6"/><text class="mono" x="242" y="36">3</text>
+        <rect class="box" x="324" y="6" width="62" height="48" rx="6"/><text class="mono" x="346" y="36">4</text>
+        <rect class="box" x="428" y="6" width="62" height="48" rx="6"/><text class="mono" x="450" y="36">5</text>
+      </g>
+      <text class="cap" x="12" y="88">Word 2 cannot start until word 1 has finished.</text>
+      <text class="cap" x="12" y="110">10,000 words = 10,000 steps, strictly in order.</text>
+      <text class="cap" x="12" y="140" font-weight="700" fill="#B3283C">Adding more computers does not help at all.</text>
+      <g stroke="#B3283C" stroke-width="2"><path d="M12 152h420"/></g>
+      <text class="tiny" x="12" y="172">time —————————————————————————→</text>
+    </g>
+
+    <!-- divider -->
+    <path d="M580 40V220" stroke="#E2DCD3" stroke-width="2"/>
+
+    <!-- Transformer: all at once -->
+    <text class="lbl gold-t" x="616" y="22">TRANSFORMER — ALL AT ONCE</text>
+    <g transform="translate(616,44)">
+      <g>
+        <rect class="box-g" x="12" y="6" width="62" height="48" rx="6"/><text class="mono gold-t" x="34" y="36">1</text>
+        <rect class="box-g" x="100" y="6" width="62" height="48" rx="6"/><text class="mono gold-t" x="122" y="36">2</text>
+        <rect class="box-g" x="188" y="6" width="62" height="48" rx="6"/><text class="mono gold-t" x="210" y="36">3</text>
+        <rect class="box-g" x="276" y="6" width="62" height="48" rx="6"/><text class="mono gold-t" x="298" y="36">4</text>
+        <rect class="box-g" x="364" y="6" width="62" height="48" rx="6"/><text class="mono gold-t" x="386" y="36">5</text>
+      </g>
+      <!-- every-to-every links -->
+      <g stroke="#A87A18" stroke-width="1.2" opacity=".45" fill="none">
+        <path d="M43 6C43-14 131-14 131 6"/><path d="M43 6C43-24 219-24 219 6"/>
+        <path d="M43 6C43-34 307-34 307 6"/><path d="M43 6C43-42 395-42 395 6"/>
+        <path d="M131 6C131-14 219-14 219 6"/><path d="M131 6C131-24 307-24 307 6"/>
+        <path d="M131 6C131-34 395-34 395 6"/><path d="M219 6C219-14 307-14 307 6"/>
+        <path d="M219 6C219-24 395-24 395 6"/><path d="M307 6C307-14 395-14 395 6"/>
+      </g>
+      <text class="cap" x="12" y="88">Every word is processed in the same instant,</text>
+      <text class="cap" x="12" y="110">each one looking at all the others.</text>
+      <text class="cap" x="12" y="140" font-weight="700" fill="#12706A">A thousand computers really do make it ~1,000× faster.</text>
+      <g stroke="#12706A" stroke-width="6"><path d="M12 152h84"/></g>
+      <text class="tiny" x="12" y="172">time —→</text>
+    </g>
+  </svg>
+
+  <p class="mt small">This is why 2017 mattered commercially, not just intellectually: it made the models
   <b>scalable</b>, and once something is scalable, money can be poured into it.</p>
   <div class="takeaway mt"><span class="lbl">Remember this for the afternoon</span>
   Everything about the last eight years of AI follows from the fact that this architecture rewards
@@ -1888,6 +2199,77 @@ noisy, and how many points each one dropped.
     <p>Pause. Take questions. This is where the disbelief surfaces, and it is worth spending two minutes on.</p>
     <p>The honest caveat if pressed: instruction tuning and RLHF shape <em>which</em> continuations are
     likely. But the mechanism does not change.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">How a Transformer is actually used</span>
+  <h2>One word out. Then start again.</h2>
+
+  <svg class="fig mt" viewBox="0 0 1180 330" style="max-height:360px" role="img"
+       aria-label="The text goes into the Transformer, one token comes out, it is appended to the text, and the whole thing runs again.">
+    <defs>
+      <marker id="ar5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+    </defs>
+
+    <!-- the desk / context -->
+    <text class="lbl accent-t" x="20" y="22">EVERYTHING ON THE DESK</text>
+    <g transform="translate(20,36)">
+      <rect class="box" x="0" y="0" width="330" height="120" rx="8"/>
+      <text class="mono" x="18" y="34">The archivist opened</text>
+      <text class="mono" x="18" y="62">the wooden</text>
+      <text class="tiny" x="18" y="98">every token, re-read from scratch</text>
+    </g>
+
+    <path class="arrow" d="M362 96H422" marker-end="url(#ar5)"/>
+
+    <!-- the model -->
+    <g transform="translate(434,26)">
+      <rect class="box-a" x="0" y="0" width="200" height="140" rx="10"/>
+      <text class="lbl accent-t" x="34" y="42">TRANSFORMER</text>
+      <text class="cap" x="18" y="72">every token looks at</text>
+      <text class="cap" x="18" y="92">every other, at once</text>
+      <text class="tiny" x="18" y="120">billions of dials, unchanged</text>
+    </g>
+
+    <path class="arrow" d="M646 96H706" marker-end="url(#ar5)"/>
+
+    <!-- the distribution -->
+    <text class="lbl gold-t" x="718" y="22">A PROBABILITY FOR EVERY TOKEN</text>
+    <g transform="translate(718,36)">
+      <g font-family="ui-monospace, Menlo, monospace" font-size="15">
+        <text x="0" y="16">box</text>     <rect x="72" y="4" width="86" height="15" fill="#8E2436"/>   <text x="168" y="16" fill="#4A4A57">31%</text>
+        <text x="0" y="40">door</text>    <rect x="72" y="28" width="66" height="15" fill="#B84A5C"/>  <text x="168" y="40" fill="#4A4A57">24%</text>
+        <text x="0" y="64">chest</text>   <rect x="72" y="52" width="50" height="15" fill="#A87A18"/>  <text x="168" y="64" fill="#4A4A57">18%</text>
+        <text x="0" y="88">cabinet</text> <rect x="72" y="76" width="31" height="15" fill="#CFC5B7"/>  <text x="168" y="88" fill="#4A4A57">11%</text>
+      </g>
+      <text class="tiny" x="0" y="112">…and ~100,000 more, all tiny</text>
+    </g>
+
+    <!-- pick one -->
+    <path class="arrow" d="M960 96H1012" marker-end="url(#ar5)"/>
+    <g transform="translate(1024,58)">
+      <rect class="box-g" x="0" y="0" width="130" height="76" rx="8"/>
+      <text class="mono gold-t" x="34" y="34" font-weight="700">box</text>
+      <text class="tiny" x="10" y="60">one is picked</text>
+    </g>
+
+    <!-- the loop back -->
+    <path d="M1089 140V236H185V182" fill="none" stroke="#12706A" stroke-width="3" stroke-dasharray="7 5"
+          marker-end="url(#ar5)"/>
+    <text class="lbl teal-t" x="404" y="228">append it to the desk, and run the whole thing again</text>
+    <text class="cap" x="404" y="262">To write 500 words, this loop runs about 700 times.</text>
+    <text class="cap" x="404" y="286">That is why it streams word by word — and why it costs what it costs.</text>
+  </svg>
+
+  <aside class="notes">
+    <p>This is the slide that ties the section together. Walk the loop once with your finger, then say
+    the last line slowly: <b>the model does not write a sentence. It writes one token, seven hundred times.</b></p>
+    <p>It also explains three things students already noticed: why output appears gradually, why longer
+    answers cost more, and why the same question can give different answers — the pick at the end is
+    the dice roll from the temperature slide.</p>
   </aside>
 </section>
 
@@ -2129,6 +2511,11 @@ noisy, and how many points each one dropped.
   <h1 style="font-size:2em">Look inside<br>the language model</h1>
   <p class="big mt" style="max-width:24em">Tokens, probabilities, temperature, and a hallucination
   you will produce deliberately.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/03_inside_the_model.ipynb"
+    >Open Notebook 3 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">or: course page → Notebooks → <b>3 · Look inside the language model</b>
+  &nbsp;·&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes">
     <p>Exercise 2 was the shared-screen demo in section 3. This is the second hands-on block.</p>
   </aside>

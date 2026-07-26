@@ -367,6 +367,22 @@ section.failure h4 { color: var(--alert); }
   padding: 0 .25em; border-radius: 3px; font-weight: 600;
 }
 
+/* the one-click way into the notebook, shown at the moment it is needed */
+.nb-open {
+  display: inline-flex; align-items: baseline; gap: .5em;
+  font-family: var(--mono); font-size: max(19px, .62em); font-weight: 600;
+  color: #fff !important; background: var(--bordeaux);
+  border-radius: 8px; padding: .5em .95em;
+  text-decoration: none !important; letter-spacing: .01em;
+  box-shadow: 0 2px 0 rgba(0,0,0,.16);
+}
+.nb-open .arrow-out { font-size: .9em; opacity: .8; }
+.nb-path {
+  font-family: var(--mono); font-size: max(16px, .5em); color: var(--ink-faint);
+  margin-top: .5em;
+}
+.nb-path b { color: var(--ink); font-weight: 600; }
+
 .kbd {
   font-family: var(--mono); font-size: .8em; background: #fff; color: var(--ink);
   border: 1px solid #CFC7BC; border-bottom-width: 3px; border-radius: 6px;
@@ -491,6 +507,27 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
 .nest--2 { background: #FBF3E6; border-color: #E5D2B2; }
 .nest--3 { background: #EDF5F3; border-color: #C4DED7; }
 .nest--4 { background: #ECEEF9; border-color: #C6CDEC; }
+
+/* ============================================================
+   DIAGRAMS — inline SVG, so the decks stay single self-contained
+   files and the figures stay crisp on any projector.
+   ============================================================ */
+.fig { display: block; margin: .2em auto; max-width: 100%; height: auto; }
+.fig text { font-family: var(--sans); fill: var(--ink); }
+.fig .lbl   { font-size: 15px; font-weight: 700; letter-spacing: .04em; }
+.fig .cap   { font-size: 14px; fill: var(--ink-soft); }
+.fig .tiny  { font-size: 12px; fill: var(--ink-faint); }
+.fig .mono  { font-family: var(--mono); font-size: 14px; }
+.fig .accent-t { fill: var(--bordeaux); }
+.fig .teal-t   { fill: var(--teal); }
+.fig .gold-t   { fill: var(--gold); }
+.fig .box   { fill: #fff; stroke: var(--rule); stroke-width: 1.5; }
+.fig .box-a { fill: #FBF2F3; stroke: var(--bordeaux); stroke-width: 2; }
+.fig .box-t { fill: #EDF7F5; stroke: var(--teal); stroke-width: 2; }
+.fig .box-g { fill: #FBF4E4; stroke: var(--gold); stroke-width: 2; }
+.fig .arrow { stroke: var(--bordeaux); stroke-width: 2; fill: none; }
+.fig .thin  { stroke: var(--rule); stroke-width: 1; fill: none; }
+.fig-cap { font-size: .62em; color: var(--ink-soft); text-align: center; margin-top: .3em; }
 
 </style>
 </head>
@@ -662,6 +699,11 @@ RULES, which apply to every answer:
   <h1 style="font-size:1.9em">Build a chatbot<br>with a method</h1>
   <p class="big mt" style="max-width:24em">You will write a system prompt, wrap it in a conversation loop,
   and then try to break your own rules.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/04_build_a_chatbot.ipynb"
+    >Open Notebook 4 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">or: course page → Notebooks → <b>4 · Build a chatbot with a method</b>
+  &nbsp;·&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes"><p>First build of the afternoon. Keep the energy up — this one always works.</p></aside>
 </section>
 
@@ -991,6 +1033,11 @@ Requirements:
   <span class="eyebrow">Exercise 5 · 20 minutes · Notebook 5</span>
   <h1 style="font-size:1.9em">The prompt tournament</h1>
   <p class="big mt" style="max-width:24em">One task, four prompts, and a measurable winner.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/05_prompt_tournament.ipynb"
+    >Open Notebook 5 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">or: course page → Notebooks → <b>5 · The prompt tournament</b>
+  &nbsp;·&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes"><p>Competitive framing works well here and the results are genuinely surprising.</p></aside>
 </section>
 
@@ -1411,6 +1458,11 @@ QUESTION: ...
   <h1 style="font-size:1.9em">Question your own documents</h1>
   <p class="big mt" style="max-width:24em">Bring your own PDFs, or use the provided archive.
   Either way you leave with a working document assistant.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/06_question_your_documents.ipynb"
+    >Open Notebook 6 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path">or: course page → Notebooks → <b>6 · Question your own documents</b>
+  &nbsp;·&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes"><p>The moment the course becomes personally useful. Encourage own material here.</p></aside>
 </section>
 
@@ -1466,6 +1518,353 @@ If they don't answer it, say so.
     a real citation you then open. Demonstrating the check is the lesson; asking them to describe it
     is not.</p>
     <p>Explicitly transferable — that framing makes the exercise feel like training rather than a toy.</p>
+  </aside>
+</section>
+
+<!-- ==== 025-rag.html ==== -->
+<!-- ============ M2 · RAG, EXPLAINED PROPERLY (10 slides · 16 min) ============ -->
+
+<section class="divider vc">
+  <span class="eyebrow">Now let's name what you just built</span>
+  <h2>Retrieval-Augmented Generation</h2>
+  <p class="muted big">Everyone will say "RAG" at you this year. In fifteen minutes you will
+  know exactly what they mean — and what they are not telling you.</p>
+  <aside class="notes">
+    <p>Deliberately placed <em>after</em> the exercise. They have already built one; this section
+    gives them the name, the parts, and the vocabulary to argue about it.</p>
+    <p>Say plainly: "you have already done this. Now I am just labelling the pieces."</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">Start with the name</span>
+  <h2>Three words, and each one is doing work</h2>
+  <div class="grid g3 mt">
+    <div class="card card--teal"><h4>Retrieval</h4>
+      <p class="small">Before answering, go and <b>fetch</b> the handful of passages most likely to be
+      relevant. This is a search step. No model writes anything yet.</p></div>
+    <div class="card card--gold"><h4>Augmented</h4>
+      <p class="small">Those passages are <b>added to the question</b> — pasted onto the desk in front
+      of the model. The prompt it finally receives is bigger than the one you typed.</p></div>
+    <div class="card card--accent"><h4>Generation</h4>
+      <p class="small">Only now does the model do its one trick: continue the text. But it is
+      continuing text that <b>already contains the answer</b>.</p></div>
+  </div>
+  <div class="takeaway mt2"><span class="lbl">The whole idea in one line</span>
+  Don't ask the model to remember. Go and find the right page first, put it under its nose,
+  and then ask.</div>
+  <aside class="notes">
+    <p>Most people who say "RAG" cannot unpack the three words. Being able to is a genuine
+    advantage in a meeting.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">The whole system in one picture</span>
+  <h2>What happens when you ask a question</h2>
+
+  <svg class="fig mt" viewBox="0 0 1180 300" style="max-height:330px" role="img"
+       aria-label="A question goes to a search step, which pulls five passages from an archive; those passages plus the question go to the model, which answers with citations.">
+    <defs>
+      <marker id="rg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+    </defs>
+
+    <!-- question -->
+    <g transform="translate(14,110)">
+      <rect class="box-t" x="0" y="0" width="176" height="80" rx="8"/>
+      <text class="lbl teal-t" x="16" y="30">YOUR QUESTION</text>
+      <text class="cap" x="16" y="56">“who asked for a delay?”</text>
+    </g>
+    <path class="arrow" d="M200 150H250" marker-end="url(#rg)"/>
+
+    <!-- search -->
+    <g transform="translate(262,96)">
+      <rect class="box" x="0" y="0" width="170" height="108" rx="8"/>
+      <text class="lbl" x="42" y="34">SEARCH</text>
+      <text class="cap" x="16" y="60">find the passages</text>
+      <text class="cap" x="16" y="80">closest in meaning</text>
+    </g>
+
+    <!-- archive below search -->
+    <g transform="translate(262,232)">
+      <rect class="box" x="0" y="0" width="170" height="52" rx="6"/>
+      <text class="cap" x="18" y="32">your 240 letters</text>
+    </g>
+    <path d="M347 228V206" stroke="#8A8A97" stroke-width="2" fill="none" marker-end="url(#rg)"/>
+
+    <path class="arrow" d="M442 150H492" marker-end="url(#rg)"/>
+
+    <!-- the desk -->
+    <g transform="translate(504,54)">
+      <rect class="box-g" x="0" y="0" width="230" height="192" rx="8"/>
+      <text class="lbl gold-t" x="52" y="30">THE DESK</text>
+      <g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#4A4A57">
+        <text x="16" y="60">the instruction</text>
+        <text x="16" y="86">[1] …passage…</text>
+        <text x="16" y="106">[2] …passage…</text>
+        <text x="16" y="126">[3] …passage…</text>
+        <text x="16" y="152">your question</text>
+      </g>
+      <text class="tiny" x="16" y="178">this is the "augmented" bit</text>
+    </g>
+
+    <path class="arrow" d="M744 150H794" marker-end="url(#rg)"/>
+
+    <!-- model -->
+    <g transform="translate(806,96)">
+      <rect class="box-a" x="0" y="0" width="160" height="108" rx="8"/>
+      <text class="lbl accent-t" x="34" y="46">THE MODEL</text>
+      <text class="cap" x="16" y="74">continues the text</text>
+    </g>
+
+    <path class="arrow" d="M976 150H1026" marker-end="url(#rg)"/>
+
+    <!-- answer -->
+    <g transform="translate(1038,96)">
+      <rect class="box-t" x="0" y="0" width="128" height="108" rx="8"/>
+      <text class="lbl teal-t" x="26" y="40">ANSWER</text>
+      <text class="cap" x="14" y="66">with [1] [3]</text>
+      <text class="tiny" x="14" y="90">you can open them</text>
+    </g>
+  </svg>
+
+  <p class="muted mt small">Read it left to right once. <b>Search happens first, and the model never
+  sees your archive</b> — only the five passages that search handed it.</p>
+  <aside class="notes">
+    <p>Walk the arrow with your cursor. The single most important beat: the model is not "looking
+    things up". Something else looked things up, and the model only ever sees the result.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">Part one · done once, in advance</span>
+  <h2>Preparing the archive</h2>
+
+  <svg class="fig mt" viewBox="0 0 1180 252" style="max-height:280px" role="img"
+       aria-label="Documents are turned into text, cut into passages, and each passage is given a set of coordinates and stored.">
+    <defs>
+      <marker id="rg2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="#8E2436"/>
+      </marker>
+    </defs>
+
+    <g transform="translate(20,50)">
+      <rect class="box" x="18" y="0" width="120" height="120" rx="6" opacity=".4"/>
+      <rect class="box" x="9" y="9" width="120" height="120" rx="6" opacity=".7"/>
+      <rect class="box" x="0" y="18" width="120" height="120" rx="6"/>
+      <text class="cap" x="22" y="86">PDFs, scans,</text>
+      <text class="cap" x="30" y="106">notes, chapters</text>
+      <text class="lbl" x="0" y="172">1 · EXTRACT</text>
+      <text class="tiny" x="0" y="192">get plain text out</text>
+    </g>
+    <path class="arrow" d="M180 120H236" marker-end="url(#rg2)"/>
+
+    <g transform="translate(250,50)">
+      <rect class="box" x="0" y="8" width="180" height="26" rx="4"/>
+      <rect class="box" x="0" y="42" width="180" height="26" rx="4"/>
+      <rect class="box" x="0" y="76" width="180" height="26" rx="4"/>
+      <rect class="box" x="0" y="110" width="180" height="26" rx="4"/>
+      <text class="lbl" x="0" y="172">2 · CHUNK</text>
+      <text class="tiny" x="0" y="192">cut into short passages</text>
+    </g>
+    <path class="arrow" d="M446 120H502" marker-end="url(#rg2)"/>
+
+    <g transform="translate(516,50)">
+      <rect class="box-t" x="0" y="8" width="200" height="128" rx="6"/>
+      <g font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#12706A">
+        <text x="14" y="40">[ 0.31, −0.88, 0.05, … ]</text>
+        <text x="14" y="66">[ 0.29, −0.91, 0.11, … ]</text>
+        <text x="14" y="92">[ −0.7, 0.12, 0.66, … ]</text>
+      </g>
+      <text class="lbl teal-t" x="0" y="172">3 · GIVE COORDINATES</text>
+      <text class="tiny" x="0" y="192">similar passages get similar numbers</text>
+    </g>
+    <path class="arrow" d="M732 120H788" marker-end="url(#rg2)"/>
+
+    <g transform="translate(802,50)">
+      <rect class="box-g" x="0" y="8" width="240" height="128" rx="6"/>
+      <text class="lbl gold-t" x="46" y="60">THE INDEX</text>
+      <text class="cap" x="20" y="90">every passage, its coordinates,</text>
+      <text class="cap" x="20" y="110">and where it came from</text>
+      <text class="lbl" x="0" y="172">4 · STORE</text>
+      <text class="tiny" x="0" y="192">built once; reused for every question afterwards</text>
+    </g>
+  </svg>
+
+  <p class="muted mt small">Step 4 is why people say "vector database" — it is a filing cabinet where
+  the label on each drawer is a list of numbers rather than a word.</p>
+  <aside class="notes">
+    <p>Step 1 is where real projects die. Say it again: a PDF of photographs contains no text, and
+    everything downstream then runs on nothing.</p>
+    <p>"Vector store", "vector database", "embedding index" — all the same drawer. Give the words once.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">Part two · every time you ask</span>
+  <h2>Finding the five passages</h2>
+  <ol class="steps mt" style="font-size:.88em">
+    <li>Your <b>question</b> is given coordinates too — by exactly the same procedure as the passages.</li>
+    <li>The system finds the passages whose coordinates are <b>nearest</b> to the question's.</li>
+    <li>It takes the closest handful — usually five — and stops. It does not read your archive.</li>
+    <li>Those five are pasted onto the desk, with the question and the instruction.</li>
+  </ol>
+  <div class="takeaway mt"><span class="lbl">The number people argue about</span>
+  That "five" has a name: <b>top-k</b>. Too few and the answer is missing. Too many and the desk fills
+  with noise, the important passage gets buried in the middle, and the answer gets worse. There is no
+  correct value; it depends on your documents.</div>
+  <aside class="notes">
+    <p>The top-k trade-off is the most useful practical knob to hand them, and connects straight back
+    to the "lost in the middle" slide from this morning.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">Why coordinates and not keywords</span>
+  <h2>"Nearest" means nearest in meaning-space</h2>
+
+  <svg class="fig mt" viewBox="0 0 1180 312" style="max-height:330px" role="img"
+       aria-label="A scatter of passages; letters about debt cluster together, letters about floods cluster elsewhere, and the question lands inside the debt cluster.">
+    <rect x="20" y="20" width="740" height="250" rx="10" fill="#FDFCFA" stroke="#E2DCD3"/>
+    <text class="tiny" x="34" y="42">a space with hundreds of directions — flattened here to two</text>
+
+    <!-- debt cluster -->
+    <g>
+      <circle cx="210" cy="170" r="86" fill="#12706A" opacity=".07"/>
+      <circle cx="176" cy="150" r="7" fill="#12706A"/><text class="tiny" x="188" y="146">“more time to repay”</text>
+      <circle cx="214" cy="186" r="7" fill="#12706A"/><text class="tiny" x="226" y="182">“grant a delay”</text>
+      <circle cx="168" cy="200" r="7" fill="#12706A"/><text class="tiny" x="60" y="222">“defer payment”</text>
+      <circle cx="252" cy="198" r="7" fill="#12706A"/>
+    </g>
+
+    <!-- flood cluster -->
+    <g>
+      <circle cx="560" cy="120" r="76" fill="#8E2436" opacity=".07"/>
+      <circle cx="536" cy="100" r="7" fill="#8E2436"/><text class="tiny" x="548" y="96">“the waters rose”</text>
+      <circle cx="580" cy="132" r="7" fill="#8E2436"/><text class="tiny" x="592" y="128">“l'inondazione”</text>
+      <circle cx="546" cy="150" r="7" fill="#8E2436"/><text class="tiny" x="452" y="176">“broke its banks”</text>
+    </g>
+
+    <!-- harvest cluster -->
+    <g>
+      <circle cx="470" cy="228" r="52" fill="#A87A18" opacity=".08"/>
+      <circle cx="454" cy="220" r="6" fill="#A87A18"/><text class="tiny" x="466" y="216">“the frost took the vines”</text>
+      <circle cx="486" cy="242" r="6" fill="#A87A18"/>
+    </g>
+
+    <!-- the question -->
+    <g>
+      <path d="M196 168m-15 0a15 15 0 1 0 30 0a15 15 0 1 0-30 0" fill="none" stroke="#A87A18" stroke-width="3" stroke-dasharray="4 3"/>
+      <circle cx="196" cy="168" r="6" fill="#A87A18"/>
+      <path d="M196 168L120 96" stroke="#A87A18" stroke-width="2"/>
+      <rect class="box-g" x="34" y="58" width="218" height="42" rx="6"/>
+      <text class="mono gold-t" x="48" y="85" font-size="13">your question lands here</text>
+    </g>
+
+    <!-- right panel -->
+    <g transform="translate(792,40)">
+      <rect class="box-t" x="0" y="0" width="360" height="114" rx="8"/>
+      <text class="lbl teal-t" x="18" y="30">WHY THIS BEATS KEYWORDS</text>
+      <text class="cap" x="18" y="56">Your question said “repay”. The letter</text>
+      <text class="cap" x="18" y="76">says “defer payment”. No shared word —</text>
+      <text class="cap" x="18" y="96">but they sit in the same neighbourhood.</text>
+    </g>
+    <g transform="translate(792,168)">
+      <rect class="box" x="0" y="0" width="360" height="132" rx="8" stroke="#B3283C"/>
+      <text class="lbl" x="18" y="30" fill="#B3283C">AND WHY IT STILL FAILS</text>
+      <text class="cap" x="18" y="56">The neighbourhood is learned from how</text>
+      <text class="cap" x="18" y="76">words are used <tspan font-weight="700">in your archive</tspan>. Ask with</text>
+      <text class="cap" x="18" y="96">vocabulary it has never seen, and your</text>
+      <text class="cap" x="18" y="116">question lands nowhere at all.</text>
+    </g>
+  </svg>
+
+  <aside class="notes">
+    <p>This is the pay-off of the embeddings slide from this morning — say so explicitly, and remind
+    them they watched exactly this succeed and fail in Exercise 6.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">What it fixes</span>
+  <h2>Four real problems RAG actually solves</h2>
+  <div class="grid g2 mt">
+    <div class="card card--teal"><h4>It knows your material</h4>
+      <p class="small">No training, no fine-tuning, no waiting. Add a document this morning and it is
+      searchable this afternoon.</p></div>
+    <div class="card card--teal"><h4>It can be checked</h4>
+      <p class="small">Every claim points at a passage you can open. This is the difference between
+      an answer and a citation.</p></div>
+    <div class="card card--teal"><h4>It can say "I don't know"</h4>
+      <p class="small">Because the instruction can name the passages as the only permitted source —
+      the strongest defence against invention you have.</p></div>
+    <div class="card card--teal"><h4>It stays current</h4>
+      <p class="small">The model's training has a cut-off date. Your index does not. Update the folder,
+      and the answers update.</p></div>
+  </div>
+  <aside class="notes"><p>Keep this brisk — the honest limits on the next slide are what they need to remember.</p></aside>
+</section>
+
+<section class="failure">
+  <span class="eyebrow">What it does not fix</span>
+  <h2>Five things RAG is still bad at</h2>
+  <div class="grid g2 mt">
+    <div class="card"><h4>Bad retrieval is invisible</h4>
+      <p class="small">If search fetches the wrong five passages, the answer is confidently wrong and
+      nothing in it says so. You saw this happen.</p></div>
+    <div class="card"><h4>It cannot count or survey</h4>
+      <p class="small">"How many letters mention the flood?" It looked at five passages. It has no idea.
+      Any number it gives you is invented.</p></div>
+    <div class="card"><h4>It cannot prove absence</h4>
+      <p class="small">"No letter mentions X" is unprovable from five passages. Arguments from silence
+      need a different method entirely.</p></div>
+    <div class="card"><h4>It splits arguments in half</h4>
+      <p class="small">The claim is in one chunk, the qualification that reverses it is in the next,
+      and only one gets retrieved.</p></div>
+    <div class="card card--ghost" style="grid-column:1/-1;border-color:#E2DCD3">
+      <h4>And it still blends in what it "knows"</h4>
+      <p class="small">Even instructed not to, models sometimes mix retrieved text with recalled text.
+      Citations are how you catch it — open the passage and check it really says that.</p></div>
+  </div>
+  <aside class="notes">
+    <p>The counting one catches people out constantly, because the question feels so reasonable.
+    "How many of my interviews mention housing?" is a database question, not a RAG question.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">The words you will now recognise</span>
+  <h2>Six terms, decoded</h2>
+  <table class="mt">
+    <tr><th style="width:12em">What they say</th><th>What it means</th></tr>
+    <tr><td><b>Chunking</b></td><td>Cutting documents into passages short enough to retrieve and to fit on the desk.</td></tr>
+    <tr><td><b>Embedding</b></td><td>The list of numbers that places a passage in meaning-space.</td></tr>
+    <tr><td><b>Vector store</b></td><td>The filing cabinet holding those numbers, so "nearest" can be found fast.</td></tr>
+    <tr><td><b>Top-k</b></td><td>How many passages to fetch. Usually five. There is no right answer.</td></tr>
+    <tr><td><b>Grounding</b></td><td>Requiring the answer to come from the supplied passages and nothing else.</td></tr>
+    <tr><td><b>Hybrid search</b></td><td>Running keyword search <em>and</em> meaning search together, because each catches what the other misses.</td></tr>
+  </table>
+  <p class="muted mt small">That is the entire vocabulary. Anyone selling you a "RAG platform" is selling
+  you these six things with good engineering around them.</p>
+  <aside class="notes">
+    <p>Tell them to photograph this one. It is the slide that makes them hard to bewilder in a
+    procurement meeting.</p>
+  </aside>
+</section>
+
+<section class="statement vc">
+  <span class="eyebrow">Section 3 · what to carry forward</span>
+  <div class="takeaway"><span class="lbl">Takeaway</span>
+  <p style="margin:0">RAG is <b>search, then answer</b>. It does not make the model cleverer or more
+  honest — it changes the question from "what do you remember?" to "what does this passage say?".
+  Everything good about it, and every way it fails, follows from that one move.</p></div>
+  <p class="muted mt2 small">Playbook line 12: <em>"Test grounded systems on facts you already know —
+  including one they should not be able to answer."</em></p>
+  <aside class="notes">
+    <p>Then straight into agents: an agent is this same move, repeated, with the system choosing what
+    to fetch each time instead of you.</p>
   </aside>
 </section>
 
@@ -1646,6 +2045,11 @@ If they don't answer it, say so.
   <h1 style="font-size:1.9em">Build your research agent</h1>
   <p class="big mt" style="max-width:24em">A goal you choose, four tools, a loop you supervise,
   and a table at the end that you can actually use.</p>
+  <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
+    href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/07_capstone_agent.ipynb"
+    >Open Notebook 7 in Colab <span class="arrow-out">↗</span></a></p>
+  <p class="nb-path"><b>Copy to Drive first.</b> This is the one whose output you keep —
+  a read-only notebook loses your table at 16:50.</p>
   <aside class="notes"><p>The deliverable of the whole day. Protect the full 40 minutes for it.</p></aside>
 </section>
 
