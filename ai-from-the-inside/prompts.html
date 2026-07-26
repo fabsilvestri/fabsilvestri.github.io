@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Every prompt in the course — Artificial Intelligence, from the Inside</title>
+<meta name="description" content="All the exercise prompts in the order they appear, each with the reason it is worded that way." />
+<link rel="canonical" href="https://fabsilvestri.github.io/ai-from-the-inside/prompts.html" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+<style>
+  .doc { max-width: 860px; margin: 0 auto; }
+  .doc-head { margin: 8px 0 28px; }
+  .doc-head .hero-eyebrow { margin-bottom: 10px; }
+  .doc-head h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.08;
+                 letter-spacing: -0.03em; margin: 0 0 10px; font-weight: 800; }
+  .doc-body {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px) saturate(1.15);
+    -webkit-backdrop-filter: blur(14px) saturate(1.15);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    padding: 34px 40px 40px;
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .doc-body h1 { display: none; }
+  .doc-body h2 {
+    font-size: 25px; color: var(--ink); margin: 40px 0 14px;
+    letter-spacing: -0.01em; line-height: 1.2;
+    padding-top: 22px; border-top: 1px solid rgba(142,31,45,.14);
+  }
+  .doc-body > h2:first-of-type { border-top: 0; padding-top: 0; margin-top: 6px; }
+  .doc-body h3 { font-size: 19.5px; color: var(--ink); margin: 30px 0 10px; letter-spacing: -0.01em; }
+  .doc-body h4 { font-size: 16.5px; color: var(--accent-1); margin: 22px 0 8px;
+                 text-transform: uppercase; letter-spacing: .08em; font-family: var(--font-mono); }
+  .doc-body p { margin: 0 0 15px; }
+  .doc-body strong { color: var(--ink); font-weight: 650; }
+  .doc-body ul, .doc-body ol { margin: 0 0 16px; padding-left: 22px; }
+  .doc-body li { margin-bottom: 8px; }
+  .doc-body hr { border: 0; border-top: 1px solid rgba(142,31,45,.14); margin: 34px 0; }
+  .doc-body code {
+    font-family: var(--font-mono); font-size: .88em;
+    background: rgba(142,31,45,.07); border: 1px solid rgba(142,31,45,.14);
+    border-radius: 5px; padding: .1em .34em; color: var(--accent-3);
+  }
+  .doc-body pre {
+    background: #1B1A22; color: #E9E5DC; border-radius: 14px;
+    padding: 20px 22px; overflow-x: auto; margin: 0 0 20px;
+    font-size: 14px; line-height: 1.6;
+    box-shadow: 0 8px 24px rgba(20,16,10,.15);
+  }
+  .doc-body pre code { background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+  .doc-body blockquote {
+    margin: 0 0 18px; padding: 2px 0 2px 18px;
+    border-left: 3px solid var(--accent-gold); color: var(--ink-soft);
+  }
+  .doc-body table { width: 100%; border-collapse: collapse; margin: 0 0 22px; font-size: 15px; }
+  .doc-body th {
+    text-align: left; font-family: var(--font-mono); font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: .07em; color: var(--accent-1);
+    border-bottom: 2px solid rgba(142,31,45,.2); padding: 8px 10px;
+  }
+  .doc-body td { padding: 9px 10px; border-bottom: 1px solid rgba(142,31,45,.1); vertical-align: top; }
+  .doc-body em { color: var(--ink-muted); }
+  @media (max-width: 640px) { .doc-body { padding: 24px 20px 28px; font-size: 15.5px; } }
+</style>
+</head>
+<body>
+<div class="bg-gradient" aria-hidden="true"></div>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+</div>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="../" class="nav-brand">FS</a>
+    <ul class="nav-links">
+      <li><a href="./">Course</a></li>
+      <li><a href="./#slides">Slides</a></li>
+      <li><a href="./#notebooks">Notebooks</a></li>
+      <li><a href="playbook.html">Playbook</a></li>
+      <li><a href="prompts.html">Prompts</a></li>
+    </ul>
+    <a class="nav-cta" href="PROMPTS.md" target="_blank" rel="noopener">Markdown ↗</a>
+  </nav>
+</header>
+
+<main>
+  <div class="doc">
+    <div class="doc-head">
+      <p class="hero-eyebrow">Artificial Intelligence, from the Inside · Sapienza PhD Soft Skills 2026</p>
+      <h1>Every prompt in the course</h1>
+      <p style="color:var(--ink-soft);margin:0">All the exercise prompts in the order they appear, each with the reason it is worded that way.</p>
+    </div>
+    <article class="doc-body">
+<h1 id="prompts">PROMPTS</h1>
+<p>Every prompt used in the course, in the order it appears.</p>
+<p><strong>This file is generated</strong> by <code>notebooks/build_notebooks.py</code> from the same source as the notebooks, so it can never drift out of step with them. Edit the generator, not this file.</p>
+<p>Two kinds of prompt appear here:</p>
+<table>
+<thead>
+<tr>
+<th>Where it goes</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>code cell</strong></td>
+<td>Typed into Colab's AI (<code>Ctrl</code>+<code>Shift</code>+<code>Enter</code>) so it writes code for you.</td>
+</tr>
+<tr>
+<td><strong>AI chat panel</strong></td>
+<td>Typed into the Colab AI sidebar, where you are talking to the model itself.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#notebook-0-warm-up">Notebook 0 — Warm-up</a></li>
+<li><a href="#notebook-1-teach-a-machine-to-sort-your-texts">Notebook 1 — Teach a machine to sort your texts</a></li>
+<li><a href="#notebook-2-images-and-how-to-fool-them">Notebook 2 — Images, and how to fool them</a></li>
+<li><a href="#notebook-3-look-inside-the-language-model">Notebook 3 — Look inside the language model</a></li>
+<li><a href="#notebook-4-build-a-chatbot-with-a-method">Notebook 4 — Build a chatbot with a method</a></li>
+<li><a href="#notebook-5-the-prompt-tournament">Notebook 5 — The prompt tournament</a></li>
+<li><a href="#notebook-6-question-your-own-documents">Notebook 6 — Question your own documents</a></li>
+<li><a href="#notebook-7-build-your-research-agent-capstone">Notebook 7 — Build your research agent (capstone)</a></li>
+</ul>
+<hr>
+<h2 id="notebook-0-warm-up">Notebook 0 — Warm-up</h2>
+<h3 id="2-your-first-generated-cell">2 · Your first generated cell</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Print a friendly one-line greeting, then print today's date in a
+human-readable form, and finally print how many days remain in this year.
+</code></pre>
+<p><strong>Why:</strong> Read what it wrote before you run it. Getting into that habit now is the whole point of the exercise.</p>
+<p><br></p>
+<h2 id="notebook-1-teach-a-machine-to-sort-your-texts">Notebook 1 — Teach a machine to sort your texts</h2>
+<h3 id="1-look-at-your-data-before-anything-else">1 · Look at your data before anything else</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Load the file letters.csv into a table.
+Show me its shape, the column names, and 10 random rows
+with the full text visible.
+Also show how many letters carry each label.
+</code></pre>
+<p><strong>Why:</strong> Never train anything before you have looked at the data. You are checking: is it what I think it is?</p>
+<p><br></p>
+<h3 id="2-train-and-evaluate-the-whole-of-machine-learning-in-one-prompt">2 · Train and evaluate — the whole of machine learning, in one prompt</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Split the data 80/20 into a training set and a test set, keeping the
+balance of labels the same in both.
+Train a simple text classifier on the training set only.
+Report its accuracy on the test set.
+Use the 'label' column, not 'true_label'.
+</code></pre>
+<p><strong>Why:</strong> Note the last line. The file also contains <code>true_label</code>, which is the label <em>before</em> we introduced realistic noise. Using it would be cheating — and it is exactly the kind of leak that ruins real studies.</p>
+<p><br></p>
+<h3 id="3-the-baseline-the-number-nobody-reports">3 · The baseline — the number nobody reports</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">What accuracy would I get on the same test set by ignoring the text
+completely and always predicting the most common label?
+Print that number next to the model's accuracy so I can compare them.
+</code></pre>
+<p><strong>Why:</strong> <strong>If these two numbers are close, your model has learned nothing.</strong> Ask this of every accuracy figure you ever meet, including in papers you referee.</p>
+<p><br></p>
+<h3 id="4-read-the-mistakes">4 · Read the mistakes</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Show me 8 test letters the model got wrong.
+For each one show the full text, the true label and the predicted label,
+in a readable layout — not a cramped table.
+</code></pre>
+<p><strong>Why:</strong> Read them properly. Ask yourself: <em>would I have got this right?</em> Some of them are mislabelled, and some are genuinely ambiguous. This is the most valuable five minutes in the notebook.</p>
+<p><br></p>
+<h3 id="5-what-did-it-actually-learn">5 · What did it actually learn?</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Show me the 15 words or phrases that push the model most strongly towards
+each of the two labels. Display them as a horizontal bar chart, with the
+two labels in different colours.
+</code></pre>
+<p><strong>Why:</strong> Look for anything embarrassing: a greeting, a place name, a punctuation habit. If the model keys on something that has nothing to do with the concept, it found a <strong>shortcut</strong>, not a meaning.</p>
+<p><br></p>
+<h3 id="6-how-much-data-did-it-actually-need">6 · How much data did it actually need?</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Retrain the same kind of model on only the first 20 training letters,
+then on 50, then on 100, then on all of them.
+Plot test accuracy against the number of training examples,
+and draw the do-nothing baseline as a horizontal line.
+</code></pre>
+<p><strong>Why:</strong> This curve is how you answer 'do I need to label more data?' — a question that costs real money in real projects.</p>
+<p><br></p>
+<h3 id="7-train-on-nonsense">7 · Train on nonsense</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Randomly shuffle the training labels so they no longer match their letters,
+then train the same kind of model on that shuffled data.
+Report BOTH the training accuracy and the test accuracy,
+and print the do-nothing baseline next to them for comparison.
+</code></pre>
+<p><strong>Why:</strong> Expect training accuracy near 100% and test accuracy near the baseline. The model happily memorised 211 arbitrary pairings and learned nothing whatsoever.</p>
+<p><br></p>
+<h2 id="notebook-2-images-and-how-to-fool-them">Notebook 2 — Images, and how to fool them</h2>
+<h3 id="1-build-an-image-classifier">1 · Build an image classifier</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Load the built-in handwritten digits dataset from scikit-learn.
+Show me 10 example images with their labels.
+Then train a classifier on 80% of the data and report its
+accuracy on the remaining 20%.
+Finally show a grid of the images it got wrong, each labelled
+with the true digit and what it guessed.
+</code></pre>
+<p><br></p>
+<h3 id="2-add-noise-and-watch-confidence-stay-high">2 · Add noise and watch confidence stay high</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Add faint random noise to the test images and report the accuracy again.
+Then, for the noisy images it got WRONG, show me how confident it was
+in its wrong answer. Plot the distribution of that confidence.
+Show a few of the noisy images next to the clean originals.
+</code></pre>
+<p><strong>Why:</strong> Watch what happens: accuracy falls substantially, and confidence barely moves. <strong>The model has no way of telling you that it has left familiar territory.</strong></p>
+<p><br></p>
+<h2 id="notebook-3-look-inside-the-language-model">Notebook 3 — Look inside the language model</h2>
+<h3 id="1-split-text-into-real-tokens">1 · Split text into real tokens</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Install and use the tiktoken library.
+Take this sentence: 'The archivist catalogued an unremarkable manuscript.'
+Split it into tokens and print each token with its number,
+one per line, so I can see exactly where the splits fall.
+Then print how many tokens it used and how many words it had.
+</code></pre>
+<p><strong>Why:</strong> <code>tiktoken</code> is a small, fast library with no heavy dependencies. It is the actual tokenizer used by several production models.</p>
+<p><br></p>
+<h3 id="2-the-language-tax">2 · The language tax</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Using the same tokenizer, compare how many tokens are needed for the
+same meaning in different languages. Use these sentences:
+  English: 'The archivist catalogued an unremarkable manuscript.'
+  Italian: 'L'archivista ha catalogato un manoscritto non degno di nota.'
+  Greek:   'Ο αρχειοφύλακας κατέγραψε ένα ασήμαντο χειρόγραφο.'
+Show the token count for each as a bar chart, and also show the
+tokens-per-character ratio.
+</code></pre>
+<p><strong>Why:</strong> The same meaning costs more tokens in Italian than English, and far more in Greek. That is a direct cost in money, in context-window space, and in reliability — and it falls hardest on exactly the material this room works with.</p>
+<p><br></p>
+<h3 id="3-build-a-tiny-next-word-predictor">3 · Build a tiny next-word predictor</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Using the text column of letters.csv, count which words follow which
+pairs of words. This gives a simple next-word predictor.
+Then, for the phrase 'I write to', show me the top 10 candidates for
+the next word with their probabilities, as a horizontal bar chart.
+Use only plain Python and pandas — no neural networks.
+</code></pre>
+<p><strong>Why:</strong> This is a <em>trigram model</em>. Real language models replaced this approach, but the output — a ranked list of candidates with probabilities — is exactly what a modern model produces too, just over 100,000 fragments instead of a few thousand words.</p>
+<p><br></p>
+<h3 id="4-generate-at-different-temperatures">4 · Generate at different temperatures</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Using the next-word predictor from the previous cell, write a function that
+generates 25 words starting from 'I write to', choosing each next word
+randomly according to its probability, adjusted by a temperature setting.
+Generate 3 samples at temperature 0.2, 3 at temperature 1.0, and
+3 at temperature 2.0. Print them grouped and clearly labelled.
+</code></pre>
+<p><strong>Why:</strong> Read the three groups aloud. Low temperature repeats itself; high temperature produces confident nonsense. This is the same dial you set when you use any commercial model — and it is why the same question can give you different answers.</p>
+<p><br></p>
+<h3 id="5-count-it-properly">5 · Count it properly</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Count how many times each letter appears in the word 'strawberry',
+and show how the tiktoken tokenizer splits that same word.
+Print the two results side by side.
+</code></pre>
+<p><strong>Why:</strong> Then go and ask the Colab AI chat panel the same question in words. Compare its answer to the count you just computed.</p>
+<p><br></p>
+<h3 id="6-ask-for-citations-in-your-own-narrow-specialism">6 · Ask for citations in your own narrow specialism</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">Give me five peer-reviewed articles about &lt;the narrowest topic in your
+own PhD that you can state in one line&gt;. For each one give the authors,
+the title, the journal, the year, and the DOI.
+</code></pre>
+<p><strong>Why:</strong> <strong>Use your own genuinely narrow topic.</strong> A general topic gives you real citations and the lesson is lost. The narrower and more specialised, the sharper the result.</p>
+<p><br></p>
+<h3 id="7-ask-it-to-mark-its-own-work">7 · Ask it to mark its own work</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">For each of the five citations you just gave me, tell me how confident you
+are that it exists, and mark any that you may have constructed rather than
+recalled. Be blunt. Do not defend your earlier answer.
+</code></pre>
+<p><strong>Why:</strong> Sometimes this works remarkably well. Sometimes it defends fiction with complete confidence. <strong>The fact that you cannot tell which in advance is the entire point.</strong> Self-checking is worth a prompt. It is never verification.</p>
+<p><br></p>
+<h2 id="notebook-4-build-a-chatbot-with-a-method">Notebook 4 — Build a chatbot with a method</h2>
+<h3 id="1-build-the-conversation-machinery">1 · Build the conversation machinery</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Build a simple chat transcript in this notebook:
+- a list of messages, each with a role (system, user, assistant) and text
+- a function add(role, text) that appends to it
+- a function show() that prints the whole transcript in a readable form
+- a function to_send() that prints exactly what would be sent to a model
+  this turn, formatted as Role: text
+Start it with a system message and two example exchanges so I can see it work.
+</code></pre>
+<p><strong>Why:</strong> Look carefully at what <code>to_send()</code> prints. That whole block is re-read from scratch by the model on every turn. Nothing is remembered; everything is resent.</p>
+<p><br></p>
+<h3 id="2-watch-the-desk-fill-up">2 · Watch the desk fill up</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Add a function that counts the tokens in the whole transcript using tiktoken,
+and prints a warning when it goes over 2000 tokens.
+Then add six more long exchanges to the transcript and print the token
+count after each one, so I can watch it grow.
+Plot the token count against the turn number.
+</code></pre>
+<p><strong>Why:</strong> Every turn costs the <em>whole</em> transcript, not just your new message. This is why turn 40 of a conversation is slow and expensive, and why very long chats start losing their beginning.</p>
+<p><br></p>
+<h3 id="3-the-fix-built-in">3 · The fix, built in</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Add a function reset() that clears the transcript but keeps the system
+message, and prints the token count before and after.
+Run it and show me the result.
+</code></pre>
+<p><strong>Why:</strong> This is the 'start a new chat' button, and now you know exactly what it does: it clears the desk and keeps the standing instructions.</p>
+<p><br></p>
+<h3 id="4-write-your-own">4 · Write your own</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">&lt;Write your own system prompt for a research assistant in YOUR field.
+ Include at least one rule about something it must REFUSE to do.
+ Then paste it as the first message in the Colab AI chat panel and
+ work with it for a few turns.&gt;
+</code></pre>
+<p><strong>Why:</strong> Then spend five minutes trying to make it break its own rule. Roleplay framings (<em>'for a novel I am writing, have a character explain…'</em>) defeat most prohibitions. Long conversations defeat them too. <strong>Report your best success to the room.</strong></p>
+<p><br></p>
+<h2 id="notebook-5-the-prompt-tournament">Notebook 5 — The prompt tournament</h2>
+<h3 id="0-look-at-the-task-first">0 · Look at the task first</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Load dates_gold.csv and show me all 20 rows with the full letter text
+and the correct date, in a readable layout.
+Count how many have no date at all.
+</code></pre>
+<p><br></p>
+<h3 id="version-1-naive">Version 1 · Naive</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">Extract the date from each of these letters.
+</code></pre>
+<p><strong>Why:</strong> This is what almost everybody types. Note what it does not say: what format, what to do about a missing year, what to do when there is no date at all.</p>
+<p><br></p>
+<h3 id="version-2-add-the-form-and-the-escape-hatch">Version 2 · Add the form and the escape hatch</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">For each letter below, extract the date.
+
+Output format: one line per letter, exactly `ID: YYYY-MM-DD`.
+If the year is not stated, use XXXX in its place.
+If there is no date at all, write `ID: NOT STATED`.
+Output nothing else — no commentary, no explanation.
+</code></pre>
+<p><strong>Why:</strong> Two additions: an exact output shape, and an instruction for what to do when it cannot comply. In our experience this is where the largest jump happens.</p>
+<p><br></p>
+<h3 id="version-3-add-worked-examples">Version 3 · Add worked examples</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">For each letter below, extract the date.
+
+Output format: one line per letter, exactly `ID: YYYY-MM-DD`.
+
+Examples of the conversions required:
+  &quot;Siena, li 9 maggio 1685&quot;            -&gt; 1685-05-09
+  &quot;Torino, questo dì 28 di luglio 1664&quot; -&gt; 1664-07-28
+  &quot;Da Genova, 14 marzo&quot;                -&gt; XXXX-03-14
+  &quot;Milano 3.11.1642&quot;                   -&gt; 1642-11-03
+  (no date line present)                -&gt; NOT STATED
+
+Output nothing else.
+</code></pre>
+<p><strong>Why:</strong> Four examples pin down the Italian month names, the missing-year convention, and the numeric format — all things that a paragraph of description leaves ambiguous.</p>
+<p><br></p>
+<h3 id="version-4-ask-for-the-evidence-before-the-answer">Version 4 · Ask for the evidence before the answer</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">For each letter below:
+  1. First quote the exact words containing the date, or write NONE.
+  2. Then, on the next line, give `ID: YYYY-MM-DD`.
+
+Examples of the conversions required:
+  &quot;Siena, li 9 maggio 1685&quot;            -&gt; 1685-05-09
+  &quot;Da Genova, 14 marzo&quot;                -&gt; XXXX-03-14
+  (no date line present)                -&gt; NOT STATED
+
+Never give a date that does not appear in the words you quoted.
+</code></pre>
+<p><strong>Why:</strong> Now the evidence is on the desk before the answer is produced — which improves the answer <em>and</em> lets you check it in seconds. Two benefits from one instruction.</p>
+<p><br></p>
+<h3 id="5-score-all-four">5 · Score all four</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">I will paste each set of answers as one long string, one answer per line
+in the form 'ID: DATE'. Write code that pulls the ID and the date out of
+each line with a regular expression, ignoring any other text on the line,
+and compares them against the correct_date column of dates_gold.csv.
+Show accuracy for all four versions as a bar chart, and print every case
+where version 4 was right and version 1 was wrong.
+</code></pre>
+<p><strong>Why:</strong> Note <em>ignoring any other text on the line</em>: version 4 also outputs quoted evidence, so the scorer has to cope with lines that are not just answers. The reference cell below already handles that.</p>
+<p><br></p>
+<h2 id="notebook-6-question-your-own-documents">Notebook 6 — Question your own documents</h2>
+<h3 id="1-extract-and-check-what-you-got">1 · Extract, and check what you got</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Read every PDF in the pdfs folder and every .txt file in the archive folder.
+For each one report: filename, number of pages (for PDFs), and
+number of characters of text extracted.
+If a file yields no text at all, print 'NO TEXT LAYER' for it and
+carry on with the others — do not stop the whole run.
+Show the results as a table, sorted by character count ascending.
+</code></pre>
+<p><strong>Why:</strong> <strong>Read that table before going any further.</strong> Sorting ascending puts the failures at the top where you cannot miss them. A file with 0 characters is a file that will be invisible to everything that follows.</p>
+<p><br></p>
+<h3 id="2-chunk-keeping-provenance">2 · Chunk, keeping provenance</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Split the text of every document into passages of about 120 words with
+30 words of overlap between consecutive passages.
+Number the passages, and for each one keep a record of which file it
+came from and its position in that file.
+Show me how many passages there are in total, and print passages 0, 1
+and 2 in full so I can check the overlap is working.
+</code></pre>
+<p><strong>Why:</strong> Provenance is what makes a citation mean something later. Without it you get an answer with a number attached that you cannot trace back to anything.</p>
+<p><br></p>
+<h3 id="3-build-the-search-and-test-it-on-its-own">3 · Build the search, and test it on its own</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Turn every passage into a vector using TF-IDF followed by TruncatedSVD
+with 100 components, then normalise the vectors.
+Write a function search(question, k=5) that returns the k most similar
+passages by cosine similarity, with their similarity scores, their
+passage numbers and their source filenames.
+Test it with the question 'a prisoner held without charge' and print
+the results, and warn me if the best similarity score is below 0.15.
+</code></pre>
+<p><strong>Why:</strong> <strong>Test retrieval before you connect it to anything.</strong> If the search is bad, the answers will be confidently wrong and you will blame the wrong component.</p>
+<p><br></p>
+<h3 id="4-build-the-prompt-assembler">4 · Build the prompt assembler</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Write a function ask(question) that:
+  1. retrieves the 5 most relevant passages
+  2. builds a single block of text containing, in this order:
+     - the instruction below
+     - the numbered passages, each with its source filename
+     - the question
+  3. prints that block so I can copy it into the AI chat panel
+
+The instruction must read:
+  Answer using ONLY the passages below. After every statement, cite the
+  passage number it came from, like [3]. If the passages do not contain
+  the answer, reply exactly: 'The provided passages do not answer this.'
+  Do not use anything you know from outside these passages.
+</code></pre>
+<p><strong>Why:</strong> Notice that you are specifying the <em>architecture</em> of a retrieval system in plain English. That is the whole skill.</p>
+<p><br></p>
+<h3 id="5-test-that-it-can-say-no">5 · Test that it can say no</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">&lt;Ask your system a question you are certain the documents cannot answer.
+ For the provided archive, try: 'What did the Bishop say about the
+ printing press in Amsterdam?'&gt;
+</code></pre>
+<p><strong>Why:</strong> The correct answer is <em>'The provided passages do not answer this.'</em> If you get anything else, your instruction is not strong enough — go back and strengthen it, then test again.</p>
+<p><br></p>
+<h2 id="notebook-7-build-your-research-agent-capstone">Notebook 7 — Build your research agent (capstone)</h2>
+<h3 id="2-build-the-tools">2 · Build the tools</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">I want to build a supervised agent in this notebook.
+
+GOAL: for every file in my source folder, produce one row with these
+columns: &lt;YOUR COLUMNS HERE&gt;
+
+Build me four separate tools, each as its own function, each printing
+what it did:
+  1. list_files()      - list the source files, print how many
+  2. read_file(name)   - return its text, print the length
+  3. make_prompt(text) - build an extraction prompt asking for the
+                         columns above as JSON, using NOT STATED for
+                         anything the text does not say
+  4. add_row(data)     - append to a results table, print the running
+                         count of rows so far
+
+Also give me a variable that tracks which file we are on, so I can
+process them one at a time and stay in control.
+
+Do not process everything at once. Stop after each file.
+</code></pre>
+<p><strong>Why:</strong> The last two lines are the entire human-in-the-loop architecture, expressed as a requirement in plain English. You are specifying a system design without writing code.</p>
+<p><br></p>
+<h3 id="4-make-it-attack-the-table">4 · Make it attack the table</h3>
+<p><em>Goes in: AI chat panel</em></p>
+<pre><code class="language-text">Look at the results table we have built. List every way it might be wrong
+or incomplete. Show me the three rows you are least confident about and
+say why. Then name the specific kind of document that would break this
+extraction entirely.
+
+Do not defend the work. Only find problems.
+</code></pre>
+<p><strong>Why:</strong> <em>Do not defend the work</em> is doing real work in that prompt. Without it, the trained-in agreeableness gives you reassurance instead of a review.</p>
+<p><br></p>
+<h3 id="5-save-what-you-built">5 · Save what you built</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Save the results table to a CSV file and download it to my computer.
+Print the number of rows saved and list any columns that are entirely
+NOT STATED, since those are the ones my extraction failed on.
+</code></pre>
+<p><strong>Why:</strong> The columns that are entirely NOT STATED tell you where the <em>prompt</em> failed, not where the documents were silent. That distinction is worth knowing.</p>
+<p><br></p>
+<hr>
+<h2 id="the-six-reusable-patterns">The six reusable patterns</h2>
+<p>These are not tied to any exercise. They are the ones worth keeping after today — the full versions, with commentary, are in <code>playbook/PROMPT_PLAYBOOK.md</code>.</p>
+<h3 id="pattern-1-the-structured-extraction">Pattern 1 — The structured extraction</h3>
+<pre><code class="language-text">Read the text between the triple quotes.
+
+Produce a table with exactly these columns:
+&lt;column&gt; | &lt;column&gt; | &lt;column&gt;
+
+Rules:
+- One row per &lt;unit: paragraph / person / event&gt;.
+- Use only the text. Anything not stated: NOT STATED.
+- For each row, add a final column quoting the exact words you based it on.
+
+&quot;&quot;&quot;
+&lt;text&gt;
+&quot;&quot;&quot;
+</code></pre>
+<p><strong>Why:</strong> The quotation column is what makes this usable in research: every cell becomes traceable to a passage, so you can verify twenty rows in the time one paragraph would take to read.</p>
+<p><br></p>
+<h3 id="pattern-2-the-hostile-reviewer">Pattern 2 — The hostile reviewer</h3>
+<pre><code class="language-text">Below is a passage from my thesis.
+
+Act as the most demanding examiner in my field.
+Do not praise anything. Do not summarise it back to me.
+
+1. List every claim I make that I have not supported.
+2. For each, name the specific evidence a reviewer would demand.
+3. Name the strongest counter-argument I have not addressed.
+4. Identify where I have overstated: quote the exact phrase and suggest
+   what it should say instead.
+
+&quot;&quot;&quot;
+&lt;passage&gt;
+&quot;&quot;&quot;
+</code></pre>
+<p><strong>Why:</strong> "Do not praise anything" is doing the real work. Without it, the agreeableness that was trained into the model gives you a paragraph of encouragement and one weak suggestion. Probably the single most useful prompt in the course for a doctoral student.</p>
+<p><br></p>
+<h3 id="pattern-3-the-interrogation-reversed">Pattern 3 — The interrogation, reversed</h3>
+<pre><code class="language-text">I want to &lt;goal&gt;.
+
+Do not give me a plan yet.
+
+First, ask me the five questions whose answers would most change your
+advice. Ask them one at a time, and wait for my answer before the next.
+
+Only after all five, give me your recommendation.
+</code></pre>
+<p><strong>Why:</strong> Inverts the usual failure — a generic answer produced by a generic question. Forcing it to interrogate you first surfaces the constraints you forgot to mention. The "one at a time, wait" instruction matters: without it you get five questions at once and answer them all badly.</p>
+<p><br></p>
+<h3 id="pattern-4-the-parallel-column-check">Pattern 4 — The parallel-column check</h3>
+<pre><code class="language-text">Below is a source text and my translation.
+
+Produce a table: Source segment | My translation | Issue | Severity
+
+For every segment, mark:
+- MEANING  if my version changes the sense
+- OMISSION if something in the source is not rendered
+- ADDITION if my version adds what is not in the source
+- REGISTER if the tone or formality differs
+- OK       if none apply
+
+Do not rewrite my translation. Only diagnose it.
+</code></pre>
+<p><strong>Why:</strong> "Do not rewrite" keeps you the author. You get a diagnosis you can act on rather than a replacement text you would have to check line by line anyway. Adapt the categories to your own discipline.</p>
+<p><br></p>
+<h3 id="pattern-5-the-normaliser-with-a-receipt">Pattern 5 — The normaliser with a receipt</h3>
+<pre><code class="language-text">Here is a column of &lt;place names / titles / dates&gt; transcribed from
+manuscripts, with inconsistent spelling, abbreviations and Latin forms.
+
+For each entry produce: Original | Normalised | Confidence | Why
+
+- Confidence is HIGH, MEDIUM or LOW.
+- LOW for anything you are guessing at.
+- If an entry could be two different &lt;places&gt;, list both and mark it
+  AMBIGUOUS. Do not choose.
+</code></pre>
+<p><strong>Why:</strong> The confidence column turns an unusable output into a workflow: check the LOW and AMBIGUOUS rows by hand, spot-check the HIGH ones. This is the difference between a tool that saves time and one that merely relocates it.</p>
+<p><br></p>
+<h3 id="pattern-6-the-specification-first-build">Pattern 6 — The specification-first build</h3>
+<pre><code class="language-text">Before writing any code, write back to me:
+
+1. Your understanding of what I want, in your own words.
+2. The three assumptions you are making that I did not state.
+3. The edge cases you expect to cause trouble.
+
+Then wait. Do not write code until I confirm.
+</code></pre>
+<p><strong>Why:</strong> Ninety seconds that routinely saves twenty minutes. Point 2 is where you discover it has assumed something ruinous — that your files are all in one folder, that every PDF has a text layer, that dates are in one format.</p>
+<p><br></p>
+<h3 id="the-verification-prompt-use-this-to-end-every-session">The verification prompt — use this to end every session</h3>
+<pre><code class="language-text">Before I rely on this, act as a hostile reviewer of your own output.
+
+1. List every claim you made that is not directly supported by the text
+   I gave you.
+2. List the three most likely ways this gives a wrong answer without
+   obviously failing.
+3. Tell me which specific input would break it.
+4. Do not defend your work. Only find problems.
+</code></pre>
+<p><strong>Why:</strong> The most reusable thing in the entire course. It applies equally to text, code, plans and arguments. Point 4 is not optional — without it you get reassurance.</p>
+<p><br></p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p><a href="./">Back to the course</a> · <a href="../">Fabrizio Silvestri</a></p>
+</footer>
+<script src="../assets/js/analytics.js"></script>
+</body>
+</html>

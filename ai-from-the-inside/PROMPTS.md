@@ -445,15 +445,15 @@ Never give a date that does not appear in the words you quoted.
 *Goes in: code cell*
 
 ```text
-I will paste the four sets of answers as four Python lists of strings
-called v1, v2, v3 and v4, each in the form 'ID: DATE'.
-Write code that compares each of them against the correct_date column
-of dates_gold.csv, being tolerant of extra whitespace and case.
-Show accuracy for each version as a bar chart, and print every case
+I will paste each set of answers as one long string, one answer per line
+in the form 'ID: DATE'. Write code that pulls the ID and the date out of
+each line with a regular expression, ignoring any other text on the line,
+and compares them against the correct_date column of dates_gold.csv.
+Show accuracy for all four versions as a bar chart, and print every case
 where version 4 was right and version 1 was wrong.
 ```
 
-**Why:** Ask the AI to write the scorer *before* you have the answers — then paste them in. The reference cell below already contains a working scorer.
+**Why:** Note *ignoring any other text on the line*: version 4 also outputs quoted evidence, so the scorer has to cope with lines that are not just answers. The reference cell below already handles that.
 
 <br>
 
