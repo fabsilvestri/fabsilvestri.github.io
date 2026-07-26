@@ -274,7 +274,7 @@ temperature 2.0. Print them grouped under clear headings and wrapped
 so I can read them.
 ```
 
-**Why:** Read the three groups side by side. Low temperature gets stuck in loops (*the most humble and the most humble and…*); high temperature wanders off the subject entirely. This is the same dial you set on any commercial model — and it is why the same question can give you different answers.
+**Why:** Two things you will notice. The letters are **bilingual**, so English and Italian run together in the output — that is the corpus, not a bug. And read the three groups side by side: low temperature gets stuck in loops (*the most humble and the most humble and…*); high temperature wanders off the subject entirely. This is the same dial you set on any commercial model — and it is why the same question can give you different answers.
 
 <br>
 
@@ -503,7 +503,8 @@ The instruction must read:
 ```text
 I want to build a supervised agent in this notebook.
 
-The source files are the .txt files in the archive folder.
+The source files are the .txt and .pdf files in my source folder
+(my_docs if I uploaded my own, otherwise archive).
 GOAL: for every file, produce one row with these columns:
    <PUT YOUR OWN COLUMNS HERE - from Step 1>
 
