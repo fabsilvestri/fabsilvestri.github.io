@@ -682,12 +682,12 @@ each turn, so I can see it growing.
 <span class="cm">— make the invisible visible</span></div>
     </div>
     <div>
-      <div class="prompt prompt--sm mt">Count and display the number of tokens in
-the transcript after every turn, and warn
-me when it passes 2000.
+      <div class="prompt prompt--sm mt">Add a function token_count() that counts the
+tokens in the transcript, print it after
+every turn, and warn me past 600.
 <span class="cm">— watch the desk fill up</span></div>
-      <div class="prompt prompt--sm mt">Add a button that clears the transcript
-but keeps the system message.
+      <div class="prompt prompt--sm mt">Add a function reset() that clears the
+transcript but keeps the system message.
 <span class="cm">— the "start fresh" fix, built in</span></div>
     </div>
   </div>
@@ -1424,9 +1424,9 @@ page count and character count. If a file
 has no extractable text, say so clearly
 and continue with the others.
 <span class="cm">— and check that table before going on</span></div>
-      <div class="prompt prompt--sm mt">Split all the text into passages of about
-250 words with 50 words of overlap. Number
-them and keep track of which file and page
+      <div class="prompt prompt--sm mt">Split every document into passages of about
+120 words with 30 words of overlap. Number
+them and record which file and which part
 each came from.
 <span class="cm">— provenance, so citations mean something</span></div>
     </div>
@@ -1689,11 +1689,11 @@ Build me four separate tools, each as its own function, each
 printing what it did:
   1. list_files()      - list the files, print how many
   2. read_file(name)   - return its text, print the length
-  3. extract(text)     - ask the AI for the columns above, as
-                         JSON, using NOT STATED for anything
-                         the text does not say
-  4. add_row(data)     - append to a results table, print the
-                         running count
+  3. make_prompt(text) - build an extraction prompt asking for
+                         the columns above as JSON, using
+                         NOT STATED for anything unstated
+  4. add_row(data, filename) - append to a results table and
+                         print the running count
 
 Then give me one cell I can run repeatedly that does the next
 file and shows me what it found, so I stay in control.
@@ -1770,7 +1770,7 @@ least confident about, with your reasons.
 
 <section>
   <span class="eyebrow">The complete playbook</span>
-  <h2>Thirteen lines, all earned today</h2>
+  <h2>Thirteen of the fifteen, all earned today</h2>
   <div class="grid g2" style="gap:.5em 1.6em;font-size:.78em">
     <ol class="steps" style="font-size:.86em">
       <li>Before reaching for AI, ask whether a rule would do.</li>
@@ -1790,7 +1790,8 @@ least confident about, with your reasons.
       <li>Agents are for narrow, repetitive, verifiable tasks.</li>
     </ol>
   </div>
-  <p class="muted mt small">The full playbook, with the prompts written out, is in your course folder.</p>
+  <p class="muted mt small">Two more — on stating assumptions, and on versioning your prompts —
+  are in the playbook, along with all seven prompts written out in full.</p>
   <aside class="notes">
     <p>Tell them explicitly: this page is the transferable part. The tools will change within a year;
     these thirteen lines will not.</p>

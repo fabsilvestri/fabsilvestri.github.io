@@ -612,11 +612,11 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <table class="mt">
     <tr><th style="width:7.5em">Time</th><th>Morning · understanding</th></tr>
     <tr><td>9:00</td><td>What "learning from examples" actually means</td></tr>
-    <tr><td>9:40</td><td><span class="badge badge--teal">Exercise 1</span> Teach a machine to sort your texts</td></tr>
-    <tr><td>10:10</td><td>Neurons, images, sequences — and what each one cannot see</td></tr>
-    <tr><td>10:50</td><td><em>Break</em></td></tr>
-    <tr><td>11:05</td><td>Transformers: why 2017 changed everything</td></tr>
-    <tr><td>11:35</td><td><span class="badge badge--teal">Exercise 3</span> Make a language model hallucinate on purpose</td></tr>
+    <tr><td>9:55</td><td><span class="badge badge--teal">Exercise 1</span> Teach a machine to sort your texts</td></tr>
+    <tr><td>10:25</td><td>Neurons, images, sequences — and what each one cannot see</td></tr>
+    <tr><td>10:55</td><td><em>Break</em></td></tr>
+    <tr><td>11:10</td><td>Transformers: why 2017 changed everything</td></tr>
+    <tr><td>11:40</td><td><span class="badge badge--teal">Exercise 3</span> Make a language model hallucinate on purpose</td></tr>
   </table>
   <table class="mt">
     <tr><th style="width:7.5em">Time</th><th>Afternoon · building</th></tr>
@@ -1072,11 +1072,11 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
     <div class="card card--dark">
       <h4>How many dials?</h4>
       <div class="grid g2 mt" style="gap:.5em">
-        <div class="stat"><span class="n">~10³</span><span class="l">A simple text classifier<br>(Exercise 1)</span></div>
+        <div class="stat"><span class="n">~5,000</span><span class="l">The text classifier<br>you build in Exercise 1</span></div>
         <div class="stat"><span class="n">~10¹²</span><span class="l">A frontier language model<br>(this afternoon)</span></div>
       </div>
-      <p class="small mt" style="color:#4A4A57">A billion times more dials.
-      Same procedure, turning every one of them.</p>
+      <p class="small mt" style="color:#4A4A57">Two hundred million times more dials.
+      Exactly the same procedure, turning every one of them.</p>
     </div>
   </div>
   <aside class="notes">
@@ -1272,7 +1272,8 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <ol class="steps mt" style="font-size:.86em">
     <li>Each cell in the notebook has a <b>grey instruction box</b> above it. That is the prompt.</li>
     <li>Click into the empty code cell and press <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">Enter</span>
-        (or click <b>Generate</b>) to open Colab's AI.</li>
+        — on a Mac, <span class="kbd">Cmd</span>+<span class="kbd">Shift</span>+<span class="kbd">Enter</span>
+        — or click <b>Generate</b>.</li>
     <li>Paste or retype the prompt. Colab writes the code.</li>
     <li>Read what it wrote — even if you don't understand it, look at it — then press <b>▶</b>.</li>
     <li>If it errors, don't panic and don't fix it by hand. Say so to the AI: that is step 6 of every exercise.</li>
@@ -1296,10 +1297,10 @@ Show me its shape, the column names, and
 10 random rows with the full text visible.
 <span class="cm">— see what you actually have</span></div>
       <div class="prompt prompt--sm mt">Using letters.csv, split it 80/20 keeping
-the label balance. Train a TF-IDF +
-logistic regression classifier, call it
-`model`, and report its test accuracy
-in a variable called `acc`.
+the label balance. Train a TF-IDF + logistic
+regression classifier, call it `model`, and
+report test accuracy as `acc`. Use the
+'label' column, not 'true_label'.
 <span class="cm">— the whole of machine learning, in one prompt</span></div>
       <div class="prompt prompt--sm mt">What accuracy would I get by always
 predicting the most common label?
@@ -1343,7 +1344,9 @@ against training size, with the baseline.
   </div>
   <aside class="notes">
     <p>You cannot look over shoulders. Do the substitute: share your screen, run prompt 5 yourself,
-    and think out loud about the top words — "why on earth is <em>signore</em> in there?" Modelling the
+    and think out loud about the top words — "why on earth is <em>bologna</em> in there?" It sits third
+    from the top on the report side, and a place name has nothing to do with whether a letter asks for
+    something. Modelling the
     inspection is what they need to copy.</p>
     <p>Then give them the question to sit with: <b>"look at your own top words. Is the model keying on
     the concept, or on a habit of the writers?"</b> No answer required.</p>
@@ -1576,14 +1579,18 @@ AVERAGE training and test accuracy, with the baseline.
 <section class="exercise vc">
   <span class="eyebrow">Live demo · 5 minutes · watch, don't type</span>
   <h2>Watch one get built, and then fooled</h2>
-  <div class="prompt mt">Load the built-in handwritten digits dataset. Show me 10 example
-images. Train a small image classifier on 80% of it and report
-the accuracy on the remaining 20%. Show me a grid of the images
-it got wrong, labelled with what it guessed.
+  <div class="prompt mt">Load the built-in handwritten digits dataset and show me 10
+example images with their labels. Train a LOGISTIC REGRESSION
+classifier on 80% and report accuracy on the other 20%. Show a
+grid of the test images it got wrong, labelled with what it guessed.
 </div>
-  <div class="prompt is-followup mt">Now add faint random noise to the test images and report the
-accuracy again. Show me the confidence of its wrong answers.
+  <div class="prompt is-followup mt">Add Gaussian noise with standard deviation 4.0 to the test images
+(pixels run 0-16). Print accuracy AND mean confidence, clean versus
+noisy, and how many points each one dropped.
 </div>
+  <p class="muted mt small">Both settings are pinned for a reason: a random forest
+  <em>does</em> lose confidence under noise, and at half this noise nothing visible happens.
+  The notebook explains why — use its version, not a paraphrase.</p>
   <p class="muted mt small">Runs in under a minute on Colab's free tier. No GPU, no waiting, no installation.</p>
   <aside class="notes">
     <p>Run this yourself on the shared screen rather than sending them off — it is a five-minute beat, not an exercise. Say so explicitly, or half of them will start typing and miss the point.</p>
@@ -1770,8 +1777,8 @@ accuracy again. Show me the confidence of its wrong answers.
   <p class="mt">Text is chopped into fragments — common words stay whole, rarer ones get split.</p>
   <div class="card mt" style="line-height:2.2">
     <p class="xs muted">"The archivist catalogued an unremarkable manuscript."</p>
-    <span class="tok tok--a">The</span><span class="tok tok--b"> arch</span><span class="tok tok--b">iv</span><span class="tok tok--b">ist</span><span class="tok tok--c"> catalog</span><span class="tok tok--c">ued</span><span class="tok tok--a"> an</span><span class="tok tok--d"> un</span><span class="tok tok--d">remark</span><span class="tok tok--d">able</span><span class="tok tok--a"> manuscript</span><span class="tok tok--a">.</span>
-    <p class="xs muted mt">12 tokens for 6 words. Roughly: 1 token ≈ 4 characters of English.</p>
+    <span class="tok tok--a">The</span><span class="tok tok--b"> arch</span><span class="tok tok--b">ivist</span><span class="tok tok--c"> catalog</span><span class="tok tok--c">ued</span><span class="tok tok--a"> an</span><span class="tok tok--d"> un</span><span class="tok tok--d">remark</span><span class="tok tok--d">able</span><span class="tok tok--a"> manuscript</span><span class="tok tok--a">.</span>
+    <p class="xs muted mt">11 tokens for 6 words. Roughly: 1 token ≈ 4 characters of English.</p>
   </div>
   <p class="muted mt small">Why? A fixed vocabulary of ~100,000 fragments can build any word, including
   ones never seen before, without needing a dictionary of every word in every language.</p>
@@ -1787,7 +1794,7 @@ accuracy again. Show me the confidence of its wrong answers.
   <div class="grid g3 mt">
     <div class="card"><h4>It cannot spell</h4>
       <p class="small">Ask how many <em>r</em>'s are in "strawberry". It often gets it wrong —
-      it never saw letters, only the chunks <code>straw</code> and <code>berry</code>.</p></div>
+      it never saw letters, only the chunks <code>str</code>, <code>aw</code> and <code>berry</code>.</p></div>
     <div class="card"><h4>Some languages cost more</h4>
       <p class="small">Italian, and far more so Greek, Arabic or Chinese, need more tokens per word than
       English. Same text: more expensive, and more of your context window consumed.</p></div>

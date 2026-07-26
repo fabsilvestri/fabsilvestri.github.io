@@ -183,8 +183,10 @@ Do not use the 'true_label' column.
 each of the two labels. Display them as a horizontal bar chart, with the
 two labels in different colours.
 </code></pre>
-<p><strong>Why:</strong> Look closely at <em>what kind</em> of words these are. You will probably not see <code>beg</code> and <code>inform</code>. You are more likely to see pronouns, tenses and little grammatical words — <code>my</code>, <code>you to</code>, <code>being</code> on one side; <code>was</code>, <code>were</code>, <code>took</code> on the other.</p>
-<p>That is the finding. The model never learned what a petition <em>is</em>. It learned that asking is written in the present and future and points at <em>you</em>, while reporting is written in the past. A real regularity — and a much shallower one than the label name suggests. Watch too for a place name or a date fragment sneaking in: that would be a pure <strong>shortcut</strong>, with nothing to do with the concept.</p>
+<p><strong>Why:</strong> Look at the two sides separately, because they tell different stories.</p>
+<p>Towards <strong>petition</strong> you should see honest content words — <code>ask</code>, <code>request</code>, <code>beg</code>, <code>ask that</code>. That is the model finding the actual signal, and it is reassuring.</p>
+<p>Towards <strong>report</strong> you will see something else entirely: fragments of the <em>closing formula</em> — <code>kiss your hands</code>, <code>remain wholly</code>, <code>at your disposal</code> — and very possibly a <strong>place name</strong> such as <code>bologna</code>. Neither has the faintest thing to do with whether a letter asks for something.</p>
+<p>That is a <strong>shortcut</strong>, and it is the same failure as the skin-lesion classifier that learned to detect rulers. The writers who used the most elaborate farewell happened to be reporting rather than asking, and the model seized on it. It works here. It would collapse on any archive with different scribal habits.</p>
 <p><br></p>
 <h3 id="6-how-much-data-did-it-actually-need">6 · How much data did it actually need?</h3>
 <p><em>Goes in: code cell</em></p>
@@ -194,7 +196,7 @@ Plot test accuracy against the number of training examples,
 and draw the do-nothing baseline as a horizontal line.
 </code></pre>
 <p><strong>Why:</strong> This curve is how you answer 'do I need to label more data?' — a question that costs real money in real projects.</p>
-<p>Expect it to climb steeply and then <strong>flatten</strong>, and do not be alarmed if the last point dips slightly below the one before: with only 53 test letters, each point carries a margin of error of several percentage points. A flat tail is the useful answer — it means more labelling would buy you very little.</p>
+<p>Read the shape, not the individual points — each carries a few percentage points of noise, so a dip in the middle means nothing. On this corpus the curve is <strong>still climbing at the right-hand edge</strong>, and that is the useful answer: it says more labelled letters would still buy you accuracy. A curve that had gone flat would have said the opposite — stop labelling, you have enough.</p>
 <p><br></p>
 <h3 id="7-train-on-nonsense">7 · Train on nonsense</h3>
 <p><em>Goes in: code cell</em></p>
@@ -205,7 +207,7 @@ Repeat the whole thing 20 times with 20 different shuffles, and report the
 AVERAGE training accuracy and the AVERAGE test accuracy, with the
 do-nothing baseline next to them.
 </code></pre>
-<p><strong>Why:</strong> <strong>Why twenty times?</strong> The test set is only 53 letters, so a single run has a margin of error of about 7 percentage points — one run tells you almost nothing. Averaging twenty runs is the difference between a number and a measurement, and that is itself one of the lessons.</p>
+<p><strong>Why:</strong> <strong>Why twenty times?</strong> The test set is 160 letters, so a single run still carries a margin of error of about 4 percentage points — one run tells you very little. Averaging twenty runs is the difference between a number and a measurement, and that is itself one of the lessons.</p>
 <p><br></p>
 <h2 id="notebook-2-images-and-how-to-fool-them">Notebook 2 — Images, and how to fool them</h2>
 <h3 id="1-build-an-image-classifier">1 · Build an image classifier</h3>
@@ -361,8 +363,9 @@ Count how many have no date at all.
 <p><br></p>
 <h3 id="5-score-the-versions">5 · Score the versions</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">I have four strings called v1, v2, v3 and v4, each containing a model's
-answers, one per line, in the form  L0213: 1685-05-09
+<pre><code class="language-text">Create four empty strings called v1, v2, v3 and v4 for me to paste into.
+Each will hold a model's answers, one per line, like  L0213: 1685-05-09
+Treat an empty string as 'not run' rather than as a score of zero.
 IDs look like L0213. A missing year is written XXXX. An absent date is the
 literal words NOT STATED.
 
@@ -441,7 +444,8 @@ The instruction must read:
 The source files are the .txt and .pdf files in my source folder
 (my_docs if I uploaded my own, otherwise archive).
 GOAL: for every file, produce one row with these columns:
-   &lt;PUT YOUR OWN COLUMNS HERE - from Step 1&gt;
+   &lt;PUT YOUR OWN COLUMNS HERE - from Step 1. If you have not written
+    any yet, use: subject, is_a_request, place, date&gt;
 
 Build me four tools, each as its own function, each printing what it did:
   1. list_files()      - list the source files, print how many

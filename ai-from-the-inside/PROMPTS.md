@@ -116,9 +116,13 @@ each of the two labels. Display them as a horizontal bar chart, with the
 two labels in different colours.
 ```
 
-**Why:** Look closely at *what kind* of words these are. You will probably not see `beg` and `inform`. You are more likely to see pronouns, tenses and little grammatical words — `my`, `you to`, `being` on one side; `was`, `were`, `took` on the other.
+**Why:** Look at the two sides separately, because they tell different stories.
 
-That is the finding. The model never learned what a petition *is*. It learned that asking is written in the present and future and points at *you*, while reporting is written in the past. A real regularity — and a much shallower one than the label name suggests. Watch too for a place name or a date fragment sneaking in: that would be a pure **shortcut**, with nothing to do with the concept.
+Towards **petition** you should see honest content words — `ask`, `request`, `beg`, `ask that`. That is the model finding the actual signal, and it is reassuring.
+
+Towards **report** you will see something else entirely: fragments of the *closing formula* — `kiss your hands`, `remain wholly`, `at your disposal` — and very possibly a **place name** such as `bologna`. Neither has the faintest thing to do with whether a letter asks for something.
+
+That is a **shortcut**, and it is the same failure as the skin-lesion classifier that learned to detect rulers. The writers who used the most elaborate farewell happened to be reporting rather than asking, and the model seized on it. It works here. It would collapse on any archive with different scribal habits.
 
 <br>
 
@@ -135,7 +139,7 @@ and draw the do-nothing baseline as a horizontal line.
 
 **Why:** This curve is how you answer 'do I need to label more data?' — a question that costs real money in real projects.
 
-Expect it to climb steeply and then **flatten**, and do not be alarmed if the last point dips slightly below the one before: with only 53 test letters, each point carries a margin of error of several percentage points. A flat tail is the useful answer — it means more labelling would buy you very little.
+Read the shape, not the individual points — each carries a few percentage points of noise, so a dip in the middle means nothing. On this corpus the curve is **still climbing at the right-hand edge**, and that is the useful answer: it says more labelled letters would still buy you accuracy. A curve that had gone flat would have said the opposite — stop labelling, you have enough.
 
 <br>
 
@@ -152,7 +156,7 @@ AVERAGE training accuracy and the AVERAGE test accuracy, with the
 do-nothing baseline next to them.
 ```
 
-**Why:** **Why twenty times?** The test set is only 53 letters, so a single run has a margin of error of about 7 percentage points — one run tells you almost nothing. Averaging twenty runs is the difference between a number and a measurement, and that is itself one of the lessons.
+**Why:** **Why twenty times?** The test set is 160 letters, so a single run still carries a margin of error of about 4 percentage points — one run tells you very little. Averaging twenty runs is the difference between a number and a measurement, and that is itself one of the lessons.
 
 <br>
 
@@ -394,8 +398,9 @@ Count how many have no date at all.
 *Goes in: code cell*
 
 ```text
-I have four strings called v1, v2, v3 and v4, each containing a model's
-answers, one per line, in the form  L0213: 1685-05-09
+Create four empty strings called v1, v2, v3 and v4 for me to paste into.
+Each will hold a model's answers, one per line, like  L0213: 1685-05-09
+Treat an empty string as 'not run' rather than as a score of zero.
 IDs look like L0213. A missing year is written XXXX. An absent date is the
 literal words NOT STATED.
 
@@ -506,7 +511,8 @@ I want to build a supervised agent in this notebook.
 The source files are the .txt and .pdf files in my source folder
 (my_docs if I uploaded my own, otherwise archive).
 GOAL: for every file, produce one row with these columns:
-   <PUT YOUR OWN COLUMNS HERE - from Step 1>
+   <PUT YOUR OWN COLUMNS HERE - from Step 1. If you have not written
+    any yet, use: subject, is_a_request, place, date>
 
 Build me four tools, each as its own function, each printing what it did:
   1. list_files()      - list the source files, print how many
