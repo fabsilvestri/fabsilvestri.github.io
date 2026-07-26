@@ -39,7 +39,9 @@ Print a friendly one-line greeting, then print today's date in a
 human-readable form, and finally print how many days remain in this year.
 ```
 
-**Why:** **The empty cell is directly below this box** — the grey one saying *Start coding or generate with AI*. Click inside it, press `Ctrl`+`Shift`+`Enter` (Mac: `Cmd`+`Shift`+`Enter`) or hover and click **Generate**, then paste the prompt. Read what it wrote before you run it — that habit is the whole point of the exercise.
+**Why:** **The empty cell is directly below this box.** It says *Start coding or generate with AI* — **click the word `generate`**. An AI box opens; paste the prompt in and press Enter. Then read what it wrote before you run it: that habit is the whole point of the exercise.
+
+(Ignore any keyboard shortcut you may have seen for this. Clicking `generate` is the reliable way.)
 
 <br>
 
