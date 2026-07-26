@@ -998,21 +998,27 @@ Requirements:
   <span class="eyebrow">Exercise 5 · the rules</span>
   <h2>Same task, escalating prompts</h2>
   <p class="mt small">The notebook gives you 20 letters and the correct answers for all of them.
-  You will run four prompts and score each automatically.</p>
+  <b>You run the first and the last yourself</b> — the two middle versions are pre-recorded so all
+  four can be scored together. Start a <b>fresh chat</b> for each, or the comparison is worthless.</p>
   <ol class="steps mt" style="font-size:.82em">
-    <li><b>Naive.</b> "Extract the date from this letter."</li>
-    <li><b>+ Form.</b> Add: the exact output format, and NOT STATED for missing values.</li>
-    <li><b>+ Examples.</b> Add four worked examples covering the awkward cases.</li>
-    <li><b>+ Evidence first.</b> Add: quote the passage containing the date before giving the answer.</li>
+    <li><b>Naive.</b> "Extract the date from each of these letters." &nbsp;<span class="badge badge--teal">you run this</span></li>
+    <li><b>+ Form.</b> The exact output shape, and NOT STATED for missing values.</li>
+    <li><b>+ Examples.</b> Four worked conversions covering the awkward cases.</li>
+    <li><b>+ Evidence first.</b> Quote the words containing the date before answering. &nbsp;<span class="badge badge--teal">you run this</span></li>
   </ol>
-  <div class="prompt is-followup mt prompt--sm">Score all four prompt versions against the correct answers.
-Show accuracy for each in a bar chart, and print every
-case where version 4 was right and version 1 was wrong.
+  <div class="prompt is-followup mt prompt--sm">Pull the ID and date out of each pasted line with a regular
+expression, ignoring bold, table pipes, arrows and bullets.
+Score each version and show them as a bar chart.
 </div>
+  <p class="muted mt small">Version 1 usually scores near <b>zero</b> — not because the model
+  cannot read dates, but because it answers in prose that nothing can extract. That is the finding.</p>
   <aside class="notes">
-    <p>The measurable jump is usually between 1 and 2, and it is large. This converts prompting from
-    an opinion into a demonstrated fact, which is what a PhD audience needs.</p>
-    <p>Then: "now write version 5 and beat it." Leave five minutes for that.</p>
+    <p>The jump from 1 to 2 is the large one, and it converts prompting from an opinion into a
+    demonstrated fact — which is what this audience needs.</p>
+    <p>Note the scoring prompt has to spell out the ID shape, the XXXX convention and the NOT
+    STATED string. Without those the AI writes a regex that silently drops a quarter of the
+    answers — the lesson of the notebook, applied to the notebook.</p>
+    <p>Then: "now write version 5 and beat it." Leave five minutes.</p>
   </aside>
 </section>
 
@@ -1296,14 +1302,20 @@ Then wait. Do not write code until I confirm.
       <p class="small muted mt">Misses: "the waters rose", "l'inondazione", "the river took the mill",
       "we lost everything below the bridge".</p></div>
     <div class="card yes"><span class="tag-yes">Search by meaning</span>
-      <p class="small">Finds all of them — because the coordinates from this morning place them near
-      each other in meaning-space, regardless of the words used.</p></div>
+      <p class="small">Finds the ones the archive itself links — because letters that say
+      <em>waters rose</em> and letters that say <em>flood</em> sit near each other in the space
+      built from how words are actually used together.</p></div>
   </div>
-  <p class="muted mt2 small">This is the direct pay-off of the embedding slide. It is why that slide
-  was worth five minutes of your morning.</p>
+  <div class="takeaway mt"><span class="lbl">And the honest limit</span>
+  It can only relate words it has actually seen <b>together</b>. Ask in vocabulary the archive
+  does not contain and you get nothing. Ask using a word that appears in the wrong context and it
+  returns the wrong document, confidently. You will meet both in Exercise 6.</div>
   <aside class="notes">
-    <p>The multilingual case matters enormously for this audience: a question in English can retrieve
-    an Italian passage. Demonstrate it if you have time.</p>
+    <p>Do not oversell this. What the classroom method does well: a question about "the river
+    overflowed" finds letters that say "flood" and "l'inondazione", because those wordings occur
+    in the same documents. What it cannot do: understand a word the archive has never used.</p>
+    <p>Commercial systems close that gap with neural embeddings — which need a GPU to build and
+    run, and that is a genuine thread through to the HPC section.</p>
   </aside>
 </section>
 
@@ -1419,10 +1431,10 @@ each came from.
 <span class="cm">— provenance, so citations mean something</span></div>
     </div>
     <div>
-      <div class="prompt prompt--sm">Build a search that, given a question,
-returns the 5 most relevant passages by
-meaning, not by keyword. Show me the
-passages and their similarity scores.
+      <div class="prompt prompt--sm">Vectorise the passages with TF-IDF then
+TruncatedSVD, and write search(question, k=5)
+returning the closest passages with scores.
+Warn me if the best score is below 0.15.
 <span class="cm">— test this on its own before going further</span></div>
       <div class="prompt prompt--sm mt">Now put it together: take my question,
 retrieve the 5 best passages, and answer
@@ -1699,11 +1711,14 @@ Do not process everything at once. Stop after each file.
   <h2>Run it, then attack it</h2>
   <ol class="steps mt" style="font-size:.84em">
     <li>Run one file. <b>Check the row by hand against the document.</b> Do not proceed until one row is right.</li>
-    <li>Run five more. Are the NOT STATED cells genuinely absent from those documents?</li>
-    <li>Feed it your worst file — the shortest, the messiest, the one in another language. What happens?</li>
-    <li>Run the rest. Check the final count against the number of files. Do they match?</li>
+    <li>Run three or four more. Are the NOT STATED cells genuinely absent — or did it give up?</li>
+    <li>Feed it your worst file — the shortest, the messiest, the one in another language.</li>
     <li>Finish with the verification prompt: ask it how this table could be wrong.</li>
   </ol>
+  <div class="takeaway mt"><span class="lbl">On scale — say this out loud</span>
+  Each file is one round trip through the chat panel, about a minute. You will do a <b>handful</b>,
+  not the archive. Three rows you have checked teach more than ninety you have not — and the
+  notebook shows you how to automate the rest afterwards.</div>
   <div class="prompt is-followup mt prompt--sm">Look at the table we just built. List every way it might be
 wrong or incomplete, and show me the three rows you are
 least confident about, with your reasons.

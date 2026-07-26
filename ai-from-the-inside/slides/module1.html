@@ -1292,13 +1292,14 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <div class="grid g2" style="gap:.7em;font-size:.92em">
     <div>
       <div class="prompt prompt--sm">Load the file letters.csv into a table.
-Show me its shape, the column names,
-and 10 random rows.
+Show me its shape, the column names, and
+10 random rows with the full text visible.
 <span class="cm">— see what you actually have</span></div>
-      <div class="prompt prompt--sm mt">Split the data 80/20 into a training set
-and a test set. Train a simple text
-classifier on the training set only.
-Report its accuracy on the test set.
+      <div class="prompt prompt--sm mt">Using letters.csv, split it 80/20 keeping
+the label balance. Train a TF-IDF +
+logistic regression classifier, call it
+`model`, and report its test accuracy
+in a variable called `acc`.
 <span class="cm">— the whole of machine learning, in one prompt</span></div>
       <div class="prompt prompt--sm mt">What accuracy would I get by always
 predicting the most common label?
@@ -1306,17 +1307,17 @@ Print both numbers side by side.
 <span class="cm">— the baseline. Never skip this.</span></div>
     </div>
     <div>
-      <div class="prompt prompt--sm">Show me 8 test examples the model got
-wrong, with the true label and the
-predicted label.
+      <div class="prompt prompt--sm">Show me 8 test letters the model got wrong,
+with the recorded label and the predicted
+label. Do not use the true_label column.
 <span class="cm">— where does it fail, and does that make sense?</span></div>
       <div class="prompt prompt--sm mt">Which 15 words push the model most
 strongly towards each label?
 Show them in a bar chart.
 <span class="cm">— what did it actually learn?</span></div>
-      <div class="prompt prompt--sm mt">Now retrain using only 20 training
-examples instead of the full set.
-Report the new test accuracy.
+      <div class="prompt prompt--sm mt">Retrain on 20 letters, then 50, 100, 150
+and all of them. Plot test accuracy
+against training size, with the baseline.
 <span class="cm">— how much data does this actually need?</span></div>
     </div>
   </div>
@@ -1352,16 +1353,16 @@ Report the new test accuracy.
 <section class="exercise">
   <span class="eyebrow">Exercise 1 · the twist</span>
   <h2>Now prove that it memorises</h2>
-  <div class="prompt mt">Randomly shuffle all the labels in the training set so
-they no longer match the texts, then train the same model
-again. Report the training accuracy AND the test accuracy.
+  <div class="prompt mt">Randomly shuffle the training labels so they no longer match
+their letters, then train a classifier with C=100 on that.
+Repeat 20 times with 20 different shuffles, and report the
+AVERAGE training and test accuracy, with the baseline.
 </div>
-  <div class="grid g2 mt2">
-    <div class="card"><h4>Training accuracy</h4><p class="small">Will be high. The model can memorise nonsense.</p></div>
-    <div class="card"><h4>Test accuracy</h4><p class="small">Will collapse to the baseline. There was never anything to learn.</p></div>
+  <div class="grid g3 mt2">
+    <div class="card"><h4>Training</h4><p class="small">100%. It memorised pure nonsense, perfectly.</p></div>
+    <div class="card"><h4>Test</h4><p class="small">~49%, against a ~51% baseline. It learned nothing at all.</p></div>
+    <div class="card card--gold"><h4>Why 20 times?</h4><p class="small">One run has a ±4-point margin of error. Averaging is the difference between a number and a measurement.</p></div>
   </div>
-  <p class="muted mt small">This is overfitting made visible in ninety seconds. It is also the single
-  best demonstration of why held-out evaluation is not optional.</p>
   <aside class="notes">
     <p>If you do only one thing from this exercise on your shared screen, do this one. Run it live and let them watch the two numbers appear.</p>
     <p>Land the point: a high number on data the model has seen is not evidence of anything at all.</p>
@@ -1919,7 +1920,8 @@ accuracy again. Show me the confidence of its wrong answers.
       <p class="xs muted mt"><b>Use for</b> brainstorming. Never for facts.</p></div>
   </div>
   <p class="muted mt2 small">This is why the same question can give you different answers.
-  It is a dice roll, and by default the dice are loaded but not fixed.</p>
+  It is a dice roll, and by default the dice are loaded but not fixed. In Exercise 3 you will
+  watch low temperature get stuck in a loop and high temperature wander off the subject.</p>
   <aside class="notes">
     <p>Practical and important for research use: <b>results are not reproducible by default.</b>
     That is a methodological problem and they should know to report it.</p>
@@ -2136,14 +2138,13 @@ each one with its number. Then do the same
 for the Italian translation, and compare
 how many tokens each one needs.
 <span class="cm">— feel the tokenizer, and the language tax</span></div>
-      <div class="prompt prompt--sm mt">Take the phrase "The archivist opened the
-wooden" and show me the model's top 10
-predictions for the next token, with their
-probabilities, as a bar chart.
+      <div class="prompt prompt--sm mt">Count which words follow which, then show
+the top 10 words that come after "the",
+with their probabilities, as a bar chart.
 <span class="cm">— see the probability distribution directly</span></div>
-      <div class="prompt prompt--sm mt">Generate a continuation of that phrase 5
-times at temperature 0.2, and 5 times at
-temperature 1.5. Print them side by side.
+      <div class="prompt prompt--sm mt">Generate 22 words starting from "i", twice
+each at temperature 0.2, 1.0 and 2.0.
+Print them grouped.
 <span class="cm">— watch the dice</span></div>
     </div>
     <div>
@@ -2153,9 +2154,9 @@ then by counting it directly in code.
 Compare the two answers.
 <span class="cm">— the tokenizer's revenge</span></div>
       <div class="prompt prompt--sm is-bad mt">Give me five peer-reviewed articles about
-[an extremely narrow topic in your own
-field], with authors, journals, years and
-DOIs.
+TOPIC, with the authors, title, journal,
+year and DOI for each.
+   ^^^ replace TOPIC with your own
 <span class="cm">— then check every single one</span></div>
       <div class="card mt" style="font-size:.72em">
         <b>The last prompt is the exercise.</b> Take the citations it gives you and search for

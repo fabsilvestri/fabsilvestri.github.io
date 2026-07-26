@@ -117,6 +117,7 @@
 </tr>
 </tbody>
 </table>
+<p>Some cells are not prompts at all — a few ask you to paste a model's reply back into the notebook, or to write something of your own. Those are marked in the notebooks and are not reproduced here.</p>
 <hr>
 <h2 id="contents">Contents</h2>
 <ul>
@@ -131,12 +132,12 @@
 </ul>
 <hr>
 <h2 id="notebook-0-warm-up">Notebook 0 — Warm-up</h2>
-<h3 id="2-your-first-generated-cell">2 · Your first generated cell</h3>
+<h3 id="2-now-let-the-ai-write-a-cell-for-you">2. Now let the AI write a cell for you</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Print a friendly one-line greeting, then print today's date in a
 human-readable form, and finally print how many days remain in this year.
 </code></pre>
-<p><strong>Why:</strong> Read what it wrote before you run it. Getting into that habit now is the whole point of the exercise.</p>
+<p><strong>Why:</strong> <strong>The empty cell is directly below this box</strong> — the grey one saying <em>Start coding or generate with AI</em>. Click inside it, press <code>Ctrl</code>+<code>Shift</code>+<code>Enter</code> (Mac: <code>Cmd</code>+<code>Shift</code>+<code>Enter</code>) or hover and click <strong>Generate</strong>, then paste the prompt. Read what it wrote before you run it — that habit is the whole point of the exercise.</p>
 <p><br></p>
 <h2 id="notebook-1-teach-a-machine-to-sort-your-texts">Notebook 1 — Teach a machine to sort your texts</h2>
 <h3 id="1-look-at-your-data-before-anything-else">1 · Look at your data before anything else</h3>
@@ -150,11 +151,12 @@ Also show how many letters carry each label.
 <p><br></p>
 <h3 id="2-train-and-evaluate-the-whole-of-machine-learning-in-one-prompt">2 · Train and evaluate — the whole of machine learning, in one prompt</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Split the data 80/20 into a training set and a test set, keeping the
-balance of labels the same in both.
-Train a simple text classifier on the training set only.
-Report its accuracy on the test set.
-Use the 'label' column, not 'true_label'.
+<pre><code class="language-text">Using the letters.csv data, split it 80/20 into a training set and a test
+set, keeping the balance of labels the same in both.
+Train a TF-IDF + logistic regression text classifier on the training set
+only, and call the fitted model `model`.
+Report its accuracy on the test set and store it in a variable called `acc`.
+Use the 'label' column as the answer, not 'true_label'.
 </code></pre>
 <p><strong>Why:</strong> Note the last line. The file also contains <code>true_label</code>, which is the label <em>before</em> we introduced realistic noise. Using it would be cheating — and it is exactly the kind of leak that ruins real studies.</p>
 <p><br></p>
@@ -169,8 +171,9 @@ Print that number next to the model's accuracy so I can compare them.
 <h3 id="4-read-the-mistakes">4 · Read the mistakes</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Show me 8 test letters the model got wrong.
-For each one show the full text, the true label and the predicted label,
-in a readable layout — not a cramped table.
+For each one show the full text, the label recorded in the 'label' column,
+and the label the model predicted, in a readable layout — not a cramped table.
+Do not use the 'true_label' column.
 </code></pre>
 <p><strong>Why:</strong> Read them properly. Ask yourself: <em>would I have got this right?</em> Some of them are mislabelled, and some are genuinely ambiguous. This is the most valuable five minutes in the notebook.</p>
 <p><br></p>
@@ -180,104 +183,131 @@ in a readable layout — not a cramped table.
 each of the two labels. Display them as a horizontal bar chart, with the
 two labels in different colours.
 </code></pre>
-<p><strong>Why:</strong> Look for anything embarrassing: a greeting, a place name, a punctuation habit. If the model keys on something that has nothing to do with the concept, it found a <strong>shortcut</strong>, not a meaning.</p>
+<p><strong>Why:</strong> Look closely at <em>what kind</em> of words these are. You will probably not see <code>beg</code> and <code>inform</code>. You are more likely to see pronouns, tenses and little grammatical words — <code>my</code>, <code>you to</code>, <code>being</code> on one side; <code>was</code>, <code>were</code>, <code>took</code> on the other.</p>
+<p>That is the finding. The model never learned what a petition <em>is</em>. It learned that asking is written in the present and future and points at <em>you</em>, while reporting is written in the past. A real regularity — and a much shallower one than the label name suggests. Watch too for a place name or a date fragment sneaking in: that would be a pure <strong>shortcut</strong>, with nothing to do with the concept.</p>
 <p><br></p>
 <h3 id="6-how-much-data-did-it-actually-need">6 · How much data did it actually need?</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Retrain the same kind of model on only the first 20 training letters,
-then on 50, then on 100, then on all of them.
+then on 50, then on 100, then on 150, then on all of them.
 Plot test accuracy against the number of training examples,
 and draw the do-nothing baseline as a horizontal line.
 </code></pre>
 <p><strong>Why:</strong> This curve is how you answer 'do I need to label more data?' — a question that costs real money in real projects.</p>
+<p>Expect it to climb steeply and then <strong>flatten</strong>, and do not be alarmed if the last point dips slightly below the one before: with only 53 test letters, each point carries a margin of error of several percentage points. A flat tail is the useful answer — it means more labelling would buy you very little.</p>
 <p><br></p>
 <h3 id="7-train-on-nonsense">7 · Train on nonsense</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Randomly shuffle the training labels so they no longer match their letters,
-then train the same kind of model on that shuffled data.
-Report BOTH the training accuracy and the test accuracy,
-and print the do-nothing baseline next to them for comparison.
+then train a text classifier on that shuffled data. Give this one plenty of
+freedom to memorise: use LogisticRegression with C=100.
+Repeat the whole thing 20 times with 20 different shuffles, and report the
+AVERAGE training accuracy and the AVERAGE test accuracy, with the
+do-nothing baseline next to them.
 </code></pre>
-<p><strong>Why:</strong> Expect training accuracy near 100% and test accuracy near the baseline. The model happily memorised 211 arbitrary pairings and learned nothing whatsoever.</p>
+<p><strong>Why:</strong> <strong>Why twenty times?</strong> The test set is only 53 letters, so a single run has a margin of error of about 7 percentage points — one run tells you almost nothing. Averaging twenty runs is the difference between a number and a measurement, and that is itself one of the lessons.</p>
 <p><br></p>
 <h2 id="notebook-2-images-and-how-to-fool-them">Notebook 2 — Images, and how to fool them</h2>
 <h3 id="1-build-an-image-classifier">1 · Build an image classifier</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Load the built-in handwritten digits dataset from scikit-learn.
 Show me 10 example images with their labels.
-Then train a classifier on 80% of the data and report its
-accuracy on the remaining 20%.
-Finally show a grid of the images it got wrong, each labelled
+Then split 80/20 and train a LOGISTIC REGRESSION classifier on the
+training part, and report its accuracy on the held-out 20%.
+Keep the fitted model in a variable called `clf`.
+Finally show a grid of the test images it got wrong, each labelled
 with the true digit and what it guessed.
 </code></pre>
+<p><strong>Why:</strong> The model type is pinned deliberately. Different classifiers behave very differently in the second half of this notebook — a random forest, for instance, <em>does</em> lose confidence under noise, which would demonstrate the opposite of the point being made.</p>
 <p><br></p>
-<h3 id="2-add-noise-and-watch-confidence-stay-high">2 · Add noise and watch confidence stay high</h3>
+<h3 id="2-add-noise-and-compare-confidence-before-and-after">2 · Add noise, and compare confidence before and after</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Add faint random noise to the test images and report the accuracy again.
-Then, for the noisy images it got WRONG, show me how confident it was
-in its wrong answer. Plot the distribution of that confidence.
-Show a few of the noisy images next to the clean originals.
+<pre><code class="language-text">Add Gaussian noise with standard deviation 4.0 to the test images
+(the pixel scale runs 0 to 16), and clip the result back into that range.
+
+Then print a small table comparing CLEAN versus NOISY:
+  - accuracy on each
+  - the model's MEAN CONFIDENCE on each (the highest predicted
+    probability, averaged over all test images)
+Print how many percentage points each one dropped.
+
+Then plot the distribution of the model's confidence in its WRONG
+answers on the noisy images, and show a few noisy images next to
+their clean originals.
 </code></pre>
-<p><strong>Why:</strong> Watch what happens: accuracy falls substantially, and confidence barely moves. <strong>The model has no way of telling you that it has left familiar territory.</strong></p>
+<p><strong>Why:</strong> The noise level is pinned because the demo only works in a narrow band: at sd=2 accuracy barely moves and there is nothing to see; at sd=8 the digits are destroyed and the failure is unsurprising.</p>
 <p><br></p>
 <h2 id="notebook-3-look-inside-the-language-model">Notebook 3 — Look inside the language model</h2>
 <h3 id="1-split-text-into-real-tokens">1 · Split text into real tokens</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Install and use the tiktoken library.
+<pre><code class="language-text">Install and use the tiktoken library. Get the 'cl100k_base' encoding
+and keep it in a variable called `enc`.
 Take this sentence: 'The archivist catalogued an unremarkable manuscript.'
-Split it into tokens and print each token with its number,
-one per line, so I can see exactly where the splits fall.
+Split it into tokens and print each token with its number, one per line,
+so I can see exactly where the splits fall.
 Then print how many tokens it used and how many words it had.
 </code></pre>
-<p><strong>Why:</strong> <code>tiktoken</code> is a small, fast library with no heavy dependencies. It is the actual tokenizer used by several production models.</p>
+<p><strong>Why:</strong> <code>tiktoken</code> is small and fast and pulls in no deep-learning framework. It is the actual tokenizer used by several production models. The variable name is pinned because later sections reuse it.</p>
 <p><br></p>
 <h3 id="2-the-language-tax">2 · The language tax</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Using the same tokenizer, compare how many tokens are needed for the
-same meaning in different languages. Use these sentences:
-  English: 'The archivist catalogued an unremarkable manuscript.'
-  Italian: 'L'archivista ha catalogato un manoscritto non degno di nota.'
-  Greek:   'Ο αρχειοφύλακας κατέγραψε ένα ασήμαντο χειρόγραφο.'
-Show the token count for each as a bar chart, and also show the
-tokens-per-character ratio.
+<pre><code class="language-text">Using the tiktoken 'cl100k_base' encoding, compare how many tokens are
+needed for the same meaning in three languages. Use these sentences,
+and mind the apostrophe in the Italian one - use double quotes around it:
+  English: &quot;The archivist catalogued an unremarkable manuscript.&quot;
+  Italian: &quot;L'archivista ha catalogato un manoscritto non degno di nota.&quot;
+  Greek:   &quot;Ο αρχειοφύλακας κατέγραψε ένα ασήμαντο χειρόγραφο.&quot;
+Show the token count for each as a bar chart, and print the
+tokens-per-character ratio for each.
 </code></pre>
-<p><strong>Why:</strong> The same meaning costs more tokens in Italian than English, and far more in Greek. That is a direct cost in money, in context-window space, and in reliability — and it falls hardest on exactly the material this room works with.</p>
+<p><strong>Why:</strong> The quoting note is there for a reason: <code>'L'archivista'</code> ends the string at the apostrophe and produces a syntax error. If that happens to you, paste the red message back to the AI — it is a good first taste of the debugging loop.</p>
 <p><br></p>
 <h3 id="3-build-a-tiny-next-word-predictor">3 · Build a tiny next-word predictor</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Using the text column of letters.csv, count which words follow which
-pairs of words. This gives a simple next-word predictor.
-Then, for the phrase 'I write to', show me the top 10 candidates for
-the next word with their probabilities, as a horizontal bar chart.
-Use only plain Python and pandas — no neural networks.
+single word. Store it as a dictionary called `nxt` mapping each word to
+a Counter of the words that follow it. Lowercase everything, and treat
+. , ; : as separate words.
+
+Then write a function distribution(word) that returns the most likely
+next words with their probabilities. If the word never appears, print a
+clear message saying so rather than failing.
+
+Show me the top 10 candidates after the word 'the', with their
+probabilities, as a horizontal bar chart.
+Use only plain Python, pandas and matplotlib — no neural networks.
 </code></pre>
-<p><strong>Why:</strong> This is a <em>trigram model</em>. Real language models replaced this approach, but the output — a ranked list of candidates with probabilities — is exactly what a modern model produces too, just over 100,000 fragments instead of a few thousand words.</p>
+<p><strong>Why:</strong> This is a <em>bigram model</em>. Real language models replaced this approach long ago, but the output — a ranked distribution over what comes next — is exactly what a modern model produces too, just over 100,000 fragments instead of a few hundred words.</p>
 <p><br></p>
 <h3 id="4-generate-at-different-temperatures">4 · Generate at different temperatures</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Using the next-word predictor from the previous cell, write a function that
-generates 25 words starting from 'I write to', choosing each next word
-randomly according to its probability, adjusted by a temperature setting.
-Generate 3 samples at temperature 0.2, 3 at temperature 1.0, and
-3 at temperature 2.0. Print them grouped and clearly labelled.
+<pre><code class="language-text">Using the `nxt` predictor from the previous cell, write a function that
+generates 22 words starting from the word 'i', choosing each next word
+randomly in proportion to its count raised to the power 1/temperature.
+
+Generate 2 samples at temperature 0.2, 2 at temperature 1.0, and 2 at
+temperature 2.0. Print them grouped under clear headings and wrapped
+so I can read them.
 </code></pre>
-<p><strong>Why:</strong> Read the three groups side by side. Low temperature repeats itself; high temperature produces confident nonsense. This is the same dial you set when you use any commercial model — and it is why the same question can give you different answers.</p>
+<p><strong>Why:</strong> Read the three groups side by side. Low temperature gets stuck in loops (<em>the most humble and the most humble and…</em>); high temperature wanders off the subject entirely. This is the same dial you set on any commercial model — and it is why the same question can give you different answers.</p>
 <p><br></p>
 <h3 id="5-count-it-properly">5 · Count it properly</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Count how many times each letter appears in the word 'strawberry',
-and show how the tiktoken tokenizer splits that same word.
+and show how the tiktoken encoding `enc` splits that same word.
 Print the two results side by side.
 </code></pre>
-<p><strong>Why:</strong> Then go and ask the Colab AI chat panel the same question in words. Compare its answer to the count you just computed.</p>
+<p><strong>Why:</strong> Then ask the Colab AI chat panel the same question in words: <em>how many times does the letter r appear in strawberry?</em> Compare its answer to the count you just computed. Recent models often get this right — if yours does, ask it for a longer or rarer word and try again.</p>
 <p><br></p>
 <h3 id="6-ask-for-citations-in-your-own-narrow-specialism">6 · Ask for citations in your own narrow specialism</h3>
 <p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">Give me five peer-reviewed articles about &lt;the narrowest topic in your
-own PhD that you can state in one line&gt;. For each one give the authors,
-the title, the journal, the year, and the DOI.
+<pre><code class="language-text">Give me five peer-reviewed articles about TOPIC, with the authors, the
+title, the journal, the year, and the DOI for each.
+
+  ^^^^^ replace TOPIC with the narrowest subject in your own research
+        that you can state in one line, then delete this note
 </code></pre>
-<p><strong>Why:</strong> <strong>Use your own genuinely narrow topic.</strong> A general topic gives you real citations and the lesson is lost. The narrower and more specialised, the sharper the result.</p>
+<p><strong>Why:</strong> If you paste it without replacing TOPIC, the model will ask you what topic you mean — which wastes a turn but does no harm.</p>
 <p><br></p>
 <h3 id="7-ask-it-to-mark-its-own-work">7 · Ask it to mark its own work</h3>
 <p><em>Goes in: AI chat panel</em></p>
@@ -291,154 +321,109 @@ recalled. Be blunt. Do not defend your earlier answer.
 <h3 id="1-build-the-conversation-machinery">1 · Build the conversation machinery</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Build a simple chat transcript in this notebook:
-- a list of messages, each with a role (system, user, assistant) and text
+- a list called `messages`, each entry a dict with a role
+  (system, user, assistant) and text
 - a function add(role, text) that appends to it
-- a function show() that prints the whole transcript in a readable form
-- a function to_send() that prints exactly what would be sent to a model
-  this turn, formatted as Role: text
-Start it with a system message and two example exchanges so I can see it work.
+- a function show() that prints the whole transcript readably
+- a function to_send() that prints exactly what would be sent to a
+  model this turn, formatted as 'Role: text', with no banner or
+  decoration around it
+Start it with a system message and two example exchanges.
 </code></pre>
 <p><strong>Why:</strong> Look carefully at what <code>to_send()</code> prints. That whole block is re-read from scratch by the model on every turn. Nothing is remembered; everything is resent.</p>
 <p><br></p>
-<h3 id="2-watch-the-desk-fill-up">2 · Watch the desk fill up</h3>
+<h3 id="2-count-the-tokens">2 · Count the tokens</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Add a function that counts the tokens in the whole transcript using tiktoken,
-and prints a warning when it goes over 2000 tokens.
-Then add six more long exchanges to the transcript and print the token
-count after each one, so I can watch it grow.
-Plot the token count against the turn number.
+<pre><code class="language-text">Add a function called token_count() that returns the number of tokens in
+the whole transcript, using tiktoken's 'cl100k_base' encoding.
+
+Then add six more long exchanges to the transcript, printing the token
+count after each one, and warn me whenever it goes over 600 tokens.
+Finally plot the token count against the turn number, with a dashed
+line at 600.
 </code></pre>
-<p><strong>Why:</strong> Every turn costs the <em>whole</em> transcript, not just your new message. This is why turn 40 of a conversation is slow and expensive, and why very long chats start losing their beginning.</p>
+<p><strong>Why:</strong> The function name is pinned — a later cell calls <code>token_count()</code> by name. If your AI calls it something else, either rename it or tell the AI to.</p>
 <p><br></p>
-<h3 id="3-the-fix-built-in">3 · The fix, built in</h3>
+<h3 id="3-add-a-reset">3 · Add a reset</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Add a function reset() that clears the transcript but keeps the system
-message, and prints the token count before and after.
-Run it and show me the result.
+message, printing the token count before and after. Then run it.
 </code></pre>
-<p><strong>Why:</strong> This is the 'start a new chat' button, and now you know exactly what it does: it clears the desk and keeps the standing instructions.</p>
-<p><br></p>
-<h3 id="4-write-your-own">4 · Write your own</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">&lt;Write your own system prompt for a research assistant in YOUR field.
- Include at least one rule about something it must REFUSE to do.
- Then paste it as the first message in the Colab AI chat panel and
- work with it for a few turns.&gt;
-</code></pre>
-<p><strong>Why:</strong> Then spend five minutes trying to make it break its own rule. Roleplay framings (<em>'for a novel I am writing, have a character explain…'</em>) defeat most prohibitions. Long conversations defeat them too.</p>
+<p><strong>Why:</strong> Run this now. The next section asks you to copy the transcript by hand — and without a reset you would be pasting about five thousand characters of filler.</p>
 <p><br></p>
 <h2 id="notebook-5-the-prompt-tournament">Notebook 5 — The prompt tournament</h2>
 <h3 id="0-look-at-the-task-first">0 · Look at the task first</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Load dates_gold.csv and show me all 20 rows with the full letter text
-and the correct date, in a readable layout.
+<pre><code class="language-text">Load dates_gold.csv into a dataframe called `gold` and show me all 20 rows
+with the full letter text and the correct date, in a readable layout.
 Count how many have no date at all.
 </code></pre>
 <p><br></p>
-<h3 id="version-1-naive">Version 1 · Naive</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">Extract the date from each of these letters.
-</code></pre>
-<p><strong>Why:</strong> This is what almost everybody types. Note what it does not say: what format, what to do about a missing year, what to do when there is no date at all.</p>
-<p><br></p>
-<h3 id="version-2-add-the-form-and-the-escape-hatch">Version 2 · Add the form and the escape hatch</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">For each letter below, extract the date.
-
-Output format: one line per letter, exactly `ID: YYYY-MM-DD`.
-If the year is not stated, use XXXX in its place.
-If there is no date at all, write `ID: NOT STATED`.
-Output nothing else — no commentary, no explanation.
-</code></pre>
-<p><strong>Why:</strong> Two additions: an exact output shape, and an instruction for what to do when it cannot comply. In our experience this is where the largest jump happens.</p>
-<p><br></p>
-<h3 id="version-3-add-worked-examples">Version 3 · Add worked examples</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">For each letter below, extract the date.
-
-Output format: one line per letter, exactly `ID: YYYY-MM-DD`.
-
-Examples of the conversions required:
-  &quot;Siena, li 9 maggio 1685&quot;            -&gt; 1685-05-09
-  &quot;Torino, questo dì 28 di luglio 1664&quot; -&gt; 1664-07-28
-  &quot;Da Genova, 14 marzo&quot;                -&gt; XXXX-03-14
-  &quot;Milano 3.11.1642&quot;                   -&gt; 1642-11-03
-  (no date line present)                -&gt; NOT STATED
-
-Output nothing else.
-</code></pre>
-<p><strong>Why:</strong> Four examples pin down the Italian month names, the missing-year convention, and the numeric format — all things that a paragraph of description leaves ambiguous.</p>
-<p><br></p>
-<h3 id="version-4-ask-for-the-evidence-before-the-answer">Version 4 · Ask for the evidence before the answer</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">For each letter below:
-  1. First quote the exact words containing the date, or write NONE.
-  2. Then, on the next line, give `ID: YYYY-MM-DD`.
-
-Examples of the conversions required:
-  &quot;Siena, li 9 maggio 1685&quot;            -&gt; 1685-05-09
-  &quot;Da Genova, 14 marzo&quot;                -&gt; XXXX-03-14
-  (no date line present)                -&gt; NOT STATED
-
-Never give a date that does not appear in the words you quoted.
-</code></pre>
-<p><strong>Why:</strong> Now the evidence is on the desk before the answer is produced — which improves the answer <em>and</em> lets you check it in seconds. Two benefits from one instruction.</p>
-<p><br></p>
-<h3 id="5-score-all-four">5 · Score all four</h3>
+<h3 id="5-score-the-versions">5 · Score the versions</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">I will paste each set of answers as one long string, one answer per line
-in the form 'ID: DATE'. Write code that pulls the ID and the date out of
-each line with a regular expression, ignoring any other text on the line,
-and compares them against the correct_date column of dates_gold.csv.
-Show accuracy for all four versions as a bar chart, and print every case
-where version 4 was right and version 1 was wrong.
+<pre><code class="language-text">I have four strings called v1, v2, v3 and v4, each containing a model's
+answers, one per line, in the form  L0213: 1685-05-09
+IDs look like L0213. A missing year is written XXXX. An absent date is the
+literal words NOT STATED.
+
+Write code that pulls the ID and the date out of each line with a regular
+expression, ignoring bold markers, table pipes, arrows, bullets and any
+other text on the line, and compares them against the correct_date column
+of `gold`. Treat a version with nothing pasted as 'not run' rather than 0%.
+
+Show accuracy for each version as a bar chart and print every case where
+version 4 was right and version 1 was wrong.
 </code></pre>
-<p><strong>Why:</strong> Note <em>ignoring any other text on the line</em>: version 4 also outputs quoted evidence, so the scorer has to cope with lines that are not just answers. The reference cell below already handles that.</p>
+<p><strong>Why:</strong> Note what the prompt has to spell out: the ID shape, the XXXX convention, and the NOT STATED string. Without those three facts the AI writes a regex that silently drops a quarter of the answers — which is the whole lesson of this notebook, applied to itself.</p>
 <p><br></p>
 <h2 id="notebook-6-question-your-own-documents">Notebook 6 — Question your own documents</h2>
 <h3 id="1-extract-and-check-what-you-got">1 · Extract, and check what you got</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Read every PDF in the pdfs folder and every .txt file in the archive folder.
-For each one report: filename, number of pages (for PDFs), and
-number of characters of text extracted.
-If a file yields no text at all, print 'NO TEXT LAYER' for it and
-carry on with the others — do not stop the whole run.
-Show the results as a table, sorted by character count ascending.
+<pre><code class="language-text">Install pypdf if it is not already available.
+
+Read every PDF in the pdfs folder and every .txt file in the archive folder.
+Build a dataframe called `docs` with one row per file and these columns:
+filename, pages, chars, and text (the full extracted text).
+
+If a file yields no text at all, record 'NO TEXT LAYER' for it and carry on
+with the others - do not stop the whole run.
+Show the filename, pages and chars columns sorted by chars ascending.
 </code></pre>
-<p><strong>Why:</strong> <strong>Read that table before going any further.</strong> Sorting ascending puts the failures at the top where you cannot miss them. A file with 0 characters is a file that will be invisible to everything that follows.</p>
+<p><strong>Why:</strong> <strong>Read that table before going any further.</strong> Sorting ascending puts the failures at the top where you cannot miss them. A file with 0 characters is invisible to everything that follows. Note the prompt asks for the text to be <em>kept</em> — a table of statistics with the text thrown away would leave section 2 with nothing to work on.</p>
 <p><br></p>
 <h3 id="2-chunk-keeping-provenance">2 · Chunk, keeping provenance</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Split the text of every document into passages of about 120 words with
-30 words of overlap between consecutive passages.
-Number the passages, and for each one keep a record of which file it
-came from and its position in that file.
-Show me how many passages there are in total, and print passages 0, 1
-and 2 in full so I can check the overlap is working.
+<pre><code class="language-text">Split the text of every document in `docs` into passages of about 120 words
+with 30 words of overlap. Build a dataframe called `chunks` with columns:
+n (a running number), file, part, and text.
+Print how many passages there are, how many documents produced more than
+one passage, and show the first two passages in full.
 </code></pre>
 <p><strong>Why:</strong> Provenance is what makes a citation mean something later. Without it you get an answer with a number attached that you cannot trace back to anything.</p>
 <p><br></p>
 <h3 id="3-build-the-search-and-test-it-on-its-own">3 · Build the search, and test it on its own</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Turn every passage into a vector using TF-IDF followed by TruncatedSVD
-with 100 components, then normalise the vectors.
+<pre><code class="language-text">Turn every passage in `chunks` into a vector using TfidfVectorizer with
+English stop words and bigrams, then TruncatedSVD with 100 components,
+then normalise. Keep the fitted pipeline as `embedder` and the matrix as `V`.
+
 Write a function search(question, k=5) that returns the k most similar
-passages by cosine similarity, with their similarity scores, their
-passage numbers and their source filenames.
-Test it with the question 'a prisoner held without charge' and print
-the results, and warn me if the best similarity score is below 0.15.
+passages by cosine similarity, each with its similarity score, passage
+number and source filename.
+
+Test it with the question 'someone jailed with no accusation against them'
+and print the results. Warn me if the best score is below 0.15.
 </code></pre>
 <p><strong>Why:</strong> <strong>Test retrieval before you connect it to anything.</strong> If the search is bad, the answers will be confidently wrong and you will blame the wrong component.</p>
 <p><br></p>
-<h3 id="4-build-the-prompt-assembler">4 · Build the prompt assembler</h3>
+<h3 id="5-build-the-prompt-assembler">5 · Build the prompt assembler</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Write a function ask(question) that:
-  1. retrieves the 5 most relevant passages
-  2. builds a single block of text containing, in this order:
-     - the instruction below
-     - the numbered passages, each with its source filename
-     - the question
-  3. prints that block so I can copy it into the AI chat panel
+  1. retrieves the 5 most relevant passages using search()
+  2. prints a warning if the best score is below 0.15
+  3. prints a single block of text containing, in this order: the
+     instruction below, the numbered passages each with its source
+     filename, and then the question
 
 The instruction must read:
   Answer using ONLY the passages below. After every statement, cite the
@@ -446,59 +431,52 @@ The instruction must read:
   the answer, reply exactly: 'The provided passages do not answer this.'
   Do not use anything you know from outside these passages.
 </code></pre>
-<p><strong>Why:</strong> Notice that you are specifying the <em>architecture</em> of a retrieval system in plain English. That is the whole skill.</p>
-<p><br></p>
-<h3 id="5-test-that-it-can-say-no">5 · Test that it can say no</h3>
-<p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">&lt;Ask your system a question you are certain the documents cannot answer.
- For the provided archive, try: 'What did the Bishop say about the
- printing press in Amsterdam?'&gt;
-</code></pre>
-<p><strong>Why:</strong> The correct answer is <em>'The provided passages do not answer this.'</em> If you get anything else, your instruction is not strong enough — go back and strengthen it, then test again.</p>
+<p><strong>Why:</strong> Notice that you are specifying the architecture of a retrieval system in plain English. That is the whole skill.</p>
 <p><br></p>
 <h2 id="notebook-7-build-your-research-agent-capstone">Notebook 7 — Build your research agent (capstone)</h2>
 <h3 id="2-build-the-tools">2 · Build the tools</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">I want to build a supervised agent in this notebook.
 
-GOAL: for every file in my source folder, produce one row with these
-columns: &lt;YOUR COLUMNS HERE&gt;
+The source files are the .txt files in the archive folder.
+GOAL: for every file, produce one row with these columns:
+   &lt;PUT YOUR OWN COLUMNS HERE - from Step 1&gt;
 
-Build me four separate tools, each as its own function, each printing
-what it did:
+Build me four tools, each as its own function, each printing what it did:
   1. list_files()      - list the source files, print how many
   2. read_file(name)   - return its text, print the length
   3. make_prompt(text) - build an extraction prompt asking for the
-                         columns above as JSON, using NOT STATED for
-                         anything the text does not say
-  4. add_row(data)     - append to a results table, print the running
-                         count of rows so far
+                         columns above as a single JSON object, using
+                         NOT STATED for anything the text does not say
+  4. add_row(data)     - append to a results table, print the running count
 
-Also give me a variable that tracks which file we are on, so I can
-process them one at a time and stay in control.
+Also give me a variable tracking which file we are on, so I can process
+them one at a time and stay in control.
 
 Do not process everything at once. Stop after each file.
 </code></pre>
-<p><strong>Why:</strong> The last two lines are the entire human-in-the-loop architecture, expressed as a requirement in plain English. You are specifying a system design without writing code.</p>
+<p><strong>Why:</strong> <strong>Replace the columns line with your own before pasting.</strong> If you leave the placeholder in, the AI will invent columns or ask you what you meant. The last two lines are the entire human-in-the-loop architecture, expressed as a requirement in plain English — you are specifying a system design without writing code.</p>
 <p><br></p>
 <h3 id="4-make-it-attack-the-table">4 · Make it attack the table</h3>
 <p><em>Goes in: AI chat panel</em></p>
-<pre><code class="language-text">Look at the results table we have built. List every way it might be wrong
-or incomplete. Show me the three rows you are least confident about and
-say why. Then name the specific kind of document that would break this
-extraction entirely.
+<pre><code class="language-text">Below is a table my extraction produced. List every way it might be wrong or
+incomplete. Show me the three rows you are least confident about and say why.
+Then name the specific kind of document that would break this extraction.
 
 Do not defend the work. Only find problems.
+
+TABLE:
+&lt;paste the table printed by the cell below&gt;
 </code></pre>
-<p><strong>Why:</strong> <em>Do not defend the work</em> is doing real work in that prompt. Without it, the trained-in agreeableness gives you reassurance instead of a review.</p>
+<p><strong>Why:</strong> <em>Do not defend the work</em> is doing real work in that prompt. Without it, the trained-in agreeableness gives you reassurance instead of a review. Run the cell below first — it prints the table in a form you can paste.</p>
 <p><br></p>
 <h3 id="5-save-what-you-built">5 · Save what you built</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Save the results table to a CSV file and download it to my computer.
-Print the number of rows saved and list any columns that are entirely
-NOT STATED, since those are the ones my extraction failed on.
+<pre><code class="language-text">Save the `results` list as a CSV called agent_results.csv and download it
+to my computer. Print how many rows were saved, and list any columns that
+are entirely NOT STATED.
 </code></pre>
-<p><strong>Why:</strong> The columns that are entirely NOT STATED tell you where the <em>prompt</em> failed, not where the documents were silent. That distinction is worth knowing.</p>
+<p><strong>Why:</strong> The columns that are entirely NOT STATED are worth a thought: either the documents never contained that information, or your prompt asked the wrong question. Those are different problems with different fixes.</p>
 <p><br></p>
 <hr>
 <h2 id="the-six-reusable-patterns">The six reusable patterns</h2>
