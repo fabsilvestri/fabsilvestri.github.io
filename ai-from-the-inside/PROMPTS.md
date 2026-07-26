@@ -242,7 +242,7 @@ Generate 3 samples at temperature 0.2, 3 at temperature 1.0, and
 3 at temperature 2.0. Print them grouped and clearly labelled.
 ```
 
-**Why:** Read the three groups aloud. Low temperature repeats itself; high temperature produces confident nonsense. This is the same dial you set when you use any commercial model — and it is why the same question can give you different answers.
+**Why:** Read the three groups side by side. Low temperature repeats itself; high temperature produces confident nonsense. This is the same dial you set when you use any commercial model — and it is why the same question can give you different answers.
 
 <br>
 
@@ -349,7 +349,7 @@ Run it and show me the result.
  work with it for a few turns.>
 ```
 
-**Why:** Then spend five minutes trying to make it break its own rule. Roleplay framings (*'for a novel I am writing, have a character explain…'*) defeat most prohibitions. Long conversations defeat them too. **Report your best success to the room.**
+**Why:** Then spend five minutes trying to make it break its own rule. Roleplay framings (*'for a novel I am writing, have a character explain…'*) defeat most prohibitions. Long conversations defeat them too.
 
 <br>
 

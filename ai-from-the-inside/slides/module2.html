@@ -556,7 +556,7 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <p class="mt2">That is the entire interface. Text in, text out. No memory between calls,
   no state, nothing persistent. Call it twice with the same input and it does not know it met you before.</p>
   <p class="muted small">So how does a conversation work?</p>
-  <aside class="notes"><p>Ask the room to guess before revealing the next slide. Someone usually gets it.</p></aside>
+  <aside class="notes"><p>Pose the question, then pause and count to three before advancing. You are asking them to guess silently — that works perfectly well, and the pause is what makes the next slide land.</p></aside>
 </section>
 
 <section>
@@ -958,8 +958,10 @@ Requirements:
       your ugliest real case early, not last.</p></div>
   </div>
   <aside class="notes">
-    <p>Every one of these will happen in the room this afternoon. Naming them in advance turns
-    frustration into recognition — "ah, this is the third one".</p>
+    <p>Every one of these will happen to somebody this afternoon. Naming them in advance turns
+    frustration into recognition — "ah, this is the third one" — which matters far more online,
+    where a stuck student has no neighbour to ask and will simply go quiet.</p>
+    <p>Tell them explicitly: if you hit one of these, put the number in the chat.</p>
   </aside>
 </section>
 
@@ -1127,7 +1129,7 @@ Do not rewrite my translation. Only diagnose it.
   rather than a replacement text you would have to check line by line anyway.</p>
   <aside class="notes">
     <p>Directly relevant to classicists, philologists, translation studies and anyone editing texts.
-    Adapt the categories to the discipline in the room.</p>
+    Adapt the categories to the disciplines you are actually teaching.</p>
   </aside>
 </section>
 
@@ -1438,7 +1440,7 @@ If they don't answer it, say so.
 
 <section>
   <span class="eyebrow">Exercise 6 · debrief</span>
-  <h2>What to report back</h2>
+  <h2>Three questions to ask your own system</h2>
   <div class="grid g3 mt">
     <div class="card"><h4>Did it admit ignorance?</h4><p class="small">When you asked something absent from the documents, did it say so — or invent?</p></div>
     <div class="card"><h4>Were the citations right?</h4><p class="small">Open the cited passage. Does it actually say what the answer claims?</p></div>
@@ -1446,7 +1448,12 @@ If they don't answer it, say so.
   </div>
   <p class="muted mt2 small">These three questions are how you evaluate any document-AI system for the
   rest of your career, including expensive ones sold to your department.</p>
-  <aside class="notes"><p>Explicitly transferable — that framing makes the exercise feel like training rather than a toy.</p></aside>
+  <aside class="notes">
+    <p>Walk these three on your own screen, against the provided archive, showing a real answer and
+    a real citation you then open. Demonstrating the check is the lesson; asking them to describe it
+    is not.</p>
+    <p>Explicitly transferable — that framing makes the exercise feel like training rather than a toy.</p>
+  </aside>
 </section>
 
 <!-- ==== 03-agents.html ==== -->
@@ -1508,7 +1515,7 @@ If they don't answer it, say so.
   Each turn round the loop puts <b>real, checked information</b> on the desk instead of recalled information.
   The agent is a machine for repeatedly grounding itself.</div>
   <aside class="notes">
-    <p>Draw the loop on the board. It is worth the thirty seconds — people remember drawn loops.</p>
+    <p>Walk the four steps twice, pointing at each one on screen as you say it. Thirty seconds spent this way is repaid in the capstone — this loop is the thing they will be executing by hand.</p>
   </aside>
 </section>
 
@@ -1576,8 +1583,8 @@ If they don't answer it, say so.
   <p class="muted mt2 small">The last one is arithmetic, not pessimism. Long autonomous chains are unreliable
   <em>by construction</em>, and no model quality fixes it entirely.</p>
   <aside class="notes">
-    <p>0.95^20 ≈ 0.36. Show the multiplication if the room is quantitative — it reframes the whole
-    "autonomous agent" discourse in one line.</p>
+    <p>0.95^20 ≈ 0.36. Show the multiplication on screen — it reframes the whole "autonomous agent"
+    discourse in one line, and it works for quantitative and non-quantitative listeners alike.</p>
   </aside>
 </section>
 
@@ -1649,8 +1656,12 @@ If they don't answer it, say so.
   <p class="muted mt2 small">Write your goal as a <b>table specification</b>: name the columns before you
   start. If you cannot name the columns, the goal is not yet a goal.</p>
   <aside class="notes">
-    <p>Insist on this. Five minutes writing column names saves the whole exercise. Circulate and check
-    goals before anyone starts prompting.</p>
+    <p>Insist on this. Five minutes writing column names saves the whole exercise.</p>
+    <p>You cannot check their goals over their shoulders, so do it from the front: put up two goals of
+    your own — one hopelessly broad, one right-sized, both from a discipline unlike yours — and think
+    aloud about why the second will work. Then give them three silent minutes to write their own
+    columns, and say plainly: <b>"if you cannot name the columns, you do not have a goal yet — fix
+    that before you prompt anything."</b></p>
   </aside>
 </section>
 
