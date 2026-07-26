@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artificial Intelligence, from the Inside — PhD Course Materials · Fabrizio Silvestri</title>
-  <meta name="description" content="A six-hour course on artificial intelligence for doctoral students of every discipline, taught at Sapienza University of Rome. No mathematics, no programming, no prior knowledge — students write no code at all. Slides, seven Colab notebooks, and a reusable prompt playbook, free to reuse." />
+  <meta name="description" content="A six-hour course on artificial intelligence for doctoral students of every discipline, taught at Sapienza University of Rome. No mathematics, no programming, no prior knowledge — students write no code at all. Slides, eight Colab notebooks, and a reusable prompt playbook, free to reuse." />
   <meta name="keywords" content="AI course, artificial intelligence for humanities, PhD soft skills, Sapienza, machine learning without code, prompting, large language models, LLM, RAG, AI agents, Colab notebooks, teaching materials, Fabrizio Silvestri" />
   <meta name="author" content="Fabrizio Silvestri" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -219,7 +219,7 @@
       </p>
       <div class="facts">
         <span class="fact"><b>6</b> hours</span>
-        <span class="fact"><b>176</b> slides</span>
+        <span class="fact"><b>187</b> slides</span>
         <span class="fact"><b>8</b> Colab notebooks</span>
         <span class="fact"><b>0</b> lines of code written by students</span>
         <span class="fact">no API key · no installation · free tier</span>
@@ -372,11 +372,19 @@
         </ul>
       </div>
       <div class="note">
-        <strong>On the corpus.</strong> The exercises use 264 short letters in the style of a
-        17th-century Italian correspondence archive. It is <strong>constructed, not historical</strong>,
-        and the notebooks say so: about one label in eight is deliberately wrong, dates appear in five
-        inconsistent formats, and some letters are in Italian. That is what makes "read the errors"
-        a real exercise rather than a formality.
+        <strong>On the corpus.</strong> The exercises use <strong>800 short letters</strong> in the
+        style of a 17th-century Italian correspondence archive: one table (<code>letters.csv</code>),
+        240 of the same letters again as individual text files (<code>archive/</code>) for the
+        document-search exercises, six as PDFs (<code>pdfs/</code>) so the extraction step is real,
+        and 20 with hand-checked dates (<code>dates_gold.csv</code>) to score the prompt tournament.
+        It is <strong>constructed, not historical</strong>, and the notebooks say so: about one label
+        in eight is deliberately wrong, dates appear in five inconsistent formats, and some letters
+        are in Italian. That is what makes "read the errors" a real exercise rather than a formality.
+        <br><br>
+        <strong>You do not need to download it.</strong> Every notebook carries the corpus inside it,
+        and the first cell unpacks it — nothing is fetched, so the exercises work on a bad connection
+        or behind a firewall. If you want the files anyway — to use them outside Colab, or in your own
+        teaching — take the <a href="corpus.zip">corpus as a zip (201 KB)</a>.
       </div>
     </section>
 
@@ -396,15 +404,15 @@
         <div class="take">
           <h4>Every prompt in the course</h4>
           <p>
-            All thirty-five exercise prompts in the order they appear, each with a note on what it
-            is for and why it is worded that way. Generated from the same source as the notebooks,
-            so the two can never drift apart.
+            All twenty-nine exercise prompts in the order they appear, each with a note on what it
+            is for and why it is worded that way, plus seven reusable patterns. Generated from
+            the same source as the notebooks, so the two can never drift apart.
           </p>
           <a class="btn btn-ghost" href="prompts.html">Read every prompt ↗</a>
         </div>
       </div>
 
-      <h2 class="section-head"><span class="slash">//</span> The thirteen rules, in short</h2>
+      <h2 class="section-head"><span class="slash">//</span> The fifteen rules, in short</h2>
       <div class="card">
         <ol class="rules">
           <li><strong>If you can write the rule, write the rule.</strong> Using AI where an ordinary rule would do is slower, costlier and less auditable.</li>
@@ -420,6 +428,8 @@
           <li><strong>Never accept a first output.</strong> Make it attack its own work, then check the attacks.</li>
           <li><strong>Test grounded systems on facts you know</strong> — including one they should not be able to answer.</li>
           <li><strong>Agents are for narrow, repetitive, verifiable tasks</strong> at a scale you cannot do by hand. Everything else is a demo.</li>
+          <li><strong>Make it state its assumptions before it acts.</strong> The assumptions are where the failures live — one folder, a text layer, one date format.</li>
+          <li><strong>Your prompts are research instruments.</strong> Version them, document their limits, reuse them.</li>
         </ol>
       </div>
     </section>
