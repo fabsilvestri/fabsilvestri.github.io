@@ -301,6 +301,8 @@ Print the two results side by side.
 *Goes in: AI chat panel*
 
 ```text
+Answer in plain text. Do NOT write any code.
+
 Give me five peer-reviewed articles about TOPIC, with the authors, the
 title, the journal, the year, and the DOI for each.
 
@@ -317,6 +319,8 @@ title, the journal, the year, and the DOI for each.
 *Goes in: AI chat panel*
 
 ```text
+Answer in plain text. Do NOT write any code.
+
 For each of the five citations you just gave me, tell me how confident you
 are that it exists, and mark any that you may have constructed rather than
 recalled. Be blunt. Do not defend your earlier answer.
@@ -413,7 +417,7 @@ Show accuracy for each version as a bar chart and print every case where
 version 4 was right and version 1 was wrong.
 ```
 
-**Why:** Note what the prompt has to spell out: the ID shape, the XXXX convention, and the NOT STATED string. Without those three facts the AI writes a regex that silently drops a quarter of the answers — which is the whole lesson of this notebook, applied to itself.
+**Why:** Note what the prompt has to spell out: the ID shape, the XXXX convention, and the NOT STATED string. Without those three facts the AI writes a reader that silently drops a quarter of the answers — the lesson of this notebook, applied to itself. The reference scorer also copes with several answers arriving on one line, which is what the assistant usually does.
 
 <br>
 
@@ -538,6 +542,8 @@ Do not process everything at once. Stop after each file.
 *Goes in: AI chat panel*
 
 ```text
+Answer in plain text. Do NOT write any code.
+
 Below is a table my extraction produced. List every way it might be wrong or
 incomplete. Show me the three rows you are least confident about and say why.
 Then name the specific kind of document that would break this extraction.
