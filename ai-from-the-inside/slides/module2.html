@@ -345,8 +345,8 @@ section.failure h4 { color: var(--alert); }
 .tok--d { background: #E3E8FA; border-color: #BFC9EF; }
 .tok--dim { opacity: .45; }
 
-.bar-row { display: grid; grid-template-columns: 7.5em 1fr 3.2em; align-items: center; gap: .6em; font-size: .66em; margin-bottom: .34em; }
-.bar-row .k { font-family: var(--mono); text-align: right; }
+.bar-row { display: grid; grid-template-columns: 9.6em 1fr 3.2em; align-items: center; gap: .6em; font-size: .66em; margin-bottom: .34em; }
+.bar-row .k { font-family: var(--mono); text-align: right; white-space: nowrap; }
 .bar-row .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
 .bar { height: 1.35em; border-radius: 4px; background: var(--bordeaux); }
 .bar--2 { background: var(--bordeaux-l); }
@@ -472,6 +472,25 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   .deck-footer, #notes-pane, .notes-hint, #accent-band { display: none !important; }
   .logo-sapienza, .logo-rstless { display: none !important; }
 }
+
+/* ---------- nested-set diagram (AI ⊃ ML ⊃ DL ⊃ LLM) ----------
+   Font size is set once on the wrapper and reset to 1em on every nested
+   level, so four levels of nesting do NOT compound down to 24% size. */
+.nest-wrap { font-size: .84em; }
+.nest {
+  border-radius: 14px;
+  padding: .8em 1em;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.nest .nest { font-size: 1em; margin-top: .7em; }
+.nest > p { margin: 0; line-height: 1.35; }
+.nest-note { color: var(--ink-soft); font-size: .82em; }
+
+.nest--1 { background: #FBF2F3; border-color: #E8C9CE; }
+.nest--2 { background: #FBF3E6; border-color: #E5D2B2; }
+.nest--3 { background: #EDF5F3; border-color: #C4DED7; }
+.nest--4 { background: #ECEEF9; border-color: #C6CDEC; }
 
 </style>
 </head>
