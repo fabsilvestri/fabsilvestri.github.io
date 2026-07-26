@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artificial Intelligence, from the Inside — PhD Course Materials · Fabrizio Silvestri</title>
+  <meta name="description" content="A six-hour course on artificial intelligence for doctoral students of every discipline, taught at Sapienza University of Rome. No mathematics, no programming, no prior knowledge — students write no code at all. Slides, seven Colab notebooks, and a reusable prompt playbook, free to reuse." />
+  <meta name="keywords" content="AI course, artificial intelligence for humanities, PhD soft skills, Sapienza, machine learning without code, prompting, large language models, LLM, RAG, AI agents, Colab notebooks, teaching materials, Fabrizio Silvestri" />
+  <meta name="author" content="Fabrizio Silvestri" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://fabsilvestri.github.io/ai-from-the-inside/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fabsilvestri.github.io/ai-from-the-inside/" />
+  <meta property="og:title" content="Artificial Intelligence, from the Inside — PhD Course Materials" />
+  <meta property="og:description" content="A six-hour AI course for doctoral students of every discipline. No mathematics, no programming — and students write no code at all. Slides, notebooks and playbook, free to reuse." />
+  <meta property="og:image" content="https://fabsilvestri.github.io/assets/img/profile.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@fabreetseo" />
+  <meta name="twitter:title" content="Artificial Intelligence, from the Inside — PhD Course Materials" />
+  <meta name="twitter:description" content="A six-hour AI course for doctoral students of every discipline. Students write no code at all. Slides, notebooks and playbook, free to reuse." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Artificial Intelligence, from the Inside",
+    "description": "A six-hour course on artificial intelligence for doctoral students of every discipline. Covers machine learning fundamentals, neural architectures, Transformers and large language models, then prompting, grounding and agents. Students write no code: they specify what they want and verify what they get.",
+    "url": "https://fabsilvestri.github.io/ai-from-the-inside/",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "educationalLevel": "Doctoral",
+    "teaches": ["Machine learning fundamentals", "Transformers and large language models", "Prompt engineering", "Retrieval-augmented generation", "AI agents", "Critical evaluation of AI systems"],
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": "Sapienza University of Rome",
+      "url": "https://www.uniroma1.it/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Fabrizio Silvestri",
+      "url": "https://fabsilvestri.github.io/"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "courseWorkload": "PT6H",
+      "location": {
+        "@type": "Place",
+        "name": "Sapienza University of Rome"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    /* ---- page-specific: course materials ---- */
+    .course-hero { padding: 64px 0 8px; }
+    .course-hero .hero-eyebrow { margin-bottom: 10px; }
+    .course-hero h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 18px;
+      font-weight: 800;
+    }
+    .course-hero .lede {
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 42em;
+      margin: 0 0 26px;
+    }
+    .course-hero .lede strong { color: var(--ink); font-weight: 600; }
+
+    .facts {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px;
+    }
+    .fact {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(142, 31, 45, 0.18);
+      color: var(--ink-soft);
+    }
+    .fact b { color: var(--accent-1); font-weight: 700; }
+
+    .deck-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    }
+    .deck {
+      display: block;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px) saturate(1.15);
+      -webkit-backdrop-filter: blur(14px) saturate(1.15);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+      padding: 26px 28px;
+      transition: transform .15s, box-shadow .15s;
+      color: inherit;
+    }
+    .deck:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .deck .mod {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--accent-1); font-weight: 700;
+    }
+    .deck h3 { margin: 8px 0 8px; font-size: 21px; color: var(--ink); line-height: 1.25; }
+    .deck p { margin: 0 0 14px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
+    .deck .meta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); }
+    .deck .go { font-weight: 700; color: var(--accent-1); font-size: 14px; }
+
+    .nb-list { list-style: none; margin: 0; padding: 0; }
+    .nb-list > li {
+      display: grid;
+      grid-template-columns: 46px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(142, 31, 45, 0.1);
+    }
+    .nb-list > li:last-child { border-bottom: 0; }
+    .nb-num {
+      font-family: var(--font-mono); font-weight: 700; font-size: 15px;
+      color: #fff; background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nb-num.demo { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-deep)); }
+    .nb-body h4 { margin: 0 0 3px; font-size: 16px; color: var(--ink); font-weight: 650; }
+    .nb-body p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+    .nb-time {
+      font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);
+      margin-left: 8px; font-weight: 500;
+    }
+    .colab {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+      padding: 8px 15px; border-radius: 999px; white-space: nowrap;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(142, 31, 45, 0.28);
+      color: var(--ink) !important;
+      transition: background .15s, transform .15s;
+    }
+    .colab:hover { text-decoration: none; background: #fff; transform: translateY(-1px); }
+    .colab svg { flex: 0 0 auto; }
+
+    .take-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .take {
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(142, 31, 45, 0.15);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+    }
+    .take h4 { margin: 0 0 8px; font-size: 16.5px; color: var(--ink); }
+    .take p { margin: 0 0 14px; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+    .rules { margin: 0; padding-left: 20px; }
+    .rules li { margin-bottom: 9px; color: var(--ink-soft); font-size: 14.5px; line-height: 1.5; }
+    .rules li strong { color: var(--ink); }
+
+    .note {
+      border-left: 3px solid var(--accent-gold);
+      background: rgba(168, 137, 41, 0.07);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 18px 0 0;
+    }
+    .note strong { color: var(--ink); }
+
+    @media (max-width: 820px) {
+      .deck-grid, .take-grid { grid-template-columns: 1fr; }
+      .nb-list > li { grid-template-columns: 38px 1fr; row-gap: 10px; }
+      .nb-list > li .colab { grid-column: 2; justify-self: start; }
+      .course-hero { padding: 28px 0 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav-pill" aria-label="Primary">
+      <a href="../" class="nav-brand">FS</a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../#teaching">Teaching</a></li>
+        <li><a href="#slides">Slides</a></li>
+        <li><a href="#notebooks">Notebooks</a></li>
+        <li><a href="#playbook">Playbook</a></li>
+      </ul>
+      <a class="nav-cta" href="https://github.com/fabsilvestri/fabsilvestri.github.io/tree/main/ai-from-the-inside" target="_blank" rel="noopener">Source ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-hero">
+      <p class="hero-eyebrow">Sapienza University of Rome · PhD Soft Skills 2026</p>
+      <h1>Artificial Intelligence,<br>from the Inside</h1>
+      <p class="lede">
+        A six-hour course for doctoral students of <strong>every</strong> discipline —
+        including those who have never written a line of code, and do not intend to start.
+        Students describe what they want; the machine writes the program. The course is about
+        <strong>knowing what to ask for, and knowing when the answer is wrong.</strong>
+      </p>
+      <div class="facts">
+        <span class="fact"><b>6</b> hours</span>
+        <span class="fact"><b>176</b> slides</span>
+        <span class="fact"><b>8</b> Colab notebooks</span>
+        <span class="fact"><b>0</b> lines of code written by students</span>
+        <span class="fact">no API key · no installation · free tier</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="slides/module1.html">Open Module 1 ↗</a>
+        <a class="btn btn-ghost" href="slides/module2.html">Open Module 2 ↗</a>
+        <a class="btn btn-ghost" href="PROMPT_PLAYBOOK.md">The Playbook ↗</a>
+      </div>
+    </section>
+
+    <section id="about" class="content">
+      <h2 class="section-head"><span class="slash">//</span> What this is</h2>
+      <div class="card prose">
+        <p>
+          Most introductions to AI either assume a mathematics degree or reduce to a tour of
+          products. This one does neither. The morning builds the mental model you need to use
+          these systems well and to recognise when they are failing; the afternoon builds four
+          layers on top of it — chatbot, prompting, grounding, agent — until each student holds
+          a small working research tool.
+        </p>
+        <p>
+          The examples lean towards text, archives, interviews and historical sources, because
+          the room is mixed and humanities-heavy. Roughly a fifth of the time is spent on where
+          these systems break: hallucination as a mechanical consequence rather than a bug,
+          shortcut learning, confidence that survives being wrong, and the citations that do not
+          exist.
+        </p>
+        <p>
+          Everything runs on Google Colab's free tier. There is nothing to install, nothing to
+          pay for, and no API key. <strong>No PyTorch appears anywhere</strong> — the exercises
+          use scikit-learn and plain Python, and the code is written by Colab's built-in AI from
+          prompts the students supply.
+        </p>
+      </div>
+    </section>
+
+    <section id="slides" class="content">
+      <h2 class="section-head"><span class="slash">//</span> Slides</h2>
+      <div class="deck-grid">
+        <a class="deck" href="slides/module1.html">
+          <span class="mod">Module 1 · 9:00–12:00</span>
+          <h3>Fundamentals: from Machine Learning to Transformers</h3>
+          <p>
+            Rules versus examples. Data, training, evaluation, and the accuracy numbers that lie.
+            Neurons, CNNs, RNNs and what each one cannot see. Then attention, tokens, next-token
+            prediction — and why hallucination is inevitable rather than accidental.
+          </p>
+          <span class="meta">99 slides · with speaker notes</span><br>
+          <span class="go">Open the deck →</span>
+        </a>
+        <a class="deck" href="slides/module2.html">
+          <span class="mod">Module 2 · 14:00–17:00</span>
+          <h3>From Models to Tools: Chatbots and Agents</h3>
+          <p>
+            Why a chatbot is an illusion, and a useful one. Prompting as a craft with actual
+            rules. Putting your own documents on the model's desk. Agents: tools, loops, and the
+            six ways they fail. Ends with the bridge to running models on the University's own machines.
+          </p>
+          <span class="meta">77 slides · with speaker notes</span><br>
+          <span class="go">Open the deck →</span>
+        </a>
+      </div>
+      <div class="note">
+        <strong>Presenting:</strong> the decks are single self-contained HTML files — no build step,
+        no internet, no PowerPoint. Press <code>N</code> for speaker notes, <code>F</code> for
+        fullscreen, <code>Esc</code> for the slide overview. Add <code>?print-pdf</code> to the URL
+        to export a PDF handout.
+      </div>
+    </section>
+
+    <section id="notebooks" class="content">
+      <h2 class="section-head"><span class="slash">//</span> Notebooks</h2>
+      <div class="card">
+        <p style="margin:0 0 18px;color:var(--ink-soft);font-size:15px;line-height:1.6">
+          Each notebook gives the student a <strong>prompt</strong>, an empty cell, and Colab's AI
+          to fill it. Every section also ships with working reference code, so anyone who would
+          rather watch than type loses nothing. The teaching corpus is embedded directly in each
+          notebook — there is nothing to download.
+        </p>
+        <ul class="nb-list">
+          <li>
+            <span class="nb-num">0</span>
+            <div class="nb-body">
+              <h4>Warm-up <span class="nb-time">2 min</span></h4>
+              <p>Prove Colab works, and generate your first cell from a prompt.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/00_warmup.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">1</span>
+            <div class="nb-body">
+              <h4>Teach a machine to sort your texts <span class="nb-time">30 min</span></h4>
+              <p>Train a real classifier, compare it to a do-nothing baseline, read its mistakes — then train it on shuffled labels and watch it memorise nonsense.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/01_teach_a_machine.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num demo">2</span>
+            <div class="nb-body">
+              <h4>Images, and how to fool them <span class="nb-time">5 min · projector</span></h4>
+              <p>A digit classifier at 97%. Add faint noise: accuracy collapses, confidence does not.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/02_images_and_failure.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">3</span>
+            <div class="nb-body">
+              <h4>Look inside the language model <span class="nb-time">20 min</span></h4>
+              <p>Real tokenisation and the language tax on Italian and Greek. A working next-word predictor with a temperature dial. Then a hallucination produced on purpose, and checked.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/03_inside_the_model.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">4</span>
+            <div class="nb-body">
+              <h4>Build a chatbot with a method <span class="nb-time">20 min</span></h4>
+              <p>Build the transcript machinery, watch the token count grow, write a system prompt for your own field — then try to break your own rules.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/04_build_a_chatbot.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">5</span>
+            <div class="nb-body">
+              <h4>The prompt tournament <span class="nb-time">20 min</span></h4>
+              <p>One task, four prompts of increasing quality, scored automatically against twenty gold answers. Where prompting stops being an opinion.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/05_prompt_tournament.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">6</span>
+            <div class="nb-body">
+              <h4>Question your own documents <span class="nb-time">25 min</span></h4>
+              <p>Extract, chunk, search by meaning, answer with citations you can check — on the provided archive or on your own PDFs.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/06_question_your_documents.ipynb">Open in Colab ↗</a>
+          </li>
+          <li>
+            <span class="nb-num">7</span>
+            <div class="nb-body">
+              <h4>Build your research agent <span class="nb-time">40 min · capstone</span></h4>
+              <p>Four tools, a supervised loop, and a table at the end you can actually use. The tools are real code doing real work; the student stands where the network call would be.</p>
+            </div>
+            <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/07_capstone_agent.ipynb">Open in Colab ↗</a>
+          </li>
+        </ul>
+      </div>
+      <div class="note">
+        <strong>On the corpus.</strong> The exercises use 264 short letters in the style of a
+        17th-century Italian correspondence archive. It is <strong>constructed, not historical</strong>,
+        and the notebooks say so: about one label in eight is deliberately wrong, dates appear in five
+        inconsistent formats, and some letters are in Italian. That is what makes "read the errors"
+        a real exercise rather than a formality.
+      </div>
+    </section>
+
+    <section id="playbook" class="content">
+      <h2 class="section-head"><span class="slash">//</span> Take-aways</h2>
+      <div class="take-grid">
+        <div class="take">
+          <h4>The Prompt Playbook</h4>
+          <p>
+            The student take-away: fifteen rules and seven reusable prompts — the structured
+            extraction, the hostile reviewer, the reversed interrogation, the normaliser with a
+            receipt, and the verification prompt that should end every session. Each with the
+            reason it works, because the reason outlives the tool.
+          </p>
+          <a class="btn btn-primary" href="PROMPT_PLAYBOOK.md">Read the playbook ↗</a>
+        </div>
+        <div class="take">
+          <h4>Every prompt in the course</h4>
+          <p>
+            All thirty-five exercise prompts in the order they appear, each with a note on what it
+            is for and why it is worded that way. Generated from the same source as the notebooks,
+            so the two can never drift apart.
+          </p>
+          <a class="btn btn-ghost" href="PROMPTS.md">Read PROMPTS.md ↗</a>
+        </div>
+      </div>
+
+      <h2 class="section-head"><span class="slash">//</span> The thirteen rules, in short</h2>
+      <div class="card">
+        <ol class="rules">
+          <li><strong>If you can write the rule, write the rule.</strong> Using AI where an ordinary rule would do is slower, costlier and less auditable.</li>
+          <li><strong>Ask whose judgement is encoded in the answers.</strong> "Ground truth" is a confident name for somebody's opinion.</li>
+          <li><strong>Never accept an accuracy number</strong> without the baseline and the failure cases.</li>
+          <li><strong>Ask what it got wrong, and which features it used.</strong> Two prompts that turn a black box into something you can judge.</li>
+          <li><strong>When a model performs suspiciously well, hunt the shortcut</strong> before celebrating.</li>
+          <li><strong>Give it the material. Ask it to transform, not to remember.</strong> The single most useful distinction in the course.</li>
+          <li><strong>Self-checking is worth a prompt and is never verification.</strong></li>
+          <li><strong>When a conversation goes wrong, start a new one.</strong> A bad turn stays on the desk and is re-read as fact.</li>
+          <li><strong>Write rules as procedures, not prohibitions.</strong> "Quote the passage, then interpret it" beats "never invent".</li>
+          <li><strong>Ask for the evidence before the conclusion.</strong> It improves the answer and makes it checkable.</li>
+          <li><strong>Never accept a first output.</strong> Make it attack its own work, then check the attacks.</li>
+          <li><strong>Test grounded systems on facts you know</strong> — including one they should not be able to answer.</li>
+          <li><strong>Agents are for narrow, repetitive, verifiable tasks</strong> at a scale you cannot do by hand. Everything else is a demo.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="reuse" class="content">
+      <h2 class="section-head"><span class="slash">//</span> Reuse</h2>
+      <div class="card prose">
+        <p>
+          The slides, notebooks and playbook are free to reuse, adapt and pass on. If you teach a
+          version of this in your own department, I would be glad to hear how it went — and
+          especially which parts failed, since those are the ones worth rewriting.
+        </p>
+        <p>
+          <a href="https://github.com/fabsilvestri/fabsilvestri.github.io/tree/main/ai-from-the-inside">Source and build scripts on GitHub</a>
+          &nbsp;·&nbsp;
+          <a href="mailto:fabrizio.silvestri@uniroma1.it">fabrizio.silvestri@uniroma1.it</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Artificial Intelligence, from the Inside · Sapienza PhD Soft Skills 2026 ·
+      <a href="../">Fabrizio Silvestri</a>
+    </p>
+  </footer>
+
+  <script src="../assets/js/analytics.js"></script>
+</body>
+</html>
