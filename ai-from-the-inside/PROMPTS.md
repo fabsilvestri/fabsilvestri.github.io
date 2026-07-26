@@ -520,7 +520,8 @@ Build me four tools, each as its own function, each printing what it did:
   3. make_prompt(text) - build an extraction prompt asking for the
                          columns above as a single JSON object, using
                          NOT STATED for anything the text does not say
-  4. add_row(data)     - append to a results table, print the running count
+  4. add_row(data, filename) - append to a results table and print the
+                         running count
 
 Also give me a variable tracking which file we are on, so I can process
 them one at a time and stay in control.
