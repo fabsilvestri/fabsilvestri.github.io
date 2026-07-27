@@ -153,7 +153,32 @@ Read the shape, not the individual points — each carries a few percentage poin
 
 <br>
 
-### 7 · Train on nonsense
+### 7 · Train and test accuracy, as the model is given more freedom
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Train the same TF-IDF + logistic regression classifier at each of these
+values of C: 0.01, 0.1, 1, 10, 100, 1000, 10000.
+
+For each one record BOTH the accuracy on the training set and the accuracy
+on the test set. Print a table with the two numbers and the gap between
+them, then plot both curves against C with a logarithmic x-axis, and draw
+the do-nothing baseline as a horizontal line.
+Print which C gave the best TEST accuracy.
+```
+
+**Why:** **Look at the gap, not the level.** Training accuracy climbs to 100% and stays there. Test accuracy stops improving somewhere in the middle and then drifts *down*. Everything to the right of that peak is the model memorising — including memorising the roughly one-in-eight labels that are deliberately wrong.
+
+This is why reporting a single accuracy figure is not enough, and why a model that scores 100% on its training data is a warning rather than an achievement.
+
+<br>
+
+### 8 · Train on nonsense
 
 *Goes in: code cell*
 

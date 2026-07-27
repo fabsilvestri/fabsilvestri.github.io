@@ -207,7 +207,25 @@ and draw the do-nothing baseline as a horizontal line.
 <p><strong>Why:</strong> This curve is how you answer 'do I need to label more data?' — a question that costs real money in real projects.</p>
 <p>Read the shape, not the individual points — each carries a few percentage points of noise, so a dip in the middle means nothing. On this corpus the curve is <strong>still climbing at the right-hand edge</strong>, and that is the useful answer: it says more labelled letters would still buy you accuracy. A curve that had gone flat would have said the opposite — stop labelling, you have enough.</p>
 <p><br></p>
-<h3 id="7-train-on-nonsense">7 · Train on nonsense</h3>
+<h3 id="7-train-and-test-accuracy-as-the-model-is-given-more-freedom">7 · Train and test accuracy, as the model is given more freedom</h3>
+<p><em>Goes in: code cell</em></p>
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Train the same TF-IDF + logistic regression classifier at each of these
+values of C: 0.01, 0.1, 1, 10, 100, 1000, 10000.
+
+For each one record BOTH the accuracy on the training set and the accuracy
+on the test set. Print a table with the two numbers and the gap between
+them, then plot both curves against C with a logarithmic x-axis, and draw
+the do-nothing baseline as a horizontal line.
+Print which C gave the best TEST accuracy.
+</code></pre>
+<p><strong>Why:</strong> <strong>Look at the gap, not the level.</strong> Training accuracy climbs to 100% and stays there. Test accuracy stops improving somewhere in the middle and then drifts <em>down</em>. Everything to the right of that peak is the model memorising — including memorising the roughly one-in-eight labels that are deliberately wrong.</p>
+<p>This is why reporting a single accuracy figure is not enough, and why a model that scores 100% on its training data is a warning rather than an achievement.</p>
+<p><br></p>
+<h3 id="8-train-on-nonsense">8 · Train on nonsense</h3>
 <p><em>Goes in: code cell</em></p>
 <pre><code class="language-text">Randomly shuffle the training labels so they no longer match their letters,
 then train a text classifier on that shuffled data. Give this one plenty of

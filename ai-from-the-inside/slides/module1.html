@@ -1243,7 +1243,124 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   data is usually a bad model.</b></p>
   <aside class="notes">
     <p>Every student has met the human version of this. Name it and let them recall their own.</p>
-    <p>If asked how to prevent it: more data, simpler models, stopping training earlier. Don't go deeper.</p>
+    <p>Do not stop at the analogy — the next slide is the shape, and the shape is what they need to
+    recognise in somebody else's results.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">③ Evaluation · what it actually looks like</span>
+  <h2>Two curves that start together and come apart</h2>
+
+  <svg class="fig mt" viewBox="0 0 1180 372" style="max-height:400px" role="img"
+       aria-label="As the model is allowed more flexibility, training accuracy climbs to 100% while test accuracy stops improving at about 75% and then drifts down. The widening gap between the two curves is overfitting.">
+    <!-- plot frame -->
+    <rect x="120" y="30" width="790" height="272" fill="#FDFCFA" stroke="#E2DCD3"/>
+    <!-- y gridlines: 100, 90, 80, 70, 60, 50 -->
+    <g class="thin" stroke="#EDE7DE">
+      <path d="M120 40H910M120 92H910M120 144H910M120 196H910M120 248H910"/>
+    </g>
+    <g class="tiny" text-anchor="end">
+      <text x="112" y="45">100%</text><text x="112" y="97">90%</text><text x="112" y="149">80%</text>
+      <text x="112" y="201">70%</text><text x="112" y="253">60%</text><text x="112" y="305">50%</text>
+    </g>
+
+    <!-- the do-nothing baseline -->
+    <path d="M120 295H910" stroke="#8A8A97" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
+    <text class="tiny" x="916" y="299">baseline 51%</text>
+
+    <!-- three regimes -->
+    <g class="tiny" text-anchor="middle" fill="#8A8A97">
+      <text x="205" y="326">too rigid</text>
+      <text x="510" y="326">about right</text>
+      <text x="810" y="326">too flexible</text>
+    </g>
+    <path d="M120 310V316M380 310V316M640 310V316M910 310V316" stroke="#CFC7BC" fill="none"/>
+    <text class="cap" x="515" y="352" text-anchor="middle">how much flexibility the model is allowed &#8594;</text>
+
+    <!-- shaded gap between the curves -->
+    <path d="M120 275L250 119L380 93L510 76L640 50L770 41L900 40
+             L900 186L770 173L640 180L510 170L380 176L250 180L120 281Z"
+          fill="#B3283C" opacity=".09"/>
+
+    <!-- training curve -->
+    <path d="M120 275L250 119L380 93L510 76L640 50L770 41L900 40"
+          fill="none" stroke="#8E2436" stroke-width="3.5"/>
+    <g fill="#8E2436">
+      <circle cx="120" cy="275" r="5"/><circle cx="250" cy="119" r="5"/><circle cx="380" cy="93" r="5"/>
+      <circle cx="510" cy="76" r="5"/><circle cx="640" cy="50" r="5"/><circle cx="770" cy="41" r="5"/>
+      <circle cx="900" cy="40" r="5"/>
+    </g>
+    <text class="lbl accent-t" x="700" y="28">TRAINING DATA &#8212; what it has seen</text>
+
+    <!-- test curve -->
+    <path d="M120 281L250 180L380 176L510 170L640 180L770 173L900 186"
+          fill="none" stroke="#12706A" stroke-width="3.5"/>
+    <g fill="#12706A">
+      <circle cx="120" cy="281" r="5"/><circle cx="250" cy="180" r="5"/><circle cx="380" cy="176" r="5"/>
+      <circle cx="510" cy="170" r="5"/><circle cx="640" cy="180" r="5"/><circle cx="770" cy="173" r="5"/>
+      <circle cx="900" cy="186" r="5"/>
+    </g>
+    <text class="lbl teal-t" x="640" y="214">TEST DATA &#8212; what it has never seen</text>
+
+    <!-- the best point -->
+    <circle cx="510" cy="170" r="10" fill="none" stroke="#A87A18" stroke-width="2.5"/>
+    <text class="tiny gold-t" x="470" y="152" text-anchor="middle">best it ever gets: 75%</text>
+
+    <!-- the gap callout -->
+    <path d="M900 46V180" stroke="#B3283C" stroke-width="2" stroke-dasharray="4 3"/>
+    <text class="lbl" x="930" y="110" fill="#B3283C">THE GAP</text>
+    <text class="tiny" x="930" y="130">100% vs 72%</text>
+    <text class="tiny" x="930" y="148">28 points of</text>
+    <text class="tiny" x="930" y="166">pure memorising</text>
+  </svg>
+
+  <p class="muted mt small">Real numbers, from the classifier you build in twenty minutes.
+  <b>Only the lower curve is a claim about the world.</b> The upper one is a claim about its own homework.</p>
+  <aside class="notes">
+    <p>Trace the two curves separately with your cursor, left to right, and narrate them. Bordeaux first:
+    "this is how well it does on the letters it studied — it climbs, and it never stops climbing."
+    Then teal: "this is how well it does on letters it has never seen — it stops improving here, and
+    then it gets slightly worse."</p>
+    <p>Then name the shaded region: <b>that gap is the overfitting.</b> It is not a small technical
+    detail — at the right-hand edge the model is 100% right on its homework and barely better than
+    a coin flip's cousin on anything new.</p>
+    <p>Be honest that the test curve's decline is mild here — with this much data it flattens rather
+    than collapses. On a small corpus, which is what most of this room has, the collapse is dramatic:
+    train 100%, test 56%, against a 50% baseline. Say that number.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">③ Evaluation · what to do about it</span>
+  <h2>You cannot see it from inside the training set</h2>
+  <div class="grid g2 mt">
+    <div class="card card--accent"><h4>How to detect it</h4>
+      <ul class="tight small">
+        <li><b>Report both numbers, always.</b> Training accuracy and test accuracy, side by side. A paper that shows only one is hiding the other.</li>
+        <li><b>Watch the gap, not the level.</b> 99% and 71% is a worse result than 78% and 76%.</li>
+        <li><b>Be suspicious of perfection.</b> 100% on anything is a bug report, not an achievement.</li>
+      </ul>
+    </div>
+    <div class="card card--teal"><h4>What actually fixes it</h4>
+      <ul class="tight small">
+        <li><b>More data</b> — by far the most effective, and usually the most expensive.</li>
+        <li><b>A less flexible model</b> — fewer dials, or dials that are penalised for growing large.</li>
+        <li><b>Stop training earlier</b> — before it starts memorising the noise.</li>
+        <li><b>Cross-validation</b> — rotate which fifth is held out, so one lucky split cannot fool you.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="takeaway mt2"><span class="lbl">Why this matters beyond the technical</span>
+  Your labels contain noise — ours contains about one wrong label in eight, deliberately. A flexible
+  enough model will learn that noise perfectly. <b>It is memorising your mistakes and reporting it
+  as accuracy.</b></div>
+  <aside class="notes">
+    <p>The takeaway is the point of the whole block. Overfitting is not an abstract worry about model
+    capacity — it is the mechanism by which a model launders your labelling errors back to you as a
+    performance figure.</p>
+    <p>Cross-validation is worth naming even though we never use it today: they will meet the term in
+    every methods section, and "rotate which fifth is held out" is the whole idea.</p>
   </aside>
 </section>
 
@@ -1383,7 +1500,7 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
 </section>
 
 <section class="exercise">
-  <span class="eyebrow">Exercise 1 · the six prompts</span>
+  <span class="eyebrow">Exercise 1 · the seven prompts</span>
   <h2>Your sequence</h2>
   <div class="grid g2" style="gap:.7em;font-size:.92em">
     <div>
@@ -1418,10 +1535,16 @@ Show them in a bar chart.
 and all of them. Plot test accuracy
 against training size, with the baseline.
 <span class="cm">— how much data does this actually need?</span></div>
+      <div class="prompt prompt--sm mt">Train at C = 0.01, 0.1, 1, 10, 100,
+1000, 10000. Record TRAIN and TEST
+accuracy for each, print the gap, and
+plot both curves.
+<span class="cm">— watch it overfit, with your own data</span></div>
     </div>
   </div>
   <aside class="notes">
-    <p>These six prompts are printed in the notebook — nobody needs to copy from the screen.</p>
+    <p>These seven prompts are printed in the notebook — nobody needs to copy from the screen.</p>
+    <p>If you are short of time, prompt 7 is the one to run on your own screen rather than send them off with: the two diverging curves are the picture from section 2, reproduced on their own data, and it lands hardest when you narrate it.</p>
     <p>Prompt 5 is the one that produces the "oh!" moment: the model's top words are often
     embarrassingly superficial.</p>
   </aside>
