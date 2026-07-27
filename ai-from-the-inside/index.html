@@ -297,8 +297,10 @@
         <p style="margin:0 0 18px;color:var(--ink-soft);font-size:15px;line-height:1.6">
           Each notebook gives the student a <strong>prompt</strong>, an empty cell, and Colab's AI
           to fill it. Every section also ships with working reference code, so anyone who would
-          rather watch than type loses nothing. The teaching corpus is embedded directly in each
-          notebook — there is nothing to download.
+          rather watch than type loses nothing. Every prompt that reads the course data begins by
+          downloading <a href="corpus.zip">corpus.zip</a>, so a prompt works wherever you paste it;
+          each notebook also carries the same files internally, so the exercises still run if this
+          site is unreachable.
         </p>
         <p style="margin:0 0 18px;color:var(--ink-soft);font-size:15px;line-height:1.6">
           <strong>Click <code>Copy to Drive</code> as soon as a notebook opens.</strong> These open
@@ -381,10 +383,12 @@
         in eight is deliberately wrong, dates appear in five inconsistent formats, and some letters
         are in Italian. That is what makes "read the errors" a real exercise rather than a formality.
         <br><br>
-        <strong>You do not need to download it.</strong> Every notebook carries the corpus inside it,
-        and the first cell unpacks it — nothing is fetched, so the exercises work on a bad connection
-        or behind a firewall. If you want the files anyway — to use them outside Colab, or in your own
-        teaching — take the <a href="corpus.zip">corpus as a zip (201 KB)</a>.
+        <strong>Where the exercises get it.</strong> Every prompt that touches the data starts by
+        downloading <a href="corpus.zip">corpus.zip (197 KB)</a> and unzipping it, so each prompt
+        stands on its own — paste it into any notebook and it works. The zip is flat: unzipping gives
+        you <code>letters.csv</code> and the <code>archive/</code> and <code>pdfs/</code> folders
+        directly. Each notebook also carries the same files internally and unpacks them in its first
+        cell, so a lecture survives this site being unreachable.
       </div>
     </section>
 

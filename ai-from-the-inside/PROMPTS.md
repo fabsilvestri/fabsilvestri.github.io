@@ -52,6 +52,10 @@ human-readable form, and finally print how many days remain in this year.
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 Load the file letters.csv into a table.
 Show me its shape, the column names, and 10 random rows
 with the full text visible.
@@ -67,6 +71,10 @@ Also show how many letters carry each label.
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 Using the letters.csv data, split it 80/20 into a training set and a test
 set, keeping the balance of labels the same in both.
 Train a TF-IDF + logistic regression text classifier on the training set
@@ -248,6 +256,10 @@ tokens-per-character ratio for each.
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 Using the text column of letters.csv, count which words follow which
 single word. Store it as a dictionary called `nxt` mapping each word to
 a Counter of the words that follow it. Lowercase everything, and treat
@@ -392,6 +404,10 @@ message, printing the token count before and after. Then run it.
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 Load dates_gold.csv into a dataframe called `gold` and show me all 20 rows
 with the full letter text and the correct date, in a readable layout.
 Count how many have no date at all.
@@ -430,6 +446,10 @@ version 4 was right and version 1 was wrong.
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 Install pypdf if it is not already available.
 
 Read every PDF in the pdfs folder and every .txt file in the archive folder.
@@ -512,6 +532,10 @@ The instruction must read:
 *Goes in: code cell*
 
 ```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
 I want to build a supervised agent in this notebook.
 
 The source files are the .txt and .pdf files in my source folder

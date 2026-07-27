@@ -143,7 +143,11 @@ human-readable form, and finally print how many days remain in this year.
 <h2 id="notebook-1-teach-a-machine-to-sort-your-texts">Notebook 1 — Teach a machine to sort your texts</h2>
 <h3 id="1-look-at-your-data-before-anything-else">1 · Look at your data before anything else</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Load the file letters.csv into a table.
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Load the file letters.csv into a table.
 Show me its shape, the column names, and 10 random rows
 with the full text visible.
 Also show how many letters carry each label.
@@ -152,7 +156,11 @@ Also show how many letters carry each label.
 <p><br></p>
 <h3 id="2-train-and-evaluate-the-whole-of-machine-learning-in-one-prompt">2 · Train and evaluate — the whole of machine learning, in one prompt</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Using the letters.csv data, split it 80/20 into a training set and a test
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Using the letters.csv data, split it 80/20 into a training set and a test
 set, keeping the balance of labels the same in both.
 Train a TF-IDF + logistic regression text classifier on the training set
 only, and call the fitted model `model`.
@@ -267,7 +275,11 @@ tokens-per-character ratio for each.
 <p><br></p>
 <h3 id="3-build-a-tiny-next-word-predictor">3 · Build a tiny next-word predictor</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Using the text column of letters.csv, count which words follow which
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Using the text column of letters.csv, count which words follow which
 single word. Store it as a dictionary called `nxt` mapping each word to
 a Counter of the words that follow it. Lowercase everything, and treat
 . , ; : as separate words.
@@ -361,7 +373,11 @@ message, printing the token count before and after. Then run it.
 <h2 id="notebook-5-the-prompt-tournament">Notebook 5 — The prompt tournament</h2>
 <h3 id="0-look-at-the-task-first">0 · Look at the task first</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Load dates_gold.csv into a dataframe called `gold` and show me all 20 rows
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Load dates_gold.csv into a dataframe called `gold` and show me all 20 rows
 with the full letter text and the correct date, in a readable layout.
 Count how many have no date at all.
 </code></pre>
@@ -387,7 +403,11 @@ version 4 was right and version 1 was wrong.
 <h2 id="notebook-6-question-your-own-documents">Notebook 6 — Question your own documents</h2>
 <h3 id="1-extract-and-check-what-you-got">1 · Extract, and check what you got</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">Install pypdf if it is not already available.
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Install pypdf if it is not already available.
 
 Read every PDF in the pdfs folder and every .txt file in the archive folder.
 Build a dataframe called `docs` with one row per file and these columns:
@@ -444,7 +464,11 @@ The instruction must read:
 <h2 id="notebook-7-build-your-research-agent-capstone">Notebook 7 — Build your research agent (capstone)</h2>
 <h3 id="2-build-the-tools">2 · Build the tools</h3>
 <p><em>Goes in: code cell</em></p>
-<pre><code class="language-text">I want to build a supervised agent in this notebook.
+<pre><code class="language-text">Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+I want to build a supervised agent in this notebook.
 
 The source files are the .txt and .pdf files in my source folder
 (my_docs if I uploaded my own, otherwise archive).

@@ -1319,7 +1319,9 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
     <li>Each cell in the notebook has a <b>grey instruction box</b> above it. That is the prompt.</li>
     <li>In the empty code cell, <b>click the word <span class="kbd">generate</span></b>
         — the cell reads <em>Start coding or generate with AI</em>. An AI box opens.</li>
-    <li>Paste or retype the prompt. Colab writes the code.</li>
+    <li>Paste or retype the prompt. Colab writes the code.
+        <span class="muted">Any prompt that reads the course data starts by downloading it —
+        that is why those prompts open with a <span class="kbd">corpus.zip</span> line.</span></li>
     <li>Read what it wrote — even if you don't understand it, look at it — then press <b>▶</b>.</li>
     <li>If it errors, don't panic and don't fix it by hand. Say so to the AI: that is step 6 of every exercise.</li>
   </ol>
@@ -1337,11 +1339,14 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <h2>Your sequence</h2>
   <div class="grid g2" style="gap:.7em;font-size:.92em">
     <div>
-      <div class="prompt prompt--sm">Load the file letters.csv into a table.
+      <div class="prompt prompt--sm">Download …/corpus.zip and unzip it
+into the current folder.
+Load the file letters.csv into a table.
 Show me its shape, the column names, and
 10 random rows with the full text visible.
 <span class="cm">— see what you actually have</span></div>
-      <div class="prompt prompt--sm mt">Using letters.csv, split it 80/20 keeping
+      <div class="prompt prompt--sm mt">Download and unzip corpus.zip, then
+using letters.csv, split it 80/20 keeping
 the label balance. Train a TF-IDF + logistic
 regression classifier, call it `model`, and
 report test accuracy as `acc`. Use the
