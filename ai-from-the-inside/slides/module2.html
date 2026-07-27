@@ -2250,7 +2250,7 @@ least confident about, with your reasons.
       <li>Give it the material; ask it to transform, not remember.</li>
       <li>Self-checking is worth a prompt and is never verification.</li>
     </ol>
-    <ol class="steps" start="8" style="font-size:.86em">
+    <ol class="steps" style="counter-reset:s 7;font-size:.86em">
       <li>When a conversation goes wrong, start a new one.</li>
       <li>Write rules as procedures, not prohibitions.</li>
       <li>Ask for the evidence before the conclusion.</li>
@@ -2386,15 +2386,60 @@ least confident about, with your reasons.
   </aside>
 </section>
 
-<section class="title vc">
-  <span class="eyebrow">Sapienza PhD Soft Skills 2026</span>
-  <h2 style="font-size:2.2em">Thank you</h2>
-  <hr>
-  <p class="big" style="max-width:22em">The slides, all eight notebooks, and the playbook are yours to keep,
-  reuse and pass on.</p>
-  <p class="small mt2"><span class="fill">fabsilvestri.github.io/ai-from-the-inside</span></p>
-  <p class="small muted">Fabrizio Silvestri &nbsp;·&nbsp; fabrizio.silvestri@uniroma1.it</p>
-  <aside class="notes"><p>Leave this on screen while people finish and ask questions.</p></aside>
+<section>
+  <span class="eyebrow">Six hours, on one slide</span>
+  <h2>The whole course</h2>
+
+  <div class="grid g2 mt" style="gap:.5em 1.4em">
+    <div>
+      <p class="xs" style="letter-spacing:.09em;font-weight:700;color:var(--bordeaux);margin:0 0 .3em">
+        MORNING &nbsp;·&nbsp; WHAT THE MACHINE <em>IS</em></p>
+      <ol class="steps" style="font-size:.62em">
+        <li><b>Rules, or examples.</b> If you can write the rule, write it. The rest of the course exists because you cannot.</li>
+        <li><b>Data, training, evaluation.</b> Labels are human judgements; training is dumb repetition; only held-out data is honest.</li>
+        <li><b>Neurons, images, sequences.</b> Each architecture is a bet about the shape of the data — and each finds shortcuts.</li>
+        <li><b>Transformers.</b> Every word looks at every other, in parallel. Then guess the next token, a trillion times.</li>
+      </ol>
+    </div>
+    <div>
+      <p class="xs" style="letter-spacing:.09em;font-weight:700;color:var(--teal);margin:0 0 .3em">
+        AFTERNOON &nbsp;·&nbsp; WHAT YOU MAKE IT <em>DO</em></p>
+      <ol class="steps" style="font-size:.62em;counter-reset:s 4">
+        <li><b>Chatbot.</b> There is no conversation — only a transcript, resent in full every turn.</li>
+        <li><b>Prompting.</b> Role, material, task, form, escape hatch. Iterate on the prompt, never the output.</li>
+        <li><b>Grounding and RAG.</b> Search first, then answer — "what does this passage say?" replaces "what do you remember?"</li>
+        <li><b>Agents.</b> The same machine in a loop, with tools. For narrow, repetitive, verifiable work.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="grid g3 mt" style="gap:.6em">
+    <div class="card card--accent"><h4>What you built</h4>
+      <p class="xs">A text classifier, an image classifier you caught cheating, a chatbot, a document
+      assistant, a research agent — with <b>zero lines of code</b>.</p></div>
+    <div class="card card--teal"><h4>What you can now do</h4>
+      <p class="xs">Referee an AI claim: who labelled it, what the baseline was, where it fails.
+      And specify a tool in plain English.</p></div>
+    <div class="card card--gold"><h4>What outlives the tools</h4>
+      <p class="xs">Fifteen playbook lines. Give it the material, demand a shape you can check,
+      require uncertainty markers, verify what you cite.</p></div>
+  </div>
+
+  <div class="takeaway mt"><span class="lbl">The through-line</span>
+  <p style="margin:0;font-size:.92em">You describe what you want; the machine writes the program. The scarce
+  skills are <b>specifying precisely</b> and <b>verifying ruthlessly</b> — which is what a doctorate trains you to do.</p></div>
+
+  <p class="nb-path" style="margin-top:.4em">Everything is yours to keep and pass on &nbsp;·&nbsp;
+  <b>fabsilvestri.github.io/ai-from-the-inside</b> &nbsp;·&nbsp; fabrizio.silvestri@uniroma1.it</p>
+
+  <aside class="notes">
+    <p>This is the slide to leave on screen while people finish and ask questions. It is deliberately
+    dense — it is the one somebody photographs, and the one they send to a colleague who missed the day.</p>
+    <p>Do not read it out. Walk the eight numbered items with your cursor in about forty seconds, naming
+    each, then stop on the through-line and say that sentence properly. It is the last thing they hear.</p>
+    <p>If anyone asks "where do I start again on Monday" — point at the first box of the middle row.
+    Everything here is recoverable from the notebooks and the playbook without you.</p>
+  </aside>
 </section>
   </div>
 </div>
