@@ -748,7 +748,10 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <aside class="notes">
     <p>Useful because it lowers the temperature. The students who are intimidated by the term are
     intimidated by a moving target.</p>
-    <p>If someone asks "so is ChatGPT really intelligent?" — park it, promise to answer at 11:50, and do.</p>
+    <p>If someone asks "so is ChatGPT <em>really</em> intelligent?" — the useful answer is that the
+    question is doing less work than it appears to. Offer the trade: we will not settle what to call
+    these systems, but by 11:00 they will know exactly what one does, what it builds inside itself
+    to do it, and where it fails. That is the question they can actually act on.</p>
   </aside>
 </section>
 
@@ -757,11 +760,12 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <p class="lede">A working definition</p>
   <blockquote class="mt">A system is doing "AI" when it produces useful behaviour that nobody
   explicitly programmed, because it derived that behaviour from data.</blockquote>
-  <p class="muted mt2">Not a philosophical claim. An engineering one. It says nothing about
-  understanding, consciousness, or intention — and neither will we.</p>
+  <p class="muted mt2">Not a philosophical claim — an engineering one. It is about where the
+  behaviour came from: derived from data, rather than written down by a person.</p>
   <aside class="notes">
     <p>Say the key phrase twice, slowly: <b>"nobody explicitly programmed it"</b>. On a call, repetition is what a whiteboard would have done for you.</p>
-    <p>Deliberately deflationary. Resist metaphysics for now; we come back to it in the closing slides.</p>
+    <p>This definition is about provenance, and that is all the work we need it to do. It lets us
+    talk precisely about these systems all day without first having to settle what they are.</p>
   </aside>
 </section>
 
@@ -906,32 +910,34 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   </aside>
 </section>
 
-<section class="failure">
+<section>
   <span class="eyebrow">Before we go further</span>
-  <h2>What "learning" does <em>not</em> mean here</h2>
+  <h2>What "learning" means here</h2>
   <div class="grid g3 mt">
-    <div class="card">
-      <h4>No understanding</h4>
-      <p class="small">The system has no concept of a letter, a person, or anger.
-      It has statistical regularities over symbols.</p>
+    <div class="card card--teal">
+      <h4>It builds structure</h4>
+      <p class="small">From examples it derives internal structure that <b>generalises</b> — it works
+      on letters nobody showed it. That is real, and it is why any of this is useful.</p>
     </div>
     <div class="card">
-      <h4>No goals</h4>
-      <p class="small">It does not want to be right. There is no intention, preference, or
-      strategy anywhere in it.</p>
+      <h4>It is frozen afterwards</h4>
+      <p class="small">Training happens once. Your conversation today changes nothing about it
+      tomorrow — talking to it is not teaching it.</p>
     </div>
     <div class="card">
-      <h4>No memory</h4>
-      <p class="small">Once trained, it does not learn from you. Your conversation today
-      changes nothing about it tomorrow.</p>
+      <h4>Nothing checks facts</h4>
+      <p class="small">There is no step inside that compares a claim against a source. Adding that
+      step is engineering — most of the afternoon is about doing exactly that.</p>
     </div>
   </div>
-  <p class="muted mt2">The word "learning" is a technical term of art, borrowed loosely.
-  It is the single biggest source of misunderstanding about these systems.</p>
+  <p class="muted mt2">"Learning" is not a metaphor we should be embarrassed about. What these
+  systems derive from data transfers to new problems and routinely surprises the people who built them.</p>
   <aside class="notes">
-    <p>The "no memory" point pre-empts a very common belief: that talking to ChatGPT trains it.
+    <p>The "frozen" point pre-empts a very common belief: that talking to ChatGPT trains it.
     It does not (product-level memory features are a separate mechanism we cover in Module 2).</p>
-    <p>Come back to this slide during the hallucination section — all three points explain it.</p>
+    <p>Card three is the one to come back to in the hallucination section. Note what it does
+    <em>not</em> say: not that the system is shallow, but that a specific component is absent.
+    That is a solvable engineering problem, and Module 2 solves a version of it.</p>
   </aside>
 </section>
 
@@ -2204,6 +2210,38 @@ noisy, and how many points each one dropped.
     <p>Pause. Take questions. This is where the disbelief surfaces, and it is worth spending two minutes on.</p>
     <p>The honest caveat if pressed: instruction tuning and RLHF shape <em>which</em> continuations are
     likely. But the mechanism does not change.</p>
+    <p><b>Do not stop here.</b> Half the room has just concluded "so it is glorified autocomplete".
+    The next slide is the correction, and it matters more than this one.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">And now the part people get wrong</span>
+  <h2>A simple mechanism is not a simple system</h2>
+  <p class="mt">"It only predicts the next word" describes <b>what it was trained to do</b>.
+  It does not describe <b>what it had to build inside itself</b> in order to do it well.</p>
+  <div class="grid g2 mt">
+    <div class="card card--teal"><h4>Prediction forces structure</h4>
+      <p class="small">To guess the next word of a legal argument, a recipe, or a proof, you have to
+      track who did what to whom, what is true so far, and where the text is going. There is no
+      shortcut that gets you a good guess without something like that inside.</p></div>
+    <div class="card card--teal"><h4>We can now look, and it is in there</h4>
+      <p class="small">Train a model <em>only</em> to predict the next move in a board game, and you
+      find a picture of the board inside it — nobody put it there. Edit that picture and the model's
+      play changes accordingly. The same probing finds concepts inside language models.</p></div>
+  </div>
+  <p class="muted mt2">Compare: evolution is "just" differential reproduction. That sentence is true,
+  and it explains the eye. A simple rule, applied at scale, is one of the few things we know
+  that reliably produces something complicated.</p>
+  <aside class="notes">
+    <p>This is the slide that stops the morning collapsing into cynicism. The "it's just autocomplete"
+    line is comfortable, it sounds sophisticated, and it will lead them to underestimate these
+    systems badly — which is just as costly a mistake as overestimating them.</p>
+    <p>The board-game result is real and worth naming as such: a model trained purely on move
+    sequences, never shown a board, turns out to represent one internally, and interventions on that
+    representation change its behaviour in the way you would predict.</p>
+    <p>Land the balance explicitly: <b>everything on the failure slides today is still true.</b> These
+    systems are far more than surface statistics <em>and</em> they still invent citations. Both.</p>
   </aside>
 </section>
 
@@ -2420,7 +2458,8 @@ noisy, and how many points each one dropped.
   <h2>Why it is inevitable</h2>
   <ol class="steps mt" style="font-size:.86em">
     <li>There is <b>no database inside</b>. The model is a wall of dials, not a store of facts.</li>
-    <li>Its only operation is producing a <b>plausible continuation</b> of the text so far.</li>
+    <li>It produces a <b>plausible continuation</b>, and <b>nothing in the loop checks a claim
+        against a source</b> — that step simply is not there.</li>
     <li>A plausible-looking citation and a real citation <b>look identical</b> to that machinery —
         same shape, same style, same rhythm.</li>
     <li>So when it doesn't have the fact, it does not fail. It <b>succeeds at its actual task</b>
@@ -2660,8 +2699,8 @@ constructed rather than recalled.
   <ul class="mt tight">
     <li>Nobody, including the people who build them, can explain why a specific output appeared.
     <b>Interpretability is an open research problem</b>, not a solved engineering detail.</li>
-    <li>Whether these systems "understand" anything is genuinely contested among serious people.
-    I have avoided the question all morning because you do not need it to use them well.</li>
+    <li>We cannot reliably <b>measure</b> what these systems can do. Benchmarks leak into training
+    data, and a headline capability number is often a claim about the test, not the model.</li>
     <li>The training data of every major commercial model is undisclosed. You cannot audit what you
     cannot see, and that includes whether your own work is in there.</li>
     <li>The environmental and labour costs are real, unevenly distributed, and largely externalised.</li>
