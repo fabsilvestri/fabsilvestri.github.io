@@ -219,7 +219,7 @@
       </p>
       <div class="facts">
         <span class="fact"><b>6</b> hours</span>
-        <span class="fact"><b>188</b> slides</span>
+        <span class="fact"><b>194</b> slides</span>
         <span class="fact"><b>8</b> Colab notebooks</span>
         <span class="fact"><b>0</b> lines of code written by students</span>
         <span class="fact">no API key · no installation · free tier</span>
@@ -324,10 +324,10 @@
             <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/01_teach_a_machine.ipynb">Open in Colab ↗</a>
           </li>
           <li>
-            <span class="nb-num demo">2</span>
+            <span class="nb-num">2</span>
             <div class="nb-body">
-              <h4>Images, and how to fool them <span class="nb-time">5 min · demo</span></h4>
-              <p>A digit classifier at 97%. Add faint noise: accuracy collapses, confidence does not.</p>
+              <h4>Images, and how to fool them <span class="nb-time">25 min</span></h4>
+              <p>Classify 400 galaxies at 99%, then watch it fall over on images from a second telescope — because it learned a survey stamp in the corner, not the galaxy. Diagnose it with one heatmap, and fix it.</p>
             </div>
             <a class="colab" target="_blank" rel="noopener" href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/02_images_and_failure.ipynb">Open in Colab ↗</a>
           </li>
@@ -374,7 +374,7 @@
         </ul>
       </div>
       <div class="note">
-        <strong>On the corpus.</strong> The exercises use <strong>800 short letters</strong> in the
+        <strong>On the corpus.</strong> The exercises use two collections. <strong>800 short letters</strong> in the
         style of a 17th-century Italian correspondence archive: one table (<code>letters.csv</code>),
         240 of the same letters again as individual text files (<code>archive/</code>) for the
         document-search exercises, six as PDFs (<code>pdfs/</code>) so the extraction step is real,
@@ -383,8 +383,15 @@
         in eight is deliberately wrong, dates appear in five inconsistent formats, and some letters
         are in Italian. That is what makes "read the errors" a real exercise rather than a formality.
         <br><br>
+        And <strong>520 galaxy images</strong> in two classes, spiral and elliptical
+        (<code>images/</code>, <code>images_clean/</code>), for the vision exercise. These are drawn
+        by a script, not observed. Their defect is deliberate and it is the point of Notebook 2:
+        in <code>images/</code> almost every spiral carries a small bright "survey stamp" in the
+        corner, so a classifier trained there scores 99% and then loses a quarter of that on
+        <code>images_clean/</code>, where the stamp means nothing.
+        <br><br>
         <strong>Where the exercises get it.</strong> Every prompt that touches the data starts by
-        downloading <a href="corpus.zip">corpus.zip (197 KB)</a> and unzipping it, so each prompt
+        downloading <a href="corpus.zip">corpus.zip (629 KB)</a> and unzipping it, so each prompt
         stands on its own — paste it into any notebook and it works. The zip is flat: unzipping gives
         you <code>letters.csv</code> and the <code>archive/</code> and <code>pdfs/</code> folders
         directly. Each notebook also carries the same files internally and unpacks them in its first
@@ -408,7 +415,7 @@
         <div class="take">
           <h4>Every prompt in the course</h4>
           <p>
-            All twenty-nine exercise prompts in the order they appear, each with a note on what it
+            All thirty-four exercise prompts in the order they appear, each with a note on what it
             is for and why it is worded that way, plus seven reusable patterns. Generated from
             the same source as the notebooks, so the two can never drift apart.
           </p>

@@ -844,6 +844,40 @@ RULES:
 </section>
 
 <section>
+  <span class="eyebrow">The same five parts · other side of campus</span>
+  <h2>Nothing about this is specific to letters</h2>
+  <div class="grid g2 mt" style="gap:.8em">
+    <div class="prompt is-bad prompt--sm">Read this paper and tell me
+what they did.
+</div>
+    <div class="prompt is-good prompt--sm">You are building a dataset from the methods
+sections of published papers.
+TEXT:
+"""
+&lt;the methods section&gt;
+"""
+TASK: Produce one row for this paper.
+FORMAT: a table with exactly these rows —
+Organism / material | Sample size | Temperature |
+Duration | Instrument | Statistical test |
+p-value reported | Replicates
+RULES:
+- Use only the text above.
+- Any field the text does not state: NOT STATED.
+- Quote the exact words for Sample size and p-value.
+</div>
+  </div>
+  <p class="muted mt small">Same five parts, same NOT STATED discipline, same ten-second check.
+  Swap the column names and this is a systematic review, a meta-analysis, or your own lab notebook.</p>
+  <aside class="notes">
+    <p>Show this immediately after the archive version and say what is identical: role, delimited
+    text, task, an explicit column list, and the rules. <b>Only the column names changed.</b></p>
+    <p>The NOT STATED rule earns its keep hardest here — "the paper did not report replicates" is a
+    finding, and a model left to its own devices will quietly fill in a plausible number instead.</p>
+  </aside>
+</section>
+
+<section>
   <span class="eyebrow">Technique 1 · why it works</span>
   <h2>Show examples instead of describing them</h2>
   <div class="prompt mt prompt--sm">Extract the place names and normalise them to modern Italian.
@@ -1788,6 +1822,35 @@ If they don't answer it, say so.
 </section>
 
 <section>
+  <span class="eyebrow">And the passages do not have to be text</span>
+  <h2>The same system, over images</h2>
+  <p class="mt">Nothing in the last five slides required the archive to be words. Give images
+  coordinates in the same way, and every part of the machine works unchanged.</p>
+  <div class="grid g3 mt">
+    <div class="card card--teal"><h4>Retrieve images by words</h4>
+      <p class="small">"Show me the micrographs with a cracked electrode." Image and caption share a
+      space, so a sentence can find a picture that has never been tagged or filed.</p></div>
+    <div class="card card--teal"><h4>Retrieve images by image</h4>
+      <p class="small">Hand it one specimen and get the twenty most similar in the collection —
+      the fastest way to find out whether what you are looking at is already known.</p></div>
+    <div class="card card--teal"><h4>Answer <em>from</em> the figures</h4>
+      <p class="small">Retrieve the figure and its caption together, put both on the desk, and ask
+      the question. The answer cites a plate you can open, exactly as before.</p></div>
+  </div>
+  <div class="takeaway mt2"><span class="lbl">The point to take</span>
+  RAG is not a text technique that happens to be popular. It is <b>search, then answer</b> — and
+  search works on anything you can give coordinates to.</div>
+  <aside class="notes">
+    <p>For the lab half of the room this is often the moment the afternoon becomes concretely useful:
+    they have folders of images with no usable metadata, and this is the first thing they have seen
+    all day that addresses that directly.</p>
+    <p>Keep the honesty level constant. Every failure mode on the next two slides applies here too,
+    and one is worse: a retrieved figure that <em>looks</em> like the right one is even harder to
+    catch than a wrong passage, because you check it with a glance rather than by reading.</p>
+  </aside>
+</section>
+
+<section>
   <span class="eyebrow">What it fixes</span>
   <h2>Four real problems RAG actually solves</h2>
   <div class="grid g2 mt">
@@ -2061,12 +2124,13 @@ If they don't answer it, say so.
       <ul class="tight small">
         <li>"Review the literature on my topic"</li>
         <li>"Analyse my interviews"</li>
-        <li>"Find interesting patterns"</li>
+        <li>"Find interesting patterns in my images"</li>
       </ul></div>
     <div class="card yes"><span class="tag-yes">Right size</span>
       <ul class="tight small">
         <li>"For each of these 30 PDFs: extract title, year, method, sample size — into one table"</li>
-        <li>"For each interview: list every mention of housing, with the surrounding sentence"</li>
+        <li>"For each experiment log: date, instrument, temperature, run duration, outcome"</li>
+        <li>"For each figure in these papers: caption, axis labels, sample size stated"</li>
         <li>"For each letter: sender, recipient, place, date, any sum of money named"</li>
       </ul></div>
   </div>

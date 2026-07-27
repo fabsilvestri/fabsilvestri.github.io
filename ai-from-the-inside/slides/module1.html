@@ -777,13 +777,16 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
       <h3>1 · Write the rules</h3>
       <p class="muted">You, the human, work out the logic and state it exactly.
       The machine follows it, forever, without deviation.</p>
-      <p class="mt"><b>Example.</b> "A sonnet has 14 lines." Count the lines. Done.</p>
+      <p class="mt"><b>Text.</b> "A sonnet has 14 lines." Count the lines. Done.</p>
+      <p class="mt"><b>Images.</b> "Flag any scan darker than this threshold." One line, exact, forever.</p>
     </div>
     <div class="card card--teal">
       <h3>2 · Show examples</h3>
       <p class="muted">You collect cases where you already know the answer.
       The machine works out its own rules to reproduce them.</p>
-      <p class="mt"><b>Example.</b> 2,000 letters you have already marked <em>angry</em> or <em>polite</em>.</p>
+      <p class="mt"><b>Text.</b> 2,000 letters you have already marked <em>angry</em> or <em>polite</em>.</p>
+      <p class="mt"><b>Images.</b> 2,000 cell photographs a colleague has already marked
+      <em>dividing</em> or <em>not</em>.</p>
     </div>
   </div>
   <p class="muted mt2 small">Everything in this course lives on the right-hand side.</p>
@@ -801,8 +804,9 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <h2>Rules are wonderful — when the world is tidy</h2>
   <ul class="mt">
     <li><b>Is this year a leap year?</b> A four-line rule. Perfect, forever, no data needed.</li>
-    <li><b>Is this a valid tax code?</b> A checksum. Exactly right or exactly wrong.</li>
-    <li><b>Does this manuscript have 14 lines?</b> Count them.</li>
+    <li><b>Is this a valid chemical formula?</b> Check the valences. Exactly right or exactly wrong.</li>
+    <li><b>Does this manuscript page have 14 lines?</b> Count them.</li>
+    <li><b>Is this image over-exposed?</b> Average the pixel values and compare. No learning required.</li>
   </ul>
   <div class="takeaway mt2"><span class="lbl">Do not forget this</span>
   If you can write the rule, <b>write the rule</b>. It will be faster, cheaper, auditable and correct.
@@ -843,6 +847,39 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   </aside>
 </section>
 
+<section>
+  <span class="eyebrow">Where rules collapse · the same story in pictures</span>
+  <h2>Now write me the rules for "this galaxy is a spiral"</h2>
+  <div class="grid g2 mt">
+    <div class="card">
+      <h4>Attempt</h4>
+      <ul class="tight small">
+        <li>Has visible arms → spiral</li>
+        <li>Bright core, fainter towards the edge → spiral</li>
+        <li>More elongated than round → spiral</li>
+      </ul>
+    </div>
+    <div class="card card--dark">
+      <h4>Immediately breaks on</h4>
+      <ul class="tight small">
+        <li>A spiral seen <em>edge-on</em> — a perfect example, and no arms are visible at all</li>
+        <li>An elliptical that happens to be elongated</li>
+        <li>Anything half-hidden behind a foreground star</li>
+        <li>The same galaxy at a different exposure, where "bright" means something else entirely</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted mt2 small">Swap galaxies for cells under a microscope, fractures on an X-ray, or
+  defects on a wafer. The shape of the problem does not change.</p>
+  <aside class="notes">
+    <p>Run this immediately after the letters slide and name what just happened: <b>the same collapse,
+    in a different modality</b>. Half this room does not work with text at all, and this is the slide
+    that tells them the course is about their material too.</p>
+    <p>The edge-on spiral is the one to dwell on. It is not an edge case — it is roughly half of all
+    spirals, and it defeats the single most obvious rule anyone proposes.</p>
+  </aside>
+</section>
+
 <section class="failure vc">
   <span class="eyebrow">The pattern</span>
   <p class="lede">Every rule you add fixes one case and breaks two others.<br>
@@ -867,11 +904,11 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <blockquote>A program that improves at a task by being shown examples,
   rather than by being given instructions.</blockquote>
   <div class="flow mt2">
-    <div class="step"><b>Examples</b>2,000 letters, each already marked angry or polite</div>
+    <div class="step"><b>Examples</b>2,000 letters marked angry or polite —<br>or 2,000 scans marked spiral or elliptical</div>
     <span class="arw">→</span>
     <div class="step"><b>Learning</b>The machine hunts for patterns that separate the two piles</div>
     <span class="arw">→</span>
-    <div class="step"><b>Model</b>A thing that can now judge a letter it has never seen</div>
+    <div class="step"><b>Model</b>A thing that can now judge a case it has never seen</div>
   </div>
   <p class="muted mt2 small">Note what the machine is <em>not</em> given: any theory of anger, any dictionary,
   any instruction about what to look at.</p>
@@ -1077,7 +1114,9 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <aside class="notes">
     <p>The ruler example (Esteva et al. and follow-ups on dermatology datasets) is the memorable one —
     it is not bias in the political sense, it is a shortcut, which makes it more insidious.</p>
-    <p>The archives example is the one this audience will actually encounter. Dwell on it.</p>
+    <p>Dwell on whichever of the last two lands for the room you have: the archives case for the
+    historians and the language case for everyone, but the ruler is the one that makes a lab
+    scientist go quiet — their instrument metadata is full of exactly that kind of tell.</p>
   </aside>
 </section>
 
@@ -1210,9 +1249,9 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
   <span class="eyebrow">③ Evaluation · the number that lies</span>
   <h2>"95% accurate" can be worthless</h2>
   <div class="card card--dark mt" style="font-size:.86em">
-    <p>Suppose 5 letters in every 100 in your archive are anonymous denunciations, and you build a
-    detector for them.</p>
-    <p class="mt"><b>My detector says "not a denunciation" every single time.</b>
+    <p>Suppose 5 scans in every 100 show the fracture you are looking for — or, if you prefer,
+    5 letters in every 100 of your archive are anonymous denunciations. You build a detector.</p>
+    <p class="mt"><b>My detector says "nothing here" every single time.</b>
     It is a single line of code. It contains no intelligence whatsoever.</p>
     <p class="mt gold" style="font-size:1.15em"><b>Its accuracy is 95%.</b></p>
   </div>
@@ -1227,17 +1266,18 @@ body.notes-open .deck-footer { right: calc(30vw + 26px); }
 
 <section>
   <span class="eyebrow">③ Evaluation · two better numbers</span>
-  <h2>Precision and recall, in archive terms</h2>
-  <p class="mt">You ask a system to find every letter in the archive that mentions a certain family.</p>
+  <h2>Precision and recall, in research terms</h2>
+  <p class="mt">You ask a system to find every letter in an archive that mentions a certain family —
+  or every image in a survey that contains a lensing arc. Same two questions either way.</p>
   <div class="grid g2 mt">
     <div class="card card--accent">
       <h4>Precision</h4>
-      <p class="small">Of the letters it handed you, how many were actually relevant?</p>
-      <p class="small muted"><b>Low precision</b> = you waste weeks reading rubbish.</p>
+      <p class="small">Of the items it handed you, how many were actually relevant?</p>
+      <p class="small muted"><b>Low precision</b> = you waste weeks reading, or re-inspecting, rubbish.</p>
     </div>
     <div class="card card--teal">
       <h4>Recall</h4>
-      <p class="small">Of the relevant letters in the archive, how many did it hand you?</p>
+      <p class="small">Of the relevant items that exist, how many did it hand you?</p>
       <p class="small muted"><b>Low recall</b> = you never learn what you missed. Far more dangerous.</p>
     </div>
   </div>
@@ -1726,16 +1766,22 @@ AVERAGE training and test accuracy, with the baseline.
   <span class="eyebrow">Architecture 2 · in your disciplines</span>
   <h2>What CNNs are actually used for here</h2>
   <div class="grid g2 mt">
+    <div class="card"><h4>Cell biology</h4><p class="small">Counting and classifying cells in microscopy; scoring which are dividing, stressed or dead, across plates no one could count by hand.</p></div>
     <div class="card"><h4>Palaeography</h4><p class="small">Transcribing handwritten manuscripts; dating and attributing hands; grouping scribes across a corpus.</p></div>
+    <div class="card"><h4>Astronomy</h4><p class="small">Sorting galaxies by morphology and flagging rare objects — lenses, transients — in surveys of hundreds of millions of images.</p></div>
     <div class="card"><h4>Art history</h4><p class="small">Finding iconographic motifs across tens of thousands of images that no one could look through by hand.</p></div>
+    <div class="card"><h4>Medical imaging</h4><p class="small">Flagging candidate lesions and fractures for a radiologist to read first, when the queue is longer than the day.</p></div>
     <div class="card"><h4>Archaeology</h4><p class="small">Spotting structures in aerial and LiDAR survey data; classifying ceramic fragments.</p></div>
-    <div class="card"><h4>Conservation</h4><p class="small">Detecting damage, overpainting, and craquelure patterns in high-resolution scans.</p></div>
   </div>
   <p class="muted mt small">In every case the value is the same: <b>triage at a scale a human cannot reach</b>,
   followed by human judgement on what it surfaces.</p>
   <aside class="notes">
     <p>Stress the pattern — AI as a filter that produces a shortlist for an expert, not as a replacement
-    for the expert. This is the realistic use in almost every humanities application.</p>
+    for the expert. That is the realistic use in the lab and in the archive alike, and it is worth
+    saying that the astronomer and the palaeographer here have <em>the same</em> problem: too many
+    images, too few expert eyes.</p>
+    <p>Three and three is deliberate. Read one from each side out loud so nobody in the room concludes
+    this section is not for them.</p>
   </aside>
 </section>
 
@@ -1763,28 +1809,85 @@ AVERAGE training and test accuracy, with the baseline.
 </section>
 
 <section class="exercise vc">
-  <span class="eyebrow">Exercise 2 · live demo · 5 minutes · Notebook 2 · watch, don't type</span>
-  <h2>Watch one get built, and then fooled</h2>
-  <div class="prompt mt">Load the built-in handwritten digits dataset and show me 10
-example images with their labels. Train a LOGISTIC REGRESSION
-classifier on 80% and report accuracy on the other 20%. Show a
-grid of the test images it got wrong, labelled with what it guessed.
-</div>
-  <div class="prompt is-followup mt">Add Gaussian noise with standard deviation 4.0 to the test images
-(pixels run 0-16). Print accuracy AND mean confidence, clean versus
-noisy, and how many points each one dropped.
-</div>
-  <p class="muted mt small">Both settings are pinned for a reason: a random forest
-  <em>does</em> lose confidence under noise, and at half this noise nothing visible happens.
-  <b>Notebook 2</b> explains why — use its version, not a paraphrase.</p>
+  <span class="eyebrow">Exercise 2 · 25 minutes · Notebook 2</span>
+  <h1 style="font-size:1.9em">The same story,<br>in pictures</h1>
+  <p class="big mt" style="max-width:25em">400 galaxies, two classes, and a model that scores
+  99% — then falls over on images from a different telescope.</p>
+  <p class="muted mt2">Everything you did in Exercise 1, with pixels instead of words.
+  Lines of code you will write: <b>still zero</b>.</p>
   <p class="mt"><a class="nb-open" target="_blank" rel="noopener"
     href="https://colab.research.google.com/github/fabsilvestri/fabsilvestri.github.io/blob/main/ai-from-the-inside/notebooks/02_images_and_failure.ipynb"
     >Open Notebook 2 in Colab <span class="arrow-out">↗</span></a></p>
-  <p class="nb-path">Nothing to do now — but it is yours to re-run afterwards.
-  Runs in under a minute, no GPU.</p>
+  <p class="nb-path">or: course page &rarr; Notebooks &rarr; <b>2 &middot; Images, and how to fool them</b>
+  &nbsp;&middot;&nbsp; then <b>Copy to Drive</b></p>
   <aside class="notes">
-    <p>Run this yourself on the shared screen rather than sending them off — it is a five-minute beat, not an exercise. Say so explicitly, or half of them will start typing and miss the point.</p>
-    <p>The payload is the second prompt: accuracy drops, <b>confidence does not</b>. Say that out loud.</p>
+    <p>This is the vision half of the morning and it carries the same weight as Exercise 1.
+    Anyone who works with images rather than text has been waiting for it.</p>
+  </aside>
+</section>
+
+<section class="exercise">
+  <span class="eyebrow">Exercise 2 &middot; the sequence</span>
+  <h2>Five prompts, and a trap you walk into</h2>
+  <div class="grid g2" style="gap:.7em;font-size:.92em">
+    <div>
+      <div class="prompt prompt--sm">Load images_labels.csv, read every PNG
+in images/, and show me 8 spirals and 8
+ellipticals captioned with label and survey.
+Cross-tab label against survey.
+<span class="cm">&mdash; look first. The answer is already here.</span></div>
+      <div class="prompt prompt--sm mt">Flatten each image to pixels, split 80/20,
+train a logistic regression as `clf`,
+report accuracy and the baseline.
+<span class="cm">&mdash; about 99%, against a 50% baseline</span></div>
+      <div class="prompt prompt--sm mt">Reshape the coefficients back into a
+48&times;48 heatmap and show it. Compare the
+top-left corner to the average pixel.
+<span class="cm">&mdash; the diagnostic. One prompt.</span></div>
+    </div>
+    <div>
+      <div class="prompt prompt--sm">Now score the SAME trained model on
+images_clean/ &mdash; the other survey.
+Print both accuracies and the difference.
+<span class="cm">&mdash; 99% becomes 74%. Nothing warned you.</span></div>
+      <div class="prompt prompt--sm mt">Blank the top-left corner of every image,
+retrain, and score on the other survey again.
+Draw the new heatmap.
+<span class="cm">&mdash; back to 97%. Same data, same model.</span></div>
+      <div class="card card--gold" style="margin-top:.7em">
+        <h4>The point</h4>
+        <p class="small">The held-out test set agreed with the model completely &mdash;
+        because it had the same artefact in it.</p></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Do not spoil prompt 1. The cross-tab gives the whole game away to anyone who reads it,
+    and the students who spot it there rather than at prompt 4 have learned the actual lesson:
+    <b>look at your data first</b>.</p>
+    <p>Run prompt 3 on your shared screen and say nothing for a moment. The bright corner in the
+    heatmap does the teaching on its own.</p>
+  </aside>
+</section>
+
+<section class="failure">
+  <span class="eyebrow">Exercise 2 &middot; part two</span>
+  <h2>And a second way images fail</h2>
+  <div class="prompt mt">Add Gaussian noise with standard deviation 4.0 to the test images
+(pixels run 0-16). Print accuracy AND mean confidence, clean versus
+noisy, and how many points each one dropped.
+</div>
+  <div class="grid g3 mt2">
+    <div class="card"><h4>Accuracy</h4><p class="small">97% &rarr; 83%. Down 14 points.</p></div>
+    <div class="card"><h4>Confidence</h4><p class="small">98% &rarr; 94%. Down 4.</p></div>
+    <div class="card card--gold"><h4>Wrong <em>and</em> sure</h4><p class="small">40% of its mistakes were held with over 90% confidence.</p></div>
+  </div>
+  <p class="muted mt small">The noise level is pinned: a random forest <em>does</em> lose confidence
+  here, and at half this noise nothing visible happens. Use the notebook&rsquo;s version.</p>
+  <aside class="notes">
+    <p>Different failure, same consequence. The shortcut made it wrong on new data; the noise
+    makes it wrong <em>and confident</em>. Neither one announces itself.</p>
+    <p>Say the last number out loud: <b>forty per cent of its errors were held above 90% confidence.</b>
+    Confidence is a writing style, not evidence.</p>
   </aside>
 </section>
 
@@ -2161,6 +2264,9 @@ noisy, and how many points each one dropped.
   </div>
   <p class="mt2">This is the property that makes <b>search by meaning</b> possible: you can find
   documents that are <em>about</em> the same thing without sharing a single word.</p>
+  <p class="mt small"><b>And it is not only for words.</b> Images get coordinates the same way, which
+  is what "find me more pictures like this one" is doing — no filename, no caption, no keyword.
+  Point it at a micrograph and it returns micrographs that look like it. Same idea, same geometry.</p>
   <p class="muted small">Remember this at 15:20. It is how your research assistant will find the right page.</p>
   <aside class="notes">
     <p>Be honest if asked: these analogies are cherry-picked in the literature and don't always hold.
@@ -2242,6 +2348,40 @@ noisy, and how many points each one dropped.
     representation change its behaviour in the way you would predict.</p>
     <p>Land the balance explicitly: <b>everything on the failure slides today is still true.</b> These
     systems are far more than surface statistics <em>and</em> they still invent citations. Both.</p>
+  </aside>
+</section>
+
+<section>
+  <span class="eyebrow">And it was never only about text</span>
+  <h2>The same machinery, pointed at other data</h2>
+  <p class="mt">Attention does not care that the things it relates are words. Give it any set of
+  pieces and let each one look at all the others, and the architecture works unchanged.</p>
+  <div class="grid g2 mt">
+    <div class="card card--teal"><h4>Images</h4>
+      <p class="small">Cut the picture into small square patches. Treat each patch exactly as if it
+      were a word. That is a <b>Vision Transformer</b> — same attention, same maths, and it competes
+      with the CNNs from the last section.</p></div>
+    <div class="card card--teal"><h4>Proteins</h4>
+      <p class="small">Amino acids in a chain, each attending to all the others. Predicting how a
+      protein folds was an open problem for fifty years; attention-based models largely solved it,
+      and it won a Nobel Prize in 2024.</p></div>
+    <div class="card card--teal"><h4>Weather</h4>
+      <p class="small">Points on a globe attending to each other. These models now match or beat
+      traditional physics simulation on many forecast variables — and run in seconds rather than
+      hours on a supercomputer.</p></div>
+    <div class="card card--teal"><h4>And your data</h4>
+      <p class="small">Scores in a piece of music, sensor readings over time, genomes, chemical
+      structures. Anything you can cut into pieces that relate to each other.</p></div>
+  </div>
+  <aside class="notes">
+    <p>This slide does two jobs. It is the answer to "this is all very nice but I don't work with
+    text", and it is the strongest available evidence that what these models learn is not a trick
+    about language.</p>
+    <p>The protein result is the one to name properly — Nobel in Chemistry, 2024. For a room of
+    doctoral students, "an open problem for fifty years, now largely solved" is the sentence that
+    lands, and it was the same architecture they have just spent twenty minutes understanding.</p>
+    <p>The image case is worth a sentence of mechanism: a patch of sky and a patch of galaxy relate
+    to each other exactly the way <em>angry</em> and <em>letter</em> did on the attention slide.</p>
   </aside>
 </section>
 

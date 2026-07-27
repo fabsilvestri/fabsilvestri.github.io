@@ -172,7 +172,117 @@ do-nothing baseline next to them.
 
 ## Notebook 2 — Images, and how to fool them
 
-### 1 · Build an image classifier
+### 1 · Look at the images before anything else
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Load images_labels.csv. It has columns filename, label and survey.
+Read every PNG named in it from the images/ folder.
+
+Show me a grid of 8 spiral and 8 elliptical images, each captioned
+with its label and its survey.
+Then print how many images carry each label, and a cross-tab of
+label against survey.
+```
+
+**Why:** The same rule as Notebook 1: look first. **Read the cross-tab carefully** — everything that happens later in this notebook is already visible in it, if you know to look.
+
+<br>
+
+### 2 · Train a classifier on the pixels
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Using the images in images/ and the labels in images_labels.csv,
+flatten each image to a row of pixel values and split 80/20,
+keeping the balance of labels.
+Train a LOGISTIC REGRESSION classifier, call it `clf`, and report
+its accuracy on the held-out 20% as `acc`.
+Also report what a classifier that always predicts the most common
+label would score, and show 8 test images it got wrong.
+```
+
+**Why:** Note how little changed from Notebook 1. A row of pixel values behaves, for these purposes, exactly like a row of word counts.
+
+<br>
+
+### 3 · Draw the model's attention as a picture
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Take the fitted classifier's coefficients, reshape them back into a
+48x48 image, and display it as a heatmap with a colour bar, so that
+pixels pushing towards each of the two classes are visible.
+
+Then print the average absolute weight inside the top-left 6x6 corner
+of the image, and compare it to the average absolute weight over the
+whole image. Print the ratio.
+```
+
+**Why:** This is the single most useful diagnostic in applied computer vision, and it is one prompt. **Look at the picture before you read the number.**
+
+<br>
+
+### 4 · Score it on the other survey
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Load images_clean_labels.csv and the images in images_clean/ the
+same way as before.
+Use the ALREADY-TRAINED classifier `clf` to predict them - do not
+retrain anything.
+Print its accuracy on this set next to its accuracy on the earlier
+held-out test set, and print the difference in percentage points.
+Then show a cross-tab of label against survey for this new set.
+```
+
+**Why:** Nothing about the images got harder. The only thing that changed is which survey took them.
+
+<br>
+
+### 5 · Blank the corner and retrain
+
+*Goes in: code cell*
+
+```text
+Download https://fabsilvestri.github.io/ai-from-the-inside/corpus.zip
+and unzip it into the current folder, so that letters.csv and the
+archive/ and pdfs/ folders are alongside this notebook.
+
+Set the top-left 6x6 corner of EVERY image to zero, in both the
+training collection and the other survey's images.
+Retrain the same logistic regression on the masked training images.
+
+Print a small table with three rows: the original model's score on
+the other survey, the retrained model's score on the other survey,
+and the baseline. Then draw the new weight heatmap.
+```
+
+**Why:** Masking is the blunt fix and it is the right one here because we *know* what the artefact is. When you do not know, the honest answer is to collect data that does not have the correlation in it.
+
+<br>
+
+### 6 · Build a second image classifier
 
 *Goes in: code cell*
 
@@ -190,7 +300,7 @@ with the true digit and what it guessed.
 
 <br>
 
-### 2 · Add noise, and compare confidence before and after
+### 7 · Add noise, and compare confidence before and after
 
 *Goes in: code cell*
 
