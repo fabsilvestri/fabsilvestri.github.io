@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-30",
-  "generated_at": "2026-07-30T06:23:21+00:00",
+  "last_updated": "2026-07-31",
+  "generated_at": "2026-07-31T06:40:14+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 290,
@@ -123,8 +123,8 @@
       "year": 2026,
       "venue": "ACL (Findings)",
       "venue_short": "ACL",
-      "url": "https://aclanthology.org/2026.findings-acl.2145/",
-      "url_publisher": "https://aclanthology.org/2026.findings-acl.2145/",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.2145",
+      "url_publisher": "https://doi.org/10.18653/v1/2026.findings-acl.2145",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
@@ -145,8 +145,8 @@
       "year": 2026,
       "venue": "ACL (Findings)",
       "venue_short": "ACL",
-      "url": "https://aclanthology.org/2026.findings-acl.583/",
-      "url_publisher": "https://aclanthology.org/2026.findings-acl.583/",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.583",
+      "url_publisher": "https://doi.org/10.18653/v1/2026.findings-acl.583",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
