@@ -1,0 +1,73 @@
+name: Bump cache busters
+
+# Recomputes the ?v=<hash> query string on assets/js/publications.js,
+# assets/js/analytics.js and assets/css/style.css in index.html whenever
+# any of them changes on main. This handles the case where someone
+# manually edits one of those files without running fetch_publications.py
+# — without this workflow, the index.html would keep referencing the old
+# hash and browsers would serve a cached pre-edit copy until the next
+# nightly publications refresh.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/js/publications.js"
+      - "assets/js/analytics.js"
+      - "assets/css/style.css"
+      - "index.html"
+      - "scripts/fetch_publications.py"
+      - ".github/workflows/bump-cache-buster.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump-cache-buster
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    # Skip when the bot itself just pushed — avoids a commit loop after
+    # the bump commit re-fires this workflow.
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Need a real ref so we can commit and push back to main.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recompute cache-buster hashes
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          from fetch_publications import (
+              bump_cache_busters,
+              CACHE_BUSTED_ASSETS,
+              INDEX_HTML,
+          )
+          changed = bump_cache_busters(Path("."), INDEX_HTML, CACHE_BUSTED_ASSETS)
+          print(f"index.html changed: {changed}")
+          PY
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain index.html)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "chore: bump cache busters ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "Cache busters already up to date."
+          fi

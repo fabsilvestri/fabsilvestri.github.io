@@ -1,10 +1,12 @@
-name: Refresh Scholar citations (biweekly)
+name: Refresh Scholar citations (weekly)
 
 on:
   schedule:
-    # 1st and 15th of each month at 05:15 UTC (~06:15 Rome).
-    # Twice a month is close enough to "every two weeks".
-    - cron: "15 5 1,15 * *"
+    # Every Sunday at 05:15 UTC (~06:15/07:15 Rome). Weekly is the
+    # sweet spot: Scholar updates author profiles roughly every few
+    # days, more frequent runs mostly burn CI minutes on no-op fetches
+    # (and look more bot-like to Scholar's anti-scraping heuristics).
+    - cron: "15 5 * * 0"
   workflow_dispatch:
 
 permissions:
@@ -44,7 +46,7 @@ jobs:
       - name: Commit + push if changed
         if: steps.scholar.outcome == 'success'
         run: |
-          FILES="data/citations.json data/publications.json assets/js/publications-data.js index.html sitemap.xml"
+          FILES="data/citations.json data/publications.json index.html sitemap.xml"
           if [ -n "$(git status --porcelain $FILES)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

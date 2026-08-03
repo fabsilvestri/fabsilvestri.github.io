@@ -8,8 +8,9 @@ on:
   workflow_run:
     workflows:
       - "Update publications"
-      - "Refresh Scholar citations (biweekly)"
+      - "Refresh Scholar citations (weekly)"
       - "Discover awards (weekly)"
+      - "Bump cache busters"
     types: [completed]
     branches: [main]
   workflow_dispatch:
