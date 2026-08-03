@@ -1,0 +1,30 @@
+{
+  "discovered_at": "2026-08-03T08:52:07+00:00",
+  "model": "claude-opus-4-7",
+  "candidates": [
+    {
+      "year": 2007,
+      "title": "Best Paper Award",
+      "issuer": "ECIR (European Conference on Information Retrieval)",
+      "description": "For the paper \"Sorting Out the Document Identifier Assignment Problem\", awarded at 29th ECIR 2007 in Rome; awarded to Silvestri as a researcher at ISTI-CNR.",
+      "source_url": "https://www.cnr.it/it/news/4541/best-paper-award-alla-29th-ecir-2007-premiato-fabrizio-silvestri-ricercatore-isti-cnr",
+      "confidence": "high"
+    },
+    {
+      "year": 2018,
+      "title": "Test-of-Time Award",
+      "issuer": "ECIR (European Conference on Information Retrieval)",
+      "description": "Test-of-Time recognition at ECIR 2018 (Grenoble) for the 2007 paper \"Sorting Out the Document Identifier Assignment Problem\".",
+      "source_url": "https://diag.uniroma1.it/users/fabrizio_silvestri",
+      "confidence": "high"
+    }
+  ],
+  "notes": "Two awards verified. The DIAG Sapienza faculty page (https://diag.uniroma1.it/users/fabrizio_silvestri) and the identical Sapienza course-catalogue bio state he 'is the holder of three best paper awards and other international awards', and this is echoed by third-party speaker bios (e.g. SERICS Summer School, Underline). The ECIR 2018 Test-of-Time Award is additionally confirmed by the ISTI-CNR HPC Lab news page (https://www.isti.cnr.it/it/ricerca/ricerca/laboratories/8/High_Performance_Computing_HPC). Only ECIR 2007 could be pinned to a specific paper/venue via an institutional URL; the other two claimed 'best paper' awards are asserted in bios but I could not identify the specific conferences/papers from institutional sources within available searches — a human reviewer should follow up (candidate venues to check: SIGIR/CIKM/WSDM/SPIRE/HPCC and IIR workshops with co-authors Perego, Lucchese, Orlando, Tolomei, Cambazoglu). No ACM/IEEE/AAAI fellowship was found. Namesakes filtered out: the Italian journalist/filmmaker 'Fabrizio Silvestri' associated with fashion/Rai media, and unrelated individuals in art (Oreste Silvestri) and other non-CS fields.",
+  "usage": {
+    "input_tokens": 503,
+    "cache_read_input_tokens": 137811,
+    "cache_creation_input_tokens": 23335,
+    "output_tokens": 4296
+  },
+  "stop_reason": "end_turn"
+}
