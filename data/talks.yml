@@ -12,6 +12,13 @@
 
 talks:
   - year: 2026
+    title: "From Database Reasoning to Retrieval-Augmented Generation: Reimagining Relevance"
+    venue: 34th Symposium on Advanced Database Systems (SEBD 2026)
+    role: Keynote
+    location: Senigallia, Italy
+    url: https://sebd2026.dii.univpm.it/keynotes.html
+
+  - year: 2026
     title: "Dall'automazione all'Agentic AI"
     venue: IntelligentIA — A new intelligence for a new era
     role: Invited Speaker (TED-style)
