@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-08-10",
-  "generated_at": "2026-08-10T05:22:04+00:00",
+  "last_updated": "2026-08-12",
+  "generated_at": "2026-08-12T05:27:43+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 291,
+  "count": 292,
   "counts_by_type": {
     "a_star_conf": 70,
     "q1_journal": 30,
     "other_conf": 67,
     "other_journal": 7,
     "workshop": 22,
-    "preprint": 95
+    "preprint": 96
   },
   "counts_by_topic": {
     "ir": 108,
-    "recsys": 45,
+    "recsys": 46,
     "llm": 36,
     "agents": 4,
     "nlp": 12,
     "gnn": 32,
     "trust": 50,
     "task_vectors": 9,
-    "efficient": 54,
+    "efficient": 55,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -383,6 +383,27 @@
         "trust"
       ],
       "citations": 1
+    },
+    {
+      "key": "journals/corr/abs-2607-22287",
+      "title": "Efficient Recommendations via Graph Coarsening and Label Propagation",
+      "authors": [
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "url": "https://doi.org/10.48550/arXiv.2607.22287",
+      "url_publisher": "https://doi.org/10.48550/arXiv.2607.22287",
+      "url_arxiv": null,
+      "type": "preprint",
+      "topics": [
+        "recsys",
+        "efficient"
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2602-06652",
