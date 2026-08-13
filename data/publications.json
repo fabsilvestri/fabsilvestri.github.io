@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-08-12",
-  "generated_at": "2026-08-12T05:27:43+00:00",
+  "last_updated": "2026-08-13",
+  "generated_at": "2026-08-13T05:36:36+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 292,
+  "count": 293,
   "counts_by_type": {
     "a_star_conf": 70,
-    "q1_journal": 30,
+    "q1_journal": 31,
     "other_conf": 67,
     "other_journal": 7,
     "workshop": 22,
@@ -19,7 +19,7 @@
     "agents": 4,
     "nlp": 12,
     "gnn": 32,
-    "trust": 50,
+    "trust": 51,
     "task_vectors": 9,
     "efficient": 55,
     "misinfo": 19,
@@ -264,6 +264,31 @@
       "topics": [
         "ir",
         "efficient"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/tai/BucarelliPBCSNMS26",
+      "title": "When Annotators Disagree: A Principled Approach to Learning With Noisy Labels",
+      "authors": [
+        "M. Sofia Bucarelli",
+        "A. Purificato",
+        "A. Bacciu",
+        "L. Cassano",
+        "F. Siciliano",
+        "A. Nelakanti",
+        "A. Mantrach",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "IEEE Trans. Artif. Intell.",
+      "venue_short": "IEEE T-AI",
+      "url": "https://doi.org/10.1109/TAI.2026.3666527",
+      "url_publisher": "https://doi.org/10.1109/TAI.2026.3666527",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "trust"
       ],
       "citations": 0
     },
