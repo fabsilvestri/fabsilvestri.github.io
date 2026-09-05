@@ -12,6 +12,42 @@
 
 talks:
   - year: 2026
+    title: "From Structured Reasoning to Retrieval-Augmented Generation: A New Take on Relevance"
+    venue: GRAIL 2026 — Workshop on Generative AI for Recommendation and Personalization @ CIKM 2026
+    role: Keynote
+    location: Rome, Italy
+
+  - year: 2026
+    title: "Learning with Structured Consistency: Sheaf Neural Networks from Theory to Applications"
+    venue: AIxIA Spotlight Seminar Series
+    role: Invited Seminar
+    location: Online
+
+  - year: 2026
+    title: "Architetture e Funzionamento dei Sistemi di IA"
+    venue: AGCOM seminar
+    role: Invited Speaker
+    location: Rome, Italy
+
+  - year: 2026
+    title: "Procurement e uso dell'intelligenza artificiale nella PA"
+    venue: PromoPA Fondazione webinar
+    role: Invited Speaker
+    location: Online
+
+  - year: 2026
+    title: "Conferenza generale DIGITALE"
+    venue: Fondazione I Lincei per la Scuola
+    role: Invited Lecture
+    location: Online
+
+  - year: 2026
+    title: "Learning with Structured Consistency"
+    venue: University of Virginia @ IMT School for Advanced Studies Lucca
+    role: Invited Talk
+    location: Lucca, Italy
+
+  - year: 2026
     title: "From Database Reasoning to Retrieval-Augmented Generation: Reimagining Relevance"
     venue: 34th Symposium on Advanced Database Systems (SEBD 2026)
     role: Keynote
@@ -24,6 +60,12 @@ talks:
     role: Invited Speaker (TED-style)
     location: Rome, Italy
     url: https://intelligentia.live/
+
+  - year: 2025
+    title: "Lo sviluppo del software nell'era della GenAI (tavola rotonda)"
+    venue: Engineering — Eng Modernize
+    role: Invited Speaker (panel)
+    location: Milan, Italy
 
   - year: 2025
     title: "On Retrieval Augmented Generation and some Unexpected Effects"
