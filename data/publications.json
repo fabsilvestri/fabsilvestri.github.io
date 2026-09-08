@@ -1,16 +1,16 @@
 {
   "last_updated": "2026-09-08",
-  "generated_at": "2026-09-08T13:27:10+00:00",
+  "generated_at": "2026-09-08T13:32:28+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 297,
   "counts_by_type": {
-    "a_star_conf": 74,
+    "a_star_conf": 75,
     "q1_journal": 34,
     "other_conf": 67,
     "other_journal": 8,
     "workshop": 23,
-    "preprint": 91
+    "preprint": 90
   },
   "counts_by_topic": {
     "ir": 109,
@@ -19,13 +19,13 @@
     "agents": 5,
     "nlp": 12,
     "gnn": 33,
-    "trust": 51,
+    "trust": 52,
     "task_vectors": 9,
     "efficient": 56,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
-    "misc": 32
+    "misc": 31
   },
   "years": [
     2026,
@@ -176,6 +176,29 @@
         "ir"
       ],
       "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2502-12581",
+      "title": "The Majority Vote Paradigm Shift: When Popular Meets Optimal",
+      "authors": [
+        "A. Purificato",
+        "M. Sofia Bucarelli",
+        "A. Kumar Nelakanti",
+        "A. Bacciu",
+        "F. Silvestri",
+        "A. Mantrach"
+      ],
+      "year": 2026,
+      "venue": "AISTATS",
+      "venue_short": "AISTATS",
+      "url": "https://openreview.net/forum?id=7f09dQVENn",
+      "url_publisher": "https://openreview.net/forum?id=7f09dQVENn",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2502.12581",
+      "type": "a_star_conf",
+      "topics": [
+        "trust"
+      ],
+      "citations": 4
     },
     {
       "key": "conf/eacl/TrappoliniCFMS26",
@@ -1626,29 +1649,6 @@
         "task_vectors"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2502-12581",
-      "title": "The Majority Vote Paradigm Shift: When Popular Meets Optimal",
-      "authors": [
-        "A. Purificato",
-        "M. Sofia Bucarelli",
-        "A. Kumar Nelakanti",
-        "A. Bacciu",
-        "F. Silvestri",
-        "A. Mantrach"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2502.12581",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2502.12581",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 4
     },
     {
       "key": "journals/corr/abs-2510-09551",
