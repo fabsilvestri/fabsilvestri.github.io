@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-09-08",
-  "generated_at": "2026-09-08T13:24:41+00:00",
+  "generated_at": "2026-09-08T13:27:10+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 297,
@@ -6786,6 +6786,13 @@
       "issuer": "HCAI Workshop @ ACM CIKM 2025",
       "description": "For \"Enhancing XAI Narratives through Multi-Narrative Refinement and Knowledge Distillation\" — with F. Giorgi, M. Silvestri, C. Campagnano, G. Tolomei.",
       "url": "https://corsi.di.uniroma1.it/en/best-paper-award-research-xai-narratives-llms-hcai-workshop-acm-cikm-2025"
+    },
+    {
+      "year": 2025,
+      "title": "SAC Highlights",
+      "issuer": "Annual Meeting of the Association for Computational Linguistics (ACL 2025)",
+      "description": "For \"Beyond Position: the emergence of wavelet-like properties in Transformers\" — with V. Ruscio, U. Nanni. Senior Area Chair selection of standout papers from the ACL 2025 main conference.",
+      "url": "https://2025.aclweb.org/program/awards/"
     },
     {
       "year": 2018,

@@ -21,6 +21,15 @@ awards:
       C. Campagnano, G. Tolomei.
     url: https://corsi.di.uniroma1.it/en/best-paper-award-research-xai-narratives-llms-hcai-workshop-acm-cikm-2025
 
+  - year: 2025
+    title: SAC Highlights
+    issuer: Annual Meeting of the Association for Computational Linguistics (ACL 2025)
+    description: >-
+      For "Beyond Position: the emergence of wavelet-like properties in
+      Transformers" — with V. Ruscio, U. Nanni. Senior Area Chair
+      selection of standout papers from the ACL 2025 main conference.
+    url: https://2025.aclweb.org/program/awards/
+
   - year: 2018
     title: Test-of-Time Award
     issuer: European Conference on Information Retrieval (ECIR)
