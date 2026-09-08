@@ -4,16 +4,20 @@
 Conferences are ranked against CORE (data/core_rankings.csv); journals
 are ranked against Scimago (data/scimago_journal_rank.csv). The
 DBLP→CORE acronym and DBLP→ISSN mappings live in data/venues.yml.
-Topic tagging lives in data/topics.yml. Outputs are written to
+Topic tagging lives in data/topics.yml. data/manual_publications.yml
+is a manual overlay merged in after the fetch, for papers DBLP has not
+indexed yet; it prunes itself once DBLP catches up. Outputs are written to
 data/publications.json (fetched at runtime by assets/js/publications.js
 with cache: 'no-store' so counters and the publication list always
 reflect the latest run).
 
-Dependencies: PyYAML (pip install -r scripts/requirements.txt).
+Dependencies: PyYAML + ruamel.yaml (pip install -r scripts/requirements.txt).
 Run locally:  python3 scripts/fetch_publications.py
+              python3 scripts/fetch_publications.py --no-prune   # dry run
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -38,6 +42,7 @@ SCIMAGO_FILE = ROOT / "data" / "scimago_journal_rank.csv"
 CITATIONS_FILE = ROOT / "data" / "citations.json"
 AWARDS_FILE = ROOT / "data" / "awards.yml"
 TALKS_FILE = ROOT / "data" / "talks.yml"
+MANUAL_FILE = ROOT / "data" / "manual_publications.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_SITEMAP = ROOT / "sitemap.xml"
 OUT_SITEMAP_INDEX = ROOT / "sitemap_index.xml"
@@ -365,30 +370,34 @@ def is_workshop(booktitle: str) -> bool:
     return bool(NON_MAIN_TRACK_RE.search(booktitle))
 
 
-def classify(
-    record: ET.Element,
+def classify_fields(
+    kind: str,
+    key: str,
+    publtype: str | None,
+    booktitle: str,
     venues: dict,
     core_ranks: dict[str, dict],
     scimago: dict[str, dict],
 ) -> str:
-    tag = record.tag
-    key = record.get("key", "")
+    """The venue classifier, expressed over plain fields rather than a
+    DBLP element, so DBLP records and manual overlay entries share one
+    code path. `kind` is the DBLP element name: "article" for journals,
+    "inproceedings" for conference and workshop papers."""
     abbrev = venue_abbrev(key)
-    booktitle = (record.findtext("booktitle") or "").strip()
 
-    if record.get("publtype") == "informal" or abbrev == "corr":
+    if publtype == "informal" or abbrev == "corr":
         return TYPE_PREPRINT
     if is_workshop(booktitle):
         return TYPE_WORKSHOP
 
-    if tag == "inproceedings":
+    if kind == "inproceedings":
         acro = venues.get("conference_core_acronym", {}).get(abbrev) or abbrev.upper()
         entry = core_ranks.get(acro)
         if entry and entry.get("rank") in ("A*", "A"):
             return TYPE_A_STAR
         return TYPE_OTHER_CONF
 
-    if tag == "article":
+    if kind == "article":
         for issn in venues.get("journal_issn", {}).get(abbrev, []):
             entry = scimago.get(issn)
             if not entry:
@@ -402,6 +411,23 @@ def classify(
             return TYPE_Q1
         return TYPE_OTHER_JOURNAL
     return TYPE_OTHER_CONF
+
+
+def classify(
+    record: ET.Element,
+    venues: dict,
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
+) -> str:
+    return classify_fields(
+        record.tag,
+        record.get("key", ""),
+        record.get("publtype"),
+        (record.findtext("booktitle") or "").strip(),
+        venues,
+        core_ranks,
+        scimago,
+    )
 
 
 def resolve_venue_full(
@@ -519,6 +545,495 @@ TYPE_ORDER = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Manual overlay — data/manual_publications.yml
+#
+# DBLP indexes a paper weeks or months after it appears, so the nightly
+# sync lags reality. The overlay forces a paper in until DBLP catches
+# up, in two shapes:
+#
+#   additions:  full records for papers DBLP has no entry for at all.
+#   overrides:  field patches keyed by DBLP key, for papers DBLP knows
+#               only as a CoRR preprint but that have since appeared at
+#               a real venue.
+#
+# It is applied after the fetch and classification and before the JSON
+# is written, and merged records go through the same topic and venue
+# classification helpers as DBLP records — nothing downstream (sort,
+# counters, filters, renderer) knows a record came from here.
+#
+# The overlay also prunes itself: an entry DBLP has caught up with is
+# dropped from the output *and* deleted from the YAML, so the file
+# shrinks back to empty on its own and the nightly workflow commits the
+# rewrite like any other change.
+# ---------------------------------------------------------------------------
+
+# The exact field list parse_record() + main() emit, in emission order.
+# Manual records are built in this order so their JSON is shaped like a
+# DBLP one; anything else in the YAML is a typo and is reported rather
+# than carried silently into the output.
+RECORD_FIELDS = [
+    "key", "title", "authors", "year", "venue", "venue_short",
+    "url", "url_publisher", "url_arxiv", "type", "topics", "citations",
+]
+
+VALID_TYPES = set(TYPE_ORDER)
+
+# Synthetic keys for additions. The segment after the prefix is the DBLP
+# venue abbreviation, so venue_abbrev() — and with it the CORE and
+# Scimago lookups — resolves exactly as it does for a real DBLP key:
+#   "manual/sigir/silvestri-2027-example"  ->  abbrev "sigir"
+MANUAL_KEY_PREFIX = "manual/"
+
+# Journal types, i.e. the ones classify_fields() must see as "article".
+JOURNAL_TYPES = {TYPE_Q1, TYPE_OTHER_JOURNAL}
+
+
+def manual_yaml_handle():
+    """A round-trip YAML handle for the overlay file, or None when
+    ruamel.yaml isn't installed. Reading falls back to PyYAML; only
+    pruning — which rewrites the file with its comments and key order
+    intact — needs ruamel."""
+    try:
+        from ruamel.yaml import YAML
+    except ImportError:
+        return None
+    handle = YAML()  # round-trip mode
+    handle.preserve_quotes = True
+    handle.width = 4096  # never re-wrap long titles / URLs
+    handle.indent(mapping=2, sequence=4, offset=2)  # "  - key:" list style
+    return handle
+
+
+# ruamel parks the comment block that *follows* an entry on that entry's
+# last key, so a plain `del` takes the next section's documentation with
+# it. These helpers read, rewrite and hand that block on instead.
+
+def trailing_comment(entry) -> str:
+    """The raw comment text sitting between `entry` and whatever comes
+    after it in the file."""
+    if not isinstance(entry, dict) or not len(entry):
+        return ""
+    slot = entry.ca.items.get(list(entry.keys())[-1])
+    token = slot[2] if slot and len(slot) > 2 else None
+    return token.value if token is not None else ""
+
+
+def set_trailing_comment(entry, text: str) -> None:
+    if not isinstance(entry, dict) or not len(entry):
+        return
+    from ruamel.yaml.error import CommentMark
+    from ruamel.yaml.tokens import CommentToken
+    slot = entry.ca.items.setdefault(list(entry.keys())[-1], [None, None, None, None])
+    while len(slot) < 4:
+        slot.append(None)
+    if not text:
+        slot[2] = None
+    elif slot[2] is not None:
+        slot[2].value = text
+    else:
+        slot[2] = CommentToken(text, CommentMark(0))
+
+
+def drop_entry_header(text: str) -> str:
+    """Strip the comment block that sits flush against the entry that
+    follows it — that block describes the entry, so it goes when the
+    entry does. A block set off by a blank line is file-level prose and
+    stays."""
+    if not text:
+        return ""
+    lead, _, body = text.partition("\n")  # the value's own line break
+    lines = body.split("\n")
+    cut = len(lines)
+    while cut and (lines[cut - 1].strip().startswith("#") or not lines[cut - 1].strip()):
+        if not lines[cut - 1].strip() and cut < len(lines):
+            break  # a blank line separates prose from the entry's header
+        cut -= 1
+    kept = lines[:cut]
+    if not any(line.strip() for line in kept):
+        return ""
+    return lead + "\n" + "\n".join(kept).rstrip("\n") + "\n"
+
+
+def prune_yaml_entries(container, victims: list) -> None:
+    """Delete `victims` (indices for a sequence, keys for a mapping)
+    from a ruamel container, handing each one's trailing comment block
+    to the previous entry — or, for the first entry, to the comment
+    that introduces the container. Without that, pruning the last
+    addition would delete the prose documenting the next section."""
+    for victim in sorted(victims, reverse=True):
+        addressable = list(container.keys()) if isinstance(container, dict) else None
+        position = (addressable.index(victim) if addressable is not None else victim)
+        moved = trailing_comment(container[victim])
+        if position > 0:
+            prev_key = (addressable[position - 1] if addressable is not None
+                        else position - 1)
+            prev = container[prev_key]
+            set_trailing_comment(prev, drop_entry_header(trailing_comment(prev)) + moved)
+        elif moved.strip():
+            # First entry: its trailing block introduces whatever is now
+            # first, so it becomes the container's start comment. The
+            # existing start comment described the entry being deleted.
+            # Mutated in place where it exists — the parent mapping
+            # holds the same list object.
+            from ruamel.yaml.error import CommentMark
+            from ruamel.yaml.tokens import CommentToken
+            text = moved.lstrip("\n")
+            token = CommentToken(
+                text.lstrip(" "), CommentMark(len(text) - len(text.lstrip(" "))),
+            )
+            if container.ca.comment is None:
+                container.ca.comment = [None, [token]]
+            elif container.ca.comment[1] is None:
+                container.ca.comment[1] = [token]
+            else:
+                container.ca.comment[1][:] = [token]
+        del container[victim]
+
+
+def load_manual_overlay(path: Path) -> tuple[dict, object]:
+    """Return (document, yaml_handle). The document is mutated in place
+    by the pruner and dumped back through the handle; a None handle
+    means pruning is unavailable this run."""
+    if not path.exists():
+        return {}, None
+    handle = manual_yaml_handle()
+    if handle is None:
+        print(
+            "[manual] ruamel.yaml not installed — overlay applied read-only, "
+            "no self-pruning. pip install -r scripts/requirements.txt",
+            file=sys.stderr,
+        )
+    try:
+        with path.open(encoding="utf-8") as f:
+            doc = (handle.load(f) if handle is not None else yaml.safe_load(f)) or {}
+    except Exception as exc:
+        # A hand-edited YAML file is one typo away from unparseable (an
+        # unquoted title containing ": " is the classic). That must not
+        # take the nightly refresh down with it — skip the overlay and
+        # let the DBLP results through.
+        print(
+            f"[warn] [manual] {path.name} could not be parsed, ignoring the "
+            f"overlay this run: {exc}",
+            file=sys.stderr,
+        )
+        return {}, None
+    return doc, handle
+
+
+def plain_value(value):
+    """Strip ruamel's round-trip wrapper types so a merged record
+    serializes to JSON exactly like a DBLP-derived one."""
+    if isinstance(value, dict):
+        return {str(k): plain_value(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [plain_value(v) for v in value]
+    if isinstance(value, str):
+        return str(value)
+    if isinstance(value, bool):
+        return bool(value)
+    if isinstance(value, int):
+        return int(value)
+    if isinstance(value, float):
+        return float(value)
+    return value
+
+
+def manual_type(
+    entry: dict,
+    key: str,
+    venue: str,
+    venues: dict,
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
+) -> str:
+    """Resolve a manual record's `type` through classify_fields(), the
+    same classifier DBLP records use. A declared type wins — it is the
+    author's explicit intent, and the only signal for whether to rank
+    the venue against CORE or against Scimago, so it also seeds the
+    element `kind`. An omitted type is derived outright, as a
+    conference paper. A disagreement is reported: it almost always
+    means the key's venue abbreviation is wrong."""
+    declared = str(entry.get("type") or "").strip()
+    if declared and declared not in VALID_TYPES:
+        print(
+            f"[warn] [manual] {key}: unknown type {declared!r} — "
+            f"classifying it instead (allowed: {', '.join(TYPE_ORDER)})",
+            file=sys.stderr,
+        )
+        declared = ""
+    derived = classify_fields(
+        "article" if declared in JOURNAL_TYPES else "inproceedings",
+        key,
+        "informal" if declared == TYPE_PREPRINT else None,
+        venue,
+        venues,
+        core_ranks,
+        scimago,
+    )
+    if declared and derived != declared:
+        print(
+            f"[manual] {key}: declared type {declared} but the venue "
+            f"abbreviation classifies as {derived} — keeping {declared}",
+            file=sys.stderr,
+        )
+    return declared or derived
+
+
+def build_manual_record(
+    entry: dict,
+    venues: dict,
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
+    topics: list[dict],
+    topic_overrides: dict[str, list[str]],
+    citations: dict[str, int],
+) -> dict:
+    """Turn one `additions:` entry into a record shaped exactly like
+    parse_record() output. Returns None (with a warning) for an entry
+    that can't be used — a bad overlay entry never fails the run."""
+    key = str(entry.get("key") or "").strip()
+    title = str(entry.get("title") or "").strip().rstrip(".")
+    if not key or not title:
+        print(
+            f"[warn] [manual] addition needs both `key` and `title`, skipping: "
+            f"{dict(entry)!r}",
+            file=sys.stderr,
+        )
+        return None
+    if not key.startswith(MANUAL_KEY_PREFIX):
+        print(
+            f"[warn] [manual] addition key {key!r} must start with "
+            f"{MANUAL_KEY_PREFIX!r}, skipping",
+            file=sys.stderr,
+        )
+        return None
+    unknown = [f for f in entry if f not in RECORD_FIELDS]
+    if unknown:
+        print(
+            f"[warn] [manual] {key}: ignoring unknown field(s) "
+            f"{', '.join(sorted(unknown))}",
+            file=sys.stderr,
+        )
+
+    venue = str(entry.get("venue") or "").strip()
+    url_publisher = (str(entry.get("url_publisher")).strip()
+                     if entry.get("url_publisher") else None)
+    url_arxiv = (str(entry.get("url_arxiv")).strip()
+                 if entry.get("url_arxiv") else None)
+    try:
+        year = int(entry.get("year") or 0)
+    except (TypeError, ValueError):
+        year = 0
+
+    rec = {
+        "key": key,
+        "title": title,
+        # Full names are abbreviated the same way DBLP names are;
+        # already-abbreviated ones pass through unchanged.
+        "authors": [format_author(str(a)) for a in (entry.get("authors") or []) if a],
+        "year": year,
+        "venue": venue,
+        "venue_short": str(entry.get("venue_short") or "").strip(),
+        # Same precedence parse_record() applies to a record's <ee> list.
+        "url": (str(entry.get("url")).strip() if entry.get("url")
+                else (url_publisher or url_arxiv)),
+        "url_publisher": url_publisher,
+        "url_arxiv": url_arxiv,
+    }
+    rec["type"] = manual_type(entry, key, venue, venues, core_ranks, scimago)
+    supplied_topics = entry.get("topics")
+    rec["topics"] = (
+        [str(t) for t in supplied_topics] if supplied_topics
+        else classify_topics(rec, topics, topic_overrides)
+    )
+    # Scholar counts win when refresh_citations.py has matched the
+    # title (it reads the merged list, so manual keys do get counts);
+    # the YAML value is only a seed for before that first match.
+    try:
+        seed = int(entry.get("citations") or 0)
+    except (TypeError, ValueError):
+        seed = 0
+    rec["citations"] = int(citations.get(key, seed))
+    return rec
+
+
+def apply_override(pub: dict, fields: dict, key: str) -> None:
+    """Merge `fields` into `pub` in place, field by field. Anything the
+    override doesn't name is left alone — url_arxiv above all, so the
+    preprint link survives on the page."""
+    for field, value in fields.items():
+        field = str(field)
+        if field == "key":
+            continue  # the key is the join, never a payload field
+        if field not in RECORD_FIELDS:
+            print(
+                f"[warn] [manual] override {key}: ignoring unknown field {field!r}",
+                file=sys.stderr,
+            )
+            continue
+        if field == "type" and str(value) not in VALID_TYPES:
+            print(
+                f"[warn] [manual] override {key}: unknown type {str(value)!r}, "
+                f"leaving {pub.get('type')!r} (allowed: {', '.join(TYPE_ORDER)})",
+                file=sys.stderr,
+            )
+            continue
+        pub[field] = plain_value(value)
+    if "url" not in fields:
+        # Same precedence parse_record() applies: the publisher page is
+        # the canonical link once there is one, arXiv is the fallback.
+        pub["url"] = pub.get("url_publisher") or pub.get("url_arxiv")
+
+
+def apply_manual_overlay(
+    pubs: list[dict],
+    manual_path: Path,
+    venues: dict,
+    core_ranks: dict[str, dict],
+    scimago: dict[str, dict],
+    topics: list[dict],
+    topic_overrides: dict[str, list[str]],
+    citations: dict[str, int],
+    prune: bool = True,
+) -> list[dict]:
+    """Merge data/manual_publications.yml into the DBLP results and
+    prune the entries DBLP has caught up with. Returns the merged list;
+    `pubs` is also mutated in place for the overridden records.
+
+    Titles are compared normalized (lowercased, punctuation stripped,
+    whitespace collapsed) via normalize_title_for_match().
+    """
+    doc, handle = load_manual_overlay(manual_path)
+    additions = doc.get("additions") or []
+    overrides = doc.get("overrides") or {}
+    if not additions and not overrides:
+        return pubs
+
+    by_key = {p["key"]: p for p in pubs}
+    # Two title indexes: every DBLP record (an addition loses to any of
+    # them), and only the published ones (an override is superseded
+    # solely by a record that is no longer a preprint — classify_fields
+    # returns preprint for every CoRR key, so "not a preprint" is the
+    # same test as "not CoRR").
+    any_by_title: dict[str, dict] = {}
+    published_by_title: dict[str, dict] = {}
+    for p in pubs:
+        norm = normalize_title_for_match(p.get("title", ""))
+        if not norm:
+            continue
+        any_by_title.setdefault(norm, p)
+        if p.get("type") != TYPE_PREPRINT:
+            published_by_title.setdefault(norm, p)
+
+    pruned_overrides: list[str] = []
+    applied_overrides = 0
+    for corr_key in list(overrides.keys()):
+        fields = overrides.get(corr_key) or {}
+        target = by_key.get(corr_key)
+        # The override's own `title` is what lets the pruner recognise
+        # the superseding record once the CoRR key itself is gone; while
+        # the key is still there, DBLP's title serves just as well.
+        title = str(fields.get("title") or (target or {}).get("title") or "")
+        norm = normalize_title_for_match(title)
+        superseder = published_by_title.get(norm) if norm else None
+        if superseder is not None:
+            print(
+                f"[manual] pruned override {corr_key}, "
+                f"superseded by {superseder['key']}",
+                file=sys.stderr,
+            )
+            pruned_overrides.append(corr_key)
+            continue
+        if target is None:
+            # Can't tell "DBLP dropped the key" from "the key never
+            # existed" in a single run, and blindly deleting on a DBLP
+            # hiccup loses a hand-written entry — so warn and carry on.
+            print(
+                f"[warn] [manual] override {corr_key} targets a DBLP key that is "
+                f"not in the current results — left in place"
+                + ("" if fields.get("title") else
+                   " (add a `title:` so a superseding record can be detected)"),
+                file=sys.stderr,
+            )
+            continue
+        if target.get("type") != TYPE_PREPRINT:
+            # DBLP re-typed the record itself; the patch adds nothing.
+            print(
+                f"[manual] pruned override {corr_key}, "
+                f"superseded by {target['key']}",
+                file=sys.stderr,
+            )
+            pruned_overrides.append(corr_key)
+            continue
+        apply_override(target, fields, corr_key)
+        # The venue is part of what topic patterns match against, so
+        # topics are re-derived through the usual path after the patch.
+        if "topics" not in fields:
+            target["topics"] = classify_topics(target, topics, topic_overrides)
+        applied_overrides += 1
+
+    pruned_additions: list[int] = []
+    merged = list(pubs)
+    for idx, entry in enumerate(additions):
+        if not entry:
+            continue
+        rec = build_manual_record(
+            entry, venues, core_ranks, scimago, topics, topic_overrides, citations,
+        )
+        if rec is None:
+            continue
+        hit = any_by_title.get(normalize_title_for_match(rec["title"]))
+        if hit is not None:
+            print(
+                f'[manual] pruned addition "{rec["title"]}", '
+                f'DBLP now has it as {hit["key"]}',
+                file=sys.stderr,
+            )
+            if hit.get("type") == TYPE_PREPRINT:
+                print(
+                    f"[warn] [manual] {hit['key']} is still only a preprint — if "
+                    f"the paper has a real venue, add an `overrides:` entry for "
+                    f"that key",
+                    file=sys.stderr,
+                )
+            pruned_additions.append(idx)
+            continue
+        merged.append(rec)
+
+    if applied_overrides or len(merged) > len(pubs):
+        print(
+            f"[manual] applied {len(merged) - len(pubs)} addition(s), "
+            f"{applied_overrides} override(s)",
+            file=sys.stderr,
+        )
+
+    if pruned_additions or pruned_overrides:
+        stale = len(pruned_additions) + len(pruned_overrides)
+        if not prune:
+            print(
+                f"[manual] --no-prune: {stale} stale entr"
+                f"{'y' if stale == 1 else 'ies'} left in "
+                f"{manual_path.name} (still kept out of the JSON)",
+                file=sys.stderr,
+            )
+        elif handle is None:
+            print(
+                f"[warn] [manual] {stale} stale entr"
+                f"{'y' if stale == 1 else 'ies'} could not be removed from "
+                f"{manual_path.name} — ruamel.yaml is not installed",
+                file=sys.stderr,
+            )
+        else:
+            prune_yaml_entries(doc["additions"], pruned_additions)
+            prune_yaml_entries(doc["overrides"], pruned_overrides)
+            with manual_path.open("w", encoding="utf-8") as f:
+                handle.dump(doc, f)
+            print(f"[manual] rewrote {manual_path.name}", file=sys.stderr)
+
+    return merged
+
+
 def load_awards(path: Path) -> list[dict]:
     """Read the hand-curated awards list. Each entry must at minimum
     have year + title; issuer/description/url are optional. Awards are
@@ -593,7 +1108,7 @@ def load_citations(path: Path) -> tuple[dict[str, int], str]:
     return counts, fetched_at
 
 
-def main() -> int:
+def main(prune_manual: bool = True) -> int:
     venues = load_venues(VENUES_FILE)
     topics, topic_overrides = load_topics(TOPICS_FILE)
     core_ranks = load_core_rankings(CORE_FILE)
@@ -640,6 +1155,21 @@ def main() -> int:
         parsed["topics"] = classify_topics(parsed, topics, topic_overrides)
         parsed["citations"] = citations.get(parsed["key"], 0)
         pubs.append(parsed)
+
+    # Force in the papers DBLP hasn't indexed yet, and patch the ones it
+    # still lists as CoRR-only. Runs before cross_link_arxiv so manual
+    # records take part in preprint↔paper linking like any other.
+    pubs = apply_manual_overlay(
+        pubs,
+        MANUAL_FILE,
+        venues,
+        core_ranks,
+        scimago,
+        topics,
+        topic_overrides,
+        citations,
+        prune=prune_manual,
+    )
 
     cross_link_arxiv(pubs)
 
@@ -732,4 +1262,16 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    parser = argparse.ArgumentParser(
+        description="Fetch publications from DBLP, classify them, and write "
+                    "data/publications.json.",
+    )
+    parser.add_argument(
+        "--no-prune",
+        action="store_true",
+        help="don't rewrite data/manual_publications.yml: report which overlay "
+             "entries DBLP has caught up with and leave the file alone. They "
+             "are still kept out of the generated JSON.",
+    )
+    args = parser.parse_args()
+    sys.exit(main(prune_manual=not args.no_prune))

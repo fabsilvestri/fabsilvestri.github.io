@@ -1,0 +1,115 @@
+# Manual overlay for the publication list.
+#
+# data/publications.json is regenerated from DBLP every night by
+# .github/workflows/update-publications.yml and committed to main, so
+# hand edits to it are lost on the next run. This file is the supported
+# escape hatch: scripts/fetch_publications.py merges it into the DBLP
+# results after the fetch and classification, before the JSON is
+# written. Merged records go through the same topic and venue
+# classification helpers as DBLP records, so nothing downstream (sort,
+# counters, filters, renderer) knows a record came from here.
+#
+# THE OVERLAY PRUNES ITSELF. Every run checks each entry against the
+# live DBLP results and deletes the ones DBLP has caught up with,
+# rewriting this file in place — comments and key order survive. The
+# nightly workflow commits the rewrite like any other change, so the
+# overlay shrinks back to empty on its own. To see what would go
+# without touching the file:
+#
+#     python3 scripts/fetch_publications.py --no-prune
+#
+# Requires ruamel.yaml (scripts/requirements.txt). Without it the
+# overlay is still applied, but pruning is skipped with a warning.
+#
+# Both sections are documented here rather than next to the data below,
+# so that pruning the last entry of a section can't carry the prose off
+# with it.
+#
+# ---------------------------------------------------------------------
+# additions — full records for papers DBLP has no entry for at all.
+#
+# Fields are exactly the ones fetch_publications.py emits. `key` and
+# `title` are required; everything else is optional and defaults the
+# way a DBLP record would:
+#
+#   key           Synthetic, and must start with "manual/". The segment
+#                 after that is the DBLP venue abbreviation, so the
+#                 CORE / Scimago lookups resolve exactly as they do for
+#                 a real key: "manual/sigir/..." classifies through
+#                 CORE's SIGIR entry, "manual/tois/..." through the
+#                 tois ISSNs in data/venues.yml. Keep it unique and
+#                 stable — data/citations.json is keyed by it.
+#   title         Without the trailing period. Quote it if it contains
+#                 a colon followed by a space — that's YAML syntax.
+#   authors       "F. Silvestri" form; full names are abbreviated the
+#                 same way DBLP names are.
+#   year          Integer.
+#   venue         Long-ish venue string, as DBLP would report it.
+#   venue_short   Badge text on the site (e.g. "SIGIR", "TOIS").
+#   url           Defaults to url_publisher or url_arxiv.
+#   url_publisher DOI / ACL Anthology / OpenReview / … page.
+#   url_arxiv     arXiv abs URL, if there is one.
+#   type          One of: a_star_conf, q1_journal, other_conf,
+#                 other_journal, workshop, preprint. It is what tells
+#                 the classifier whether to rank the venue against CORE
+#                 or against Scimago, so declare it for anything that
+#                 isn't a conference paper. Omitted, the entry is
+#                 classified as a conference paper from the key's venue
+#                 abbreviation, exactly as a DBLP record would be.
+#   topics        Slugs from data/topics.yml. Omit for auto-tagging.
+#   citations     Seed count. data/citations.json wins when Google
+#                 Scholar has matched the title (it does match overlay
+#                 records — refresh_citations.py reads the merged list).
+#
+# Pruning: when a DBLP record turns up with the same normalized title
+# (lowercased, punctuation stripped, whitespace collapsed), DBLP wins —
+# the addition is dropped from the output and deleted from this file.
+#
+# Example:
+#
+#   - key: manual/sigir/silvestri-2027-example
+#     title: "An Example Paper: One DBLP Has Not Indexed Yet"
+#     authors: ["A. Coauthor", "F. Silvestri"]
+#     year: 2027
+#     venue: SIGIR
+#     venue_short: SIGIR
+#     type: a_star_conf
+#     url_publisher: https://doi.org/10.1145/0000000.0000000
+#     url_arxiv: https://arxiv.org/abs/2701.00000
+#     topics: [ir, llm]
+#
+# ---------------------------------------------------------------------
+# overrides — field patches for papers DBLP knows only as a CoRR
+# preprint, but that have since appeared at a real venue.
+#
+# Keyed by DBLP key. List ONLY the fields to replace (typically venue,
+# venue_short, type, year, url_publisher); everything else is left
+# alone, so url_arxiv survives and the preprint link stays on the page.
+# `url` is recomputed as url_publisher or url_arxiv unless the override
+# sets it explicitly. Topics are re-derived after the patch, since the
+# venue is part of what the topic patterns match against.
+#
+# Include `title:` even though it is not being replaced: the pruner
+# needs it to recognise the DBLP record that eventually supersedes this
+# entry once the CoRR key itself disappears. Quote it if it contains a
+# colon followed by a space.
+#
+# Pruning: the entry goes when the target key is no longer a preprint,
+# or when a non-preprint DBLP record with the same normalized title
+# shows up. An override pointing at a key DBLP does not have is
+# reported and left alone — never a hard failure of the nightly run.
+#
+# Example:
+#
+#   journals/corr/abs-2501-01234:
+#     title: An Example Paper That Was Only On arXiv
+#     venue: SIGIR
+#     venue_short: SIGIR
+#     type: a_star_conf
+#     year: 2026
+#     url_publisher: https://doi.org/10.1145/0000000.0000000
+# ---------------------------------------------------------------------
+
+additions: []
+
+overrides: {}

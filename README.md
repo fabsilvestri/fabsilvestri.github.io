@@ -17,11 +17,13 @@ nightly by a GitHub Action.
 │   └── img/profile.jpg               # hero photo
 ├── data/
 │   ├── publications.json             # generated — canonical JSON, served live to the page
+│   ├── manual_publications.yml       # manual overlay — papers DBLP hasn't indexed yet
 │   ├── venues.yml                    # DBLP → CORE acronym / Scimago ISSN map
 │   ├── core_rankings.csv             # CORE conference rankings (vendored)
 │   └── scimago_journal_rank.csv      # Scimago journal quartiles (manual download)
 ├── scripts/
-│   ├── fetch_publications.py         # DBLP fetch + classify (also bumps cache busters)
+│   ├── fetch_publications.py         # DBLP fetch + classify + manual overlay
+│   ├── test_manual_overlay.py        # tests for the overlay merge/prune
 │   ├── refresh_scimago.py            # yearly Scimago CSV refresh
 │   ├── refresh_citations.py          # Scholar citation cache refresh
 │   ├── discover_awards_claude.py     # weekly Claude web-search award scan
@@ -63,8 +65,56 @@ python3 scripts/fetch_publications.py
 ```
 
 This regenerates `data/publications.json` and rewrites the
-`?v=<content-hash>` query strings in `index.html`. Requires PyYAML
-(`pip install -r scripts/requirements.txt`).
+`?v=<content-hash>` query strings in `index.html`. Requires PyYAML and
+ruamel.yaml (`pip install -r scripts/requirements.txt`).
+
+## Manual publications
+
+DBLP indexes a paper weeks or months after it appears, and
+`data/publications.json` is overwritten by the nightly sync, so editing
+it by hand achieves nothing. `data/manual_publications.yml` is the
+supported way to force a paper in until DBLP catches up. It has two
+sections:
+
+- **`additions`** — full records for papers DBLP has no entry for at
+  all. Same fields the generator emits, under a synthetic key that must
+  start with `manual/`. The segment after that is the DBLP venue
+  abbreviation (`manual/sigir/…`, `manual/tois/…`), so CORE and Scimago
+  rank the venue exactly as they would for a real DBLP key.
+- **`overrides`** — field patches keyed by DBLP key, for papers DBLP
+  knows only as a CoRR preprint but that have since appeared at a real
+  venue. List only the fields to replace; everything else survives, so
+  the arXiv link stays on the page.
+
+The overlay is merged in after the DBLP fetch and classification, and
+merged records go through the same topic and venue classification path
+as DBLP records — the renderer never learns where a record came from.
+
+**It prunes itself.** Every run compares each entry against the live
+DBLP results, using normalized titles (lowercased, punctuation
+stripped, whitespace collapsed):
+
+- an addition whose title DBLP now carries is dropped in favour of the
+  DBLP record;
+- an override is dropped once its target is no longer a preprint, or
+  once a published DBLP record with the same title shows up;
+- an override pointing at a key DBLP doesn't have is reported and left
+  alone — a stale overlay entry never fails the nightly run.
+
+Pruned entries are deleted from the YAML in place (comments and key
+order preserved) and the nightly workflow commits the rewrite, so the
+file empties itself without anyone tending it. To see what would go
+without touching the file:
+
+```bash
+python3 scripts/fetch_publications.py --no-prune
+```
+
+The file itself documents every field. Tests:
+
+```bash
+python3 scripts/test_manual_overlay.py
+```
 
 ## Editing venue classification
 
@@ -108,9 +158,11 @@ python3 scripts/refresh_citations.py
 ```
 
 Scrapes `scholar.google.com/citations?user=pi985dQAAAAJ`, fuzzy-matches
-each row to a DBLP title, and writes `data/citations.json`
-(`{dblp_key → cite_count}`). Unmatched Scholar rows (editorials, PhD
-thesis, workshop abstracts, etc.) are listed in the `unmatched` field
+each row to a title in `data/publications.json` — the merged list, so
+manual-overlay records pick up counts under their `manual/…` key too —
+and writes `data/citations.json` (`{key → cite_count}`). Unmatched
+Scholar rows (editorials, PhD thesis, workshop abstracts, etc.) are
+listed in the `unmatched` field
 of the same file. The homepage's "Selected" tab uses these counts to
 pick high-impact papers — definition: top-tier venue (CORE A/A* or
 Scimago-Q1 CS) **and** (≥ 20 Scholar citations **or** published in the

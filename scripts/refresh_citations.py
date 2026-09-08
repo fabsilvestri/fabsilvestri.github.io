@@ -3,8 +3,11 @@
 
 Scrapes the author profile at scholar.google.com/citations?user=<id>,
 paginating until the profile is exhausted, then fuzzy-matches each row
-against DBLP titles (normalized, with a prefix-match fallback for the
-titles Scholar truncates with "..."). Writes:
+against the titles in data/publications.json (normalized, with a
+prefix-match fallback for the titles Scholar truncates with "...").
+That list is the merged one, so records forced in through
+data/manual_publications.yml pick up their counts too — they are keyed
+by their synthetic "manual/..." key. Writes:
 
     data/citations.json = {
       "scholar_id":   "pi985dQAAAAJ",
@@ -142,11 +145,12 @@ def fetch_all_scholar(session: requests.Session) -> list[dict]:
 
 
 def match_to_dblp(scholar_rows: list[dict], dblp_pubs: list[dict]) -> tuple[dict[str, int], list[dict]]:
-    """Build {dblp_key → cite_count}. Matching strategy: first try exact
-    normalized-title equality; then, because Scholar truncates long
-    titles with an ellipsis, try prefix containment (Scholar prefix of
-    DBLP title, or DBLP prefix of Scholar title) and require the years
-    to be within 1."""
+    """Build {publication_key → cite_count} over the merged publication
+    list — DBLP records plus any manual-overlay ones. Matching strategy:
+    first try exact normalized-title equality; then, because Scholar
+    truncates long titles with an ellipsis, try prefix containment
+    (Scholar prefix of the paper's title, or the other way round) and
+    require the years to be within 1."""
     by_norm_title: dict[str, dict] = {}
     # Prefer the row with the most cites if Scholar lists duplicates.
     for row in scholar_rows:
