@@ -77,18 +77,27 @@ supported way to force a paper in until DBLP catches up. It has two
 sections:
 
 - **`additions`** — full records for papers DBLP has no entry for at
-  all. Same fields the generator emits, under a synthetic key that must
-  start with `manual/`. The segment after that is the DBLP venue
-  abbreviation (`manual/sigir/…`, `manual/tois/…`), so CORE and Scimago
-  rank the venue exactly as they would for a real DBLP key.
+  all. Same fields the generator emits, under a synthetic key starting
+  with `manual/`. Mirror the DBLP key the paper will eventually get
+  (`manual/conf/iclr/…`, `manual/journals/tors/…`) or use the short form
+  (`manual/iclr/…`) — either way the venue abbreviation lands where the
+  CORE and Scimago lookups expect it, so the venue is ranked exactly as
+  it would be for a real DBLP key.
 - **`overrides`** — field patches keyed by DBLP key, for papers DBLP
   knows only as a CoRR preprint but that have since appeared at a real
-  venue. List only the fields to replace; everything else survives, so
-  the arXiv link stays on the page.
+  venue. List only the fields to replace; everything else survives. A
+  `null` is a TODO placeholder, not an erase. DBLP files a CoRR paper's
+  arXiv copy as a `10.48550` DOI under `url_publisher`, so an override
+  that sets the real publisher page moves that DOI to `url_arxiv` —
+  pointing a record at its venue never costs it its preprint link.
 
 The overlay is merged in after the DBLP fetch and classification, and
 merged records go through the same topic and venue classification path
 as DBLP records — the renderer never learns where a record came from.
+Topics come from the `data/topics.yml` keyword patterns; a `topics:`
+list in the overlay is only the fallback for papers those patterns
+don't recognise. To beat the patterns, add the key to `topic_overrides`
+in `data/topics.yml` — that works for `manual/…` keys too.
 
 **It prunes itself.** Every run compares each entry against the live
 DBLP results, using normalized titles (lowercased, punctuation
