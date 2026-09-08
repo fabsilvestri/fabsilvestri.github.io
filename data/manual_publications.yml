@@ -235,6 +235,35 @@ overrides:
     topics: ["ir", "llm", "trust"]
     url_publisher: https://doi.org/10.1007/s10796-026-10741-3
 
+  # ECML PKDD 2026 research track, Naples. Springer LNCS chapter,
+  # pp. 340-355 of Proceedings Part II (isbn 9783032376565) — doi and
+  # author list verified via CrossRef. Type is declared rather than
+  # derived: CORE ranks this venue A under the acronym "ECML PKDD", but
+  # its entry reads "PKDD and ECML combined from 2008", so mapping the
+  # DBLP abbrev "pkdd" to it in venues.yml would retroactively promote
+  # the 2004 PKDD paper that predates the merger.
+  journals/corr/abs-2511-18660:
+    title: "Subtract the Corruption: Training-Data-Free Corrective Machine Unlearning using Task Arithmetic"
+    venue: ECML/PKDD
+    venue_short: PKDD
+    year: 2026
+    type: a_star_conf
+    url_publisher: https://doi.org/10.1007/978-3-032-37657-2_19
+
+  # ParCo2001, published 2002 in the World Scientific proceedings volume
+  # (doi and author list verified via CrossRef, pp. 197-204). The record
+  # currently sits on the Preprints tab under 2004, the year the arXiv
+  # copy was posted. ParCo is not in CORE, so other_conf. This one keeps
+  # its own arxiv.org link — it is one of the few CoRR records where
+  # DBLP listed one.
+  journals/corr/cs-IR-0407053:
+    title: Design of a Parallel and Distributed Web Search Engine
+    venue: PARCO
+    venue_short: PARCO
+    year: 2002
+    type: other_conf
+    url_publisher: https://doi.org/10.1142/9781860949630_0025
+
   # AISTATS 2026 poster; the OpenReview page states "AISTATS 2026
   # Poster", and virtual.aistats.org/virtual/2026/poster/13835 links to
   # the same id. No PMLR volume yet, so OpenReview is the publisher

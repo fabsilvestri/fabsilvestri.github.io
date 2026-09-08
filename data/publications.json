@@ -1,16 +1,16 @@
 {
   "last_updated": "2026-09-08",
-  "generated_at": "2026-09-08T13:32:28+00:00",
+  "generated_at": "2026-09-08T14:33:02+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 297,
   "counts_by_type": {
-    "a_star_conf": 75,
+    "a_star_conf": 76,
     "q1_journal": 34,
-    "other_conf": 67,
+    "other_conf": 68,
     "other_journal": 8,
     "workshop": 23,
-    "preprint": 90
+    "preprint": 88
   },
   "counts_by_topic": {
     "ir": 109,
@@ -334,6 +334,27 @@
       "type": "a_star_conf",
       "topics": [
         "trust"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2511-18660",
+      "title": "Subtract the Corruption: Training-Data-Free Corrective Machine Unlearning using Task Arithmetic",
+      "authors": [
+        "M. Mozafari",
+        "F. Ahmad Wani",
+        "M. Sofia Bucarelli",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ECML/PKDD",
+      "venue_short": "PKDD",
+      "url": "https://doi.org/10.1007/978-3-032-37657-2_19",
+      "url_publisher": "https://doi.org/10.1007/978-3-032-37657-2_19",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2511.18660",
+      "type": "a_star_conf",
+      "topics": [
+        "task_vectors"
       ],
       "citations": 0
     },
@@ -1628,27 +1649,6 @@
         "llm"
       ],
       "citations": 6
-    },
-    {
-      "key": "journals/corr/abs-2511-18660",
-      "title": "Subtract the Corruption: Training-Data-Free Corrective Machine Unlearning using Task Arithmetic",
-      "authors": [
-        "M. Mozafari",
-        "F. Ahmad Wani",
-        "M. Sofia Bucarelli",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2511.18660",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2511.18660",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 0
     },
     {
       "key": "journals/corr/abs-2510-09551",
@@ -6648,27 +6648,6 @@
       "citations": 40
     },
     {
-      "key": "journals/corr/cs-IR-0407053",
-      "title": "Design of a Parallel and Distributed Web Search Engine",
-      "authors": [
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.cs/0407053",
-      "url_publisher": "https://doi.org/10.48550/arXiv.cs/0407053",
-      "url_arxiv": "http://arxiv.org/abs/cs.IR/0407053",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 44
-    },
-    {
       "key": "conf/fimi/OrlandoLPPS03",
       "title": "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets",
       "authors": [
@@ -6755,6 +6734,27 @@
         "data_mining"
       ],
       "citations": 50
+    },
+    {
+      "key": "journals/corr/cs-IR-0407053",
+      "title": "Design of a Parallel and Distributed Web Search Engine",
+      "authors": [
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2002,
+      "venue": "PARCO",
+      "venue_short": "PARCO",
+      "url": "https://doi.org/10.1142/9781860949630_0025",
+      "url_publisher": "https://doi.org/10.1142/9781860949630_0025",
+      "url_arxiv": "http://arxiv.org/abs/cs.IR/0407053",
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 44
     },
     {
       "key": "conf/vecpar/OrlandoPPS02",
