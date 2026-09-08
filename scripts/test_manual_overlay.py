@@ -196,6 +196,65 @@ class OverlayTestCase(unittest.TestCase):
         self.assertEqual(merged, [])
         self.assertIn("must start with 'manual/'", err)
 
+    def test_key_shapes_resolve_the_venue_abbreviation(self):
+        # Both the DBLP-mirroring shape and the short one must reach the
+        # same CORE / Scimago entry.
+        self.assertEqual(fp.manual_venue_abbrev("manual/conf/sigir/CasoS26"), "sigir")
+        self.assertEqual(fp.manual_venue_abbrev("manual/journals/tois/SmithJ26"), "tois")
+        self.assertEqual(fp.manual_venue_abbrev("manual/sigir/some-slug"), "sigir")
+        self.write_overlay(additions="""\
+  - key: manual/conf/sigir/MirrorsDblp26
+    title: A Conference Paper Keyed Like DBLP
+    year: 2026
+    venue: SIGIR
+  - key: manual/journals/tois/MirrorsDblp26
+    title: A Journal Paper Keyed Like DBLP
+    year: 2026
+    venue: ACM Trans. Inf. Syst.
+    type: q1_journal
+""")
+        merged, err = self.run_overlay([])
+        self.assertEqual([p["type"] for p in merged],
+                         [fp.TYPE_A_STAR, fp.TYPE_Q1])
+        self.assertNotIn("classifies as", err)  # no declared/derived mismatch
+
+    # -- topics ---------------------------------------------------------
+
+    def test_keyword_topics_win_over_the_yaml_list(self):
+        self.write_overlay(additions="""\
+  - key: manual/conf/sigir/AutoTopics26
+    title: Neural Ranking for Retrieval
+    year: 2026
+    venue: SIGIR
+    topics: [llm]
+""")
+        merged, _ = self.run_overlay([])
+        self.assertEqual(merged[0]["topics"], ["ir"])
+
+    def test_yaml_topics_are_the_fallback_when_nothing_matches(self):
+        self.write_overlay(additions="""\
+  - key: manual/conf/sigir/NoKeyword26
+    title: A Title Matching No Pattern At All
+    year: 2026
+    venue: SIGIR
+    topics: [llm, misc, bogus_slug]
+""")
+        merged, err = self.run_overlay([])
+        # misc is dropped (it only means anything alone) and the unknown
+        # slug is reported rather than emitted.
+        self.assertEqual(merged[0]["topics"], ["llm"])
+        self.assertIn("unknown topic 'bogus_slug'", err)
+
+    def test_fallback_stays_misc_when_the_yaml_says_nothing(self):
+        self.write_overlay(additions="""\
+  - key: manual/conf/sigir/NoKeyword26
+    title: A Title Matching No Pattern At All
+    year: 2026
+    venue: SIGIR
+""")
+        merged, _ = self.run_overlay([])
+        self.assertEqual(merged[0]["topics"], [fp.MISC_SLUG])
+
     # -- overrides ------------------------------------------------------
 
     OVERRIDE = """\
@@ -229,6 +288,41 @@ class OverlayTestCase(unittest.TestCase):
         self.assertEqual(sorted(rec["topics"]), ["ir", "llm"])  # re-derived
         self.assertNotIn("pruned", err)  # kept, silently
         self.assertIn("journals/corr/abs-2501-01234", self.path.read_text())
+
+    def test_override_rescues_the_arxiv_doi_into_url_arxiv(self):
+        # DBLP files a CoRR paper's arXiv copy as a 10.48550 DOI under
+        # url_publisher; the override must not simply overwrite it.
+        self.write_overlay(overrides=self.OVERRIDE)
+        pub = self.corr_pub()
+        pub["url_arxiv"] = None
+        pub["url_publisher"] = "https://doi.org/10.48550/arXiv.2501.01234"
+        pub["url"] = pub["url_publisher"]
+        merged, _ = self.run_overlay([pub])
+        rec = merged[0]
+        self.assertEqual(rec["url_publisher"], "https://doi.org/10.1145/2222222.2222222")
+        self.assertEqual(rec["url_arxiv"], "https://doi.org/10.48550/arXiv.2501.01234")
+        self.assertEqual(rec["url"], "https://doi.org/10.1145/2222222.2222222")
+
+    def test_override_keeps_a_real_arxiv_url_over_the_doi(self):
+        self.write_overlay(overrides=self.OVERRIDE)
+        pub = self.corr_pub()  # already has an arxiv.org url_arxiv
+        pub["url_publisher"] = "https://doi.org/10.48550/arXiv.2501.01234"
+        merged, _ = self.run_overlay([pub])
+        self.assertEqual(merged[0]["url_arxiv"], "https://arxiv.org/abs/2501.01234")
+
+    def test_override_null_is_a_placeholder_not_an_erase(self):
+        self.write_overlay(overrides="""\
+  journals/corr/abs-2501-01234:
+    title: Retrieval With Language Models
+    venue: SIGIR
+    type: a_star_conf
+    url_publisher: null
+""")
+        pub = self.corr_pub()
+        pub["url_publisher"] = "https://doi.org/10.48550/arXiv.2501.01234"
+        merged, _ = self.run_overlay([pub])
+        self.assertEqual(merged[0]["url_publisher"],
+                         "https://doi.org/10.48550/arXiv.2501.01234")
 
     def test_override_pruned_when_dblp_publishes_the_paper(self):
         self.write_overlay(overrides=self.OVERRIDE)

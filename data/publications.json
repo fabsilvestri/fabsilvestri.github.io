@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-09-04",
-  "generated_at": "2026-09-04T08:25:47+00:00",
+  "last_updated": "2026-09-08",
+  "generated_at": "2026-09-08T13:24:41+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 293,
+  "count": 297,
   "counts_by_type": {
-    "a_star_conf": 70,
-    "q1_journal": 31,
+    "a_star_conf": 74,
+    "q1_journal": 34,
     "other_conf": 67,
-    "other_journal": 7,
-    "workshop": 22,
-    "preprint": 96
+    "other_journal": 8,
+    "workshop": 23,
+    "preprint": 91
   },
   "counts_by_topic": {
-    "ir": 108,
-    "recsys": 46,
+    "ir": 109,
+    "recsys": 47,
     "llm": 36,
-    "agents": 4,
+    "agents": 5,
     "nlp": 12,
-    "gnn": 32,
+    "gnn": 33,
     "trust": 51,
     "task_vectors": 9,
-    "efficient": 55,
+    "efficient": 56,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -155,6 +155,29 @@
       "citations": 0
     },
     {
+      "key": "manual/conf/aistats/DragoBCMSS26",
+      "title": "Rank Lifting and Random Non-Linear Maps",
+      "authors": [
+        "A. Drago",
+        "M. Sofia Bucarelli",
+        "F. Caso",
+        "M. Michetti",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "AISTATS",
+      "venue_short": "AISTATS",
+      "url": null,
+      "url_publisher": null,
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 0
+    },
+    {
       "key": "conf/eacl/TrappoliniCFMS26",
       "title": "Redefining Retrieval Evaluation in the Era of LLMs",
       "authors": [
@@ -199,6 +222,76 @@
         "ir"
       ],
       "citations": 0
+    },
+    {
+      "key": "manual/conf/iclr/CasoFMSS26",
+      "title": "Composable Sparse Subnetworks via Maximum-Entropy Principle",
+      "authors": [
+        "F. Caso",
+        "S. Fonio",
+        "S. Monaco",
+        "N. Saccomanno",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ICLR",
+      "venue_short": "ICLR",
+      "url": "https://openreview.net/forum?id=IHwx5ioIP2",
+      "url_publisher": "https://openreview.net/forum?id=IHwx5ioIP2",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2510-04727",
+      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
+      "authors": [
+        "E. Mule",
+        "S. Fiorini",
+        "A. Purificato",
+        "F. Siciliano",
+        "S. Coniglio",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ICLR",
+      "venue_short": "ICLR",
+      "url": "https://openreview.net/forum?id=d1hQkcDy7c",
+      "url_publisher": "https://openreview.net/forum?id=d1hQkcDy7c",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2510.04727",
+      "type": "a_star_conf",
+      "topics": [
+        "gnn"
+      ],
+      "citations": 5
+    },
+    {
+      "key": "journals/corr/abs-2504-05342",
+      "title": "MASS: MoErging through Adaptive Subspace Selection",
+      "authors": [
+        "D. Crisostomi",
+        "A. Zirilli",
+        "A. Andrea Gargiulo",
+        "M. Sofia Bucarelli",
+        "S. Scardapane",
+        "F. Silvestri",
+        "I. Masi",
+        "E. Rodolà"
+      ],
+      "year": 2026,
+      "venue": "ICLR",
+      "venue_short": "ICLR",
+      "url": "https://openreview.net/forum?id=CRBt6DNaBE",
+      "url_publisher": "https://openreview.net/forum?id=CRBt6DNaBE",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2504.05342",
+      "type": "a_star_conf",
+      "topics": [
+        "task_vectors"
+      ],
+      "citations": 2
     },
     {
       "key": "conf/kdd/GiorgiVST26",
@@ -293,6 +386,73 @@
       "citations": 0
     },
     {
+      "key": "journals/corr/abs-2602-15650",
+      "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
+      "authors": [
+        "M. Salmè",
+        "F. Siciliano",
+        "F. Silvestri",
+        "P. Soda",
+        "R. Sicilia",
+        "V. Guarrasi"
+      ],
+      "year": 2026,
+      "venue": "Inf. Syst. Frontiers",
+      "venue_short": "ISF",
+      "url": "https://doi.org/10.1007/s10796-026-10741-3",
+      "url_publisher": "https://doi.org/10.1007/s10796-026-10741-3",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2602.15650",
+      "type": "q1_journal",
+      "topics": [
+        "llm",
+        "trust"
+      ],
+      "citations": 1
+    },
+    {
+      "key": "manual/journals/tors/SbandiSS26",
+      "title": "Balancing the Diversity-Coverage Trade-off in Graph-based Recommendations for Cold-Start Industrial Applications",
+      "authors": [
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM Trans. Recomm. Syst.",
+      "venue_short": "TORS",
+      "url": "https://doi.org/10.1145/3796509",
+      "url_publisher": "https://doi.org/10.1145/3796509",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "recsys",
+        "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "manual/journals/tors/SbandiKSAS26",
+      "title": "CRAB: Churn Reduction Agent Based via Reinforcement Learning",
+      "authors": [
+        "A. Sbandi",
+        "N. Kaploukhaya",
+        "F. Siciliano",
+        "A. Anagnostopoulos",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM Trans. Recomm. Syst.",
+      "venue_short": "TORS",
+      "url": "https://doi.org/10.1145/3814953",
+      "url_publisher": "https://doi.org/10.1145/3814953",
+      "url_arxiv": null,
+      "type": "q1_journal",
+      "topics": [
+        "agents"
+      ],
+      "citations": 0
+    },
+    {
       "key": "journals/tors/ChenHSZAT26",
       "title": "Joint Factual and Counterfactual Explanations for Top-k GNN-based Recommendations",
       "authors": [
@@ -341,6 +501,49 @@
       "citations": 12
     },
     {
+      "key": "journals/corr/abs-2502-10111",
+      "title": "Unified Counterfactual Explainer for Graph Neural Networks",
+      "authors": [
+        "F. Giorgi",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2026,
+      "venue": "npj Artif. Intell.",
+      "venue_short": "npj AI",
+      "url": "https://doi.org/10.1038/s44387-026-00135-w",
+      "url_publisher": "https://doi.org/10.1038/s44387-026-00135-w",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2502.10111",
+      "type": "other_journal",
+      "topics": [
+        "gnn",
+        "trust"
+      ],
+      "citations": 7
+    },
+    {
+      "key": "journals/corr/abs-2406-14972",
+      "title": "A Tale of Trust and Accuracy: Base vs. Instruct LLMs in RAG Systems",
+      "authors": [
+        "F. Cuconasu",
+        "G. Trappolini",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "RAG4Reports@ACL",
+      "venue_short": "RAG4REPORTS",
+      "url": "https://doi.org/10.18653/v1/2026.rag4reports-1.3",
+      "url_publisher": "https://doi.org/10.18653/v1/2026.rag4reports-1.3",
+      "url_arxiv": "https://doi.org/10.48550/arXiv.2406.14972",
+      "type": "workshop",
+      "topics": [
+        "llm",
+        "trust"
+      ],
+      "citations": 4
+    },
+    {
       "key": "journals/corr/abs-2602-17518",
       "title": "A Picture of Agentic Search",
       "authors": [
@@ -384,30 +587,6 @@
         "gnn"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2602-15650",
-      "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
-      "authors": [
-        "M. Salmè",
-        "F. Siciliano",
-        "F. Silvestri",
-        "P. Soda",
-        "R. Sicilia",
-        "V. Guarrasi"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2602.15650",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2602.15650",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "llm",
-        "trust"
-      ],
-      "citations": 1
     },
     {
       "key": "journals/corr/abs-2607-22287",
@@ -1122,27 +1301,6 @@
       "citations": 1
     },
     {
-      "key": "journals/corr/abs-2502-10111",
-      "title": "COMBINEX: A Unified Counterfactual Explainer for Graph Neural Networks via Node Feature and Structural Perturbations",
-      "authors": [
-        "F. Giorgi",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2502.10111",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2502.10111",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "gnn",
-        "trust"
-      ],
-      "citations": 7
-    },
-    {
       "key": "journals/corr/abs-2502-00432",
       "title": "Community Membership Hiding via Gradient-based Optimization",
       "authors": [
@@ -1185,29 +1343,6 @@
         "trust"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2510-04727",
-      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
-      "authors": [
-        "E. Mule",
-        "S. Fiorini",
-        "A. Purificato",
-        "F. Siciliano",
-        "S. Coniglio",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2510.04727",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2510.04727",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 5
     },
     {
       "key": "journals/corr/abs-2505-15561",
@@ -1360,31 +1495,6 @@
         "trust"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2504-05342",
-      "title": "MASS: MoErging through Adaptive Subspace Selection",
-      "authors": [
-        "D. Crisostomi",
-        "A. Zirilli",
-        "A. Andrea Gargiulo",
-        "M. Sofia Bucarelli",
-        "S. Scardapane",
-        "F. Silvestri",
-        "I. Masi",
-        "E. Rodolà"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2504.05342",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2504.05342",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 2
     },
     {
       "key": "journals/corr/abs-2508-16082",
@@ -2019,28 +2129,6 @@
         "recsys"
       ],
       "citations": 32
-    },
-    {
-      "key": "journals/corr/abs-2406-14972",
-      "title": "A Tale of Trust and Accuracy: Base vs. Instruct LLMs in RAG Systems",
-      "authors": [
-        "F. Cuconasu",
-        "G. Trappolini",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "url": "https://doi.org/10.48550/arXiv.2406.14972",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2406.14972",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "llm",
-        "trust"
-      ],
-      "citations": 4
     },
     {
       "key": "journals/corr/abs-2411-07770",

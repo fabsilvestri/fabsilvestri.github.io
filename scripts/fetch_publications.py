@@ -372,7 +372,7 @@ def is_workshop(booktitle: str) -> bool:
 
 def classify_fields(
     kind: str,
-    key: str,
+    abbrev: str,
     publtype: str | None,
     booktitle: str,
     venues: dict,
@@ -382,9 +382,9 @@ def classify_fields(
     """The venue classifier, expressed over plain fields rather than a
     DBLP element, so DBLP records and manual overlay entries share one
     code path. `kind` is the DBLP element name: "article" for journals,
-    "inproceedings" for conference and workshop papers."""
-    abbrev = venue_abbrev(key)
-
+    "inproceedings" for conference and workshop papers; `abbrev` is the
+    venue abbreviation (venue_abbrev() for a DBLP key,
+    manual_venue_abbrev() for an overlay one)."""
     if publtype == "informal" or abbrev == "corr":
         return TYPE_PREPRINT
     if is_workshop(booktitle):
@@ -421,7 +421,7 @@ def classify(
 ) -> str:
     return classify_fields(
         record.tag,
-        record.get("key", ""),
+        venue_abbrev(record.get("key", "")),
         record.get("publtype"),
         (record.findtext("booktitle") or "").strip(),
         venues,
@@ -579,14 +579,36 @@ RECORD_FIELDS = [
 
 VALID_TYPES = set(TYPE_ORDER)
 
-# Synthetic keys for additions. The segment after the prefix is the DBLP
-# venue abbreviation, so venue_abbrev() — and with it the CORE and
-# Scimago lookups — resolves exactly as it does for a real DBLP key:
-#   "manual/sigir/silvestri-2027-example"  ->  abbrev "sigir"
 MANUAL_KEY_PREFIX = "manual/"
+
+
+def manual_venue_abbrev(key: str) -> str:
+    """Venue abbreviation for a synthetic overlay key, so the CORE and
+    Scimago lookups resolve as they do for a real DBLP key. Both shapes
+    work — mirror the DBLP key the paper will eventually get, or drop
+    the conf/journals segment:
+
+        manual/conf/iclr/CasoFMSS26      ->  "iclr"
+        manual/journals/tors/SbandiSS26  ->  "tors"
+        manual/iclr/some-slug            ->  "iclr"
+    """
+    rest = key[len(MANUAL_KEY_PREFIX):] if key.startswith(MANUAL_KEY_PREFIX) else key
+    parts = [part for part in rest.split("/") if part]
+    if not parts:
+        return ""
+    if parts[0] in ("conf", "journals") and len(parts) >= 2:
+        return parts[1].lower()
+    return parts[0].lower()
 
 # Journal types, i.e. the ones classify_fields() must see as "article".
 JOURNAL_TYPES = {TYPE_Q1, TYPE_OTHER_JOURNAL}
+
+# arXiv's own DOI namespace. DBLP lists a CoRR paper's arXiv copy as
+# "https://doi.org/10.48550/arXiv.2510.04727" rather than an arxiv.org
+# URL, and parse_record files anything that isn't arxiv.org under
+# url_publisher — so on most CoRR records the preprint link lives in
+# url_publisher and url_arxiv is empty.
+ARXIV_DOI_MARKER = "10.48550/arxiv"
 
 
 def manual_yaml_handle():
@@ -764,7 +786,7 @@ def manual_type(
         declared = ""
     derived = classify_fields(
         "article" if declared in JOURNAL_TYPES else "inproceedings",
-        key,
+        manual_venue_abbrev(key),
         "informal" if declared == TYPE_PREPRINT else None,
         venue,
         venues,
@@ -778,6 +800,36 @@ def manual_type(
             file=sys.stderr,
         )
     return declared or derived
+
+
+def resolve_manual_topics(
+    rec: dict,
+    supplied,
+    topics: list[dict],
+    topic_overrides: dict[str, list[str]],
+) -> list[str]:
+    """Topics for an overlay record. classify_topics() runs first and
+    wins whenever it recognises the paper; the YAML list is the fallback
+    for the ones its keyword patterns don't (those come back as the
+    catch-all MISC_SLUG). A fallback list is validated against
+    topics.yml, and MISC_SLUG is dropped from it — the catch-all only
+    means anything on its own."""
+    auto = classify_topics(rec, topics, topic_overrides)
+    if not supplied or auto != [MISC_SLUG]:
+        return auto
+    known = {t["slug"] for t in topics}
+    out: list[str] = []
+    for slug in supplied:
+        slug = str(slug)
+        if slug not in known:
+            print(
+                f"[warn] [manual] {rec['key']}: unknown topic {slug!r} — "
+                f"not in {TOPICS_FILE.name}, ignoring",
+                file=sys.stderr,
+            )
+        elif slug != MISC_SLUG and slug not in out:
+            out.append(slug)
+    return out or [MISC_SLUG]
 
 
 def build_manual_record(
@@ -842,10 +894,8 @@ def build_manual_record(
         "url_arxiv": url_arxiv,
     }
     rec["type"] = manual_type(entry, key, venue, venues, core_ranks, scimago)
-    supplied_topics = entry.get("topics")
-    rec["topics"] = (
-        [str(t) for t in supplied_topics] if supplied_topics
-        else classify_topics(rec, topics, topic_overrides)
+    rec["topics"] = resolve_manual_topics(
+        rec, entry.get("topics"), topics, topic_overrides,
     )
     # Scholar counts win when refresh_citations.py has matched the
     # title (it reads the merged list, so manual keys do get counts);
@@ -862,6 +912,7 @@ def apply_override(pub: dict, fields: dict, key: str) -> None:
     """Merge `fields` into `pub` in place, field by field. Anything the
     override doesn't name is left alone — url_arxiv above all, so the
     preprint link survives on the page."""
+    was_publisher = pub.get("url_publisher")
     for field, value in fields.items():
         field = str(field)
         if field == "key":
@@ -872,6 +923,11 @@ def apply_override(pub: dict, fields: dict, key: str) -> None:
                 file=sys.stderr,
             )
             continue
+        if value is None:
+            # A bare `null` is how an unresearched field is parked in the
+            # YAML ("url_publisher: null  # TODO"). Treat it as "not
+            # specified" so a placeholder can't wipe DBLP's value.
+            continue
         if field == "type" and str(value) not in VALID_TYPES:
             print(
                 f"[warn] [manual] override {key}: unknown type {str(value)!r}, "
@@ -880,6 +936,18 @@ def apply_override(pub: dict, fields: dict, key: str) -> None:
             )
             continue
         pub[field] = plain_value(value)
+    # An override's whole job is to point url_publisher at the real
+    # venue. On a CoRR record that overwrites the arXiv DOI, which is
+    # the only preprint link there is, so rescue it into url_arxiv —
+    # otherwise "the preprint link stays" holds only for the minority of
+    # records where DBLP also listed an arxiv.org URL.
+    if (
+        "url_arxiv" not in fields
+        and not pub.get("url_arxiv")
+        and ARXIV_DOI_MARKER in (was_publisher or "").lower()
+        and pub.get("url_publisher") != was_publisher
+    ):
+        pub["url_arxiv"] = was_publisher
     if "url" not in fields:
         # Same precedence parse_record() applies: the publisher page is
         # the canonical link once there is one, arXiv is the fallback.
@@ -969,8 +1037,9 @@ def apply_manual_overlay(
         apply_override(target, fields, corr_key)
         # The venue is part of what topic patterns match against, so
         # topics are re-derived through the usual path after the patch.
-        if "topics" not in fields:
-            target["topics"] = classify_topics(target, topics, topic_overrides)
+        target["topics"] = resolve_manual_topics(
+            target, fields.get("topics"), topics, topic_overrides,
+        )
         applied_overrides += 1
 
     pruned_additions: list[int] = []

@@ -9,6 +9,9 @@
 # classification helpers as DBLP records, so nothing downstream (sort,
 # counters, filters, renderer) knows a record came from here.
 #
+#   additions   full records for papers DBLP has not indexed at all
+#   overrides   field patches for papers DBLP knows only as a CoRR preprint
+#
 # THE OVERLAY PRUNES ITSELF. Every run checks each entry against the
 # live DBLP results and deletes the ones DBLP has caught up with,
 # rewriting this file in place — comments and key order survive. The
@@ -26,57 +29,64 @@
 # with it.
 #
 # ---------------------------------------------------------------------
+# How the fields decide placement on the homepage
+#
+#   type        picks the TYPE tab:
+#                 a_star_conf   -> "A/A* Conferences"   (CORE A or A*)
+#                 q1_journal    -> "Q1 Journals"        (Scimago Q1, CS)
+#                 other_conf    -> "Other Conferences & Journals"
+#                 other_journal -> "Other Conferences & Journals"
+#                 workshop      -> "Workshops"
+#                 preprint      -> "Preprints"
+#               It also tells the classifier whether to rank the venue
+#               against CORE or against Scimago, so declare it for
+#               anything that isn't a conference paper. Omitted, the
+#               entry is classified as a conference paper from the key's
+#               venue abbreviation, exactly as a DBLP record would be.
+#               The "Selected" tab is computed, not set here: the 15
+#               most-cited papers from top-tier venues (a_star_conf or
+#               q1_journal). With 0 citations a new paper will not
+#               appear there until Scholar counts come in — recency is
+#               only the tie-break, not a way in.
+#   topics      picks the TOPIC filter. FALLBACK ONLY: the keyword
+#               patterns in data/topics.yml run first and win whenever
+#               they recognise the paper; the list here is used only
+#               for papers they don't (those come back as "misc").
+#               Allowed slugs, exactly these:
+#                 ir, recsys, llm, agents, nlp, gnn, trust, task_vectors,
+#                 efficient, misinfo, data_mining, social_net, misc
+#               To force topics on a paper the patterns get wrong, add
+#               its key to topic_overrides in data/topics.yml — that
+#               beats the patterns, which this list does not.
+#   venue_short is the badge text on the card. Short and uppercase-ish,
+#               matching siblings already in publications.json (SIGIR,
+#               TOIS, IEEE T-AI, SEMEVAL).
+#   authors     DBLP display style: first name to an initial, middle and
+#               last names spelled out — "M. Sofia Bucarelli", not
+#               "Maria Sofia Bucarelli". Full first names are abbreviated
+#               for you, so either form is accepted.
+#   year        publication year as it should sort on the page.
+#   title       without the trailing period. Quote it if it contains a
+#               colon followed by a space — that's YAML syntax.
+#   url         defaults to url_publisher, or url_arxiv when there is no
+#               publisher page. Omit it and it is derived.
+#
+# ---------------------------------------------------------------------
 # additions — full records for papers DBLP has no entry for at all.
 #
-# Fields are exactly the ones fetch_publications.py emits. `key` and
-# `title` are required; everything else is optional and defaults the
-# way a DBLP record would:
-#
-#   key           Synthetic, and must start with "manual/". The segment
-#                 after that is the DBLP venue abbreviation, so the
-#                 CORE / Scimago lookups resolve exactly as they do for
-#                 a real key: "manual/sigir/..." classifies through
-#                 CORE's SIGIR entry, "manual/tois/..." through the
-#                 tois ISSNs in data/venues.yml. Keep it unique and
-#                 stable — data/citations.json is keyed by it.
-#   title         Without the trailing period. Quote it if it contains
-#                 a colon followed by a space — that's YAML syntax.
-#   authors       "F. Silvestri" form; full names are abbreviated the
-#                 same way DBLP names are.
-#   year          Integer.
-#   venue         Long-ish venue string, as DBLP would report it.
-#   venue_short   Badge text on the site (e.g. "SIGIR", "TOIS").
-#   url           Defaults to url_publisher or url_arxiv.
-#   url_publisher DOI / ACL Anthology / OpenReview / … page.
-#   url_arxiv     arXiv abs URL, if there is one.
-#   type          One of: a_star_conf, q1_journal, other_conf,
-#                 other_journal, workshop, preprint. It is what tells
-#                 the classifier whether to rank the venue against CORE
-#                 or against Scimago, so declare it for anything that
-#                 isn't a conference paper. Omitted, the entry is
-#                 classified as a conference paper from the key's venue
-#                 abbreviation, exactly as a DBLP record would be.
-#   topics        Slugs from data/topics.yml. Omit for auto-tagging.
-#   citations     Seed count. data/citations.json wins when Google
-#                 Scholar has matched the title (it does match overlay
-#                 records — refresh_citations.py reads the merged list).
+# `key` and `title` are required; every other field is optional and
+# defaults the way a DBLP record would. The key is synthetic and must
+# start with "manual/". Mirror the DBLP key the paper will eventually
+# get — "manual/conf/<abbrev>/<slug>" or "manual/journals/<abbrev>/<slug>" —
+# so that the venue abbreviation lands where the CORE and Scimago
+# lookups expect it; "manual/<abbrev>/<slug>" works too. Keep it unique
+# and stable, since data/citations.json is keyed by it (Scholar counts
+# do reach overlay records: refresh_citations.py matches against the
+# merged list).
 #
 # Pruning: when a DBLP record turns up with the same normalized title
 # (lowercased, punctuation stripped, whitespace collapsed), DBLP wins —
 # the addition is dropped from the output and deleted from this file.
-#
-# Example:
-#
-#   - key: manual/sigir/silvestri-2027-example
-#     title: "An Example Paper: One DBLP Has Not Indexed Yet"
-#     authors: ["A. Coauthor", "F. Silvestri"]
-#     year: 2027
-#     venue: SIGIR
-#     venue_short: SIGIR
-#     type: a_star_conf
-#     url_publisher: https://doi.org/10.1145/0000000.0000000
-#     url_arxiv: https://arxiv.org/abs/2701.00000
-#     topics: [ir, llm]
 #
 # ---------------------------------------------------------------------
 # overrides — field patches for papers DBLP knows only as a CoRR
@@ -86,30 +96,152 @@
 # venue_short, type, year, url_publisher); everything else is left
 # alone, so url_arxiv survives and the preprint link stays on the page.
 # `url` is recomputed as url_publisher or url_arxiv unless the override
-# sets it explicitly. Topics are re-derived after the patch, since the
-# venue is part of what the topic patterns match against.
+# sets it explicitly. A field set to `null` is treated as "not known
+# yet", not as "erase it", so a TODO placeholder can't wipe DBLP's
+# value.
 #
 # Include `title:` even though it is not being replaced: the pruner
 # needs it to recognise the DBLP record that eventually supersedes this
-# entry once the CoRR key itself disappears. Quote it if it contains a
-# colon followed by a space.
+# entry once the CoRR key itself disappears.
 #
 # Pruning: the entry goes when the target key is no longer a preprint,
 # or when a non-preprint DBLP record with the same normalized title
 # shows up. An override pointing at a key DBLP does not have is
 # reported and left alone — never a hard failure of the nightly run.
 #
-# Example:
+# ---------------------------------------------------------------------
+# NOT INCLUDED, on purpose:
 #
-#   journals/corr/abs-2501-01234:
-#     title: An Example Paper That Was Only On arXiv
-#     venue: SIGIR
-#     venue_short: SIGIR
-#     type: a_star_conf
-#     year: 2026
-#     url_publisher: https://doi.org/10.1145/0000000.0000000
+#   "Survey and Benchmark of Graph Learning under Label Noise"
+#   (F. A. Wani, A. Purificato, M. Sofia Bucarelli, A. G. Di Francesco,
+#   M. Corelli, et al.) — Google Scholar lists no venue for it at all.
+#   Add it once the venue is known.
+#
+#   "Variational Inference of Parameters in Opinion Dynamics Models",
+#   IEEE Trans. Comput. Soc. Syst. 2026 (doi 10.1109/TCSS.2025.3640692).
+#   The journal version is real, but conf/icwsm/LentiSM25 already carries
+#   the identical title, so title-based pruning would drop this addition
+#   on its first run. It will appear by itself once DBLP indexes the
+#   TCSS record.
+#
+#   "TSMO 2026: Two-sided Marketplace Optimization ..." — the TSMO
+#   editions are workshop-organizing entries, not papers, and
+#   skip_title_patterns in data/venues.yml drops them from the DBLP sync
+#   (it names "TSMO 2024: ..." as its example). No TSMO record of any
+#   year is on the site; forcing 2026 in would be the odd one out.
 # ---------------------------------------------------------------------
 
-additions: []
+additions:
 
-overrides: {}
+  # ICLR 2026 poster. Venue, authors and the OpenReview id confirmed on
+  # iclr.cc/virtual/2026/poster/10010319 — note the paper also has a
+  # NeurIPS 2025 Mech Interp workshop page under a different id.
+  - key: manual/conf/iclr/CasoFMSS26
+    title: Composable Sparse Subnetworks via Maximum-Entropy Principle
+    authors: ["F. Caso", "S. Fonio", "S. Monaco", "N. Saccomanno", "F. Silvestri"]
+    year: 2026
+    venue: ICLR
+    venue_short: ICLR
+    url_publisher: https://openreview.net/forum?id=IHwx5ioIP2
+    type: a_star_conf
+    topics: ["efficient"]
+    citations: 0
+
+  # CORE2023 ranks AISTATS A, which classifies as a_star_conf.
+  # No proceedings page found yet, so no URL and the author list is the
+  # one from Scholar — a co-author's homepage lists this title under
+  # ECML-PKDD 2026 with a different author list, so check both before
+  # the record settles.
+  - key: manual/conf/aistats/DragoBCMSS26
+    title: Rank Lifting and Random Non-Linear Maps
+    authors: ["A. Drago", "M. Sofia Bucarelli", "F. Caso", "M. Michetti", "F. Siciliano", "F. Silvestri"]
+    year: 2026
+    venue: AISTATS
+    venue_short: AISTATS
+    type: a_star_conf
+    topics: ["gnn"]
+    citations: 0
+
+  # doi verified via CrossRef: ACM Trans. Recomm. Syst., 2026.
+  - key: manual/journals/tors/SbandiKSAS26
+    title: "CRAB: Churn Reduction Agent Based via Reinforcement Learning"
+    authors: ["A. Sbandi", "N. Kaploukhaya", "F. Siciliano", "A. Anagnostopoulos", "F. Silvestri"]
+    year: 2026
+    venue: ACM Trans. Recomm. Syst.
+    venue_short: TORS
+    url_publisher: https://doi.org/10.1145/3814953
+    type: q1_journal
+    topics: ["recsys", "agents"]
+    citations: 0
+
+  # doi verified via CrossRef: ACM Trans. Recomm. Syst., 2026.
+  - key: manual/journals/tors/SbandiSS26
+    title: Balancing the Diversity-Coverage Trade-off in Graph-based Recommendations for Cold-Start Industrial Applications
+    authors: ["A. Sbandi", "F. Siciliano", "F. Silvestri"]
+    year: 2026
+    venue: ACM Trans. Recomm. Syst.
+    venue_short: TORS
+    url_publisher: https://doi.org/10.1145/3796509
+    type: q1_journal
+    topics: ["recsys", "gnn"]
+    citations: 0
+
+overrides:
+
+  # ICLR 2026 poster; DBLP still has the preprint only. OpenReview id
+  # taken from the ICLR poster page, not from search results.
+  journals/corr/abs-2510-04727:
+    title: "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs"
+    venue: ICLR
+    venue_short: ICLR
+    year: 2026
+    type: a_star_conf
+    topics: ["gnn"]
+    url_publisher: https://openreview.net/forum?id=d1hQkcDy7c
+
+  # ICLR 2026 poster; the OpenReview page states "ICLR 2026 Poster".
+  journals/corr/abs-2504-05342:
+    title: "MASS: MoErging through Adaptive Subspace Selection"
+    venue: ICLR
+    venue_short: ICLR
+    year: 2026
+    type: a_star_conf
+    topics: ["task_vectors"]
+    url_publisher: https://openreview.net/forum?id=CRBt6DNaBE
+
+  # npj Artificial Intelligence 2026. The title changed between the
+  # COMBINEX preprint and the journal version, so it is replaced here
+  # and the pruner keys on the new one. npj AI is too new for Scimago to
+  # have a quartile, so it cannot be ranked — other_journal is the
+  # conservative call; its ISSN is in venues.yml, which will promote it
+  # automatically once Scimago indexes the journal.
+  journals/corr/abs-2502-10111:
+    title: Unified Counterfactual Explainer for Graph Neural Networks
+    venue: npj Artif. Intell.
+    venue_short: npj AI
+    year: 2026
+    type: other_journal
+    topics: ["gnn", "trust"]
+    url_publisher: https://doi.org/10.1038/s44387-026-00135-w
+
+  # Information Systems Frontiers 2026. Scimago rates ISF Q1 in
+  # Information Systems (and two other CS categories), so q1_journal.
+  journals/corr/abs-2602-15650:
+    title: "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation"
+    venue: Inf. Syst. Frontiers
+    venue_short: ISF
+    year: 2026
+    type: q1_journal
+    topics: ["ir", "llm", "trust"]
+    url_publisher: https://doi.org/10.1007/s10796-026-10741-3
+
+  # 1st Workshop on Multilingual Report Generation via RAG
+  # (RAG4Reports 2026), co-located with ACL 2026, San Diego.
+  journals/corr/abs-2406-14972:
+    title: "A Tale of Trust and Accuracy: Base vs. Instruct LLMs in RAG Systems"
+    venue: RAG4Reports@ACL
+    venue_short: RAG4REPORTS
+    year: 2026
+    type: workshop
+    topics: ["ir", "llm"]
+    url_publisher: https://doi.org/10.18653/v1/2026.rag4reports-1.3
