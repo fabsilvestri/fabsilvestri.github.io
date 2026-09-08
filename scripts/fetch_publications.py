@@ -534,9 +534,29 @@ def cross_link_arxiv(pubs: list[dict]) -> None:
 
 
 def fetch_dblp_xml() -> bytes:
+    """Fetch the person page as XML, and fail with something readable
+    when what comes back isn't XML at all.
+
+    dblp.org serves an interstitial bot check to automated clients. It
+    answers 200 with an HTML page, so the request looks like a success
+    and the failure only surfaces several frames later as
+    "ParseError: syntax error: line 1, column 0". When the check is up
+    it covers every dblp.org endpoint, the documented search API
+    included, so there is no machine-readable route around it — the run
+    simply has to be retried later."""
     req = urllib.request.Request(DBLP_URL, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read()
+        body = resp.read()
+    if not body.lstrip()[:64].lower().startswith((b"<?xml", b"<dblpperson")):
+        raise SystemExit(
+            f"[error] DBLP returned {len(body)} bytes of non-XML for {DBLP_URL}\n"
+            f"        starting: {body.lstrip()[:90]!r}\n"
+            f"        This is almost always dblp.org's bot check. Nothing was written,\n"
+            f"        so the site keeps serving the last good data/publications.json.\n"
+            f"        Retry later; papers that need to appear meanwhile can go into\n"
+            f"        data/manual_publications.yml."
+        )
+    return body
 
 
 TYPE_ORDER = [

@@ -45,6 +45,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      # fetch_publications.py imports PyYAML at module scope, so the
+      # import below needs the dependencies even though this job only
+      # calls the hashing helper.
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
       - name: Recompute cache-buster hashes
         run: |
           python - <<'PY'
