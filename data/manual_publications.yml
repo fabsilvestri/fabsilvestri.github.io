@@ -147,6 +147,23 @@ additions:
     topics: ["efficient"]
     citations: 0
 
+  # IEEE FLTA 2025 (3rd Int. Conf. on Federated Learning Technologies and
+  # Applications). Found by diffing the Google Scholar profile against
+  # the site while dblp.org was closed to automated clients; doi, venue
+  # and author list verified via CrossRef. FLTA is not in CORE, so
+  # other_conf. The keyword patterns match nothing here, so the topic
+  # below is the overlay's fallback.
+  - key: manual/conf/flta/AvellaS25
+    title: "Eco-Friendly Federated Learning: Designing a FinOps Framework for Multicloud Resource Coordination"
+    authors: ["F. Avella", "F. Silvestri"]
+    year: 2025
+    venue: FLTA
+    venue_short: FLTA
+    url_publisher: https://doi.org/10.1109/flta67013.2025.11336369
+    type: other_conf
+    topics: ["efficient"]
+    citations: 2
+
   # CORE2023 ranks AISTATS A, which classifies as a_star_conf.
   # No proceedings page found yet, so no URL and the author list is the
   # one from Scholar — a co-author's homepage lists this title under

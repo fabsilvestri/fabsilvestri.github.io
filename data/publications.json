@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-09-08",
-  "generated_at": "2026-09-08T14:33:02+00:00",
+  "last_updated": "2026-09-09",
+  "generated_at": "2026-09-09T09:23:22+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
-  "count": 297,
+  "count": 298,
   "counts_by_type": {
     "a_star_conf": 76,
     "q1_journal": 34,
-    "other_conf": 68,
+    "other_conf": 69,
     "other_journal": 8,
     "workshop": 23,
     "preprint": 88
@@ -21,7 +21,7 @@
     "gnn": 33,
     "trust": 52,
     "task_vectors": 9,
-    "efficient": 56,
+    "efficient": 57,
     "misinfo": 19,
     "data_mining": 6,
     "social_net": 14,
@@ -1079,6 +1079,25 @@
         "misinfo"
       ],
       "citations": 1
+    },
+    {
+      "key": "manual/conf/flta/AvellaS25",
+      "title": "Eco-Friendly Federated Learning: Designing a FinOps Framework for Multicloud Resource Coordination",
+      "authors": [
+        "F. Avella",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "FLTA",
+      "venue_short": "FLTA",
+      "url": "https://doi.org/10.1109/flta67013.2025.11336369",
+      "url_publisher": "https://doi.org/10.1109/flta67013.2025.11336369",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 2
     },
     {
       "key": "conf/ictir/DErasmoTST25",
