@@ -164,17 +164,21 @@ additions:
     topics: ["efficient"]
     citations: 2
 
-  # CORE2023 ranks AISTATS A, which classifies as a_star_conf.
-  # No proceedings page found yet, so no URL and the author list is the
-  # one from Scholar — a co-author's homepage lists this title under
-  # ECML-PKDD 2026 with a different author list, so check both before
-  # the record settles.
-  - key: manual/conf/aistats/DragoBCMSS26
+  # CORE2023 ranks AISTATS A, which classifies as a_star_conf. Venue and
+  # author list confirmed on the conference's own poster page,
+  # virtual.aistats.org/virtual/2026/poster/13883, and on OpenReview,
+  # which states "AISTATS 2026 Poster". Both list seven authors —
+  # Scholar truncates after the sixth, which is why L. Becchetti was
+  # missing. (A co-author's homepage listing this title under
+  # ECML-PKDD 2026 is not borne out by either source.) No PMLR volume
+  # yet, so OpenReview is the publisher link.
+  - key: manual/conf/aistats/DragoBCMSSB26
     title: Rank Lifting and Random Non-Linear Maps
-    authors: ["A. Drago", "M. Sofia Bucarelli", "F. Caso", "M. Michetti", "F. Siciliano", "F. Silvestri"]
+    authors: ["A. Drago", "M. Sofia Bucarelli", "F. Caso", "M. Michetti", "F. Siciliano", "F. Silvestri", "L. Becchetti"]
     year: 2026
     venue: AISTATS
     venue_short: AISTATS
+    url_publisher: https://openreview.net/forum?id=3Tvd1qJ5UJ
     type: a_star_conf
     topics: ["gnn"]
     citations: 0

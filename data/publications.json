@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-09-09",
-  "generated_at": "2026-09-09T09:23:22+00:00",
+  "generated_at": "2026-09-09T10:24:08+00:00",
   "citations_fetched_at": "2026-07-06",
   "source": "https://dblp.org/pid/s/FabrizioSilvestri.xml",
   "count": 298,
@@ -155,7 +155,7 @@
       "citations": 0
     },
     {
-      "key": "manual/conf/aistats/DragoBCMSS26",
+      "key": "manual/conf/aistats/DragoBCMSSB26",
       "title": "Rank Lifting and Random Non-Linear Maps",
       "authors": [
         "A. Drago",
@@ -163,13 +163,14 @@
         "F. Caso",
         "M. Michetti",
         "F. Siciliano",
-        "F. Silvestri"
+        "F. Silvestri",
+        "L. Becchetti"
       ],
       "year": 2026,
       "venue": "AISTATS",
       "venue_short": "AISTATS",
-      "url": null,
-      "url_publisher": null,
+      "url": "https://openreview.net/forum?id=3Tvd1qJ5UJ",
+      "url_publisher": "https://openreview.net/forum?id=3Tvd1qJ5UJ",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
