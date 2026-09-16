@@ -1,7 +1,7 @@
 {
   "last_updated": "2026-09-16",
-  "generated_at": "2026-09-16T09:02:24+00:00",
-  "citations_fetched_at": "2026-07-06",
+  "generated_at": "2026-09-16T09:24:31+00:00",
+  "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 286,
   "counts_by_type": {
@@ -132,7 +132,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 14
+      "citations": 16
     },
     {
       "key": "doi/10.18653/v1/2026.findings-acl.583",
@@ -230,7 +230,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 6
+      "citations": 9
     },
     {
       "key": "doi/10.18653/v1/2026.eacl-short.51",
@@ -255,7 +255,7 @@
         "ir",
         "nlp"
       ],
-      "citations": 0
+      "citations": 3
     },
     {
       "key": "manual/conf/iclr/CasoFMSS26",
@@ -302,7 +302,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 5
+      "citations": 7
     },
     {
       "key": "journals/corr/abs-2504-05342",
@@ -328,7 +328,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 2
+      "citations": 4
     },
     {
       "key": "doi/10.1145/3770854.3780243",
@@ -351,7 +351,7 @@
         "trust",
         "data_mining"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "manual/journals/corr/abs-2511-18660",
@@ -373,7 +373,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.1145/3805712.3809539",
@@ -421,7 +421,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.1109/tai.2026.3666527",
@@ -494,7 +494,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.1145/3796509",
@@ -516,7 +516,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 0
+      "citations": 2
     },
     {
       "key": "doi/10.1145/3814953",
@@ -540,7 +540,7 @@
         "recsys",
         "agents"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2502-10111",
@@ -562,7 +562,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 7
+      "citations": 0
     },
     {
       "key": "doi/10.1007/978-3-032-11381-8_17",
@@ -586,7 +586,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 10
+      "citations": 13
     },
     {
       "key": "doi/10.18653/v1/2026.rag4reports-1.3",
@@ -610,7 +610,7 @@
         "llm",
         "trust"
       ],
-      "citations": 4
+      "citations": 6
     },
     {
       "key": "manual/journals/corr/abs-2602-17518",
@@ -634,7 +634,7 @@
         "ir",
         "agents"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "manual/journals/corr/abs-2607-16321",
@@ -753,7 +753,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2601-05649",
@@ -777,7 +777,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 0
+      "citations": 3
     },
     {
       "key": "openalex/W7171347076",
@@ -869,7 +869,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 142
+      "citations": 165
     },
     {
       "key": "doi/10.1007/978-3-031-88714-7_41",
@@ -938,7 +938,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 13
+      "citations": 14
     },
     {
       "key": "doi/10.52202/085713-4116",
@@ -959,7 +959,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 16
+      "citations": 20
     },
     {
       "key": "doi/10.1007/978-3-031-87654-7_11",
@@ -980,7 +980,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 15
+      "citations": 16
     },
     {
       "key": "doi/10.1145/3705328.3748150",
@@ -1001,7 +1001,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 3
+      "citations": 4
     },
     {
       "key": "doi/10.1145/3726302.3730318",
@@ -1075,7 +1075,7 @@
         "trust",
         "efficient"
       ],
-      "citations": 25
+      "citations": 23
     },
     {
       "key": "doi/10.1109/access.2025.3568133",
@@ -1100,7 +1100,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 5
+      "citations": 6
     },
     {
       "key": "doi/10.1016/j.osnem.2025.100334",
@@ -1125,7 +1125,7 @@
         "misinfo",
         "social_net"
       ],
-      "citations": 1
+      "citations": 2
     },
     {
       "key": "doi/10.1145/3731683",
@@ -1151,7 +1151,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 10
+      "citations": 13
     },
     {
       "key": "doi/10.1145/3742898",
@@ -1175,7 +1175,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 12
+      "citations": 13
     },
     {
       "key": "manual/conf/flta/AvellaS25",
@@ -1217,7 +1217,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 8
+      "citations": 10
     },
     {
       "key": "doi/10.1145/3731120.3744575",
@@ -1330,7 +1330,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "doi/10.1109/ijcnn64981.2025.11229036",
@@ -1424,7 +1424,7 @@
         "llm",
         "trust"
       ],
-      "citations": 0
+      "citations": 7
     },
     {
       "key": "manual/journals/corr/abs-2510-22593",
@@ -1449,7 +1449,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 1
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2502-09193",
@@ -1471,7 +1471,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "manual/journals/corr/abs-2508-03606",
@@ -1495,7 +1495,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2505-15561",
@@ -1519,7 +1519,7 @@
         "llm",
         "trust"
       ],
-      "citations": 0
+      "citations": 14
     },
     {
       "key": "manual/journals/corr/abs-2505-18088",
@@ -1543,7 +1543,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 4
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2510-03134",
@@ -1635,7 +1635,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 3
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2505-01468",
@@ -1701,7 +1701,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 6
+      "citations": 7
     },
     {
       "key": "journals/corr/abs-2510-21440",
@@ -1725,7 +1725,7 @@
         "ir",
         "llm"
       ],
-      "citations": 6
+      "citations": 9
     },
     {
       "key": "journals/corr/abs-2502-00432",
@@ -1747,7 +1747,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2510-09551",
@@ -1790,7 +1790,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 0
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2510-20351",
@@ -1860,7 +1860,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 27
+      "citations": 29
     },
     {
       "key": "doi/10.1145/3637528.3671896",
@@ -1884,7 +1884,7 @@
         "data_mining",
         "social_net"
       ],
-      "citations": 9
+      "citations": 10
     },
     {
       "key": "doi/10.1145/3626772.3657834",
@@ -1911,7 +1911,7 @@
         "ir",
         "llm"
       ],
-      "citations": 553
+      "citations": 625
     },
     {
       "key": "doi/10.1109/access.2024.3522049",
@@ -1936,7 +1936,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 32
+      "citations": 36
     },
     {
       "key": "doi/10.1109/tai.2024.3496616",
@@ -1959,7 +1959,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "doi/10.1016/j.neunet.2024.106465",
@@ -1982,7 +1982,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 6
+      "citations": 8
     },
     {
       "key": "doi/10.63317/4za9ey2b3j4r",
@@ -2005,7 +2005,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 24
+      "citations": 25
     },
     {
       "key": "manual/conf/iir/BetelloSMS24",
@@ -2056,7 +2056,7 @@
         "ir",
         "llm"
       ],
-      "citations": 10
+      "citations": 12
     },
     {
       "key": "doi/10.1109/ijcnn60899.2024.10650366",
@@ -2077,7 +2077,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 9
+      "citations": 10
     },
     {
       "key": "doi/10.1007/978-3-031-71382-8_6",
@@ -2150,7 +2150,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "manual/conf/robustrecsys/FrancomanoSS24",
@@ -2173,7 +2173,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.18653/v1/2024.semeval-1.275",
@@ -2199,7 +2199,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 75
+      "citations": 81
     },
     {
       "key": "doi/10.1145/3589335.3648339",
@@ -2232,7 +2232,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 35
+      "citations": 42
     },
     {
       "key": "journals/corr/abs-2403-14339",
@@ -2280,7 +2280,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 32
+      "citations": 36
     },
     {
       "key": "journals/corr/abs-2411-07770",
@@ -2302,7 +2302,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "journals/corr/abs-2401-03824",
@@ -2325,7 +2325,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 6
+      "citations": 8
     },
     {
       "key": "journals/corr/abs-2411-03055",
@@ -2349,7 +2349,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 10
+      "citations": 13
     },
     {
       "key": "manual/journals/corr/abs-2410-18067",
@@ -2398,7 +2398,7 @@
         "trust",
         "task_vectors"
       ],
-      "citations": 6
+      "citations": 7
     },
     {
       "key": "journals/corr/abs-2412-14967",
@@ -2420,7 +2420,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 8
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2410-09514",
@@ -2441,7 +2441,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 15
+      "citations": 16
     },
     {
       "key": "journals/corr/abs-2412-08419",
@@ -2486,7 +2486,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 0
+      "citations": 2
     },
     {
       "key": "journals/corr/abs-2405-19749",
@@ -2511,7 +2511,7 @@
         "recsys",
         "llm"
       ],
-      "citations": 18
+      "citations": 20
     },
     {
       "key": "journals/corr/abs-2406-11720",
@@ -2534,7 +2534,7 @@
         "ir",
         "gnn"
       ],
-      "citations": 3
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2409-08036",
@@ -2559,7 +2559,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 0
+      "citations": 14
     },
     {
       "key": "journals/corr/abs-2402-14802",
@@ -2605,7 +2605,7 @@
         "nlp",
         "trust"
       ],
-      "citations": 16
+      "citations": 17
     },
     {
       "key": "journals/corr/abs-2403-05185",
@@ -2638,7 +2638,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 35
+      "citations": 42
     },
     {
       "key": "journals/corr/abs-2406-12535",
@@ -2682,7 +2682,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 2
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2411-10198",
@@ -2730,7 +2730,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 142
+      "citations": 165
     },
     {
       "key": "journals/corr/abs-2403-05358",
@@ -2751,7 +2751,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 13
+      "citations": 14
     },
     {
       "key": "doi/10.1145/3583780.3615481",
@@ -2783,7 +2783,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 6
+      "citations": 8
     },
     {
       "key": "doi/10.1109/cvpr52729.2023.00335",
@@ -2806,7 +2806,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 30
+      "citations": 33
     },
     {
       "key": "doi/10.52202/075280-0529",
@@ -2828,7 +2828,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 92
+      "citations": 106
     },
     {
       "key": "doi/10.1145/3604915.3610643",
@@ -2899,7 +2899,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 45
+      "citations": 49
     },
     {
       "key": "doi/10.1007/s44163-023-00047-7",
@@ -2974,7 +2974,7 @@
         "misinfo",
         "social_net"
       ],
-      "citations": 36
+      "citations": 38
     },
     {
       "key": "doi/10.1109/cogmi58952.2023.00027",
@@ -2996,7 +2996,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 16
+      "citations": 18
     },
     {
       "key": "doi/10.1007/978-3-031-44070-0_12",
@@ -3023,7 +3023,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 15
+      "citations": 17
     },
     {
       "key": "journals/corr/abs-2312-17506",
@@ -3052,7 +3052,7 @@
         "trust",
         "efficient"
       ],
-      "citations": 25
+      "citations": 23
     },
     {
       "key": "journals/corr/abs-2312-15228",
@@ -3121,7 +3121,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 0
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2310-08909",
@@ -3144,7 +3144,7 @@
         "trust",
         "social_net"
       ],
-      "citations": 0
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2306-14457",
@@ -3213,7 +3213,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 0
+      "citations": 29
     },
     {
       "key": "journals/corr/abs-2303-09470",
@@ -3234,7 +3234,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 0
+      "citations": 10
     },
     {
       "key": "journals/corr/abs-2310-04875",
@@ -3256,7 +3256,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 16
+      "citations": 18
     },
     {
       "key": "journals/corr/abs-2306-00707",
@@ -3279,7 +3279,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "journals/corr/abs-2307-12798",
@@ -3304,7 +3304,7 @@
         "ir",
         "llm"
       ],
-      "citations": 21
+      "citations": 22
     },
     {
       "key": "journals/corr/abs-2309-17116",
@@ -3326,7 +3326,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 92
+      "citations": 106
     },
     {
       "key": "journals/corr/abs-2304-09097",
@@ -3350,7 +3350,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 0
+      "citations": 13
     },
     {
       "key": "journals/corr/abs-2305-00574",
@@ -3374,7 +3374,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 45
+      "citations": 49
     },
     {
       "key": "doi/10.1145/3511808.3557429",
@@ -3399,7 +3399,7 @@
         "agents",
         "trust"
       ],
-      "citations": 0
+      "citations": 97
     },
     {
       "key": "doi/10.24963/ijcai.2022/781",
@@ -3427,7 +3427,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 123
+      "citations": 133
     },
     {
       "key": "doi/10.1145/3477495.3532034",
@@ -3503,7 +3503,7 @@
         "agents",
         "trust"
       ],
-      "citations": 56
+      "citations": 58
     },
     {
       "key": "doi/10.1109/ijcnn55064.2022.9892739",
@@ -3528,7 +3528,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 22
+      "citations": 24
     },
     {
       "key": "doi/10.1109/ijcnn55064.2022.9892367",
@@ -3578,7 +3578,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 123
+      "citations": 133
     },
     {
       "key": "journals/corr/abs-2207-13586",
@@ -3604,7 +3604,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 25
+      "citations": 26
     },
     {
       "key": "journals/corr/abs-2208-04222",
@@ -3631,7 +3631,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 54
+      "citations": 56
     },
     {
       "key": "journals/corr/abs-2209-09688",
@@ -3679,7 +3679,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 44
+      "citations": 45
     },
     {
       "key": "doi/10.18653/v1/2021.acl-long.516",
@@ -3706,7 +3706,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 144
+      "citations": 152
     },
     {
       "key": "doi/10.1609/icwsm.v10i1.14726",
@@ -3729,7 +3729,7 @@
         "misinfo",
         "social_net"
       ],
-      "citations": 22
+      "citations": 21
     },
     {
       "key": "doi/10.1016/j.ins.2021.06.039",
@@ -3752,7 +3752,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 93
+      "citations": 97
     },
     {
       "key": "doi/10.14778/3447689.3447706",
@@ -3776,7 +3776,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 84
+      "citations": 88
     },
     {
       "key": "doi/10.1109/ijcnn52387.2021.9533640",
@@ -3828,7 +3828,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 182
+      "citations": 189
     },
     {
       "key": "journals/corr/abs-2103-12541",
@@ -3855,7 +3855,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 246
+      "citations": 267
     },
     {
       "key": "journals/corr/abs-2102-03322",
@@ -3879,7 +3879,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 339
+      "citations": 369
     },
     {
       "key": "journals/corr/abs-2104-00353",
@@ -3930,7 +3930,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 144
+      "citations": 152
     },
     {
       "key": "journals/corr/abs-2110-02775",
@@ -4031,7 +4031,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 76
+      "citations": 77
     },
     {
       "key": "doi/10.1007/978-3-030-52485-2_14",
@@ -4080,7 +4080,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 17
+      "citations": 18
     },
     {
       "key": "journals/corr/abs-2001-07524",
@@ -4102,7 +4102,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 30
+      "citations": 31
     },
     {
       "key": "doi/10.18653/v1/n19-1326",
@@ -4126,7 +4126,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 97
+      "citations": 100
     },
     {
       "key": "doi/10.1109/tkde.2019.2945326",
@@ -4146,7 +4146,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 28
+      "citations": 30
     },
     {
       "key": "journals/corr/abs-1905-09755",
@@ -4170,7 +4170,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 97
+      "citations": 100
     },
     {
       "key": "doi/10.1145/3205453",
@@ -4195,7 +4195,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 0
+      "citations": 16
     },
     {
       "key": "manual/conf/kdd/TolomeiSHL17",
@@ -4217,7 +4217,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 365
+      "citations": 370
     },
     {
       "key": "doi/10.1007/s13278-017-0449-y",
@@ -4239,7 +4239,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 11
+      "citations": 12
     },
     {
       "key": "doi/10.1145/3041021.3054193",
@@ -4288,7 +4288,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 24
+      "citations": 25
     },
     {
       "key": "doi/10.1145/2911451.2914760",
@@ -4337,7 +4337,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 94
+      "citations": 96
     },
     {
       "key": "manual/conf/sigir/GrbovicDRSBFOYO16",
@@ -4365,7 +4365,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 87
+      "citations": 89
     },
     {
       "key": "doi/10.1145/2872427.2883092",
@@ -4386,7 +4386,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 84
+      "citations": 85
     },
     {
       "key": "doi/10.1007/s10618-016-0477-7",
@@ -4410,7 +4410,7 @@
         "recsys",
         "data_mining"
       ],
-      "citations": 78
+      "citations": 79
     },
     {
       "key": "doi/10.1016/j.ins.2016.12.038",
@@ -4433,7 +4433,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 59
+      "citations": 60
     },
     {
       "key": "doi/10.1007/978-3-319-44564-9_10",
@@ -4556,7 +4556,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 12
+      "citations": 11
     },
     {
       "key": "doi/10.1145/2783258.2788581",
@@ -4580,7 +4580,7 @@
         "llm",
         "data_mining"
       ],
-      "citations": 44
+      "citations": 43
     },
     {
       "key": "doi/10.3115/v1/n15-1014",
@@ -4602,7 +4602,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 67
+      "citations": 69
     },
     {
       "key": "doi/10.1145/2766462.2767709",
@@ -4625,7 +4625,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 151
+      "citations": 153
     },
     {
       "key": "doi/10.1145/2684822.2685302",
@@ -4648,7 +4648,7 @@
         "ir",
         "data_mining"
       ],
-      "citations": 227
+      "citations": 235
     },
     {
       "key": "doi/10.1145/2766459",
@@ -4670,7 +4670,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 47
+      "citations": 48
     },
     {
       "key": "doi/10.1007/978-3-319-25252-0_26",
@@ -4759,7 +4759,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 49
+      "citations": 50
     },
     {
       "key": "doi/10.1145/2505515.2505699",
@@ -4807,7 +4807,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 7
+      "citations": 8
     },
     {
       "key": "doi/10.1145/2493175.2493179",
@@ -4904,7 +4904,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 10
+      "citations": 11
     },
     {
       "key": "doi/10.1145/2487788.2487851",
@@ -4926,7 +4926,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 4
+      "citations": 5
     },
     {
       "key": "doi/10.1145/2487788.2487853",
@@ -4992,7 +4992,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 69
+      "citations": 70
     },
     {
       "key": "doi/10.1145/2396761.2398559",
@@ -5016,7 +5016,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 32
+      "citations": 34
     },
     {
       "key": "doi/10.1007/978-3-642-28997-2_17",
@@ -5064,7 +5064,7 @@
         "recsys",
         "efficient"
       ],
-      "citations": 60
+      "citations": 61
     },
     {
       "key": "doi/10.1145/2348283.2348368",
@@ -5086,7 +5086,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 45
+      "citations": 43
     },
     {
       "key": "doi/10.1007/978-3-642-35236-2_20",
@@ -5109,7 +5109,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 19
+      "citations": 20
     },
     {
       "key": "doi/10.1007/978-3-642-31178-9_26",
@@ -5131,7 +5131,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 4
+      "citations": 3
     },
     {
       "key": "doi/10.1109/wi-iat.2012.88",
@@ -5248,7 +5248,7 @@
         "ir",
         "data_mining"
       ],
-      "citations": 187
+      "citations": 185
     },
     {
       "key": "doi/10.1016/j.ipm.2011.07.005",
@@ -5315,7 +5315,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 117
+      "citations": 118
     },
     {
       "key": "doi/10.1145/1963192.1963202",
@@ -5385,7 +5385,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 117
+      "citations": 118
     },
     {
       "key": "doi/10.1145/1871437.1871592",
@@ -5429,7 +5429,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 46
+      "citations": 48
     },
     {
       "key": "doi/10.1109/apweb.2010.30",
@@ -5451,7 +5451,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 5
+      "citations": 6
     },
     {
       "key": "doi/10.1109/hpcc.2010.22",
@@ -5520,7 +5520,7 @@
         "ir",
         "gnn"
       ],
-      "citations": 24
+      "citations": 26
     },
     {
       "key": "doi/10.1007/978-3-642-16321-0_2",
@@ -5545,7 +5545,7 @@
         "recsys",
         "efficient"
       ],
-      "citations": 17
+      "citations": 15
     },
     {
       "key": "doi/10.1007/978-3-642-16321-0_4",
@@ -5621,7 +5621,7 @@
         "ir",
         "agents"
       ],
-      "citations": 9
+      "citations": 8
     },
     {
       "key": "doi/10.1109/wi-iat.2010.139",
@@ -5644,7 +5644,7 @@
         "agents",
         "efficient"
       ],
-      "citations": 10
+      "citations": 11
     },
     {
       "key": "doi/10.4018/jdst.2010090804",
@@ -5713,7 +5713,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 31
+      "citations": 34
     },
     {
       "key": "doi/10.1007/978-3-642-00958-7_94",
@@ -5733,7 +5733,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 9
+      "citations": 263
     },
     {
       "key": "doi/10.1145/1639714.1639729",
@@ -5759,7 +5759,7 @@
         "ir",
         "recsys"
       ],
-      "citations": 36
+      "citations": 39
     },
     {
       "key": "doi/10.1145/1526709.1526862",
@@ -5783,7 +5783,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 5
+      "citations": 6
     },
     {
       "key": "doi/10.1561/1500000013",
@@ -5802,7 +5802,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 258
+      "citations": 0
     },
     {
       "key": "manual/conf/fia/NittoKMPPPSH09",
@@ -5921,7 +5921,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 4
+      "citations": 5
     },
     {
       "key": "doi/10.1145/1383422.1383458",
@@ -5943,7 +5943,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "doi/10.1016/j.future.2008.07.012",
@@ -5988,7 +5988,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 3
+      "citations": 2
     },
     {
       "key": "openalex/W59672765",
@@ -6035,7 +6035,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 140
+      "citations": 143
     },
     {
       "key": "doi/10.1007/978-3-540-71496-5_12",
@@ -6079,7 +6079,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 151
+      "citations": 156
     },
     {
       "key": "doi/10.1145/1277741.1277814",
@@ -6102,7 +6102,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 499
+      "citations": 491
     },
     {
       "key": "doi/10.1145/1277741.1277775",
@@ -6127,7 +6127,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 301
+      "citations": 316
     },
     {
       "key": "doi/10.1145/1216016.1216022",
@@ -6147,7 +6147,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 162
+      "citations": 157
     },
     {
       "key": "doi/10.1109/cbms.2007.29",
@@ -6171,7 +6171,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 16
+      "citations": 17
     },
     {
       "key": "manual/conf/coregrid/TserpesKMVSL07",
@@ -6217,7 +6217,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 18
+      "citations": 20
     },
     {
       "key": "doi/10.4108/infoscale.2007.227",
@@ -6240,7 +6240,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 63
+      "citations": 64
     },
     {
       "key": "doi/10.1145/1183614.1183777",
@@ -6260,7 +6260,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 18
+      "citations": 20
     },
     {
       "key": "doi/10.1145/1125857.1125859",
@@ -6283,7 +6283,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 292
+      "citations": 300
     },
     {
       "key": "doi/10.1145/1146847.1146881",
@@ -6305,7 +6305,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 77
+      "citations": 80
     },
     {
       "key": "doi/10.1145/1141277.1141407",
@@ -6329,7 +6329,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 26
+      "citations": 25
     },
     {
       "key": "doi/10.1145/1141277.1141605",
@@ -6349,7 +6349,7 @@
       "topics": [
         "social_net"
       ],
-      "citations": 45
+      "citations": 46
     },
     {
       "key": "doi/10.1007/11549468_52",
@@ -6372,7 +6372,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 94
+      "citations": 96
     },
     {
       "key": "doi/10.1109/itcc.2005.108",
@@ -6439,7 +6439,7 @@
         "efficient",
         "data_mining"
       ],
-      "citations": 69
+      "citations": 70
     },
     {
       "key": "doi/10.1109/ccgrid.2004.1336708",
@@ -6504,7 +6504,7 @@
       "topics": [
         "data_mining"
       ],
-      "citations": 68
+      "citations": 69
     },
     {
       "key": "doi/10.1007/978-3-540-24685-5_33",
@@ -6526,7 +6526,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 10
+      "citations": 11
     },
     {
       "key": "doi/10.1109/itcc.2004.1286486",
@@ -6548,7 +6548,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 40
+      "citations": 39
     },
     {
       "key": "doi/10.1007/978-3-540-30116-5_56",
@@ -6591,7 +6591,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 57
+      "citations": 52
     },
     {
       "key": "openalex/W173525302",
@@ -6677,7 +6677,7 @@
         "recsys",
         "agents"
       ],
-      "citations": 108
+      "citations": 104
     },
     {
       "key": "journals/corr/abs-cs-0407053",
@@ -6699,7 +6699,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 0
+      "citations": 44
     },
     {
       "key": "doi/10.1109/icdm.2002.1183921",
@@ -6721,7 +6721,7 @@
       "topics": [
         "data_mining"
       ],
-      "citations": 157
+      "citations": 155
     },
     {
       "key": "manual/conf/fimi/OrlandoLPPS03",
@@ -6744,7 +6744,7 @@
       "topics": [
         "data_mining"
       ],
-      "citations": 92
+      "citations": 94
     },
     {
       "key": "doi/10.1007/3-540-36569-9_28",
@@ -6767,7 +6767,7 @@
         "efficient",
         "data_mining"
       ],
-      "citations": 41
+      "citations": 43
     },
     {
       "key": "openalex/W2988175665",
@@ -6814,7 +6814,7 @@
         "efficient",
         "data_mining"
       ],
-      "citations": 50
+      "citations": 44
     },
     {
       "key": "doi/10.1142/9781860949630_0025",

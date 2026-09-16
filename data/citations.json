@@ -1,252 +1,284 @@
 {
   "scholar_id": "pi985dQAAAAJ",
-  "fetched_at": "2026-07-06T09:29:48+00:00",
-  "total_cites": 12130,
+  "fetched_at": "2026-09-16T09:21:45+00:00",
+  "total_cites": 10948,
   "citations": {
-    "doi/10.1145/3770854.3780243": 0,
-    "doi/10.18653/v1/2026.eacl-long.391": 6,
-    "doi/10.18653/v1/2026.eacl-short.51": 0,
-    "doi/10.1145/3731683": 10,
-    "doi/10.1145/3742898": 12,
-    "manual/journals/corr/abs-2602-17518": 0,
+    "doi/10.18653/v1/2026.findings-acl.2145": 16,
+    "doi/10.18653/v1/2026.findings-acl.583": 0,
+    "openalex/W7162269174": 0,
+    "journals/corr/abs-2502-12581": 4,
+    "doi/10.18653/v1/2026.eacl-long.391": 9,
+    "doi/10.18653/v1/2026.eacl-short.51": 3,
+    "manual/conf/iclr/CasoFMSS26": 0,
+    "journals/corr/abs-2510-04727": 7,
+    "journals/corr/abs-2504-05342": 4,
+    "doi/10.1145/3770854.3780243": 1,
+    "manual/journals/corr/abs-2511-18660": 1,
+    "doi/10.1145/3805712.3809539": 0,
+    "doi/10.1145/3805712.3809875": 1,
+    "doi/10.1109/tai.2026.3666527": 0,
     "manual/journals/corr/abs-2602-15650": 1,
+    "doi/10.1016/j.osnem.2026.100357": 1,
+    "doi/10.1145/3796509": 2,
+    "doi/10.1145/3814953": 1,
+    "journals/corr/abs-2502-10111": 0,
+    "doi/10.1007/978-3-032-11381-8_17": 13,
+    "doi/10.18653/v1/2026.rag4reports-1.3": 6,
+    "manual/journals/corr/abs-2602-17518": 1,
+    "manual/journals/corr/abs-2607-16321": 0,
+    "journals/corr/abs-2607-22287": 0,
+    "journals/corr/abs-2608-27974": 0,
     "journals/corr/abs-2602-06652": 0,
-    "journals/corr/abs-2603-21840": 0,
-    "journals/corr/abs-2601-05649": 0,
+    "journals/corr/abs-2603-21840": 1,
+    "journals/corr/abs-2601-05649": 3,
+    "openalex/W7171347076": 0,
     "journals/corr/abs-2606-06160": 0,
     "doi/10.18653/v1/2025.acl-long.303": 3,
-    "doi/10.18653/v1/2025.emnlp-main.1422": 14,
+    "doi/10.1109/cvpr52734.2025.01742": 165,
     "doi/10.1007/978-3-031-88714-7_41": 4,
-    "journals/corr/abs-2410-09295": 16,
-    "doi/10.1109/wacv61041.2025.00114": 5,
-    "doi/10.1109/cvpr52734.2025.01742": 142,
-    "doi/10.1145/3705328.3748150": 3,
+    "doi/10.18653/v1/2025.emnlp-main.1422": 14,
+    "doi/10.1609/icwsm.v19i1.35963": 14,
+    "doi/10.52202/085713-4116": 20,
+    "doi/10.1007/978-3-031-87654-7_11": 16,
+    "doi/10.1145/3705328.3748150": 4,
     "doi/10.1145/3726302.3730318": 5,
-    "doi/10.1609/icwsm.v19i1.35963": 13,
-    "doi/10.52202/085713-4116": 16,
-    "doi/10.1016/j.compmedimag.2024.102484": 25,
-    "doi/10.1109/access.2024.3522049": 32,
-    "doi/10.1109/tai.2024.3496616": 8,
-    "doi/10.1109/access.2025.3568133": 5,
-    "doi/10.1016/j.osnem.2025.100334": 1,
-    "doi/10.1109/ijcnn64981.2025.11228603": 8,
-    "doi/10.1109/ijcnn64981.2025.11229036": 2,
+    "doi/10.1109/wacv61041.2025.00114": 5,
+    "doi/10.1016/j.compmedimag.2024.102484": 23,
+    "doi/10.1109/access.2025.3568133": 6,
+    "doi/10.1016/j.osnem.2025.100334": 2,
+    "doi/10.1145/3731683": 13,
+    "doi/10.1145/3742898": 13,
+    "manual/conf/flta/AvellaS25": 2,
+    "doi/10.1145/3731120.3744579": 10,
+    "doi/10.1145/3731120.3744575": 1,
     "manual/conf/iir/SicilianoPBTS25": 0,
     "manual/conf/iir/TeodoroSTS25": 0,
-    "doi/10.1145/3731120.3744579": 8,
     "manual/conf/iir/DErasmoTTS25": 0,
+    "doi/10.1109/ijcnn64981.2025.11228603": 9,
+    "doi/10.1109/ijcnn64981.2025.11229036": 2,
     "doi/10.1109/ijcnn64981.2025.11227954": 0,
-    "doi/10.1145/3731120.3744575": 1,
     "doi/10.1109/ijcnn64981.2025.11228915": 1,
-    "doi/10.1007/978-3-032-11381-8_17": 10,
-    "doi/10.18653/v1/2026.findings-acl.2145": 14,
-    "manual/journals/corr/abs-2510-22593": 1,
-    "journals/corr/abs-2502-10111": 7,
-    "manual/journals/corr/abs-2508-03606": 0,
-    "journals/corr/abs-2510-04727": 5,
-    "manual/journals/corr/abs-2505-18088": 4,
+    "doi/10.36227/techrxiv.176282217.77757258/v1": 7,
+    "manual/journals/corr/abs-2510-22593": 2,
+    "journals/corr/abs-2502-09193": 1,
+    "manual/journals/corr/abs-2508-03606": 1,
+    "journals/corr/abs-2505-15561": 14,
+    "manual/journals/corr/abs-2505-18088": 5,
     "journals/corr/abs-2510-03134": 2,
     "journals/corr/abs-2509-21211": 1,
     "journals/corr/abs-2505-23225": 0,
-    "journals/corr/abs-2504-05342": 2,
-    "journals/corr/abs-2508-16082": 3,
+    "journals/corr/abs-2508-16082": 10,
     "journals/corr/abs-2505-01468": 4,
     "journals/corr/abs-2511-22435": 0,
-    "journals/corr/abs-2512-00242": 6,
-    "journals/corr/abs-2510-21440": 6,
-    "manual/journals/corr/abs-2511-18660": 0,
-    "journals/corr/abs-2502-12581": 4,
+    "journals/corr/abs-2512-00242": 7,
+    "journals/corr/abs-2510-21440": 9,
+    "journals/corr/abs-2502-00432": 1,
     "journals/corr/abs-2510-09551": 0,
-    "doi/10.1145/3637528.3671896": 9,
-    "doi/10.1007/978-3-031-56060-6_14": 27,
+    "journals/corr/abs-2501-14524": 10,
+    "journals/corr/abs-2510-20351": 0,
     "doi/10.1145/3627673.3680069": 10,
-    "doi/10.1145/3626772.3657834": 553,
-    "doi/10.1016/j.neunet.2024.106465": 6,
-    "doi/10.1109/tai.2022.3223892": 56,
-    "doi/10.1109/tai.2023.3319306": 15,
-    "doi/10.63317/4za9ey2b3j4r": 24,
+    "doi/10.1007/978-3-031-56060-6_14": 29,
+    "doi/10.1145/3637528.3671896": 10,
+    "doi/10.1145/3626772.3657834": 625,
+    "doi/10.1109/access.2024.3522049": 36,
+    "doi/10.1109/tai.2024.3496616": 9,
+    "doi/10.1016/j.neunet.2024.106465": 8,
+    "doi/10.63317/4za9ey2b3j4r": 25,
     "manual/conf/iir/BetelloSMS24": 4,
-    "doi/10.1007/978-3-031-63800-8_2": 8,
-    "doi/10.1109/ijcnn60899.2024.10650366": 9,
-    "manual/conf/iir/CuconasuTSFCMTS24": 10,
+    "manual/conf/iir/CuconasuTSFCMTS24": 12,
+    "doi/10.1109/ijcnn60899.2024.10650366": 10,
     "doi/10.1007/978-3-031-71382-8_6": 1,
-    "doi/10.1007/978-3-031-87654-7_11": 15,
-    "doi/10.1145/3589335.3648339": 35,
-    "manual/conf/robustrecsys/FrancomanoSS24": 0,
-    "doi/10.18653/v1/2024.semeval-1.275": 75,
-    "journals/corr/abs-2408-03873": 32,
-    "doi/10.18653/v1/2026.rag4reports-1.3": 4,
-    "journals/corr/abs-2411-07770": 8,
-    "journals/corr/abs-2401-03824": 6,
-    "journals/corr/abs-2411-03055": 10,
-    "manual/journals/corr/abs-2410-18067": 0,
-    "journals/corr/abs-2404-15760": 6,
-    "journals/corr/abs-2412-14967": 8,
-    "journals/corr/abs-2410-09514": 15,
-    "journals/corr/abs-2405-19749": 18,
-    "journals/corr/abs-2406-11720": 3,
-    "journals/corr/abs-2403-05185": 35,
-    "journals/corr/abs-2406-12535": 1,
-    "journals/corr/abs-2412-09983": 2,
-    "journals/corr/abs-2411-10198": 5,
-    "journals/corr/abs-2412-00081": 142,
-    "journals/corr/abs-2403-05358": 13,
-    "doi/10.1145/3583780.3615481": 6,
-    "doi/10.1145/3604915.3610643": 19,
-    "doi/10.1109/cvpr52729.2023.00335": 30,
-    "doi/10.1145/3539618.3591930": 20,
-    "doi/10.52202/075280-0529": 92,
-    "doi/10.1145/3539618.3592070": 45,
-    "doi/10.1016/j.osnem.2023.100244": 36,
-    "doi/10.1007/978-3-031-44070-0_12": 15,
-    "journals/corr/abs-2306-14457": 38,
-    "doi/10.1109/cogmi58952.2023.00027": 16,
-    "doi/10.1007/s44163-023-00047-7": 13,
     "doi/10.1007/978-3-031-74627-7_44": 4,
-    "journals/corr/abs-2303-08288": 2,
-    "journals/corr/abs-2307-12798": 21,
-    "journals/corr/abs-2312-17506": 25,
+    "doi/10.1007/978-3-031-63800-8_2": 9,
+    "manual/conf/robustrecsys/FrancomanoSS24": 1,
+    "doi/10.18653/v1/2024.semeval-1.275": 81,
+    "doi/10.1145/3589335.3648339": 42,
+    "journals/corr/abs-2408-03873": 36,
+    "journals/corr/abs-2411-07770": 9,
+    "journals/corr/abs-2401-03824": 8,
+    "journals/corr/abs-2411-03055": 13,
+    "manual/journals/corr/abs-2410-18067": 0,
+    "journals/corr/abs-2404-15760": 7,
+    "journals/corr/abs-2412-14967": 10,
+    "journals/corr/abs-2410-09514": 16,
+    "doi/10.36227/techrxiv.172866006.66912846/v1": 2,
+    "journals/corr/abs-2405-19749": 20,
+    "journals/corr/abs-2406-11720": 4,
+    "journals/corr/abs-2409-08036": 14,
+    "journals/corr/abs-2402-14802": 0,
+    "journals/corr/abs-2410-09295": 17,
+    "journals/corr/abs-2403-05185": 42,
+    "journals/corr/abs-2406-12535": 1,
+    "journals/corr/abs-2412-09983": 5,
+    "journals/corr/abs-2411-10198": 5,
+    "journals/corr/abs-2412-00081": 165,
+    "journals/corr/abs-2403-05358": 14,
+    "doi/10.1145/3583780.3615481": 8,
+    "doi/10.1109/cvpr52729.2023.00335": 33,
+    "doi/10.52202/075280-0529": 106,
+    "doi/10.1145/3604915.3610643": 19,
+    "doi/10.1145/3539618.3591930": 20,
+    "doi/10.1145/3539618.3592070": 49,
+    "doi/10.1007/s44163-023-00047-7": 13,
+    "doi/10.1109/tai.2023.3319306": 15,
+    "doi/10.1016/j.osnem.2023.100244": 38,
+    "doi/10.1109/cogmi58952.2023.00027": 18,
+    "doi/10.1007/978-3-031-44070-0_12": 17,
+    "journals/corr/abs-2312-17506": 23,
     "journals/corr/abs-2312-15228": 4,
+    "journals/corr/abs-2303-08288": 2,
+    "journals/corr/abs-2312-02401": 4,
+    "journals/corr/abs-2310-08909": 10,
+    "journals/corr/abs-2306-14457": 38,
     "journals/corr/abs-2305-10824": 19,
-    "journals/corr/abs-2310-04875": 16,
-    "journals/corr/abs-2309-17116": 92,
-    "journals/corr/abs-2305-00574": 45,
-    "journals/corr/abs-2102-03322": 339,
-    "doi/10.24963/ijcai.2022/781": 123,
+    "journals/corr/abs-2307-13165": 29,
+    "journals/corr/abs-2303-09470": 10,
+    "journals/corr/abs-2310-04875": 18,
+    "journals/corr/abs-2306-00707": 1,
+    "journals/corr/abs-2307-12798": 22,
+    "journals/corr/abs-2309-17116": 106,
+    "journals/corr/abs-2304-09097": 13,
+    "journals/corr/abs-2305-00574": 49,
+    "doi/10.24963/ijcai.2022/781": 133,
     "doi/10.1145/3477495.3532034": 27,
     "doi/10.1145/3462671": 94,
-    "journals/corr/abs-2103-12541": 246,
-    "doi/10.1109/ijcnn55064.2022.9892739": 22,
+    "doi/10.1109/tai.2022.3223892": 58,
+    "doi/10.1109/ijcnn55064.2022.9892739": 24,
     "doi/10.1109/ijcnn55064.2022.9892367": 14,
-    "journals/corr/abs-2205-04274": 123,
-    "journals/corr/abs-2207-13586": 25,
-    "journals/corr/abs-2208-04222": 54,
+    "journals/corr/abs-2205-04274": 133,
+    "journals/corr/abs-2207-13586": 26,
+    "journals/corr/abs-2208-04222": 56,
     "journals/corr/abs-2209-09688": 15,
-    "doi/10.18653/v1/2021.acl-long.241": 44,
-    "doi/10.18653/v1/2021.acl-long.516": 144,
-    "doi/10.14778/3447689.3447706": 84,
-    "doi/10.1109/tkde.2019.2945326": 28,
-    "doi/10.1016/j.ins.2021.06.039": 93,
+    "doi/10.18653/v1/2021.acl-long.241": 45,
+    "doi/10.18653/v1/2021.acl-long.516": 152,
+    "doi/10.1609/icwsm.v10i1.14726": 21,
+    "doi/10.1016/j.ins.2021.06.039": 97,
+    "doi/10.14778/3447689.3447706": 88,
     "doi/10.1109/ijcnn52387.2021.9533640": 3,
-    "doi/10.18653/v1/2021.semeval-1.7": 182,
+    "doi/10.18653/v1/2021.semeval-1.7": 189,
+    "journals/corr/abs-2103-12541": 267,
+    "journals/corr/abs-2102-03322": 369,
     "journals/corr/abs-2104-00353": 13,
-    "journals/corr/abs-2109-08013": 144,
+    "journals/corr/abs-2109-08013": 152,
     "journals/corr/abs-2110-02775": 14,
-    "doi/10.18653/v1/2020.findings-emnlp.22": 76,
+    "doi/10.18653/v1/2020.findings-emnlp.22": 77,
     "doi/10.1007/978-3-030-52485-2_14": 0,
-    "journals/corr/abs-2010-06973": 17,
-    "journals/corr/abs-2001-07524": 30,
-    "doi/10.18653/v1/n19-1326": 97,
-    "journals/corr/abs-1905-09755": 97,
-    "manual/conf/kdd/TolomeiSHL17": 365,
-    "doi/10.1016/j.ins.2016.12.038": 59,
-    "doi/10.1007/s10618-016-0477-7": 78,
-    "doi/10.1007/s13278-017-0449-y": 11,
+    "journals/corr/abs-2010-06973": 18,
+    "journals/corr/abs-2001-07524": 31,
+    "doi/10.18653/v1/n19-1326": 100,
+    "doi/10.1109/tkde.2019.2945326": 30,
+    "journals/corr/abs-1905-09755": 100,
+    "manual/conf/kdd/TolomeiSHL17": 370,
+    "doi/10.1007/s13278-017-0449-y": 12,
     "doi/10.1145/3041021.3054193": 4,
-    "doi/10.1145/2872427.2883092": 84,
+    "doi/10.1145/2983323.2983840": 25,
     "doi/10.1145/2911451.2914760": 19,
-    "doi/10.1609/icwsm.v10i1.14726": 22,
-    "doi/10.1145/2911451.2914763": 94,
-    "manual/conf/sigir/GrbovicDRSBFOYO16": 87,
-    "doi/10.1145/2983323.2983840": 24,
+    "doi/10.1145/2911451.2914763": 96,
+    "manual/conf/sigir/GrbovicDRSBFOYO16": 89,
+    "doi/10.1145/2872427.2883092": 85,
+    "doi/10.1007/s10618-016-0477-7": 79,
+    "doi/10.1016/j.ins.2016.12.038": 60,
     "doi/10.1007/978-3-319-44564-9_10": 2,
     "doi/10.1145/2964797.2964801": 2,
-    "journals/corr/abs-1612-08157": 12,
-    "doi/10.1145/2766462.2767709": 151,
-    "doi/10.3115/v1/n15-1014": 67,
-    "doi/10.1145/2684822.2685302": 227,
-    "doi/10.1145/2783258.2788581": 44,
-    "doi/10.1016/j.ipm.2014.07.010": 11,
-    "doi/10.1145/2766459": 47,
+    "journals/corr/abs-1612-08157": 11,
+    "doi/10.1145/2783258.2788581": 43,
+    "doi/10.3115/v1/n15-1014": 69,
+    "doi/10.1145/2766462.2767709": 153,
+    "doi/10.1145/2684822.2685302": 235,
+    "doi/10.1145/2766459": 48,
     "doi/10.1007/978-3-319-25252-0_26": 0,
-    "doi/10.1145/2505515.2505656": 49,
+    "doi/10.1016/j.ipm.2014.07.010": 11,
+    "doi/10.1145/2505515.2505656": 50,
     "doi/10.1145/2505515.2505699": 22,
+    "doi/10.1016/j.ins.2013.05.037": 8,
     "doi/10.1145/2493175.2493179": 76,
-    "doi/10.1016/j.ins.2013.05.037": 7,
-    "doi/10.5555/2491748.2491768": 10,
     "doi/10.1007/978-3-319-02432-5_9": 7,
-    "doi/10.1145/2487788.2487851": 4,
+    "doi/10.1007/978-3-642-45260-4_9": 5,
+    "doi/10.5555/2491748.2491768": 11,
+    "doi/10.1145/2487788.2487851": 5,
     "doi/10.1145/2487788.2487853": 6,
-    "doi/10.1145/2348283.2348332": 60,
-    "doi/10.1007/978-3-642-28997-2_17": 58,
     "doi/10.1145/2396761.2398534": 5,
-    "doi/10.1145/2396761.2396786": 69,
-    "doi/10.1145/2348283.2348368": 45,
-    "doi/10.1145/2396761.2398559": 32,
+    "doi/10.1145/2396761.2396786": 70,
+    "doi/10.1145/2396761.2398559": 34,
+    "doi/10.1007/978-3-642-28997-2_17": 58,
+    "doi/10.1145/2348283.2348332": 61,
+    "doi/10.1145/2348283.2348368": 43,
+    "doi/10.1007/978-3-642-35236-2_20": 20,
+    "doi/10.1007/978-3-642-31178-9_26": 3,
+    "doi/10.1109/wi-iat.2012.88": 9,
+    "openalex/W2399410367": 0,
+    "doi/10.1007/978-3-642-20161-5_66": 0,
+    "doi/10.1145/1951365.1951379": 32,
+    "doi/10.1145/1935826.1935875": 185,
     "doi/10.1016/j.ipm.2011.07.005": 47,
     "doi/10.1016/j.ipm.2010.11.010": 32,
-    "doi/10.1007/978-3-642-35236-2_20": 19,
-    "doi/10.1007/978-3-642-31178-9_26": 4,
-    "doi/10.1109/wi-iat.2012.88": 9,
-    "doi/10.1007/978-3-642-45260-4_9": 5,
-    "openalex/W2399410367": 0,
-    "doi/10.1145/1951365.1951379": 32,
-    "doi/10.1145/1935826.1935875": 187,
-    "doi/10.1007/978-3-642-20161-5_66": 0,
-    "doi/10.14778/1988776.1988781": 117,
+    "doi/10.14778/1988776.1988781": 118,
     "doi/10.1145/1963192.1963202": 8,
     "doi/10.1145/1963192.1963201": 29,
-    "journals/corr/abs-1105-4255": 117,
+    "journals/corr/abs-1105-4255": 118,
     "doi/10.1145/1871437.1871592": 104,
-    "doi/10.1561/1500000013": 258,
-    "doi/10.1145/1740592.1740593": 46,
-    "doi/10.1109/apweb.2010.30": 5,
-    "doi/10.1007/978-3-642-16321-0_2": 17,
+    "doi/10.1145/1740592.1740593": 48,
+    "doi/10.1109/apweb.2010.30": 6,
     "doi/10.1109/hpcc.2010.22": 9,
-    "doi/10.1007/978-3-642-16321-0_4": 4,
-    "doi/10.1109/wi-iat.2010.139": 10,
     "openalex/W204170047": 0,
-    "manual/conf/riao/BaragliaNCPDS10": 24,
+    "manual/conf/riao/BaragliaNCPDS10": 26,
+    "doi/10.1007/978-3-642-16321-0_2": 15,
+    "doi/10.1007/978-3-642-16321-0_4": 4,
+    "doi/10.1109/wi-iat.2010.281": 8,
+    "doi/10.1109/wi-iat.2010.139": 11,
     "doi/10.4018/jdst.2010090804": 3,
-    "doi/10.1109/wi-iat.2010.281": 9,
     "doi/10.1109/icdew.2010.5452726": 11,
-    "doi/10.1145/1645953.1646272": 31,
-    "doi/10.1007/978-3-642-00958-7_94": 9,
-    "doi/10.1145/1639714.1639729": 36,
-    "doi/10.1145/1526709.1526862": 5,
-    "doi/10.1109/icumt.2009.5345355": 24,
-    "doi/10.1007/978-3-642-04409-0_50": 11,
+    "doi/10.1145/1645953.1646272": 34,
+    "doi/10.1007/978-3-642-00958-7_94": 263,
+    "doi/10.1145/1639714.1639729": 39,
+    "doi/10.1145/1526709.1526862": 6,
     "manual/conf/fia/NittoKMPPPSH09": 7,
-    "doi/10.1145/1507509.1507517": 4,
+    "doi/10.1007/978-3-642-04409-0_50": 11,
+    "doi/10.1109/icumt.2009.5345355": 24,
     "openalex/W2139126712": 29,
-    "doi/10.1145/1383422.1383458": 8,
-    "doi/10.1109/la-web.2008.21": 3,
-    "doi/10.1145/1409220.1409223": 140,
+    "doi/10.1145/1507509.1507517": 5,
+    "doi/10.1145/1383422.1383458": 9,
+    "doi/10.1109/la-web.2008.21": 2,
     "openalex/W59672765": 0,
-    "doi/10.1109/icde.2007.367846": 151,
-    "doi/10.1145/1277741.1277814": 499,
+    "doi/10.1145/1409220.1409223": 143,
     "doi/10.1007/978-3-540-71496-5_12": 138,
-    "doi/10.1145/1277741.1277775": 301,
-    "doi/10.1145/1216016.1216022": 162,
+    "doi/10.1109/icde.2007.367846": 156,
+    "doi/10.1145/1277741.1277814": 491,
+    "doi/10.1145/1277741.1277775": 316,
+    "doi/10.1145/1216016.1216022": 157,
+    "doi/10.1109/cbms.2007.29": 17,
     "manual/conf/coregrid/TserpesKMVSL07": 4,
-    "doi/10.1109/cbms.2007.29": 16,
-    "doi/10.5555/1366804.1366807": 18,
-    "doi/10.4108/infoscale.2007.227": 63,
-    "doi/10.1145/1183614.1183777": 18,
-    "doi/10.1145/1125857.1125859": 292,
-    "doi/10.1145/1141277.1141407": 26,
-    "doi/10.1145/1146847.1146881": 77,
-    "doi/10.1145/1141277.1141605": 45,
-    "doi/10.1002/cpe.995": 11,
-    "doi/10.1007/11549468_52": 94,
+    "doi/10.5555/1366804.1366807": 20,
+    "doi/10.4108/infoscale.2007.227": 64,
+    "doi/10.1145/1183614.1183777": 20,
+    "doi/10.1145/1125857.1125859": 300,
+    "doi/10.1145/1146847.1146881": 80,
+    "doi/10.1145/1141277.1141407": 25,
+    "doi/10.1145/1141277.1141605": 46,
+    "doi/10.1007/11549468_52": 96,
     "doi/10.1109/itcc.2005.108": 2,
-    "doi/10.1145/1008992.1009046": 69,
+    "doi/10.1002/cpe.995": 11,
+    "doi/10.1145/1008992.1009046": 70,
     "doi/10.1007/978-3-540-27866-5_45": 4,
-    "doi/10.1109/wi.2004.13": 4,
+    "manual/conf/fimi/LuccheseOPS04": 69,
+    "doi/10.1007/978-3-540-24685-5_33": 11,
+    "doi/10.1109/itcc.2004.1286486": 39,
     "doi/10.1007/978-3-540-30116-5_56": 4,
+    "doi/10.1145/967900.968024": 52,
     "openalex/W173525302": 0,
-    "doi/10.1109/wi.2004.29": 108,
-    "doi/10.1145/967900.968024": 57,
-    "doi/10.1109/itcc.2004.1286486": 40,
-    "manual/conf/fimi/LuccheseOPS04": 68,
-    "doi/10.1007/978-3-540-24685-5_33": 10,
-    "doi/10.1142/9781860949630_0025": 44,
-    "manual/conf/fimi/OrlandoLPPS03": 92,
+    "doi/10.1109/wi.2004.13": 4,
+    "doi/10.1109/wi.2004.29": 104,
+    "journals/corr/abs-cs-0407053": 44,
+    "doi/10.1109/icdm.2002.1183921": 155,
+    "manual/conf/fimi/OrlandoLPPS03": 94,
+    "doi/10.1007/3-540-36569-9_28": 43,
     "openalex/W2988175665": 4,
-    "doi/10.1109/icdm.2002.1183921": 157,
-    "doi/10.1007/3-540-36569-9_28": 41,
-    "doi/10.1007/3-540-45706-2_49": 50,
-    "doi/10.1145/2740908.2744112": 0
+    "doi/10.1007/3-540-45706-2_49": 44,
+    "doi/10.1142/9781860949630_0025": 44,
+    "journals/corr/abs-2412-08419": 0,
+    "doi/10.1145/2740908.2744112": 0,
+    "doi/10.1145/3511808.3557429": 97,
+    "doi/10.1145/3205453": 16
   },
   "unmatched": [
     {
@@ -255,19 +287,14 @@
       "year": 2017
     },
     {
-      "title": "R e LAX: Reinforcement Learning Agent Explainer for Arbitrary Predictive Models",
-      "cites": 88,
-      "year": 2022
+      "title": "Generating actionable suggestions for improving user engagement with online advertisements",
+      "cites": 54,
+      "year": 2020
     },
     {
       "title": "Machine learning classification of digital content for mobile devices",
       "cites": 54,
-      "year": 2024
-    },
-    {
-      "title": "Generating actionable suggestions for improving user engagement with online advertisements",
-      "cites": 54,
-      "year": 2020
+      "year": 2018
     },
     {
       "title": "Palliative treatment for malignant jaundice: endoscopic vs surgical approach",
@@ -276,7 +303,7 @@
     },
     {
       "title": "State of the art report, gap analysis of knowledge on principles, techniques and methodologies for monitoring and adaptation of SBAs",
-      "cites": 34,
+      "cites": 35,
       "year": 2008
     },
     {
@@ -286,12 +313,12 @@
     },
     {
       "title": ": Gradient-based and Task-Agnostic machine Unlearning",
-      "cites": 22,
+      "cites": 28,
       "year": 2024
     },
     {
       "title": "Ir-rag@ sigir24: Information retrieval's role in rag systems",
-      "cites": 20,
+      "cites": 22,
       "year": 2024
     },
     {
@@ -300,9 +327,19 @@
       "year": 2024
     },
     {
+      "title": "Who is more positive in private? Analyzing sentiment differences across privacy levels and demographic factors in Facebook chats and posts",
+      "cites": 19,
+      "year": 2015
+    },
+    {
       "title": "Method of detecting spam hosts based on clustering the host graph",
       "cites": 19,
       "year": 2009
+    },
+    {
+      "title": "High performance issues in web search engines: Algorithms and techniques",
+      "cites": 18,
+      "year": 2004
     },
     {
       "title": "A scalable multi-strategy algorithm for counting frequent sets",
@@ -310,14 +347,9 @@
       "year": 2002
     },
     {
-      "title": "High performance issues in web search engines: Algorithms and techniques",
+      "title": "Harmonizing global voices: Culturally-aware models for enhanced content moderation",
       "cites": 17,
-      "year": 2004
-    },
-    {
-      "title": "X-CLE a VER: Learning Ranking Ensembles by Growing and Pruning Trees",
-      "cites": 16,
-      "year": 2018
+      "year": 2023
     },
     {
       "title": "Method of detecting spam hosts based on propagating prediction labels",
@@ -335,11 +367,6 @@
       "year": 2021
     },
     {
-      "title": "Heterogeneous sheaf neural networks",
-      "cites": 11,
-      "year": 2024
-    },
-    {
       "title": "Systems and methods for query rewriting",
       "cites": 11,
       "year": 2016
@@ -355,9 +382,24 @@
       "year": 2009
     },
     {
+      "title": "Link prediction under heterophily: a physics-inspired graph neural network approach",
+      "cites": 10,
+      "year": 2024
+    },
+    {
       "title": "Using exogenous sources for personalization of website services",
       "cites": 10,
-      "year": 2017
+      "year": 2016
+    },
+    {
+      "title": "IR-RAG@ SIGIR25: The Second Edition of the Workshop on Information Retrieval's Role in RAG Systems",
+      "cites": 9,
+      "year": 2025
+    },
+    {
+      "title": "An efficient algorithm to generate search shortcuts",
+      "cites": 9,
+      "year": 2010
     },
     {
       "title": "Advances in Information Retrieval: 38th European Conference on IR Research (ECIR 2016) proceedings",
@@ -365,17 +407,22 @@
       "year": 2016
     },
     {
-      "title": "Recommender Systems.",
+      "title": "WSN key distribution method based on PTPP",
       "cites": 8,
       "year": 2014
     },
     {
-      "title": "An efficient algorithm to generate search shortcuts",
+      "title": "Recommender systems",
       "cites": 8,
-      "year": 2010
+      "year": 2014
     },
     {
-      "title": "IR-RAG@ SIGIR25: The Second Edition of the Workshop on Information Retrieval's Role in RAG Systems",
+      "title": "Combinex: A unified counterfactual explainer for graph neural networks via node feature and structural perturbations",
+      "cites": 7,
+      "year": 2025
+    },
+    {
+      "title": "Advances in Information Retrieval",
       "cites": 7,
       "year": 2025
     },
@@ -385,19 +432,14 @@
       "year": 2019
     },
     {
-      "title": "WSN key distribution method based on PTPP",
-      "cites": 7,
-      "year": 2014
-    },
-    {
-      "title": "Critical evaluation of the use of dogs in biomedical research and testing",
-      "cites": 7,
-      "year": 2011
-    },
-    {
       "title": "SIGIR workshop report: the SIGIR heterogeneous and distributed information retrieval workshop",
       "cites": 7,
       "year": 2005
+    },
+    {
+      "title": "Critical evaluation of the use of dogs in biomedical research and testing",
+      "cites": 6,
+      "year": 2011
     },
     {
       "title": "State of the Art Report",
@@ -410,9 +452,24 @@
       "year": 2005
     },
     {
+      "title": "Evaluating latent knowledge of public tabular datasets in large language models",
+      "cites": 5,
+      "year": 2025
+    },
+    {
+      "title": "Renormalized graph neural networks",
+      "cites": 5,
+      "year": 2023
+    },
+    {
       "title": "Preserving privacy in web recommender systems",
       "cites": 5,
       "year": 2010
+    },
+    {
+      "title": "Web search result caching and prefetching",
+      "cites": 5,
+      "year": 2009
     },
     {
       "title": "PO-JRA-1.2. 1, State of the Art Report, Gap Analysis of Knowledge on Principles, Techniques and Methodologies for Monitoring and Adaptation of SBAs",
@@ -420,9 +477,19 @@
       "year": 2008
     },
     {
-      "title": "A Survey on Explainable AI Narratives based on Large Language Models",
+      "title": "Toward GRIDLE: A way to build grid applications searching through an ecosystem of components",
+      "cites": 5,
+      "year": 2006
+    },
+    {
+      "title": "Robustrecsys@ recsys2024: Design, evaluation and deployment of robust recommender systems",
       "cites": 4,
-      "year": 2025
+      "year": 2024
+    },
+    {
+      "title": "Sheaf neural networks for graph-based recommender systems",
+      "cites": 4,
+      "year": 2023
     },
     {
       "title": "Service Research Challenges and Solutions for the Future Internet",
@@ -430,29 +497,9 @@
       "year": 2010
     },
     {
-      "title": "Advances in Information Retrieval",
-      "cites": 4,
-      "year": 2009
-    },
-    {
-      "title": "Web search result caching and prefetching",
-      "cites": 4,
-      "year": 2009
-    },
-    {
       "title": "The CIKM 2006 workshop on information retrieval in peer-to-peer networks",
       "cites": 4,
       "year": 2007
-    },
-    {
-      "title": "Toward GRIDLE: A way to build grid applications searching through an ecosystem of components",
-      "cites": 4,
-      "year": 2006
-    },
-    {
-      "title": "Robustrecsys@ recsys2024: Design, evaluation and deployment of robust recommender systems",
-      "cites": 3,
-      "year": 2024
     },
     {
       "title": "Proceedings of the 2015 IEEE/ACM international conference on advances in social networks analysis and mining 2015",
@@ -460,39 +507,34 @@
       "year": 2015
     },
     {
-      "title": "Effective data access patterns on massively parallel processors",
-      "cites": 3,
-      "year": 2014
-    },
-    {
       "title": "Advances in Medical Knowledge Systems: LLMs, RAG and Foundation Models",
       "cites": 2,
       "year": 2025
     },
     {
-      "title": "Report on the 1st Workshop on Information Retrieval's Role in RAG Systems (IR-RAG 2024) at SIGIR 2024",
-      "cites": 2,
-      "year": 2025
-    },
-    {
-      "title": "Generate counterfactual explanations for graph neural networks from node feature perturbations",
+      "title": "Robustness of Graph Classification: failure modes, causes, and noise-resistant loss in Graph Neural Networks",
       "cites": 2,
       "year": 2024
     },
     {
-      "title": "Enhancing Content Moderation with Culturally-Aware Models",
+      "title": "Combining distance to class centroids and outlier discounting for improved learning with noisy labels",
       "cites": 2,
       "year": 2023
+    },
+    {
+      "title": "Community Membership Hiding as Counterfactual Graph Search via Deep Reinforcement Learning",
+      "cites": 2,
+      "year": 2023
+    },
+    {
+      "title": "Effective data access patterns on massively parallel processors",
+      "cites": 2,
+      "year": 2014
     },
     {
       "title": "Advances in Information Retrieval: 34th European Conference on IR Research, ECIR 2012, Barcelona, Spain, April 1-5, 2012, Proceedings",
       "cites": 2,
       "year": 2012
-    },
-    {
-      "title": "Knowledge extraction of service usage",
-      "cites": 2,
-      "year": 2011
     },
     {
       "title": "Scalable information systems",
@@ -510,32 +552,32 @@
       "year": 2008
     },
     {
-      "title": "Eco-Friendly Federated Learning: Designing a FinOps Framework for Multicloud Resource Coordination",
+      "title": "Report on the 1st Workshop on Information Retrieval's Role in RAG Systems (IR-RAG 2024) at SIGIR 2024",
       "cites": 1,
       "year": 2025
     },
     {
-      "title": "Advances in Information Retrieval: 47th European Conference on Information Retrieval, ECIR 2025, Lucca, Italy, April 6–10, 2025, Proceedings, Part I",
+      "title": "Machine Learning and Principles and Practice of Knowledge Discovery in Databases: International Workshops of ECML PKDD 2023, Turin, Italy, September 18–22, 2023, Revised …",
       "cites": 1,
       "year": 2025
     },
     {
-      "title": "The Right to Hide: Masking Community Affiliation via Minimal Graph Rewiring",
+      "title": "Generalizability through explainability: Countering overfitting with counterfactual examples",
       "cites": 1,
       "year": 2025
     },
     {
-      "title": "Energy Guided smoothness to improve Robustness in Graph Classification",
-      "cites": 1,
-      "year": 2024
-    },
-    {
-      "title": "Mining Lifecycle Event Logs for Enhancing Service-Based Applications",
+      "title": "Mining lifecycle event logs for enhancing service-based applications",
       "cites": 1,
       "year": 2013
     },
     {
       "title": "String Processing and Information Retrieval: 18th International Symposium, SPIRE 2011, Pisa, Italy, October 17-21, 2011, Proceedings",
+      "cites": 1,
+      "year": 2011
+    },
+    {
+      "title": "Knowledge extraction of service usage",
       "cites": 1,
       "year": 2011
     },
@@ -555,22 +597,22 @@
       "year": 2006
     },
     {
-      "title": "The Mechanics of Interference: Defusing Distractors in RAG via Sparse Autoencoder Interventions",
+      "title": "Machine Learning and Knowledge Discovery in Databases. Applied Data Science Track, Demo Track and Industrial Track: European Conference, ECML PKDD 2026, Naples, Italy …",
       "cites": 0,
       "year": 2026
     },
     {
-      "title": "Rank Lifting and Random Non-Linear Maps",
+      "title": "Equivariant Sheaf Neural Networks: Learning Geometric Transport on Graphs",
       "cites": 0,
       "year": 2026
     },
     {
-      "title": "When Annotators Disagree: A Principled Approach to Learning with Noisy Labels",
+      "title": "TSMO 2026: Two-sided Marketplace Optimization: Search, Discovery, Pricing & Growth",
       "cites": 0,
       "year": 2026
     },
     {
-      "title": "CRAB: Churn Reduction Agent Based via Reinforcement Learning",
+      "title": "Machine Learning and Knowledge Discovery in Databases. Applied Data Science Track, Demo Track and Industrial Track",
       "cites": 0,
       "year": 2026
     },
@@ -580,7 +622,7 @@
       "year": 2025
     },
     {
-      "title": "Machine Learning and Principles and Practice of Knowledge Discovery in Databases: International Workshops of ECML PKDD 2023, Turin, Italy, September 18–22, 2023, Revised …",
+      "title": "Community Membership Hiding via Gradient-based Optimization.",
       "cites": 0,
       "year": 2025
     },
@@ -715,9 +757,19 @@
       "year": 2012
     },
     {
+      "title": "S-CUBE-Knowledge extraction from service usage",
+      "cites": 0,
+      "year": 2011
+    },
+    {
       "title": "String Processing and Information Retrieval",
       "cites": 0,
       "year": 2011
+    },
+    {
+      "title": "Tuning the capacity of search engines",
+      "cites": 0,
+      "year": 2010
     },
     {
       "title": "An incremental prefix filtering approach for all pairs similarity search",
@@ -736,6 +788,11 @@
     },
     {
       "title": "InfoScale 2008: The Third International ICST Conference on Scalable Information Systems",
+      "cites": 0,
+      "year": 2008
+    },
+    {
+      "title": "CoPhIR (Content-based Photo Image Retrieval) Test-Collection",
       "cites": 0,
       "year": 2008
     },
@@ -775,6 +832,11 @@
       "year": 2007
     },
     {
+      "title": "SIGIR workshop report",
+      "cites": 0,
+      "year": 2005
+    },
+    {
       "title": "Topic 5-Parallel and Distributed Databases, Data Mining and Knowledge Discovery-A Highly Scalable Parallel Caching System for Web Search Engine Results",
       "cites": 0,
       "year": 2004
@@ -795,27 +857,17 @@
       "year": 1996
     },
     {
-      "title": "Energy Guided Smoothness to Improve Robustness",
+      "title": "Double Descent Revisited: When Noise Amplifies and Optimizers Decide",
       "cites": 0,
       "year": 0
     },
     {
-      "title": "Balancing the Diversity-Coverage Trade-off in Graph-based Recommendations for Cold-Start Industrial Applications",
-      "cites": 0,
-      "year": 0
-    },
-    {
-      "title": "AI for Mechanism Design and Strategic Decision Making (AIMS)",
+      "title": "OSNED 2018 Chairs’ Welcome",
       "cites": 0,
       "year": 0
     },
     {
       "title": "One Size Does not Fit All: Cross-Architectural Layer-wise Representations in Diffusion Models",
-      "cites": 0,
-      "year": 0
-    },
-    {
-      "title": "Composable Sparse Subnetworks via Maximum-Entropy Principle",
       "cites": 0,
       "year": 0
     },

@@ -149,7 +149,9 @@ def match_to_dblp(scholar_rows: list[dict], dblp_pubs: list[dict]) -> tuple[dict
     list — DBLP records plus any manual-overlay ones. Matching strategy:
     first try exact normalized-title equality; then, because Scholar
     truncates long titles with an ellipsis, try prefix containment
-    (Scholar prefix of the paper's title, or the other way round) and
+    (Scholar prefix of the paper's title, or the other way round);
+    finally try equality with word spacing ignored, for the titles
+    publisher small-caps markup has split into pieces. Both fallbacks
     require the years to be within 1."""
     by_norm_title: dict[str, dict] = {}
     # Prefer the row with the most cites if Scholar lists duplicates.
@@ -195,6 +197,30 @@ def match_to_dblp(scholar_rows: list[dict], dblp_pubs: list[dict]) -> tuple[dict
             citations[pub["key"]] = row["cites"]
             matched_scholar_keys.add(norm)
             break
+
+    # Pass 3 — equality ignoring word boundaries, year within 1.
+    #
+    # Publishers register small-caps runs as separate markup spans
+    # ("X-CLE<scp>a</scp>VER"), and whatever scraped the title for
+    # Scholar flattened them to spaces, so its row reads "X-CLE a VER"
+    # and "R e LAX". fetch_publications.py strips that markup and
+    # recovers the real title, which is precisely why the two no longer
+    # compare equal. Dropping every space makes them match again, and is
+    # safe: two distinct titles that differ only in spacing don't occur.
+    squashed = {norm.replace(" ", ""): norm for norm in by_norm_title}
+    for pub in dblp_pubs:
+        if pub["key"] in citations:
+            continue
+        pub_norm = normalize_title(pub.get("title", "")).replace(" ", "")
+        norm = squashed.get(pub_norm)
+        if not pub_norm or norm is None or norm in matched_scholar_keys:
+            continue
+        row = by_norm_title[norm]
+        pub_year = pub.get("year", 0) or 0
+        if abs(row["year"] - pub_year) > 1 and pub_year and row["year"]:
+            continue
+        citations[pub["key"]] = row["cites"]
+        matched_scholar_keys.add(norm)
 
     unmatched = [
         row for norm, row in by_norm_title.items() if norm not in matched_scholar_keys
