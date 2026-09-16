@@ -133,6 +133,291 @@
 
 additions:
 
+  # ---------------------------------------------------------------
+  # Carried over from the DBLP era (2026-09-16). The nightly sync now
+  # reads OpenAlex, and these are the papers OpenAlex has no record of
+  # at all: the CEUR-WS workshops it does not index (IIR, RobustRecSys,
+  # FIMI, RIAO), a few older conference papers, and preprints that are
+  # on arXiv but not yet in OpenAlex. Each one was on the site under
+  # DBLP, so the fields below are DBLP's, not guesses. They prune
+  # themselves the moment OpenAlex indexes the paper, like any other
+  # overlay entry.
+  # ---------------------------------------------------------------
+
+  - key: manual/journals/corr/abs-2602-17518
+    title: A Picture of Agentic Search
+    authors: [F. Pezzuti, O. Frieder, F. Silvestri, S. MacAvaney, N. Tonellotto]
+    year: 2026
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2602.17518
+    type: preprint
+    topics: [ir, agents]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2607-16321
+    title: "Art Beyond Semantics: Sheaf-Informed Contrastive Learning for Multi-Relational Representations"
+    authors: [L. Schaerf, A. Purificato, P. Riccio, F. Silvestri, N. Garcia]
+    year: 2026
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2607.16321
+    type: preprint
+    topics: [gnn]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2602-15650
+    title: "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation"
+    authors: [M. Salmè, F. Siciliano, F. Silvestri, P. Soda, R. Sicilia, V. Guarrasi]
+    year: 2026
+    venue: Inf. Syst. Frontiers
+    venue_short: ISF
+    abbrev: isf
+    url_publisher: https://doi.org/10.1007/s10796-026-10741-3
+    url_arxiv: https://doi.org/10.48550/arXiv.2602.15650
+    type: q1_journal
+    topics: [llm, trust]
+    citations: 1
+
+  # ECML PKDD 2026 research track, Naples; Springer LNCS chapter,
+  # pp. 340-355 of Proceedings Part II. The type is declared rather than
+  # derived: CORE ranks this venue A under the acronym "ECML PKDD", but
+  # its entry reads "PKDD and ECML combined from 2008", so mapping the
+  # abbrev "pkdd" to it in venues.yml would retroactively promote the
+  # 2004 PKDD paper that predates the merger. Hence the "declared
+  # a_star_conf but classifies as other_conf" note on every run.
+  - key: manual/journals/corr/abs-2511-18660
+    title: "Subtract the Corruption: Training-Data-Free Corrective Machine Unlearning using Task Arithmetic"
+    authors: [M. Mozafari, F. Ahmad Wani, M. Sofia Bucarelli, F. Silvestri]
+    year: 2026
+    venue: ECML/PKDD
+    venue_short: PKDD
+    abbrev: pkdd
+    url_publisher: https://doi.org/10.1007/978-3-032-37657-2_19
+    url_arxiv: https://doi.org/10.48550/arXiv.2511.18660
+    type: a_star_conf
+    topics: [task_vectors]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2510-22593
+    title: "AutoBench: Automating LLM Evaluation through Reciprocal Peer Assessment"
+    authors: [D. Loi, E. Maria Muià, F. Siciliano, G. Trappolini, V. Crisà, P. Kruger, F. Silvestri]
+    year: 2025
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2510.22593
+    type: preprint
+    topics: [llm]
+    citations: 1
+
+  - key: manual/conf/iir/SicilianoPBTS25
+    title: "Caser+ and CosRec+: Closing the Gap Between CNNs and Attention Models in SRS"
+    authors: [F. Siciliano, A. Purificato, F. Betello, N. Tonellotto, F. Silvestri]
+    year: 2025
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-4026/paper4.pdf
+    type: other_conf
+    topics: [recsys]
+    citations: 0
+
+  - key: manual/conf/iir/TeodoroSTS25
+    title: Comparing Recommendation Losses under Negative Sampling
+    authors: [G. Di Teodoro, F. Siciliano, N. Tonellotto, F. Silvestri]
+    year: 2025
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-4026/paper25.pdf
+    type: other_conf
+    topics: [recsys]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2508-03606
+    title: "Demystifying Sequential Recommendations: Counterfactual Explanations via Genetic Algorithms"
+    authors: [D. Scarcelli, F. Betello, G. Perelli, F. Silvestri, G. Tolomei]
+    year: 2025
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2508.03606
+    type: preprint
+    topics: [recsys, trust]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2505-18088
+    title: Early-Exit Graph Neural Networks
+    authors: [A. Giuseppe Di Francesco, M. Sofia Bucarelli, F. Maria Nardini, R. Perego, N. Tonellotto, F. Silvestri]
+    year: 2025
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2505.18088
+    type: preprint
+    topics: [gnn]
+    citations: 4
+
+  - key: manual/conf/iir/DErasmoTTS25
+    title: "Eclipse: Leveraging Pseudo-Irrelevance for Dimension Importance Estimation"
+    authors: ["G. D'Erasmo", G. Trappolini, N. Tonellotto, F. Silvestri]
+    year: 2025
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-4026/paper10.pdf
+    type: other_conf
+    topics: [misc]
+    citations: 0
+
+  - key: manual/journals/corr/abs-2410-18067
+    title: "Beyond position: how rotary embeddings shape representations and memory in autoregressive transfomers"
+    authors: [V. Ruscio, F. Silvestri]
+    year: 2024
+    venue: CoRR
+    venue_short: arXiv
+    abbrev: corr
+    url_publisher: https://doi.org/10.48550/arXiv.2410.18067
+    type: preprint
+    topics: [misc]
+    citations: 0
+
+  - key: manual/conf/iir/BetelloSMS24
+    title: "Finite Rank-Biased Overlap (FRBO): A New Measure for Stability in Sequential Recommender Systems"
+    authors: [F. Betello, F. Siciliano, P. Mishra, F. Silvestri]
+    year: 2024
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-3802/paper3.pdf
+    type: other_conf
+    topics: [ir, recsys, trust]
+    citations: 4
+
+  - key: manual/conf/iir/CuconasuTSFCMTS24
+    title: "Rethinking Relevance: How Noise and Distractors Impact Retrieval-Augmented Generation"
+    authors: [F. Cuconasu, G. Trappolini, F. Siciliano, S. Filice, C. Campagnano, Y. Maarek, N. Tonellotto, F. Silvestri]
+    year: 2024
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-3802/paper23.pdf
+    type: other_conf
+    topics: [ir, llm]
+    citations: 10
+
+  - key: manual/conf/robustrecsys/FrancomanoSS24
+    title: Robust Solutions for Ranking Variability in Recommender Systems
+    authors: [B. Marco Francomano, F. Siciliano, F. Silvestri]
+    year: 2024
+    venue: "RobustRecSys@RecSys"
+    venue_short: ROBUSTRECSYS
+    abbrev: robustrecsys
+    url_publisher: https://ceur-ws.org/Vol-3924/short7.pdf
+    type: workshop
+    topics: [ir, recsys, trust]
+    citations: 0
+
+  - key: manual/conf/kdd/TolomeiSHL17
+    title: Interpretable Predictions of Tree-based Ensembles via Actionable Feature Tweaking
+    authors: [G. Tolomei, F. Silvestri, A. Haines, M. Lalmas]
+    year: 2017
+    venue: KDD
+    venue_short: KDD
+    abbrev: kdd
+    url_publisher: https://doi.org/10.1145/3097983.3098039
+    type: a_star_conf
+    topics: [trust]
+    citations: 365
+
+  - key: manual/conf/iir/LuccheseNOPST16
+    title: Post-Learning Optimization of Tree Ensembles
+    authors: [C. Lucchese, F. Maria Nardini, S. Orlando, R. Perego, F. Silvestri, S. Trani]
+    year: 2016
+    venue: IIR
+    venue_short: IIR
+    abbrev: iir
+    url_publisher: https://ceur-ws.org/Vol-1653/paper_27.pdf
+    type: other_conf
+    topics: [misc]
+    citations: 0
+
+  - key: manual/conf/sigir/GrbovicDRSBFOYO16
+    title: Scalable Semantic Matching of Queries to Ads in Sponsored Search Advertising
+    authors: [M. Grbovic, N. Djuric, V. Radosavljevic, F. Silvestri, R. Baeza-Yates, A. Feng, E. Ordentlich, L. Yang, G. Owens]
+    year: 2016
+    venue: SIGIR
+    venue_short: SIGIR
+    abbrev: sigir
+    url_publisher: https://doi.org/10.1145/2911451.2911538
+    url_arxiv: http://arxiv.org/abs/1607.01869
+    type: a_star_conf
+    topics: [ir, efficient]
+    citations: 87
+
+  - key: manual/conf/riao/BaragliaNCPDS10
+    title: The effects of time on query flow graph-based models for query suggestion
+    authors: [R. Baraglia, F. Maria Nardini, C. Castillo, R. Perego, D. Donato, F. Silvestri]
+    year: 2010
+    venue: RIAO
+    venue_short: RIAO
+    abbrev: riao
+    url_publisher: https://dl.acm.org/doi/10.5555/1937055.1937102
+    type: other_conf
+    topics: [ir, gnn]
+    citations: 24
+
+  - key: manual/conf/fia/NittoKMPPPSH09
+    title: "S-Cube: Addressing Multidisciplinary Research Challenges for the Internet of Services"
+    authors: [E. Di Nitto, D. Karastoyanova, A. Metzger, M. Parkin, M. Pistore, K. Pohl, F. Silvestri, W. van den Heuvel]
+    year: 2009
+    venue: Future Internet Assembly
+    venue_short: FIA
+    abbrev: fia
+    url_publisher: https://doi.org/10.3233/978-1-60750-007-0-263
+    type: other_conf
+    topics: [misc]
+    citations: 7
+
+  - key: manual/conf/coregrid/TserpesKMVSL07
+    title: An Open Architecture for QoS Information in Business Grids
+    authors: [K. Tserpes, D. Kyriazis, A. Menychtas, T. A. Varvarigou, F. Silvestri, D. Laforenza]
+    year: 2007
+    venue: CoreGRID
+    venue_short: COREGRID
+    abbrev: coregrid
+    url_publisher: https://doi.org/10.1007/978-0-387-72498-0_4
+    type: other_conf
+    topics: [efficient]
+    citations: 4
+
+  - key: manual/conf/fimi/LuccheseOPS04
+    title: "WebDocs: a real-life huge transactional dataset"
+    authors: [C. Lucchese, S. Orlando, R. Perego, F. Silvestri]
+    year: 2004
+    venue: FIMI
+    venue_short: FIMI
+    abbrev: fimi
+    url_publisher: https://ceur-ws.org/Vol-126/webdocs.pdf
+    type: other_conf
+    topics: [data_mining]
+    citations: 68
+
+  - key: manual/conf/fimi/OrlandoLPPS03
+    title: "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets"
+    authors: [S. Orlando, C. Lucchese, P. Palmerini, R. Perego, F. Silvestri]
+    year: 2003
+    venue: FIMI
+    venue_short: FIMI
+    abbrev: fimi
+    url_publisher: https://ceur-ws.org/Vol-90/palmerini.pdf
+    type: other_conf
+    topics: [data_mining]
+    citations: 92
+
   # ICLR 2026 poster. Venue, authors and the OpenReview id confirmed on
   # iclr.cc/virtual/2026/poster/10010319 — note the paper also has a
   # NeurIPS 2025 Mech Interp workshop page under a different id.
@@ -164,50 +449,17 @@ additions:
     topics: ["efficient"]
     citations: 2
 
-  # CORE2023 ranks AISTATS A, which classifies as a_star_conf. Venue and
-  # author list confirmed on the conference's own poster page,
-  # virtual.aistats.org/virtual/2026/poster/13883, and on OpenReview,
-  # which states "AISTATS 2026 Poster". Both list seven authors —
-  # Scholar truncates after the sixth, which is why L. Becchetti was
-  # missing. (A co-author's homepage listing this title under
-  # ECML-PKDD 2026 is not borne out by either source.) No PMLR volume
-  # yet, so OpenReview is the publisher link.
-  - key: manual/conf/aistats/DragoBCMSSB26
-    title: Rank Lifting and Random Non-Linear Maps
-    authors: ["A. Drago", "M. Sofia Bucarelli", "F. Caso", "M. Michetti", "F. Siciliano", "F. Silvestri", "L. Becchetti"]
-    year: 2026
-    venue: AISTATS
-    venue_short: AISTATS
-    url_publisher: https://openreview.net/forum?id=3Tvd1qJ5UJ
-    type: a_star_conf
-    topics: ["gnn"]
-    citations: 0
-
-  # doi verified via CrossRef: ACM Trans. Recomm. Syst., 2026.
-  - key: manual/journals/tors/SbandiKSAS26
-    title: "CRAB: Churn Reduction Agent Based via Reinforcement Learning"
-    authors: ["A. Sbandi", "N. Kaploukhaya", "F. Siciliano", "A. Anagnostopoulos", "F. Silvestri"]
-    year: 2026
-    venue: ACM Trans. Recomm. Syst.
-    venue_short: TORS
-    url_publisher: https://doi.org/10.1145/3814953
-    type: q1_journal
-    topics: ["recsys", "agents"]
-    citations: 0
-
-  # doi verified via CrossRef: ACM Trans. Recomm. Syst., 2026.
-  - key: manual/journals/tors/SbandiSS26
-    title: Balancing the Diversity-Coverage Trade-off in Graph-based Recommendations for Cold-Start Industrial Applications
-    authors: ["A. Sbandi", "F. Siciliano", "F. Silvestri"]
-    year: 2026
-    venue: ACM Trans. Recomm. Syst.
-    venue_short: TORS
-    url_publisher: https://doi.org/10.1145/3796509
-    type: q1_journal
-    topics: ["recsys", "gnn"]
-    citations: 0
-
 overrides:
+
+  # AISTATS 2026. OpenAlex resolves the venue correctly but its only
+  # location is a HAL mirror, so the publisher link it reports is
+  # hal.science rather than the conference's own page. Everything else
+  # on the record is right; this override exists purely to restore the
+  # OpenReview link, and prunes itself if OpenAlex ever indexes that
+  # page. The key is an OpenAlex work id because the paper has no DOI.
+  openalex/W7162269174:
+    title: Rank Lifting and Random Non-Linear Maps
+    url_publisher: https://openreview.net/forum?id=3Tvd1qJ5UJ
 
   # ICLR 2026 poster; DBLP still has the preprint only. OpenReview id
   # taken from the ICLR poster page, not from search results.
@@ -245,46 +497,6 @@ overrides:
     topics: ["gnn", "trust"]
     url_publisher: https://doi.org/10.1038/s44387-026-00135-w
 
-  # Information Systems Frontiers 2026. Scimago rates ISF Q1 in
-  # Information Systems (and two other CS categories), so q1_journal.
-  journals/corr/abs-2602-15650:
-    title: "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation"
-    venue: Inf. Syst. Frontiers
-    venue_short: ISF
-    year: 2026
-    type: q1_journal
-    topics: ["ir", "llm", "trust"]
-    url_publisher: https://doi.org/10.1007/s10796-026-10741-3
-
-  # ECML PKDD 2026 research track, Naples. Springer LNCS chapter,
-  # pp. 340-355 of Proceedings Part II (isbn 9783032376565) — doi and
-  # author list verified via CrossRef. Type is declared rather than
-  # derived: CORE ranks this venue A under the acronym "ECML PKDD", but
-  # its entry reads "PKDD and ECML combined from 2008", so mapping the
-  # DBLP abbrev "pkdd" to it in venues.yml would retroactively promote
-  # the 2004 PKDD paper that predates the merger.
-  journals/corr/abs-2511-18660:
-    title: "Subtract the Corruption: Training-Data-Free Corrective Machine Unlearning using Task Arithmetic"
-    venue: ECML/PKDD
-    venue_short: PKDD
-    year: 2026
-    type: a_star_conf
-    url_publisher: https://doi.org/10.1007/978-3-032-37657-2_19
-
-  # ParCo2001, published 2002 in the World Scientific proceedings volume
-  # (doi and author list verified via CrossRef, pp. 197-204). The record
-  # currently sits on the Preprints tab under 2004, the year the arXiv
-  # copy was posted. ParCo is not in CORE, so other_conf. This one keeps
-  # its own arxiv.org link — it is one of the few CoRR records where
-  # DBLP listed one.
-  journals/corr/cs-IR-0407053:
-    title: Design of a Parallel and Distributed Web Search Engine
-    venue: PARCO
-    venue_short: PARCO
-    year: 2002
-    type: other_conf
-    url_publisher: https://doi.org/10.1142/9781860949630_0025
-
   # AISTATS 2026 poster; the OpenReview page states "AISTATS 2026
   # Poster", and virtual.aistats.org/virtual/2026/poster/13835 links to
   # the same id. No PMLR volume yet, so OpenReview is the publisher
@@ -299,14 +511,3 @@ overrides:
     type: a_star_conf
     topics: ["trust"]
     url_publisher: https://openreview.net/forum?id=7f09dQVENn
-
-  # 1st Workshop on Multilingual Report Generation via RAG
-  # (RAG4Reports 2026), co-located with ACL 2026, San Diego.
-  journals/corr/abs-2406-14972:
-    title: "A Tale of Trust and Accuracy: Base vs. Instruct LLMs in RAG Systems"
-    venue: RAG4Reports@ACL
-    venue_short: RAG4REPORTS
-    year: 2026
-    type: workshop
-    topics: ["ir", "llm"]
-    url_publisher: https://doi.org/10.18653/v1/2026.rag4reports-1.3

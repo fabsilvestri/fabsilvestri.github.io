@@ -1,5 +1,14 @@
 # Venue classification sources.
 #
+# Records come from OpenAlex, which has no DBLP-style venue key — so the
+# first job is to recover a venue abbreviation from the strings OpenAlex
+# does give us (a proceedings title, a journal name, an ISSN, a DOI).
+# That abbreviation is the join key for everything below, and it keeps
+# the DBLP spelling ("sigir", "tois") so the tables here, the display
+# names in fetch_publications.py, and the manual overlay keys all stay
+# on one vocabulary. venue_patterns / venue_doi_patterns below do the
+# recovery; see resolve_abbrev() in scripts/fetch_publications.py.
+#
 # Conferences are ranked against CORE (data/core_rankings.csv):
 #   inproceedings whose CORE rank is "A*" or "A"  →  a_star_conf
 #   anything else (or no CORE entry)              →  other_conf
@@ -20,19 +29,21 @@
 #   Scimago → download from https://www.scimagojr.com/journalrank.php (button "Download data"),
 #             save as data/scimago_journal_rank.csv (semicolon-separated, UTF-8).
 
-# DBLP venue abbreviation → CORE acronym.
-# Only needed when the CORE acronym differs from the uppercased DBLP
+# Venue abbreviation → CORE acronym.
+# Only needed when the CORE acronym differs from the uppercased
 # abbrev (which is the default lookup key). Leave this empty for the
-# common case where DBLP "sigir" matches CORE "SIGIR".
+# common case where "sigir" matches CORE "SIGIR".
 conference_core_acronym:
-  nips:  NeurIPS       # DBLP uses the legacy key; CORE2023 lists "NeurIPS"
+  nips:  NeurIPS       # legacy abbrev; CORE2023 lists "NeurIPS"
   pvldb: VLDB          # PVLDB proceedings are ranked as VLDB in CORE
   webi:  WI            # Web Intelligence
 
-# DBLP venue abbreviation → ISSN(s). A journal not listed here can
-# never be classified Q1, even if Scimago would rank it so — the ISSN
-# is the join key against data/scimago_journal_rank.csv. Multiple ISSNs
-# are allowed; any match counts. Hyphens are ignored during matching.
+# Venue abbreviation → ISSN(s). OpenAlex reports a journal's ISSNs on
+# the record itself, so this table is now a *fallback*, consulted only
+# when OpenAlex has no ISSN for the source (older records, and venues it
+# files under a book series). Where it does apply it works as before:
+# the ISSN is the join key against data/scimago_journal_rank.csv,
+# multiple ISSNs are allowed, any match counts, hyphens are ignored.
 journal_issn:
   # ACM Transactions
   tois:        ["1046-8188", "1558-2868"]   # ACM Trans. on Information Systems
@@ -77,14 +88,16 @@ journal_issn:
   # Nature Portfolio, launched 2025 — Scimago has no quartile for it yet,
   # so this ISSN can't promote it to Q1 today; it's here so the journal is
   # ranked automatically once Scimago indexes it. The DBLP abbreviation is
-  # a guess until DBLP indexes a paper from it.
+  # a guess until a paper from it is indexed.
   npjai:       ["3005-1460"]                # npj Artificial Intelligence
   # Other journals that appear in publications but are unlikely Q1-CS
   # (kept here so the ISSN column is self-documenting; Scimago decides)
   concurrency: ["1532-0626", "1532-0634"]   # Concurrency and Computation
   ercim:       []                            # ERCIM News — magazine, not in Scimago
+  ijdst:       ["1947-3532", "1947-3540"]   # Int. J. of Distributed Systems and Technologies
+  sigirforum:  ["0163-5840"]                # ACM SIGIR Forum — newsletter, not in Scimago
 
-# DBLP journal abbreviations to force-classify as Q1, for journals
+# Journal abbreviations to force-classify as Q1, for journals
 # that Scimago's website rates Q1 but our local snapshot doesn't yet
 # cover (the ikashnitsky/sjrdata mirror lags the live site by ~1 year
 # and brand-new ACM/IEEE Transactions take longer to be indexed).
@@ -93,19 +106,54 @@ journal_issn:
 journal_q1_override:
   - tors    # ACM Trans. on Recommender Systems — Q1 on scimagojr.com (journalsearch.php?q=18997), missing from sjrdata 2024 parquet.
 
-# Explicit DBLP keys to drop. Use this for one-off non-papers
-# (keynotes, invited talks, panels, tutorials, abstracts) whose
-# booktitle is the plain conference acronym and whose title doesn't
-# match any general skip pattern — there's no automatable signal, so
-# list them here. The nightly sync honours this list on every run,
-# so one edit keeps the non-paper out of future builds.
+# Explicit record keys to drop. Use this for one-off non-papers
+# (keynotes, invited talks, panels, tutorials, abstracts) whose venue
+# reads as the plain conference name and whose title doesn't match any
+# general skip pattern — there's no automatable signal, so list them
+# here. Keys are the ones fetch_publications.py mints: "doi/<doi>" for
+# anything with a DOI, "journals/corr/abs-<arxiv id>" for an arXiv
+# preprint, "openalex/<work id>" otherwise. The nightly sync honours
+# this list on every run, so one edit keeps the non-paper out of
+# future builds.
 skip_keys:
-  - conf/www/MantrachS19             # Enlisting the Public... (WWW 2019 — not a paper)
-  - conf/cikm/TeodoroGSS25           # "Advances in Medical Knowledge Systems..." — CIKM 2025 tutorial (4 pages)
+  - doi/10.1145/3308558.3314993      # Enlisting the Public... (WWW 2019 — not a paper)
+  - doi/10.1145/3746252.3761592      # "Advances in Medical Knowledge Systems..." — CIKM 2025 tutorial (4 pages)
+  # Papers by other researchers named Silvestri that OpenAlex's author
+  # disambiguation has attached to this profile. Each was checked against
+  # the co-author list and the field; none are his.
+  - doi/10.21203/rs.3.rs-4902571/v1  # "Gender Matters: ... Cardiovascular Complications" — cardiology
+  - doi/10.1049/el.2019.0244         # "Q-RTS: a real-time swarm intelligence ..." — Electronics Letters
+  - doi/10.1049/ic.2007.1235         # "The electromagnetic data exchange ..." — antennas/propagation
+  - journals/corr/abs-physics-0306032  # "Real-time Control System Prototype ..." — physics.ins-det
+  - openalex/W3132088526             # "Automatic Music Production Using GANs"
+  # A Zenodo deposit of a paper that is already indexed under its own
+  # DOI, which OpenAlex carries as a second record with no venue.
+  - doi/10.5281/zenodo.8119161       # duplicate of doi/10.1145/2911451.2914763 (SIGIR 2016)
 
-# Title patterns (case-insensitive regex) for DBLP records to DROP entirely.
+# Record key → type, for the handful of papers no automatic signal can
+# classify correctly.
+#
+# This exists because OpenAlex flattens a conference's satellite tracks
+# into its main proceedings: a WWW Companion paper and a WWW research
+# paper carry the same venue name and the same DOI prefix, so is_workshop
+# has nothing to match on and the companion paper is promoted to A*.
+# DBLP recorded the distinction ("WWW (Companion Volume)"); nothing in
+# OpenAlex or Crossref does. Each entry below was checked against the
+# proceedings it actually appeared in.
+#
+# Applied after classification, so it overrules the CORE/Scimago
+# verdict. Keep it short — a pattern in venue_patterns or
+# skip_title_patterns is the better fix whenever one is possible.
+type_overrides:
+  doi/10.1145/2740908.2744112: workshop     # WWW 2015 Companion (Web Search and Data Mining track)
+  doi/10.1145/2487788.2487851: workshop     # WWW 2013 Companion (SNOW workshop)
+  doi/10.1145/2487788.2487853: workshop     # WWW 2013 Companion (SNOW workshop)
+  openalex/W2988175665:        workshop     # WWW 2003 poster/alternate track
+  openalex/W2139126712:        workshop     # LSDS-IR 2009 workshop, co-located with SIGIR
+
+# Title patterns (case-insensitive regex) for records to DROP entirely.
 # Used to filter out workshop-organizing entries, editorials, and reports
-# that DBLP lists as "publications" but are service contributions, not
+# that the source lists as "publications" but are service contributions, not
 # research papers. Edit this list to keep or remove entries from the site.
 skip_title_patterns:
   - '\bworkshop on\b'           # "... Workshop on X ..."  (organizing a workshop)
@@ -121,3 +169,155 @@ skip_title_patterns:
   - '^\S+\s*@\s*\w+\d+\b'       # "IR-RAG @ SIGIR24 ...", "RobustRecSys @ RecSys2024 ..."
   - '^[A-Z][A-Z0-9]+\s+\d{4}[:\s]' # "TSMO 2024: ...", "OSNED 2018 Chairs' Welcome ...", "ECIR 2012: ..."
   - "chairs'?\\s+welcome"       # "... Chairs' Welcome ..." (workshop preface)
+  - '\btable of contents\b'     # "LA-WEB 2008 Table of Contents" (front matter)
+  - '^session details\b'        # "Session details: Session 9: Web Mining (2)" — ACM DL
+                                # front matter, registered as a proceedings article
+  - '^proceedings of\b'         # the proceedings volume itself, not a paper in it
+  - '^(advances in information retrieval|web information systems engineering)\b'
+                                # ditto: Springer volumes he co-edited, which
+                                # OpenAlex types as ordinary conference papers
+
+# ---------------------------------------------------------------------------
+# Venue name → abbreviation, the OpenAlex replacement for DBLP's venue key.
+#
+# OpenAlex names a venue in prose ("Proceedings of the 45th International
+# ACM SIGIR Conference on Research and Development in Information
+# Retrieval"), and on roughly a third of conference records it has no
+# source object at all — only the raw proceedings title carried on the
+# location. These patterns turn either shape back into the short
+# abbreviation the tables above are keyed on.
+#
+# Matching is case-insensitive, unanchored, and FIRST MATCH WINS, so the
+# list is ordered most-specific-first: ICTIR's proceedings title contains
+# "ACM SIGIR", and NAACL's contains "Association for Computational
+# Linguistics", so each sits above the venue it would otherwise be
+# swallowed by. Journals normally never reach this table — OpenAlex
+# reports their ISSN and Scimago is joined on that directly — but the
+# patterns cover the journals whose ISSN OpenAlex is missing.
+#
+# Workshops are detected before this runs (see is_workshop), so a
+# "... Workshop on ..." proceedings title never needs an entry.
+venue_patterns:
+  # --- IR ---
+  - ['Innovative Concepts and Theories in Information Retrieval', ictir]
+  - ['ACM SIGIR (International )?Conference on Research and Development', sigir]
+  - ['annual international ACM SIGIR conference', sigir]
+  - ['\bSIGIR Forum\b', sigirforum]
+  - ['Advances in Information Retrieval', ecir]             # ECIR proceedings title
+  - ['European Conference on (IR Research|Information Retrieval)', ecir]
+  - ['Web Search and Data Mining', wsdm]
+  - ['Information (and|&) Knowledge Management', cikm]
+  - ['String Processing and Information Retrieval', spire]
+  - ['Scalable Information Systems|InfoScale', infoscale]
+  - ['Adaptivity, Personalization and Fusion of Heterogeneous Information|\bRIAO\b', riao]
+  # --- Data mining / DB ---
+  # PKDD first: its proceedings title is "Knowledge Discovery in
+  # Databases: PKDD 2004", which the KDD pattern below would swallow —
+  # and CORE ranks KDD A* and PKDD A, so the order decides a rank.
+  - ['\bPKDD\b|(Machine Learning and )?Principles and Practice of Knowledge Discovery', pkdd]
+  - ['European Conference on Machine Learning', pkdd]
+  - ['SIGKDD', kdd]
+  - ['Knowledge Discovery (and|in) Data(bases)?\b', kdd]
+  - ['International Conference on Data Mining', icdm]
+  - ['Extending Database Technology', edbt]
+  - ['International Conference on Data Engineering', icde]
+  - ['VLDB Endowment', pvldb]
+  - ['Very Large Data ?Bases', vldb]
+  - ['Sistemi Evoluti per Basi di Dati|^SEBD\b', sebd]
+  # --- Web / social ---
+  - ['ACM Web Conference|The Web Conference|World Wide Web', www]
+  - ['AAAI Conference on Web and Social Media', icwsm]
+  - ['Web Intelligence', webi]
+  - ['Web Information Systems Engineering', wise]
+  - ['Latin American Web', 'la-web']
+  - ['Asia-Pacific Web', apweb]
+  # --- NLP ---
+  - ['Empirical Methods in Natural Language Processing', emnlp]
+  - ['North American Chapter of the Association for Computational Linguistics', naacl]
+  - ['Association for Computational Linguistics', acl]
+  - ['Natural Language Processing and Information Systems', nldb]
+  # --- ML / AI / CV ---
+  - ['Computer Vision and Pattern Recognition', cvpr]
+  - ['Winter Conference on Applications of Computer Vision', wacv]
+  - ['International Conference on Machine Learning', icml]
+  - ['(Neural Information Processing Systems|NeurIPS)', nips]
+  - ['International Conference on Learning Representations', iclr]
+  - ['Artificial Intelligence and Statistics', aistats]
+  - ['International Joint Conference on Neural Networks', ijcnn]
+  - ['International Joint Conference on Artificial Intelligence', ijcai]
+  - ['AAAI Conference on Artificial Intelligence', aaai]
+  - ['European Conference on Artificial Intelligence', ecai]
+  - ['Recommender Systems', recsys]
+  - ['Foundations of Intelligent Systems|Methodologies for Intelligent Systems', ismis]
+  - ['Active Media Technology', amt]
+  - ['Cognitive Machine Intelligence', cogmi]
+  # --- Systems / HPC ---
+  - ['High.performance distributed computing', hpdc]
+  - ['High Performance Computing and Communications', hpcc]
+  - ['Cluster Computing and the Grid', ccgrid]
+  - ['Euro-?Par', europar]
+  - ['High Performance Computing for Computational Science|VECPAR', vecpar]
+  - ['\bICCS\b|International Conference on Computational Science', iccs]
+  - ['(Symposium|Conference) on Applied Computing', sac]
+  - ['Information Technology: Coding and Computing', itcc]
+  - ['Ultra Modern Telecommunications', icumt]
+  # --- Satellite venues that CORE does not rank, listed so the page
+  #     shows the workshop's own name rather than initials of its title.
+  - ['Semantic Evaluation|SemEval', semeval]
+  - ['Web Search Click Data', wscd]
+  - ['Multilingual Report Generation via Retrieval', rag4reports]
+  - ['Graph-Based Approaches in Information Retrieval|IRonGraphs', irongraphs]
+  - ['Explainable Artificial Intelligence|\bxAI\b', xai]
+  - ['Bias and Social Aspects in Search and Recommendation', bias]
+  - ['Experimental IR Meets Multilinguality', clef]
+  - ['Robust(ness)? .*Recommender System', robustrecsys]
+  - ['Trustworthy Eternal Systems', tes]   # ECAI 2012 satellite; CORE ranks no 'TES'
+  # --- Other ---
+  - ['Language Resources and Evaluation', coling]
+  - ['ERCIM ?news', ercim]
+  - ['Parallel Computing', parco]
+  - ['Distributed Systems and Technologies', ijdst]
+  - ['Applications of Natural Language to Data ?Bases', nldb]
+  - ['Computer-Based Medical Systems', cbms]
+  - ['^IIR\b|Italian Information Retrieval', iir]
+
+# DOI pattern → abbreviation, tried before venue_patterns.
+#
+# A DOI often names the venue more reliably than the prose title does —
+# most of all for the ACL Anthology, where the shard after the year
+# ("2025.emnlp-main.1422", "2026.findings-acl.2145") is the venue
+# itself. Same matching rules: case-insensitive, first match wins,
+# matched against the bare DOI (no "https://doi.org/" prefix).
+venue_doi_patterns:
+  - ['^10\.18653/v1/\d{4}\.findings-acl\.', acl]
+  - ['^10\.18653/v1/\d{4}\.findings-emnlp\.', emnlp]
+  - ['^10\.18653/v1/\d{4}\.acl-', acl]
+  - ['^10\.18653/v1/\d{4}\.emnlp-', emnlp]
+  - ['^10\.18653/v1/\d{4}\.naacl-', naacl]
+  - ['^10\.18653/v1/\d{4}\.eacl-', eacl]
+  # Pre-2020 anthology ids encode the venue in their first letter:
+  # N19- is NAACL, D18- EMNLP, P17- ACL, E17- EACL. CORE ranks NAACL and
+  # EMNLP A* and ACL A*, so a letter read wrong is a rank read wrong.
+  - ['^10\.(18653/v1|3115(/v1)?)/n\d\d-', naacl]
+  - ['^10\.(18653/v1|3115(/v1)?)/d\d\d-', emnlp]
+  - ['^10\.(18653/v1|3115(/v1)?)/e\d\d-', eacl]
+  - ['^10\.(18653/v1|3115(/v1)?)/[pk]\d\d-', acl]
+  - ['^10\.18653/v1/\d{4}\.semeval-', semeval]
+  - ['^10\.24963/ijcai', ijcai]
+  - ['^10\.1609/aaai', aaai]
+
+# Source names that are a publisher's book *series*, not a venue.
+#
+# OpenAlex files Springer conference proceedings under the series
+# ("Lecture Notes in Computer Science") and drops the volume title, which
+# is the only thing that says ECIR, SPIRE or ECML PKDD. When a record's
+# source matches one of these, fetch_publications.py asks Crossref for
+# the volume's container title and matches *that* against
+# venue_patterns. Crossref is optional: if the lookup fails the record
+# simply falls through to other_conf, exactly as an unmatched venue does.
+generic_series:
+  - '^Lecture Notes in Computer Science'
+  - '^Communications in Computer and Information Science'
+  - '^Springer eBooks$'
+  - '^IGI Global eBooks$'
+  - 'eBooks$'

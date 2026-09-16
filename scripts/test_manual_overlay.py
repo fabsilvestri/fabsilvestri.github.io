@@ -130,7 +130,7 @@ class OverlayTestCase(unittest.TestCase):
 
         self.assertIn(
             '[manual] pruned addition "A Paper DBLP Has Just Indexed", '
-            'DBLP now has it as conf/sigir/Silvestri26', err)
+            'OpenAlex now has it as conf/sigir/Silvestri26', err)
         # Gone from the output …
         self.assertEqual(self.titles(merged),
                          ["A paper DBLP has, just indexed.", "Neural Ranking Without DBLP"])
@@ -351,16 +351,35 @@ class OverlayTestCase(unittest.TestCase):
         self.write_overlay(overrides=self.OVERRIDE)
         merged, err = self.run_overlay([])  # DBLP knows nothing at all
         self.assertEqual(merged, [])
-        self.assertIn("targets a DBLP key that is not in the current results", err)
+        self.assertIn("targets a key that is not in the current results", err)
         self.assertIn("journals/corr/abs-2501-01234", self.path.read_text())
 
-    def test_override_pruned_when_dblp_retypes_the_key(self):
+    def test_override_kept_when_the_record_is_retyped_but_still_wrong(self):
+        # The source now types the record as a real paper, but still
+        # reports the wrong venue and no publisher link. The override is
+        # no longer "upgrade a preprint" — it is the only thing making
+        # those two fields right — so it has to survive.
         self.write_overlay(overrides=self.OVERRIDE)
         pubs = [dblp_pub("journals/corr/abs-2501-01234",
                          "Retrieval With Language Models", fp.TYPE_A_STAR)]
+        merged, err = self.run_overlay(pubs)
+        self.assertNotIn("pruned", err)
+        self.assertEqual(merged[0]["venue_short"], "SIGIR")
+        self.assertEqual(merged[0]["url_publisher"],
+                         "https://doi.org/10.1145/2222222.2222222")
+        self.assertIn("journals/corr/abs-2501-01234", self.path.read_text())
+
+    def test_override_pruned_once_every_field_already_matches(self):
+        # Self-pruning still happens — just on "the override changes
+        # nothing" rather than on "the record is no longer a preprint".
+        self.write_overlay(overrides=self.OVERRIDE)
+        pubs = [dblp_pub("journals/corr/abs-2501-01234",
+                         "Retrieval With Language Models", fp.TYPE_A_STAR,
+                         venue="SIGIR", venue_short="SIGIR", year=2026,
+                         url_publisher="https://doi.org/10.1145/2222222.2222222")]
         _, err = self.run_overlay(pubs)
         self.assertIn("[manual] pruned override journals/corr/abs-2501-01234, "
-                      "superseded by journals/corr/abs-2501-01234", err)
+                      "fully superseded by journals/corr/abs-2501-01234", err)
         self.assertNotIn("journals/corr/abs-2501-01234", self.path.read_text())
 
     # -- idempotence ----------------------------------------------------

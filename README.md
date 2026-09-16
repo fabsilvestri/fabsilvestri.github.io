@@ -3,8 +3,9 @@
 Personal homepage for Fabrizio Silvestri — Full Professor at Sapienza University of Rome.
 
 Single-page static site with a "glass-light" aesthetic. Publications are
-auto-synced from [DBLP](https://dblp.org/pid/s/FabrizioSilvestri.html)
-nightly by a GitHub Action.
+auto-synced from [OpenAlex](https://openalex.org/A5044165871) nightly by a
+GitHub Action, with [Crossref](https://www.crossref.org/) filling in the
+titles and proceedings volumes OpenAlex leaves incomplete.
 
 ## Structure
 
@@ -17,12 +18,12 @@ nightly by a GitHub Action.
 │   └── img/profile.jpg               # hero photo
 ├── data/
 │   ├── publications.json             # generated — canonical JSON, served live to the page
-│   ├── manual_publications.yml       # manual overlay — papers DBLP hasn't indexed yet
-│   ├── venues.yml                    # DBLP → CORE acronym / Scimago ISSN map
+│   ├── manual_publications.yml       # manual overlay — papers OpenAlex hasn't indexed yet
+│   ├── venues.yml                    # venue name → abbrev, CORE acronym, Scimago ISSN
 │   ├── core_rankings.csv             # CORE conference rankings (vendored)
 │   └── scimago_journal_rank.csv      # Scimago journal quartiles (manual download)
 ├── scripts/
-│   ├── fetch_publications.py         # DBLP fetch + classify + manual overlay
+│   ├── fetch_publications.py         # OpenAlex fetch + classify + manual overlay
 │   ├── test_manual_overlay.py        # tests for the overlay merge/prune
 │   ├── refresh_scimago.py            # yearly Scimago CSV refresh
 │   ├── refresh_citations.py          # Scholar citation cache refresh
@@ -68,47 +69,71 @@ This regenerates `data/publications.json` and rewrites the
 `?v=<content-hash>` query strings in `index.html`. Requires PyYAML and
 ruamel.yaml (`pip install -r scripts/requirements.txt`).
 
+Both APIs it calls are open and need no credentials, locally or in CI.
+A full run is about fifteen requests — three OpenAlex filters paginating
+to eight, plus seven batched Crossref calls — against a polite-pool
+allowance of 100,000 a day, so no API key is required and none is
+checked in. If OpenAlex ever does throttle the nightly job, put a key in
+an `OPENALEX_API_KEY` repository secret and pass it to the step as an
+env var; the script already reads it:
+
+```bash
+OPENALEX_API_KEY=… python3 scripts/fetch_publications.py
+```
+
+If OpenAlex returns nothing at all — the author id stopped resolving,
+say — the script exits without writing, so the site keeps serving the
+last good `data/publications.json`.
+
 ## Manual publications
 
-DBLP indexes a paper weeks or months after it appears, and
+OpenAlex indexes a paper weeks or months after it appears, and
 `data/publications.json` is overwritten by the nightly sync, so editing
 it by hand achieves nothing. `data/manual_publications.yml` is the
-supported way to force a paper in until DBLP catches up. It has two
+supported way to force a paper in until OpenAlex catches up. It has two
 sections:
 
-- **`additions`** — full records for papers DBLP has no entry for at
+- **`additions`** — full records for papers OpenAlex has no entry for at
   all. Same fields the generator emits, under a synthetic key starting
-  with `manual/`. Mirror the DBLP key the paper will eventually get
-  (`manual/conf/iclr/…`, `manual/journals/tors/…`) or use the short form
-  (`manual/iclr/…`) — either way the venue abbreviation lands where the
-  CORE and Scimago lookups expect it, so the venue is ranked exactly as
-  it would be for a real DBLP key.
-- **`overrides`** — field patches keyed by DBLP key, for papers DBLP
-  knows only as a CoRR preprint but that have since appeared at a real
-  venue. List only the fields to replace; everything else survives. A
-  `null` is a TODO placeholder, not an erase. DBLP files a CoRR paper's
-  arXiv copy as a `10.48550` DOI under `url_publisher`, so an override
-  that sets the real publisher page moves that DOI to `url_arxiv` —
-  pointing a record at its venue never costs it its preprint link.
+  with `manual/`. Set `abbrev:` to the venue abbreviation (`iclr`,
+  `tors`) so the CORE and Scimago lookups land, or leave it out and
+  encode it in the key (`manual/conf/iclr/…`, `manual/journals/tors/…`,
+  or the short `manual/iclr/…`) — either way the venue is ranked exactly
+  as it would be for a fetched record.
+- **`overrides`** — field patches keyed by record key, for a record the
+  fetch gets partly wrong: a paper still listed only as a preprint, or
+  one whose venue resolved but whose publisher link points at a
+  repository mirror instead of the page you want linked. List only the
+  fields to replace; everything else survives. A `null` is a TODO
+  placeholder, not an erase. Where a preprint's only link was its
+  `10.48550` arXiv DOI under `url_publisher`, an override that sets the
+  real publisher page moves that DOI to `url_arxiv` — pointing a record
+  at its venue never costs it its preprint link.
 
-The overlay is merged in after the DBLP fetch and classification, and
-merged records go through the same topic and venue classification path
-as DBLP records — the renderer never learns where a record came from.
+Record keys are minted by the fetcher: `journals/corr/abs-<arxiv id>`
+for an arXiv preprint (DBLP's old spelling, kept so existing overrides
+still resolve), `doi/<doi>` for anything with a DOI, and
+`openalex/<work id>` for the rest.
+
+The overlay is merged in after the fetch and classification, and merged
+records go through the same topic and venue classification path as
+fetched records — the renderer never learns where a record came from.
 Topics come from the `data/topics.yml` keyword patterns; a `topics:`
 list in the overlay is only the fallback for papers those patterns
 don't recognise. To beat the patterns, add the key to `topic_overrides`
 in `data/topics.yml` — that works for `manual/…` keys too.
 
 **It prunes itself.** Every run compares each entry against the live
-DBLP results, using normalized titles (lowercased, punctuation
-stripped, whitespace collapsed):
+results, using normalized titles (lowercased, punctuation stripped,
+whitespace collapsed):
 
-- an addition whose title DBLP now carries is dropped in favour of the
-  DBLP record;
-- an override is dropped once its target is no longer a preprint, or
-  once a published DBLP record with the same title shows up;
-- an override pointing at a key DBLP doesn't have is reported and left
-  alone — a stale overlay entry never fails the nightly run.
+- an addition whose title the fetch now carries is dropped in favour of
+  the fetched record;
+- an override is dropped once the fetched record already says
+  everything the override sets, or once a *different* published record
+  with the same title shows up;
+- an override pointing at a key the fetch doesn't have is reported and
+  left alone — a stale overlay entry never fails the nightly run.
 
 Pruned entries are deleted from the YAML in place (comments and key
 order preserved) and the nightly workflow commits the rewrite, so the
@@ -128,24 +153,50 @@ python3 scripts/test_manual_overlay.py
 ## Editing venue classification
 
 Conference ranks are looked up in [CORE](https://portal.core.edu.au/conf-ranks/)
-and journal quartiles in [Scimago](https://www.scimagojr.com/). The DBLP
-venue abbreviation is the segment after `conf/` or `journals/` in a
-DBLP record key — e.g. a paper with key `conf/sigir/SmithJ24` has
-abbreviation `sigir`.
+and journal quartiles in [Scimago](https://www.scimagojr.com/), both
+joined on a short **venue abbreviation** (`sigir`, `tois`). DBLP handed
+that abbreviation over in its record keys; OpenAlex names venues in
+prose ("Proceedings of the 45th International ACM SIGIR Conference on
+…") and leaves the source empty on about a third of conference records,
+so the abbreviation has to be recovered before anything can be ranked.
 
-`data/venues.yml` is a thin translation layer:
+`data/venues.yml` does the recovery and the translation:
 
-- `conference_core_acronym` — only for DBLP abbrevs that don't match their
+- `venue_patterns` — regex over the venue name → abbrev. **First match
+  wins**, so the list is ordered most-specific-first: ICTIR's
+  proceedings title contains "ACM SIGIR", and PKDD's contains
+  "Knowledge Discovery in Databases", so each sits above the venue that
+  would otherwise swallow it.
+- `venue_doi_patterns` — regex over the DOI → abbrev, tried first. The
+  ACL Anthology encodes the venue in the DOI (`2025.emnlp-main.1422`),
+  which is more reliable than its prose title.
+- `generic_series` — source names that are a publisher's book series
+  rather than a venue. Springer files conference proceedings under
+  "Lecture Notes in Computer Science" and drops the volume title, so a
+  record matching one of these is looked up in Crossref for the volume
+  title and matched again.
+- `conference_core_acronym` — only for abbrevs that don't match their
   CORE acronym when uppercased (e.g. `nips` → `NeurIPS`).
-- `journal_issn` — DBLP abbrev → ISSN(s) used to look up the journal in
-  Scimago. A journal not listed here can never be classified Q1.
+- `journal_issn` — abbrev → ISSN(s). OpenAlex reports a journal's ISSN
+  on the record, so this is now a *fallback* for sources it has no ISSN
+  for — but it is also the reverse lookup that puts an ISSN back on its
+  abbreviation, which is what keeps "TOIS" on the page.
+- `type_overrides` — key → type, for the few papers no signal
+  classifies right. OpenAlex flattens a conference's satellite tracks
+  into its main proceedings, so a WWW Companion paper is
+  indistinguishable from a WWW research paper; DBLP recorded the
+  difference and nothing in OpenAlex or Crossref does.
+- `skip_keys` / `skip_title_patterns` — records to drop outright:
+  front matter, proceedings volumes, and papers by other researchers
+  named Silvestri that OpenAlex's author disambiguation mis-assigns.
 
 Classification rules:
 
-- `publtype="informal"` or venue `corr` → **Preprint**
-- Booktitle containing "workshop" or the `X@Y` shorthand → **Workshop**
-- `inproceedings` whose resolved CORE rank is `A*` or `A` → **A/A\* Conference**
-- `article` whose resolved Scimago ISSN has quartile Q1 in any
+- An arXiv-only record → **Preprint**
+- Venue name containing "workshop" or the `X@Y` shorthand → **Workshop**
+- A proceedings paper whose resolved CORE rank is `A*` or `A` →
+  **A/A\* Conference**
+- A journal article whose ISSN has Scimago quartile Q1 in any
   [Computer Science category](scripts/fetch_publications.py) → **Q1 Journal**
 - Everything else → **Other Conferences & Journals**
 
