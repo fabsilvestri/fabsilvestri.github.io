@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-16",
-  "generated_at": "2026-09-16T09:24:31+00:00",
+  "last_updated": "2026-09-17",
+  "generated_at": "2026-09-17T09:08:48+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 286,
@@ -18,7 +18,7 @@
     "llm": 29,
     "agents": 10,
     "nlp": 21,
-    "gnn": 34,
+    "gnn": 33,
     "trust": 53,
     "task_vectors": 9,
     "efficient": 59,
@@ -2372,6 +2372,28 @@
       "citations": 0
     },
     {
+      "key": "journals/corr/abs-2406-11720",
+      "title": "Cross-Document Neural Re-Ranking via Query-Induced Subgraphs",
+      "authors": [
+        "A. Giuseppe Di Francesco",
+        "C. Giannetti",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://hdl.handle.net/11573/1747335",
+      "url_publisher": "https://hdl.handle.net/11573/1747335",
+      "url_arxiv": "https://arxiv.org/abs/2406.11720",
+      "type": "preprint",
+      "topics": [
+        "ir"
+      ],
+      "citations": 4
+    },
+    {
       "key": "journals/corr/abs-2404-15760",
       "title": "Debiasing Machine Unlearning with Counterfactual Examples",
       "authors": [
@@ -2512,29 +2534,6 @@
         "llm"
       ],
       "citations": 20
-    },
-    {
-      "key": "journals/corr/abs-2406-11720",
-      "title": "Graph Neural Re-Ranking via Corpus Graph",
-      "authors": [
-        "A. Giuseppe Di Francesco",
-        "C. Giannetti",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1747335",
-      "url_publisher": "https://hdl.handle.net/11573/1747335",
-      "url_arxiv": "https://arxiv.org/abs/2406.11720",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "gnn"
-      ],
-      "citations": 4
     },
     {
       "key": "journals/corr/abs-2409-08036",
