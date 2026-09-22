@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-09-21",
-  "generated_at": "2026-09-21T09:32:59+00:00",
+  "last_updated": "2026-09-22",
+  "generated_at": "2026-09-22T08:59:48+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 288,
+  "count": 289,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
-    "other_conf": 68,
+    "other_conf": 69,
     "other_journal": 9,
     "workshop": 16,
     "preprint": 84
@@ -18,14 +18,14 @@
     "llm": 30,
     "agents": 10,
     "nlp": 21,
-    "gnn": 33,
+    "gnn": 34,
     "trust": 54,
     "task_vectors": 9,
-    "efficient": 59,
+    "efficient": 58,
     "misinfo": 16,
     "data_mining": 12,
     "social_net": 14,
-    "misc": 29
+    "misc": 30
   },
   "years": [
     2026,
@@ -543,6 +543,29 @@
       "citations": 1
     },
     {
+      "key": "doi/10.1007/978-3-032-37324-3_15",
+      "title": "Art Beyond Semantics: Sheaf-Informed Contrastive Learning for Multi-relational Representations",
+      "authors": [
+        "L. Schaerf",
+        "A. Purificato",
+        "P. Riccio",
+        "F. Silvestri",
+        "N. García"
+      ],
+      "year": 2026,
+      "venue": "Computer Vision – ECCV 2026",
+      "venue_short": "CVE",
+      "abbrev": "",
+      "url": "https://doi.org/10.1007/978-3-032-37324-3_15",
+      "url_publisher": "https://doi.org/10.1007/978-3-032-37324-3_15",
+      "url_arxiv": "https://arxiv.org/abs/2607.16321",
+      "type": "other_conf",
+      "topics": [
+        "gnn"
+      ],
+      "citations": 0
+    },
+    {
       "key": "journals/corr/abs-2502-10111",
       "title": "Unified Counterfactual Explainer for Graph Neural Networks",
       "authors": [
@@ -637,22 +660,22 @@
       "citations": 1
     },
     {
-      "key": "manual/journals/corr/abs-2607-16321",
-      "title": "Art Beyond Semantics: Sheaf-Informed Contrastive Learning for Multi-Relational Representations",
+      "key": "journals/corr/abs-2607-16321",
+      "title": "Art Beyond Semantics: Sheaf-Informed Contrastive Learning for Multi-relational Representations",
       "authors": [
         "L. Schaerf",
         "A. Purificato",
         "P. Riccio",
         "F. Silvestri",
-        "N. Garcia"
+        "N. García"
       ],
       "year": 2026,
       "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://doi.org/10.48550/arXiv.2607.16321",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2607.16321",
-      "url_arxiv": null,
+      "url": "https://doi.org/10.1007/978-3-032-37324-3_15",
+      "url_publisher": "https://doi.org/10.1007/978-3-032-37324-3_15",
+      "url_arxiv": "https://arxiv.org/abs/2607.16321",
       "type": "preprint",
       "topics": [
         "gnn"
@@ -1106,7 +1129,7 @@
         "V. Guarrasi",
         "A. Vandamme",
         "V. Ghisetti",
-        "A. Sönnerborg",
+        "A. B. Sönnerborg",
         "M. Zazzi",
         "F. Silvestri",
         "L. Palagi"
@@ -1227,24 +1250,24 @@
       "citations": 13
     },
     {
-      "key": "manual/conf/flta/AvellaS25",
+      "key": "doi/10.1109/flta67013.2025.11336369",
       "title": "Eco-Friendly Federated Learning: Designing a FinOps Framework for Multicloud Resource Coordination",
       "authors": [
         "F. Avella",
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "FLTA",
+      "venue": "2025 3rd International Conference on Federated Learning Technologies and Applications (FLTA)",
       "venue_short": "FLTA",
-      "abbrev": "flta",
+      "abbrev": "",
       "url": "https://doi.org/10.1109/flta67013.2025.11336369",
       "url_publisher": "https://doi.org/10.1109/flta67013.2025.11336369",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
-        "efficient"
+        "misc"
       ],
-      "citations": 2
+      "citations": 0
     },
     {
       "key": "doi/10.1145/3731120.3744579",
@@ -2257,7 +2280,7 @@
         "M. De Nadai",
         "F. Fabbri",
         "P. Gigioli",
-        "A. Wang",
+        "A. Y. Wang",
         "A. Li",
         "F. Silvestri",
         "L. Kim",
@@ -2454,7 +2477,7 @@
         "J. Huang",
         "K. Nag",
         "K. Kuang",
-        "X. Ning",
+        "X. Bao Ning",
         "G. Tolomei"
       ],
       "year": 2024,
@@ -2662,7 +2685,7 @@
         "M. De Nadai",
         "F. Fabbri",
         "P. Gigioli",
-        "A. Wang",
+        "A. Y. Wang",
         "A. Li",
         "F. Silvestri",
         "L. Kim",
@@ -2807,7 +2830,7 @@
       "authors": [
         "E. Palumbo",
         "A. Damianou",
-        "A. Wang",
+        "A. Y. Wang",
         "A. Liu",
         "G. Fazelnia",
         "F. Fabbri",
@@ -2908,7 +2931,7 @@
         "G. Trappolini",
         "A. Santilli",
         "E. Rodolà",
-        "A. Halevy",
+        "A. Y. Halevy",
         "F. Silvestri"
       ],
       "year": 2023,
@@ -3082,7 +3105,7 @@
         "V. Guarrasi",
         "A. Vandamme",
         "V. Ghisetti",
-        "A. Sönnerborg",
+        "A. B. Sönnerborg",
         "M. Zazzi",
         "F. Silvestri",
         "L. Palagi"
@@ -3453,13 +3476,13 @@
       "key": "doi/10.24963/ijcai.2022/781",
       "title": "Detecting and Understanding Harmful Memes: A Survey",
       "authors": [
-        "S. Sharma",
+        "S. Kumar Sharma",
         "F. Alam",
         "M. Shad Akhtar",
         "D. Dimitrov",
         "G. Da San Martino",
         "H. Firooz",
-        "A. Halevy",
+        "A. Y. Halevy",
         "F. Silvestri",
         "P. Nakov",
         "T. Chakraborty"
@@ -3482,8 +3505,8 @@
       "title": "On the Role of Relevance in Natural Language Processing Tasks",
       "authors": [
         "A. Sauchuk",
-        "J. Thorne",
-        "A. Halevy",
+        "J. Peter Thorne",
+        "A. Y. Halevy",
         "N. Tonellotto",
         "F. Silvestri"
       ],
@@ -3886,7 +3909,7 @@
         "S. Cresci",
         "T. Chakraborty",
         "F. Silvestri",
-        "D. Dimitrov",
+        "D. V. Dimitrov",
         "G. Da San Martino",
         "S. Shaar",
         "H. Firooz",
@@ -3937,7 +3960,7 @@
         "G. Trappolini",
         "L. Lastilla",
         "C. Campagnano",
-        "A. Fan",
+        "A. Pei-Chen Fan",
         "F. Petroni",
         "F. Silvestri"
       ],
