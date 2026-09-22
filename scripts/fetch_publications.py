@@ -76,6 +76,7 @@ SCIMAGO_FILE = ROOT / "data" / "scimago_journal_rank.csv"
 CITATIONS_FILE = ROOT / "data" / "citations.json"
 AWARDS_FILE = ROOT / "data" / "awards.yml"
 TALKS_FILE = ROOT / "data" / "talks.yml"
+SERVICES_FILE = ROOT / "data" / "services.yml"
 MANUAL_FILE = ROOT / "data" / "manual_publications.yml"
 OUT_JSON = ROOT / "data" / "publications.json"
 OUT_SITEMAP = ROOT / "sitemap.xml"
@@ -1794,6 +1795,44 @@ def load_talks(path: Path) -> list[dict]:
     return talks
 
 
+def load_services(path: Path) -> list[dict]:
+    """Read the hand-curated professional-service list — editorial boards,
+    conference chairing roles, program committees. Entries are grouped, and
+    both the groups and the items inside them render in file order (the
+    file already lists chairing roles most-recent-first)."""
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8") as f:
+        raw = yaml.safe_load(f) or {}
+    groups = []
+    for entry in raw.get("services") or []:
+        if not entry:
+            continue
+        name = (entry.get("group") or "").strip()
+        if not name:
+            continue
+        items = []
+        for item in entry.get("items") or []:
+            if not item:
+                continue
+            title = (item.get("title") or "").strip()
+            if not title:
+                continue
+            year = item.get("year")
+            items.append({
+                "title": title,
+                "role": (item.get("role") or "").strip(),
+                "detail": (item.get("detail") or "").strip(),
+                "year": int(year) if year else None,
+                "url": (item.get("url") or "").strip(),
+            })
+        note = (entry.get("note") or "").strip()
+        if not items and not note:
+            continue
+        groups.append({"group": name, "note": note, "items": items})
+    return groups
+
+
 def load_citations(path: Path) -> tuple[dict[str, int], str]:
     """Return ({record key → citation_count}, fetched_at_iso_date) from the
     Scholar scrape cache. Missing file → empty dict + empty date with a
@@ -1821,13 +1860,15 @@ def main(prune_manual: bool = True) -> int:
     citations, citations_fetched_at = load_citations(CITATIONS_FILE)
     awards = load_awards(AWARDS_FILE)
     talks = load_talks(TALKS_FILE)
+    services = load_services(SERVICES_FILE)
     print(
         f"Loaded venues: {len(venues.get('conference_core_acronym', {}))} CORE overrides, "
         f"{len(venues.get('journal_issn', {}))} journal ISSN mappings; "
         f"{len(core_ranks)} CORE entries, {len(scimago)} Scimago ISSNs; "
         f"{len(topics)} topics; {len(citations)} citation counts "
         f"(fetched {citations_fetched_at or '?'}); "
-        f"{len(awards)} awards; {len(talks)} talks",
+        f"{len(awards)} awards; {len(talks)} talks; "
+        f"{sum(len(g['items']) for g in services)} service entries",
         file=sys.stderr,
     )
 
@@ -1943,6 +1984,7 @@ def main(prune_manual: bool = True) -> int:
         "publications": pubs,
         "awards": awards,
         "talks": talks,
+        "services": services,
     }
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)

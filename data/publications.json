@@ -7242,5 +7242,185 @@
       "location": "Dijon, France",
       "url": ""
     }
+  ],
+  "services": [
+    {
+      "group": "Editorial Boards",
+      "note": "",
+      "items": [
+        {
+          "title": "npj Artificial Intelligence",
+          "role": "Editorial Board",
+          "detail": "",
+          "year": null,
+          "url": "https://www.nature.com/npjai/"
+        },
+        {
+          "title": "Online Social Networks and Media",
+          "role": "Editorial Board",
+          "detail": "",
+          "year": null,
+          "url": ""
+        },
+        {
+          "title": "Social Network Analysis and Mining",
+          "role": "Editorial Board",
+          "detail": "",
+          "year": null,
+          "url": ""
+        },
+        {
+          "title": "Journal of the Franklin Institute",
+          "role": "Editorial Board",
+          "detail": "",
+          "year": null,
+          "url": ""
+        },
+        {
+          "title": "Transactions on Machine Learning Research (TMLR)",
+          "role": "Action Editor",
+          "detail": "",
+          "year": null,
+          "url": "https://jmlr.org/tmlr/"
+        }
+      ]
+    },
+    {
+      "group": "Conference Chairing",
+      "note": "",
+      "items": [
+        {
+          "title": "CIKM 2026",
+          "role": "PC Chair",
+          "detail": "Program Committee Chair.",
+          "year": 2026,
+          "url": ""
+        },
+        {
+          "title": "TheWebConf 2026",
+          "role": "Track Chair",
+          "detail": "Search and Retrieval-Augmented AI track.",
+          "year": 2026,
+          "url": ""
+        },
+        {
+          "title": "TheWebConf 2026",
+          "role": "Co-Chair",
+          "detail": "Ph.D. Symposium.",
+          "year": 2026,
+          "url": ""
+        },
+        {
+          "title": "ECML PKDD 2026",
+          "role": "Track Chair",
+          "detail": "Industry track.",
+          "year": 2026,
+          "url": ""
+        },
+        {
+          "title": "ECIR 2025",
+          "role": "General Chair",
+          "detail": "European Conference on Information Retrieval — Lucca, Italy.",
+          "year": 2025,
+          "url": ""
+        },
+        {
+          "title": "ESSAI 2025",
+          "role": "Chair",
+          "detail": "European Summer School on Artificial Intelligence.",
+          "year": 2025,
+          "url": ""
+        },
+        {
+          "title": "KDD 2024",
+          "role": "Chair",
+          "detail": "Hands-On Tutorial chair.",
+          "year": 2024,
+          "url": ""
+        },
+        {
+          "title": "ECML PKDD 2023",
+          "role": "Workshop Chair",
+          "detail": "",
+          "year": 2023,
+          "url": ""
+        },
+        {
+          "title": "TheWebConf 2022",
+          "role": "Track Chair",
+          "detail": "Systems and Infrastructure track.",
+          "year": 2022,
+          "url": ""
+        },
+        {
+          "title": "WISE 2022",
+          "role": "PC Chair",
+          "detail": "",
+          "year": 2022,
+          "url": ""
+        },
+        {
+          "title": "TheWebConf 2018",
+          "role": "Track Chair",
+          "detail": "Search track.",
+          "year": 2018,
+          "url": ""
+        },
+        {
+          "title": "ECIR 2016",
+          "role": "PC Co-Chair",
+          "detail": "Short papers.",
+          "year": 2016,
+          "url": ""
+        },
+        {
+          "title": "ASONAM 2015",
+          "role": "PC Co-Chair",
+          "detail": "",
+          "year": 2015,
+          "url": ""
+        },
+        {
+          "title": "CIKM 2013",
+          "role": "Associate PC Chair",
+          "detail": "Information Retrieval area.",
+          "year": 2013,
+          "url": ""
+        },
+        {
+          "title": "AIRS 2013",
+          "role": "PC Co-Chair",
+          "detail": "",
+          "year": 2013,
+          "url": ""
+        },
+        {
+          "title": "SPIRE 2011",
+          "role": "PC Chair",
+          "detail": "Information Retrieval track.",
+          "year": 2011,
+          "url": ""
+        },
+        {
+          "title": "AICCS 2011",
+          "role": "PC Chair",
+          "detail": "Information Retrieval and Databases track.",
+          "year": 2011,
+          "url": ""
+        },
+        {
+          "title": "INFOSCALE 2007",
+          "role": "PC Chair",
+          "detail": "",
+          "year": 2007,
+          "url": ""
+        }
+      ]
+    },
+    {
+      "group": "Program Committees",
+      "note": "Regular service on the Program Committee, Senior Program Committee, and as Area Chair at top-tier venues each year — NeurIPS, ICML, ACL, AAAI, NAACL, TheWebConf, VLDB, IJCAI, SIGIR, and CIKM among others.",
+      "items": []
+    }
   ]
 }

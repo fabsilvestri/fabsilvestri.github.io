@@ -1,0 +1,105 @@
+# Professional service — editorial boards and conference chairing roles.
+# Maintained by hand from the CV; the homepage renders the groups in the
+# order they appear here, and the entries within each group as listed.
+#
+# Schema per group:
+#   group: heading shown on the card.
+#   note:  optional paragraph rendered instead of / above the item list.
+#   items: optional list, each with
+#     title:  the venue or journal name (required).
+#     role:   optional badge — "General Chair", "PC Chair", "Editor", …
+#     detail: optional one-line context.
+#     year:   optional 4-digit integer, shown in the left gutter.
+#     url:    optional link to the venue or journal page.
+
+services:
+  - group: Editorial Boards
+    items:
+      - title: npj Artificial Intelligence
+        role: Editorial Board
+        url: https://www.nature.com/npjai/
+      - title: Online Social Networks and Media
+        role: Editorial Board
+      - title: Social Network Analysis and Mining
+        role: Editorial Board
+      - title: Journal of the Franklin Institute
+        role: Editorial Board
+      - title: Transactions on Machine Learning Research (TMLR)
+        role: Action Editor
+        url: https://jmlr.org/tmlr/
+
+  - group: Conference Chairing
+    items:
+      - year: 2026
+        title: CIKM 2026
+        role: PC Chair
+        detail: Program Committee Chair.
+      - year: 2026
+        title: TheWebConf 2026
+        role: Track Chair
+        detail: Search and Retrieval-Augmented AI track.
+      - year: 2026
+        title: TheWebConf 2026
+        role: Co-Chair
+        detail: Ph.D. Symposium.
+      - year: 2026
+        title: ECML PKDD 2026
+        role: Track Chair
+        detail: Industry track.
+      - year: 2025
+        title: ECIR 2025
+        role: General Chair
+        detail: European Conference on Information Retrieval — Lucca, Italy.
+      - year: 2025
+        title: ESSAI 2025
+        role: Chair
+        detail: European Summer School on Artificial Intelligence.
+      - year: 2024
+        title: KDD 2024
+        role: Chair
+        detail: Hands-On Tutorial chair.
+      - year: 2023
+        title: ECML PKDD 2023
+        role: Workshop Chair
+      - year: 2022
+        title: TheWebConf 2022
+        role: Track Chair
+        detail: Systems and Infrastructure track.
+      - year: 2022
+        title: WISE 2022
+        role: PC Chair
+      - year: 2018
+        title: TheWebConf 2018
+        role: Track Chair
+        detail: Search track.
+      - year: 2016
+        title: ECIR 2016
+        role: PC Co-Chair
+        detail: Short papers.
+      - year: 2015
+        title: ASONAM 2015
+        role: PC Co-Chair
+      - year: 2013
+        title: CIKM 2013
+        role: Associate PC Chair
+        detail: Information Retrieval area.
+      - year: 2013
+        title: AIRS 2013
+        role: PC Co-Chair
+      - year: 2011
+        title: SPIRE 2011
+        role: PC Chair
+        detail: Information Retrieval track.
+      - year: 2011
+        title: AICCS 2011
+        role: PC Chair
+        detail: Information Retrieval and Databases track.
+      - year: 2007
+        title: INFOSCALE 2007
+        role: PC Chair
+
+  - group: Program Committees
+    note: >-
+      Regular service on the Program Committee, Senior Program Committee,
+      and as Area Chair at top-tier venues each year — NeurIPS, ICML, ACL,
+      AAAI, NAACL, TheWebConf, VLDB, IJCAI, SIGIR, and CIKM among others.

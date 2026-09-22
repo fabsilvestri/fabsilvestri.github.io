@@ -110,7 +110,7 @@
   />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=6e075cc1aa" />
+  <link rel="stylesheet" href="assets/css/style.css?v=2247146744" />
   <!-- Kick off the publications.json fetch in parallel with parsing the
        rest of <head>, so the data is in the HTTP cache by the time
        publications.js runs and asks for it. -->
@@ -135,6 +135,7 @@
         <li><a href="#teaching">Teaching</a></li>
         <li id="nav-talks" hidden><a href="#talks">Keynotes and Invited Talks</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li id="nav-services" hidden><a href="#services">Services</a></li>
       </ul>
       <a class="nav-cta" href="https://scholar.google.com/citations?user=pi985dQAAAAJ" target="_blank" rel="noopener">Scholar ↗</a>
     </nav>
@@ -353,6 +354,11 @@
         </div>
       </div>
     </section>
+
+    <section id="services" class="content" hidden>
+      <h2 class="section-head"><span class="slash">//</span> Services</h2>
+      <div class="services-grid" id="services-groups"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -374,7 +380,7 @@
        data/publications.json (cache: 'no-store') so counters and the
        publication list always reflect the latest bot refresh, even if
        the cached HTML is a few minutes behind. -->
-  <script src="assets/js/publications.js?v=b1f31f067f"></script>
+  <script src="assets/js/publications.js?v=26e60d9887"></script>
   <script src="assets/js/analytics.js?v=c4f706f382"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>

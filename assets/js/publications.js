@@ -545,8 +545,55 @@
     if (navItem) navItem.hidden = false;
   }
 
+  function renderServices() {
+    var data = window.PUBLICATIONS;
+    var wrap = byId("services-groups");
+    var section = byId("services");
+    var navItem = byId("nav-services");
+    if (!wrap || !section) return;
+    var groups = (data && data.services) || [];
+    if (groups.length === 0) {
+      section.hidden = true;
+      if (navItem) navItem.hidden = true;
+      return;
+    }
+    wrap.innerHTML = groups.map(function (g) {
+      var items = (g.items || []).map(function (i) {
+        var title = escapeHtml(i.title);
+        if (i.url) {
+          title = '<a href="' + escapeHtml(i.url) + '" target="_blank" rel="noopener">' + title + ' \u2197</a>';
+        }
+        var role = i.role
+          ? '<span class="service-role">' + escapeHtml(i.role) + '</span>'
+          : '';
+        return (
+          '<li class="service-item">' +
+            '<span class="service-year">' + (i.year ? i.year : '') + '</span>' +
+            '<div class="service-body">' +
+              '<div class="service-title">' + title + role + '</div>' +
+              (i.detail ? '<div class="service-detail">' + escapeHtml(i.detail) + '</div>' : '') +
+            '</div>' +
+          '</li>'
+        );
+      }).join("");
+      // Groups with no years at all (editorial boards) drop the year
+      // gutter so their titles start at the card's left edge.
+      var hasYear = (g.items || []).some(function (i) { return !!i.year; });
+      var listClass = "service-list" + (hasYear ? "" : " service-list-noyear");
+      return (
+        '<article class="card service-group">' +
+          '<h3>' + escapeHtml(g.group) + '</h3>' +
+          (g.note ? '<p class="service-note">' + escapeHtml(g.note) + '</p>' : '') +
+          (items ? '<ul class="' + listClass + '">' + items + '</ul>' : '') +
+        '</article>'
+      );
+    }).join("");
+    section.hidden = false;
+    if (navItem) navItem.hidden = false;
+  }
+
   // Fetch publications.json with cache: 'no-store' so visitors always see
-  // the latest bot refresh (counts, list, awards, talks) even when their
+  // the latest bot refresh (counts, list, awards, talks, services) even when their
   // browser or an intermediate cache is still serving an older index.html.
   // Falls back to a window.PUBLICATIONS preloaded by an inline script if
   // the fetch fails (offline, file moved, etc.).
@@ -572,6 +619,7 @@
     initDownloadButton();
     renderAwards();
     renderTalks();
+    renderServices();
     render();
   }
 

@@ -20,6 +20,9 @@ titles and proceedings volumes OpenAlex leaves incomplete.
 │   ├── publications.json             # generated — canonical JSON, served live to the page
 │   ├── manual_publications.yml       # manual overlay — papers OpenAlex hasn't indexed yet
 │   ├── venues.yml                    # venue name → abbrev, CORE acronym, Scimago ISSN
+│   ├── awards.yml                    # hand-curated awards and honours
+│   ├── talks.yml                     # hand-curated keynotes and invited talks
+│   ├── services.yml                  # hand-curated editorial boards and chairing roles
 │   ├── core_rankings.csv             # CORE conference rankings (vendored)
 │   └── scimago_journal_rank.csv      # Scimago journal quartiles (manual download)
 ├── scripts/
@@ -286,3 +289,13 @@ Source: **GitHub Actions**.
 
 The nightly publication update commits any changes directly to `main`;
 that push triggers a redeploy automatically.
+
+## Services
+
+The Services section (editorial boards, conference chairing roles,
+program committees) is driven by hand-curated `data/services.yml`.
+Entries are grouped, and both the groups and the items inside them
+render in file order — chairing roles are listed most-recent-first.
+`fetch_publications.py` copies the file into `publications.json` under
+the `services` key on every run, so editing the YAML and re-running the
+fetch (or waiting for the nightly Action) is all it takes.
