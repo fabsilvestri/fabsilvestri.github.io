@@ -144,18 +144,6 @@ additions:
   # overlay entry.
   # ---------------------------------------------------------------
 
-  - key: manual/journals/corr/abs-2602-17518
-    title: A Picture of Agentic Search
-    authors: [F. Pezzuti, O. Frieder, F. Silvestri, S. MacAvaney, N. Tonellotto]
-    year: 2026
-    venue: CoRR
-    venue_short: arXiv
-    abbrev: corr
-    url_publisher: https://doi.org/10.48550/arXiv.2602.17518
-    type: preprint
-    topics: [ir, agents]
-    citations: 0
-
   - key: manual/journals/corr/abs-2602-15650
     title: "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation"
     authors: [M. Salmè, F. Siciliano, F. Silvestri, P. Soda, R. Sicilia, V. Guarrasi]

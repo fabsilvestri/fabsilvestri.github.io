@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-22",
-  "generated_at": "2026-09-22T08:59:48+00:00",
+  "last_updated": "2026-09-24",
+  "generated_at": "2026-09-24T08:58:01+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 289,
@@ -636,7 +636,7 @@
       "citations": 6
     },
     {
-      "key": "manual/journals/corr/abs-2602-17518",
+      "key": "journals/corr/abs-2602-17518",
       "title": "A Picture of Agentic Search",
       "authors": [
         "F. Pezzuti",
@@ -649,15 +649,15 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://doi.org/10.48550/arXiv.2602.17518",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2602.17518",
-      "url_arxiv": null,
+      "url": "https://arxiv.org/abs/2602.17518",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2602.17518",
       "type": "preprint",
       "topics": [
         "ir",
         "agents"
       ],
-      "citations": 1
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2607-16321",
@@ -2980,7 +2980,7 @@
         "G. Trappolini",
         "L. Lastilla",
         "C. Campagnano",
-        "A. Fan",
+        "A. Pei-Chen Fan",
         "F. Petroni",
         "F. Silvestri"
       ],
@@ -3027,7 +3027,7 @@
       "authors": [
         "G. Barnabò",
         "F. Siciliano",
-        "C. Castillo",
+        "C. Cortes Castillo",
         "S. Leonardi",
         "P. Nakov",
         "G. Da San Martino",
@@ -3528,7 +3528,7 @@
       "key": "doi/10.1145/3462671",
       "title": "Preserving integrity in online social networks",
       "authors": [
-        "A. Halevy",
+        "A. Y. Halevy",
         "C. Canton-­Ferrer",
         "H. Ma",
         "U. Özertem",
@@ -3582,7 +3582,7 @@
       "authors": [
         "G. Barnabò",
         "F. Siciliano",
-        "C. Castillo",
+        "C. Cortes Castillo",
         "S. Leonardi",
         "P. Nakov",
         "G. Da San Martino",
@@ -3630,10 +3630,10 @@
         "S. Sharma",
         "F. Alam",
         "M. Shad Akhtar",
-        "D. Dimitrov",
+        "D. Petkov Dimitrov",
         "G. Da San Martino",
         "H. Firooz",
-        "A. Halevy",
+        "A. Y. Halevy",
         "F. Silvestri",
         "P. Nakov",
         "T. Chakraborty"
@@ -3732,12 +3732,12 @@
       "key": "doi/10.18653/v1/2021.acl-long.241",
       "title": "Database reasoning over text",
       "authors": [
-        "J. Thorne",
+        "J. Peter Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
         "S. Riedel",
-        "A. Halevy"
+        "A. Y. Halevy"
       ],
       "year": 2021,
       "venue": "Association for Computational Linguistics",
@@ -3829,12 +3829,12 @@
       "key": "doi/10.14778/3447689.3447706",
       "title": "From natural language processing to neural databases",
       "authors": [
-        "J. Thorne",
+        "J. Peter Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
         "S. Riedel",
-        "A. Halevy"
+        "A. Y. Halevy"
       ],
       "year": 2021,
       "venue": "Proceedings of the VLDB Endowment",
@@ -4109,7 +4109,7 @@
       "title": "Improving News Personalization Through Search Logs",
       "authors": [
         "X. Bai",
-        "B. Barla Cambazoğlu",
+        "B. Barla Cambazoglu",
         "F. Gullo",
         "A. Mantrach",
         "F. Silvestri"
@@ -4133,12 +4133,12 @@
       "key": "journals/corr/abs-2010-06973",
       "title": "Neural Databases",
       "authors": [
-        "J. Thorne",
+        "J. Peter Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
         "S. Riedel",
-        "A. Halevy"
+        "A. Y. Halevy"
       ],
       "year": 2020,
       "venue": "arXiv (Cornell University)",
@@ -4342,7 +4342,7 @@
       "authors": [
         "L. Maria Aiello",
         "I. Arapakis",
-        "R. Baeza‐Yates",
+        "R. A. Baeza-Yates",
         "X. Bai",
         "N. Barbieri",
         "A. Mantrach",
@@ -4488,7 +4488,7 @@
       "title": "Exploiting search history of users for news personalization",
       "authors": [
         "X. Bai",
-        "B. Barla Cambazoğlu",
+        "B. Barla Cambazoglu",
         "F. Gullo",
         "A. Mantrach",
         "F. Silvestri"
@@ -4563,7 +4563,7 @@
         "F. Silvestri",
         "J. Kekäläinen",
         "P. Rosso",
-        "P. Clough",
+        "P. David Clough",
         "G. Pasi",
         "C. Lioma",
         "S. Mizzaro",
@@ -4592,7 +4592,7 @@
       "authors": [
         "G. Singh",
         "F. Silvestri",
-        "J. Shawe‐Taylor"
+        "J. S. Shawe-Taylor"
       ],
       "year": 2016,
       "venue": "CoRR",
@@ -4683,7 +4683,7 @@
         "N. Djuric",
         "V. Radosavljević",
         "F. Silvestri",
-        "N. Bhamidipati"
+        "N. L. Bhamidipati"
       ],
       "year": 2015,
       "venue": "ACM International Conference on Research and Development in Information Retrieval",
@@ -4702,7 +4702,7 @@
       "key": "doi/10.1145/2684822.2685302",
       "title": "Predicting The Next App That You Are Going To Use",
       "authors": [
-        "R. Baeza‐Yates",
+        "R. A. Baeza-Yates",
         "D. Jiang",
         "F. Silvestri",
         "B. L. Harrison"
@@ -4770,7 +4770,7 @@
       "key": "doi/10.1145/2740908.2744112",
       "title": "Large-scale Contextual Query-to-Ad Matching and Retrieval System for Sponsored Search: (Abstract)",
       "authors": [
-        "R. Baeza‐Yates",
+        "R. A. Baeza-Yates",
         "N. Djuric",
         "M. Grbovic",
         "V. Radosavljević",
@@ -5142,7 +5142,7 @@
       "title": "Prefetching query results and its impact on search engines",
       "authors": [
         "S. Jonassen",
-        "B. Barla Cambazoğlu",
+        "B. Barla Cambazoglu",
         "F. Silvestri"
       ],
       "year": 2012,
@@ -5486,7 +5486,7 @@
         "D. Puppin",
         "F. Silvestri",
         "R. Perego",
-        "R. Baeza‐Yates"
+        "R. A. Baeza-Yates"
       ],
       "year": 2010,
       "venue": "ACM Transactions on Information Systems",
@@ -5721,11 +5721,11 @@
       "key": "doi/10.4018/jdst.2010090804",
       "title": "A Study on the Effect of Application and Resource Characteristics on the QoS in Service Provisioning Environments",
       "authors": [
-        "T. Varvarigou",
+        "T. A. Varvarigou",
         "K. Tserpes",
         "D. Kyriazis",
         "F. Silvestri",
-        "Ν. Ψιμόγιαννος"
+        "N. Psimogiannos"
       ],
       "year": 2010,
       "venue": "International Journal of Distributed Systems and Technologies",
@@ -5767,7 +5767,7 @@
       "title": "Aging effects on query flow graphs for query suggestion",
       "authors": [
         "R. Baraglia",
-        "C. Castillo",
+        "C. Cortes Castillo",
         "D. Donato",
         "F. Maria Nardini",
         "R. Perego",
@@ -6087,7 +6087,7 @@
       "key": "doi/10.1145/1409220.1409223",
       "title": "Design trade-offs for search engine caching",
       "authors": [
-        "R. Baeza‐Yates",
+        "R. A. Baeza-Yates",
         "A. Gionis",
         "F. Junqueira",
         "V. Murdock",
@@ -6132,8 +6132,8 @@
       "key": "doi/10.1109/icde.2007.367846",
       "title": "Challenges on Distributed Web Retrieval",
       "authors": [
-        "R. Baeza‐Yates",
-        "C. Castillo",
+        "R. A. Baeza-Yates",
+        "C. Cortes Castillo",
         "F. Junqueira",
         "V. Plachouras",
         "F. Silvestri"
@@ -6156,7 +6156,7 @@
       "key": "doi/10.1145/1277741.1277814",
       "title": "Know your neighbors: web spam detection using the web topology",
       "authors": [
-        "C. Castillo",
+        "C. Cortes Castillo",
         "D. Donato",
         "A. Gionis",
         "V. Murdock",
@@ -6179,7 +6179,7 @@
       "key": "doi/10.1145/1277741.1277775",
       "title": "The impact of caching on search engines",
       "authors": [
-        "R. Baeza‐Yates",
+        "R. A. Baeza-Yates",
         "A. Gionis",
         "F. Junqueira",
         "V. Murdock",
@@ -6275,7 +6275,7 @@
         "D. Puppin",
         "F. Silvestri",
         "R. Perego",
-        "R. Baeza‐Yates"
+        "R. A. Baeza-Yates"
       ],
       "year": 2007,
       "venue": "Scalable Information Systems",
