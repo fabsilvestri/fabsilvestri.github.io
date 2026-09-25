@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-09-24",
-  "generated_at": "2026-09-24T08:58:01+00:00",
+  "last_updated": "2026-09-25",
+  "generated_at": "2026-09-25T09:19:32+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 289,
+  "count": 290,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
     "other_conf": 69,
     "other_journal": 9,
     "workshop": 16,
-    "preprint": 84
+    "preprint": 85
   },
   "counts_by_topic": {
     "ir": 104,
@@ -18,8 +18,8 @@
     "llm": 30,
     "agents": 10,
     "nlp": 21,
-    "gnn": 34,
-    "trust": 54,
+    "gnn": 35,
+    "trust": 55,
     "task_vectors": 9,
     "efficient": 58,
     "misinfo": 16,
@@ -566,20 +566,20 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2502-10111",
-      "title": "Unified Counterfactual Explainer for Graph Neural Networks",
+      "key": "doi/10.1038/s44387-026-00135-w",
+      "title": "Unified counterfactual explainer for graph neural networks",
       "authors": [
         "F. Giorgi",
         "F. Silvestri",
         "G. Tolomei"
       ],
       "year": 2026,
-      "venue": "npj Artif. Intell.",
-      "venue_short": "npj AI",
-      "abbrev": "corr",
+      "venue": "npj Artificial Intelligence",
+      "venue_short": "NPJAI",
+      "abbrev": "npjai",
       "url": "https://doi.org/10.1038/s44387-026-00135-w",
       "url_publisher": "https://doi.org/10.1038/s44387-026-00135-w",
-      "url_arxiv": "https://arxiv.org/abs/2502.10111",
+      "url_arxiv": null,
       "type": "other_journal",
       "topics": [
         "gnn",
@@ -1522,6 +1522,28 @@
         "llm"
       ],
       "citations": 2
+    },
+    {
+      "key": "journals/corr/abs-2502-10111",
+      "title": "COMBINEX: A Unified Counterfactual Explainer for Graph Neural Networks via Node Feature and Structural Perturbations",
+      "authors": [
+        "F. Giorgi",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2025,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2502.10111",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2502.10111",
+      "type": "preprint",
+      "topics": [
+        "gnn",
+        "trust"
+      ],
+      "citations": 0
     },
     {
       "key": "journals/corr/abs-2502-09193",
@@ -3231,8 +3253,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2306.14457",
-      "url_publisher": null,
+      "url": "https://hdl.handle.net/11573/1698182",
+      "url_publisher": "https://hdl.handle.net/11573/1698182",
       "url_arxiv": "https://arxiv.org/abs/2306.14457",
       "type": "preprint",
       "topics": [

@@ -441,21 +441,6 @@ overrides:
     topics: ["task_vectors"]
     url_publisher: https://openreview.net/forum?id=CRBt6DNaBE
 
-  # npj Artificial Intelligence 2026. The title changed between the
-  # COMBINEX preprint and the journal version, so it is replaced here
-  # and the pruner keys on the new one. npj AI is too new for Scimago to
-  # have a quartile, so it cannot be ranked — other_journal is the
-  # conservative call; its ISSN is in venues.yml, which will promote it
-  # automatically once Scimago indexes the journal.
-  journals/corr/abs-2502-10111:
-    title: Unified Counterfactual Explainer for Graph Neural Networks
-    venue: npj Artif. Intell.
-    venue_short: npj AI
-    year: 2026
-    type: other_journal
-    topics: ["gnn", "trust"]
-    url_publisher: https://doi.org/10.1038/s44387-026-00135-w
-
   # AISTATS 2026 poster; the OpenReview page states "AISTATS 2026
   # Poster", and virtual.aistats.org/virtual/2026/poster/13835 links to
   # the same id. No PMLR volume yet, so OpenReview is the publisher
