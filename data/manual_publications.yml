@@ -132,31 +132,6 @@
 # ---------------------------------------------------------------------
 
 additions:
-
-  # ---------------------------------------------------------------
-  # Carried over from the DBLP era (2026-09-16). The nightly sync now
-  # reads OpenAlex, and these are the papers OpenAlex has no record of
-  # at all: the CEUR-WS workshops it does not index (IIR, RobustRecSys,
-  # FIMI, RIAO), a few older conference papers, and preprints that are
-  # on arXiv but not yet in OpenAlex. Each one was on the site under
-  # DBLP, so the fields below are DBLP's, not guesses. They prune
-  # themselves the moment OpenAlex indexes the paper, like any other
-  # overlay entry.
-  # ---------------------------------------------------------------
-
-  - key: manual/journals/corr/abs-2602-15650
-    title: "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation"
-    authors: [M. Salmè, F. Siciliano, F. Silvestri, P. Soda, R. Sicilia, V. Guarrasi]
-    year: 2026
-    venue: Inf. Syst. Frontiers
-    venue_short: ISF
-    abbrev: isf
-    url_publisher: https://doi.org/10.1007/s10796-026-10741-3
-    url_arxiv: https://doi.org/10.48550/arXiv.2602.15650
-    type: q1_journal
-    topics: [llm, trust]
-    citations: 1
-
   # ECML PKDD 2026 research track, Naples; Springer LNCS chapter,
   # pp. 340-355 of Proceedings Part II. The type is declared rather than
   # derived: CORE ranks this venue A under the acronym "ECML PKDD", but

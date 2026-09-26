@@ -1,25 +1,25 @@
 {
-  "last_updated": "2026-09-25",
-  "generated_at": "2026-09-25T09:19:32+00:00",
+  "last_updated": "2026-09-26",
+  "generated_at": "2026-09-26T09:01:53+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 290,
+  "count": 291,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
     "other_conf": 69,
     "other_journal": 9,
     "workshop": 16,
-    "preprint": 85
+    "preprint": 86
   },
   "counts_by_topic": {
     "ir": 104,
     "recsys": 50,
-    "llm": 30,
+    "llm": 31,
     "agents": 10,
     "nlp": 21,
     "gnn": 35,
-    "trust": 55,
+    "trust": 56,
     "task_vectors": 9,
     "efficient": 58,
     "misinfo": 16,
@@ -450,7 +450,7 @@
       "citations": 0
     },
     {
-      "key": "manual/journals/corr/abs-2602-15650",
+      "key": "doi/10.1007/s10796-026-10741-3",
       "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
       "authors": [
         "M. Salmè",
@@ -461,18 +461,18 @@
         "V. Guarrasi"
       ],
       "year": 2026,
-      "venue": "Inf. Syst. Frontiers",
+      "venue": "Information Systems Frontiers",
       "venue_short": "ISF",
       "abbrev": "isf",
       "url": "https://doi.org/10.1007/s10796-026-10741-3",
       "url_publisher": "https://doi.org/10.1007/s10796-026-10741-3",
-      "url_arxiv": "https://doi.org/10.48550/arXiv.2602.15650",
+      "url_arxiv": "https://arxiv.org/abs/2602.15650",
       "type": "q1_journal",
       "topics": [
         "llm",
         "trust"
       ],
-      "citations": 1
+      "citations": 0
     },
     {
       "key": "doi/10.1016/j.osnem.2026.100357",
@@ -679,6 +679,31 @@
       "type": "preprint",
       "topics": [
         "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2602-15650",
+      "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
+      "authors": [
+        "M. Salmè",
+        "F. Siciliano",
+        "F. Silvestri",
+        "P. Soda",
+        "R. Sicilia",
+        "V. Guarrasi"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2602.15650",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2602.15650",
+      "type": "preprint",
+      "topics": [
+        "llm",
+        "trust"
       ],
       "citations": 0
     },
@@ -2716,7 +2741,7 @@
         "S. Ghael",
         "D. Nyhan",
         "H. Bouchard",
-        "M. Lalmas-Roelleke",
+        "M. Lalmas",
         "A. Damianou"
       ],
       "year": 2024,
@@ -4155,7 +4180,7 @@
       "key": "journals/corr/abs-2010-06973",
       "title": "Neural Databases",
       "authors": [
-        "J. Peter Thorne",
+        "J. H. Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
@@ -4163,7 +4188,7 @@
         "A. Y. Halevy"
       ],
       "year": 2020,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2010.06973",
@@ -5264,8 +5289,8 @@
       "venue": "ERCIM news/ERCIM news online edition",
       "venue_short": "ERCIM",
       "abbrev": "ercim",
-      "url": "https://dblp.uni-trier.de/db/journals/ercim/ercim2012.html#JackSSTV12",
-      "url_publisher": "https://dblp.uni-trier.de/db/journals/ercim/ercim2012.html#JackSSTV12",
+      "url": "http://hdl.handle.net/11568/489685",
+      "url_publisher": "http://hdl.handle.net/11568/489685",
       "url_arxiv": null,
       "type": "other_journal",
       "topics": [
@@ -6627,7 +6652,7 @@
       "authors": [
         "F. Silvestri",
         "R. Baraglia",
-        "P. Palmerini",
+        "P. P",
         "M. Serrano"
       ],
       "year": 2004,
@@ -6799,7 +6824,7 @@
       "title": "Adaptive and resource-aware mining of frequent sets",
       "authors": [
         "S. Orlando",
-        "P. Palmerini",
+        "P. P",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6844,7 +6869,7 @@
       "title": "An Efficient Parallel and Distributed Algorithm for Counting Frequent Sets",
       "authors": [
         "S. Orlando",
-        "P. Palmerini",
+        "P. P",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6868,7 +6893,7 @@
       "authors": [
         "T. Fagni",
         "S. Orlando",
-        "P. Palmerini",
+        "P. P",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6891,7 +6916,7 @@
       "title": "Scheduling High Performance Data Mining Tasks on a Data Grid Environment",
       "authors": [
         "S. Orlando",
-        "P. Palmerini",
+        "P. P",
         "R. Perego",
         "F. Silvestri"
       ],
