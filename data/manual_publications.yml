@@ -272,18 +272,6 @@ additions:
     topics: [ir, recsys, trust]
     citations: 0
 
-  - key: manual/conf/kdd/TolomeiSHL17
-    title: Interpretable Predictions of Tree-based Ensembles via Actionable Feature Tweaking
-    authors: [G. Tolomei, F. Silvestri, A. Haines, M. Lalmas]
-    year: 2017
-    venue: KDD
-    venue_short: KDD
-    abbrev: kdd
-    url_publisher: https://doi.org/10.1145/3097983.3098039
-    type: a_star_conf
-    topics: [trust]
-    citations: 365
-
   - key: manual/conf/iir/LuccheseNOPST16
     title: Post-Learning Optimization of Tree Ensembles
     authors: [C. Lucchese, F. Maria Nardini, S. Orlando, R. Perego, F. Silvestri, S. Trani]

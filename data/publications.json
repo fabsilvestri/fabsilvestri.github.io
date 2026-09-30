@@ -1,30 +1,30 @@
 {
-  "last_updated": "2026-09-26",
-  "generated_at": "2026-09-26T09:01:53+00:00",
+  "last_updated": "2026-09-30",
+  "generated_at": "2026-09-30T13:37:08+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 291,
+  "count": 283,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
     "other_conf": 69,
     "other_journal": 9,
     "workshop": 16,
-    "preprint": 86
+    "preprint": 78
   },
   "counts_by_topic": {
-    "ir": 104,
-    "recsys": 50,
+    "ir": 101,
+    "recsys": 45,
     "llm": 31,
     "agents": 10,
     "nlp": 21,
-    "gnn": 35,
-    "trust": 56,
+    "gnn": 32,
+    "trust": 53,
     "task_vectors": 9,
-    "efficient": 58,
+    "efficient": 57,
     "misinfo": 16,
-    "data_mining": 12,
-    "social_net": 14,
+    "data_mining": 13,
+    "social_net": 13,
     "misc": 30
   },
   "years": [
@@ -309,7 +309,7 @@
       "title": "MASS: MoErging through Adaptive Subspace Selection",
       "authors": [
         "D. Crisostomi",
-        "A. Zirilli",
+        "Z. Alessandro",
         "A. Andrea Gargiulo",
         "M. Sofia Bucarelli",
         "S. Scardapane",
@@ -660,29 +660,6 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2607-16321",
-      "title": "Art Beyond Semantics: Sheaf-Informed Contrastive Learning for Multi-relational Representations",
-      "authors": [
-        "L. Schaerf",
-        "A. Purificato",
-        "P. Riccio",
-        "F. Silvestri",
-        "N. García"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://doi.org/10.1007/978-3-032-37324-3_15",
-      "url_publisher": "https://doi.org/10.1007/978-3-032-37324-3_15",
-      "url_arxiv": "https://arxiv.org/abs/2607.16321",
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 0
-    },
-    {
       "key": "journals/corr/abs-2602-15650",
       "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
       "authors": [
@@ -757,6 +734,28 @@
       "citations": 0
     },
     {
+      "key": "journals/corr/abs-2608-28853",
+      "title": "Equivariant Sheaf Neural Networks: Learning Geometric Transport on Graphs",
+      "authors": [
+        "A. Borgi",
+        "M. Severino",
+        "F. Silvestri",
+        "P. Liò"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2608.28853",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2608.28853",
+      "type": "preprint",
+      "topics": [
+        "gnn"
+      ],
+      "citations": 0
+    },
+    {
       "key": "journals/corr/abs-2608-27974",
       "title": "QUORUM: QUality-Optimized Routing Using Multiple annotators",
       "authors": [
@@ -783,7 +782,7 @@
       "key": "journals/corr/abs-2602-06652",
       "title": "Same Answer, Different Representations: Hidden instability in VLMs",
       "authors": [
-        "F. Ahmad Wani",
+        "W. Farooq Ahmad",
         "A. Suglia",
         "R. Saxena",
         "A. Pradipta Gema",
@@ -831,30 +830,6 @@
       "citations": 1
     },
     {
-      "key": "journals/corr/abs-2601-05649",
-      "title": "Statistical Foundations of DIME: Risk Estimation for Practical Index Selection",
-      "authors": [
-        "G. D'Erasmo",
-        "C. Campagnano",
-        "A. Mallia",
-        "P. Brutti",
-        "N. Ferdinando Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2601.05649",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2601.05649",
-      "type": "preprint",
-      "topics": [
-        "ir"
-      ],
-      "citations": 3
-    },
-    {
       "key": "journals/corr/abs-2609-18695",
       "title": "SURF: Subtractive Updates for Recommender Forgetting",
       "authors": [
@@ -892,8 +867,8 @@
       "venue": "2026",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://hal.science/hal-05698305v1/document",
-      "url_publisher": "https://hal.science/hal-05698305v1/document",
+      "url": "https://hal.science/hal-05698305v1",
+      "url_publisher": "https://hal.science/hal-05698305v1",
       "url_arxiv": null,
       "type": "preprint",
       "topics": [
@@ -1784,7 +1759,7 @@
       "title": "PISA: Prioritized Invariant Subgraph Aggregation",
       "authors": [
         "A. Ghasemi",
-        "F. Ahmad Wani",
+        "W. Farooq Ahmad",
         "M. Sofia Bucarelli",
         "F. Silvestri"
       ],
@@ -2377,31 +2352,6 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2408-03873",
-      "title": "A Reproducible Analysis of Sequential Recommender Systems",
-      "authors": [
-        "F. Betello",
-        "A. Purificato",
-        "F. Siciliano",
-        "G. Trappolini",
-        "A. Bacciu",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2408.03873",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2408.03873",
-      "type": "preprint",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 36
-    },
-    {
       "key": "journals/corr/abs-2411-07770",
       "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
       "authors": [
@@ -2518,13 +2468,13 @@
       "authors": [
         "Z. Chen",
         "J. Wang",
-        "J. Zhuang",
+        "Z. Jun",
         "A. Gowtham Reddy",
         "F. Silvestri",
         "J. Huang",
         "K. Nag",
         "K. Kuang",
-        "X. Bao Ning",
+        "N. Xin",
         "G. Tolomei"
       ],
       "year": 2024,
@@ -2564,31 +2514,10 @@
       "citations": 10
     },
     {
-      "key": "journals/corr/abs-2410-09514",
-      "title": "Eco-Aware Graph Neural Networks for Sustainable Recommendations",
-      "authors": [
-        "A. Purificato",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2410.09514",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2410.09514",
-      "type": "preprint",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 16
-    },
-    {
       "key": "journals/corr/abs-2412-08419",
       "title": "Energy Guided smoothness to improve Robustness in Graph Classification",
       "authors": [
-        "F. Ahmad Wani",
+        "W. Farooq Ahmad",
         "M. Sofia Bucarelli",
         "A. Giuseppe Di Francesco",
         "O. Pryymak",
@@ -2684,7 +2613,7 @@
       "title": "Link Prediction with Physics-Inspired Graph Neural Networks",
       "authors": [
         "A. Giuseppe Di Francesco",
-        "F. Caso",
+        "C. Francesco",
         "M. Sofia Bucarelli",
         "F. Silvestri"
       ],
@@ -3027,7 +2956,7 @@
         "G. Trappolini",
         "L. Lastilla",
         "C. Campagnano",
-        "A. Pei-Chen Fan",
+        "A. Fan",
         "F. Petroni",
         "F. Silvestri"
       ],
@@ -3074,7 +3003,7 @@
       "authors": [
         "G. Barnabò",
         "F. Siciliano",
-        "C. Cortes Castillo",
+        "C. Castillo",
         "S. Leonardi",
         "P. Nakov",
         "G. Da San Martino",
@@ -3142,35 +3071,6 @@
         "trust"
       ],
       "citations": 17
-    },
-    {
-      "key": "journals/corr/abs-2312-17506",
-      "title": "A graph neural network-based model with Out-of-Distribution Robustness for enhancing Antiretroviral Therapy Outcome Prediction for HIV-1",
-      "authors": [
-        "G. Di Teodoro",
-        "F. Siciliano",
-        "V. Guarrasi",
-        "A. Vandamme",
-        "V. Ghisetti",
-        "A. B. Sönnerborg",
-        "M. Zazzi",
-        "F. Silvestri",
-        "L. Palagi"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1697827",
-      "url_publisher": "https://hdl.handle.net/11573/1697827",
-      "url_arxiv": "https://arxiv.org/abs/2312.17506",
-      "type": "preprint",
-      "topics": [
-        "gnn",
-        "trust",
-        "efficient"
-      ],
-      "citations": 23
     },
     {
       "key": "journals/corr/abs-2312-15228",
@@ -3242,29 +3142,6 @@
       "citations": 4
     },
     {
-      "key": "journals/corr/abs-2310-08909",
-      "title": "Evading Community Detection via Counterfactual Neighborhood Search",
-      "authors": [
-        "A. Bernini",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2310.08909",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2310.08909",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "trust",
-        "social_net"
-      ],
-      "citations": 10
-    },
-    {
       "key": "journals/corr/abs-2306-14457",
       "title": "Fauno: The Italian Large Language Model that will leave you senza parole!",
       "authors": [
@@ -3288,56 +3165,10 @@
       "citations": 38
     },
     {
-      "key": "journals/corr/abs-2305-10824",
-      "title": "Integrating Item Relevance in Training Loss for Sequential Recommender Systems",
-      "authors": [
-        "A. Bacciu",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2305.10824",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2305.10824",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "recsys"
-      ],
-      "citations": 19
-    },
-    {
-      "key": "journals/corr/abs-2307-13165",
-      "title": "Investigating the Robustness of Sequential Recommender Systems Against Training Data Perturbations",
-      "authors": [
-        "F. Betello",
-        "F. Siciliano",
-        "P. Mishra",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2307.13165",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2307.13165",
-      "type": "preprint",
-      "topics": [
-        "recsys",
-        "trust"
-      ],
-      "citations": 29
-    },
-    {
       "key": "journals/corr/abs-2303-09470",
       "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
       "authors": [
-        "F. Ahmad Wani",
+        "W. Farooq Ahmad",
         "M. Sofia Bucarelli",
         "F. Silvestri"
       ],
@@ -3380,7 +3211,7 @@
       "key": "journals/corr/abs-2306-00707",
       "title": "Renormalized Graph Representations for Node Classification",
       "authors": [
-        "F. Caso",
+        "C. Francesco",
         "G. Trappolini",
         "A. Bacciu",
         "P. Lió",
@@ -3445,30 +3276,6 @@
         "gnn"
       ],
       "citations": 106
-    },
-    {
-      "key": "journals/corr/abs-2304-09097",
-      "title": "Sheaf4Rec: Sheaf Neural Networks for Graph-based Recommender Systems",
-      "authors": [
-        "A. Purificato",
-        "G. Cassarà",
-        "S. Federico",
-        "P. Lió",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2304.09097",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2304.09097",
-      "type": "preprint",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 13
     },
     {
       "key": "journals/corr/abs-2305-00574",
@@ -3629,7 +3436,7 @@
       "authors": [
         "G. Barnabò",
         "F. Siciliano",
-        "C. Cortes Castillo",
+        "C. Castillo",
         "S. Leonardi",
         "P. Nakov",
         "G. Da San Martino",
@@ -3956,7 +3763,7 @@
         "S. Cresci",
         "T. Chakraborty",
         "F. Silvestri",
-        "D. V. Dimitrov",
+        "D. Dimiter",
         "G. Da San Martino",
         "S. Shaar",
         "H. Firooz",
@@ -4007,7 +3814,7 @@
         "G. Trappolini",
         "L. Lastilla",
         "C. Campagnano",
-        "A. Pei-Chen Fan",
+        "F. Angela",
         "F. Petroni",
         "F. Silvestri"
       ],
@@ -4074,17 +3881,17 @@
     },
     {
       "key": "journals/corr/abs-2110-11960",
-      "title": "ReLAX: Reinforcement Learning Agent eXplainer for Arbitrary Predictive Models",
+      "title": "ReLACE: Reinforcement Learning Agent for Counterfactual Explanations of Arbitrary Predictive Models",
       "authors": [
         "Z. Chen",
         "F. Silvestri",
-        "J. Wang",
+        "G. Tolomei",
         "H. Zhu",
-        "H. Ahn",
-        "G. Tolomei"
+        "J. Wang",
+        "H. Ahn"
       ],
       "year": 2021,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2110.11960",
@@ -4180,7 +3987,7 @@
       "key": "journals/corr/abs-2010-06973",
       "title": "Neural Databases",
       "authors": [
-        "J. H. Thorne",
+        "T. James",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
@@ -4188,7 +3995,7 @@
         "A. Y. Halevy"
       ],
       "year": 2020,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2010.06973",
@@ -4316,7 +4123,7 @@
       "citations": 16
     },
     {
-      "key": "manual/conf/kdd/TolomeiSHL17",
+      "key": "doi/10.1145/3097983.3098039",
       "title": "Interpretable Predictions of Tree-based Ensembles via Actionable Feature Tweaking",
       "authors": [
         "G. Tolomei",
@@ -4325,17 +4132,18 @@
         "M. Lalmas"
       ],
       "year": 2017,
-      "venue": "KDD",
+      "venue": "ACM International Conference on Knowledge Discovery and Data Mining",
       "venue_short": "KDD",
       "abbrev": "kdd",
       "url": "https://doi.org/10.1145/3097983.3098039",
       "url_publisher": "https://doi.org/10.1145/3097983.3098039",
-      "url_arxiv": null,
+      "url_arxiv": "https://arxiv.org/abs/1706.06691",
       "type": "a_star_conf",
       "topics": [
-        "trust"
+        "trust",
+        "data_mining"
       ],
-      "citations": 370
+      "citations": 0
     },
     {
       "key": "doi/10.1007/s13278-017-0449-y",
@@ -5772,7 +5580,7 @@
         "K. Tserpes",
         "D. Kyriazis",
         "F. Silvestri",
-        "N. Psimogiannos"
+        "Ν. Ψιμόγιαννος"
       ],
       "year": 2010,
       "venue": "International Journal of Distributed Systems and Technologies",
@@ -5814,7 +5622,7 @@
       "title": "Aging effects on query flow graphs for query suggestion",
       "authors": [
         "R. Baraglia",
-        "C. Cortes Castillo",
+        "C. Castillo",
         "D. Donato",
         "F. Maria Nardini",
         "R. Perego",
@@ -6180,7 +5988,7 @@
       "title": "Challenges on Distributed Web Retrieval",
       "authors": [
         "R. A. Baeza-Yates",
-        "C. Cortes Castillo",
+        "C. Castillo",
         "F. Junqueira",
         "V. Plachouras",
         "F. Silvestri"
@@ -6203,7 +6011,7 @@
       "key": "doi/10.1145/1277741.1277814",
       "title": "Know your neighbors: web spam detection using the web topology",
       "authors": [
-        "C. Cortes Castillo",
+        "C. Castillo",
         "D. Donato",
         "A. Gionis",
         "V. Murdock",
@@ -6652,7 +6460,7 @@
       "authors": [
         "F. Silvestri",
         "R. Baraglia",
-        "P. P",
+        "P. Palmerini",
         "M. Serrano"
       ],
       "year": 2004,
@@ -6824,7 +6632,7 @@
       "title": "Adaptive and resource-aware mining of frequent sets",
       "authors": [
         "S. Orlando",
-        "P. P",
+        "P. Palmerini",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6869,7 +6677,7 @@
       "title": "An Efficient Parallel and Distributed Algorithm for Counting Frequent Sets",
       "authors": [
         "S. Orlando",
-        "P. P",
+        "P. Palmerini",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6893,7 +6701,7 @@
       "authors": [
         "T. Fagni",
         "S. Orlando",
-        "P. P",
+        "P. Palmerini",
         "R. Perego",
         "F. Silvestri"
       ],
@@ -6916,7 +6724,7 @@
       "title": "Scheduling High Performance Data Mining Tasks on a Data Grid Environment",
       "authors": [
         "S. Orlando",
-        "P. P",
+        "P. Palmerini",
         "R. Perego",
         "F. Silvestri"
       ],
