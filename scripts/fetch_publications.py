@@ -66,6 +66,10 @@ OPENALEX_API = "https://api.openalex.org/works"
 CROSSREF_API = "https://api.crossref.org/works/"
 CONTACT_EMAIL = "fabrizio.silvestri@uniroma1.it"  # OpenAlex/Crossref polite pool
 OPENALEX_PAGE_SIZE = 200  # the API maximum
+
+# Set when the `raw_author_name.search:` pass could not run — see
+# fetch_openalex_works() and the guard in main().
+name_search_unavailable = False
 USER_AGENT = "fabsilvestri-homepage/1.0 (+https://fabsilvestri.github.io)"
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1047,7 +1051,23 @@ def fetch_openalex_works() -> list[dict]:
     confirmed_coauthors: set[str] = set()
     for work in works.values():
         confirmed_coauthors |= coauthor_ids(work)
-    by_name = fetch_openalex_filter(f"raw_author_name.search:{OPENALEX_AUTHOR_NAME}")
+    # The name pass is the only one that uses a `.search:` filter, and
+    # OpenAlex pauses anonymous search whenever its search cluster is
+    # under load (503 "Anonymous search is paused"). That is a degraded
+    # run, not a broken one: the id and ORCID passes above already found
+    # everything except records sitting on a fresh, ORCID-less id. Set
+    # the OPENALEX_API_KEY secret to keep search available; until then,
+    # warn and carry on rather than failing the nightly job.
+    global name_search_unavailable
+    try:
+        by_name = fetch_openalex_filter(f"raw_author_name.search:{OPENALEX_AUTHOR_NAME}")
+    except (urllib.error.URLError, SystemExit) as exc:
+        print(
+            f"[warn] OpenAlex name search unavailable ({exc}).",
+            file=sys.stderr,
+        )
+        name_search_unavailable = True
+        by_name = []
     adopted = 0
     for work in by_name:
         if not work.get("id") or work["id"] in works:
@@ -1873,6 +1893,26 @@ def main(prune_manual: bool = True) -> int:
     )
 
     works = fetch_openalex_works()
+
+    # A run without the name pass finds fewer records than the last good
+    # one, and writing it would drop those publications from the site and
+    # prune them out of the manual overlay — churn that reverses itself
+    # the moment OpenAlex search comes back. Stop here instead, before
+    # anything is written: the site keeps serving the last good file and
+    # the nightly job stays green.
+    if name_search_unavailable:
+        print(
+            "[skip] Nothing written — OpenAlex paused anonymous search, so this\n"
+            "       run would have dropped the records only the name pass finds.\n"
+            "       The site keeps serving the last good data/publications.json.\n"
+            "       To make search available again, register a free key at\n"
+            "       https://openalex.org/rest-api and put it in the\n"
+            "       OPENALEX_API_KEY repository secret (the workflow passes it\n"
+            "       through, and openalex_params() already sends it).",
+            file=sys.stderr,
+        )
+        return 0
+
     xref = fetch_crossref([bare_doi(w) for w in works])
 
     skip_patterns = [

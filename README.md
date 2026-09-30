@@ -299,3 +299,23 @@ render in file order — chairing roles are listed most-recent-first.
 `fetch_publications.py` copies the file into `publications.json` under
 the `services` key on every run, so editing the YAML and re-running the
 fetch (or waiting for the nightly Action) is all it takes.
+
+## When the nightly job finds nothing new
+
+`fetch_publications.py` queries OpenAlex three ways — by author id, by
+ORCID, and by raw author name — and unions the results. Only the third
+uses a `.search:` filter, and OpenAlex pauses anonymous search whenever
+its search cluster is under load, answering `503 Anonymous search is
+paused`. That pass is what finds records sitting on a fresh OpenAlex id
+with no ORCID on them (typically new preprints), so a run without it
+would drop those publications from the site and prune them out of the
+manual overlay — churn that reverses itself as soon as search returns.
+
+So the script treats it as a degraded run: it warns, writes nothing, and
+exits 0. The site keeps serving the last good `data/publications.json`
+and the workflow stays green.
+
+To keep the pass available, register a free key at
+<https://openalex.org/rest-api> and add it as the `OPENALEX_API_KEY`
+repository secret — `update-publications.yml` already passes it through,
+and `openalex_params()` already sends it.
