@@ -319,3 +319,15 @@ To keep the pass available, register a free key at
 <https://openalex.org/rest-api> and add it as the `OPENALEX_API_KEY`
 repository secret — `update-publications.yml` already passes it through,
 and `openalex_params()` already sends it.
+
+A source can also come back *short* rather than failing — a 200 from a
+search index that is still rebuilding — which no error handling would
+catch. So before writing, the script compares the result against the
+last good file (`unexplained_losses()`). A publication that disappears
+while another entry keeps its title is a deduplication, not a gap: that
+is what happens when OpenAlex merges an arXiv record into the published
+paper, and it is allowed through. More than `MAX_SHRINK` records
+vanishing with nothing left under their titles means a source returned
+short, and the run is refused — including the in-place prune of
+`manual_publications.yml`, which is restored. Pass `--allow-shrink` when
+the loss is real.

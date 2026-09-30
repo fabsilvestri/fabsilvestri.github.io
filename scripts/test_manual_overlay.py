@@ -399,5 +399,37 @@ class OverlayTestCase(unittest.TestCase):
                          json.dumps(second, sort_keys=True))
 
 
+class UnexplainedLossesTest(unittest.TestCase):
+    """The guard that stops a short run from overwriting good data."""
+
+    @staticmethod
+    def pub(key, title):
+        return {"key": key, "title": title}
+
+    def test_preprint_merged_into_published_paper_is_not_a_loss(self):
+        # What OpenAlex did on 2026-09-30: the arXiv record vanished and
+        # the published one stayed behind under the same title.
+        previous = [self.pub("journals/corr/abs-2304-09097", "Sheaf4Rec: Sheaf Neural Networks"),
+                    self.pub("doi/10.1145/3742898", "Sheaf4Rec: Sheaf Neural Networks")]
+        current = [self.pub("doi/10.1145/3742898", "Sheaf4Rec: Sheaf Neural Networks")]
+        self.assertEqual(fp.unexplained_losses(previous, current), [])
+
+    def test_rekeyed_entry_is_not_a_loss(self):
+        previous = [self.pub("manual/conf/kdd/TolomeiSHL17", "Actionable Feature Tweaking")]
+        current = [self.pub("doi/10.1145/3097983.3098039", "Actionable Feature Tweaking")]
+        self.assertEqual(fp.unexplained_losses(previous, current), [])
+
+    def test_record_that_leaves_nothing_behind_is_a_loss(self):
+        previous = [self.pub("k1", "A Paper That Vanished"),
+                    self.pub("k2", "A Paper That Stayed")]
+        current = [self.pub("k2", "A Paper That Stayed")]
+        lost = fp.unexplained_losses(previous, current)
+        self.assertEqual([p["key"] for p in lost], ["k1"])
+
+    def test_empty_run_loses_everything(self):
+        previous = [self.pub("k1", "One"), self.pub("k2", "Two")]
+        self.assertEqual(len(fp.unexplained_losses(previous, [])), 2)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

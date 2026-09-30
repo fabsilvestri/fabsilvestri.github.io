@@ -70,6 +70,12 @@ OPENALEX_PAGE_SIZE = 200  # the API maximum
 # Set when the `raw_author_name.search:` pass could not run — see
 # fetch_openalex_works() and the guard in main().
 name_search_unavailable = False
+
+# How many publications the run may lose relative to the last good file
+# before it is treated as a bad run rather than a real correction. The
+# count normally only grows; OpenAlex merging two records can shave off
+# one or two, but a larger drop means a source came back short.
+MAX_SHRINK = 2
 USER_AGENT = "fabsilvestri-homepage/1.0 (+https://fabsilvestri.github.io)"
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1872,7 +1878,25 @@ def load_citations(path: Path) -> tuple[dict[str, int], str]:
     return counts, fetched_at
 
 
-def main(prune_manual: bool = True) -> int:
+def unexplained_losses(previous: list[dict], current: list[dict]) -> list[dict]:
+    """Publications in `previous` that `current` lost for no visible reason.
+
+    Most losses are benign. When OpenAlex merges an arXiv record into the
+    published paper the preprint entry disappears and the published one
+    stays behind under the same title — a deduplication, not a gap, and
+    the same goes for an entry whose key changed. Only a record that
+    leaves nothing under its title counts as a real loss, which is what
+    a source returning short looks like."""
+    keys = {p.get("key") for p in current}
+    titles = {normalize_title_for_match(p.get("title", "")) for p in current}
+    return [
+        p for p in previous
+        if p.get("key") not in keys
+        and normalize_title_for_match(p.get("title", "")) not in titles
+    ]
+
+
+def main(prune_manual: bool = True, allow_shrink: bool = False) -> int:
     venues = load_venues(VENUES_FILE)
     topics, topic_overrides = load_topics(TOPICS_FILE)
     core_ranks = load_core_rankings(CORE_FILE)
@@ -1892,6 +1916,31 @@ def main(prune_manual: bool = True) -> int:
         file=sys.stderr,
     )
 
+    # apply_manual_overlay() prunes the overlay in place, so keep the
+    # bytes around: a run we end up refusing has to leave the working
+    # tree exactly as it found it.
+    manual_before = MANUAL_FILE.read_bytes() if MANUAL_FILE.exists() else None
+    previous_pubs: list[dict] = []
+    if OUT_JSON.exists():
+        try:
+            previous_pubs = json.loads(OUT_JSON.read_text(encoding="utf-8"))["publications"]
+        except (ValueError, KeyError, OSError):
+            pass
+
+    def refuse(reason: str) -> int:
+        """Abandon the run without touching anything the site serves."""
+        if manual_before is not None:
+            MANUAL_FILE.write_bytes(manual_before)
+        print(
+            f"[skip] Nothing written — {reason}\n"
+            "       The site keeps serving the last good data/publications.json.\n"
+            "       If OpenAlex paused anonymous search (503 'Anonymous search is\n"
+            "       paused'), register a free key at https://openalex.org/rest-api\n"
+            "       and put it in the OPENALEX_API_KEY repository secret.",
+            file=sys.stderr,
+        )
+        return 0
+
     works = fetch_openalex_works()
 
     # A run without the name pass finds fewer records than the last good
@@ -1901,17 +1950,10 @@ def main(prune_manual: bool = True) -> int:
     # anything is written: the site keeps serving the last good file and
     # the nightly job stays green.
     if name_search_unavailable:
-        print(
-            "[skip] Nothing written — OpenAlex paused anonymous search, so this\n"
-            "       run would have dropped the records only the name pass finds.\n"
-            "       The site keeps serving the last good data/publications.json.\n"
-            "       To make search available again, register a free key at\n"
-            "       https://openalex.org/rest-api and put it in the\n"
-            "       OPENALEX_API_KEY repository secret (the workflow passes it\n"
-            "       through, and openalex_params() already sends it).",
-            file=sys.stderr,
+        return refuse(
+            "the OpenAlex name pass could not run, so this run would have\n"
+            "       dropped the records only that pass finds."
         )
-        return 0
 
     xref = fetch_crossref([bare_doi(w) for w in works])
 
@@ -2027,6 +2069,26 @@ def main(prune_manual: bool = True) -> int:
         "services": services,
     }
 
+    # A source can come back *short* rather than failing — a 200 from a
+    # search index that is still rebuilding — and nothing above notices.
+    # So compare against the last good file. Most losses are benign: when
+    # OpenAlex merges an arXiv record into the published paper, the
+    # preprint entry disappears and the published one remains under the
+    # same title, which is a deduplication, not a gap. Only a record that
+    # leaves no same-titled entry behind is a real loss.
+    vanished = unexplained_losses(previous_pubs, pubs)
+    if len(vanished) > MAX_SHRINK and not allow_shrink:
+        listing = "\n".join(
+            f"         - {p.get('year')} {p.get('title', '')[:60]}" for p in vanished[:8]
+        )
+        return refuse(
+            f"{len(vanished)} publications in the last good file have no entry\n"
+            "       under the same title in this run, so a source came back short\n"
+            f"       (more than the {MAX_SHRINK} a genuine correction would\n"
+            "       explain). Re-run with --allow-shrink if the loss is real:\n"
+            + listing
+        )
+
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
@@ -2093,5 +2155,13 @@ if __name__ == "__main__":
              "entries OpenAlex has caught up with and leave the file alone. They "
              "are still kept out of the generated JSON.",
     )
+    parser.add_argument(
+        "--allow-shrink",
+        action="store_true",
+        help="write the result even when it has fewer publications than the "
+             "last good data/publications.json. Use when the loss is a real "
+             "correction (OpenAlex merging duplicate records, a new skip "
+             "pattern) rather than a source returning short.",
+    )
     args = parser.parse_args()
-    sys.exit(main(prune_manual=not args.no_prune))
+    sys.exit(main(prune_manual=not args.no_prune, allow_shrink=args.allow_shrink))
