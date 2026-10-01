@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-30",
-  "generated_at": "2026-09-30T13:37:08+00:00",
+  "last_updated": "2026-10-01",
+  "generated_at": "2026-10-01T10:41:10+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 283,
@@ -21,11 +21,11 @@
     "gnn": 32,
     "trust": 53,
     "task_vectors": 9,
-    "efficient": 57,
+    "efficient": 58,
     "misinfo": 16,
     "data_mining": 13,
     "social_net": 13,
-    "misc": 30
+    "misc": 29
   },
   "years": [
     2026,
@@ -1756,7 +1756,7 @@
     },
     {
       "key": "journals/corr/abs-2511-22435",
-      "title": "PISA: Prioritized Invariant Subgraph Aggregation",
+      "title": "PISA: Prioritized Invariant Subgraph Aggregation for Out-of-Distribution Generalization on Graphs",
       "authors": [
         "A. Ghasemi",
         "W. Farooq Ahmad",
@@ -1772,7 +1772,7 @@
       "url_arxiv": "https://arxiv.org/abs/2511.22435",
       "type": "preprint",
       "topics": [
-        "misc"
+        "efficient"
       ],
       "citations": 0
     },
