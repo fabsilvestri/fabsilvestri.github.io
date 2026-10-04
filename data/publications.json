@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-10-03",
-  "generated_at": "2026-10-03T09:37:36+00:00",
+  "last_updated": "2026-10-04",
+  "generated_at": "2026-10-04T10:22:42+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 282,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
-    "other_conf": 69,
+    "other_conf": 70,
     "other_journal": 9,
     "workshop": 16,
-    "preprint": 77
+    "preprint": 76
   },
   "counts_by_topic": {
     "ir": 101,
@@ -541,6 +541,29 @@
         "agents"
       ],
       "citations": 1
+    },
+    {
+      "key": "doi/10.1007/978-3-032-40774-0_20",
+      "title": "Cross-Document Neural Re-ranking via Query-Induced Subgraphs",
+      "authors": [
+        "A. Giuseppe Di Francesco",
+        "C. Giannetti",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "AIxIA 2026 – Advances in Artificial Intelligence",
+      "venue_short": "AAAI",
+      "abbrev": "",
+      "url": "https://doi.org/10.1007/978-3-032-40774-0_20",
+      "url_publisher": "https://doi.org/10.1007/978-3-032-40774-0_20",
+      "url_arxiv": "https://arxiv.org/abs/2406.11720",
+      "type": "other_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 0
     },
     {
       "key": "doi/10.1007/978-3-032-37324-3_15",
@@ -2439,28 +2462,6 @@
         "misc"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2406-11720",
-      "title": "Cross-Document Neural Re-Ranking via Query-Induced Subgraphs",
-      "authors": [
-        "A. Giuseppe Di Francesco",
-        "C. Giannetti",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1747335",
-      "url_publisher": "https://hdl.handle.net/11573/1747335",
-      "url_arxiv": "https://arxiv.org/abs/2406.11720",
-      "type": "preprint",
-      "topics": [
-        "ir"
-      ],
-      "citations": 4
     },
     {
       "key": "journals/corr/abs-2404-15760",
