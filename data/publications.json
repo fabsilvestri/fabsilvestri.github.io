@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-04",
-  "generated_at": "2026-10-04T10:22:42+00:00",
+  "last_updated": "2026-10-05",
+  "generated_at": "2026-10-05T11:07:56+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 282,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 36,
-    "other_conf": 70,
+    "other_conf": 71,
     "other_journal": 9,
-    "workshop": 16,
+    "workshop": 15,
     "preprint": 76
   },
   "counts_by_topic": {
@@ -2031,6 +2031,39 @@
       "citations": 625
     },
     {
+      "key": "doi/10.1145/3589335.3648339",
+      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
+      "authors": [
+        "M. De Nadai",
+        "F. Fabbri",
+        "P. Gigioli",
+        "A. Y. Wang",
+        "A. Li",
+        "F. Silvestri",
+        "L. Kim",
+        "S. Lin",
+        "V. Radosavljević",
+        "S. Ghael",
+        "D. Nyhan",
+        "H. Bouchard",
+        "M. Lalmas",
+        "A. Damianou"
+      ],
+      "year": 2024,
+      "venue": "International World Wide Web Conference",
+      "venue_short": "WWW",
+      "abbrev": "www",
+      "url": "https://doi.org/10.1145/3589335.3648339",
+      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
+      "url_arxiv": "https://arxiv.org/abs/2403.05185",
+      "type": "a_star_conf",
+      "topics": [
+        "recsys",
+        "gnn"
+      ],
+      "citations": 42
+    },
+    {
       "key": "doi/10.1109/access.2024.3522049",
       "title": "A Reproducible Analysis of Sequential Recommender Systems",
       "authors": [
@@ -2305,7 +2338,7 @@
         "G. Da San Martino"
       ],
       "year": 2024,
-      "venue": "Proceedings of the 18th International Workshop on Semantic Evaluation (SemEval-2024)",
+      "venue": "International Workshop on Semantic Evaluation (SemEval)",
       "venue_short": "SEMEVAL",
       "abbrev": "semeval",
       "url": "https://doi.org/10.18653/v1/2024.semeval-1.275",
@@ -2317,39 +2350,6 @@
         "misinfo"
       ],
       "citations": 81
-    },
-    {
-      "key": "doi/10.1145/3589335.3648339",
-      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
-      "authors": [
-        "M. De Nadai",
-        "F. Fabbri",
-        "P. Gigioli",
-        "A. Y. Wang",
-        "A. Li",
-        "F. Silvestri",
-        "L. Kim",
-        "S. Lin",
-        "V. Radosavljević",
-        "S. Ghael",
-        "D. Nyhan",
-        "H. Bouchard",
-        "M. Lalmas",
-        "A. Damianou"
-      ],
-      "year": 2024,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "https://doi.org/10.1145/3589335.3648339",
-      "url_publisher": "https://doi.org/10.1145/3589335.3648339",
-      "url_arxiv": "https://arxiv.org/abs/2403.05185",
-      "type": "workshop",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 42
     },
     {
       "key": "journals/corr/abs-2403-14339",
@@ -3034,7 +3034,7 @@
         "G. Trappolini"
       ],
       "year": 2023,
-      "venue": "2023 IEEE 5th International Conference on Cognitive Machine Intelligence (CogMI)",
+      "venue": "IEEE International Conference on Cognitive Machine Intelligence (CogMI)",
       "venue_short": "COGMI",
       "abbrev": "cogmi",
       "url": "https://doi.org/10.1109/cogmi58952.2023.00027",
@@ -5824,28 +5824,6 @@
       "citations": 5
     },
     {
-      "key": "doi/10.1145/1383422.1383458",
-      "title": "Collaborative ranking of grid-enabled workflow service providers",
-      "authors": [
-        "D. Laforenza",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2008,
-      "venue": "ACM International Symposium on High Performance Distributed Computing",
-      "venue_short": "HPDC",
-      "abbrev": "hpdc",
-      "url": "https://doi.org/10.1145/1383422.1383458",
-      "url_publisher": "https://doi.org/10.1145/1383422.1383458",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 9
-    },
-    {
       "key": "doi/10.1016/j.future.2008.07.012",
       "title": "Special Section: Scalable information systems",
       "authors": [
@@ -5866,6 +5844,28 @@
         "efficient"
       ],
       "citations": 0
+    },
+    {
+      "key": "doi/10.1145/1383422.1383458",
+      "title": "Collaborative ranking of grid-enabled workflow service providers",
+      "authors": [
+        "D. Laforenza",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2008,
+      "venue": "International Symposium on High-Performance Parallel and Distributed Computing (HPDC)",
+      "venue_short": "HPDC",
+      "abbrev": "",
+      "url": "https://doi.org/10.1145/1383422.1383458",
+      "url_publisher": "https://doi.org/10.1145/1383422.1383458",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 9
     },
     {
       "key": "doi/10.1109/la-web.2008.21",
@@ -6438,7 +6438,7 @@
         "M. Serrano"
       ],
       "year": 2004,
-      "venue": "International Conference on Information Technology: Coding and Computing, 2004. Proceedings. ITCC 2004.",
+      "venue": "International Conference on Information Technology: Coding and Computing (ITCC)",
       "venue_short": "ITCC",
       "abbrev": "itcc",
       "url": "https://doi.org/10.1109/itcc.2004.1286486",
