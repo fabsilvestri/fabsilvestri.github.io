@@ -18,6 +18,9 @@ services:
       - title: npj Artificial Intelligence
         role: Editorial Board
         url: https://www.nature.com/npjai/
+      - title: ACM Transactions on Intelligent Systems and Technology (TIST)
+        role: Editorial Board
+        url: https://dl.acm.org/journal/tist
       - title: Online Social Networks and Media
         role: Editorial Board
       - title: Social Network Analysis and Mining
