@@ -186,6 +186,12 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
   margin: 0 0 10px;
   letter-spacing: 0.02em;
 }
+.hero-eyebrow a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+.hero-eyebrow a:hover { color: var(--accent-1); text-decoration: none; }
 .hero-title {
   font-size: clamp(44px, 7vw, 76px);
   font-weight: 800;

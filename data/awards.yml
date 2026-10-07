@@ -12,6 +12,11 @@
 #   url:         optional link to the public announcement or award page.
 
 awards:
+  - year: 2026
+    title: ELLIS Fellow
+    issuer: European Laboratory for Learning and Intelligent Systems (ELLIS)
+    url: https://ellis.eu/fellows
+
   - year: 2025
     title: Best Paper Award
     issuer: HCAI Workshop @ ACM CIKM 2025

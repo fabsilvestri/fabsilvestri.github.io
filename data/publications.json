@@ -6741,6 +6741,13 @@
   ],
   "awards": [
     {
+      "year": 2026,
+      "title": "ELLIS Fellow",
+      "issuer": "European Laboratory for Learning and Intelligent Systems (ELLIS)",
+      "description": "",
+      "url": "https://ellis.eu/fellows"
+    },
+    {
       "year": 2025,
       "title": "Best Paper Award",
       "issuer": "HCAI Workshop @ ACM CIKM 2025",
