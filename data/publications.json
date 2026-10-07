@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-10-06",
-  "generated_at": "2026-10-06T10:59:19+00:00",
+  "last_updated": "2026-10-07",
+  "generated_at": "2026-10-07T10:48:58+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 282,
   "counts_by_type": {
-    "a_star_conf": 75,
+    "a_star_conf": 74,
     "q1_journal": 36,
-    "other_conf": 71,
+    "other_conf": 72,
     "other_journal": 9,
     "workshop": 15,
     "preprint": 76
@@ -5854,7 +5854,7 @@
         "F. Silvestri"
       ],
       "year": 2008,
-      "venue": "International Symposium on High-Performance Parallel and Distributed Computing (HPDC)",
+      "venue": "ACM International Symposium on High-Performance Parallel and Distributed Computing (HPDC)",
       "venue_short": "HPDC",
       "abbrev": "",
       "url": "https://doi.org/10.1145/1383422.1383458",
@@ -6602,28 +6602,6 @@
       "citations": 44
     },
     {
-      "key": "doi/10.1109/icdm.2002.1183921",
-      "title": "Adaptive and resource-aware mining of frequent sets",
-      "authors": [
-        "S. Orlando",
-        "P. Palmerini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2003,
-      "venue": "IEEE International Conference on Data Mining",
-      "venue_short": "ICDM",
-      "abbrev": "icdm",
-      "url": "https://doi.org/10.1109/icdm.2002.1183921",
-      "url_publisher": "https://doi.org/10.1109/icdm.2002.1183921",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "data_mining"
-      ],
-      "citations": 155
-    },
-    {
       "key": "manual/conf/fimi/OrlandoLPPS03",
       "title": "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets",
       "authors": [
@@ -6645,6 +6623,28 @@
         "data_mining"
       ],
       "citations": 94
+    },
+    {
+      "key": "doi/10.1109/icdm.2002.1183921",
+      "title": "Adaptive and resource-aware mining of frequent sets",
+      "authors": [
+        "S. Orlando",
+        "P. Palmerini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2003,
+      "venue": "Proceedings",
+      "venue_short": "Proceedings",
+      "abbrev": "",
+      "url": "https://doi.org/10.1109/icdm.2002.1183921",
+      "url_publisher": "https://doi.org/10.1109/icdm.2002.1183921",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "data_mining"
+      ],
+      "citations": 155
     },
     {
       "key": "doi/10.1007/3-540-36569-9_28",
