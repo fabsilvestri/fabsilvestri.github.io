@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-11",
-  "generated_at": "2026-10-11T10:32:36+00:00",
+  "last_updated": "2026-10-12",
+  "generated_at": "2026-10-12T11:36:59+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 282,
@@ -4008,7 +4008,7 @@
       "title": "Misspelling Oblivious Word Embeddings",
       "authors": [
         "A. Piktus",
-        "N. Bora Edizel",
+        "B. Edizel",
         "P. Bojanowski",
         "É. Grave",
         "R. Ferreira",
