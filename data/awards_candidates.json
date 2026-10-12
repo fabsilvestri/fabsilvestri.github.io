@@ -1,0 +1,38 @@
+{
+  "discovered_at": "2026-10-12T13:26:54+00:00",
+  "model": "claude-opus-4-7",
+  "candidates": [
+    {
+      "year": 2007,
+      "title": "Best Paper Award",
+      "issuer": "ECIR (29th European Conference on Information Retrieval)",
+      "description": "For the paper \"Sorting Out the Document Identifier Assignment Problem\" (ECIR 2007), while a researcher at ISTI-CNR.",
+      "source_url": "https://www.cnr.it/it/news/4541/best-paper-award-alla-29th-ecir-2007-premiato-fabrizio-silvestri-ricercatore-isti-cnr",
+      "confidence": "medium"
+    },
+    {
+      "year": 2011,
+      "title": "Yahoo! Faculty Research and Engagement Program Award",
+      "issuer": "Yahoo! Labs",
+      "description": "Recipient of the Yahoo! FREP 2011 in the area \"Computational Advertising, Machine Learning and Search & Web Mining\" while at ISTI-CNR.",
+      "source_url": "https://www.isti.cnr.it/it/comunicazioni/risultati/1669-fabrizio-silvestri-is-the-recipient-of-the-yahoo-faculty-research-and-engagement-program-2011-in-the-computational-advertising-machine-learning-and-search-amp-web-mining-area",
+      "confidence": "high"
+    },
+    {
+      "year": 2018,
+      "title": "Test-of-Time Award",
+      "issuer": "ECIR (European Conference on Information Retrieval)",
+      "description": "Awarded at ECIR 2018 for an article originally published in 2007, as stated on his DIAG Sapienza faculty page and the Nature npj AI editorial board bio.",
+      "source_url": "https://www.diag.uniroma1.it/users/fabrizio_silvestri",
+      "confidence": "medium"
+    }
+  ],
+  "notes": "Verified via institutional sources: (1) ECIR 2007 Best Paper — confirmed on CNR national press-release page (cnr.it/it/news/4541) for the paper 'Sorting Out the Document Identifier Assignment Problem'. (2) Yahoo! FREP 2011 — confirmed on BOTH the CNR national news page (cnr.it/it/news/5174) and the ISTI-CNR institutional announcement (isti.cnr.it/.../1669), hence 'high' confidence. (3) ECIR 2018 Test-of-Time — stated verbatim on his official DIAG Sapienza faculty bio ('He is the holder of the \"test-of-time\" award at the ECIR 2018 conference for an article published in 2007') and corroborated on the Nature npj AI editorial-board page; I could not retrieve a direct ECIR 2018 awards page during this session (search quota exhausted), so confidence is 'medium' rather than 'high'. GAP: The DIAG Sapienza bio claims Silvestri 'is the holder of THREE best paper awards and other international awards'; I could only pin down ONE best paper (ECIR 2007) to a specific URL — the other two should be chased down by a human reviewer (candidates to investigate include best/runner-up awards at SIGIR, CIKM, WSDM, SPIRE, or workshops co-located with these, in the 2008–2020 window spanning his ISTI-CNR / Yahoo / Facebook years). Disambiguation: filtered out an Italian journalist/radio speaker ('Fabrizio Silvestri' on radiospeaker.it) and various unrelated namesakes (Daniele Silvestri – musician; Charles Anthony Silvestri – poet; Oreste Silvestri – painter; Cristian Silvestri – footballer; Fabrizio Michelassi – surgeon at Weill Cornell; Fabrizio Ruggeri – statistician; Fabrizio Zilibotti – economist; Fabrizio Gifuni – actor; Fabrizio Calvi – journalist). Also note: a DIAG seminar-announcement page (diag.uniroma1.it/node/24917) lists best-paper awards at WebSci'22, CIKM'20, ACL'20, SemEval'20, SocInfo'19, RANLP'11 and the Bulgarian President's John Atanasoff award — these belong to the SEMINAR SPEAKER (Preslav Nakov), NOT to Silvestri, who is only the local contact; they were explicitly excluded. No ACM/IEEE Fellow or society-level fellowship was found for Silvestri as of the search date.",
+  "usage": {
+    "input_tokens": 509,
+    "cache_read_input_tokens": 397218,
+    "cache_creation_input_tokens": 31398,
+    "output_tokens": 5997
+  },
+  "stop_reason": "end_turn"
+}
