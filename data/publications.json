@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-10-12",
-  "generated_at": "2026-10-12T11:36:59+00:00",
+  "last_updated": "2026-10-13",
+  "generated_at": "2026-10-13T11:22:04+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 282,
+  "count": 262,
   "counts_by_type": {
     "a_star_conf": 74,
     "q1_journal": 36,
     "other_conf": 72,
-    "other_journal": 9,
+    "other_journal": 10,
     "workshop": 15,
-    "preprint": 76
+    "preprint": 55
   },
   "counts_by_topic": {
-    "ir": 101,
-    "recsys": 45,
-    "llm": 31,
+    "ir": 100,
+    "recsys": 42,
+    "llm": 30,
     "agents": 10,
     "nlp": 20,
-    "gnn": 32,
-    "trust": 53,
-    "task_vectors": 9,
-    "efficient": 58,
-    "misinfo": 15,
+    "gnn": 27,
+    "trust": 47,
+    "task_vectors": 7,
+    "efficient": 57,
+    "misinfo": 13,
     "data_mining": 13,
     "social_net": 13,
-    "misc": 29
+    "misc": 26
   },
   "years": [
     2026,
@@ -585,6 +585,28 @@
       "type": "other_conf",
       "topics": [
         "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.5281/zenodo.23325892",
+      "title": "LLM Model Editing Has a Geometry Problem",
+      "authors": [
+        "G. Trappolini",
+        "A. Santilli",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "",
+      "venue_short": "",
+      "abbrev": "",
+      "url": "https://doi.org/10.5281/zenodo.23325892",
+      "url_publisher": "https://doi.org/10.5281/zenodo.23325892",
+      "url_arxiv": null,
+      "type": "other_journal",
+      "topics": [
+        "llm"
       ],
       "citations": 0
     },
@@ -1569,28 +1591,6 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2502-09193",
-      "title": "Countering Overfitting with Counterfactual Examples",
-      "authors": [
-        "F. Giorgi",
-        "F. Veglianti",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2502.09193",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2502.09193",
-      "type": "preprint",
-      "topics": [
-        "trust"
-      ],
-      "citations": 1
-    },
-    {
       "key": "manual/journals/corr/abs-2508-03606",
       "title": "Demystifying Sequential Recommendations: Counterfactual Explanations via Genetic Algorithms",
       "authors": [
@@ -1613,30 +1613,6 @@
         "trust"
       ],
       "citations": 1
-    },
-    {
-      "key": "journals/corr/abs-2505-15561",
-      "title": "Do RAG Systems Really Suffer From Positional Bias?",
-      "authors": [
-        "F. Cuconasu",
-        "S. Filice",
-        "G. Horowitz",
-        "Y. Maarek",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2505.15561",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2505.15561",
-      "type": "preprint",
-      "topics": [
-        "llm",
-        "trust"
-      ],
-      "citations": 14
     },
     {
       "key": "manual/journals/corr/abs-2505-18088",
@@ -1843,28 +1819,6 @@
         "llm"
       ],
       "citations": 9
-    },
-    {
-      "key": "journals/corr/abs-2502-00432",
-      "title": "The Right to Hide: Masking Community Affiliation via Minimal Graph Rewiring",
-      "authors": [
-        "M. Silvestri",
-        "E. Gabrielli",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2502.00432",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2502.00432",
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 1
     },
     {
       "key": "journals/corr/abs-2510-09551",
@@ -2375,75 +2329,6 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2411-07770",
-      "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
-      "authors": [
-        "G. Di Teodoro",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2411.07770",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2411.07770",
-      "type": "preprint",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 9
-    },
-    {
-      "key": "journals/corr/abs-2401-03824",
-      "title": "A topological description of loss surfaces based on Betti Numbers",
-      "authors": [
-        "M. Sofia Bucarelli",
-        "G. Alessio D’Inverno",
-        "M. Bianchini",
-        "F. Scarselli",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2401.03824",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2401.03824",
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 8
-    },
-    {
-      "key": "journals/corr/abs-2411-03055",
-      "title": "ATM: Improving Model Merging by Alternating Tuning and Merging",
-      "authors": [
-        "L. Zhou",
-        "D. Solombrino",
-        "D. Crisostomi",
-        "M. Sofia Bucarelli",
-        "F. Silvestri",
-        "E. Rodolà"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2411.03055",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2411.03055",
-      "type": "preprint",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 13
-    },
-    {
       "key": "manual/journals/corr/abs-2410-18067",
       "title": "Beyond position: how rotary embeddings shape representations and memory in autoregressive transfomers",
       "authors": [
@@ -2491,28 +2376,6 @@
         "task_vectors"
       ],
       "citations": 7
-    },
-    {
-      "key": "journals/corr/abs-2412-14967",
-      "title": "ECLIPSE: Contrastive Dimension Importance Estimation with Pseudo-Irrelevance Feedback for Dense Retrieval",
-      "authors": [
-        "G. D'Erasmo",
-        "G. Trappolini",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2412.14967",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2412.14967",
-      "type": "preprint",
-      "topics": [
-        "ir"
-      ],
-      "citations": 10
     },
     {
       "key": "journals/corr/abs-2412-08419",
@@ -2610,28 +2473,6 @@
       "citations": 14
     },
     {
-      "key": "journals/corr/abs-2402-14802",
-      "title": "Link Prediction with Physics-Inspired Graph Neural Networks",
-      "authors": [
-        "A. Giuseppe Di Francesco",
-        "C. Francesco",
-        "M. Sofia Bucarelli",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2402.14802",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2402.14802",
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 0
-    },
-    {
       "key": "journals/corr/abs-2410-09295",
       "title": "Natural Language Counterfactual Explanations for Graphs Using Large Language Models",
       "authors": [
@@ -2654,39 +2495,6 @@
         "trust"
       ],
       "citations": 17
-    },
-    {
-      "key": "journals/corr/abs-2403-05185",
-      "title": "Personalized Audiobook Recommendations at Spotify Through Graph Neural Networks",
-      "authors": [
-        "M. De Nadai",
-        "F. Fabbri",
-        "P. Gigioli",
-        "A. Y. Wang",
-        "A. Li",
-        "F. Silvestri",
-        "L. Kim",
-        "S. Lin",
-        "V. Radosavljević",
-        "S. Ghael",
-        "D. Nyhan",
-        "H. Bouchard",
-        "M. Lalmas",
-        "A. Damianou"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2403.05185",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2403.05185",
-      "type": "preprint",
-      "topics": [
-        "recsys",
-        "gnn"
-      ],
-      "citations": 42
     },
     {
       "key": "journals/corr/abs-2406-12535",
@@ -2731,54 +2539,6 @@
         "efficient"
       ],
       "citations": 5
-    },
-    {
-      "key": "journals/corr/abs-2411-10198",
-      "title": "STLight: a Fully Convolutional Approach for Efficient Predictive Learning by Spatio-Temporal joint Processing",
-      "authors": [
-        "A. Alfarano",
-        "A. Alfarano",
-        "L. Friso",
-        "A. Bacciu",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2411.10198",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2411.10198",
-      "type": "preprint",
-      "topics": [
-        "efficient"
-      ],
-      "citations": 5
-    },
-    {
-      "key": "journals/corr/abs-2412-00081",
-      "title": "Task Singular Vectors: Reducing Task Interference in Model Merging",
-      "authors": [
-        "A. Andrea Gargiulo",
-        "D. Crisostomi",
-        "M. Sofia Bucarelli",
-        "S. Scardapane",
-        "F. Silvestri",
-        "E. Rodolà"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2412.00081",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2412.00081",
-      "type": "preprint",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 165
     },
     {
       "key": "journals/corr/abs-2403-05358",
@@ -3074,31 +2834,6 @@
       "citations": 17
     },
     {
-      "key": "journals/corr/abs-2312-15228",
-      "title": "Adversarial Data Poisoning for Fake News Detection: How to Make a Model Misclassify a Target News without Modifying It",
-      "authors": [
-        "F. Siciliano",
-        "L. Maiano",
-        "L. Papa",
-        "F. Baccini",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2312.15228",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2312.15228",
-      "type": "preprint",
-      "topics": [
-        "trust",
-        "misinfo"
-      ],
-      "citations": 4
-    },
-    {
       "key": "journals/corr/abs-2303-08288",
       "title": "Attention-likelihood relationship in transformers",
       "authors": [
@@ -3166,72 +2901,6 @@
       "citations": 38
     },
     {
-      "key": "journals/corr/abs-2303-09470",
-      "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
-      "authors": [
-        "W. Farooq Ahmad",
-        "M. Sofia Bucarelli",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2303.09470",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2303.09470",
-      "type": "preprint",
-      "topics": [
-        "trust"
-      ],
-      "citations": 10
-    },
-    {
-      "key": "journals/corr/abs-2310-04875",
-      "title": "Prompt-to-OS (P2OS): Revolutionizing Operating Systems and Human-Computer Interaction with Integrated AI Generative Models",
-      "authors": [
-        "G. Tolomei",
-        "C. Campagnano",
-        "F. Silvestri",
-        "G. Trappolini"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2310.04875",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2310.04875",
-      "type": "preprint",
-      "topics": [
-        "llm"
-      ],
-      "citations": 18
-    },
-    {
-      "key": "journals/corr/abs-2306-00707",
-      "title": "Renormalized Graph Representations for Node Classification",
-      "authors": [
-        "C. Francesco",
-        "G. Trappolini",
-        "A. Bacciu",
-        "P. Lió",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2306.00707",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2306.00707",
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 1
-    },
-    {
       "key": "journals/corr/abs-2307-12798",
       "title": "RRAML: Reinforced Retrieval Augmented Machine Learning",
       "authors": [
@@ -3255,52 +2924,6 @@
         "llm"
       ],
       "citations": 22
-    },
-    {
-      "key": "journals/corr/abs-2309-17116",
-      "title": "Sheaf Hypergraph Networks",
-      "authors": [
-        "I. Duta",
-        "G. Cassarà",
-        "F. Silvestri",
-        "P. Lió"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1697629",
-      "url_publisher": "https://hdl.handle.net/11573/1697629",
-      "url_arxiv": "https://arxiv.org/abs/2309.17116",
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 106
-    },
-    {
-      "key": "journals/corr/abs-2305-00574",
-      "title": "The Dark Side of Explanations: Poisoning Recommender Systems with Counterfactual Examples",
-      "authors": [
-        "Z. Chen",
-        "F. Silvestri",
-        "J. Wang",
-        "Y. Zhang",
-        "G. Tolomei"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2305.00574",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2305.00574",
-      "type": "preprint",
-      "topics": [
-        "recsys",
-        "trust"
-      ],
-      "citations": 49
     },
     {
       "key": "doi/10.1145/3511808.3557429",
@@ -3479,34 +3102,6 @@
       "citations": 14
     },
     {
-      "key": "journals/corr/abs-2205-04274",
-      "title": "Detecting and Understanding Harmful Memes: A Survey",
-      "authors": [
-        "S. Sharma",
-        "F. Alam",
-        "M. Shad Akhtar",
-        "D. Petkov Dimitrov",
-        "G. Da San Martino",
-        "H. Firooz",
-        "A. Y. Halevy",
-        "F. Silvestri",
-        "P. Nakov",
-        "T. Chakraborty"
-      ],
-      "year": 2022,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2205.04274",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2205.04274",
-      "type": "preprint",
-      "topics": [
-        "misinfo"
-      ],
-      "citations": 133
-    },
-    {
       "key": "journals/corr/abs-2207-13586",
       "title": "Encoding Concepts in Graph Neural Networks",
       "authors": [
@@ -3558,30 +3153,6 @@
         "trust"
       ],
       "citations": 56
-    },
-    {
-      "key": "journals/corr/abs-2209-09688",
-      "title": "Sparse Vicious Attacks on Graph Neural Networks",
-      "authors": [
-        "G. Trappolini",
-        "V. Maiorca",
-        "S. Severino",
-        "E. Rodolà",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2022,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2209.09688",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2209.09688",
-      "type": "preprint",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 15
     },
     {
       "key": "doi/10.18653/v1/2021.acl-long.241",
@@ -3808,31 +3379,6 @@
       "citations": 369
     },
     {
-      "key": "journals/corr/abs-2104-00353",
-      "title": "CycleDRUMS: Automatic Drum Arrangement For Bass Lines Using CycleGAN",
-      "authors": [
-        "G. Barnabò",
-        "G. Trappolini",
-        "L. Lastilla",
-        "C. Campagnano",
-        "A. Fan",
-        "F. Petroni",
-        "F. Silvestri"
-      ],
-      "year": 2021,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2104.00353",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2104.00353",
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 13
-    },
-    {
       "key": "journals/corr/abs-2109-08013",
       "title": "Detecting Propaganda Techniques in Memes",
       "authors": [
@@ -3857,28 +3403,6 @@
         "misinfo"
       ],
       "citations": 152
-    },
-    {
-      "key": "journals/corr/abs-2110-02775",
-      "title": "NEWRON: A New Generalization of the Artificial Neuron to Enhance the Interpretability of Neural Networks",
-      "authors": [
-        "F. Siciliano",
-        "M. Sofia Bucarelli",
-        "G. Tolomei",
-        "F. Silvestri"
-      ],
-      "year": 2021,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2110.02775",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2110.02775",
-      "type": "preprint",
-      "topics": [
-        "trust"
-      ],
-      "citations": 14
     },
     {
       "key": "journals/corr/abs-2110-11960",
