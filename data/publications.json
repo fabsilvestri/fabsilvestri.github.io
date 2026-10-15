@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-14",
-  "generated_at": "2026-10-14T09:14:40+00:00",
+  "last_updated": "2026-10-15",
+  "generated_at": "2026-10-15T08:47:05+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 262,
@@ -285,7 +285,7 @@
       "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
       "authors": [
         "E. Mule",
-        "S. Fiorini",
+        "F. Stefano",
         "A. Purificato",
         "F. Siciliano",
         "S. Coniglio",
@@ -1991,7 +1991,7 @@
         "M. De Nadai",
         "F. Fabbri",
         "P. Gigioli",
-        "A. Y. Wang",
+        "A. Wang",
         "A. Li",
         "F. Silvestri",
         "L. Kim",
@@ -2354,7 +2354,7 @@
       "authors": [
         "Z. Chen",
         "J. Wang",
-        "Z. Jun",
+        "J. Zhuang",
         "A. Gowtham Reddy",
         "F. Silvestri",
         "J. Huang",
@@ -2567,7 +2567,7 @@
       "authors": [
         "E. Palumbo",
         "A. Damianou",
-        "A. Y. Wang",
+        "A. Wang",
         "A. Liu",
         "G. Fazelnia",
         "F. Fabbri",
@@ -4100,7 +4100,7 @@
       "key": "doi/10.1007/978-3-319-25252-0_26",
       "title": "MUSETS: Diversity-Aware Web Query Suggestions for Shortening User Sessions",
       "authors": [
-        "M. Sydow",
+        "M. Sydow A",
         "C. Ioana Muntean",
         "F. Maria Nardini",
         "S. Matwin",
@@ -4337,7 +4337,7 @@
         "C. Ioana Muntean",
         "F. Maria Nardini",
         "F. Silvestri",
-        "M. Sydow"
+        "M. Sydow A"
       ],
       "year": 2013,
       "venue": "International World Wide Web Conference",
@@ -4400,7 +4400,7 @@
       "key": "doi/10.1145/2396761.2396786",
       "title": "Making your interests follow you on twitter",
       "authors": [
-        "M. Pennacchiotti",
+        "M. Pennacchiotti B",
         "F. Silvestri",
         "H. Vahabi",
         "R. Venturini"
