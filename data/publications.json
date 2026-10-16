@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-15",
-  "generated_at": "2026-10-15T08:47:05+00:00",
+  "last_updated": "2026-10-16",
+  "generated_at": "2026-10-16T08:42:25+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 262,
