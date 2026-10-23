@@ -1,22 +1,22 @@
 {
-  "last_updated": "2026-10-22",
-  "generated_at": "2026-10-22T09:06:59+00:00",
+  "last_updated": "2026-10-23",
+  "generated_at": "2026-10-23T09:02:49+00:00",
   "citations_fetched_at": "2026-09-16",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 262,
+  "count": 264,
   "counts_by_type": {
     "a_star_conf": 74,
     "q1_journal": 36,
     "other_conf": 72,
-    "other_journal": 10,
+    "other_journal": 11,
     "workshop": 15,
-    "preprint": 55
+    "preprint": 56
   },
   "counts_by_topic": {
-    "ir": 100,
+    "ir": 101,
     "recsys": 42,
     "llm": 30,
-    "agents": 10,
+    "agents": 11,
     "nlp": 20,
     "gnn": 27,
     "trust": 47,
@@ -25,7 +25,7 @@
     "misinfo": 13,
     "data_mining": 13,
     "social_net": 13,
-    "misc": 26
+    "misc": 27
   },
   "years": [
     2026,
@@ -633,6 +633,30 @@
       "citations": 0
     },
     {
+      "key": "doi/10.1371/journal.pone.0360157",
+      "title": "How AI agents search",
+      "authors": [
+        "F. Pezzuti",
+        "O. Frieder",
+        "F. Silvestri",
+        "S. MacAvaney",
+        "N. Tonellotto"
+      ],
+      "year": 2026,
+      "venue": "PLoS ONE",
+      "venue_short": "PO",
+      "abbrev": "",
+      "url": "https://doi.org/10.1371/journal.pone.0360157",
+      "url_publisher": "https://doi.org/10.1371/journal.pone.0360157",
+      "url_arxiv": null,
+      "type": "other_journal",
+      "topics": [
+        "ir",
+        "agents"
+      ],
+      "citations": 0
+    },
+    {
       "key": "doi/10.1007/978-3-032-11381-8_17",
       "title": "ATM: Improving Model Merging by Alternating Tuning and Merging",
       "authors": [
@@ -797,6 +821,35 @@
       "type": "preprint",
       "topics": [
         "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2610-28458",
+      "title": "LocaLeJEPA: Maximum Entropy Representations under Geometric Priors",
+      "authors": [
+        "K. Tandon",
+        "A. Borgi",
+        "P. Snopov",
+        "I. García‐Redondo",
+        "D. D’Ascenzo",
+        "S. Cultrera di Montesano",
+        "F. Silvestri",
+        "P. Liò",
+        "F. Dominici",
+        "R. Balestriero",
+        "C. Battiloro"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2610.28458",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2610.28458",
+      "type": "preprint",
+      "topics": [
+        "misc"
       ],
       "citations": 0
     },
