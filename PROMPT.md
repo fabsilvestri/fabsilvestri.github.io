@@ -206,7 +206,7 @@ python3 scripts/refresh_citations.py        # Scholar → data/citations.json (s
 
 ## Automation that comes with the clone
 
-The cloned repo carries three GitHub Actions workflows — all per-person-agnostic,
+The cloned repo carries two GitHub Actions workflows — all per-person-agnostic,
 copy verbatim, no edits needed:
 
 - `.github/workflows/update-publications.yml` — runs `fetch_publications.py`
@@ -215,11 +215,6 @@ copy verbatim, no edits needed:
   The page fetches `data/publications.json` at runtime with `cache: 'no-store'`,
   so refreshed counters land for visitors on the next page load with no
   cache-buster churn.
-- `.github/workflows/refresh-citations.yml` — runs `refresh_citations.py`
-  every Sunday at 05:15 UTC to scrape Google Scholar. The script retries
-  the fetch up to 3 times with exponential backoff before giving up; the
-  workflow itself uses `continue-on-error` for the scrape step so a hard
-  block doesn't fail the run, and the next week tries again.
 - `.github/workflows/discover-awards.yml` — runs `discover_awards_claude.py`
   every Monday at 05:30 UTC and opens a PR with `data/awards_candidates.{json,md}`
   for review.

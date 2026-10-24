@@ -35,7 +35,6 @@ titles and proceedings volumes OpenAlex leaves incomplete.
 │   └── requirements.txt
 └── .github/workflows/
     ├── update-publications.yml       # nightly cron (04:00 UTC)
-    ├── refresh-citations.yml         # weekly cron (Sun 05:15 UTC)
     ├── discover-awards.yml           # weekly cron (Mon 05:30 UTC)
     ├── bump-cache-buster.yml         # on push: rehash CSS/JS, rewrite index.html
     └── pages.yml                     # deploy on push to main (and after bot workflows)
