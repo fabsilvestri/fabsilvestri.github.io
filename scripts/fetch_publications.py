@@ -186,6 +186,7 @@ VENUE_DISPLAY = {
     "concurrency": "Concurrency",
     "fgcs":    "FGCS",
     "sigirforum": "SIGIR Forum",
+    "plosone": "PLoS ONE",
     "la-web":  "LA-WEB",
 }
 

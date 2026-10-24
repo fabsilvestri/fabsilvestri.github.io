@@ -90,6 +90,7 @@ journal_issn:
   # ranked automatically once Scimago indexes it. The DBLP abbreviation is
   # a guess until a paper from it is indexed.
   npjai:       ["3005-1460"]                # npj Artificial Intelligence
+  plosone:     ["1932-6203"]                # PLoS ONE — Scimago Q1 in Multidisciplinary only
   # Other journals that appear in publications but are unlikely Q1-CS
   # (kept here so the ISSN column is self-documenting; Scimago decides)
   concurrency: ["1532-0626", "1532-0634"]   # Concurrency and Computation
@@ -105,6 +106,8 @@ journal_issn:
 # the ISSN/Scimago join entirely.
 journal_q1_override:
   - tors    # ACM Trans. on Recommender Systems — Q1 on scimagojr.com (journalsearch.php?q=18997), missing from sjrdata 2024 parquet.
+  - npjai   # npj Artificial Intelligence — Nature Portfolio, no Scimago quartile yet; counted as Q1 by the author's call.
+  - plosone # PLoS ONE — Scimago Q1 (Multidisciplinary, no CS category); counted as Q1 by the author's call.
 
 # Explicit record keys to drop. Use this for one-off non-papers
 # (keynotes, invited talks, panels, tutorials, abstracts) whose venue
@@ -238,6 +241,7 @@ venue_patterns:
   - ['Natural Language Processing and Information Systems', nldb]
   # --- ML / AI / CV ---
   - ['Computer Vision and Pattern Recognition', cvpr]
+  - ['European Conference on Computer Vision|\bECCV\b', eccv]   # Springer titles the volume "Computer Vision – ECCV 2026"
   - ['Winter Conference on Applications of Computer Vision', wacv]
   - ['International Conference on Machine Learning', icml]
   - ['(Neural Information Processing Systems|NeurIPS)', nips]
