@@ -221,7 +221,7 @@
       "Selected: top " + SELECTED_TOP_N + " most-cited papers in CORE A/A*",
       "conferences or Scimago Q1 (Computer Science) journals.",
       "Citations: Google Scholar (cached).",
-      "Source: https://dblp.org/pid/s/FabrizioSilvestri.html",
+      "Source: OpenAlex (https://openalex.org/authors/A5044165871)",
       "Generated: " + (data.last_updated || new Date().toISOString().slice(0, 10)),
       "Count: " + pubs.length,
       "",
