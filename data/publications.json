@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-10-24",
-  "generated_at": "2026-10-24T08:35:27+00:00",
+  "last_updated": "2026-10-25",
+  "generated_at": "2026-10-25T08:54:31+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 264,
+  "count": 265,
   "counts_by_type": {
     "a_star_conf": 75,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 9,
     "workshop": 15,
-    "preprint": 56
+    "preprint": 57
   },
   "counts_by_topic": {
     "ir": 101,
     "recsys": 42,
-    "llm": 30,
+    "llm": 31,
     "agents": 11,
     "nlp": 20,
     "gnn": 27,
@@ -268,7 +268,7 @@
         "N. García"
       ],
       "year": 2026,
-      "venue": "Computer Vision – ECCV 2026",
+      "venue": "European Conference on Computer Vision",
       "venue_short": "ECCV",
       "abbrev": "eccv",
       "url": "https://doi.org/10.1007/978-3-032-37324-3_15",
@@ -850,6 +850,30 @@
       "type": "preprint",
       "topics": [
         "misc"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2610-31572",
+      "title": "On the Token Collapse Phenomenon in Textual Graph Soft Prompting",
+      "authors": [
+        "A. Giuseppe Di Francesco",
+        "R. Jain",
+        "F. Maria Nardini",
+        "N. Tonellotto",
+        "P. Liò",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2610.31572",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2610.31572",
+      "type": "preprint",
+      "topics": [
+        "llm"
       ],
       "citations": 0
     },
