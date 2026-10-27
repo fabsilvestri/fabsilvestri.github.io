@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-10-26",
-  "generated_at": "2026-10-26T09:37:17+00:00",
+  "last_updated": "2026-10-27",
+  "generated_at": "2026-10-27T09:33:26+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 265,
   "counts_by_type": {
-    "a_star_conf": 75,
+    "a_star_conf": 78,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 9,
-    "workshop": 15,
+    "workshop": 12,
     "preprint": 57
   },
   "counts_by_topic": {
@@ -1379,7 +1379,7 @@
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "2025 3rd International Conference on Federated Learning Technologies and Applications (FLTA)",
+      "venue": "International Conference on Federated Learning Technologies and Applications (FLTA)",
       "venue_short": "FLTA",
       "abbrev": "",
       "url": "https://doi.org/10.1109/flta67013.2025.11336369",
@@ -3721,6 +3721,30 @@
       "citations": 377
     },
     {
+      "key": "doi/10.1145/3041021.3054193",
+      "title": "Friendly, Appealing or Both?: Characterising User Experience in Sponsored Search Landing Pages",
+      "authors": [
+        "M. Bron",
+        "М. Реди",
+        "M. Lalmas",
+        "F. Silvestri",
+        "H. Evans",
+        "M. Chute"
+      ],
+      "year": 2017,
+      "venue": "International World Wide Web Conference",
+      "venue_short": "WWW",
+      "abbrev": "www",
+      "url": "https://doi.org/10.1145/3041021.3054193",
+      "url_publisher": "https://doi.org/10.1145/3041021.3054193",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 4
+    },
+    {
       "key": "doi/10.1007/s13278-017-0449-y",
       "title": "Adult content consumption in online social networks",
       "authors": [
@@ -3741,30 +3765,6 @@
         "social_net"
       ],
       "citations": 13
-    },
-    {
-      "key": "doi/10.1145/3041021.3054193",
-      "title": "Friendly, Appealing or Both?: Characterising User Experience in Sponsored Search Landing Pages",
-      "authors": [
-        "M. Bron",
-        "М. Реди",
-        "M. Lalmas",
-        "F. Silvestri",
-        "H. Evans",
-        "M. Chute"
-      ],
-      "year": 2017,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "https://doi.org/10.1145/3041021.3054193",
-      "url_publisher": "https://doi.org/10.1145/3041021.3054193",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "ir"
-      ],
-      "citations": 4
     },
     {
       "key": "doi/10.1145/2983323.2983840",
@@ -4752,6 +4752,53 @@
       "citations": 186
     },
     {
+      "key": "doi/10.1145/1963192.1963202",
+      "title": "Efficient diversification of search results using query logs",
+      "authors": [
+        "G. Capannini",
+        "F. Maria Nardini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2011,
+      "venue": "International World Wide Web Conference",
+      "venue_short": "WWW",
+      "abbrev": "www",
+      "url": "https://doi.org/10.1145/1963192.1963202",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963202",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "efficient"
+      ],
+      "citations": 8
+    },
+    {
+      "key": "doi/10.1145/1963192.1963201",
+      "title": "Recommendations for the long tail by term-query graph",
+      "authors": [
+        "F. Bonchi",
+        "R. Perego",
+        "F. Silvestri",
+        "H. Vahabi",
+        "R. Venturini"
+      ],
+      "year": 2011,
+      "venue": "International World Wide Web Conference",
+      "venue_short": "WWW",
+      "abbrev": "www",
+      "url": "https://doi.org/10.1145/1963192.1963201",
+      "url_publisher": "https://doi.org/10.1145/1963192.1963201",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "ir",
+        "recsys"
+      ],
+      "citations": 29
+    },
+    {
       "key": "doi/10.1016/j.ipm.2011.07.005",
       "title": "Generating suggestions for queries in the long tail with an inverted index",
       "authors": [
@@ -4817,53 +4864,6 @@
         "efficient"
       ],
       "citations": 118
-    },
-    {
-      "key": "doi/10.1145/1963192.1963202",
-      "title": "Efficient diversification of search results using query logs",
-      "authors": [
-        "G. Capannini",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2011,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "https://doi.org/10.1145/1963192.1963202",
-      "url_publisher": "https://doi.org/10.1145/1963192.1963202",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 8
-    },
-    {
-      "key": "doi/10.1145/1963192.1963201",
-      "title": "Recommendations for the long tail by term-query graph",
-      "authors": [
-        "F. Bonchi",
-        "R. Perego",
-        "F. Silvestri",
-        "H. Vahabi",
-        "R. Venturini"
-      ],
-      "year": 2011,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "https://doi.org/10.1145/1963192.1963201",
-      "url_publisher": "https://doi.org/10.1145/1963192.1963201",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "ir",
-        "recsys"
-      ],
-      "citations": 29
     },
     {
       "key": "journals/corr/abs-1105-4255",
@@ -5365,7 +5365,7 @@
         "S. Orlando"
       ],
       "year": 2009,
-      "venue": "2009 International Conference on Ultra Modern Telecommunications & Workshops",
+      "venue": "International Congress on Ultra Modern Telecommunications and Control Systems and Workshops (ICUMT)",
       "venue_short": "ICUMT",
       "abbrev": "icumt",
       "url": "https://doi.org/10.1109/icumt.2009.5345355",
@@ -5730,7 +5730,7 @@
         "F. Silvestri"
       ],
       "year": 2007,
-      "venue": "Proceedings of the 2nd International ICST Conference on Scalable Information Systems",
+      "venue": "Scalable Information Systems",
       "venue_short": "INFOSCALE",
       "abbrev": "infoscale",
       "url": "https://doi.org/10.4108/infoscale.2007.227",
@@ -5884,7 +5884,7 @@
         "D. Laforenza"
       ],
       "year": 2005,
-      "venue": "International Conference on Information Technology: Coding and Computing (ITCC'05) - Volume II",
+      "venue": "International Conference on Information Technology: Coding and Computing (ITCC)",
       "venue_short": "ITCC",
       "abbrev": "itcc",
       "url": "https://doi.org/10.1109/itcc.2005.108",
@@ -5951,9 +5951,9 @@
         "D. Laforenza"
       ],
       "year": 2004,
-      "venue": "IEEE International Symposium on Cluster, Cloud and Grid Computing",
+      "venue": "IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGrid)",
       "venue_short": "CCGRID",
-      "abbrev": "ccgrid",
+      "abbrev": "",
       "url": "https://doi.org/10.1109/ccgrid.2004.1336708",
       "url_publisher": "https://doi.org/10.1109/ccgrid.2004.1336708",
       "url_arxiv": null,
