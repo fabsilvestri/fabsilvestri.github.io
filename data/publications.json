@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-27",
-  "generated_at": "2026-10-27T09:33:26+00:00",
+  "last_updated": "2026-10-28",
+  "generated_at": "2026-10-28T10:17:53+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 265,
@@ -1401,9 +1401,9 @@
         "N. Tonellotto"
       ],
       "year": 2025,
-      "venue": "International Conference on the Theory of Information Retrieval",
+      "venue": "ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)",
       "venue_short": "ICTIR",
-      "abbrev": "ictir",
+      "abbrev": "",
       "url": "https://doi.org/10.1145/3731120.3744579",
       "url_publisher": "https://doi.org/10.1145/3731120.3744579",
       "url_arxiv": "https://arxiv.org/abs/2412.14967",
@@ -1424,9 +1424,9 @@
         "F. Silvestri"
       ],
       "year": 2025,
-      "venue": "International Conference on the Theory of Information Retrieval",
+      "venue": "ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)",
       "venue_short": "ICTIR",
-      "abbrev": "ictir",
+      "abbrev": "",
       "url": "https://doi.org/10.1145/3731120.3744575",
       "url_publisher": "https://doi.org/10.1145/3731120.3744575",
       "url_arxiv": null,
@@ -5479,7 +5479,7 @@
         "R. Perego"
       ],
       "year": 2008,
-      "venue": "2008 Latin American Web Conference",
+      "venue": "Latin American Web Congress",
       "venue_short": "LA-WEB",
       "abbrev": "la-web",
       "url": "https://doi.org/10.1109/la-web.2008.21",
@@ -5795,7 +5795,7 @@
         "D. Laforenza"
       ],
       "year": 2006,
-      "venue": "Proceedings of the 1st international conference on Scalable information systems - InfoScale '06",
+      "venue": "Scalable Information Systems",
       "venue_short": "INFOSCALE",
       "abbrev": "infoscale",
       "url": "https://doi.org/10.1145/1146847.1146881",
