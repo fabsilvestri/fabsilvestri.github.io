@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-28",
-  "generated_at": "2026-10-28T10:17:53+00:00",
+  "last_updated": "2026-10-29",
+  "generated_at": "2026-10-29T10:41:05+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 265,
@@ -904,7 +904,7 @@
       "key": "journals/corr/abs-2602-06652",
       "title": "Same Answer, Different Representations: Hidden instability in VLMs",
       "authors": [
-        "W. Farooq Ahmad",
+        "F. Ahmad Wani",
         "A. Suglia",
         "R. Saxena",
         "A. Pradipta Gema",
