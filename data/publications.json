@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-10-30",
-  "generated_at": "2026-10-30T10:41:26+00:00",
+  "last_updated": "2026-10-31",
+  "generated_at": "2026-10-31T10:08:39+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 265,
+  "count": 266,
   "counts_by_type": {
-    "a_star_conf": 78,
+    "a_star_conf": 82,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 9,
     "workshop": 12,
-    "preprint": 57
+    "preprint": 54
   },
   "counts_by_topic": {
     "ir": 101,
     "recsys": 42,
     "llm": 31,
     "agents": 11,
-    "nlp": 20,
+    "nlp": 23,
     "gnn": 27,
-    "trust": 47,
+    "trust": 48,
     "task_vectors": 7,
     "efficient": 57,
     "misinfo": 13,
     "data_mining": 13,
     "social_net": 13,
-    "misc": 27
+    "misc": 26
   },
   "years": [
     2026,
@@ -133,6 +133,31 @@
         "nlp"
       ],
       "citations": 20
+    },
+    {
+      "key": "doi/10.18653/2026.findings-emnlp.1708",
+      "title": "I Wrote This Because of That: Interpretable Radiology Report Generation via Visual Prototypes",
+      "authors": [
+        "M. Salmè",
+        "F. Siciliano",
+        "F. Silvestri",
+        "P. Soda",
+        "R. Sicilia",
+        "V. Guarrasi"
+      ],
+      "year": 2026,
+      "venue": "Association for Computational Linguistics",
+      "venue_short": "ACL",
+      "abbrev": "acl",
+      "url": "https://doi.org/10.18653/2026.findings-emnlp.1708",
+      "url_publisher": "https://doi.org/10.18653/2026.findings-emnlp.1708",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "nlp",
+        "trust"
+      ],
+      "citations": 0
     },
     {
       "key": "doi/10.18653/v1/2026.findings-acl.583",
@@ -277,6 +302,81 @@
       "type": "a_star_conf",
       "topics": [
         "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.18653/2026.emnlp-main.1172",
+      "title": "QUORUM: QUality-Optimized Routing Using Multiple annotators",
+      "authors": [
+        "A. Purificato",
+        "M. Sofia Bucarelli",
+        "A. Bacciu",
+        "A. Mantrach",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "Empirical Methods in Natural Language Processing",
+      "venue_short": "EMNLP",
+      "abbrev": "emnlp",
+      "url": "https://doi.org/10.18653/2026.emnlp-main.1172",
+      "url_publisher": "https://doi.org/10.18653/2026.emnlp-main.1172",
+      "url_arxiv": "https://arxiv.org/abs/2608.27974",
+      "type": "a_star_conf",
+      "topics": [
+        "nlp"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.18653/2026.emnlp-main.1803",
+      "title": "Same Answer, Different Representations: Hidden instability in VLMs",
+      "authors": [
+        "F. Ahmad Wani",
+        "A. Suglia",
+        "R. Saxena",
+        "A. Pradipta Gema",
+        "W. Kwan",
+        "F. Barez",
+        "M. Sofia Bucarelli",
+        "F. Silvestri",
+        "P. Minervini"
+      ],
+      "year": 2026,
+      "venue": "Empirical Methods in Natural Language Processing",
+      "venue_short": "EMNLP",
+      "abbrev": "emnlp",
+      "url": "https://doi.org/10.18653/2026.emnlp-main.1803",
+      "url_publisher": "https://doi.org/10.18653/2026.emnlp-main.1803",
+      "url_arxiv": "https://arxiv.org/abs/2602.06652",
+      "type": "a_star_conf",
+      "topics": [
+        "llm",
+        "nlp",
+        "trust"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.18653/2026.emnlp-main.1160",
+      "title": "Select, Label, Evaluate: Active Testing in NLP",
+      "authors": [
+        "A. Purificato",
+        "M. Sofia Bucarelli",
+        "A. Bacciu",
+        "F. Silvestri",
+        "A. Mantrach"
+      ],
+      "year": 2026,
+      "venue": "Empirical Methods in Natural Language Processing",
+      "venue_short": "EMNLP",
+      "abbrev": "emnlp",
+      "url": "https://doi.org/10.18653/2026.emnlp-main.1160",
+      "url_publisher": "https://doi.org/10.18653/2026.emnlp-main.1160",
+      "url_arxiv": "https://arxiv.org/abs/2603.21840",
+      "type": "a_star_conf",
+      "topics": [
+        "nlp"
       ],
       "citations": 0
     },
@@ -876,80 +976,6 @@
         "llm"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2608-27974",
-      "title": "QUORUM: QUality-Optimized Routing Using Multiple annotators",
-      "authors": [
-        "A. Purificato",
-        "M. Sofia Bucarelli",
-        "A. Bacciu",
-        "A. Mantrach",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2608.27974",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2608.27974",
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2602-06652",
-      "title": "Same Answer, Different Representations: Hidden instability in VLMs",
-      "authors": [
-        "F. Ahmad Wani",
-        "A. Suglia",
-        "R. Saxena",
-        "A. Pradipta Gema",
-        "W. Kwan",
-        "F. Barez",
-        "M. Sofia Bucarelli",
-        "F. Silvestri",
-        "P. Minervini"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2602.06652",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2602.06652",
-      "type": "preprint",
-      "topics": [
-        "llm",
-        "trust"
-      ],
-      "citations": 2
-    },
-    {
-      "key": "journals/corr/abs-2603-21840",
-      "title": "Select, Label, Evaluate: Active Testing in NLP",
-      "authors": [
-        "A. Purificato",
-        "M. Sofia Bucarelli",
-        "A. Bacciu",
-        "F. Silvestri",
-        "A. Mantrach"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2603.21840",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2603.21840",
-      "type": "preprint",
-      "topics": [
-        "nlp"
-      ],
-      "citations": 2
     },
     {
       "key": "journals/corr/abs-2609-18695",
@@ -3442,11 +3468,11 @@
         "F. Silvestri"
       ],
       "year": 2021,
-      "venue": "Sanjay, V, Lohse, D & Jalaal, M 2021 'Bursting Bubble in a Viscoplastic Medium' v1 edn, Ithaca, NY. https://doi.org/10.48550/arXiv.2102.03322",
+      "venue": "Lucic, A, ter Hoeve, M, Tolomei, G, de Rijke, M & Silvestri, F 2021 'CF-GNNExplainer: Counterfactual Explanations for Graph Neural Networks' v1 edn. https://doi.org/10.48550/arXiv.2102.03322",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://hdl.handle.net/11245.1/d9c0804d-ef38-452b-8fb7-eb061065183c",
-      "url_publisher": "https://hdl.handle.net/11245.1/d9c0804d-ef38-452b-8fb7-eb061065183c",
+      "url": "https://handle.uba.uva.nl/personal/pure/en/publications/cfgnnexplainer-counterfactual-explanations-for-graph-neural-networks(f53c8414-5ff1-4ecd-8180-3bc8bff16156).html",
+      "url_publisher": "https://handle.uba.uva.nl/personal/pure/en/publications/cfgnnexplainer-counterfactual-explanations-for-graph-neural-networks(f53c8414-5ff1-4ecd-8180-3bc8bff16156).html",
       "url_arxiv": "https://arxiv.org/abs/2102.03322",
       "type": "preprint",
       "topics": [
