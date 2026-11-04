@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-03",
-  "generated_at": "2026-11-03T11:33:44+00:00",
+  "last_updated": "2026-11-04",
+  "generated_at": "2026-11-04T11:49:05+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 266,
+  "count": 268,
   "counts_by_type": {
-    "a_star_conf": 82,
+    "a_star_conf": 85,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 9,
     "workshop": 12,
-    "preprint": 54
+    "preprint": 53
   },
   "counts_by_topic": {
     "ir": 101,
@@ -21,11 +21,11 @@
     "gnn": 27,
     "trust": 48,
     "task_vectors": 7,
-    "efficient": 57,
+    "efficient": 58,
     "misinfo": 13,
     "data_mining": 13,
     "social_net": 13,
-    "misc": 26
+    "misc": 27
   },
   "years": [
     2026,
@@ -231,6 +231,72 @@
         "trust"
       ],
       "citations": 4
+    },
+    {
+      "key": "doi/10.1145/3799682.3839283",
+      "title": "GREEN-AI: Grounding Research on Energy- and Resource-Efficient Networks for Sustainable AI",
+      "authors": [
+        "F. Betello",
+        "A. Purificato",
+        "V. Vineis",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM International Conference on Information and Knowledge Management",
+      "venue_short": "CIKM",
+      "abbrev": "cikm",
+      "url": "https://doi.org/10.1145/3799682.3839283",
+      "url_publisher": "https://doi.org/10.1145/3799682.3839283",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.1145/3799682.3840825",
+      "title": "SA-GSL: Simulated Annealing for Graph Structure Learning",
+      "authors": [
+        "A. Sbandi",
+        "F. Siciliano",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM International Conference on Information and Knowledge Management",
+      "venue_short": "CIKM",
+      "abbrev": "cikm",
+      "url": "https://doi.org/10.1145/3799682.3840825",
+      "url_publisher": "https://doi.org/10.1145/3799682.3840825",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "misc"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.1145/3799682.3840731",
+      "title": "SURF: Subtractive Updates for Recommender Forgetting",
+      "authors": [
+        "F. Betello",
+        "A. Purificato",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM International Conference on Information and Knowledge Management",
+      "venue_short": "CIKM",
+      "abbrev": "cikm",
+      "url": "https://doi.org/10.1145/3799682.3840731",
+      "url_publisher": "https://doi.org/10.1145/3799682.3840731",
+      "url_arxiv": "https://arxiv.org/abs/2609.18695",
+      "type": "a_star_conf",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 0
     },
     {
       "key": "doi/10.18653/v1/2026.eacl-long.391",
@@ -974,28 +1040,6 @@
       "type": "preprint",
       "topics": [
         "llm"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-2609-18695",
-      "title": "SURF: Subtractive Updates for Recommender Forgetting",
-      "authors": [
-        "F. Betello",
-        "A. Purificato",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://doi.org/10.1145/3799682.3840731",
-      "url_publisher": "https://doi.org/10.1145/3799682.3840731",
-      "url_arxiv": "https://arxiv.org/abs/2609.18695",
-      "type": "preprint",
-      "topics": [
-        "recsys"
       ],
       "citations": 0
     },
