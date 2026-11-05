@@ -610,6 +610,53 @@
       });
   }
 
+  // Homepage "Recent publications" panel: the newest top-tier papers
+  // (CORE A/A* conferences, Scimago Q1 journals), newest year first and
+  // most-cited first within a year. Refreshes with the nightly sync.
+  var RECENT_N = 4;
+  function shortAuthors(authors) {
+    return (authors || []).map(function (a) {
+      var parts = String(a).trim().split(/\s+/);
+      return parts[parts.length - 1];
+    }).join(", ");
+  }
+  function renderRecent() {
+    var list = byId("recent-list");
+    var data = window.PUBLICATIONS;
+    if (!list || !data) return;
+    var pubs = (data.publications || [])
+      .filter(isTopTier)
+      .sort(function (a, b) {
+        return ((b.year || 0) - (a.year || 0)) || ((b.citations || 0) - (a.citations || 0));
+      })
+      .slice(0, RECENT_N);
+    if (!pubs.length) { list.innerHTML = ""; return; }
+    list.innerHTML = pubs.map(function (p) {
+      var yy = p.year ? " '" + String(p.year).slice(-2) : "";
+      var title = escapeHtml(p.title);
+      if (p.url) {
+        title = '<a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">' + title + "</a>";
+      }
+      return '<li><span class="recent-venue">' + escapeHtml((p.venue_short || TYPE_FALLBACK[p.type] || "") + yy) +
+        '</span><span class="recent-title">' + title +
+        '</span><span class="recent-authors">' + escapeHtml(shortAuthors(p.authors)) + "</span></li>";
+    }).join("");
+  }
+
+  // Links elsewhere on the page (e.g. the research questions) that jump to
+  // the publication list pre-filtered by topic: <a data-topic-link="ir">.
+  function initTopicLinks() {
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest("[data-topic-link]");
+      if (!link) return;
+      e.preventDefault();
+      if (state.type === "selected") setTypeFilter("all");
+      setTopicFilter(link.getAttribute("data-topic-link"));
+      var pubs = byId("publications");
+      if (pubs) pubs.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   function renderAll() {
     if (!window.PUBLICATIONS) return; // nothing to render
     updateStats();
@@ -620,6 +667,8 @@
     renderAwards();
     renderTalks();
     renderServices();
+    renderRecent();
+    initTopicLinks();
     render();
   }
 
