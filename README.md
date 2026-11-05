@@ -171,7 +171,9 @@ so the abbreviation has to be recovered before anything can be ranked.
   would otherwise swallow it.
 - `venue_doi_patterns` — regex over the DOI → abbrev, tried first. The
   ACL Anthology encodes the venue in the DOI (`2025.emnlp-main.1422`),
-  which is more reliable than its prose title.
+  which is more reliable than its prose title. The patterns accept the
+  DOI with or without the `v1/` segment, because some new Anthology
+  DOIs reach OpenAlex without it.
 - `generic_series` — source names that are a publisher's book series
   rather than a venue. Springer files conference proceedings under
   "Lecture Notes in Computer Science" and drops the volume title, so a
