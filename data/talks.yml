@@ -86,6 +86,13 @@ talks:
     location: Rome, Italy
     url: https://www.linkedin.com/posts/fabrizio-silvestri-a6b0391_we-had-so-much-fun-working-on-this-project-activity-7161675949112074241-CPc0
 
+  - year: 2024
+    title: "Vision statement on the future of web search"
+    venue: Search Futures Workshop @ ECIR 2024
+    role: Invited Talk
+    location: Glasgow, United Kingdom
+    url: https://doi.org/10.1145/3687273.3687288
+
   - year: 2023
     title: "Bridging the Gap: Federated Learning, Large Language Models, and Information Retrieval"
     venue: FLIRT 2023 — 1st Workshop on Federated Learning for Information Retrieval @ SIGIR 2023
