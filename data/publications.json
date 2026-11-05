@@ -1,30 +1,30 @@
 {
-  "last_updated": "2026-11-04",
-  "generated_at": "2026-11-04T11:49:05+00:00",
+  "last_updated": "2026-11-05",
+  "generated_at": "2026-11-05T11:49:11+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 268,
+  "count": 262,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 9,
     "workshop": 12,
-    "preprint": 53
+    "preprint": 47
   },
   "counts_by_topic": {
-    "ir": 101,
+    "ir": 99,
     "recsys": 42,
-    "llm": 31,
+    "llm": 29,
     "agents": 11,
     "nlp": 23,
-    "gnn": 27,
-    "trust": 48,
+    "gnn": 26,
+    "trust": 46,
     "task_vectors": 7,
-    "efficient": 58,
+    "efficient": 57,
     "misinfo": 13,
     "data_mining": 13,
-    "social_net": 13,
+    "social_net": 11,
     "misc": 27
   },
   "years": [
@@ -677,7 +677,7 @@
       "abbrev": "npjai",
       "url": "https://doi.org/10.1038/s44387-026-00135-w",
       "url_publisher": "https://doi.org/10.1038/s44387-026-00135-w",
-      "url_arxiv": null,
+      "url_arxiv": "https://arxiv.org/abs/2502.10111",
       "type": "q1_journal",
       "topics": [
         "gnn",
@@ -895,31 +895,6 @@
       "citations": 2
     },
     {
-      "key": "journals/corr/abs-2602-15650",
-      "title": "Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation",
-      "authors": [
-        "M. Salmè",
-        "F. Siciliano",
-        "F. Silvestri",
-        "P. Soda",
-        "R. Sicilia",
-        "V. Guarrasi"
-      ],
-      "year": 2026,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2602.15650",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2602.15650",
-      "type": "preprint",
-      "topics": [
-        "llm",
-        "trust"
-      ],
-      "citations": 1
-    },
-    {
       "key": "journals/corr/abs-2609-20139",
       "title": "Cross-Modal Attention Acts as a Frequency Filter: Why Verbose Prompts Improve Robustness in Vision-Language Models",
       "authors": [
@@ -1103,7 +1078,7 @@
       "abbrev": "acl",
       "url": "https://doi.org/10.18653/v1/2025.acl-long.303",
       "url_publisher": "https://doi.org/10.18653/v1/2025.acl-long.303",
-      "url_arxiv": null,
+      "url_arxiv": "https://arxiv.org/abs/2410.18067",
       "type": "a_star_conf",
       "topics": [
         "llm",
@@ -1716,28 +1691,6 @@
       "citations": 3
     },
     {
-      "key": "journals/corr/abs-2502-10111",
-      "title": "COMBINEX: A Unified Counterfactual Explainer for Graph Neural Networks via Node Feature and Structural Perturbations",
-      "authors": [
-        "F. Giorgi",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2502.10111",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2502.10111",
-      "type": "preprint",
-      "topics": [
-        "gnn",
-        "trust"
-      ],
-      "citations": 8
-    },
-    {
       "key": "manual/journals/corr/abs-2508-03606",
       "title": "Demystifying Sequential Recommendations: Counterfactual Explanations via Genetic Algorithms",
       "authors": [
@@ -1942,30 +1895,6 @@
         "gnn"
       ],
       "citations": 10
-    },
-    {
-      "key": "journals/corr/abs-2510-21440",
-      "title": "Redefining Retrieval Evaluation in the Era of LLMs",
-      "authors": [
-        "G. Trappolini",
-        "F. Cuconasu",
-        "S. Filice",
-        "Y. Maarek",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1764953",
-      "url_publisher": "https://hdl.handle.net/11573/1764953",
-      "url_arxiv": "https://arxiv.org/abs/2510.21440",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "llm"
-      ],
-      "citations": 12
     },
     {
       "key": "journals/corr/abs-2510-09551",
@@ -2686,27 +2615,6 @@
         "efficient"
       ],
       "citations": 6
-    },
-    {
-      "key": "journals/corr/abs-2403-05358",
-      "title": "Variational Inference of Parameters in Opinion Dynamics Models",
-      "authors": [
-        "J. Lenti",
-        "F. Silvestri",
-        "G. De Francisci Morales"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2403.05358",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2403.05358",
-      "type": "preprint",
-      "topics": [
-        "social_net"
-      ],
-      "citations": 15
     },
     {
       "key": "doi/10.1145/3583780.3615481",
@@ -3829,7 +3737,7 @@
       "abbrev": "snam",
       "url": "https://doi.org/10.1007/s13278-017-0449-y",
       "url_publisher": "https://doi.org/10.1007/s13278-017-0449-y",
-      "url_arxiv": null,
+      "url_arxiv": "https://arxiv.org/abs/1612.08157",
       "type": "other_journal",
       "topics": [
         "social_net"
@@ -4106,28 +4014,6 @@
         "misc"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-1612-08157",
-      "title": "Pornography consumption in Social Media",
-      "authors": [
-        "M. Coletto",
-        "L. Maria Aiello",
-        "C. Lucchese",
-        "F. Silvestri"
-      ],
-      "year": 2016,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/1612.08157",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/1612.08157",
-      "type": "preprint",
-      "topics": [
-        "social_net"
-      ],
-      "citations": 11
     },
     {
       "key": "doi/10.1145/2783258.2788581",
@@ -4936,29 +4822,6 @@
       "citations": 118
     },
     {
-      "key": "journals/corr/abs-1105-4255",
-      "title": "Efficient Diversification of Web Search Results",
-      "authors": [
-        "G. Capannini",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2011,
-      "venue": "arXiv (Cornell University)",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.676.9930",
-      "url_publisher": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.676.9930",
-      "url_arxiv": "https://arxiv.org/abs/1105.4255",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 118
-    },
-    {
       "key": "doi/10.1145/1871437.1871592",
       "title": "VSEncoding: efficient coding and fast decoding of integer lists via dynamic programming",
       "authors": [
@@ -5574,8 +5437,8 @@
       "venue": "ERCIM news/ERCIM news online edition",
       "venue_short": "ERCIM",
       "abbrev": "ercim",
-      "url": "http://dblp.uni-trier.de/db/journals/ercim/ercim2008.html#LaforenzaNST08",
-      "url_publisher": "http://dblp.uni-trier.de/db/journals/ercim/ercim2008.html#LaforenzaNST08",
+      "url": "http://hdl.handle.net/11573/1382684",
+      "url_publisher": "http://hdl.handle.net/11573/1382684",
       "url_arxiv": null,
       "type": "other_journal",
       "topics": [
