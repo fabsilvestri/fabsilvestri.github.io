@@ -311,6 +311,7 @@ main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
 .prose p { margin: 0 0 14px; color: var(--ink-soft); }
 .prose p:last-child { margin-bottom: 0; }
 .prose strong { color: var(--ink); font-weight: 600; }
+.prose p.cv-links { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--card-border); font-size: 14px; }
 
 /* ---- Research grid ---- */
 .research-grid {
