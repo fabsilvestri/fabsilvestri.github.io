@@ -2,7 +2,8 @@
 
 Personal homepage for Fabrizio Silvestri — Full Professor at Sapienza University of Rome.
 
-Single-page static site with a "glass-light" aesthetic. Publications are
+Single-page static site. The "Questions" theme leads with the research
+questions, the RSTLess group, and the newest top-tier papers. Publications are
 auto-synced from [OpenAlex](https://openalex.org/A5044165871) nightly by a
 GitHub Action, with [Crossref](https://www.crossref.org/) filling in the
 titles and proceedings volumes OpenAlex leaves incomplete.
@@ -13,7 +14,7 @@ titles and proceedings volumes OpenAlex leaves incomplete.
 .
 ├── index.html                        # single page
 ├── assets/
-│   ├── css/style.css                 # glass-light theme
+│   ├── css/style.css                 # "Questions" theme (Bricolage Grotesque + Public Sans, navy + orange)
 │   ├── js/publications.js            # renderer (DOM) — fetches publications.json at runtime
 │   ├── img/profile.jpg               # hero photo
 │   └── cv/                           # CV PDFs, pushed here by the fabsilvestri/cv workflow (don't edit by hand)

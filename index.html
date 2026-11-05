@@ -108,7 +108,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet"
   />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
@@ -120,25 +120,18 @@
   <link rel="preload" as="fetch" type="application/json" crossorigin="anonymous" href="data/publications.json" />
 </head>
 <body>
-  <div class="bg-gradient" aria-hidden="true"></div>
-  <div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-
   <header class="site-header">
-    <nav class="nav-pill" aria-label="Primary">
-      <a href="#home" class="nav-brand">FS</a>
+    <nav class="nav-bar" aria-label="Primary">
+      <a href="#home" class="nav-brand">Fabrizio Silvestri</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#group">Group</a></li>
         <li><a href="#publications">Publications</a></li>
         <li id="nav-awards" hidden><a href="#awards">Awards</a></li>
+        <li id="nav-talks" hidden><a href="#talks">Talks</a></li>
         <li><a href="#teaching">Teaching</a></li>
-        <li id="nav-talks" hidden><a href="#talks">Keynotes and Invited Talks</a></li>
+        <li id="nav-services" hidden><a href="#services">Service</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li id="nav-services" hidden><a href="#services">Services</a></li>
       </ul>
       <a class="nav-cta" href="https://scholar.google.com/citations?user=pi985dQAAAAJ" target="_blank" rel="noopener">Scholar ↗</a>
     </nav>
@@ -148,36 +141,91 @@
     <section id="home" class="hero">
       <div class="hero-grid">
         <div class="hero-text">
-          <p class="hero-eyebrow">Full Professor · Sapienza University of Rome · <a href="https://ellis.eu/fellows" target="_blank" rel="noopener">ELLIS Fellow</a></p>
-          <h1 class="hero-title">Fabrizio Silvestri</h1>
+          <p class="hero-eyebrow">RSTLess group · Sapienza University of Rome</p>
+          <h1 class="hero-title">Language models that retrieve, reason, and act, <em>reliably</em>.</h1>
           <p class="hero-lede">
-            I lead the <strong>RSTLess</strong> research group on Robust, Safe, and
-            Transparent Machine Learning, and coordinate the Ph.D. Programme in
-            Data Science at Sapienza. My work sits at the intersection of
-            <strong>Machine Learning</strong>, <strong>Natural Language
-            Processing</strong> (with applications to Information Retrieval and
-            RAG), and <strong>Generative &amp; Agentic AI</strong>.
+            I am a <strong>Full Professor at Sapienza University of Rome</strong> and an
+            <a href="https://ellis.eu/fellows" target="_blank" rel="noopener"><strong>ELLIS Fellow</strong></a>.
+            My group studies how language models use external knowledge, what happens
+            inside them, and how to make learning systems robust, fair, and transparent.
+            Before Sapienza I worked at Yahoo Labs, Facebook Search, and Facebook AI Research.
           </p>
           <div class="hero-stats">
             <div><span class="stat-num" id="stat-pubs">—</span><span class="stat-lbl">Publications</span></div>
-            <div><span class="stat-num" id="stat-astar">—</span><span class="stat-lbl">A/A* Conf. papers</span></div>
+            <div><span class="stat-num" id="stat-astar">—</span><span class="stat-lbl">A/A* conference papers</span></div>
             <div><span class="stat-num" id="stat-years">—</span><span class="stat-lbl">Years active</span></div>
           </div>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#publications">View Publications</a>
-            <a class="btn btn-ghost" href="#about">About me</a>
-          </div>
         </div>
-        <div class="hero-photo">
-          <div class="photo-ring">
-            <img src="assets/img/profile.jpg" alt="Fabrizio Silvestri" />
-          </div>
-        </div>
+        <figure class="id-card">
+          <img src="assets/img/profile.jpg" alt="Fabrizio Silvestri" width="600" height="600" />
+          <figcaption>
+            <strong>Fabrizio Silvestri</strong>
+            <span>Full Professor, DIAG · Coordinator, Ph.D. in Data Science</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
+    <section id="research" class="questions">
+    <div class="band-inner">
+      <h2 class="band-head">What we work on</h2>
+      <div class="question-grid">
+        <article class="question">
+          <h3>When does retrieval help a language model, and when does it hurt?</h3>
+          <p>RAG pipelines, distractors, and how to evaluate retrieval when the reader is an LLM.</p>
+          <ul>
+            <li><b>ACL '26</b><a href="https://doi.org/10.18653/v1/2026.findings-acl.583" target="_blank" rel="noopener">The Mechanics of Interference: Defusing Distractors in RAG</a></li>
+            <li><b>EACL '26</b><a href="https://doi.org/10.18653/v1/2026.eacl-long.391" target="_blank" rel="noopener">Redefining Retrieval Evaluation in the Era of LLMs</a></li>
+          </ul>
+          <a class="question-more" href="#publications" data-topic-link="ir">Papers on information retrieval →</a>
+        </article>
+        <article class="question">
+          <h3>What is actually going on inside the model?</h3>
+          <p>Attention, internal representations, task vectors, and model merging.</p>
+          <ul>
+            <li><b>ACL '26</b><a href="https://doi.org/10.18653/v1/2026.findings-acl.2145" target="_blank" rel="noopener">Attention Sinks in Diffusion Language Models</a></li>
+            <li><b>AISTATS '26</b><a href="https://openreview.net/forum?id=3Tvd1qJ5UJ" target="_blank" rel="noopener">Rank Lifting and Random Non-Linear Maps</a></li>
+          </ul>
+          <a class="question-more" href="#publications" data-topic-link="llm">Papers on LLMs →</a>
+        </article>
+        <article class="question">
+          <h3>Can a learning system forget, stay fair, and resist attack?</h3>
+          <p>Unlearning, robustness, fairness, and misinformation on large platforms.</p>
+          <ul>
+            <li><b>CIKM '26</b><a href="https://doi.org/10.1145/3799682.3840731" target="_blank" rel="noopener">SURF: Subtractive Updates for Recommender Forgetting</a></li>
+            <li><b>AISTATS '26</b><a href="https://openreview.net/forum?id=7f09dQVENn" target="_blank" rel="noopener">The Majority Vote Paradigm Shift: When Popular Meets Optimal</a></li>
+          </ul>
+          <a class="question-more" href="#publications" data-topic-link="trust">Papers on trustworthy AI →</a>
+        </article>
+      </div>
+    </div>
+    </section>
+
+    <section id="group" class="group">
+      <div class="group-text">
+        <h2 class="group-title">The RSTLess group</h2>
+        <p>
+          RSTLess stands for Robust, Safe, and Transparent Machine Learning. We are
+          Ph.D. students, postdocs, and collaborators at DIAG, Sapienza, working with
+          partners in academia and industry.
+        </p>
+        <p>
+          Prospective MSc and Ph.D. students interested in RAG, LLM interpretability,
+          graph learning for recommendation, or robust sequence models are welcome to
+          <a href="#contact">get in touch</a>.
+        </p>
+      </div>
+      <aside class="recent-panel" aria-labelledby="recent-head">
+        <h3 id="recent-head">Recent publications</h3>
+        <ul class="recent-list" id="recent-list">
+          <li class="recent-empty">Loading…</li>
+        </ul>
+        <a class="btn btn-primary" href="#publications">All publications</a>
+      </aside>
+    </section>
+
     <section id="about" class="content">
-      <h2 class="section-head"><span class="slash">//</span> About</h2>
+      <h2 class="section-head">About</h2>
       <div class="card prose">
         <p>
           <strong>Fabrizio Silvestri</strong> is a Full Professor of Computer
@@ -224,34 +272,8 @@
       </div>
     </section>
 
-    <section id="research" class="content">
-      <h2 class="section-head"><span class="slash">//</span> Research</h2>
-      <div class="research-grid">
-        <article class="card research-card">
-          <div class="research-icon">◉</div>
-          <h3>Machine Learning</h3>
-          <p>Foundational methods for robust, safe, and transparent models — with a focus on reliability under distribution shift and on interpretability of deep architectures.</p>
-        </article>
-        <article class="card research-card">
-          <div class="research-icon">✎</div>
-          <h3>NLP &mdash; IR &amp; RAG</h3>
-          <p>Natural Language Processing applied to Information Retrieval and Retrieval-Augmented Generation: query understanding, dense retrieval, and grounded generation.</p>
-        </article>
-        <article class="card research-card">
-          <div class="research-icon">✧</div>
-          <h3>Generative &amp; Agentic AI</h3>
-          <p>Large language models and agents: their capabilities, their failure modes, and the techniques that make them trustworthy enough for real-world deployment.</p>
-        </article>
-        <article class="card research-card">
-          <div class="research-icon">⚑</div>
-          <h3>Trustworthy AI</h3>
-          <p>RSTLess group research line — robustness, safety, fairness, and transparency of ML systems, and mitigation of misinformation in online platforms.</p>
-        </article>
-      </div>
-    </section>
-
     <section id="publications" class="content">
-      <h2 class="section-head"><span class="slash">//</span> Publications</h2>
+      <h2 class="section-head">Publications</h2>
       <p class="pub-meta">
         <span class="pub-meta-text">Auto-synced nightly from <a href="https://openalex.org/authors/A5044165871" target="_blank" rel="noopener">OpenAlex</a>. Last updated <span id="pub-last-updated">—</span>. <span id="cit-last-updated-wrap" hidden>Citations last refreshed on <span id="cit-last-updated">—</span>.</span></span>
         <button type="button" class="pub-download" id="pub-download-ieee" title="Download the high-impact subset as an IEEE-style plain-text file">Download Citations as a txt File</button>
@@ -280,12 +302,12 @@
     </section>
 
     <section id="awards" class="content" hidden>
-      <h2 class="section-head"><span class="slash">//</span> Awards &amp; Recognition</h2>
+      <h2 class="section-head">Awards &amp; Recognition</h2>
       <ol class="awards-list" id="awards-list"></ol>
     </section>
 
     <section id="teaching" class="content">
-      <h2 class="section-head"><span class="slash">//</span> Teaching</h2>
+      <h2 class="section-head">Teaching</h2>
       <div class="card prose">
         <p>
           I coordinate the <strong>Ph.D. Programme in Data Science</strong> at
@@ -332,12 +354,12 @@
     </section>
 
     <section id="talks" class="content" hidden>
-      <h2 class="section-head"><span class="slash">//</span> Keynotes and Invited Talks</h2>
+      <h2 class="section-head">Keynotes and Invited Talks</h2>
       <ol class="talks-list" id="talks-list"></ol>
     </section>
 
     <section id="contact" class="content">
-      <h2 class="section-head"><span class="slash">//</span> Contact</h2>
+      <h2 class="section-head">Contact</h2>
       <div class="contact-grid">
         <div class="card contact-card">
           <h3>Office</h3>
@@ -367,7 +389,7 @@
     </section>
 
     <section id="services" class="content" hidden>
-      <h2 class="section-head"><span class="slash">//</span> Services</h2>
+      <h2 class="section-head">Services</h2>
       <div class="services-grid" id="services-groups"></div>
     </section>
   </main>
