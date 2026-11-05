@@ -123,6 +123,13 @@ talks:
     role: Distinguished Speech
     location: London, United Kingdom
 
+  - year: 2021
+    title: "Industry panel discussion (moderated by Ricardo Baeza-Yates)"
+    venue: SIRIP 2021 — SIGIR Symposium on IR in Practice @ SIGIR 2021
+    role: Panel
+    location: Virtual
+    url: https://sigir.org/sigir2021/sirip/
+
   - year: 2020
     title: "How Decoding Strategies Affect the Verifiability of Generated Text"
     venue: Georgetown University
