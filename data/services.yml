@@ -71,6 +71,11 @@ services:
       - year: 2022
         title: WISE 2022
         role: PC Chair
+      - year: 2021
+        title: ECIR 2021
+        role: Chair
+        detail: Industry Day chair (with Roi Blanco).
+        url: https://www.ecir2021.eu/call-for-industry-day-presentations/
       - year: 2018
         title: TheWebConf 2018
         role: Track Chair
