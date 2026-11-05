@@ -155,6 +155,13 @@ talks:
     location: Facebook HQ, Menlo Park, CA, USA
     url: https://www.youtube.com/watch?v=GpVB0UUkr7U
 
+  - year: 2018
+    title: "Query Embeddings: From Research to Production and Back!"
+    venue: ECIR 2018 Industry Day
+    role: Invited Talk
+    location: Grenoble, France
+    url: http://www.ecir2018.org/industry-day/index.html
+
   - year: 2015
     title: "On the Use of Word Embeddings in Query Rewriting for Sponsored Search"
     venue: 6th Italian Information Retrieval Workshop (IIR 2015)
