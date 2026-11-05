@@ -700,3 +700,26 @@ main > section.questions {
   .cookie-actions { width: 100%; }
   .cookie-actions .btn { flex: 1; text-align: center; }
 }
+
+/* ---- Group research lines ---- */
+.group-lines { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; max-width: 60ch; }
+.group-lines li { color: var(--ink-muted); padding-left: 16px; position: relative; }
+.group-lines li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: var(--signal); }
+.group-lines strong { color: var(--ink); font-weight: 600; }
+
+/* ---- "More… / Less…" caps ---- */
+.is-capped .is-extra { display: none !important; }
+.more-toggle-wrap { display: flex; justify-content: center; margin: 14px 0 4px; }
+.service-group .more-toggle-wrap { justify-content: flex-start; margin-top: 10px; }
+.more-toggle {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+.more-toggle:hover { border-color: var(--ink); }

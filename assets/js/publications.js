@@ -265,7 +265,62 @@
       .join("");
   }
 
+  // ---- "More… / Less…" caps -------------------------------------------
+  // Every list on the page shows at most CAP items until the visitor asks
+  // for more. Expanded state is remembered per list until a filter changes.
+  var CAP = 5;
+  var expanded = {};
+
+  function capList(container, itemSel, key) {
+    if (!container) return;
+    var toggleId = "more-" + key;
+    var wrap = document.getElementById(toggleId);
+    var items = container.querySelectorAll(itemSel);
+    container.querySelectorAll(".is-extra").forEach(function (el) { el.classList.remove("is-extra"); });
+    if (items.length <= CAP) {
+      container.classList.remove("is-capped");
+      if (wrap) wrap.remove();
+      return;
+    }
+    for (var i = CAP; i < items.length; i++) items[i].classList.add("is-extra");
+    // Year blocks and other children of the list that would show nothing
+    // but a heading once collapsed are hidden too.
+    Array.prototype.forEach.call(container.children, function (child) {
+      if (child.matches(itemSel)) return;
+      var inner = child.querySelectorAll(itemSel);
+      var anyShown = Array.prototype.some.call(inner, function (el) { return !el.classList.contains("is-extra"); });
+      if (!anyShown) child.classList.add("is-extra");
+    });
+    if (!wrap) {
+      wrap = document.createElement("div");
+      wrap.className = "more-toggle-wrap";
+      wrap.id = toggleId;
+      wrap.innerHTML = '<button type="button" class="more-toggle"></button>';
+      container.insertAdjacentElement("afterend", wrap);
+      wrap.firstChild.addEventListener("click", function () {
+        expanded[key] = !expanded[key];
+        applyCap(container, wrap, Number(wrap.dataset.total), key);
+        if (!expanded[key]) container.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    }
+    wrap.dataset.total = items.length;
+    applyCap(container, wrap, items.length, key);
+  }
+
+  function applyCap(container, wrap, total, key) {
+    var open = !!expanded[key];
+    container.classList.toggle("is-capped", !open);
+    var btn = wrap.firstChild;
+    btn.textContent = open ? "Less\u2026" : "More\u2026 (" + (total - CAP) + ")";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
   function render() {
+    renderPubList();
+    capList(byId("pub-list"), ".pub-item", "pubs");
+  }
+
+  function renderPubList() {
     var data = window.PUBLICATIONS;
     var list = byId("pub-list");
     if (!list) return;
@@ -392,6 +447,7 @@
 
   function setTypeFilter(value) {
     state.type = value;
+    expanded.pubs = false;
     state.showOlder = false;
     var bar = byId("pub-filters");
     if (bar) {
@@ -404,6 +460,7 @@
 
   function setTopicFilter(value) {
     state.topic = value;
+    expanded.pubs = false;
     state.showOlder = false;
     var bar = byId("topic-filters");
     if (bar) {
@@ -667,6 +724,11 @@
     renderAwards();
     renderTalks();
     renderServices();
+    capList(byId("awards-list"), ".award-item", "awards");
+    capList(byId("talks-list"), ".talk-item", "talks");
+    document.querySelectorAll("#services-groups .service-list").forEach(function (ul, i) {
+      capList(ul, ".service-item", "services-" + i);
+    });
     renderRecent();
     initTopicLinks();
     render();
