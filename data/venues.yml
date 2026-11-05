@@ -153,6 +153,7 @@ type_overrides:
   doi/10.1145/2487788.2487853: workshop     # WWW 2013 Companion (SNOW workshop)
   openalex/W2988175665:        workshop     # WWW 2003 poster/alternate track
   openalex/W2139126712:        workshop     # LSDS-IR 2009 workshop, co-located with SIGIR
+  doi/10.1145/3799682.3839283: workshop     # GREEN-AI 2026, workshop co-located with CIKM (DOI shares the CIKM proceedings prefix)
 
 # Title patterns (case-insensitive regex) for records to DROP entirely.
 # Used to filter out workshop-organizing entries, editorials, and reports
@@ -292,13 +293,16 @@ venue_patterns:
 # ("2025.emnlp-main.1422", "2026.findings-acl.2145") is the venue
 # itself. Same matching rules: case-insensitive, first match wins,
 # matched against the bare DOI (no "https://doi.org/" prefix).
+# The "v1/" segment is optional: some new Anthology DOIs reach OpenAlex
+# without it (10.18653/2026.findings-emnlp.1708), and without the
+# optional segment those fell through to the prose title and read as ACL.
 venue_doi_patterns:
-  - ['^10\.18653/v1/\d{4}\.findings-acl\.', acl]
-  - ['^10\.18653/v1/\d{4}\.findings-emnlp\.', emnlp]
-  - ['^10\.18653/v1/\d{4}\.acl-', acl]
-  - ['^10\.18653/v1/\d{4}\.emnlp-', emnlp]
-  - ['^10\.18653/v1/\d{4}\.naacl-', naacl]
-  - ['^10\.18653/v1/\d{4}\.eacl-', eacl]
+  - ['^10\.18653/(v1/)?\d{4}\.findings-acl\.', acl]
+  - ['^10\.18653/(v1/)?\d{4}\.findings-emnlp\.', emnlp]
+  - ['^10\.18653/(v1/)?\d{4}\.acl-', acl]
+  - ['^10\.18653/(v1/)?\d{4}\.emnlp-', emnlp]
+  - ['^10\.18653/(v1/)?\d{4}\.naacl-', naacl]
+  - ['^10\.18653/(v1/)?\d{4}\.eacl-', eacl]
   # Pre-2020 anthology ids encode the venue in their first letter:
   # N19- is NAACL, D18- EMNLP, P17- ACL, E17- EACL. CORE ranks NAACL and
   # EMNLP A* and ACL A*, so a letter read wrong is a rank read wrong.

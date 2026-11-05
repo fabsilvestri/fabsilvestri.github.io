@@ -5,12 +5,12 @@
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 262,
   "counts_by_type": {
-    "a_star_conf": 85,
+    "a_star_conf": 84,
     "q1_journal": 38,
-    "other_conf": 71,
+    "other_conf": 72,
     "other_journal": 9,
-    "workshop": 12,
-    "preprint": 47
+    "workshop": 13,
+    "preprint": 46
   },
   "counts_by_topic": {
     "ir": 99,
@@ -135,31 +135,6 @@
       "citations": 20
     },
     {
-      "key": "doi/10.18653/2026.findings-emnlp.1708",
-      "title": "I Wrote This Because of That: Interpretable Radiology Report Generation via Visual Prototypes",
-      "authors": [
-        "M. Salmè",
-        "F. Siciliano",
-        "F. Silvestri",
-        "P. Soda",
-        "R. Sicilia",
-        "V. Guarrasi"
-      ],
-      "year": 2026,
-      "venue": "Association for Computational Linguistics",
-      "venue_short": "ACL",
-      "abbrev": "acl",
-      "url": "https://doi.org/10.18653/2026.findings-emnlp.1708",
-      "url_publisher": "https://doi.org/10.18653/2026.findings-emnlp.1708",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "nlp",
-        "trust"
-      ],
-      "citations": 0
-    },
-    {
       "key": "doi/10.18653/v1/2026.findings-acl.583",
       "title": "The Mechanics of Interference: Defusing Distractors in RAG via Sparse Autoencoder Interventions",
       "authors": [
@@ -231,29 +206,6 @@
         "trust"
       ],
       "citations": 4
-    },
-    {
-      "key": "doi/10.1145/3799682.3839283",
-      "title": "GREEN-AI: Grounding Research on Energy- and Resource-Efficient Networks for Sustainable AI",
-      "authors": [
-        "F. Betello",
-        "A. Purificato",
-        "V. Vineis",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "ACM International Conference on Information and Knowledge Management",
-      "venue_short": "CIKM",
-      "abbrev": "cikm",
-      "url": "https://doi.org/10.1145/3799682.3839283",
-      "url_publisher": "https://doi.org/10.1145/3799682.3839283",
-      "url_arxiv": null,
-      "type": "a_star_conf",
-      "topics": [
-        "efficient"
-      ],
-      "citations": 0
     },
     {
       "key": "doi/10.1145/3799682.3840825",
@@ -368,6 +320,31 @@
       "type": "a_star_conf",
       "topics": [
         "gnn"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.18653/2026.findings-emnlp.1708",
+      "title": "I Wrote This Because of That: Interpretable Radiology Report Generation via Visual Prototypes",
+      "authors": [
+        "M. Salmè",
+        "F. Siciliano",
+        "F. Silvestri",
+        "P. Soda",
+        "R. Sicilia",
+        "V. Guarrasi"
+      ],
+      "year": 2026,
+      "venue": "Empirical Methods in Natural Language Processing",
+      "venue_short": "EMNLP",
+      "abbrev": "emnlp",
+      "url": "https://doi.org/10.18653/2026.findings-emnlp.1708",
+      "url_publisher": "https://doi.org/10.18653/2026.findings-emnlp.1708",
+      "url_arxiv": null,
+      "type": "a_star_conf",
+      "topics": [
+        "nlp",
+        "trust"
       ],
       "citations": 0
     },
@@ -801,6 +778,29 @@
       "citations": 0
     },
     {
+      "key": "journals/corr/abs-2510-20351",
+      "title": "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets",
+      "authors": [
+        "M. Silvestri",
+        "F. Veglianti",
+        "F. Giorgi",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2026,
+      "venue": "Conference on Language Modeling",
+      "venue_short": "COLM",
+      "abbrev": "corr",
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
+      "url_arxiv": "https://arxiv.org/abs/2510.20351",
+      "type": "other_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
       "key": "doi/10.5281/zenodo.23325892",
       "title": "LLM Model Editing Has a Geometry Problem",
       "authors": [
@@ -819,6 +819,29 @@
       "type": "other_journal",
       "topics": [
         "llm"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.1145/3799682.3839283",
+      "title": "GREEN-AI: Grounding Research on Energy- and Resource-Efficient Networks for Sustainable AI",
+      "authors": [
+        "F. Betello",
+        "A. Purificato",
+        "V. Vineis",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "ACM International Conference on Information and Knowledge Management",
+      "venue_short": "CIKM",
+      "abbrev": "cikm",
+      "url": "https://doi.org/10.1145/3799682.3839283",
+      "url_publisher": "https://doi.org/10.1145/3799682.3839283",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "efficient"
       ],
       "citations": 0
     },
@@ -1938,29 +1961,6 @@
         "misc"
       ],
       "citations": 11
-    },
-    {
-      "key": "journals/corr/abs-2510-20351",
-      "title": "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets",
-      "authors": [
-        "M. Silvestri",
-        "V. Fabiano",
-        "G. Flavio",
-        "S. Fabrizio",
-        "G. Tolomei"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2510.20351",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2510.20351",
-      "type": "preprint",
-      "topics": [
-        "llm"
-      ],
-      "citations": 0
     },
     {
       "key": "doi/10.1145/3627673.3680069",
@@ -6429,6 +6429,14 @@
       "url": "https://www.linkedin.com/posts/fabrizio-silvestri-a6b0391_we-had-so-much-fun-working-on-this-project-activity-7161675949112074241-CPc0"
     },
     {
+      "year": 2024,
+      "title": "Vision statement on the future of web search",
+      "venue": "Search Futures Workshop @ ECIR 2024",
+      "role": "Invited Talk",
+      "location": "Glasgow, United Kingdom",
+      "url": "https://doi.org/10.1145/3687273.3687288"
+    },
+    {
       "year": 2023,
       "title": "Bridging the Gap: Federated Learning, Large Language Models, and Information Retrieval",
       "venue": "FLIRT 2023 — 1st Workshop on Federated Learning for Information Retrieval @ SIGIR 2023",
@@ -6477,6 +6485,14 @@
       "url": ""
     },
     {
+      "year": 2021,
+      "title": "Industry panel discussion (moderated by Ricardo Baeza-Yates)",
+      "venue": "SIRIP 2021 — SIGIR Symposium on IR in Practice @ SIGIR 2021",
+      "role": "Panel",
+      "location": "Virtual",
+      "url": "https://sigir.org/sigir2021/sirip/"
+    },
+    {
       "year": 2020,
       "title": "How Decoding Strategies Affect the Verifiability of Generated Text",
       "venue": "Georgetown University",
@@ -6515,6 +6531,14 @@
       "role": "Lightning Talk",
       "location": "Facebook HQ, Menlo Park, CA, USA",
       "url": "https://www.youtube.com/watch?v=GpVB0UUkr7U"
+    },
+    {
+      "year": 2018,
+      "title": "Query Embeddings: From Research to Production and Back!",
+      "venue": "ECIR 2018 Industry Day",
+      "role": "Invited Talk",
+      "location": "Grenoble, France",
+      "url": "http://www.ecir2018.org/industry-day/index.html"
     },
     {
       "year": 2015,
@@ -6735,6 +6759,13 @@
           "detail": "",
           "year": 2022,
           "url": ""
+        },
+        {
+          "title": "ECIR 2021",
+          "role": "Chair",
+          "detail": "Industry Day chair (with Roi Blanco).",
+          "year": 2021,
+          "url": "https://www.ecir2021.eu/call-for-industry-day-presentations/"
         },
         {
           "title": "TheWebConf 2018",
