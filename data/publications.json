@@ -6541,6 +6541,14 @@
       "url": "http://www.ecir2018.org/industry-day/index.html"
     },
     {
+      "year": 2017,
+      "title": "On The Use of Embeddings in Search and Personalization Applications",
+      "venue": "SoMePeAS 2017 — Workshop on Social Media for Personalization and Search @ ECIR 2017",
+      "role": "Keynote",
+      "location": "Aberdeen, United Kingdom",
+      "url": "https://doi.org/10.1145/3130332.3130339"
+    },
+    {
       "year": 2015,
       "title": "On the Use of Word Embeddings in Query Rewriting for Sponsored Search",
       "venue": "6th Italian Information Retrieval Workshop (IIR 2015)",
