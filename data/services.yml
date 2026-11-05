@@ -33,6 +33,10 @@ services:
 
   - group: Conference Chairing
     items:
+      - year: 2027
+        title: ASONAM 2027
+        role: PC Co-Chair
+        detail: IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining.
       - year: 2026
         title: CIKM 2026
         role: PC Chair
