@@ -15,7 +15,8 @@ titles and proceedings volumes OpenAlex leaves incomplete.
 ├── assets/
 │   ├── css/style.css                 # glass-light theme
 │   ├── js/publications.js            # renderer (DOM) — fetches publications.json at runtime
-│   └── img/profile.jpg               # hero photo
+│   ├── img/profile.jpg               # hero photo
+│   └── cv/                           # CV PDFs, pushed here by the fabsilvestri/cv workflow (don't edit by hand)
 ├── data/
 │   ├── publications.json             # generated — canonical JSON, served live to the page
 │   ├── manual_publications.yml       # manual overlay — papers OpenAlex hasn't indexed yet
