@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-05",
-  "generated_at": "2026-11-05T11:49:11+00:00",
+  "last_updated": "2026-11-06",
+  "generated_at": "2026-11-06T11:44:53+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 262,
+  "count": 263,
   "counts_by_type": {
     "a_star_conf": 84,
     "q1_journal": 38,
     "other_conf": 72,
     "other_journal": 9,
     "workshop": 13,
-    "preprint": 46
+    "preprint": 47
   },
   "counts_by_topic": {
     "ir": 99,
@@ -18,7 +18,7 @@
     "llm": 29,
     "agents": 11,
     "nlp": 23,
-    "gnn": 26,
+    "gnn": 27,
     "trust": 46,
     "task_vectors": 7,
     "efficient": 57,
@@ -1038,6 +1038,41 @@
       "type": "preprint",
       "topics": [
         "llm"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "journals/corr/abs-2611-04670",
+      "title": "Sheaf-MPNN: A Library for Sheaf Neural Networks as Message Passing",
+      "authors": [
+        "A. Borgi",
+        "M. Severino",
+        "L. Braithwaite",
+        "S. Azzolin",
+        "R. Bourgerie",
+        "O. Zaghen",
+        "E. Mule",
+        "R. Ali",
+        "L. Minh Kustermann",
+        "E. Coppola",
+        "A. Purificato",
+        "S. Fiorini",
+        "C. Irwin",
+        "F. Spiga",
+        "F. Silvestri",
+        "M. M. Bronstein",
+        "P. Liò"
+      ],
+      "year": 2026,
+      "venue": "CoRR",
+      "venue_short": "arXiv",
+      "abbrev": "corr",
+      "url": "https://arxiv.org/abs/2611.04670",
+      "url_publisher": null,
+      "url_arxiv": "https://arxiv.org/abs/2611.04670",
+      "type": "preprint",
+      "topics": [
+        "gnn"
       ],
       "citations": 0
     },
