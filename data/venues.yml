@@ -12,6 +12,8 @@
 # Conferences are ranked against CORE (data/core_rankings.csv):
 #   inproceedings whose CORE rank is "A*" or "A"  →  a_star_conf
 #   anything else (or no CORE entry)              →  other_conf
+#   conference_a_star_override (below) is the manual escape hatch for
+#   conferences CORE does not rank yet but that count as A/A*.
 #
 # Journals are ranked against Scimago (data/scimago_journal_rank.csv):
 #   article whose ISSN resolves to Q1 in any Computer Science subject
@@ -108,6 +110,12 @@ journal_q1_override:
   - tors    # ACM Trans. on Recommender Systems — Q1 on scimagojr.com (journalsearch.php?q=18997), missing from sjrdata 2024 parquet.
   - npjai   # npj Artificial Intelligence — Nature Portfolio, no Scimago quartile yet; counted as Q1 by the author's call.
   - plosone # PLoS ONE — Scimago Q1 (Multidisciplinary, no CS category); counted as Q1 by the author's call.
+
+# Conferences counted as A/A* although CORE has no entry for them
+# (usually because they are too new to have been ranked). Abbrevs as
+# resolved by venue_patterns.
+conference_a_star_override:
+  - colm    # Conference on Language Modeling (since 2024); unranked by CORE, counted as A/A* by the author's call.
 
 # Explicit record keys to drop. Use this for one-off non-papers
 # (keynotes, invited talks, panels, tutorials, abstracts) whose venue
@@ -248,6 +256,7 @@ venue_patterns:
   - ['(Neural Information Processing Systems|NeurIPS)', nips]
   - ['International Conference on Learning Representations', iclr]
   - ['Artificial Intelligence and Statistics', aistats]
+  - ['Conference on Language Modeling', colm]
   - ['International Joint Conference on Neural Networks', ijcnn]
   - ['International Joint Conference on Artificial Intelligence', ijcai]
   - ['AAAI Conference on Artificial Intelligence', aaai]

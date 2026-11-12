@@ -422,14 +422,14 @@ overrides:
   # COLM 2026. Title and authors taken from the COLM proceedings page
   # (pre-proceedings, no BibTeX yet). OpenAlex still has only the arXiv
   # preprint, with the authors' given and family names swapped, so the
-  # override fixes the author list too. COLM has no CORE rank, so the
-  # paper is filed under other_conf, as the classification rules do for
-  # any unranked conference.
+  # override fixes the author list too. COLM has no CORE rank; it is
+  # counted as A/A* by the author's call (conference_a_star_override in
+  # data/venues.yml).
   journals/corr/abs-2510-20351:
     title: "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets"
     authors: [M. Silvestri, F. Veglianti, F. Giorgi, F. Silvestri, G. Tolomei]
     venue: Conference on Language Modeling
     venue_short: COLM
     year: 2026
-    type: other_conf
+    type: a_star_conf
     url_publisher: https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html

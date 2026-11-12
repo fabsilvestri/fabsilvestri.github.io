@@ -236,6 +236,9 @@ def load_venues(path: Path) -> dict:
     raw["journal_q1_override"] = {
         k.lower() for k in (raw.get("journal_q1_override") or [])
     }
+    raw["conference_a_star_override"] = {
+        k.lower() for k in (raw.get("conference_a_star_override") or [])
+    }
     for key in ("skip_title_patterns", "skip_keys"):
         raw[key] = list(raw.get(key, []) or [])
     raw["type_overrides"] = {
@@ -541,6 +544,9 @@ def classify_fields(
     if kind == "inproceedings":
         entry = core_ranks.get(core_acronym(abbrev, venues))
         if entry and entry.get("rank") in ("A*", "A"):
+            return TYPE_A_STAR
+        # Override: conferences CORE hasn't ranked yet (e.g. COLM).
+        if abbrev in venues.get("conference_a_star_override", set()):
             return TYPE_A_STAR
         return TYPE_OTHER_CONF
 
