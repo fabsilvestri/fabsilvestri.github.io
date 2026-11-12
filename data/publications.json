@@ -5,9 +5,9 @@
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 263,
   "counts_by_type": {
-    "a_star_conf": 84,
+    "a_star_conf": 85,
     "q1_journal": 38,
-    "other_conf": 72,
+    "other_conf": 71,
     "other_journal": 9,
     "workshop": 13,
     "preprint": 47
@@ -794,7 +794,7 @@
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
       "url_publisher": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
       "url_arxiv": "https://arxiv.org/abs/2510.20351",
-      "type": "other_conf",
+      "type": "a_star_conf",
       "topics": [
         "llm"
       ],
