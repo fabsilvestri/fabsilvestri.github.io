@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-06",
-  "generated_at": "2026-11-06T11:44:53+00:00",
+  "last_updated": "2026-11-21",
+  "generated_at": "2026-11-21T12:01:29+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 263,
@@ -8,24 +8,24 @@
     "a_star_conf": 85,
     "q1_journal": 38,
     "other_conf": 71,
-    "other_journal": 9,
-    "workshop": 13,
+    "other_journal": 8,
+    "workshop": 14,
     "preprint": 47
   },
   "counts_by_topic": {
-    "ir": 99,
-    "recsys": 42,
+    "ir": 98,
+    "recsys": 41,
     "llm": 29,
     "agents": 11,
     "nlp": 23,
     "gnn": 27,
     "trust": 46,
     "task_vectors": 7,
-    "efficient": 57,
+    "efficient": 56,
     "misinfo": 13,
     "data_mining": 13,
     "social_net": 11,
-    "misc": 27
+    "misc": 29
   },
   "years": [
     2026,
@@ -251,6 +251,29 @@
       "citations": 0
     },
     {
+      "key": "journals/corr/abs-2510-20351",
+      "title": "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets",
+      "authors": [
+        "M. Silvestri",
+        "F. Veglianti",
+        "F. Giorgi",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2026,
+      "venue": "Conference on Language Modeling",
+      "venue_short": "COLM",
+      "abbrev": "corr",
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
+      "url_arxiv": "https://arxiv.org/abs/2510.20351",
+      "type": "a_star_conf",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
       "key": "doi/10.18653/v1/2026.eacl-long.391",
       "title": "Redefining Retrieval Evaluation in the Era of LLMs",
       "authors": [
@@ -424,7 +447,7 @@
       "citations": 0
     },
     {
-      "key": "manual/conf/iclr/CasoFMSS26",
+      "key": "openalex/W7217887086",
       "title": "Composable Sparse Subnetworks via Maximum-Entropy Principle",
       "authors": [
         "F. Caso",
@@ -434,44 +457,20 @@
         "F. Silvestri"
       ],
       "year": 2026,
-      "venue": "ICLR",
+      "venue": "International Conference on Learning Representations",
       "venue_short": "ICLR",
       "abbrev": "iclr",
-      "url": "https://openreview.net/forum?id=IHwx5ioIP2",
-      "url_publisher": "https://openreview.net/forum?id=IHwx5ioIP2",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5a966a8d451fae43806ac3c22d13c3ad-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5a966a8d451fae43806ac3c22d13c3ad-Abstract-Conference.html",
       "url_arxiv": null,
       "type": "a_star_conf",
       "topics": [
-        "efficient"
+        "misc"
       ],
-      "citations": 2
+      "citations": 0
     },
     {
-      "key": "journals/corr/abs-2510-04727",
-      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
-      "authors": [
-        "E. Mule",
-        "F. Stefano",
-        "A. Purificato",
-        "F. Siciliano",
-        "S. Coniglio",
-        "F. Silvestri"
-      ],
-      "year": 2026,
-      "venue": "ICLR",
-      "venue_short": "ICLR",
-      "abbrev": "corr",
-      "url": "https://openreview.net/forum?id=d1hQkcDy7c",
-      "url_publisher": "https://openreview.net/forum?id=d1hQkcDy7c",
-      "url_arxiv": "https://arxiv.org/abs/2510.04727",
-      "type": "a_star_conf",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 8
-    },
-    {
-      "key": "journals/corr/abs-2504-05342",
+      "key": "doi/10.48550/arxiv.2504.05342",
       "title": "MASS: MoErging through Adaptive Subspace Selection",
       "authors": [
         "D. Crisostomi",
@@ -484,17 +483,17 @@
         "E. Rodolà"
       ],
       "year": 2026,
-      "venue": "ICLR",
+      "venue": "International Conference on Learning Representations",
       "venue_short": "ICLR",
-      "abbrev": "corr",
-      "url": "https://openreview.net/forum?id=CRBt6DNaBE",
-      "url_publisher": "https://openreview.net/forum?id=CRBt6DNaBE",
+      "abbrev": "iclr",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/21f1dd8ee699b699f95b589ddf78fa0c-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/21f1dd8ee699b699f95b589ddf78fa0c-Abstract-Conference.html",
       "url_arxiv": "https://arxiv.org/abs/2504.05342",
       "type": "a_star_conf",
       "topics": [
         "task_vectors"
       ],
-      "citations": 5
+      "citations": 0
     },
     {
       "key": "doi/10.1145/3770854.3780243",
@@ -778,25 +777,25 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2510-20351",
-      "title": "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets",
+      "key": "doi/10.1145/3806096.3862349",
+      "title": "AI Infrastructure and Systems",
       "authors": [
-        "M. Silvestri",
-        "F. Veglianti",
-        "F. Giorgi",
+        "F. Özcan",
+        "S. Parthasarathy",
+        "S. Shao",
         "F. Silvestri",
-        "G. Tolomei"
+        "D. Stanzione"
       ],
       "year": 2026,
-      "venue": "Conference on Language Modeling",
-      "venue_short": "COLM",
-      "abbrev": "corr",
-      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
-      "url_publisher": "https://proceedings.colm.cc/paper_files/paper/2026/hash/d80f533473c2dc8dd6984ceffc3ed3fd-Abstract-Conference.html",
-      "url_arxiv": "https://arxiv.org/abs/2510.20351",
-      "type": "a_star_conf",
+      "venue": "Proceedings of the ACM AI Leadership Summit 2026",
+      "venue_short": "ALS",
+      "abbrev": "",
+      "url": "https://doi.org/10.1145/3806096.3862349",
+      "url_publisher": "https://doi.org/10.1145/3806096.3862349",
+      "url_arxiv": null,
+      "type": "other_conf",
       "topics": [
-        "llm"
+        "misc"
       ],
       "citations": 0
     },
@@ -973,7 +972,7 @@
         "A. Borgi",
         "M. Severino",
         "F. Silvestri",
-        "P. Liò"
+        "P. Lió"
       ],
       "year": 2026,
       "venue": "CoRR",
@@ -999,7 +998,7 @@
         "D. D’Ascenzo",
         "S. Cultrera di Montesano",
         "F. Silvestri",
-        "P. Liò",
+        "P. Lió",
         "F. Dominici",
         "R. Balestriero",
         "C. Battiloro"
@@ -1025,7 +1024,7 @@
         "R. Jain",
         "F. Maria Nardini",
         "N. Tonellotto",
-        "P. Liò",
+        "P. Lió",
         "F. Silvestri"
       ],
       "year": 2026,
@@ -1059,9 +1058,10 @@
         "S. Fiorini",
         "C. Irwin",
         "F. Spiga",
+        "L. Guo",
         "F. Silvestri",
         "M. M. Bronstein",
-        "P. Liò"
+        "P. Lió"
       ],
       "year": 2026,
       "venue": "CoRR",
@@ -1215,6 +1215,30 @@
         "trust"
       ],
       "citations": 19
+    },
+    {
+      "key": "doi/10.48550/arxiv.2510.04727",
+      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
+      "authors": [
+        "E. Mule",
+        "F. Stefano",
+        "A. Purificato",
+        "F. Siciliano",
+        "S. Coniglio",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "International Conference on Learning Representations",
+      "venue_short": "ICLR",
+      "abbrev": "iclr",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
+      "url_arxiv": "https://arxiv.org/abs/2510.04727",
+      "type": "a_star_conf",
+      "topics": [
+        "gnn"
+      ],
+      "citations": 0
     },
     {
       "key": "doi/10.1609/icwsm.v19i1.35963",
@@ -1698,6 +1722,31 @@
       "citations": 1
     },
     {
+      "key": "doi/10.1007/978-3-031-74627-7_44",
+      "title": "Adversarial Data Poisoning for Fake News Detection: How to Make a Model Misclassify a Target News Without Modifying it",
+      "authors": [
+        "F. Siciliano",
+        "L. Maiano",
+        "L. Papa",
+        "F. Baccini",
+        "I. Amerini",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "Machine Learning and Principles and Practice of Knowledge Discovery in Databases",
+      "venue_short": "PKDD",
+      "abbrev": "pkdd",
+      "url": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_publisher": "https://doi.org/10.1007/978-3-031-74627-7_44",
+      "url_arxiv": "https://arxiv.org/abs/2312.15228",
+      "type": "other_conf",
+      "topics": [
+        "trust",
+        "misinfo"
+      ],
+      "citations": 4
+    },
+    {
       "key": "doi/10.36227/techrxiv.176282217.77757258/v1",
       "title": "A Survey on Explainable AI Narratives based on Large Language Models",
       "authors": [
@@ -1879,8 +1928,8 @@
       "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2508.16082",
-      "url_publisher": null,
+      "url": "https://hdl.handle.net/11573/1780818",
+      "url_publisher": "https://hdl.handle.net/11573/1780818",
       "url_arxiv": "https://arxiv.org/abs/2508.16082",
       "type": "preprint",
       "topics": [
@@ -2321,31 +2370,6 @@
       "citations": 1
     },
     {
-      "key": "doi/10.1007/978-3-031-74627-7_44",
-      "title": "Adversarial Data Poisoning for Fake News Detection: How to Make a Model Misclassify a Target News Without Modifying it",
-      "authors": [
-        "F. Siciliano",
-        "L. Maiano",
-        "L. Papa",
-        "F. Baccini",
-        "I. Amerini",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "Machine Learning and Principles and Practice of Knowledge Discovery in Databases",
-      "venue_short": "PKDD",
-      "abbrev": "pkdd",
-      "url": "https://doi.org/10.1007/978-3-031-74627-7_44",
-      "url_publisher": "https://doi.org/10.1007/978-3-031-74627-7_44",
-      "url_arxiv": "https://arxiv.org/abs/2312.15228",
-      "type": "other_conf",
-      "topics": [
-        "trust",
-        "misinfo"
-      ],
-      "citations": 4
-    },
-    {
       "key": "doi/10.1007/978-3-031-63800-8_2",
       "title": "Human-in-the-Loop Personalized Counterfactual Recourse",
       "authors": [
@@ -2568,7 +2592,7 @@
         "K. Tarantelli",
         "F. Restuccia",
         "F. Silvestri",
-        "P. Liò"
+        "P. Lió"
       ],
       "year": 2024,
       "venue": "CoRR",
@@ -2713,7 +2737,7 @@
         "I. Duta",
         "G. Cassarà",
         "F. Silvestri",
-        "P. Liò"
+        "P. Lió"
       ],
       "year": 2023,
       "venue": "Advances in Neural Information Processing Systems (was NIPS)",
@@ -3073,7 +3097,7 @@
       "title": "On the Role of Relevance in Natural Language Processing Tasks",
       "authors": [
         "A. Sauchuk",
-        "J. Peter Thorne",
+        "J. Thorne",
         "A. Y. Halevy",
         "N. Tonellotto",
         "F. Silvestri"
@@ -3097,7 +3121,7 @@
       "title": "Preserving integrity in online social networks",
       "authors": [
         "A. Y. Halevy",
-        "C. Canton-­Ferrer",
+        "C. Canton-Ferrer",
         "H. Ma",
         "U. Özertem",
         "P. Pantel",
@@ -3248,7 +3272,7 @@
       "key": "doi/10.18653/v1/2021.acl-long.241",
       "title": "Database reasoning over text",
       "authors": [
-        "J. Peter Thorne",
+        "J. Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
@@ -3345,7 +3369,7 @@
       "key": "doi/10.14778/3447689.3447706",
       "title": "From natural language processing to neural databases",
       "authors": [
-        "J. Peter Thorne",
+        "J. Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
@@ -3404,13 +3428,13 @@
         "G. Da San Martino"
       ],
       "year": 2021,
-      "venue": "",
+      "venue": "International Workshop on Semantic Evaluation (SemEval)",
       "venue_short": "SEMEVAL",
       "abbrev": "semeval",
       "url": "https://doi.org/10.18653/v1/2021.semeval-1.7",
       "url_publisher": "https://doi.org/10.18653/v1/2021.semeval-1.7",
-      "url_arxiv": null,
-      "type": "other_conf",
+      "url_arxiv": "https://arxiv.org/abs/2105.09284",
+      "type": "workshop",
       "topics": [
         "nlp",
         "misinfo"
@@ -3575,7 +3599,7 @@
       "key": "journals/corr/abs-2010-06973",
       "title": "Neural Databases",
       "authors": [
-        "T. James",
+        "J. Thorne",
         "M. Yazdani",
         "M. Saeidi",
         "F. Silvestri",
@@ -4168,7 +4192,7 @@
       "key": "doi/10.1007/978-3-319-25252-0_26",
       "title": "MUSETS: Diversity-Aware Web Query Suggestions for Shortening User Sessions",
       "authors": [
-        "M. Sydow A",
+        "M. Sydow",
         "C. Ioana Muntean",
         "F. Maria Nardini",
         "S. Matwin",
@@ -4325,6 +4349,29 @@
       "citations": 77
     },
     {
+      "key": "doi/10.5555/2491748.2491768",
+      "title": "Modeling and predicting the task-by-task behavior of search engine users",
+      "authors": [
+        "C. Lucchese",
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri",
+        "G. Tolomei"
+      ],
+      "year": 2013,
+      "venue": "",
+      "venue_short": "",
+      "abbrev": "",
+      "url": "https://doi.org/10.5555/2491748.2491768",
+      "url_publisher": "https://doi.org/10.5555/2491748.2491768",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "ir"
+      ],
+      "citations": 11
+    },
+    {
       "key": "doi/10.1007/978-3-319-02432-5_9",
       "title": "Query Processing in Highly-Loaded Search Engines",
       "authors": [
@@ -4376,36 +4423,13 @@
       "citations": 5
     },
     {
-      "key": "doi/10.5555/2491748.2491768",
-      "title": "Modeling and predicting the task-by-task behavior of search engine users",
-      "authors": [
-        "C. Lucchese",
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri",
-        "G. Tolomei"
-      ],
-      "year": 2013,
-      "venue": "",
-      "venue_short": "",
-      "abbrev": "",
-      "url": "https://doi.org/10.5555/2491748.2491768",
-      "url_publisher": "https://doi.org/10.5555/2491748.2491768",
-      "url_arxiv": null,
-      "type": "other_journal",
-      "topics": [
-        "ir"
-      ],
-      "citations": 11
-    },
-    {
       "key": "doi/10.1145/2487788.2487851",
       "title": "Learning to shorten query sessions",
       "authors": [
         "C. Ioana Muntean",
         "F. Maria Nardini",
         "F. Silvestri",
-        "M. Sydow A"
+        "M. Sydow"
       ],
       "year": 2013,
       "venue": "International World Wide Web Conference",
@@ -4468,7 +4492,7 @@
       "key": "doi/10.1145/2396761.2396786",
       "title": "Making your interests follow you on twitter",
       "authors": [
-        "M. Pennacchiotti B",
+        "M. Pennacchiotti",
         "F. Silvestri",
         "H. Vahabi",
         "R. Venturini"
@@ -4944,29 +4968,6 @@
       "citations": 9
     },
     {
-      "key": "openalex/W204170047",
-      "title": "Refreshing Models to Provide Timely Query Recommendations",
-      "authors": [
-        "D. Broccolo",
-        "F. Maria Nardini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2010,
-      "venue": "IIR eBooks",
-      "venue_short": "IIR",
-      "abbrev": "iir",
-      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.172.8581",
-      "url_publisher": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.172.8581",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys"
-      ],
-      "citations": 0
-    },
-    {
       "key": "manual/conf/riao/BaragliaNCPDS10",
       "title": "The effects of time on query flow graph-based models for query suggestion",
       "authors": [
@@ -5358,8 +5359,8 @@
       "venue": "ACM International Conference on Research and Development in Information Retrieval",
       "venue_short": "SIGIR",
       "abbrev": "sigir",
-      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.214.8942",
-      "url_publisher": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.214.8942",
+      "url": "http://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_publisher": "http://ceur-ws.org/Vol-480/paper4.pdf",
       "url_arxiv": null,
       "type": "workshop",
       "topics": [
@@ -6073,8 +6074,8 @@
       "venue": "SEBD",
       "venue_short": "SEBD",
       "abbrev": "sebd",
-      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.7354",
-      "url_publisher": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.7354",
+      "url": "https://dblp.uni-trier.de/db/conf/sebd/sebd2004.html#BaragliaS04",
+      "url_publisher": "https://dblp.uni-trier.de/db/conf/sebd/sebd2004.html#BaragliaS04",
       "url_arxiv": null,
       "type": "other_conf",
       "topics": [
@@ -6160,8 +6161,8 @@
       "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
-      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.7993",
-      "url_publisher": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.7993",
+      "url": "http://hdl.handle.net/11573/1476470",
+      "url_publisher": "http://hdl.handle.net/11573/1476470",
       "url_arxiv": "https://arxiv.org/abs/cs/0407053",
       "type": "preprint",
       "topics": [

@@ -357,20 +357,6 @@ additions:
     topics: [data_mining]
     citations: 92
 
-  # ICLR 2026 poster. Venue, authors and the OpenReview id confirmed on
-  # iclr.cc/virtual/2026/poster/10010319 — note the paper also has a
-  # NeurIPS 2025 Mech Interp workshop page under a different id.
-  - key: manual/conf/iclr/CasoFMSS26
-    title: Composable Sparse Subnetworks via Maximum-Entropy Principle
-    authors: ["F. Caso", "S. Fonio", "S. Monaco", "N. Saccomanno", "F. Silvestri"]
-    year: 2026
-    venue: ICLR
-    venue_short: ICLR
-    url_publisher: https://openreview.net/forum?id=IHwx5ioIP2
-    type: a_star_conf
-    topics: ["efficient"]
-    citations: 0
-
 overrides:
 
   # AISTATS 2026. OpenAlex resolves the venue correctly but its only
@@ -382,27 +368,6 @@ overrides:
   openalex/W7162269174:
     title: Rank Lifting and Random Non-Linear Maps
     url_publisher: https://openreview.net/forum?id=3Tvd1qJ5UJ
-
-  # ICLR 2026 poster; DBLP still has the preprint only. OpenReview id
-  # taken from the ICLR poster page, not from search results.
-  journals/corr/abs-2510-04727:
-    title: "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs"
-    venue: ICLR
-    venue_short: ICLR
-    year: 2026
-    type: a_star_conf
-    topics: ["gnn"]
-    url_publisher: https://openreview.net/forum?id=d1hQkcDy7c
-
-  # ICLR 2026 poster; the OpenReview page states "ICLR 2026 Poster".
-  journals/corr/abs-2504-05342:
-    title: "MASS: MoErging through Adaptive Subspace Selection"
-    venue: ICLR
-    venue_short: ICLR
-    year: 2026
-    type: a_star_conf
-    topics: ["task_vectors"]
-    url_publisher: https://openreview.net/forum?id=CRBt6DNaBE
 
   # AISTATS 2026 poster; the OpenReview page states "AISTATS 2026
   # Poster", and virtual.aistats.org/virtual/2026/poster/13835 links to
