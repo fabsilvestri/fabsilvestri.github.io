@@ -1,25 +1,25 @@
 {
-  "last_updated": "2026-11-21",
-  "generated_at": "2026-11-21T12:01:29+00:00",
+  "last_updated": "2026-11-22",
+  "generated_at": "2026-11-22T12:14:23+00:00",
   "citations_fetched_at": "2026-10-24",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 263,
+  "count": 262,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
     "other_conf": 71,
     "other_journal": 8,
     "workshop": 14,
-    "preprint": 47
+    "preprint": 46
   },
   "counts_by_topic": {
     "ir": 98,
     "recsys": 41,
     "llm": 29,
-    "agents": 11,
+    "agents": 10,
     "nlp": 23,
     "gnn": 27,
-    "trust": 46,
+    "trust": 45,
     "task_vectors": 7,
     "efficient": 56,
     "misinfo": 13,
@@ -466,6 +466,30 @@
       "type": "a_star_conf",
       "topics": [
         "misc"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.48550/arxiv.2510.04727",
+      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
+      "authors": [
+        "E. Mule",
+        "F. Stefano",
+        "A. Purificato",
+        "F. Siciliano",
+        "S. Coniglio",
+        "F. Silvestri"
+      ],
+      "year": 2026,
+      "venue": "International Conference on Learning Representations",
+      "venue_short": "ICLR",
+      "abbrev": "iclr",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
+      "url_publisher": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
+      "url_arxiv": "https://arxiv.org/abs/2510.04727",
+      "type": "a_star_conf",
+      "topics": [
+        "gnn"
       ],
       "citations": 0
     },
@@ -1215,30 +1239,6 @@
         "trust"
       ],
       "citations": 19
-    },
-    {
-      "key": "doi/10.48550/arxiv.2510.04727",
-      "title": "Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs",
-      "authors": [
-        "E. Mule",
-        "F. Stefano",
-        "A. Purificato",
-        "F. Siciliano",
-        "S. Coniglio",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "International Conference on Learning Representations",
-      "venue_short": "ICLR",
-      "abbrev": "iclr",
-      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
-      "url_publisher": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/83ccb398f3ce9c4d137011f36a03c7d4-Abstract-Conference.html",
-      "url_arxiv": "https://arxiv.org/abs/2510.04727",
-      "type": "a_star_conf",
-      "topics": [
-        "gnn"
-      ],
-      "citations": 0
     },
     {
       "key": "doi/10.1609/icwsm.v19i1.35963",
@@ -3517,31 +3517,6 @@
         "misinfo"
       ],
       "citations": 155
-    },
-    {
-      "key": "journals/corr/abs-2110-11960",
-      "title": "ReLACE: Reinforcement Learning Agent for Counterfactual Explanations of Arbitrary Predictive Models",
-      "authors": [
-        "Z. Chen",
-        "F. Silvestri",
-        "G. Tolomei",
-        "H. Zhu",
-        "J. Wang",
-        "H. Ahn"
-      ],
-      "year": 2021,
-      "venue": "arXiv (Cornell University)",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2110.11960",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2110.11960",
-      "type": "preprint",
-      "topics": [
-        "agents",
-        "trust"
-      ],
-      "citations": 0
     },
     {
       "key": "doi/10.18653/v1/2020.findings-emnlp.22",
