@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-11-22",
-  "generated_at": "2026-11-22T12:14:23+00:00",
-  "citations_fetched_at": "2026-10-24",
+  "last_updated": "2026-11-23",
+  "generated_at": "2026-11-23T13:58:41+00:00",
+  "citations_fetched_at": "2026-11-23",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 262,
+  "count": 261,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
-    "other_conf": 71,
+    "other_conf": 72,
     "other_journal": 8,
-    "workshop": 14,
-    "preprint": 46
+    "workshop": 13,
+    "preprint": 45
   },
   "counts_by_topic": {
-    "ir": 98,
+    "ir": 97,
     "recsys": 41,
     "llm": 29,
     "agents": 10,
     "nlp": 23,
     "gnn": 27,
-    "trust": 45,
+    "trust": 44,
     "task_vectors": 7,
     "efficient": 56,
     "misinfo": 13,
     "data_mining": 13,
     "social_net": 11,
-    "misc": 29
+    "misc": 30
   },
   "years": [
     2026,
@@ -132,7 +132,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 20
+      "citations": 22
     },
     {
       "key": "doi/10.18653/v1/2026.findings-acl.583",
@@ -184,7 +184,7 @@
       "citations": 1
     },
     {
-      "key": "journals/corr/abs-2502-12581",
+      "key": "doi/10.48550/arxiv.2502.12581",
       "title": "The Majority Vote Paradigm Shift: When Popular Meets Optimal",
       "authors": [
         "A. Purificato",
@@ -195,17 +195,17 @@
         "A. Mantrach"
       ],
       "year": 2026,
-      "venue": "AISTATS",
+      "venue": "International Conference on Artificial Intelligence and Statistics",
       "venue_short": "AISTATS",
-      "abbrev": "corr",
-      "url": "https://openreview.net/forum?id=7f09dQVENn",
-      "url_publisher": "https://openreview.net/forum?id=7f09dQVENn",
+      "abbrev": "aistats",
+      "url": "https://proceedings.mlr.press/v300/purificato26a.html",
+      "url_publisher": "https://proceedings.mlr.press/v300/purificato26a.html",
       "url_arxiv": "https://arxiv.org/abs/2502.12581",
       "type": "a_star_conf",
       "topics": [
-        "trust"
+        "misc"
       ],
-      "citations": 4
+      "citations": 0
     },
     {
       "key": "doi/10.1145/3799682.3840825",
@@ -271,7 +271,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.18653/v1/2026.eacl-long.391",
@@ -296,7 +296,7 @@
         "llm",
         "nlp"
       ],
-      "citations": 12
+      "citations": 17
     },
     {
       "key": "doi/10.18653/v1/2026.eacl-short.51",
@@ -321,7 +321,7 @@
         "ir",
         "nlp"
       ],
-      "citations": 3
+      "citations": 4
     },
     {
       "key": "doi/10.1007/978-3-032-37324-3_15",
@@ -392,7 +392,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.18653/2026.emnlp-main.1803",
@@ -421,7 +421,7 @@
         "nlp",
         "trust"
       ],
-      "citations": 0
+      "citations": 5
     },
     {
       "key": "doi/10.18653/2026.emnlp-main.1160",
@@ -444,7 +444,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 0
+      "citations": 3
     },
     {
       "key": "openalex/W7217887086",
@@ -467,7 +467,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 0
+      "citations": 2
     },
     {
       "key": "doi/10.48550/arxiv.2510.04727",
@@ -491,7 +491,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 0
+      "citations": 10
     },
     {
       "key": "doi/10.48550/arxiv.2504.05342",
@@ -517,7 +517,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 0
+      "citations": 5
     },
     {
       "key": "doi/10.1145/3770854.3780243",
@@ -562,7 +562,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.1145/3805712.3809539",
@@ -636,7 +636,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 0
+      "citations": 1
     },
     {
       "key": "doi/10.1007/s10796-026-10741-3",
@@ -661,7 +661,7 @@
         "llm",
         "trust"
       ],
-      "citations": 1
+      "citations": 5
     },
     {
       "key": "doi/10.1038/s44387-026-00135-w",
@@ -751,7 +751,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 2
+      "citations": 3
     },
     {
       "key": "doi/10.1145/3814953",
@@ -824,6 +824,31 @@
       "citations": 0
     },
     {
+      "key": "doi/10.48550/arxiv.2508.16082",
+      "title": "On Task Vectors and Gradients",
+      "authors": [
+        "L. Zhou",
+        "D. Solombrino",
+        "D. Crisostomi",
+        "M. Sofia Bucarelli",
+        "G. Alessio D’Inverno",
+        "F. Silvestri",
+        "E. Rodolà"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of Machine Learning Research",
+      "venue_short": "MLR",
+      "abbrev": "",
+      "url": "https://proceedings.mlr.press/v322/zhou26a.html",
+      "url_publisher": "https://proceedings.mlr.press/v322/zhou26a.html",
+      "url_arxiv": "https://arxiv.org/abs/2508.16082",
+      "type": "other_conf",
+      "topics": [
+        "task_vectors"
+      ],
+      "citations": 0
+    },
+    {
       "key": "doi/10.5281/zenodo.23325892",
       "title": "LLM Model Editing Has a Geometry Problem",
       "authors": [
@@ -890,7 +915,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 13
+      "citations": 14
     },
     {
       "key": "doi/10.18653/v1/2026.rag4reports-1.3",
@@ -938,7 +963,7 @@
         "ir",
         "agents"
       ],
-      "citations": 2
+      "citations": 4
     },
     {
       "key": "journals/corr/abs-2609-20139",
@@ -1190,7 +1215,7 @@
       "topics": [
         "task_vectors"
       ],
-      "citations": 200
+      "citations": 223
     },
     {
       "key": "doi/10.1007/978-3-031-88714-7_41",
@@ -1238,7 +1263,7 @@
         "nlp",
         "trust"
       ],
-      "citations": 19
+      "citations": 22
     },
     {
       "key": "doi/10.1609/icwsm.v19i1.35963",
@@ -1280,7 +1305,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 23
+      "citations": 25
     },
     {
       "key": "doi/10.1007/978-3-031-87654-7_11",
@@ -1301,7 +1326,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 16
+      "citations": 17
     },
     {
       "key": "doi/10.1145/3705328.3748150",
@@ -1343,7 +1368,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 5
+      "citations": 7
     },
     {
       "key": "doi/10.1109/wacv61041.2025.00114",
@@ -1367,7 +1392,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 5
+      "citations": 6
     },
     {
       "key": "doi/10.1016/j.compmedimag.2024.102484",
@@ -1421,7 +1446,7 @@
       "topics": [
         "efficient"
       ],
-      "citations": 7
+      "citations": 8
     },
     {
       "key": "doi/10.1016/j.osnem.2025.100334",
@@ -1472,7 +1497,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 13
+      "citations": 14
     },
     {
       "key": "doi/10.1145/3742898",
@@ -1496,7 +1521,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 14
+      "citations": 17
     },
     {
       "key": "doi/10.1109/flta67013.2025.11336369",
@@ -1538,7 +1563,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 11
+      "citations": 14
     },
     {
       "key": "doi/10.1145/3731120.3744575",
@@ -1651,7 +1676,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 9
+      "citations": 10
     },
     {
       "key": "doi/10.1109/ijcnn64981.2025.11229036",
@@ -1770,7 +1795,7 @@
         "llm",
         "trust"
       ],
-      "citations": 8
+      "citations": 9
     },
     {
       "key": "manual/journals/corr/abs-2510-22593",
@@ -1795,7 +1820,7 @@
       "topics": [
         "llm"
       ],
-      "citations": 3
+      "citations": 4
     },
     {
       "key": "manual/journals/corr/abs-2508-03606",
@@ -1843,7 +1868,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 5
+      "citations": 6
     },
     {
       "key": "journals/corr/abs-2510-03134",
@@ -1913,31 +1938,6 @@
       "citations": 0
     },
     {
-      "key": "journals/corr/abs-2508-16082",
-      "title": "On Task Vectors and Gradients",
-      "authors": [
-        "L. Zhou",
-        "D. Solombrino",
-        "D. Crisostomi",
-        "M. Sofia Bucarelli",
-        "G. Alessio D’Inverno",
-        "F. Silvestri",
-        "E. Rodolà"
-      ],
-      "year": 2025,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1780818",
-      "url_publisher": "https://hdl.handle.net/11573/1780818",
-      "url_arxiv": "https://arxiv.org/abs/2508.16082",
-      "type": "preprint",
-      "topics": [
-        "task_vectors"
-      ],
-      "citations": 12
-    },
-    {
       "key": "journals/corr/abs-2505-01468",
       "title": "One Search Fits All: Pareto-Optimal Eco-Friendly Model Selection",
       "authors": [
@@ -1958,7 +1958,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 4
+      "citations": 5
     },
     {
       "key": "journals/corr/abs-2511-22435",
@@ -2044,7 +2044,7 @@
       "topics": [
         "misc"
       ],
-      "citations": 11
+      "citations": 12
     },
     {
       "key": "doi/10.1145/3627673.3680069",
@@ -2067,7 +2067,7 @@
         "recsys",
         "gnn"
       ],
-      "citations": 10
+      "citations": 12
     },
     {
       "key": "doi/10.1007/978-3-031-56060-6_14",
@@ -2091,7 +2091,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 30
+      "citations": 31
     },
     {
       "key": "doi/10.1145/3637528.3671896",
@@ -2115,7 +2115,7 @@
         "data_mining",
         "social_net"
       ],
-      "citations": 12
+      "citations": 13
     },
     {
       "key": "doi/10.1145/3626772.3657834",
@@ -2142,7 +2142,7 @@
         "ir",
         "llm"
       ],
-      "citations": 681
+      "citations": 744
     },
     {
       "key": "doi/10.1145/3589335.3648339",
@@ -2200,7 +2200,7 @@
       "topics": [
         "recsys"
       ],
-      "citations": 39
+      "citations": 40
     },
     {
       "key": "doi/10.1109/tai.2024.3496616",
@@ -2341,7 +2341,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 9
+      "citations": 10
     },
     {
       "key": "doi/10.1007/978-3-031-71382-8_6",
@@ -2412,7 +2412,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 1
+      "citations": 2
     },
     {
       "key": "doi/10.18653/v1/2024.semeval-1.275",
@@ -2438,7 +2438,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 87
+      "citations": 90
     },
     {
       "key": "journals/corr/abs-2403-14339",
@@ -2580,7 +2580,7 @@
         "recsys",
         "llm"
       ],
-      "citations": 20
+      "citations": 23
     },
     {
       "key": "journals/corr/abs-2409-08036",
@@ -2629,7 +2629,7 @@
         "nlp",
         "trust"
       ],
-      "citations": 17
+      "citations": 19
     },
     {
       "key": "journals/corr/abs-2406-12535",
@@ -2673,7 +2673,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 6
+      "citations": 7
     },
     {
       "key": "doi/10.1145/3583780.3615481",
@@ -2728,7 +2728,7 @@
       "topics": [
         "trust"
       ],
-      "citations": 32
+      "citations": 33
     },
     {
       "key": "doi/10.52202/075280-0529",
@@ -2750,7 +2750,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 109
+      "citations": 114
     },
     {
       "key": "doi/10.1145/3604915.3610643",
@@ -2773,7 +2773,7 @@
         "ir",
         "recsys"
       ],
-      "citations": 19
+      "citations": 20
     },
     {
       "key": "doi/10.1145/3539618.3591930",
@@ -2796,7 +2796,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 20
+      "citations": 21
     },
     {
       "key": "doi/10.1145/3539618.3592070",
@@ -2821,7 +2821,7 @@
         "recsys",
         "trust"
       ],
-      "citations": 50
+      "citations": 51
     },
     {
       "key": "doi/10.1007/s44163-023-00047-7",
@@ -2896,7 +2896,7 @@
         "misinfo",
         "social_net"
       ],
-      "citations": 38
+      "citations": 39
     },
     {
       "key": "doi/10.1109/cogmi58952.2023.00027",
@@ -3062,7 +3062,7 @@
         "agents",
         "trust"
       ],
-      "citations": 101
+      "citations": 104
     },
     {
       "key": "doi/10.24963/ijcai.2022/781",
@@ -3090,7 +3090,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 135
+      "citations": 140
     },
     {
       "key": "doi/10.1145/3477495.3532034",
@@ -3141,7 +3141,7 @@
         "misinfo",
         "social_net"
       ],
-      "citations": 95
+      "citations": 96
     },
     {
       "key": "doi/10.1109/tai.2022.3223892",
@@ -3166,7 +3166,7 @@
         "agents",
         "trust"
       ],
-      "citations": 58
+      "citations": 59
     },
     {
       "key": "doi/10.1109/ijcnn55064.2022.9892739",
@@ -3266,7 +3266,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 59
+      "citations": 61
     },
     {
       "key": "doi/10.18653/v1/2021.acl-long.241",
@@ -3317,7 +3317,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 155
+      "citations": 159
     },
     {
       "key": "doi/10.1609/icwsm.v10i1.14726",
@@ -3387,7 +3387,7 @@
       "topics": [
         "nlp"
       ],
-      "citations": 88
+      "citations": 89
     },
     {
       "key": "doi/10.1109/ijcnn52387.2021.9533640",
@@ -3439,7 +3439,7 @@
         "nlp",
         "misinfo"
       ],
-      "citations": 192
+      "citations": 196
     },
     {
       "key": "journals/corr/abs-2103-12541",
@@ -3456,7 +3456,7 @@
         "P. Nakov"
       ],
       "year": 2021,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://hdl.handle.net/11573/1678450",
@@ -3466,7 +3466,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 280
+      "citations": 287
     },
     {
       "key": "journals/corr/abs-2102-03322",
@@ -3490,7 +3490,7 @@
         "gnn",
         "trust"
       ],
-      "citations": 386
+      "citations": 403
     },
     {
       "key": "journals/corr/abs-2109-08013",
@@ -3506,7 +3506,7 @@
         "G. Da San Martino"
       ],
       "year": 2021,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2109.08013",
@@ -3516,7 +3516,7 @@
       "topics": [
         "misinfo"
       ],
-      "citations": 155
+      "citations": 159
     },
     {
       "key": "doi/10.18653/v1/2020.findings-emnlp.22",
@@ -3582,7 +3582,7 @@
         "A. Y. Halevy"
       ],
       "year": 2020,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2010.06973",
@@ -3614,7 +3614,7 @@
       "topics": [
         "gnn"
       ],
-      "citations": 31
+      "citations": 32
     },
     {
       "key": "doi/10.18653/v1/n19-1326",
@@ -3672,7 +3672,7 @@
         "F. Silvestri"
       ],
       "year": 2019,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/1905.09755",
@@ -3730,7 +3730,7 @@
         "trust",
         "data_mining"
       ],
-      "citations": 377
+      "citations": 382
     },
     {
       "key": "doi/10.1145/3041021.3054193",
@@ -3801,7 +3801,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 25
+      "citations": 26
     },
     {
       "key": "doi/10.1145/2911451.2914760",
@@ -3878,7 +3878,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 90
+      "citations": 91
     },
     {
       "key": "doi/10.1145/2872427.2883092",
@@ -4139,7 +4139,7 @@
         "ir",
         "data_mining"
       ],
-      "citations": 236
+      "citations": 238
     },
     {
       "key": "doi/10.1145/2766459",
@@ -4181,29 +4181,6 @@
       "url_publisher": "https://doi.org/10.1007/978-3-319-25252-0_26",
       "url_arxiv": null,
       "type": "other_conf",
-      "topics": [
-        "ir"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "doi/10.1145/2740908.2744112",
-      "title": "Large-scale Contextual Query-to-Ad Matching and Retrieval System for Sponsored Search: (Abstract)",
-      "authors": [
-        "R. A. Baeza-Yates",
-        "N. Djuric",
-        "M. Grbovic",
-        "V. Radosavljević",
-        "F. Silvestri"
-      ],
-      "year": 2015,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "https://doi.org/10.1145/2740908.2744112",
-      "url_publisher": "https://doi.org/10.1145/2740908.2744112",
-      "url_arxiv": null,
-      "type": "workshop",
       "topics": [
         "ir"
       ],
@@ -4321,7 +4298,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 77
+      "citations": 78
     },
     {
       "key": "doi/10.5555/2491748.2491768",
@@ -4739,7 +4716,7 @@
         "ir",
         "data_mining"
       ],
-      "citations": 186
+      "citations": 188
     },
     {
       "key": "doi/10.1145/1963192.1963202",
@@ -4853,7 +4830,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 118
+      "citations": 120
     },
     {
       "key": "doi/10.1145/1871437.1871592",
@@ -5178,7 +5155,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 264
+      "citations": 265
     },
     {
       "key": "doi/10.1145/1639714.1639729",
@@ -5480,7 +5457,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 144
+      "citations": 145
     },
     {
       "key": "doi/10.1007/978-3-540-71496-5_12",
@@ -5500,7 +5477,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 139
+      "citations": 141
     },
     {
       "key": "doi/10.1109/icde.2007.367846",
@@ -5547,7 +5524,7 @@
       "topics": [
         "ir"
       ],
-      "citations": 496
+      "citations": 498
     },
     {
       "key": "doi/10.1145/1277741.1277775",
@@ -5572,7 +5549,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 317
+      "citations": 319
     },
     {
       "key": "doi/10.1145/1216016.1216022",
@@ -5728,7 +5705,7 @@
         "ir",
         "efficient"
       ],
-      "citations": 301
+      "citations": 302
     },
     {
       "key": "doi/10.1145/1146847.1146881",
@@ -5884,7 +5861,7 @@
         "efficient",
         "data_mining"
       ],
-      "citations": 70
+      "citations": 71
     },
     {
       "key": "doi/10.1109/ccgrid.2004.1336708",
@@ -6133,7 +6110,7 @@
         "F. Silvestri"
       ],
       "year": 2004,
-      "venue": "arXiv (Cornell University)",
+      "venue": "CoRR",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "http://hdl.handle.net/11573/1476470",

@@ -369,21 +369,6 @@ overrides:
     title: Rank Lifting and Random Non-Linear Maps
     url_publisher: https://openreview.net/forum?id=3Tvd1qJ5UJ
 
-  # AISTATS 2026 poster; the OpenReview page states "AISTATS 2026
-  # Poster", and virtual.aistats.org/virtual/2026/poster/13835 links to
-  # the same id. No PMLR volume yet, so OpenReview is the publisher
-  # link. Topic mirrors journals/tai/BucarelliPBCSNMS26, the same line
-  # of work on learning from disagreeing annotators — the keyword
-  # patterns match nothing in this title.
-  journals/corr/abs-2502-12581:
-    title: "The Majority Vote Paradigm Shift: When Popular Meets Optimal"
-    venue: AISTATS
-    venue_short: AISTATS
-    year: 2026
-    type: a_star_conf
-    topics: ["trust"]
-    url_publisher: https://openreview.net/forum?id=7f09dQVENn
-
   # COLM 2026. Title and authors taken from the COLM proceedings page
   # (pre-proceedings, no BibTeX yet). OpenAlex still has only the arXiv
   # preprint, with the authors' given and family names swapped, so the
