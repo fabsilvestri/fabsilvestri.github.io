@@ -176,18 +176,6 @@ additions:
     topics: [recsys]
     citations: 0
 
-  - key: manual/conf/iir/TeodoroSTS25
-    title: Comparing Recommendation Losses under Negative Sampling
-    authors: [G. Di Teodoro, F. Siciliano, N. Tonellotto, F. Silvestri]
-    year: 2025
-    venue: IIR
-    venue_short: IIR
-    abbrev: iir
-    url_publisher: https://ceur-ws.org/Vol-4026/paper25.pdf
-    type: other_conf
-    topics: [recsys]
-    citations: 0
-
   - key: manual/journals/corr/abs-2508-03606
     title: "Demystifying Sequential Recommendations: Counterfactual Explanations via Genetic Algorithms"
     authors: [D. Scarcelli, F. Betello, G. Perelli, F. Silvestri, G. Tolomei]
@@ -212,18 +200,6 @@ additions:
     topics: [gnn]
     citations: 4
 
-  - key: manual/conf/iir/DErasmoTTS25
-    title: "Eclipse: Leveraging Pseudo-Irrelevance for Dimension Importance Estimation"
-    authors: ["G. D'Erasmo", G. Trappolini, N. Tonellotto, F. Silvestri]
-    year: 2025
-    venue: IIR
-    venue_short: IIR
-    abbrev: iir
-    url_publisher: https://ceur-ws.org/Vol-4026/paper10.pdf
-    type: other_conf
-    topics: [misc]
-    citations: 0
-
   - key: manual/journals/corr/abs-2410-18067
     title: "Beyond position: how rotary embeddings shape representations and memory in autoregressive transfomers"
     authors: [V. Ruscio, F. Silvestri]
@@ -235,30 +211,6 @@ additions:
     type: preprint
     topics: [misc]
     citations: 0
-
-  - key: manual/conf/iir/BetelloSMS24
-    title: "Finite Rank-Biased Overlap (FRBO): A New Measure for Stability in Sequential Recommender Systems"
-    authors: [F. Betello, F. Siciliano, P. Mishra, F. Silvestri]
-    year: 2024
-    venue: IIR
-    venue_short: IIR
-    abbrev: iir
-    url_publisher: https://ceur-ws.org/Vol-3802/paper3.pdf
-    type: other_conf
-    topics: [ir, recsys, trust]
-    citations: 4
-
-  - key: manual/conf/iir/CuconasuTSFCMTS24
-    title: "Rethinking Relevance: How Noise and Distractors Impact Retrieval-Augmented Generation"
-    authors: [F. Cuconasu, G. Trappolini, F. Siciliano, S. Filice, C. Campagnano, Y. Maarek, N. Tonellotto, F. Silvestri]
-    year: 2024
-    venue: IIR
-    venue_short: IIR
-    abbrev: iir
-    url_publisher: https://ceur-ws.org/Vol-3802/paper23.pdf
-    type: other_conf
-    topics: [ir, llm]
-    citations: 10
 
   - key: manual/conf/robustrecsys/FrancomanoSS24
     title: Robust Solutions for Ranking Variability in Recommender Systems

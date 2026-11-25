@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-24",
-  "generated_at": "2026-11-24T14:30:16+00:00",
+  "last_updated": "2026-11-25",
+  "generated_at": "2026-11-25T13:50:51+00:00",
   "citations_fetched_at": "2026-11-23",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 261,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
-    "other_conf": 72,
+    "other_conf": 68,
     "other_journal": 8,
-    "workshop": 13,
-    "preprint": 45
+    "workshop": 19,
+    "preprint": 43
   },
   "counts_by_topic": {
     "ir": 97,
@@ -1613,50 +1613,6 @@
       "citations": 0
     },
     {
-      "key": "manual/conf/iir/TeodoroSTS25",
-      "title": "Comparing Recommendation Losses under Negative Sampling",
-      "authors": [
-        "G. Di Teodoro",
-        "F. Siciliano",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "IIR",
-      "venue_short": "IIR",
-      "abbrev": "iir",
-      "url": "https://ceur-ws.org/Vol-4026/paper25.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-4026/paper25.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "recsys"
-      ],
-      "citations": 0
-    },
-    {
-      "key": "manual/conf/iir/DErasmoTTS25",
-      "title": "Eclipse: Leveraging Pseudo-Irrelevance for Dimension Importance Estimation",
-      "authors": [
-        "G. D'Erasmo",
-        "G. Trappolini",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2025,
-      "venue": "IIR",
-      "venue_short": "IIR",
-      "abbrev": "iir",
-      "url": "https://ceur-ws.org/Vol-4026/paper10.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-4026/paper10.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "misc"
-      ],
-      "citations": 0
-    },
-    {
       "key": "doi/10.1109/ijcnn64981.2025.11228603",
       "title": "A Theoretical Analysis of Recommendation Loss Functions under Negative Sampling",
       "authors": [
@@ -1770,6 +1726,50 @@
         "misinfo"
       ],
       "citations": 4
+    },
+    {
+      "key": "openalex/W7239641670",
+      "title": "Comparing Recommendation Losses under Negative Sampling",
+      "authors": [
+        "G. Di Teodoro",
+        "F. Siciliano",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-4026/paper25.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-4026/paper25.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "recsys"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "openalex/W7239597427",
+      "title": "Eclipse: Leveraging Pseudo-Irrelevance for Dimension Importance Estimation",
+      "authors": [
+        "G. D'Erasmo",
+        "G. Trappolini",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2025,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-4026/paper10.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-4026/paper10.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "misc"
+      ],
+      "citations": 0
     },
     {
       "key": "doi/10.36227/techrxiv.176282217.77757258/v1",
@@ -2272,57 +2272,6 @@
       "citations": 25
     },
     {
-      "key": "manual/conf/iir/BetelloSMS24",
-      "title": "Finite Rank-Biased Overlap (FRBO): A New Measure for Stability in Sequential Recommender Systems",
-      "authors": [
-        "F. Betello",
-        "F. Siciliano",
-        "P. Mishra",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "IIR",
-      "venue_short": "IIR",
-      "abbrev": "iir",
-      "url": "https://ceur-ws.org/Vol-3802/paper3.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-3802/paper3.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "recsys",
-        "trust"
-      ],
-      "citations": 4
-    },
-    {
-      "key": "manual/conf/iir/CuconasuTSFCMTS24",
-      "title": "Rethinking Relevance: How Noise and Distractors Impact Retrieval-Augmented Generation",
-      "authors": [
-        "F. Cuconasu",
-        "G. Trappolini",
-        "F. Siciliano",
-        "S. Filice",
-        "C. Campagnano",
-        "Y. Maarek",
-        "N. Tonellotto",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "IIR",
-      "venue_short": "IIR",
-      "abbrev": "iir",
-      "url": "https://ceur-ws.org/Vol-3802/paper23.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-3802/paper23.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "ir",
-        "llm"
-      ],
-      "citations": 12
-    },
-    {
       "key": "doi/10.1109/ijcnn60899.2024.10650366",
       "title": "Learning with Noisy Labels through Learnable Weighting and Centroid Similarity",
       "authors": [
@@ -2390,6 +2339,57 @@
         "trust"
       ],
       "citations": 9
+    },
+    {
+      "key": "openalex/W7239548195",
+      "title": "Finite Rank-Biased Overlap (FRBO): A New Measure for Stability in Sequential Recommender Systems",
+      "authors": [
+        "F. Betello",
+        "F. Siciliano",
+        "P. Mishra",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-3802/paper3.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3802/paper3.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "recsys",
+        "trust"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "openalex/W7239609081",
+      "title": "Rethinking Relevance: How Noise and Distractors Impact Retrieval-Augmented Generation",
+      "authors": [
+        "F. Cuconasu",
+        "G. Trappolini",
+        "F. Siciliano",
+        "S. Filice",
+        "C. Campagnano",
+        "Y. Mareek",
+        "N. Tonellotto",
+        "F. Silvestri"
+      ],
+      "year": 2024,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-3802/paper23.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3802/paper23.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "llm"
+      ],
+      "citations": 0
     },
     {
       "key": "manual/conf/robustrecsys/FrancomanoSS24",
@@ -2948,6 +2948,54 @@
       "citations": 17
     },
     {
+      "key": "doi/10.48550/arxiv.2306.14457",
+      "title": "Fauno: The Italian Large Language Model that will leave you senza parole!",
+      "authors": [
+        "A. Bacciu",
+        "G. Trappolini",
+        "A. Santilli",
+        "E. Rodolà",
+        "F. Silvestri"
+      ],
+      "year": 2023,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3448/paper-24.pdf",
+      "url_arxiv": "https://arxiv.org/abs/2306.14457",
+      "type": "workshop",
+      "topics": [
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
+      "key": "doi/10.48550/arxiv.2307.12798",
+      "title": "RRAML: Reinforced Retrieval Augmented Machine Learning",
+      "authors": [
+        "A. Bacciu",
+        "F. Cuconasu",
+        "F. Siciliano",
+        "F. Silvestri",
+        "N. Tonellotto",
+        "G. Trappolini"
+      ],
+      "year": 2023,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "https://ceur-ws.org/Vol-3537/paper4.pdf",
+      "url_publisher": "https://ceur-ws.org/Vol-3537/paper4.pdf",
+      "url_arxiv": "https://arxiv.org/abs/2307.12798",
+      "type": "workshop",
+      "topics": [
+        "ir",
+        "llm"
+      ],
+      "citations": 0
+    },
+    {
       "key": "journals/corr/abs-2303-08288",
       "title": "Attention-likelihood relationship in transformers",
       "authors": [
@@ -2990,54 +3038,6 @@
         "misinfo"
       ],
       "citations": 5
-    },
-    {
-      "key": "journals/corr/abs-2306-14457",
-      "title": "Fauno: The Italian Large Language Model that will leave you senza parole!",
-      "authors": [
-        "A. Bacciu",
-        "G. Trappolini",
-        "A. Santilli",
-        "E. Rodolà",
-        "F. Silvestri"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://hdl.handle.net/11573/1698182",
-      "url_publisher": "https://hdl.handle.net/11573/1698182",
-      "url_arxiv": "https://arxiv.org/abs/2306.14457",
-      "type": "preprint",
-      "topics": [
-        "llm"
-      ],
-      "citations": 38
-    },
-    {
-      "key": "journals/corr/abs-2307-12798",
-      "title": "RRAML: Reinforced Retrieval Augmented Machine Learning",
-      "authors": [
-        "A. Bacciu",
-        "F. Cuconasu",
-        "F. Siciliano",
-        "F. Silvestri",
-        "N. Tonellotto",
-        "G. Trappolini"
-      ],
-      "year": 2023,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2307.12798",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2307.12798",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "llm"
-      ],
-      "citations": 22
     },
     {
       "key": "doi/10.1145/3511808.3557429",
@@ -3456,7 +3456,7 @@
         "P. Nakov"
       ],
       "year": 2021,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://hdl.handle.net/11573/1678450",
@@ -3506,7 +3506,7 @@
         "G. Da San Martino"
       ],
       "year": 2021,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2109.08013",
@@ -3582,7 +3582,7 @@
         "A. Y. Halevy"
       ],
       "year": 2020,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/2010.06973",
@@ -3672,7 +3672,7 @@
         "F. Silvestri"
       ],
       "year": 2019,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "https://arxiv.org/abs/1905.09755",
@@ -5818,6 +5818,27 @@
       "citations": 2
     },
     {
+      "key": "doi/10.1109/wi.2004.10158",
+      "title": "An Online Recommender System for Large Web Sites",
+      "authors": [
+        "R. Baraglia",
+        "F. Silvestri"
+      ],
+      "year": 2005,
+      "venue": "IEEE/WIC/ACM International Conference on Web Intelligence (previously joint with Intelligent Agent Technology WI-IAT)",
+      "venue_short": "WEBI",
+      "abbrev": "webi",
+      "url": "https://doi.org/10.1109/wi.2004.10158",
+      "url_publisher": "https://doi.org/10.1109/wi.2004.10158",
+      "url_arxiv": null,
+      "type": "other_conf",
+      "topics": [
+        "recsys",
+        "agents"
+      ],
+      "citations": 0
+    },
+    {
       "key": "doi/10.1002/cpe.995",
       "title": "Toward a search architecture for software components",
       "authors": [
@@ -6081,27 +6102,6 @@
       "citations": 4
     },
     {
-      "key": "doi/10.1109/wi.2004.29",
-      "title": "An Online Recommender System for Large Web Sites",
-      "authors": [
-        "R. Baraglia",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "IEEE/WIC/ACM International Conference on Web Intelligence (previously joint with Intelligent Agent Technology WI-IAT)",
-      "venue_short": "WEBI",
-      "abbrev": "webi",
-      "url": "https://doi.org/10.1109/wi.2004.29",
-      "url_publisher": "https://doi.org/10.1109/wi.2004.29",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "recsys",
-        "agents"
-      ],
-      "citations": 104
-    },
-    {
       "key": "journals/corr/abs-cs-0407053",
       "title": "Design of a Parallel and Distributed Web Search Engine",
       "authors": [
@@ -6110,7 +6110,7 @@
         "F. Silvestri"
       ],
       "year": 2004,
-      "venue": "CoRR",
+      "venue": "arXiv (Cornell University)",
       "venue_short": "arXiv",
       "abbrev": "corr",
       "url": "http://hdl.handle.net/11573/1476470",
@@ -6192,28 +6192,28 @@
       "citations": 43
     },
     {
-      "key": "openalex/W2988175665",
+      "key": "openalex/W193901335",
       "title": "A Hybrid Strategy for Caching Web Search Engine Results",
       "authors": [
+        "F. Silvestri",
         "T. Fagni",
         "S. Orlando",
         "P. Palmerini",
-        "R. Perego",
-        "F. Silvestri"
+        "R. Perego"
       ],
       "year": 2003,
-      "venue": "International World Wide Web Conference",
-      "venue_short": "WWW",
-      "abbrev": "www",
-      "url": "http://hdl.handle.net/10068/313255",
-      "url_publisher": "http://hdl.handle.net/10068/313255",
+      "venue": "WWW (Posters)",
+      "venue_short": "POSTERS",
+      "abbrev": "",
+      "url": "https://dblp.uni-trier.de/db/conf/www/www2003p.html#SilvestriFOPP03",
+      "url_publisher": "https://dblp.uni-trier.de/db/conf/www/www2003p.html#SilvestriFOPP03",
       "url_arxiv": null,
       "type": "workshop",
       "topics": [
         "ir",
         "efficient"
       ],
-      "citations": 4
+      "citations": 0
     },
     {
       "key": "doi/10.1007/3-540-45706-2_49",
