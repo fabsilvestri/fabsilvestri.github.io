@@ -285,30 +285,6 @@ additions:
     topics: [efficient]
     citations: 4
 
-  - key: manual/conf/fimi/LuccheseOPS04
-    title: "WebDocs: a real-life huge transactional dataset"
-    authors: [C. Lucchese, S. Orlando, R. Perego, F. Silvestri]
-    year: 2004
-    venue: FIMI
-    venue_short: FIMI
-    abbrev: fimi
-    url_publisher: https://ceur-ws.org/Vol-126/webdocs.pdf
-    type: other_conf
-    topics: [data_mining]
-    citations: 68
-
-  - key: manual/conf/fimi/OrlandoLPPS03
-    title: "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets"
-    authors: [S. Orlando, C. Lucchese, P. Palmerini, R. Perego, F. Silvestri]
-    year: 2003
-    venue: FIMI
-    venue_short: FIMI
-    abbrev: fimi
-    url_publisher: https://ceur-ws.org/Vol-90/palmerini.pdf
-    type: other_conf
-    topics: [data_mining]
-    citations: 92
-
 overrides:
 
   # AISTATS 2026. OpenAlex resolves the venue correctly but its only

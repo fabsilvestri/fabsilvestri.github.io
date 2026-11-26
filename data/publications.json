@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-11-25",
-  "generated_at": "2026-11-25T13:50:51+00:00",
+  "last_updated": "2026-11-26",
+  "generated_at": "2026-11-26T13:30:08+00:00",
   "citations_fetched_at": "2026-11-23",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 261,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
-    "other_conf": 68,
+    "other_conf": 66,
     "other_journal": 8,
-    "workshop": 19,
+    "workshop": 21,
     "preprint": 43
   },
   "counts_by_topic": {
-    "ir": 97,
+    "ir": 96,
     "recsys": 41,
     "llm": 29,
     "agents": 10,
@@ -5275,6 +5275,28 @@
       "citations": 11
     },
     {
+      "key": "openalex/W2139126712",
+      "title": "Sorting using BItonic netwoRk wIth CUDA",
+      "authors": [
+        "R. Baraglia",
+        "G. Capannini",
+        "F. Maria Nardini",
+        "F. Silvestri"
+      ],
+      "year": 2009,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "http://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_publisher": "http://ceur-ws.org/Vol-480/paper4.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "efficient"
+      ],
+      "citations": 30
+    },
+    {
       "key": "doi/10.1109/icumt.2009.5345355",
       "title": "Challenges in designing an interest-based distributed aggregation of users in P2P systems",
       "authors": [
@@ -5297,29 +5319,6 @@
         "efficient"
       ],
       "citations": 24
-    },
-    {
-      "key": "openalex/W2139126712",
-      "title": "Sorting using BItonic netwoRk wIth CUDA",
-      "authors": [
-        "R. Baraglia",
-        "G. Capannini",
-        "F. Maria Nardini",
-        "F. Silvestri"
-      ],
-      "year": 2009,
-      "venue": "ACM International Conference on Research and Development in Information Retrieval",
-      "venue_short": "SIGIR",
-      "abbrev": "sigir",
-      "url": "http://ceur-ws.org/Vol-480/paper4.pdf",
-      "url_publisher": "http://ceur-ws.org/Vol-480/paper4.pdf",
-      "url_arxiv": null,
-      "type": "workshop",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 30
     },
     {
       "key": "doi/10.1145/1507509.1507517",
@@ -5928,28 +5927,6 @@
       "citations": 4
     },
     {
-      "key": "manual/conf/fimi/LuccheseOPS04",
-      "title": "WebDocs: a real-life huge transactional dataset",
-      "authors": [
-        "C. Lucchese",
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "FIMI",
-      "venue_short": "FIMI",
-      "abbrev": "fimi",
-      "url": "https://ceur-ws.org/Vol-126/webdocs.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-126/webdocs.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "data_mining"
-      ],
-      "citations": 69
-    },
-    {
       "key": "doi/10.1007/978-3-540-24685-5_33",
       "title": "WINGS: A Parallel Indexer for Web Contents",
       "authors": [
@@ -6102,6 +6079,28 @@
       "citations": 4
     },
     {
+      "key": "openalex/W172108465",
+      "title": "WebDocs: a real-life huge transactional dataset",
+      "authors": [
+        "C. Lucchese",
+        "S. Orlando",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2004,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "http://ceur-ws.org/Vol-126/webdocs.pdf",
+      "url_publisher": "http://ceur-ws.org/Vol-126/webdocs.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "data_mining"
+      ],
+      "citations": 0
+    },
+    {
       "key": "journals/corr/abs-cs-0407053",
       "title": "Design of a Parallel and Distributed Web Search Engine",
       "authors": [
@@ -6122,29 +6121,6 @@
         "efficient"
       ],
       "citations": 44
-    },
-    {
-      "key": "manual/conf/fimi/OrlandoLPPS03",
-      "title": "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets",
-      "authors": [
-        "S. Orlando",
-        "C. Lucchese",
-        "P. Palmerini",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2003,
-      "venue": "FIMI",
-      "venue_short": "FIMI",
-      "abbrev": "fimi",
-      "url": "https://ceur-ws.org/Vol-90/palmerini.pdf",
-      "url_publisher": "https://ceur-ws.org/Vol-90/palmerini.pdf",
-      "url_arxiv": null,
-      "type": "other_conf",
-      "topics": [
-        "data_mining"
-      ],
-      "citations": 94
     },
     {
       "key": "doi/10.1109/icdm.2002.1183921",
@@ -6190,6 +6166,29 @@
         "data_mining"
       ],
       "citations": 43
+    },
+    {
+      "key": "openalex/W1580803093",
+      "title": "kDCI: a Multi-Strategy Algorithm for Mining Frequent Sets",
+      "authors": [
+        "S. Orlando",
+        "C. Lucchese",
+        "P. Palmerini",
+        "R. Perego",
+        "F. Silvestri"
+      ],
+      "year": 2003,
+      "venue": "CEUR Workshop Proceedings",
+      "venue_short": "CEUR Workshop Proceedings",
+      "abbrev": "",
+      "url": "http://ceur-ws.org/Vol-90/palmerini.pdf",
+      "url_publisher": "http://ceur-ws.org/Vol-90/palmerini.pdf",
+      "url_arxiv": null,
+      "type": "workshop",
+      "topics": [
+        "data_mining"
+      ],
+      "citations": 0
     },
     {
       "key": "openalex/W193901335",
