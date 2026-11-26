@@ -172,6 +172,89 @@
     return (b.year || 0) - (a.year || 0);
   }
 
+  // Same correspondence as scripts/fetch_publications.py
+  // (drop_superseded_preprints): a preprint leaves the page when a
+  // non-preprint record is the same paper, by normalized title or by
+  // arXiv id. The published record keeps the arXiv link.
+  function normalizeTitle(s) {
+    return String(s || "")
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}_\s]/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  var ARXIV_ABS_RE = /arxiv\.org\/(?:abs|pdf)\/([^\s?#]+?)(?:v\d+)?(?:\.pdf)?$/i;
+  var ARXIV_DOI_RE = /^10\.48550\/arxiv\.(.+?)(?:v\d+)?$/i;
+
+  function publicationArxivId(pub) {
+    var fields = ["url_arxiv", "url", "url_publisher"];
+    for (var i = 0; i < fields.length; i++) {
+      var value = String(pub[fields[i]] || "").trim();
+      if (!value) continue;
+      var abs = value.match(ARXIV_ABS_RE);
+      if (abs) return abs[1].toLowerCase();
+      var tail = value.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "");
+      var doi = tail.match(ARXIV_DOI_RE);
+      if (doi) return doi[1].toLowerCase();
+    }
+    return "";
+  }
+
+  function dropSupersededPreprints(data) {
+    var pubs = data.publications || [];
+    var publishedTitles = {};
+    var publishedByArxiv = {};
+    pubs.forEach(function (p) {
+      if (p.type === "preprint") return;
+      var title = normalizeTitle(p.title);
+      if (title) publishedTitles[title] = p;
+      var arxiv = publicationArxivId(p);
+      if (arxiv && !publishedByArxiv[arxiv]) publishedByArxiv[arxiv] = p;
+    });
+    var kept = [];
+    pubs.forEach(function (p) {
+      if (p.type !== "preprint") {
+        kept.push(p);
+        return;
+      }
+      var title = normalizeTitle(p.title);
+      var arxiv = publicationArxivId(p);
+      var match = (title && publishedTitles[title]) || (arxiv && publishedByArxiv[arxiv]);
+      if (!match) {
+        kept.push(p);
+        return;
+      }
+      if (!match.url_arxiv) {
+        match.url_arxiv = p.url_arxiv || (arxiv ? "https://arxiv.org/abs/" + arxiv : "");
+      }
+    });
+    if (kept.length === pubs.length) return;
+    data.publications = kept;
+    data.count = kept.length;
+    var byType = {};
+    var byTopic = {};
+    var years = {};
+    kept.forEach(function (p) {
+      byType[p.type] = (byType[p.type] || 0) + 1;
+      (p.topics || []).forEach(function (slug) {
+        byTopic[slug] = (byTopic[slug] || 0) + 1;
+      });
+      if (p.year) years[p.year] = true;
+    });
+    if (data.counts_by_type) {
+      Object.keys(data.counts_by_type).forEach(function (k) {
+        data.counts_by_type[k] = byType[k] || 0;
+      });
+    }
+    if (data.counts_by_topic) {
+      Object.keys(data.counts_by_topic).forEach(function (k) {
+        data.counts_by_topic[k] = byTopic[k] || 0;
+      });
+    }
+    data.years = Object.keys(years).map(Number).sort(function (a, b) { return b - a; });
+  }
+
   function matchesType(pub, typeFilter) {
     // "all" excludes preprints — they're only visible via the
     // dedicated Preprints tab. "selected" matches the top-tier
@@ -716,6 +799,7 @@
 
   function renderAll() {
     if (!window.PUBLICATIONS) return; // nothing to render
+    dropSupersededPreprints(window.PUBLICATIONS);
     updateStats();
     initTypeTabs();
     initTopicTabs();

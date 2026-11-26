@@ -399,12 +399,87 @@ class OverlayTestCase(unittest.TestCase):
                          json.dumps(second, sort_keys=True))
 
 
+class DropSupersededPreprintsTest(unittest.TestCase):
+    def test_same_title_drops_the_preprint_and_keeps_the_arxiv_link(self):
+        preprint = {
+            "type": "preprint",
+            "title": "Detecting Propaganda Techniques in Memes",
+            "key": "journals/corr/abs-2109-08013",
+            "url_arxiv": "https://arxiv.org/abs/2109.08013",
+        }
+        published = {
+            "type": "a_star_conf",
+            "title": "Detecting Propaganda Techniques in Memes.",
+            "key": "doi/10.18653/v1/2021.emnlp-main.1",
+        }
+        pubs = [preprint, published]
+        fp.cross_link_arxiv(pubs)
+        kept = fp.drop_superseded_preprints(pubs)
+        self.assertEqual([p["key"] for p in kept], ["doi/10.18653/v1/2021.emnlp-main.1"])
+        self.assertEqual(kept[0]["url_arxiv"], "https://arxiv.org/abs/2109.08013")
+
+    def test_same_arxiv_id_drops_a_renamed_preprint(self):
+        preprint = {
+            "type": "preprint",
+            "title": "Beyond position: how rotary embeddings shape representations",
+            "key": "manual/journals/corr/abs-2410-18067",
+            "url": "https://doi.org/10.48550/arXiv.2410.18067",
+            "url_publisher": "https://doi.org/10.48550/arXiv.2410.18067",
+            "url_arxiv": None,
+        }
+        published = {
+            "type": "a_star_conf",
+            "title": "Beyond Position: the emergence of wavelet-like properties in Transformers",
+            "key": "doi/10.18653/v1/example",
+            "url_arxiv": "https://arxiv.org/abs/2410.18067v2",
+        }
+        kept = fp.drop_superseded_preprints([preprint, published])
+        self.assertEqual([p["key"] for p in kept], ["doi/10.18653/v1/example"])
+
+    def test_preprint_without_a_publication_stays(self):
+        preprint = {
+            "type": "preprint",
+            "title": "A Picture of Agentic Search",
+            "key": "journals/corr/abs-2602-17518",
+            "url_arxiv": "https://arxiv.org/abs/2602.17518",
+        }
+        kept = fp.drop_superseded_preprints([preprint])
+        self.assertEqual(kept, [preprint])
+
+    def test_backfills_arxiv_url_from_the_preprint_doi(self):
+        preprint = {
+            "type": "preprint",
+            "title": "Only the DOI names arXiv",
+            "key": "journals/corr/abs-1905-09755",
+            "url_publisher": "https://doi.org/10.48550/arXiv.1905.09755",
+        }
+        published = {
+            "type": "a_star_conf",
+            "title": "Only the DOI names arXiv",
+            "key": "doi/10.1145/1",
+        }
+        kept = fp.drop_superseded_preprints([preprint, published])
+        self.assertEqual(len(kept), 1)
+        self.assertEqual(kept[0]["url_arxiv"], "https://arxiv.org/abs/1905.09755")
+
+
 class UnexplainedLossesTest(unittest.TestCase):
     """The guard that stops a short run from overwriting good data."""
 
     @staticmethod
     def pub(key, title):
         return {"key": key, "title": title}
+
+    def test_preprint_with_a_renamed_arxiv_version_is_not_a_loss(self):
+        previous = [self.pub("manual/journals/corr/abs-2410-18067",
+                             "Beyond position: how rotary embeddings shape representations")]
+        previous[0]["type"] = "preprint"
+        previous[0]["url_publisher"] = "https://doi.org/10.48550/arXiv.2410.18067"
+        current = [self.pub("doi/10.18653/v1/example",
+                            "Beyond Position: the emergence of wavelet-like properties")]
+        current[0]["type"] = "a_star_conf"
+        current[0]["url_arxiv"] = "https://arxiv.org/abs/2410.18067"
+        self.assertEqual(fp.unexplained_losses(previous, current), [])
 
     def test_preprint_merged_into_published_paper_is_not_a_loss(self):
         # What OpenAlex did on 2026-09-30: the arXiv record vanished and

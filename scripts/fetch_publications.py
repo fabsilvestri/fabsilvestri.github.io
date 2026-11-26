@@ -943,6 +943,74 @@ def cross_link_arxiv(pubs: list[dict]) -> None:
             p["url_arxiv"] = hit
 
 
+def publication_arxiv_id(pub: dict) -> str:
+    """arXiv id carried by a rendered record, lowercased and without a
+    version suffix. Read from an arxiv.org URL or an arXiv DOI
+    (`10.48550/arXiv.…`), including one wrapped in a doi.org link."""
+    for field in ("url_arxiv", "url", "url_publisher"):
+        value = (pub.get(field) or "").strip()
+        if not value:
+            continue
+        match = ARXIV_ABS_RE.search(value)
+        if match:
+            return re.sub(r"v\d+$", "", match.group(1), flags=re.IGNORECASE).lower()
+        tail = value
+        for prefix in (
+            "https://doi.org/",
+            "http://doi.org/",
+            "https://dx.doi.org/",
+            "http://dx.doi.org/",
+        ):
+            if tail.lower().startswith(prefix):
+                tail = tail[len(prefix):]
+                break
+        match = ARXIV_DOI_RE.match(tail)
+        if match:
+            return re.sub(r"v\d+$", "", match.group(1), flags=re.IGNORECASE).lower()
+    return ""
+
+
+def drop_superseded_preprints(pubs: list[dict]) -> list[dict]:
+    """Drop a preprint when a non-preprint record is the same paper.
+
+    The same paper is a shared normalized title, or a shared arXiv id
+    when the published title has moved on. The published record keeps
+    an arXiv link when only the preprint had one. Preprints with no
+    published counterpart stay."""
+    published = [p for p in pubs if p.get("type") != TYPE_PREPRINT]
+    published_titles = {
+        normalize_title_for_match(p.get("title", "")): p
+        for p in published
+        if p.get("title")
+    }
+    published_by_arxiv: dict[str, dict] = {}
+    for p in published:
+        arxiv = publication_arxiv_id(p)
+        if arxiv:
+            published_by_arxiv.setdefault(arxiv, p)
+
+    kept: list[dict] = []
+    for p in pubs:
+        if p.get("type") != TYPE_PREPRINT:
+            kept.append(p)
+            continue
+        title = normalize_title_for_match(p.get("title", ""))
+        arxiv = publication_arxiv_id(p)
+        match = published_titles.get(title) if title else None
+        if match is None and arxiv:
+            match = published_by_arxiv.get(arxiv)
+        if match is None:
+            kept.append(p)
+            continue
+        if not match.get("url_arxiv"):
+            url = p.get("url_arxiv") or (
+                "https://arxiv.org/abs/" + arxiv if arxiv else ""
+            )
+            if url:
+                match["url_arxiv"] = url
+    return kept
+
+
 def http_json(url: str, timeout: int = 60, retries: int = 3):
     """GET a JSON document, retrying on the transient failures a long
     paginated crawl runs into (429 from the shared rate limiter, 5xx
@@ -1896,10 +1964,12 @@ def unexplained_losses(previous: list[dict], current: list[dict]) -> list[dict]:
     a source returning short looks like."""
     keys = {p.get("key") for p in current}
     titles = {normalize_title_for_match(p.get("title", "")) for p in current}
+    arxiv_ids = {publication_arxiv_id(p) for p in current} - {""}
     return [
         p for p in previous
         if p.get("key") not in keys
         and normalize_title_for_match(p.get("title", "")) not in titles
+        and publication_arxiv_id(p) not in arxiv_ids
     ]
 
 
@@ -2006,10 +2076,10 @@ def main(prune_manual: bool = True, allow_shrink: bool = False) -> int:
         # record and a repository copy, or two preprint records for one
         # arXiv posting — so the same paper can arrive under two work
         # ids and two keys. De-duplicate on key first, then on
-        # normalized title — but only within one standing, since a
-        # preprint and the paper it became are not duplicates: the site
-        # lists both, on separate tabs, and cross_link_arxiv() ties them
-        # together. Of two genuine duplicates the fuller record wins.
+        # normalized title within one standing. A preprint and the
+        # published paper stay distinct here so cross_link_arxiv() can
+        # copy the arXiv link; drop_superseded_preprints() then removes
+        # the preprint. Of two genuine duplicates the fuller record wins.
         if parsed["key"] in by_key:
             continue
         title_key = (normalize_title_for_match(parsed["title"]),
@@ -2040,6 +2110,7 @@ def main(prune_manual: bool = True, allow_shrink: bool = False) -> int:
     )
 
     cross_link_arxiv(pubs)
+    pubs = drop_superseded_preprints(pubs)
 
     pubs.sort(
         key=lambda p: (
