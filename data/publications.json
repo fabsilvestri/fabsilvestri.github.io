@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-11-26",
-  "generated_at": "2026-11-26T13:30:08+00:00",
+  "last_updated": "2026-11-27",
+  "generated_at": "2026-11-27T13:26:50+00:00",
   "citations_fetched_at": "2026-11-23",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
-  "count": 261,
+  "count": 257,
   "counts_by_type": {
     "a_star_conf": 85,
     "q1_journal": 38,
     "other_conf": 66,
     "other_journal": 8,
     "workshop": 21,
-    "preprint": 43
+    "preprint": 39
   },
   "counts_by_topic": {
-    "ir": 96,
+    "ir": 95,
     "recsys": 41,
     "llm": 29,
     "agents": 10,
-    "nlp": 23,
+    "nlp": 22,
     "gnn": 27,
     "trust": 44,
     "task_vectors": 7,
-    "efficient": 56,
-    "misinfo": 13,
+    "efficient": 55,
+    "misinfo": 12,
     "data_mining": 13,
     "social_net": 11,
-    "misc": 30
+    "misc": 29
   },
   "years": [
     2026,
@@ -2464,26 +2464,6 @@
       "citations": 0
     },
     {
-      "key": "manual/journals/corr/abs-2410-18067",
-      "title": "Beyond position: how rotary embeddings shape representations and memory in autoregressive transfomers",
-      "authors": [
-        "V. Ruscio",
-        "F. Silvestri"
-      ],
-      "year": 2024,
-      "venue": "CoRR",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://doi.org/10.48550/arXiv.2410.18067",
-      "url_publisher": "https://doi.org/10.48550/arXiv.2410.18067",
-      "url_arxiv": null,
-      "type": "preprint",
-      "topics": [
-        "misc"
-      ],
-      "citations": 0
-    },
-    {
       "key": "journals/corr/abs-2404-15760",
       "title": "Debiasing Machine Unlearning with Counterfactual Examples",
       "authors": [
@@ -3493,32 +3473,6 @@
       "citations": 403
     },
     {
-      "key": "journals/corr/abs-2109-08013",
-      "title": "Detecting Propaganda Techniques in Memes",
-      "authors": [
-        "D. Dimitrov",
-        "B. Bin Ali",
-        "S. Shaar",
-        "F. Alam",
-        "F. Silvestri",
-        "H. Firooz",
-        "P. Nakov",
-        "G. Da San Martino"
-      ],
-      "year": 2021,
-      "venue": "arXiv (Cornell University)",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/2109.08013",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/2109.08013",
-      "type": "preprint",
-      "topics": [
-        "misinfo"
-      ],
-      "citations": 159
-    },
-    {
       "key": "doi/10.18653/v1/2020.findings-emnlp.22",
       "title": "How Decoding Strategies Affect the Verifiability of Generated Text",
       "authors": [
@@ -3659,30 +3613,6 @@
         "trust"
       ],
       "citations": 35
-    },
-    {
-      "key": "journals/corr/abs-1905-09755",
-      "title": "Misspelling Oblivious Word Embeddings",
-      "authors": [
-        "B. Edizel",
-        "A. Piktus",
-        "P. Bojanowski",
-        "R. Ferreira",
-        "É. Grave",
-        "F. Silvestri"
-      ],
-      "year": 2019,
-      "venue": "arXiv (Cornell University)",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "https://arxiv.org/abs/1905.09755",
-      "url_publisher": null,
-      "url_arxiv": "https://arxiv.org/abs/1905.09755",
-      "type": "preprint",
-      "topics": [
-        "nlp"
-      ],
-      "citations": 101
     },
     {
       "key": "doi/10.1145/3205453",
@@ -6099,28 +6029,6 @@
         "data_mining"
       ],
       "citations": 0
-    },
-    {
-      "key": "journals/corr/abs-cs-0407053",
-      "title": "Design of a Parallel and Distributed Web Search Engine",
-      "authors": [
-        "S. Orlando",
-        "R. Perego",
-        "F. Silvestri"
-      ],
-      "year": 2004,
-      "venue": "arXiv (Cornell University)",
-      "venue_short": "arXiv",
-      "abbrev": "corr",
-      "url": "http://hdl.handle.net/11573/1476470",
-      "url_publisher": "http://hdl.handle.net/11573/1476470",
-      "url_arxiv": "https://arxiv.org/abs/cs/0407053",
-      "type": "preprint",
-      "topics": [
-        "ir",
-        "efficient"
-      ],
-      "citations": 44
     },
     {
       "key": "doi/10.1109/icdm.2002.1183921",
