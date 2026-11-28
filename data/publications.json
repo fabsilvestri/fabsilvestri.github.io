@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27",
-  "generated_at": "2026-11-27T13:26:50+00:00",
+  "last_updated": "2026-11-28",
+  "generated_at": "2026-11-28T12:40:01+00:00",
   "citations_fetched_at": "2026-11-23",
   "source": "https://api.openalex.org/works?filter=author.id:A5044165871",
   "count": 257,
@@ -3929,7 +3929,7 @@
       "title": "Report on ECIR 2016: 38th European Conference on Information Retrieval",
       "authors": [
         "N. Ferro",
-        "F. Crestani",
+        "F. A. Crestani",
         "M. Moens",
         "J. Mothe",
         "F. Silvestri",
